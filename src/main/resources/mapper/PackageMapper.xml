@@ -50,4 +50,10 @@
     <select id="showAllPackage" resultType="com.dyhc.hospitalmanager.pojo.Package">
        SELECT * FROM package;
     </select>
+
+    <!-- 根据套餐Id，获取该套餐 -->
+    <select id="selPackageById" resultType="com.dyhc.hospitalmanager.pojo.Package">
+        SELECT * FROM `package`
+        WHERE package_id = #{packageId}
+    </select>
 </mapper>
