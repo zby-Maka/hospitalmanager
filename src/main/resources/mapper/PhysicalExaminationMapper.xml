@@ -13,7 +13,7 @@
         SELECT * FROM physical_examination WHERE archives_id=#{archivesId}
     </select>
 
-    <!--  -->
+    <!-- 根据当前日期查询体检表倒叙第一条的体检编号 -->
     <select id="getPhysicalExaminationOrderByMedicalTime">
         SELECT `medical_time` FROM `physical_examination`
         WHERE `medical_time` LIKE '%'+#{now}+'%'
