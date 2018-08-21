@@ -16,7 +16,7 @@ public interface CompanyInfoMapper {
      * @param companyName 单位名称
      * @return
      */
-    CompanyInfo showCompanyInfo(@Param("companyName") String companyName);
+    CompanyInfo showCompanyInfo(@Param("companyName") String companyName)throws  Exception;
 
     /**
      * 李文荣

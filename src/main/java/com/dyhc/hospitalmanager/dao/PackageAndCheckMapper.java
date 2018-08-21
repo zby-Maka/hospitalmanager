@@ -9,5 +9,5 @@ public interface PackageAndCheckMapper {
      * @param packageAndCheck
      * @return
      */
-    Integer addPackageAndCheckInfo(PackageAndCheck packageAndCheck);
+    Integer addPackageAndCheckInfo(PackageAndCheck packageAndCheck)throws  Exception;
 }
