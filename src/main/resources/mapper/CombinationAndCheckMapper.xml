@@ -4,4 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CombinationAndCheckMapper">
 
+    <!-- 根据组合项Id，查询其下的所有体检项 -->
+    <select id="getCheckByCombinationId" resultType="com.dyhc.hospitalmanager.pojo.Check">
+        SELECT * FROM `check` c
+        INNER JOIN `combination_and_ check` cac
+        ON c.`check_id` = cac.`check_id`
+        WHERE cac.`combination_id` = #{comId}
+    </select>
 </mapper>
