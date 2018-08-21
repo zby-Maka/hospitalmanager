@@ -7,4 +7,5 @@
    <select id="getCheckById">
        SELECT * FROM `check` WHERE check_id=#{checkId}
    </select>
+
 </mapper>
