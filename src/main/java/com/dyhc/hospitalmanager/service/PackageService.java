@@ -11,5 +11,5 @@ public interface PackageService {
      * @param
      * @return
      */
-    List<Package> getPackage()throws  Exception;
+    List<Package> getPackage();
 }

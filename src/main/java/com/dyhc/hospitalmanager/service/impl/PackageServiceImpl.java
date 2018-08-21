@@ -17,17 +17,21 @@ public class PackageServiceImpl implements PackageService {
 
     @Override
     public List<Package> getPackage() {
-        List<Integer> packageIdList = packageMapper.getAllPackageId();
         List<Package> packageList = new ArrayList<Package>();
         Package packageCombination=null;
         Package packageCheck=null;
-        for (Integer packageId:packageIdList) {
-            packageCombination =  packageMapper.getPackageCombination(packageId);
-            packageCheck =  packageMapper.getPackageCheck(packageId);
-            if(packageCombination!=null)
-                packageCombination.setPackageCheckList(packageCheck.getPackageCheckList());
+        try {
+            List<Integer> packageIdList = packageIdList = packageMapper.getAllPackageId();
+            for (Integer packageId:packageIdList) {
+                packageCombination =  packageMapper.getPackageCombination(packageId);
+                packageCheck =  packageMapper.getPackageCheck(packageId);
+                if(packageCombination!=null)
+                    packageCombination.setPackageCheckList(packageCheck.getPackageCheckList());
 
-            packageList.add(packageCombination);
+                packageList.add(packageCombination);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return packageList;
     }
