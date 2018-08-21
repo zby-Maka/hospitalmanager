@@ -19,4 +19,12 @@ public interface PersonInfoMapper {
      */
     List<PersonInfo> findPersonInfos(@Param("personName") String personName, @Param("personIdCard") String personIdCard);
 
+    /**
+     * 李文荣
+     * 添加用户信息
+     * @param personInfo 用户信息
+     * @return
+     */
+    Integer addPersonInfo(PersonInfo personInfo);
+
 }
