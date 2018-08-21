@@ -23,4 +23,22 @@ public interface PhysicalExaminationMapper {
      * @return
      */
     List<PhysicalExamination>getPhysicalExaminationInfoByArchivesId(@Param("archivesId") String archivesId);
+
+
+    /**
+     * 修改体检表档案编号和时间
+     * @param physicalExamination
+     * author ycy
+     * @return
+     */
+    int updPhysicalExaminationInfo(PhysicalExamination physicalExamination);
+
+    /**
+     * 查询体检表最后一位倒序
+     * @return
+     * author ycy
+     * @throws Exception
+     */
+    PhysicalExamination getPhysicalExaminationIdByDesc() throws Exception;
+
 }
