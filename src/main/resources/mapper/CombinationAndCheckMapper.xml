@@ -3,5 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CombinationAndCheckMapper">
-
+   <select id="getCheckAndComByCheckId" resultType="com.dyhc.hospitalmanager.pojo.CombinationAndCheck">
+        SELECT ch.*,(SELECT check_name FROM `check` c WHERE c.`check_id`=ch.`check_id`) AS check_name,
+       (SELECT `combination_name` FROM `combination` com WHERE com.`combination_id`=ch.`combination_id`) AS com
+        FROM `combination_and_ check` ch WHERE ch.check_id=#{checkId}
+   </select>
 </mapper>
