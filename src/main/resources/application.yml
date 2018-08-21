@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://120.79.200.87:3306/health_examination_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: Project123..
+      db-type: com.alibaba.druid.pool.DruidDataSource #指定使用druid连接池作为数据源
+      initial-size: 5 #初始化大小
+      min-idle: 5 #最小空闲数
+      max-active: 50 #最大连接数
+      max-wait: 60000 #连接等待超时的时间，毫秒为单位
+      time-between-eviction-runs-millis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      min-evictable-idle-time-millis: 300000 # 配置一个连接在池中最小生存的时间，单位是毫秒
+      validation-query: SELECT 1 FROM DUAL #验证查询
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      max-pool-prepared-statement-per-connection-size: 20 # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      filters: stat # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      connection-properties: druid.stat.mergeSql # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      filter:
+        stat:
+          merge-sql: true
+          slow-sql-millis: 5000
+      use-global-data-source-stat: true # 合并多个DruidDataSource的监控数据
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml #映射指定mapper下的所有SQL映射文件
+  configuration:
+    map-underscore-to-camel-case: true           #设置自动映射数据库表有下划线字段属性
+    auto-mapping-behavior: full                   #高级查询
+  type-aliases-package: com.dyhc.hospitalmanager.pojo   #开启别名
