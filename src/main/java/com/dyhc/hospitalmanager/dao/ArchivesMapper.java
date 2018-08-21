@@ -27,4 +27,14 @@ public interface ArchivesMapper {
     Archives getArchivesIdByDesc() throws Exception;
 
 
+    /**
+     * 添加档案表信息
+     * @param archives
+     * anthor ycy
+     * @return
+     * @throws Exception
+     */
+    int addArchivesInfo(Archives archives)throws  Exception;
+
+
 }

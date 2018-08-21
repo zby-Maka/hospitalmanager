@@ -14,6 +14,11 @@
         SELECT * FROM archives ORDER BY archives_id DESC LIMIT 1
     </select>
 
+    <!--添加档案信息-->
+    <insert id="addArchivesInfo">
+    INSERT INTO archives VALUES(#archivesId,#personId,NOW())
+    </insert>
+
 
 
 </mapper>
