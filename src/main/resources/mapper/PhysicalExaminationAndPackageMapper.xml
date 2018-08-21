@@ -4,4 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.PhysicalExaminationAndPackageMapper">
 
+    <!-- 新增用户选择的套餐 -->
+    <insert id="addPhysicalExaminationAndPackageMapper">
+        INSERT INTO `health_examination_system`.`physical_examination_and_package` (
+          `physical_examination_and_package_id`,
+          `physical_examination_id`,
+          `package_id`,
+          `physical_statu`
+        )
+        VALUES
+          (
+            null ,
+            #{physicalExaminationId},
+            #{packageId},
+            0
+          );
+    </insert>
 </mapper>

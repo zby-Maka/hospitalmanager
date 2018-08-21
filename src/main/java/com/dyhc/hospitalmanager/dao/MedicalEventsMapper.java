@@ -8,5 +8,5 @@ public interface MedicalEventsMapper {
      * @param medicalEvents
      * @return
      */
-    Integer addMedicalEvent(MedicalEvents medicalEvents);
+    Integer addMedicalEvent(MedicalEvents medicalEvents)throws  Exception;
 }

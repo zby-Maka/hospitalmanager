@@ -17,7 +17,7 @@ public interface PersonInfoMapper {
      * @param personIdCard 身份证号
      * @return
      */
-    List<PersonInfo> findPersonInfos(@Param("personName") String personName, @Param("personIdCard") String personIdCard);
+    List<PersonInfo> findPersonInfos(@Param("personName") String personName, @Param("personIdCard") String personIdCard)throws  Exception;
 
     /**
      * 李文荣

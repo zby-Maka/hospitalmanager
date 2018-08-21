@@ -4,4 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CostMapper">
 
+    <!--  -->
+    <insert id="addCost">
+        INSERT INTO `cost` VALUE(NULL,#{costType},#{healthExaminationId},#{costAmount},NOW())
+    </insert>
+
 </mapper>
