@@ -14,9 +14,9 @@ public interface CheckMapper {
     List<Check> getCheckById(@Param("checkId")Integer checkId)throws Exception;
     /**
      * 根据体检编号，查询人员体检项 白文鑫
-     * @param checkId
+     * @param physicalExaminationAndCombinationId
      * @return
      * @throws Exception
      */
-    List<Check>  getCheckList(@Param("checkId")Integer checkId) throws  Exception;
+    List<Check>  getCheckList(@Param("physicalExaminationAndCombinationId")Integer physicalExaminationAndCombinationId) throws  Exception;
 }

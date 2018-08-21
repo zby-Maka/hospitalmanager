@@ -4,8 +4,35 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CheckMapper">
     <!--根据体检项id查出体检项数据，与接收的数据进行对比-->
-   <select id="getCheckById">
+   <select id="getCheckById" resultType="com.dyhc.hospitalmanager.pojo.Check">
        SELECT * FROM `check` WHERE check_id=#{checkId}
    </select>
+    <select id="getCheckList" resultType="com.dyhc.hospitalmanager.pojo.Check">
+        SELECT pe.*,c.`check_name` FROM `physical_examination` pe
+    INNER JOIN `physical_examination_and_package` pep
+    ON pe.`physical_examination_id` = pep.`physical_examination_id`
+    INNER JOIN `package_and_ combination` pac ON pep.`package_id` = pac.`package_id`
+    INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
+    INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
+    WHERE pe.`physical_examination_id` = #{physicalExaminationAndCombinationId}
+    UNION
+    SELECT pe.*,c.`check_name` FROM `physical_examination` pe
+    INNER JOIN `physical_examination_and_package` peap
+    ON pe.`physical_examination_id` = peap.`physical_examination_id`
+    INNER JOIN `package_and_ check` pac ON peap.package_id = pac.package_id
+    INNER JOIN `check` c ON c.`check_id` = pac.check_id
+    WHERE peap.physical_examination_id = #{physicalExaminationAndCombinationId}
+    UNION
+    SELECT pe.*,c.`check_name` FROM `physical_examination` pe
+    INNER JOIN `physical_examination_and_ combination` pac ON pe.`physical_examination_id` = pac.`physical_examination_id`
+    INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
+    INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
+    WHERE pe.`physical_examination_id` = #{physicalExaminationAndCombinationId}
+    UNION
+    SELECT pe.*,c.`check_name` FROM `physical_examination` pe
+    INNER JOIN `physical_examination_and_ check` peac ON pe.`physical_examination_id` = peac.`physical_examination_id`
+    INNER JOIN `check` c ON peac.`check_id` = c.`check_id`
+     WHERE pe.`physical_examination_id` =#{physicalExaminationAndCombinationId}
 
+    </select>
 </mapper>
