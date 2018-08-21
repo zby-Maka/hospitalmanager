@@ -3,5 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CheckResultMapper">
-
+   <!--将体检结果插入体检结果表中-->
+    <insert id="addCheckResult">
+       INSERT INTO `check_result` VALUES(NULL,#{physicalExaminationId},#{checkId},#{roleInfoId},now(),#{checkResultFinally},#{checkAdvice})
+   </insert>
 </mapper>

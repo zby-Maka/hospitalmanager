@@ -3,5 +3,23 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.PersonInfoMapper">
+    <!--李文荣  根据用户姓名与身份证号查询用户信息-->
+    <select id="findPersonInfos" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
+        SELECT * FROM `person_info` WHERE 1 = 1
+        <IF test="personName != null and personName != ''">
+            AND `person_name` = #{personName}
+        </IF>
+        <IF test="personIdCard != null and personIdCard != ''">
+            AND `person_id_card` = #{personIdCard}
+        </IF>
+    </select>
 
+    <!--添加用户信息-->
+    <insert id="addPersonInfo">
+      INSERT INTO `health_examination_system`.`person_info` (`person_id`,`person_name`,`person_age`,`person_birthday`,`person_sex`,
+                  `person_id_card`,`is_marry`,`person_telephone`,`person_address`,`person_name_spell_code`,`person_type`,`group_id`,
+                  `create_date`)
+      VALUES(0,#{personName},#{personAge},#{personBirthday},#{personSex},#{personIdCard},#{isMarry},#{personTelephone},
+            #{personAddress},#{personNameSpellCode},#{personType},#{groupId},now());
+    </insert>
 </mapper>

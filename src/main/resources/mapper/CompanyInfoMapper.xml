@@ -3,5 +3,41 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CompanyInfoMapper">
+    <!--李文荣 根据单位名称查询单位表-->
+    <select id="showCompanyInfo" resultType="com.dyhc.hospitalmanager.pojo.CompanyInfo">
+          SELECT * FROM `company_info` WHERE `company_name` = #{companyName};
+    </select>
+
+    <!--李文荣 修改单位信息-->
+    <update id="updCompanyInfo">
+        UPDATE
+          `health_examination_system`.`company_info`
+        SET
+          `company_name` = '#{companyName}',
+          `spell_code` = '#{spellCode}',
+          `company_principal` = '#{companyPrincipal}',
+          `telephone` = '#{telephone}',
+          `postal_code` = '#{postalCode}',
+          `address` = '#{address}',
+          `bank_name` = '#{bankName}',
+          `bank_number` = '#{bankNumber}',
+          `company_nature` = '#{companyNature}',
+          `authorized_strength` = '#{authorizedStrength}',
+          `is_delete` = '#{isDelete}',
+          `remark` = '#{remark}'
+       WHERE `company_id` = '#{companyId}';
+    </update>
+    <!--李文荣 添加单位信息-->
+    <insert id="addCompanyInfo">
+        INSERT INTO `health_examination_system`.`company_info` (`company_id`,`company_name`,`spell_code`,`company_principal`,
+          `telephone`,`postal_code`,`address`,`bank_name`,`bank_number`,`company_nature`,`authorized_strength`,
+          `is_delete`,`remark` )
+        VALUES
+          (0,#{companyName},#{spellCode},#{companyPrincipal},#{telephone},#{postalCode},
+            #{address},#{bankName},#{bankNumber},#{companyNature},#{authorizedStrength},1,
+           #{remark});
+    </insert>
+
+
 
 </mapper>
