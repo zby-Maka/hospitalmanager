@@ -11,5 +11,5 @@ public interface CombinationAndCheckMapper {
      * @param checkId
      * @return
      */
-    Combination getCheckAndComByCheckId(@Param("checkId")Integer checkId);
+    Combination getCheckAndComByCheckId(@Param("checkId")Integer checkId)throws Exception;
 }
