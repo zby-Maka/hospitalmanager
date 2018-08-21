@@ -13,7 +13,7 @@ public interface PackageMapper {
      * @param packageId 套餐Id
      * @return
      */
-    Package getPackageCombination(@Param("packageId") Integer packageId);
+    Package getPackageCombination(@Param("packageId") Integer packageId)throws  Exception;
 
     /**
      * 周冰洋
@@ -21,19 +21,19 @@ public interface PackageMapper {
      * @param packageId 套餐id
      * @return
      */
-    Package getPackageCheck(@Param("packageId") Integer packageId);
+    Package getPackageCheck(@Param("packageId") Integer packageId)throws  Exception;
 
     /**
      * 周冰洋
      * 获取所有套餐的Id
      * @return
      */
-    List<Integer> getAllPackageId();
+    List<Integer> getAllPackageId()throws  Exception;
 
     /**
      * 李文荣
      * 获取所有套餐
      * @return
      */
-    List<Package> showAllPackage();
+    List<Package> showAllPackage()throws  Exception;
 }

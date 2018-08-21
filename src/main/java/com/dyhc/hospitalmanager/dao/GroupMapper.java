@@ -9,5 +9,5 @@ public interface GroupMapper {
      * @param group
      * @return
      */
-    Integer addGroupInfo(Group group);
+    Integer addGroupInfo(Group group)throws  Exception;
 }
