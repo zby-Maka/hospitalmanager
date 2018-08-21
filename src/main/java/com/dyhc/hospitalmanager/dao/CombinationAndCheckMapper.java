@@ -1,14 +1,11 @@
 package com.dyhc.hospitalmanager.dao;
 
-import com.dyhc.hospitalmanager.pojo.Check;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
-
 import com.dyhc.hospitalmanager.pojo.Combination;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+
+import com.dyhc.hospitalmanager.pojo.Check;
 
 public interface CombinationAndCheckMapper {
 
