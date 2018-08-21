@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.PhysicalExaminationMapper">
 
-<!--添加体检信息-->
+    <!--添加体检信息-->
     <insert id="addPhysicalExaminationInfo">
         INSERT INTO physical_examination VALUES (#physicalExaminationId,#personId,#archivesId,#medicalResultsId,NOW())
     </insert>
@@ -14,4 +14,25 @@
         SELECT * FROM `physical_examination`
         WHERE person_id = #{personId}
     </select>
+    <!--根据档案编号查询体检信息-->
+    <select id="getPhysicalExaminationInfoByArchivesId">
+        SELECT * FROM physical_examination WHERE archives_id=#{archivesId}
+    </select>
+    <!--修改体检信息的档案编号和日期-->
+    <update id="updPhysicalExaminationInfo">
+        UPDATE  physical_examination SET archives_id=#{archivesId}, medical_time=NOW() WHERE physical_examination_id=#{physicalExaminationId}
+    </update>
+
+    <!--查询体检表编号的最后一位 倒序排序-->
+    <select id="getPhysicalExaminationIdByDesc" resultType="com.dyhc.hospitalmanager.pojo.PhysicalExamination">
+        SELECT * FROM physical_examination ORDER BY physical_examination_id DESC LIMIT 1
+    </select>
+
+    <!-- 根据当前日期查询体检表倒叙第一条的体检编号 -->
+    <select id="getPhysicalExaminationOrderByMedicalTime">
+        SELECT `medical_time` FROM `physical_examination`
+        WHERE `medical_time` LIKE '%'+#{now}+'%'
+        ORDER BY `medical_time` DESC LIMIT 0,1
+    </select>
+
 </mapper>
