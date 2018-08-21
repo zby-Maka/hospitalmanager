@@ -4,4 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CostDetailMapper">
 
+    <!-- 添加费用明细表 -->
+    <insert id="addCostDetail">
+        INSERT INTO `cost_detail` VALUE(NULL,#{checkId},#{costDetailPrice},#{costId})
+    </insert>
+
 </mapper>
