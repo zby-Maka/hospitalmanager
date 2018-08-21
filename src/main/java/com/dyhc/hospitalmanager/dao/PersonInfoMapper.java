@@ -41,4 +41,12 @@ public interface PersonInfoMapper {
      * @return
      */
     Integer updPersonInfo(PersonInfo personInfo);
+
+    /**
+     * 李文荣
+     *  根据用户身份证号码查询用户信息
+     * @param personIdCard 身份证号码
+     * @return
+     */
+    PersonInfo findPersonInfoPersonIdCard(@Param("personIdCard") String personIdCard);
 }

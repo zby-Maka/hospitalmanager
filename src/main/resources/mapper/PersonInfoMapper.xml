@@ -68,4 +68,11 @@
               </if>
           </trim>
     </update>
+
+    <select id="findPersonInfoPersonIdCard" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
+        SELECT * FROM `person_info` WHERE 1 = 1
+        <if test="personIdCard != null and personIdCard != ''">
+            AND `person_id_card` = #{personIdCard}
+        </if>
+    </select>
 </mapper>
