@@ -1,30 +1,23 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "common_results", schema = "health_examination_system", catalog = "")
 public class CommonResults {
-    private int commonResultsId;
+    private Integer commonResultsId;
     private Integer checkId;
     private String resultDesc;
     private String pinyinCod;
     private Integer isPositive;
     private Integer isDelete;
 
-    @Id
-    @Column(name = "common_results_id")
-    public int getCommonResultsId() {
+    public Integer getCommonResultsId() {
         return commonResultsId;
     }
 
-    public void setCommonResultsId(int commonResultsId) {
+    public void setCommonResultsId(Integer commonResultsId) {
         this.commonResultsId = commonResultsId;
     }
 
-    @Basic
-    @Column(name = "check_id")
     public Integer getCheckId() {
         return checkId;
     }
@@ -33,8 +26,6 @@ public class CommonResults {
         this.checkId = checkId;
     }
 
-    @Basic
-    @Column(name = "result_desc")
     public String getResultDesc() {
         return resultDesc;
     }
@@ -43,8 +34,6 @@ public class CommonResults {
         this.resultDesc = resultDesc;
     }
 
-    @Basic
-    @Column(name = "pinyin_cod")
     public String getPinyinCod() {
         return pinyinCod;
     }
@@ -53,8 +42,6 @@ public class CommonResults {
         this.pinyinCod = pinyinCod;
     }
 
-    @Basic
-    @Column(name = "is_positive")
     public Integer getIsPositive() {
         return isPositive;
     }
@@ -63,8 +50,6 @@ public class CommonResults {
         this.isPositive = isPositive;
     }
 
-    @Basic
-    @Column(name = "is_delete")
     public Integer getIsDelete() {
         return isDelete;
     }

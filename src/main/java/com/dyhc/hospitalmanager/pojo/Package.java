@@ -1,31 +1,23 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Objects;
 
-@Entity
+
 public class Package {
-    private int packageId;
+    private Integer packageId;
     private String packageName;
     private String scopeApplication;
     private String note;
     private Integer isEnable;
 
-    @Id
-    @Column(name = "package_id")
-    public int getPackageId() {
+    public Integer getPackageId() {
         return packageId;
     }
 
-    public void setPackageId(int packageId) {
+    public void setPackageId(Integer packageId) {
         this.packageId = packageId;
     }
 
-    @Basic
-    @Column(name = "package_name")
     public String getPackageName() {
         return packageName;
     }
@@ -34,8 +26,6 @@ public class Package {
         this.packageName = packageName;
     }
 
-    @Basic
-    @Column(name = "scope_application")
     public String getScopeApplication() {
         return scopeApplication;
     }
@@ -44,8 +34,6 @@ public class Package {
         this.scopeApplication = scopeApplication;
     }
 
-    @Basic
-    @Column(name = "note")
     public String getNote() {
         return note;
     }
@@ -54,8 +42,6 @@ public class Package {
         this.note = note;
     }
 
-    @Basic
-    @Column(name = "is_enable")
     public Integer getIsEnable() {
         return isEnable;
     }

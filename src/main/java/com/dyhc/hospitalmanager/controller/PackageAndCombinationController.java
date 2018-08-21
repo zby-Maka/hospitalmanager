@@ -1,12 +1,12 @@
 package com.dyhc.hospitalmanager.controller;
 
-import com.dyhc.hospitalmanager.service.PersonInfoService;
+import com.dyhc.hospitalmanager.service.PackageAndCombinationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PersonInfoControll {
+public class PackageAndCombinationController {
 
     @Autowired
-    private PersonInfoService personInfoService;
+    private PackageAndCombinationService packageAndCombinationService;
 }

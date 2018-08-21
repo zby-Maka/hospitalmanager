@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class PhysicalExaminationAndCombinationControll{
+public class PhysicalExaminationAndCombinationController{
 
     @Autowired
     private PhysicalExaminationAndCombinationService physicalExaminationAndCombinationService;

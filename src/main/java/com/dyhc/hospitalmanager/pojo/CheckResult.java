@@ -1,22 +1,22 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
-import java.sql.Timestamp;
+import com.alibaba.fastjson.annotation.JSONField;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 import java.util.Objects;
 
-@Entity
-@Table(name = "check_result", schema = "health_examination_system", catalog = "")
 public class CheckResult {
     private int checkResultId;
     private String physicalExaminationId;
     private String checkId;
     private Integer roleInfoId;
-    private Timestamp checkDate;
+    @JSONField(format = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date checkDate;
     private Integer checkResultFinally;
     private Integer checkAdvice;
 
-    @Id
-    @Column(name = "check_result _id")
     public int getCheckResultId() {
         return checkResultId;
     }
@@ -25,8 +25,6 @@ public class CheckResult {
         this.checkResultId = checkResultId;
     }
 
-    @Basic
-    @Column(name = "physical_examination_id")
     public String getPhysicalExaminationId() {
         return physicalExaminationId;
     }
@@ -35,8 +33,6 @@ public class CheckResult {
         this.physicalExaminationId = physicalExaminationId;
     }
 
-    @Basic
-    @Column(name = "check_id")
     public String getCheckId() {
         return checkId;
     }
@@ -45,8 +41,6 @@ public class CheckResult {
         this.checkId = checkId;
     }
 
-    @Basic
-    @Column(name = "role_info_id")
     public Integer getRoleInfoId() {
         return roleInfoId;
     }
@@ -55,18 +49,14 @@ public class CheckResult {
         this.roleInfoId = roleInfoId;
     }
 
-    @Basic
-    @Column(name = "check_date")
-    public Timestamp getCheckDate() {
+    public Date getCheckDate() {
         return checkDate;
     }
 
-    public void setCheckDate(Timestamp checkDate) {
+    public void setCheckDate(Date checkDate) {
         this.checkDate = checkDate;
     }
 
-    @Basic
-    @Column(name = "check_result_finally")
     public Integer getCheckResultFinally() {
         return checkResultFinally;
     }
@@ -75,8 +65,6 @@ public class CheckResult {
         this.checkResultFinally = checkResultFinally;
     }
 
-    @Basic
-    @Column(name = "check_advice")
     public Integer getCheckAdvice() {
         return checkAdvice;
     }

@@ -1,19 +1,19 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import java.sql.Timestamp;
+import com.alibaba.fastjson.annotation.JSONField;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 import java.util.Objects;
 
-@Entity
 public class Archives {
     private String archivesId;
     private Integer personId;
-    private Timestamp archivesDate;
 
-    @Basic
-    @Column(name = "archives_id")
+    @JSONField(format = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date archivesDate;
+
     public String getArchivesId() {
         return archivesId;
     }
@@ -22,8 +22,6 @@ public class Archives {
         this.archivesId = archivesId;
     }
 
-    @Basic
-    @Column(name = "person_id")
     public Integer getPersonId() {
         return personId;
     }
@@ -32,13 +30,11 @@ public class Archives {
         this.personId = personId;
     }
 
-    @Basic
-    @Column(name = "archives_ date")
-    public Timestamp getArchivesDate() {
+    public Date getArchivesDate() {
         return archivesDate;
     }
 
-    public void setArchivesDate(Timestamp archivesDate) {
+    public void setArchivesDate(Date archivesDate) {
         this.archivesDate = archivesDate;
     }
 
@@ -56,5 +52,15 @@ public class Archives {
     public int hashCode() {
 
         return Objects.hash(archivesId, personId, archivesDate);
+    }
+
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

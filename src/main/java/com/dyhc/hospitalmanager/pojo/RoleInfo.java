@@ -1,30 +1,23 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "role_info", schema = "health_examination_system", catalog = "")
 public class RoleInfo {
-    private int roleInfoId;
+    private Integer roleInfoId;
     private String realName;
     private String userName;
     private String password;
     private Integer sectionId;
     private Integer roleTypeId;
 
-    @Id
-    @Column(name = "role_info_id")
-    public int getRoleInfoId() {
+    public Integer getRoleInfoId() {
         return roleInfoId;
     }
 
-    public void setRoleInfoId(int roleInfoId) {
+    public void setRoleInfoId(Integer roleInfoId) {
         this.roleInfoId = roleInfoId;
     }
 
-    @Basic
-    @Column(name = "real_name")
     public String getRealName() {
         return realName;
     }
@@ -33,8 +26,6 @@ public class RoleInfo {
         this.realName = realName;
     }
 
-    @Basic
-    @Column(name = "user_name")
     public String getUserName() {
         return userName;
     }
@@ -43,8 +34,6 @@ public class RoleInfo {
         this.userName = userName;
     }
 
-    @Basic
-    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -53,8 +42,6 @@ public class RoleInfo {
         this.password = password;
     }
 
-    @Basic
-    @Column(name = "section_id")
     public Integer getSectionId() {
         return sectionId;
     }
@@ -63,8 +50,6 @@ public class RoleInfo {
         this.sectionId = sectionId;
     }
 
-    @Basic
-    @Column(name = "role_type_id")
     public Integer getRoleTypeId() {
         return roleTypeId;
     }

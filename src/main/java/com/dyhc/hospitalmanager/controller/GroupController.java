@@ -1,12 +1,12 @@
 package com.dyhc.hospitalmanager.controller;
 
-import com.dyhc.hospitalmanager.service.CommonResultsService;
+import com.dyhc.hospitalmanager.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CommonResultsControll{
+public class GroupController {
 
     @Autowired
-    private CommonResultsService commonResultsService;
+    private GroupService groupService;
 }

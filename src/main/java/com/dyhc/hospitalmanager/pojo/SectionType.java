@@ -1,26 +1,19 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "section_type", schema = "health_examination_system", catalog = "")
 public class SectionType {
-    private int sectionTypeId;
+    private Integer sectionTypeId;
     private String sectionTypeName;
 
-    @Id
-    @Column(name = "section_type_id")
-    public int getSectionTypeId() {
+    public Integer getSectionTypeId() {
         return sectionTypeId;
     }
 
-    public void setSectionTypeId(int sectionTypeId) {
+    public void setSectionTypeId(Integer sectionTypeId) {
         this.sectionTypeId = sectionTypeId;
     }
 
-    @Basic
-    @Column(name = "section _type_name")
     public String getSectionTypeName() {
         return sectionTypeName;
     }

@@ -1,12 +1,12 @@
 package com.dyhc.hospitalmanager.controller;
 
-import com.dyhc.hospitalmanager.service.ProposedDescriptionService;
+import com.dyhc.hospitalmanager.service.CheckResultService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ProposedDescriptionCoontroll {
+public class CheckResultController{
 
     @Autowired
-    private ProposedDescriptionService proposedDescriptionService;
+    private CheckResultService checkResultService;
 }

@@ -1,12 +1,12 @@
 package com.dyhc.hospitalmanager.controller;
 
-import com.dyhc.hospitalmanager.service.CombinationAndCheckService;
+import com.dyhc.hospitalmanager.service.ArchivesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CombinationAndCheckControll{
+public class ArchivesController{
 
     @Autowired
-    private CombinationAndCheckService combinationAndCheckService;
+    private ArchivesService archivesService;
 }

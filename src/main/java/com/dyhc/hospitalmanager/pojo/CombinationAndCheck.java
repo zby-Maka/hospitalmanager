@@ -1,27 +1,20 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "combination_and_ check", schema = "health_examination_system", catalog = "")
 public class CombinationAndCheck {
-    private int combinationAndMedicalId;
+    private Integer combinationAndMedicalId;
     private Integer combinationId;
     private Integer checkId;
 
-    @Id
-    @Column(name = "combination_and_ medical_id")
-    public int getCombinationAndMedicalId() {
+    public Integer getCombinationAndMedicalId() {
         return combinationAndMedicalId;
     }
 
-    public void setCombinationAndMedicalId(int combinationAndMedicalId) {
+    public void setCombinationAndMedicalId(Integer combinationAndMedicalId) {
         this.combinationAndMedicalId = combinationAndMedicalId;
     }
 
-    @Basic
-    @Column(name = "combination_id")
     public Integer getCombinationId() {
         return combinationId;
     }
@@ -30,8 +23,6 @@ public class CombinationAndCheck {
         this.combinationId = combinationId;
     }
 
-    @Basic
-    @Column(name = "check_id")
     public Integer getCheckId() {
         return checkId;
     }

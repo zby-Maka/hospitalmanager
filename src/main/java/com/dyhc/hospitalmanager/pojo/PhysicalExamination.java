@@ -1,20 +1,20 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
-import java.sql.Timestamp;
+import com.alibaba.fastjson.annotation.JSONField;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 import java.util.Objects;
 
-@Entity
-@Table(name = "physical_examination", schema = "health_examination_system", catalog = "")
 public class PhysicalExamination {
     private String physicalExaminationId;
     private Integer personId;
     private String archivesId;
     private Integer medicalResultsId;
-    private Timestamp medicalTime;
+    @JSONField(format = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date medicalTime;
 
-    @Id
-    @Column(name = "physical_examination_id")
     public String getPhysicalExaminationId() {
         return physicalExaminationId;
     }
@@ -23,8 +23,6 @@ public class PhysicalExamination {
         this.physicalExaminationId = physicalExaminationId;
     }
 
-    @Basic
-    @Column(name = "person_id")
     public Integer getPersonId() {
         return personId;
     }
@@ -33,8 +31,6 @@ public class PhysicalExamination {
         this.personId = personId;
     }
 
-    @Basic
-    @Column(name = "archives_id")
     public String getArchivesId() {
         return archivesId;
     }
@@ -43,8 +39,6 @@ public class PhysicalExamination {
         this.archivesId = archivesId;
     }
 
-    @Basic
-    @Column(name = "medical_results_id")
     public Integer getMedicalResultsId() {
         return medicalResultsId;
     }
@@ -53,13 +47,11 @@ public class PhysicalExamination {
         this.medicalResultsId = medicalResultsId;
     }
 
-    @Basic
-    @Column(name = "medical_time")
-    public Timestamp getMedicalTime() {
+    public Date getMedicalTime() {
         return medicalTime;
     }
 
-    public void setMedicalTime(Timestamp medicalTime) {
+    public void setMedicalTime(Date medicalTime) {
         this.medicalTime = medicalTime;
     }
 

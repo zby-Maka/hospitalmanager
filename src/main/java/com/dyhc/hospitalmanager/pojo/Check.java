@@ -1,15 +1,11 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@Entity
 public class Check {
-    private int checkId;
+
+    private Integer checkId;
     private Integer sectionId;
     private String checkName;
     private String termSex;
@@ -26,18 +22,14 @@ public class Check {
     private String remark;
     private Integer isEnable;
 
-    @Id
-    @Column(name = "check_id")
-    public int getCheckId() {
+    public Integer getCheckId() {
         return checkId;
     }
 
-    public void setCheckId(int checkId) {
+    public void setCheckId(Integer checkId) {
         this.checkId = checkId;
     }
 
-    @Basic
-    @Column(name = "section_id")
     public Integer getSectionId() {
         return sectionId;
     }
@@ -46,8 +38,6 @@ public class Check {
         this.sectionId = sectionId;
     }
 
-    @Basic
-    @Column(name = "check_name")
     public String getCheckName() {
         return checkName;
     }
@@ -56,8 +46,6 @@ public class Check {
         this.checkName = checkName;
     }
 
-    @Basic
-    @Column(name = "term_sex")
     public String getTermSex() {
         return termSex;
     }
@@ -66,8 +54,6 @@ public class Check {
         this.termSex = termSex;
     }
 
-    @Basic
-    @Column(name = "check_spell_code")
     public String getCheckSpellCode() {
         return checkSpellCode;
     }
@@ -76,8 +62,6 @@ public class Check {
         this.checkSpellCode = checkSpellCode;
     }
 
-    @Basic
-    @Column(name = "check_price")
     public BigDecimal getCheckPrice() {
         return checkPrice;
     }
@@ -86,8 +70,6 @@ public class Check {
         this.checkPrice = checkPrice;
     }
 
-    @Basic
-    @Column(name = "check_address")
     public String getCheckAddress() {
         return checkAddress;
     }
@@ -96,8 +78,6 @@ public class Check {
         this.checkAddress = checkAddress;
     }
 
-    @Basic
-    @Column(name = "unit")
     public String getUnit() {
         return unit;
     }
@@ -106,8 +86,6 @@ public class Check {
         this.unit = unit;
     }
 
-    @Basic
-    @Column(name = "reference_floor")
     public Double getReferenceFloor() {
         return referenceFloor;
     }
@@ -116,8 +94,6 @@ public class Check {
         this.referenceFloor = referenceFloor;
     }
 
-    @Basic
-    @Column(name = "reference_ceil")
     public Double getReferenceCeil() {
         return referenceCeil;
     }
@@ -126,8 +102,6 @@ public class Check {
         this.referenceCeil = referenceCeil;
     }
 
-    @Basic
-    @Column(name = "prompt_flat")
     public String getPromptFlat() {
         return promptFlat;
     }
@@ -136,8 +110,6 @@ public class Check {
         this.promptFlat = promptFlat;
     }
 
-    @Basic
-    @Column(name = "prompt_high")
     public String getPromptHigh() {
         return promptHigh;
     }
@@ -146,8 +118,6 @@ public class Check {
         this.promptHigh = promptHigh;
     }
 
-    @Basic
-    @Column(name = "min_value")
     public Double getMinValue() {
         return minValue;
     }
@@ -156,8 +126,6 @@ public class Check {
         this.minValue = minValue;
     }
 
-    @Basic
-    @Column(name = "max_value")
     public Double getMaxValue() {
         return maxValue;
     }
@@ -166,8 +134,6 @@ public class Check {
         this.maxValue = maxValue;
     }
 
-    @Basic
-    @Column(name = "remark")
     public String getRemark() {
         return remark;
     }
@@ -176,8 +142,6 @@ public class Check {
         this.remark = remark;
     }
 
-    @Basic
-    @Column(name = "is_enable")
     public Integer getIsEnable() {
         return isEnable;
     }

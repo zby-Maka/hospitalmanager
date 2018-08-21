@@ -1,26 +1,19 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "role_type", schema = "health_examination_system", catalog = "")
 public class RoleType {
-    private int roleId;
+    private Integer roleId;
     private String roleName;
 
-    @Id
-    @Column(name = "role_id")
-    public int getRoleId() {
+    public Integer getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
 
-    @Basic
-    @Column(name = "role_name")
     public String getRoleName() {
         return roleName;
     }

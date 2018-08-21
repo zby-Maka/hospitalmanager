@@ -1,29 +1,22 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "proposed_description", schema = "health_examination_system", catalog = "")
 public class ProposedDescription {
-    private int proposedDescriptionId;
+    private Integer proposedDescriptionId;
     private Integer resultId;
     private String sciencePopularization;
     private String adviceContent;
     private Integer isDelete;
 
-    @Id
-    @Column(name = "proposed_description_id")
-    public int getProposedDescriptionId() {
+    public Integer getProposedDescriptionId() {
         return proposedDescriptionId;
     }
 
-    public void setProposedDescriptionId(int proposedDescriptionId) {
+    public void setProposedDescriptionId(Integer proposedDescriptionId) {
         this.proposedDescriptionId = proposedDescriptionId;
     }
 
-    @Basic
-    @Column(name = "result_id")
     public Integer getResultId() {
         return resultId;
     }
@@ -32,8 +25,6 @@ public class ProposedDescription {
         this.resultId = resultId;
     }
 
-    @Basic
-    @Column(name = "science_popularization")
     public String getSciencePopularization() {
         return sciencePopularization;
     }
@@ -42,8 +33,6 @@ public class ProposedDescription {
         this.sciencePopularization = sciencePopularization;
     }
 
-    @Basic
-    @Column(name = "advice_content")
     public String getAdviceContent() {
         return adviceContent;
     }
@@ -52,8 +41,6 @@ public class ProposedDescription {
         this.adviceContent = adviceContent;
     }
 
-    @Basic
-    @Column(name = "is_delete")
     public Integer getIsDelete() {
         return isDelete;
     }

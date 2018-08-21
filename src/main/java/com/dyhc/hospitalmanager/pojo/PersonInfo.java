@@ -1,16 +1,17 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Timestamp;
+import com.alibaba.fastjson.annotation.JSONField;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 import java.util.Objects;
 
-@Entity
-@Table(name = "person_info", schema = "health_examination_system", catalog = "")
 public class PersonInfo {
-    private int personId;
+    private Integer personId;
     private String personName;
     private Integer personAge;
+    @JSONField(format = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date personBirthday;
     private String personSex;
     private String personIdCard;
@@ -20,20 +21,19 @@ public class PersonInfo {
     private String personNameSpellCode;
     private String personType;
     private Integer groupId;
-    private Timestamp createDate;
+    @JSONField(format = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date createDate;
 
-    @Id
-    @Column(name = "person_id")
-    public int getPersonId() {
+
+    public Integer getPersonId() {
         return personId;
     }
 
-    public void setPersonId(int personId) {
+    public void setPersonId(Integer personId) {
         this.personId = personId;
     }
 
-    @Basic
-    @Column(name = "person_name")
     public String getPersonName() {
         return personName;
     }
@@ -42,8 +42,6 @@ public class PersonInfo {
         this.personName = personName;
     }
 
-    @Basic
-    @Column(name = "person_age")
     public Integer getPersonAge() {
         return personAge;
     }
@@ -52,8 +50,6 @@ public class PersonInfo {
         this.personAge = personAge;
     }
 
-    @Basic
-    @Column(name = "person_birthday")
     public Date getPersonBirthday() {
         return personBirthday;
     }
@@ -62,8 +58,6 @@ public class PersonInfo {
         this.personBirthday = personBirthday;
     }
 
-    @Basic
-    @Column(name = "person_sex")
     public String getPersonSex() {
         return personSex;
     }
@@ -72,8 +66,6 @@ public class PersonInfo {
         this.personSex = personSex;
     }
 
-    @Basic
-    @Column(name = "person_id_card")
     public String getPersonIdCard() {
         return personIdCard;
     }
@@ -82,8 +74,6 @@ public class PersonInfo {
         this.personIdCard = personIdCard;
     }
 
-    @Basic
-    @Column(name = "is_marry")
     public String getIsMarry() {
         return isMarry;
     }
@@ -92,8 +82,6 @@ public class PersonInfo {
         this.isMarry = isMarry;
     }
 
-    @Basic
-    @Column(name = "person_telephone")
     public String getPersonTelephone() {
         return personTelephone;
     }
@@ -102,8 +90,6 @@ public class PersonInfo {
         this.personTelephone = personTelephone;
     }
 
-    @Basic
-    @Column(name = "person_address")
     public String getPersonAddress() {
         return personAddress;
     }
@@ -112,8 +98,6 @@ public class PersonInfo {
         this.personAddress = personAddress;
     }
 
-    @Basic
-    @Column(name = "person_name_spell_code")
     public String getPersonNameSpellCode() {
         return personNameSpellCode;
     }
@@ -122,8 +106,6 @@ public class PersonInfo {
         this.personNameSpellCode = personNameSpellCode;
     }
 
-    @Basic
-    @Column(name = "person_type")
     public String getPersonType() {
         return personType;
     }
@@ -132,8 +114,6 @@ public class PersonInfo {
         this.personType = personType;
     }
 
-    @Basic
-    @Column(name = "group_id")
     public Integer getGroupId() {
         return groupId;
     }
@@ -142,13 +122,11 @@ public class PersonInfo {
         this.groupId = groupId;
     }
 
-    @Basic
-    @Column(name = "create_date")
-    public Timestamp getCreateDate() {
+    public Date getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
+    public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
 

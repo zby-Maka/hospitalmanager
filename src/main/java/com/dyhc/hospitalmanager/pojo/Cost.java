@@ -1,33 +1,30 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.alibaba.fastjson.annotation.JSONField;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Objects;
 
-@Entity
+
 public class Cost {
-    private int costId;
+    private Integer costId;
     private String costType;
     private String healthExaminationId;
     private BigDecimal costAmount;
-    private Timestamp costDate;
+    @JSONField(format = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date costDate;
 
-    @Id
-    @Column(name = "cost_id")
-    public int getCostId() {
+    public Integer getCostId() {
         return costId;
     }
 
-    public void setCostId(int costId) {
+    public void setCostId(Integer costId) {
         this.costId = costId;
     }
 
-    @Basic
-    @Column(name = "cost_type")
     public String getCostType() {
         return costType;
     }
@@ -36,8 +33,6 @@ public class Cost {
         this.costType = costType;
     }
 
-    @Basic
-    @Column(name = "health_examination_id")
     public String getHealthExaminationId() {
         return healthExaminationId;
     }
@@ -46,8 +41,6 @@ public class Cost {
         this.healthExaminationId = healthExaminationId;
     }
 
-    @Basic
-    @Column(name = "cost_amount")
     public BigDecimal getCostAmount() {
         return costAmount;
     }
@@ -56,13 +49,11 @@ public class Cost {
         this.costAmount = costAmount;
     }
 
-    @Basic
-    @Column(name = "cost_date")
-    public Timestamp getCostDate() {
+    public Date getCostDate() {
         return costDate;
     }
 
-    public void setCostDate(Timestamp costDate) {
+    public void setCostDate(Date costDate) {
         this.costDate = costDate;
     }
 

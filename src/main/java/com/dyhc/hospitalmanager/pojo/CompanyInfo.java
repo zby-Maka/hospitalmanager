@@ -1,12 +1,9 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "company_info", schema = "health_examination_system", catalog = "")
 public class CompanyInfo {
-    private int companyId;
+    private Integer companyId;
     private String companyName;
     private String spellCode;
     private String companyPrincipal;
@@ -20,18 +17,14 @@ public class CompanyInfo {
     private Integer isDelete;
     private String remark;
 
-    @Id
-    @Column(name = "company_id")
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(int companyId) {
+    public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
     }
 
-    @Basic
-    @Column(name = "company_name")
     public String getCompanyName() {
         return companyName;
     }
@@ -40,8 +33,6 @@ public class CompanyInfo {
         this.companyName = companyName;
     }
 
-    @Basic
-    @Column(name = "spell_code")
     public String getSpellCode() {
         return spellCode;
     }
@@ -50,8 +41,6 @@ public class CompanyInfo {
         this.spellCode = spellCode;
     }
 
-    @Basic
-    @Column(name = "company_principal")
     public String getCompanyPrincipal() {
         return companyPrincipal;
     }
@@ -60,8 +49,6 @@ public class CompanyInfo {
         this.companyPrincipal = companyPrincipal;
     }
 
-    @Basic
-    @Column(name = "telephone")
     public String getTelephone() {
         return telephone;
     }
@@ -70,8 +57,6 @@ public class CompanyInfo {
         this.telephone = telephone;
     }
 
-    @Basic
-    @Column(name = "postal_code")
     public String getPostalCode() {
         return postalCode;
     }
@@ -80,8 +65,6 @@ public class CompanyInfo {
         this.postalCode = postalCode;
     }
 
-    @Basic
-    @Column(name = "address")
     public String getAddress() {
         return address;
     }
@@ -90,8 +73,6 @@ public class CompanyInfo {
         this.address = address;
     }
 
-    @Basic
-    @Column(name = "bank_name")
     public String getBankName() {
         return bankName;
     }
@@ -100,8 +81,6 @@ public class CompanyInfo {
         this.bankName = bankName;
     }
 
-    @Basic
-    @Column(name = "bank_number")
     public String getBankNumber() {
         return bankNumber;
     }
@@ -110,8 +89,6 @@ public class CompanyInfo {
         this.bankNumber = bankNumber;
     }
 
-    @Basic
-    @Column(name = "company_nature")
     public String getCompanyNature() {
         return companyNature;
     }
@@ -120,8 +97,6 @@ public class CompanyInfo {
         this.companyNature = companyNature;
     }
 
-    @Basic
-    @Column(name = "authorized_strength")
     public Integer getAuthorizedStrength() {
         return authorizedStrength;
     }
@@ -130,8 +105,6 @@ public class CompanyInfo {
         this.authorizedStrength = authorizedStrength;
     }
 
-    @Basic
-    @Column(name = "is_delete")
     public Integer getIsDelete() {
         return isDelete;
     }
@@ -140,8 +113,6 @@ public class CompanyInfo {
         this.isDelete = isDelete;
     }
 
-    @Basic
-    @Column(name = "remark")
     public String getRemark() {
         return remark;
     }

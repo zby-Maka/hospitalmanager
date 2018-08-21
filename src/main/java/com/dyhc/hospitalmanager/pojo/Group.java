@@ -1,14 +1,10 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Objects;
 
-@Entity
+
 public class Group {
-    private int groupId;
+    private Integer groupId;
     private String groupName;
     private Integer companyId;
     private String termSex;
@@ -18,18 +14,14 @@ public class Group {
     private Integer packageId;
     private Integer isDelete;
 
-    @Id
-    @Column(name = "group_id")
-    public int getGroupId() {
+    public Integer getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(int groupId) {
+    public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
 
-    @Basic
-    @Column(name = "group_name")
     public String getGroupName() {
         return groupName;
     }
@@ -38,8 +30,6 @@ public class Group {
         this.groupName = groupName;
     }
 
-    @Basic
-    @Column(name = "company_id")
     public Integer getCompanyId() {
         return companyId;
     }
@@ -48,8 +38,6 @@ public class Group {
         this.companyId = companyId;
     }
 
-    @Basic
-    @Column(name = "term_sex")
     public String getTermSex() {
         return termSex;
     }
@@ -58,8 +46,6 @@ public class Group {
         this.termSex = termSex;
     }
 
-    @Basic
-    @Column(name = "term_is_marry")
     public String getTermIsMarry() {
         return termIsMarry;
     }
@@ -68,8 +54,6 @@ public class Group {
         this.termIsMarry = termIsMarry;
     }
 
-    @Basic
-    @Column(name = "term_age_floor")
     public Integer getTermAgeFloor() {
         return termAgeFloor;
     }
@@ -78,8 +62,6 @@ public class Group {
         this.termAgeFloor = termAgeFloor;
     }
 
-    @Basic
-    @Column(name = "term_age_ceil")
     public Integer getTermAgeCeil() {
         return termAgeCeil;
     }
@@ -88,8 +70,6 @@ public class Group {
         this.termAgeCeil = termAgeCeil;
     }
 
-    @Basic
-    @Column(name = "package_id")
     public Integer getPackageId() {
         return packageId;
     }
@@ -98,8 +78,6 @@ public class Group {
         this.packageId = packageId;
     }
 
-    @Basic
-    @Column(name = "is_delete")
     public Integer getIsDelete() {
         return isDelete;
     }

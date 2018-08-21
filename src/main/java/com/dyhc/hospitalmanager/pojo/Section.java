@@ -1,31 +1,22 @@
 package com.dyhc.hospitalmanager.pojo;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Objects;
 
-@Entity
 public class Section {
-    private int sectionId;
+    private Integer sectionId;
     private String sectionName;
     private Integer sectionTypeId;
     private Integer sectionStatus;
     private String remark;
 
-    @Id
-    @Column(name = "section_id")
-    public int getSectionId() {
+    public Integer getSectionId() {
         return sectionId;
     }
 
-    public void setSectionId(int sectionId) {
+    public void setSectionId(Integer sectionId) {
         this.sectionId = sectionId;
     }
 
-    @Basic
-    @Column(name = "section _name")
     public String getSectionName() {
         return sectionName;
     }
@@ -34,8 +25,6 @@ public class Section {
         this.sectionName = sectionName;
     }
 
-    @Basic
-    @Column(name = "section _type_id")
     public Integer getSectionTypeId() {
         return sectionTypeId;
     }
@@ -44,8 +33,6 @@ public class Section {
         this.sectionTypeId = sectionTypeId;
     }
 
-    @Basic
-    @Column(name = "section _status")
     public Integer getSectionStatus() {
         return sectionStatus;
     }
@@ -54,8 +41,6 @@ public class Section {
         this.sectionStatus = sectionStatus;
     }
 
-    @Basic
-    @Column(name = "remark")
     public String getRemark() {
         return remark;
     }
