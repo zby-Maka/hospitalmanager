@@ -17,4 +17,20 @@ public interface CompanyInfoMapper {
      * @return
      */
     CompanyInfo showCompanyInfo(@Param("companyName") String companyName);
+
+    /**
+     * 李文荣
+     * 修改单位信息
+     * @param companyInfo
+     * @return
+     */
+    Integer updCompanyInfo(CompanyInfo companyInfo);
+
+    /**
+     * 李文荣
+     * 添加单位信息
+     * @param companyInfo
+     * @return
+     */
+    Integer addCompanyInfo(CompanyInfo companyInfo);
 }
