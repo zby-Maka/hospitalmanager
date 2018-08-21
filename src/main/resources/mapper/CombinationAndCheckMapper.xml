@@ -3,6 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CombinationAndCheckMapper">
+
+    <!-- 根据组合项Id，查询其下的所有体检项 -->
+    <select id="getCheckByCombinationId" resultType="com.dyhc.hospitalmanager.pojo.Check">
+        SELECT * FROM `check` c
+        INNER JOIN `combination_and_ check` cac
+        ON c.`check_id` = cac.`check_id`
+        WHERE cac.`combination_id` = #{comId}
+    </select>
   <!--根据体检编号查询人员在该科室下的体检项和组合项-->
    <select id="getCheckAndComByCheckId" resultType="com.dyhc.hospitalmanager.pojo.CombinationAndCheck">
         SELECT ch.*,(SELECT check_name FROM `check` c WHERE c.`check_id`=ch.`check_id`) AS check_name,

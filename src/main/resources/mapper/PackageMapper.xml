@@ -4,4 +4,50 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.PackageMapper">
 
+    <!-- 根据套餐Id查询其下面的所有组合项 -->
+    <select id="getPackageCombination" resultMap="getPC">
+        SELECT p.*,com.*,c.* FROM `package` p
+        INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id`
+        INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id`
+        INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id`
+        INNER JOIN `check` c ON c.`check_id` = cac.`check_id`
+        WHERE p.`package_id`=#{packageId}
+    </select>
+
+    <!-- 根据套餐Id查询其下面的所有组合项 -->
+    <resultMap id="getPC" type="com.dyhc.hospitalmanager.pojo.Package">
+        <id column="package_id" property="packageId"/>
+        <collection property="packageCombinationList" javaType="com.dyhc.hospitalmanager.pojo.Combination">
+            <id column="combination_id" property="combinationId"/>
+            <collection property="combinationCheckList" javaType="com.dyhc.hospitalmanager.pojo.Check">
+                <id column="check_id" property="checkId"/>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <!-- 根据套餐Id查询套餐下的体检项 -->
+    <select id="getPackageCheck" resultMap="getC">
+        SELECT * FROM `package` p
+        INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id`
+        INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id`
+        WHERE p.`package_id`=#{packageId}
+    </select>
+
+    <!-- 根据套餐Id查询套餐下的体检项 -->
+    <resultMap id="getC" type="com.dyhc.hospitalmanager.pojo.Package">
+        <id column="package_id" property="packageId"/>
+        <collection property="packageCheckList" javaType="com.dyhc.hospitalmanager.pojo.Check">
+            <id column="check_id" property="checkId"/>
+        </collection>
+    </resultMap>
+
+    <!-- 获取所有套餐的Id -->
+    <select id="getAllPackageId" resultType="int">
+        SELECT package_id FROM `package`
+    </select>
+
+    <!--查询所有套餐-->
+    <select id="showAllPackage" resultType="com.dyhc.hospitalmanager.pojo.Package">
+       SELECT * FROM package;
+    </select>
 </mapper>

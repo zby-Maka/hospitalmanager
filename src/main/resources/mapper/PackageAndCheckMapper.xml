@@ -3,5 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.PackageAndCheckMapper">
-
+    <!--添加体检与套餐关系 李文荣-->
+    <insert id="addPackageAndCheckInfo">
+        INSERT INTO `health_examination_system`.`package_and_ check` (
+          `package_and_ check_id`,
+          `package_id`,
+          `check_id`
+        )
+        VALUES
+          (
+            0,
+            #{packageId},
+            #{checkId}
+          );
+    </insert>
 </mapper>

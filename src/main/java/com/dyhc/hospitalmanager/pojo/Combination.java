@@ -1,5 +1,7 @@
 package com.dyhc.hospitalmanager.pojo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Combination {
@@ -12,6 +14,16 @@ public class Combination {
     private Integer isSpecimen;
     private String specimenType;
     private Integer isEnable;
+    //组合项所包含的体检项
+    List<Check> combinationCheckList = new ArrayList<Check>();
+
+    public List<Check> getCombinationCheckList() {
+        return combinationCheckList;
+    }
+
+    public void setCombinationCheckList(List<Check> combinationCheckList) {
+        this.combinationCheckList = combinationCheckList;
+    }
 
     public Integer getCombinationId() {
         return combinationId;

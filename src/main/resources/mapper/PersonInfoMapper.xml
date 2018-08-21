@@ -6,12 +6,12 @@
     <!--李文荣  根据用户姓名与身份证号查询用户信息-->
     <select id="findPersonInfos" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
         SELECT * FROM `person_info` WHERE 1 = 1
-        <IF test="personName != null and personName != ''">
+        <if test="personName != null and personName != ''">
             AND `person_name` = #{personName}
-        </IF>
-        <IF test="personIdCard != null and personIdCard != ''">
+        </if>
+        <if test="personIdCard != null and personIdCard != ''">
             AND `person_id_card` = #{personIdCard}
-        </IF>
+        </if>
     </select>
 
     <!--添加用户信息-->
@@ -26,5 +26,53 @@
     <!-- 根据手机号查询人员信息 -->
     <select id="getPersonInfoByPersonTelephone" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
         SELECT * FROM `person_info` WHERE `person_telephone` = #{personTelephone}
+    </select>
+
+    <update id="updPersonInfo">
+        UPDATE
+          `health_examination_system`.`person_info`
+        SET
+          <trim suffixOverrides="," suffix="WHERE `person_id` = #{personId}">
+              <if test="personName!=null and personName!=''">
+                  `person_name` = #{personName},
+              </if>
+              <if test="personAge!=null and personAge!=0">
+                  `person_age` = #{personAge},
+              </if>
+              <if test="personBirthday!=null">
+                  `person_birthday` = #{personBirthday},
+              </if>
+              <if test="personSex!=null and personSex!=''">
+                  `person_sex` = #{personSex},
+              </if>
+              <if test="personIdCard!=null and personIdCard!=''">
+                  `person_id_card` = #{personIdCard},
+              </if>
+              <if test="isMarry!=null and isMarry!=''">
+                  `is_marry` = #{isMarry},
+              </if>
+              <if test="personTelephone!=null and personTelephone!=''">
+                  `person_telephone` = #{personTelephone},
+              </if>
+              <if test="personAddress!=null and personAddress!=''">
+                  `person_address` = #{personAddress},
+              </if>
+              <if test="personNameSpellCode!=null and personNameSpellCode!=''">
+                  `person_name_spell_code` = #{personNameSpellCode},
+              </if>
+              <if test="personType!=null and personType!=''">
+                  `person_type` = #{personType},
+              </if>
+              <if test="groupId!=null and groupId!=0">
+                  `group_id` = #{groupId},
+              </if>
+          </trim>
+    </update>
+
+    <select id="findPersonInfoPersonIdCard" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
+        SELECT * FROM `person_info` WHERE 1 = 1
+        <if test="personIdCard != null and personIdCard != ''">
+            AND `person_id_card` = #{personIdCard}
+        </if>
     </select>
 </mapper>
