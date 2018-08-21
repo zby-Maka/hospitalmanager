@@ -4,4 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.ArchivesMapper">
 
+    <!--根据用户id查询档案信息-->
+    <select id="getArchivesByPerssonId" resultType="com.dyhc.hospitalmanager.pojo.Archives">
+        SELECT * FROM archives WHERE person_id=#{personId}
+    </select>
+
+    <!--查询档案编号的最后一位 倒序排序-->
+    <select id="getArchivesIdByDesc" resultType="com.dyhc.hospitalmanager.pojo.Archives">
+        SELECT * FROM archives ORDER BY archives_id DESC LIMIT 1
+    </select>
+
+
+
 </mapper>
