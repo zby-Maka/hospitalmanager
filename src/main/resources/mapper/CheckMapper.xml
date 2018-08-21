@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CheckMapper">
+    <!--根据体检项id查出体检项数据，与接收的数据进行对比-->
    <select id="getCheckById">
        SELECT * FROM `check` WHERE check_id=#{checkId}
    </select>

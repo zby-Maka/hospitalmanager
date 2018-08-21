@@ -3,14 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.ProposedDescriptionMapper">
-
     <!-- 根据结果id查建议描述表，默认显示第一条 -->
      <select id="getProposedByResultId" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
          SELECT * FROM `proposed_description` WHERE result_id=#{resultId} LIMIT 1
      </select>
 
-    <!-- 根据结果Id查建议描述表（默认第一条） -->
-    <select id="getProposedDescriptionByresultId" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
-        SELECT * FROM `proposed_description` WHERE `result_id` = #{resultId} LIMIT 0,1
-    </select>
 </mapper>
