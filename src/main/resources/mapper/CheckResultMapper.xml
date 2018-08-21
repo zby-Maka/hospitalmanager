@@ -7,4 +7,13 @@
     <insert id="addCheckResult">
        INSERT INTO `check_result` VALUES(NULL,#{physicalExaminationId},#{checkId},#{roleInfoId},now(),#{checkResultFinally},#{checkAdvice})
    </insert>
+    <select id="getCheckResultsList" resultType="com.dyhc.hospitalmanager.pojo.CheckResult">
+        SELECT * FROM check_result WHERE physical_examination_id=#{physical_examination_id}
+AND check_id=#{physical_examination_id}
+    </select>
+    <select id="getCheckResultAndMedicalEvents" resultType="com.dyhc.hospitalmanager.pojo.CheckResult">
+        SELECT * FROM medical_events,check_result INNER JOIN  proposed_description
+        WHERE   proposed_description.`proposed_description_id`=check_result.`check_advice`
+        AND check_result.`check_result _id`=medical_events.`check_result _id`
+    </select>
 </mapper>
