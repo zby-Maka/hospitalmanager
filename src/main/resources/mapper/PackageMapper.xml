@@ -45,4 +45,9 @@
     <select id="getAllPackageId" resultType="int">
         SELECT package_id FROM `package`
     </select>
+
+    <!--查询所有套餐-->
+    <select id="showAllPackage" resultType="com.dyhc.hospitalmanager.pojo.Package">
+       SELECT * FROM package;
+    </select>
 </mapper>
