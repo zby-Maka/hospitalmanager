@@ -6,7 +6,7 @@
 
     <!--添加体检信息-->
     <insert id="addPhysicalExaminationInfo">
-            INSERT INTO physical_examination VALUES (#physicalExaminationId,#personId,null,#medicalResultsId,null)
+        INSERT INTO physical_examination VALUES (#physicalExaminationId,#personId,#archivesId,#medicalResultsId,NOW())
     </insert>
     <!--根据档案编号查询体检信息-->
     <select id="getPhysicalExaminationInfoByArchivesId">
@@ -21,4 +21,12 @@
     <select id="getPhysicalExaminationIdByDesc" resultType="com.dyhc.hospitalmanager.pojo.PhysicalExamination">
         SELECT * FROM physical_examination ORDER BY physical_examination_id DESC LIMIT 1
     </select>
+
+    <!-- 根据当前日期查询体检表倒叙第一条的体检编号 -->
+    <select id="getPhysicalExaminationOrderByMedicalTime">
+        SELECT `medical_time` FROM `physical_examination`
+        WHERE `medical_time` LIKE '%'+#{now}+'%'
+        ORDER BY `medical_time` DESC LIMIT 0,1
+    </select>
+
 </mapper>

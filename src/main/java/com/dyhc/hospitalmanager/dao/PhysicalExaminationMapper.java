@@ -17,6 +17,14 @@ public interface PhysicalExaminationMapper {
     int addPhysicalExaminationInfo(PhysicalExamination physicalExamination)throws  Exception;
 
     /**
+     * 根据当前日期查询体检表倒叙第一条的体检编号
+     * @param now
+     * @return
+     */
+    String getPhysicalExaminationOrderByMedicalTime(@Param("now")String now)throws  Exception;
+
+
+    /**
      * 根据档案编号查询体检信息
      * author ycy
      * @param archivesId
