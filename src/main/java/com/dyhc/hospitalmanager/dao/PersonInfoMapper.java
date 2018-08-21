@@ -34,4 +34,11 @@ public interface PersonInfoMapper {
      */
     PersonInfo getPersonInfoByPersonTelephone(@Param("personTelephone")String personTelephone);
 
+    /**
+     * 周冰洋
+     * 修改用户
+     * @param personInfo 用户信息
+     * @return
+     */
+    Integer updPersonInfo(PersonInfo personInfo);
 }
