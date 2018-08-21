@@ -22,4 +22,9 @@
       VALUES(0,#{personName},#{personAge},#{personBirthday},#{personSex},#{personIdCard},#{isMarry},#{personTelephone},
             #{personAddress},#{personNameSpellCode},#{personType},#{groupId},now());
     </insert>
+
+    <!-- 根据手机号查询人员信息 -->
+    <select id="getPersonInfoByPersonTelephone" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
+        SELECT * FROM `person_info` WHERE `person_telephone` = #{personTelephone}
+    </select>
 </mapper>

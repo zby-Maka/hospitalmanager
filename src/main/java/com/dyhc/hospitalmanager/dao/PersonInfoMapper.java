@@ -27,4 +27,11 @@ public interface PersonInfoMapper {
      */
     Integer addPersonInfo(PersonInfo personInfo);
 
+    /**
+     * 根据手机号查询人员信息
+     * @param personTelephone
+     * @return
+     */
+    PersonInfo getPersonInfoByPersonTelephone(@Param("personTelephone")String personTelephone);
+
 }
