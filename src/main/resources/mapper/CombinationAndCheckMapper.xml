@@ -11,8 +11,8 @@
         ON c.`check_id` = cac.`check_id`
         WHERE cac.`combination_id` = #{comId}
     </select>
-  <!--根据体检编号查询人员在该科室下的体检项和组合项-->
-   <select id="getCheckAndComByCheckId" resultType="com.dyhc.hospitalmanager.pojo.CombinationAndCheck">
+    <!--根据体检编号查询人员在该科室下的体检项和组合项-->
+    <select id="getCheckAndComByCheckId" resultType="com.dyhc.hospitalmanager.pojo.Combination">
         SELECT ch.*,(SELECT check_name FROM `check` c WHERE c.`check_id`=ch.`check_id`) AS check_name,
        (SELECT `combination_name` FROM `combination` com WHERE com.`combination_id`=ch.`combination_id`) AS com
         FROM `combination_and_ check` ch WHERE ch.check_id=#{checkId}
