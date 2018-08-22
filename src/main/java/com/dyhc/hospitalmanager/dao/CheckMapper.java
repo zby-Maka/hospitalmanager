@@ -26,4 +26,12 @@ public interface CheckMapper {
      * @return
      */
     List<Check> getAllCheckList() throws Exception;
+
+    /**王娇娇
+     * 根据体检编号查询人员在该科室下的体检项
+     * @param peacId
+     * @return
+     * @throws Exception
+     */
+    List<Check>  getPersonCheckBySectionId(@Param("peacId")String peacId,@Param("sectionId")Integer sectionId) throws  Exception;
 }

@@ -21,10 +21,4 @@ public interface CombinationAndCheckMapper {
      * @return
      */
     List<Check> getCheckByCombinationId(@Param("comId")Integer comId)throws  Exception;
-    /**王娇
-     * 根据体检编号查询人员在该科室下的体检项，组合项
-     * @param checkId
-     * @return
-     */
-    CombinationAndCheck getCheckAndComByCheckId(@Param("checkId")Integer checkId)throws Exception;
 }
