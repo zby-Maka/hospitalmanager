@@ -19,4 +19,11 @@ public interface CheckMapper {
      * @throws Exception
      */
     List<Check>  getCheckList(@Param("physicalExaminationAndCombinationId")Integer physicalExaminationAndCombinationId) throws  Exception;
+
+    /**
+     * 查询所有的体检项
+     * zby
+     * @return
+     */
+    List<Check> getAllCheckList() throws Exception;
 }

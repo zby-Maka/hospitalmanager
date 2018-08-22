@@ -4,4 +4,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CombinationMapper">
 
+    <!-- 查询所有组合项，及其下的体检项 -->
+    <select id="getAllCombinationList" resultMap="comCheck">
+        SELECT com.*,c.* FROM `combination` com
+        INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id`
+        INNER JOIN `check` c ON c.`check_id`=cac.`check_id`
+    </select>
+
+    <!-- 查询所有组合项，及其下的体检项 -->
+    <resultMap id="comCheck" type="com.dyhc.hospitalmanager.pojo.Combination">
+        <id property="combinationId" column="combination_id" />
+        <collection property="combinationCheckList" javaType="com.dyhc.hospitalmanager.pojo.Check">
+            <id property="checkId" column="check_id" />
+        </collection>
+    </resultMap>
 </mapper>
