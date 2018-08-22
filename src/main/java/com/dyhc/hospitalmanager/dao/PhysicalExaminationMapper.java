@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 @Mapper
-@Repository
 public interface PhysicalExaminationMapper {
 
 
