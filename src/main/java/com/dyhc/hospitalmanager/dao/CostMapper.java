@@ -2,7 +2,9 @@ package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.Cost;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CostMapper {
 
     /**
