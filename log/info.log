@@ -28,3 +28,48 @@
 2018-08-21 18:06:01.070 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 14208 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
 2018-08-21 18:06:01.074 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
 2018-08-21 18:06:08.714 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.972 seconds (JVM running for 9.46)
+2018-08-21 20:20:13.020 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 14772 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-21 20:20:13.038 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-21 20:20:20.630 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.997 seconds (JVM running for 9.506)
+2018-08-21 20:26:21.969 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 13920 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-21 20:26:21.973 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-21 20:26:29.584 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.128 seconds (JVM running for 9.5)
+2018-08-21 20:51:38.544 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 14708 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-21 20:51:38.550 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-21 20:51:45.776 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.579 seconds (JVM running for 9.104)
+2018-08-21 21:51:15.585 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 6292 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 21:51:15.648 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 21:51:29.645 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 14.95 seconds (JVM running for 20.209)
+2018-08-21 21:51:53.623 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 5780 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 21:51:53.623 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 21:52:02.574 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 9.544 seconds (JVM running for 11.365)
+2018-08-21 22:08:17.436 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 10860 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:08:17.436 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:08:26.200 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 9.483 seconds (JVM running for 11.024)
+2018-08-21 22:17:12.151 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 4268 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:17:12.151 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:17:20.477 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 8.919 seconds (JVM running for 10.858)
+2018-08-21 22:21:42.684 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 2416 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:21:42.684 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:21:51.245 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 9.232 seconds (JVM running for 10.952)
+2018-08-21 22:23:39.950 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 8492 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:23:39.950 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:23:48.682 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 9.217 seconds (JVM running for 11.085)
+2018-08-21 22:30:44.583 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 6748 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:30:44.598 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:30:53.518 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 9.654 seconds (JVM running for 11.484)
+2018-08-21 22:35:00.134 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 9816 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:35:00.134 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:35:09.804 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 10.295 seconds (JVM running for 12.147)
+2018-08-21 22:41:43.657 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 11860 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:41:43.673 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:41:52.077 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 8.919 seconds (JVM running for 10.774)
+2018-08-21 22:44:39.771 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 12716 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:44:39.786 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:44:48.425 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 9.311 seconds (JVM running for 11.035)
+2018-08-21 22:46:04.423 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 7484 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:46:04.423 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:46:13.069 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 9.239 seconds (JVM running for 11.041)
+2018-08-21 22:47:08.281 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on DESKTOP-KAF6VDO with PID 7344 (started by aixiaobai in E:\hospitalmanager)
+2018-08-21 22:47:08.281 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
+2018-08-21 22:47:17.638 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 9.967 seconds (JVM running for 11.807)

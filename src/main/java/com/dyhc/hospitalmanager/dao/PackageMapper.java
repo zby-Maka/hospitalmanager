@@ -1,10 +1,14 @@
 package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.Package;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Mapper
+@Repository
 public interface PackageMapper {
 
     /**
@@ -36,4 +40,12 @@ public interface PackageMapper {
      * @return
      */
     List<Package> showAllPackage()throws  Exception;
+
+    /**
+     * 根据套餐Id，获取该套餐
+     * zby
+     * @param packageId 套餐Id
+     * @return
+     */
+    Package selPackageById(@Param("packageId") Integer packageId);
 }
