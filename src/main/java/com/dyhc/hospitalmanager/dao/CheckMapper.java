@@ -29,6 +29,7 @@ public interface CheckMapper {
 
     /**
      * 添加体检项信息
+     * author ycy
      * @param check
      * @return
      */
@@ -36,6 +37,7 @@ public interface CheckMapper {
 
     /**
      * 修改体检项信息
+     * author ycy
      * @param check
      * @return
      */

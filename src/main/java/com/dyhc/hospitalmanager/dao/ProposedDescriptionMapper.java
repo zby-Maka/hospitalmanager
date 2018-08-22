@@ -17,6 +17,7 @@ public interface ProposedDescriptionMapper {
 
     /**
      * 添加建议描述信息
+     *   author ycy
      * @param proposedDescription
      * @return
      */
@@ -24,6 +25,7 @@ public interface ProposedDescriptionMapper {
 
     /**
      * 修改建议描述信息
+     * author ycy
      * @param proposedDescription
      * @return
      */
