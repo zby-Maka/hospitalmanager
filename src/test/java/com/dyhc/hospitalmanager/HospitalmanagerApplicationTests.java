@@ -33,6 +33,11 @@ public class HospitalmanagerApplicationTests {
     private GroupMapper groupMapper;
     @Autowired
     private MedicalEventsMapper medicalEventsMapper;
+    /**
+     *  李文荣
+     *  根据姓名和身份证查询用户信息
+     * @return
+     */
     public void test01(){
         try {
             List<PersonInfo> info = personInfoMapper.findPersonInfos("李文荣","");
@@ -42,6 +47,11 @@ public class HospitalmanagerApplicationTests {
         }
     }
 
+    /**
+     * 李文荣
+     * 添加用户信息
+     * @return
+     */
     public void test02(){
         try {
             String str = "2013-06-09";
@@ -58,6 +68,11 @@ public class HospitalmanagerApplicationTests {
         }
     }
 
+    /**
+     * 李文荣
+     * 获取所有套餐
+     * @return
+     */
     public void test03(){
         try {
             List<Package> list = packageMapper.showAllPackage();
@@ -67,6 +82,11 @@ public class HospitalmanagerApplicationTests {
         }
     }
 
+    /**
+     * 李文荣
+     *  根据单位名称查询单位表
+     * @return
+     */
     public void test04(){
         try {
             CompanyInfo list = companyInfoMapper.showCompanyInfo("北大青鸟");
@@ -85,6 +105,10 @@ public class HospitalmanagerApplicationTests {
         }
     }
 
+    /**
+     * lwr
+     * 添加单位分组信息
+     */
     public void test06(){
         try {
             Group group = new Group();
@@ -103,6 +127,11 @@ public class HospitalmanagerApplicationTests {
         }
     }
 
+    /**
+     * 李文荣
+     * 添加单位信息
+     * @return
+     */
     public void test07(){
         CompanyInfo companyInfo = new CompanyInfo();
         companyInfo.setCompanyName("李文荣公司");
@@ -119,6 +148,10 @@ public class HospitalmanagerApplicationTests {
         Integer info = companyInfoMapper.addCompanyInfo(companyInfo);
     }
 
+    /**
+     * 李文荣
+     * 修改单位信息
+     */
     public void test08(){
         CompanyInfo companyInfo = new CompanyInfo();
         companyInfo.setCompanyName("李文荣公司1");
