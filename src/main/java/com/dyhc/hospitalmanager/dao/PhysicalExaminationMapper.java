@@ -1,11 +1,14 @@
 package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
+@Mapper
 @Repository
 public interface PhysicalExaminationMapper {
 
