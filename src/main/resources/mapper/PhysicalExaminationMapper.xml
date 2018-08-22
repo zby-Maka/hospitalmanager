@@ -29,9 +29,9 @@
     </select>
 
     <!-- 根据当前日期查询体检表倒叙第一条的体检编号 -->
-    <select id="getPhysicalExaminationOrderByMedicalTime">
-        SELECT `medical_time` FROM `physical_examination`
-        WHERE `medical_time` LIKE '%'+#{now}+'%'
+    <select id="getPhysicalExaminationOrderByMedicalTime" resultType="java.lang.String">
+        SELECT `physical_examination_id` FROM `physical_examination`
+        WHERE `medical_time` LIKE CONCAT('%',#{now},'%')
         ORDER BY `medical_time` DESC LIMIT 0,1
     </select>
 

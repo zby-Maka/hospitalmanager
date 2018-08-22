@@ -6,9 +6,10 @@ import org.apache.ibatis.annotations.Param;
 public interface CostDetailMapper {
 
     /**
+     * crf
      * 添加费用明细表
-     * @param costDetail
-     * @return
+     * @param costDetail 费用明细对象
+     * @return 返回一个处理结果
      */
     Integer addCostDetail(@Param("costDetail")CostDetail costDetail)throws Exception;
 

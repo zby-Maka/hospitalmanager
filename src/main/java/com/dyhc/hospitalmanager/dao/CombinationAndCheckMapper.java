@@ -1,6 +1,7 @@
 package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.Combination;
+import com.dyhc.hospitalmanager.pojo.CombinationAndCheck;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -20,10 +21,4 @@ public interface CombinationAndCheckMapper {
      * @return
      */
     List<Check> getCheckByCombinationId(@Param("comId")Integer comId)throws  Exception;
-    /**王娇
-     * 根据体检编号查询人员在该科室下的体检项，组合项
-     * @param checkId
-     * @return
-     */
-    Combination getCheckAndComByCheckId(@Param("checkId")Integer checkId)throws Exception;
 }
