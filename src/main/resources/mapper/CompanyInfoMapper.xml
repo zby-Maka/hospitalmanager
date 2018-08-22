@@ -13,19 +13,45 @@
         UPDATE
           `health_examination_system`.`company_info`
         SET
-          `company_name` = '#{companyName}',
-          `spell_code` = '#{spellCode}',
-          `company_principal` = '#{companyPrincipal}',
-          `telephone` = '#{telephone}',
-          `postal_code` = '#{postalCode}',
-          `address` = '#{address}',
-          `bank_name` = '#{bankName}',
-          `bank_number` = '#{bankNumber}',
-          `company_nature` = '#{companyNature}',
-          `authorized_strength` = '#{authorizedStrength}',
-          `is_delete` = '#{isDelete}',
-          `remark` = '#{remark}'
-       WHERE `company_id` = '#{companyId}';
+        <trim suffixOverrides="," suffix="WHERE `company_id` = #{companyId}" >
+            <if test="companyName!=null and companyName!=''">
+                `company_name` = #{companyName},
+            </if>
+            <if test="spellCode!=null and spellCode!=''">
+                `spell_code` = #{spellCode},
+            </if>
+            <if test="companyPrincipal != null and companyPrincipal != ''">
+                `company_principal` = #{companyPrincipal},
+            </if>
+            <if test="telephone != null and telephone != ''">
+                `telephone` = #{telephone},
+            </if>
+            <if test="postalCode != null and postalCode != ''">
+                `postal_code` = #{postalCode},
+            </if>
+            <if test="address != null and address != ''">
+                `address` = #{address},
+            </if>
+            <if test="bankName != null and bankName != ''">
+                `bank_name` = #{bankName},
+            </if>
+
+            <if test="companyNature != null and companyNature != ''">
+                `company_nature` = #{companyNature},
+            </if>
+            <if test="authorizedStrength != null and authorizedStrength != ''">
+                `authorized_strength` = #{authorizedStrength},
+            </if>
+            <if test="isDelete != null and isDelete != ''">
+                `is_delete` = #{isDelete},
+            </if>
+            <if test="remark != null and remark != ''">
+                `remark` = #{remark},
+            </if>
+            <if test="bankNumber != null and bankNumber != ''">
+                    `bank_number` = #{bankNumber},
+            </if>
+        </trim>
     </update>
     <!--李文荣 添加单位信息-->
     <insert id="addCompanyInfo">
@@ -37,7 +63,4 @@
             #{address},#{bankName},#{bankNumber},#{companyNature},#{authorizedStrength},1,
            #{remark});
     </insert>
-
-
-
 </mapper>
