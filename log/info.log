@@ -46,3 +46,12 @@
 2018-08-22 10:36:37.848 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on Makah with PID 10684 (started by Administrator in E:\hospitalmanager)
 2018-08-22 10:36:37.923 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
 2018-08-22 10:36:52.748 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 15.683 seconds (JVM running for 17.567)
+2018-08-22 18:24:12.089 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 9748 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-22 18:24:12.095 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-22 18:24:26.704 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 15.09 seconds (JVM running for 17.788)
+2018-08-22 18:25:38.772 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 9980 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-22 18:25:38.777 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-22 18:25:47.185 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.808 seconds (JVM running for 10.658)
+2018-08-22 18:32:04.319 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 7664 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-22 18:32:04.324 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-22 18:32:12.756 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.792 seconds (JVM running for 10.584)
