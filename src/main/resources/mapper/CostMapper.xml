@@ -6,7 +6,7 @@
 
     <!--  -->
     <insert id="addCost">
-        INSERT INTO `cost` VALUE(NULL,#{costType},#{healthExaminationId},#{costAmount},NOW())
+        INSERT INTO `cost` VALUE(NULL,#{cost.costType},#{cost.healthExaminationId},#{cost.costAmount},NOW())
     </insert>
 
 </mapper>
