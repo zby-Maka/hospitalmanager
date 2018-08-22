@@ -2,9 +2,11 @@ package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface PhysicalExaminationMapper {
 
 
@@ -25,9 +27,10 @@ public interface PhysicalExaminationMapper {
     List<PhysicalExamination> getPersonPhysicalExaminationList(@Param("personId") Integer personId);
 
     /**
+     * crf
      * 根据当前日期查询体检表倒叙第一条的体检编号
-     * @param now
-     * @return
+     * @param now 当前时间
+     * @return 返回一个检查编号
      */
     String getPhysicalExaminationOrderByMedicalTime(@Param("now")String now)throws  Exception;
 
