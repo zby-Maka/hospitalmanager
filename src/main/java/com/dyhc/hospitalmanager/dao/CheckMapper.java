@@ -18,7 +18,7 @@ public interface CheckMapper {
      * @return
      * @throws Exception
      */
-    List<Check>  getCheckList(@Param("physicalExaminationAndCombinationId")Integer physicalExaminationAndCombinationId) throws  Exception;
+    List<Check>  getCheckList(@Param("physicalExaminationAndCombinationId")String  physicalExaminationAndCombinationId) throws  Exception;
 
     /**
      * 查询所有的体检项

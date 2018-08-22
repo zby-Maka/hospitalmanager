@@ -42,12 +42,12 @@ public interface PackageMapper {
     List<Package> showAllPackage()throws  Exception;
 
     /**
+     * 周冰洋
      * 根据套餐Id，获取该套餐
-     * zby
      * @param packageId 套餐Id
      * @return
      */
-    Package selPackageById(@Param("packageId") Integer packageId);
+    Package selPackageById(@Param("packageId") Integer packageId) throws Exception;
 
     /**
      * 添加套餐信息
