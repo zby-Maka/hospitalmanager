@@ -22,7 +22,7 @@ public interface PhysicalExaminationMapper {
      * @param personId 人员编号
      * @return
      */
-    List<PhysicalExamination> getPersonPhysicalExaminationList(@Param("personId") Integer personId);
+    List<PhysicalExamination> getPersonPhysicalExaminationList(@Param("personId") Integer personId) throws Exception;
 
     /**
      * 根据当前日期查询体检表倒叙第一条的体检编号
@@ -38,7 +38,7 @@ public interface PhysicalExaminationMapper {
      * @param archivesId
      * @return
      */
-    List<PhysicalExamination>getPhysicalExaminationInfoByArchivesId(@Param("archivesId") String archivesId);
+    List<PhysicalExamination>getPhysicalExaminationInfoByArchivesId(@Param("archivesId") String archivesId)throws Exception;
 
 
     /**
@@ -47,7 +47,7 @@ public interface PhysicalExaminationMapper {
      * author ycy
      * @return
      */
-    int updPhysicalExaminationInfo(PhysicalExamination physicalExamination);
+    int updPhysicalExaminationInfo(PhysicalExamination physicalExamination)throws Exception;
 
     /**
      * 查询体检表最后一位倒序

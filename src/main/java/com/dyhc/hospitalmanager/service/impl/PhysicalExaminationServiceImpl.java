@@ -22,7 +22,7 @@ public class PhysicalExaminationServiceImpl implements PhysicalExaminationServic
      * @throws Exception
      */
     @Override
-    public int addPhysicalExaminationInfo(PhysicalExamination physicalExamination) throws Exception {
+    public int addPhysicalExaminationInfo(PhysicalExamination physicalExamination) {
         return 0;
     }
 

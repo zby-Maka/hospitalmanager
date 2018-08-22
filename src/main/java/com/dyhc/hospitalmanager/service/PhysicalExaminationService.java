@@ -11,12 +11,12 @@ public interface PhysicalExaminationService {
      * @param physicalExamination
      * @return
      */
-    int addPhysicalExaminationInfo(PhysicalExamination physicalExamination)throws  Exception;
+    int addPhysicalExaminationInfo(PhysicalExamination physicalExamination);
 
     /**
      * 根据当前日期查询体检表倒叙第一条的体检编号
      * @return
      */
-    String getPhysicalExaminationOrderByMedicalTime()throws  Exception;
+    String getPhysicalExaminationOrderByMedicalTime();
 
 }
