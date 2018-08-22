@@ -2,6 +2,11 @@ package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.Section;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+@Mapper
+@Repository
 public interface SectionMapper {
 
     /**

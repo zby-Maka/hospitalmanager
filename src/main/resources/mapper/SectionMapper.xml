@@ -11,7 +11,7 @@
 
     <!--修改科室信息-->
     <update id="updSectionInfo">
-        update remark set section_name=#{sectionName},section_type_id=#{sectionTypeId},remark=#{remark}
+        update section set section_name=#{sectionName},section_type_id=#{sectionTypeId},remark=#{remark}
         where section_id=#{sectionId}
     </update>
 </mapper>
