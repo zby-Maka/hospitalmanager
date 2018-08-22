@@ -6,7 +6,7 @@
 
     <!-- 添加费用明细表 -->
     <insert id="addCostDetail">
-        INSERT INTO `cost_detail` VALUE(NULL,#{checkId},#{costDetailPrice},#{costId})
+        INSERT INTO `cost_detail` VALUE(NULL,#{costDetail.checkId},#{costDetail.costDetailPrice},#{costDetail.costId})
     </insert>
 
 </mapper>
