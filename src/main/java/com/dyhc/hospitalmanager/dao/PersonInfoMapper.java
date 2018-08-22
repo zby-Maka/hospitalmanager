@@ -28,9 +28,10 @@ public interface PersonInfoMapper {
     Integer addPersonInfo(PersonInfo personInfo);
 
     /**
+     * crf
      * 根据手机号查询人员信息
-     * @param personTelephone
-     * @return
+     * @param personTelephone 手机号属性
+     * @return 返回一个人员信息对象
      */
     PersonInfo getPersonInfoByPersonTelephone(@Param("personTelephone")String personTelephone);
 
