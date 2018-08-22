@@ -14,7 +14,7 @@ public interface CombinationMapper {
      * @param combination
      * @return
      */
-    int addCombinationInfo(Combination combination);
+    int addCombinationInfo(Combination combination)throws  Exception;
 
     /**
      * 修改组合项信息
@@ -22,7 +22,7 @@ public interface CombinationMapper {
      * @param combination
      * @return
      */
-    int updCombinationInfo(Combination combination);
+    int updCombinationInfo(Combination combination) throws Exception;
 
     /**
      * 查询所有组合项，及其下的体检项

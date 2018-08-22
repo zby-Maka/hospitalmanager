@@ -26,4 +26,18 @@ public interface CheckMapper {
      * @return
      */
     List<Check> getAllCheckList() throws Exception;
+
+    /**
+     * 添加体检项信息
+     * @param check
+     * @return
+     */
+    int addCheckInfo(Check check);
+
+    /**
+     * 修改体检项信息
+     * @param check
+     * @return
+     */
+    int updCheckInfo(Check check);
 }

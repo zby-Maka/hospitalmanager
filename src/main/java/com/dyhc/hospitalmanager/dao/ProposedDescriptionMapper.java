@@ -15,5 +15,19 @@ public interface ProposedDescriptionMapper {
     List<ProposedDescription> getProposedByResultId(@Param("resultId") Integer resultId)throws Exception;
 
 
+    /**
+     * 添加建议描述信息
+     * @param proposedDescription
+     * @return
+     */
+    int addProposedDescriptionInfo(ProposedDescription proposedDescription);
+
+    /**
+     * 修改建议描述信息
+     * @param proposedDescription
+     * @return
+     */
+    int updProposedDescriptionInfo(ProposedDescription proposedDescription);
+
 
 }

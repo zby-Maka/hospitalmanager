@@ -14,4 +14,20 @@ public interface CommonResultsMapper {
      */
     List<CommonResults> getCommResultsByCheckId(@Param("checkId")Integer checkId)throws Exception;
 
+    /**
+     * 添加常见结果信息
+     * author ycy
+     * @param commonResults
+     * @return
+     */
+    int addCommonResultsInfo(CommonResults commonResults);
+
+    /**
+     * 修改常见结果信息
+     * author ycy
+     * @param commonResults
+     * @return
+     */
+    int updCommonResultsInfo(CommonResults commonResults);
+
 }
