@@ -1,7 +1,9 @@
 package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.Archives;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +11,8 @@ import java.util.List;
  * 档案接口
  * ycy
  */
+@Mapper
+@Repository
 public interface ArchivesMapper {
 
     /**

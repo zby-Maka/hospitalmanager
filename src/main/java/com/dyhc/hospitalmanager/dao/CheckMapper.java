@@ -1,10 +1,13 @@
 package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.Check;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Mapper
+@Repository
 public interface CheckMapper {
     /**wjj
      * 科室是检验:根据体检项id查出体检项数据，与接收的数据对比
