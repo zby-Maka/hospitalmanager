@@ -309,8 +309,8 @@
 2018-08-22 18:29:34.164 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
 2018-08-22 18:29:34.272 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 3
 2018-08-22 18:32:04.322 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-22 18:32:19.864 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` 
-2018-08-22 18:32:19.944 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-08-22 18:32:19.864 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check`
+2018-08-22 18:32:19.944 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters:
 2018-08-22 18:32:20.019 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 4
 =======
 >>>>>>> origin/master
@@ -319,123 +319,181 @@
 2018-08-23 18:32:47.161 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 18:33:01.479 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 18:33:57.872 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:34:10.429 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-23 18:34:10.429 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ?
 2018-08-23 18:34:10.695 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 141024199703260019(String)
 2018-08-23 18:34:10.791 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
 2018-08-23 18:34:26.295 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:34:37.386 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-23 18:34:37.386 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ?
 2018-08-23 18:34:37.566 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 14102419970326001(String)
 2018-08-23 18:34:37.715 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 0
 2018-08-23 18:34:51.554 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:35:02.399 [main] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` 
-2018-08-23 18:35:02.532 [main] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-08-23 18:35:02.399 [main] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check`
+2018-08-23 18:35:02.532 [main] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters:
 2018-08-23 18:35:02.624 [main] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 4
 2018-08-23 18:35:11.395 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:35:22.247 [main] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` 
-2018-08-23 18:35:22.433 [main] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-08-23 18:35:22.247 [main] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id`
+2018-08-23 18:35:22.433 [main] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters:
 2018-08-23 18:35:22.540 [main] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 3
 2018-08-23 18:35:57.313 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 18:36:39.151 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:36:50.335 [main] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` 
-2018-08-23 18:36:50.480 [main] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-08-23 18:36:50.335 [main] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package`
+2018-08-23 18:36:50.480 [main] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters:
 2018-08-23 18:36:50.572 [main] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 4
-2018-08-23 18:36:50.575 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-23 18:36:50.575 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-23 18:36:50.591 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
 2018-08-23 18:36:50.673 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
-2018-08-23 18:36:50.673 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-23 18:36:50.673 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
 2018-08-23 18:36:50.674 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
 2018-08-23 18:36:50.744 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
-2018-08-23 18:36:50.745 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-23 18:36:50.745 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-23 18:36:50.745 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
 2018-08-23 18:36:50.819 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
-2018-08-23 18:36:50.819 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-23 18:36:50.819 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
 2018-08-23 18:36:50.820 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
 2018-08-23 18:36:50.889 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
-2018-08-23 18:36:50.891 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-23 18:36:50.891 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-23 18:36:50.892 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
 2018-08-23 18:36:50.960 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
-2018-08-23 18:36:50.960 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-23 18:36:50.960 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
 2018-08-23 18:36:50.960 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
 2018-08-23 18:36:51.036 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
-2018-08-23 18:36:51.037 [main] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-23 18:36:51.037 [main] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ?
 2018-08-23 18:36:51.038 [main] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
 2018-08-23 18:36:51.106 [main] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
-2018-08-23 18:36:51.106 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-23 18:36:51.106 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-23 18:36:51.107 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
 2018-08-23 18:36:51.174 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
-2018-08-23 18:36:51.175 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-23 18:36:51.175 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
 2018-08-23 18:36:51.175 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
 2018-08-23 18:36:51.245 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
-2018-08-23 18:36:51.246 [main] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-23 18:36:51.246 [main] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ?
 2018-08-23 18:36:51.246 [main] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
 2018-08-23 18:36:51.314 [main] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
 2018-08-23 18:38:01.835 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:38:13.053 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 ) 
+2018-08-23 18:38:13.053 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 )
 2018-08-23 18:38:13.221 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==> Parameters: 123(String), 1(Integer), 123(String), 2(Integer)
 2018-08-23 18:38:13.372 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - <==    Updates: 2
 2018-08-23 18:40:20.257 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:40:31.769 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 ) 
+2018-08-23 18:40:31.769 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 )
 2018-08-23 18:40:31.958 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==> Parameters: 123(String), 1(Integer), 123(String), 2(Integer)
 2018-08-23 18:40:32.104 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - <==    Updates: 2
 2018-08-23 18:44:07.507 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:44:19.803 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 ) 
+2018-08-23 18:44:19.803 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 )
 2018-08-23 18:44:19.930 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==> Parameters: 123(String), 1(Integer), 123(String), 2(Integer)
 2018-08-23 18:44:20.073 [main] DEBUG c.d.h.d.P.addBatchPhyAndPackage - <==    Updates: 2
-2018-08-23 18:44:20.074 [main] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ combination` ( `physical_examination_and_ combination_id`, `physical_examination_id`, `combination_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 ) 
+2018-08-23 18:44:20.074 [main] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ combination` ( `physical_examination_and_ combination_id`, `physical_examination_id`, `combination_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 )
 2018-08-23 18:44:20.075 [main] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==> Parameters: 123(String), 1(Integer), 123(String), 2(Integer)
 2018-08-23 18:44:20.210 [main] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - <==    Updates: 2
-2018-08-23 18:44:20.211 [main] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ check` ( `physical_examination_and_ check_id`, `physical_examination_id`, `check_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 ) 
+2018-08-23 18:44:20.211 [main] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ check` ( `physical_examination_and_ check_id`, `physical_examination_id`, `check_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) , ( null , ?, ?, 0 )
 2018-08-23 18:44:20.212 [main] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==> Parameters: 123(String), 2(Integer), 123(String), 2(Integer)
 2018-08-23 18:44:20.367 [main] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - <==    Updates: 2
 2018-08-23 18:47:19.672 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:47:31.042 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-23 18:47:31.042 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ?
 2018-08-23 18:47:31.190 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 141024199703260019(String)
 2018-08-23 18:47:31.287 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
 2018-08-23 18:48:55.670 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:49:25.039 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-23 18:49:25.039 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ?
 2018-08-23 18:49:25.692 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 141024199703260019(String)
 2018-08-23 18:49:25.967 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
-2018-08-23 18:51:11.703 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_id_card` = ? WHERE `person_id` = ? 
+2018-08-23 18:51:11.703 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_id_card` = ? WHERE `person_id` = ?
 2018-08-23 18:51:11.719 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 141024199703260019(String), 1(Integer)
 2018-08-23 18:51:11.860 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
-2018-08-23 18:51:41.783 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-08-23 18:51:41.783 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1
 2018-08-23 18:51:41.799 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-08-23(String)
 2018-08-23 18:51:41.900 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
-2018-08-23 18:54:40.956 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,NOW()) 
+2018-08-23 18:54:40.956 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,NOW())
 2018-08-23 18:54:40.962 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 201801018(String), 1(Integer), null, null
 2018-08-23 18:54:53.307 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:55:11.238 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-23 18:55:11.238 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ?
 2018-08-23 18:55:11.834 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 141024199703260019(String)
 2018-08-23 18:55:12.107 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
-2018-08-23 18:55:13.833 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_id_card` = ? WHERE `person_id` = ? 
+2018-08-23 18:55:13.833 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_id_card` = ? WHERE `person_id` = ?
 2018-08-23 18:55:13.848 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 141024199703260019(String), 1(Integer)
 2018-08-23 18:55:14.013 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
-2018-08-23 18:55:17.118 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-08-23 18:55:17.118 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1
 2018-08-23 18:55:17.134 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-08-23(String)
 2018-08-23 18:55:17.209 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
-2018-08-23 18:56:48.298 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,NOW()) 
+2018-08-23 18:56:48.298 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,NOW())
 2018-08-23 19:00:28.934 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 19:00:44.626 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-23 19:00:44.626 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ?
 2018-08-23 19:00:45.211 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 141024199703260019(String)
 2018-08-23 19:00:45.490 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
-2018-08-23 19:00:47.551 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_id_card` = ? WHERE `person_id` = ? 
+2018-08-23 19:00:47.551 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_id_card` = ? WHERE `person_id` = ?
 2018-08-23 19:00:47.566 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 141024199703260019(String), 1(Integer)
 2018-08-23 19:00:47.693 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
-2018-08-23 19:00:50.366 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-08-23 19:00:50.366 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1
 2018-08-23 19:00:50.383 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-08-23(String)
 2018-08-23 19:00:50.458 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
-2018-08-23 19:01:35.882 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,NOW()) 
+2018-08-23 19:01:35.882 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,NOW())
 2018-08-23 19:01:35.890 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 201808232(String), 1(Integer), null, null
 2018-08-23 19:01:42.340 [main] DEBUG c.d.h.PersonalReservationApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 19:01:57.434 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-23 19:01:57.434 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ?
 2018-08-23 19:01:58.032 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 141024199703260019(String)
 2018-08-23 19:01:58.322 [main] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
-2018-08-23 19:01:59.641 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_id_card` = ? WHERE `person_id` = ? 
+2018-08-23 19:01:59.641 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_id_card` = ? WHERE `person_id` = ?
 2018-08-23 19:01:59.656 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 141024199703260019(String), 1(Integer)
 2018-08-23 19:01:59.804 [main] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
-2018-08-23 19:02:01.478 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-08-23 19:02:01.478 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1
 2018-08-23 19:02:01.494 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-08-23(String)
 2018-08-23 19:02:01.570 [main] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
-2018-08-23 19:02:09.493 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,NOW()) 
+2018-08-23 19:02:09.493 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,NOW())
 2018-08-23 19:02:09.510 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018082302(String), 1(Integer), null, null
 2018-08-23 19:02:09.656 [main] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - <==    Updates: 1
+2018-08-23 16:08:31.580 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 16:30:01.210 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 16:48:31.056 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 16:54:54.195 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:02:58.090 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:12:11.624 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:15:45.456 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:17:53.188 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:22:55.303 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:23:10.463 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ?
+2018-08-23 17:23:11.021 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==> Parameters: 2018010101(String)
+2018-08-23 17:26:48.227 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:26:54.025 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:27:07.928 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ?
+2018-08-23 17:27:08.353 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==> Parameters: 2018010101(String)
+2018-08-23 17:27:34.803 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:27:44.040 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:27:56.221 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ?
+2018-08-23 17:27:56.384 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==> Parameters: 2018010101(String)
+2018-08-23 17:27:56.485 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - <==      Total: 1
+2018-08-23 17:29:00.204 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:29:11.458 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ?
+2018-08-23 17:29:11.643 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==> Parameters: 2018010101(String)
+2018-08-23 17:29:11.746 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - <==      Total: 1
+2018-08-23 17:34:23.692 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:36:25.869 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:39:45.680 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:40:39.088 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:41:27.376 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:42:53.927 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:44:09.986 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:45:41.630 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:47:13.808 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:48:04.882 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:48:55.303 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:54:25.014 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:57:56.579 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 17:58:12.456 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
+2018-08-23 17:58:12.599 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 123(String)
+2018-08-23 17:58:12.704 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
+2018-08-23 17:58:20.129 [http-nio-8080-exec-4] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
+2018-08-23 17:58:20.129 [http-nio-8080-exec-4] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 321(String)
+2018-08-23 17:58:20.197 [http-nio-8080-exec-4] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 0
+2018-08-23 17:58:27.132 [http-nio-8080-exec-6] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
+2018-08-23 17:58:27.132 [http-nio-8080-exec-6] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 123(String)
+2018-08-23 17:58:27.204 [http-nio-8080-exec-6] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
+2018-08-23 18:20:24.480 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 18:22:03.506 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 18:23:02.738 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-23 18:23:16.047 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
+2018-08-23 18:23:16.193 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 123(String)
+2018-08-23 18:23:16.285 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
+2018-08-23 18:23:19.703 [http-nio-8080-exec-2] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
+2018-08-23 18:23:19.704 [http-nio-8080-exec-2] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 123(String)
+2018-08-23 18:23:19.769 [http-nio-8080-exec-2] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
+2018-08-23 18:23:27.390 [http-nio-8080-exec-7] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
+2018-08-23 18:23:27.391 [http-nio-8080-exec-7] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 13(String)
+2018-08-23 18:23:27.456 [http-nio-8080-exec-7] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 0

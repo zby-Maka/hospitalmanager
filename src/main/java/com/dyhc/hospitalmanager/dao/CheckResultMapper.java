@@ -25,4 +25,8 @@ public interface CheckResultMapper {
      * @throws Exception
      */
     List<CheckResult> getCheckResultAndMedicalEvents() throws  Exception;
+    /***
+     * 通过体检编号查询常见结果和建议
+     */
+    List<CheckResult> getCheckResults(@Param("physicalExaminationId")String physicalExaminationId) throws Exception;
 }
