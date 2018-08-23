@@ -54,7 +54,7 @@
         </trim>
     </update>
     <!--李文荣 添加单位信息-->
-    <insert id="addCompanyInfo">
+    <insert id="addCompanyInfo" useGeneratedKeys = "true" keyProperty="companyId">
         INSERT INTO `health_examination_system`.`company_info` (`company_id`,`company_name`,`spell_code`,`company_principal`,
           `telephone`,`postal_code`,`address`,`bank_name`,`bank_number`,`company_nature`,`authorized_strength`,
           `is_delete`,`remark` )

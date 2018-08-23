@@ -4,15 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.GroupMapper">
     <!--添加单位分组信息-->
-    <insert id="addGroupInfo">
+    <insert id="addGroupInfo" useGeneratedKeys="true" keyProperty="groupId" keyColumn="group_id" >
         INSERT INTO `health_examination_system`.`group` (
           `group_id`,`group_name`,`company_id`,`term_sex`,`term_is_marry`,
           `term_age_floor`,`term_age_ceil`,`package_id`,`is_delete`
         )
         VALUES
           (
-            0,#{groupName}, #{companyId}, #{termSex},
-            #{termIsMarry},#{termAgeFloor},#{termAgeCeil}, #{packageId},1
+            null,#{groupName}, #{companyId}, #{termSex},
+            #{termIsMarry},#{termAgeFloor},#{termAgeCeil},#{packageId},1
           );
     </insert>
 </mapper>
