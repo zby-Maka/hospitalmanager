@@ -5,7 +5,7 @@
 <mapper namespace="com.dyhc.hospitalmanager.dao.CostMapper">
 
     <!-- 添加费用表 -->
-    <insert id="addCost">
+    <insert id="addCost" useGeneratedKeys="true" keyProperty="costId" >
         INSERT INTO `cost` VALUE(NULL,#{cost.costType},#{cost.healthExaminationId},#{cost.costAmount},NOW())
     </insert>
 
