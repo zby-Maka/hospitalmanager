@@ -18,7 +18,6 @@ public interface SectionService {
 
 
 
-
     /**王娇娇
      * 科室是检查:根据体检项id查常见结果表，默认显示第一条
      * @param checkId
@@ -34,10 +33,9 @@ public interface SectionService {
     List<ProposedDescription> getProposedByResultId(@Param("resultId") Integer resultId)throws Exception;
 
 
-
     /**
      * 科室是检查:将结果插入体检结果表
-     * 科室是检验:将检验结果添加到检验明细表中
+     * 科室是检验:将检验结果添加到检验明细表中和插入体检结果表
      * @param checkResult
      * @param medicalEvents
      * @param sectionId
