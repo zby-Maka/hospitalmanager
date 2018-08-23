@@ -67,32 +67,22 @@ public class SectionServiceImpl implements SectionService {
         return list;
     }
 
-    @Override
-    public Integer addCheckResult(CheckResult checkResult) throws Exception {
-        Integer save=0;
-        Integer ok=0;
-        try {
-            save=checkResultMapper.addCheckResult(checkResult);
-            if(save>0){
-                ok=1;
-            }else{
-                ok=0;
-            }
-        }catch (Exception e){
-            logger.error("增加出错了");
-            e.printStackTrace();
-        }
-        return ok;
-    }
 
     @Override
-    public Integer addMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents) throws Exception {
+    public Object addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId) {
         Integer save=0;
         Integer add=0;
         Integer ok=0;
         try {
-            add=checkResultMapper.addCheckResult(checkResult);
-            save=medicalEventsMapper.addMedicalEvent(medicalEvents);
+            SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
+            if(sectionType.getSectionTypeName()=="检查"){
+                save=checkResultMapper.addCheckResult(checkResult);
+            }else if(sectionType.getSectionTypeName()=="检验"){
+                add=checkResultMapper.addCheckResult(checkResult);
+                save=medicalEventsMapper.addMedicalEvent(medicalEvents);
+            }else{
+                save=checkResultMapper.addCheckResult(checkResult);
+            }
             if(add>0&&save>0){
                 ok=1;
             }else{
@@ -104,6 +94,7 @@ public class SectionServiceImpl implements SectionService {
         }
         return ok;
     }
+
 
 
 

@@ -34,19 +34,17 @@ public interface SectionService {
     List<ProposedDescription> getProposedByResultId(@Param("resultId") Integer resultId)throws Exception;
 
 
-    /**王娇娇
-     * 科室是检查:将结果插入体检结果表
-     * @param checkResult
-     * @return
-     */
-    Integer addCheckResult(CheckResult checkResult)throws Exception;
 
     /**
-     * wjj
+     * 科室是检查:将结果插入体检结果表
      * 科室是检验:将检验结果添加到检验明细表中
-     * @param checkResult medicalEvents
+     * @param checkResult
+     * @param medicalEvents
+     * @param sectionId
      * @return
+     * @throws Exception
      */
-    Integer addMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents)throws  Exception;
+    Object addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId)throws Exception;
+
 
 }
