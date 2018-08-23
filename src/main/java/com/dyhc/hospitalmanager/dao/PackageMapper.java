@@ -48,4 +48,20 @@ public interface PackageMapper {
      * @return
      */
     Package selPackageById(@Param("packageId") Integer packageId) throws Exception;
+
+    /**
+     * 添加套餐信息
+     * author ycy
+     * @return
+     * @throws Exception
+     */
+    int addPackageInfo() throws Exception;
+
+    /**
+     * 修改套餐信息
+     * author ycy
+     * @return
+     * @throws Exception
+     */
+    int updPackageInfo() throws Exception;
 }

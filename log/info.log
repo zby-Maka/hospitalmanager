@@ -1,3 +1,38 @@
+<<<<<<< HEAD
+2018-08-22 08:44:17.257 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 8272 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 08:44:17.351 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
+2018-08-22 08:44:34.507 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 18.73 seconds (JVM running for 23.314)
+2018-08-22 08:49:56.935 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 9536 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 08:49:56.935 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
+2018-08-22 08:50:09.571 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 13.343 seconds (JVM running for 15.165)
+2018-08-22 08:55:35.443 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 8920 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 08:55:35.458 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
+2018-08-22 08:55:44.789 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 10.034 seconds (JVM running for 11.796)
+2018-08-22 08:57:03.227 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 5348 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 08:57:03.243 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
+2018-08-22 08:57:12.414 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 9.874 seconds (JVM running for 11.725)
+2018-08-22 09:13:06.772 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 9848 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 09:13:06.892 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
+2018-08-22 09:13:26.652 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 22.054 seconds (JVM running for 35.593)
+2018-08-22 10:44:31.513 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 11800 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 10:44:31.629 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
+2018-08-22 10:45:14.513 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 45.89 seconds (JVM running for 58.0)
+2018-08-22 18:20:55.116 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 5720 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 18:20:55.218 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
+2018-08-22 18:21:14.616 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 21.296 seconds (JVM running for 30.214)
+2018-08-22 18:22:14.033 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 9172 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 18:22:14.047 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
+2018-08-22 18:22:24.108 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 10.825 seconds (JVM running for 14.64)
+2018-08-22 18:22:42.520 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 3788 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 18:22:42.525 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
+2018-08-22 18:22:51.656 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 10.136 seconds (JVM running for 14.882)
+2018-08-22 18:23:28.444 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 2620 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 18:23:28.447 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
+2018-08-22 18:23:37.220 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 9.319 seconds (JVM running for 11.474)
+2018-08-22 18:23:50.665 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 11568 (started by aixiaobai in E:\hospitalmanager)
+2018-08-22 18:23:50.669 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
+2018-08-22 18:23:59.624 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 9.443 seconds (JVM running for 11.505)
+=======
 2018-08-21 12:18:17.608 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 10560 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
 2018-08-21 12:18:17.613 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
 2018-08-21 12:18:25.313 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.987 seconds (JVM running for 11.001)
@@ -46,6 +81,7 @@
 2018-08-22 10:36:37.848 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on Makah with PID 10684 (started by Administrator in E:\hospitalmanager)
 2018-08-22 10:36:37.923 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
 2018-08-22 10:36:52.748 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 15.683 seconds (JVM running for 17.567)
+<<<<<<< HEAD
 2018-08-22 18:24:12.089 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 9748 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
 2018-08-22 18:24:12.095 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
 2018-08-22 18:24:26.704 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 15.09 seconds (JVM running for 17.788)
@@ -55,3 +91,6 @@
 2018-08-22 18:32:04.319 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 7664 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
 2018-08-22 18:32:04.324 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
 2018-08-22 18:32:12.756 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.792 seconds (JVM running for 10.584)
+=======
+>>>>>>> origin/master
+>>>>>>> cf0aa082de354b2b914d24072916c3a16f605208

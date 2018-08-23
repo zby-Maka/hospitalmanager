@@ -7,6 +7,18 @@
    <select id="getCheckById" resultType="com.dyhc.hospitalmanager.pojo.Check">
        SELECT * FROM `check` WHERE check_id=#{checkId}
    </select>
+
+<!--添加体检项信息-->
+    <insert id="addCheckInfo">
+        insert into `check` values (null,#{sectionId},#{checkName},#{termSex},#{checkSpellCode},#{checkPrice},#{checkAddress},#{unit},#{referenceFloor},#{referenceCeil},#{promptFlat},#{promptHigh},#{minValue},#{maxValue},#{remark},1)
+    </insert>
+
+    <!--修改体检信息-->
+    <update id="updCheckInfo">
+      update into `check`set section_id=#{sectionId},check_name=#{checkName},term_sex=#{termSex},check_spell_code=#{checkSpellCode},check_price=#{checkPrice},
+      check_address=#{checkAddress},unit=#{unit},reference_floor=#{referenceFloor},reference_ceil=#{referenceCeil},prompt_flat=#{promptFlat},prompt_high=#{promptHigh},min_value=#{minValue},max_value=#{maxValue},remark=#{remark},
+is_enable=1 where check_id=#{checkId}
+    </update>
     <select id="getCheckList" resultType="com.dyhc.hospitalmanager.pojo.Check">
            SELECT c.* FROM `physical_examination` pe
           INNER JOIN `physical_examination_and_package` pep
@@ -14,18 +26,18 @@
           INNER JOIN `package_and_ combination` pac ON pep.`package_id` = pac.`package_id`
           INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
           INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
-          WHERE pe.`physical_examination_id` = #{physicalExaminationAndCombinationId}
+          WHERE pe.`physical_examination_id` = #{physicalExaminationId}
        UNION
       SELECT c.* FROM `physical_examination` pe
       INNER JOIN `physical_examination_and_ combination` pac ON pe.`physical_examination_id` = pac.`physical_examination_id`
       INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
       INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
-      WHERE pe.`physical_examination_id` =  #{physicalExaminationAndCombinationId}
+      WHERE pe.`physical_examination_id` =  #{physicalExaminationId}
       UNION
       SELECT c.* FROM `physical_examination` pe
       INNER JOIN `physical_examination_and_ check` peac ON pe.`physical_examination_id` = peac.`physical_examination_id`
       INNER JOIN `check` c ON peac.`check_id` = c.`check_id`
-      WHERE pe.`physical_examination_id` =  #{physicalExaminationAndCombinationId}
+      WHERE pe.`physical_examination_id` =  #{physicalExaminationId}
     </select>
     <!--wjj根据体检编号查询人员在该科室下的体检项和组合项-->
    <select id="getPersonCheckBySectionId" resultType="com.dyhc.hospitalmanager.pojo.Check">
