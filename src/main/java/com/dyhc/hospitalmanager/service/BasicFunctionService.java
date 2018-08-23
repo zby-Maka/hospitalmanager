@@ -2,6 +2,9 @@ package com.dyhc.hospitalmanager.service;
 
 
 import com.dyhc.hospitalmanager.pojo.*;
+import com.dyhc.hospitalmanager.pojo.Package;
+
+import java.util.List;
 
 /**
  * 基础功能维护
@@ -30,6 +33,13 @@ public interface BasicFunctionService {
 
 
 //----------------------------------体检项维护
+
+    /**
+     * 查询所有的体检项
+     * zby
+     * @return
+     */
+    List<Check> getAllCheckList();
 
     /**
      * 添加体检项信息
@@ -74,7 +84,7 @@ public interface BasicFunctionService {
      * @return
      * @throws Exception
      */
-    int addPackageInfo();
+    int addPackageInfo(Package pack);
 
     /**
      * 修改套餐信息
@@ -82,12 +92,11 @@ public interface BasicFunctionService {
      * @return
      * @throws Exception
      */
-    int updPackageInfo();
+    int updPackageInfo(Package pack);
 
 
 
 //----------------------------------常见结果维护
-
 
     /**
      * 添加常见结果信息
