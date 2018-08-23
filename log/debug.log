@@ -293,4 +293,25 @@
 2018-08-22 10:36:52.909 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
 2018-08-22 10:36:53.180 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
 2018-08-22 10:36:53.711 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
+<<<<<<< HEAD
+2018-08-22 18:24:12.093 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-22 18:24:28.579 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 18:24:28.644 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-08-22 18:24:29.308 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
+2018-08-22 18:25:38.776 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-22 18:25:47.335 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 18:25:47.402 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-08-22 18:25:47.513 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
+2018-08-22 18:25:47.517 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 18:25:47.517 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-08-22 18:25:47.585 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
+2018-08-22 18:29:34.163 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` 
+2018-08-22 18:29:34.164 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-08-22 18:29:34.272 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 3
+2018-08-22 18:32:04.322 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-22 18:32:19.864 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` 
+2018-08-22 18:32:19.944 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-08-22 18:32:20.019 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 4
+=======
 >>>>>>> origin/master
+>>>>>>> cf0aa082de354b2b914d24072916c3a16f605208
