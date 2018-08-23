@@ -62,4 +62,12 @@ public interface PhysicalExaminationMapper {
      */
     PhysicalExamination getPhysicalExaminationIdByDesc() throws Exception;
 
+    /**
+     * crf
+     * 根据人员Id查询体检编号
+     * @return
+     * @throws Exception
+     */
+    String getPhysicalExaminationByPersonId(@Param("personId")Integer personId)throws Exception;
+
 }

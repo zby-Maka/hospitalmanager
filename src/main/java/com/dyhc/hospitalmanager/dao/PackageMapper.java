@@ -55,7 +55,7 @@ public interface PackageMapper {
      * @return
      * @throws Exception
      */
-    int addPackageInfo() throws Exception;
+    int addPackageInfo(Package pack) throws Exception;
 
     /**
      * 修改套餐信息
@@ -63,7 +63,8 @@ public interface PackageMapper {
      * @return
      * @throws Exception
      */
-    int updPackageInfo() throws Exception;
+    int updPackageInfo(Package pack) throws Exception;
+
 
     /**
      * crf
