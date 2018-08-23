@@ -15,6 +15,6 @@ public interface RoleInfoMapper {
      * @return
      * @throws Exception
      */
-    RoleInfo getRoleInfoLogin(@Param("userName")String userName,@Param("password")String password) throws Exception;
+    RoleInfo getRoleInfoLogin(@Param("userName") String userName,@Param("password") String password) throws Exception;
 
 }
