@@ -25,4 +25,13 @@ public interface PhysicalExaminationAndPackageMapper {
      * @return
      */
     Integer addPhyAndPackage(PhysicalExaminationAndPackage physicalExaminationAndPackage)throws Exception;
+
+    /**
+     * 新增用户所选的套餐
+     * @param physicalExaminationId 体检编号
+     * @param packId 所选套餐
+     * @return
+     * @throws Exception
+     */
+    Integer addBatchPhyAndPackage(@Param("physicalExaminationId")String physicalExaminationId,@Param("packId") Integer[] packId) throws Exception;
 }

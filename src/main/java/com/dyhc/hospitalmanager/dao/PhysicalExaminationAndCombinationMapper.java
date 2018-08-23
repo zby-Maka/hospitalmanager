@@ -15,5 +15,5 @@ public interface PhysicalExaminationAndCombinationMapper {
      * @param combinationId 体检表Id
      * @return
      */
-    Integer addPhysicalExaminationAndCombination(@Param("physicalExaminationId") String physicalExaminationId, @Param("combinationId") Integer combinationId);
+    Integer addBatchPhysicalExaminationAndCombination(@Param("physicalExaminationId") String physicalExaminationId, @Param("combinationId") Integer[] combinationId) throws Exception;
 }

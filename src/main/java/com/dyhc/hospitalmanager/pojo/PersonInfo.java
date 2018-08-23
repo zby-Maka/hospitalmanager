@@ -4,6 +4,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class PersonInfo {
@@ -24,7 +25,6 @@ public class PersonInfo {
     @JSONField(format = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createDate;
-
 
     public Integer getPersonId() {
         return personId;

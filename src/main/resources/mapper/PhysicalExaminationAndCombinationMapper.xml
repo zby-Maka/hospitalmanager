@@ -5,7 +5,7 @@
 <mapper namespace="com.dyhc.hospitalmanager.dao.PhysicalExaminationAndCombinationMapper">
 
     <!-- 新增用户选择的组合项 -->
-    <insert id="addPhysicalExaminationAndCombination">
+    <insert id="addBatchPhysicalExaminationAndCombination">
         INSERT INTO `health_examination_system`.`physical_examination_and_ combination` (
           `physical_examination_and_ combination_id`,
           `physical_examination_id`,
@@ -13,11 +13,13 @@
           `physical_statu`
         )
         VALUES
-          (
+        <foreach collection="combinationId" item="comId" index="index" separator=",">
+            (
             null ,
             #{physicalExaminationId},
-            #{combinationId},
+            #{comId},
             0
-          );
+            )
+        </foreach>
     </insert>
 </mapper>
