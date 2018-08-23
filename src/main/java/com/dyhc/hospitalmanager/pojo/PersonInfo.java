@@ -25,6 +25,15 @@ public class PersonInfo {
     @JSONField(format = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createDate;
+    private List<Check> checkList;
+
+    public List<Check> getCheckList() {
+        return checkList;
+    }
+
+    public void setCheckList(List<Check> checkList) {
+        this.checkList = checkList;
+    }
 
     public Integer getPersonId() {
         return personId;

@@ -31,7 +31,13 @@
     <!-- 根据当前日期查询体检表倒叙第一条的体检编号 -->
     <select id="getPhysicalExaminationOrderByMedicalTime" resultType="java.lang.String">
         SELECT `physical_examination_id` FROM `physical_examination`
-        WHERE `medical_time` LIKE CONCAT('%',#{now},'%')
+        WHERE `medical_time` LIKE CONCAT('%',#{medicalTime},'%')
+        ORDER BY `medical_time` DESC LIMIT 0,1
+    </select>
+
+    <!-- 根据人员Id查询体检编号 -->
+    <select id="getPhysicalExaminationByPersonId" resultType="java.lang.String">
+        SELECT `physical_examination_id` FROM `physical_examination` WHERE `person_id` = #{personId}
         ORDER BY `medical_time` DESC LIMIT 0,1
     </select>
 

@@ -53,4 +53,23 @@ public interface CheckMapper {
      * @throws Exception
      */
     List<Check>  getPersonCheckBySectionId(@Param("peacId")String peacId,@Param("sectionId")Integer sectionId) throws  Exception;
+
+    /**
+     * crf
+     * 根据体检编号查询体检项信息
+     * @param physicalExaminationId
+     * @return
+     * @throws Exception
+     */
+    List<Check> getCheckByPhysicalExaminationId(@Param("physicalExaminationId")String physicalExaminationId)throws Exception;
+
+    /**
+     * crf
+     * 根据体检编号查询所有体检项信息
+     * @param physicalExaminationId
+     * @return
+     * @throws Exception
+     */
+    List<Check> getCheckByPhysicalExaminationIdList(@Param("physicalExaminationId")String physicalExaminationId,@Param("physicalStatu")Integer physicalStatu)throws Exception;
+
 }

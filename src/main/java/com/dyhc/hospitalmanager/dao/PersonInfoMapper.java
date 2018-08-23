@@ -50,4 +50,13 @@ public interface PersonInfoMapper {
      * @return
      */
     PersonInfo findPersonInfoPersonIdCard(@Param("personIdCard") String personIdCard)throws  Exception;
+
+    /**
+     * crf
+     * 根据人员id查询人员信息
+     * @param personId
+     * @return
+     */
+    PersonInfo getPersonInfoByPersonId(@Param("personId")Integer personId)throws  Exception;
+
 }
