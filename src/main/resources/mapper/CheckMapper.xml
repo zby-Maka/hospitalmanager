@@ -20,24 +20,31 @@
 is_enable=1 where check_id=#{checkId}
     </update>
     <select id="getCheckList" resultType="com.dyhc.hospitalmanager.pojo.Check">
-           SELECT c.* FROM `physical_examination` pe
-          INNER JOIN `physical_examination_and_package` pep
-           ON pe.`physical_examination_id` = pep.`physical_examination_id`
-          INNER JOIN `package_and_ combination` pac ON pep.`package_id` = pac.`package_id`
-          INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
-          INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
-          WHERE pe.`physical_examination_id` = #{physicalExaminationId}
-       UNION
-      SELECT c.* FROM `physical_examination` pe
-      INNER JOIN `physical_examination_and_ combination` pac ON pe.`physical_examination_id` = pac.`physical_examination_id`
-      INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
-      INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
-      WHERE pe.`physical_examination_id` =  #{physicalExaminationId}
-      UNION
-      SELECT c.* FROM `physical_examination` pe
-      INNER JOIN `physical_examination_and_ check` peac ON pe.`physical_examination_id` = peac.`physical_examination_id`
-      INNER JOIN `check` c ON peac.`check_id` = c.`check_id`
-      WHERE pe.`physical_examination_id` =  #{physicalExaminationId}
+            SELECT c.* FROM `physical_examination` pe
+  INNER JOIN `physical_examination_and_package` pep
+  ON pe.`physical_examination_id` = pep.`physical_examination_id`
+  INNER JOIN `package_and_ combination` pac ON pep.`package_id` = pac.`package_id`
+  INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
+  INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
+  WHERE pe.`physical_examination_id` = #{physicalExaminationId}
+  UNION
+  SELECT c.* FROM `physical_examination` pe
+  INNER JOIN `physical_examination_and_package` peap
+  ON pe.`physical_examination_id` = peap.`physical_examination_id`
+  INNER JOIN `package_and_ check` pac ON peap.package_id = pac.package_id
+  INNER JOIN `check` c ON c.`check_id` = pac.check_id
+  WHERE peap.physical_examination_id = #{physicalExaminationId}
+  UNION
+  SELECT c.* FROM `physical_examination` pe
+  INNER JOIN `physical_examination_and_ combination` pac ON pe.`physical_examination_id` = pac.`physical_examination_id`
+  INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
+  INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
+  WHERE pe.`physical_examination_id` = #{physicalExaminationId}
+  UNION
+  SELECT c.* FROM `physical_examination` pe
+  INNER JOIN `physical_examination_and_ check` peac ON pe.`physical_examination_id` = peac.`physical_examination_id`
+  INNER JOIN `check` c ON peac.`check_id` = c.`check_id`
+  WHERE pe.`physical_examination_id` = #{physicalExaminationId}
     </select>
     <!--wjj根据体检编号查询人员在该科室下的体检项和组合项-->
    <select id="getPersonCheckBySectionId" resultType="com.dyhc.hospitalmanager.pojo.Check">
