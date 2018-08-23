@@ -6,7 +6,7 @@
 
     <!--添加体检信息-->
     <insert id="addPhysicalExaminationInfo">
-        INSERT INTO physical_examination VALUES (#physicalExaminationId,#personId,null,null,NOW())
+        INSERT INTO physical_examination VALUES (#{physicalExaminationId},#{personId},#{archivesId},#{medicalResultsId},NOW())
     </insert>
 
     <!-- 根据用户Id查询历史体检记录 -->
