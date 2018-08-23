@@ -20,4 +20,21 @@
             0
           );
     </insert>
+
+    <!--添加体检与套餐关系-->
+    <insert id="addPhyAndPackage">
+        INSERT INTO `health_examination_system`.`physical_examination_and_package` (
+          `physical_examination_and_package_id`,
+          `physical_examination_id`,
+          `package_id`,
+          `physical_statu`
+        )
+        VALUES
+          (
+            0,
+            #{physicalExaminationId},
+            #{packageId},
+            #{physicalStatu}
+          );
+    </insert>
 </mapper>
