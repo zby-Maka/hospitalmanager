@@ -40,4 +40,12 @@
             <id property="checkId" column="check_id" />
         </collection>
     </resultMap>
+
+    <!-- 根据体检Id查询组合信息 -->
+    <select id="getCombinationByPhysicalExaminationId" resultType="com.dyhc.hospitalmanager.pojo.Combination">
+        SELECT * FROM `combination` WHERE `combination_id` IN
+          (SELECT `combination_id` FROM `physical_examination_and_ combination`
+          WHERE `physical_examination_id` = #{physicalExaminationId})
+    </select>
+    
 </mapper>

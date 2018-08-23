@@ -3,5 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.SectionTypeMapper">
-
+    <!--根据session作用域传过来的科室id获取可是类型名称-->
+    <select id="getSectionTypeName" resultType="com.dyhc.hospitalmanager.pojo.SectionType">
+           SELECT s.*,t.section_type_name FROM section s
+           INNER JOIN `section_type` t
+           ON s.section_type_id= t.section_type_id
+           WHERE s.section_id=#{sectionId}
+      </select>
 </mapper>

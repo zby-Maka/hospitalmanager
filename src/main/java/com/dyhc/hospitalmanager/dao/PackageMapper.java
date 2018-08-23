@@ -64,4 +64,13 @@ public interface PackageMapper {
      * @throws Exception
      */
     int updPackageInfo(Package pack) throws Exception;
+
+
+    /**
+     * crf
+     * 根据体检编号查询套餐信息
+     * @return
+     */
+    List<Package> getPackageByPhysicalExaminationId(@Param("physicalExaminationId")String physicalExaminationId)throws Exception;
+
 }

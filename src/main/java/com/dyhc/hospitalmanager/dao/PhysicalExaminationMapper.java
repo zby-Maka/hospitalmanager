@@ -31,10 +31,10 @@ public interface PhysicalExaminationMapper {
     /**
      * crf
      * 根据当前日期查询体检表倒叙第一条的体检编号
-     * @param now 当前时间
+     * @param medicalTime 当前时间
      * @return 返回一个检查编号
      */
-    String getPhysicalExaminationOrderByMedicalTime(@Param("now")String now)throws  Exception;
+    String getPhysicalExaminationOrderByMedicalTime(@Param("medicalTime")String medicalTime)throws  Exception;
 
 
     /**

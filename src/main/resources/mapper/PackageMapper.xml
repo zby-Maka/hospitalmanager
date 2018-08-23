@@ -71,4 +71,12 @@
       is_enable=#{isEnable}
       where package_id=#{packageId}
     </update>
+
+    <!-- 根据体检编号查询套餐信息 -->
+    <select id="getPackageByPhysicalExaminationId" resultType="com.dyhc.hospitalmanager.pojo.Package">
+        SELECT * FROM `package` WHERE `package_id` IN
+          (SELECT `package_id` FROM  `physical_examination_and_package`
+            WHERE `physical_examination_id` = #{physicalExaminationId})
+    </select>
+
 </mapper>
