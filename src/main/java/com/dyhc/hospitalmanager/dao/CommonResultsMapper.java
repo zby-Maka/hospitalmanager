@@ -23,7 +23,7 @@ public interface CommonResultsMapper {
      * @param commonResults
      * @return
      */
-    int addCommonResultsInfo(CommonResults commonResults);
+    int addCommonResultsInfo(CommonResults commonResults)throws Exception;
 
     /**
      * 修改常见结果信息
@@ -31,6 +31,6 @@ public interface CommonResultsMapper {
      * @param commonResults
      * @return
      */
-    int updCommonResultsInfo(CommonResults commonResults);
+    int updCommonResultsInfo(CommonResults commonResults) throws Exception;
 
 }

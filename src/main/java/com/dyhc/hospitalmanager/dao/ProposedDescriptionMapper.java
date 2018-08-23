@@ -24,7 +24,7 @@ public interface ProposedDescriptionMapper {
      * @param proposedDescription
      * @return
      */
-    int addProposedDescriptionInfo(ProposedDescription proposedDescription);
+    int addProposedDescriptionInfo(ProposedDescription proposedDescription)throws Exception;
 
     /**
      * 修改建议描述信息
@@ -32,7 +32,7 @@ public interface ProposedDescriptionMapper {
      * @param proposedDescription
      * @return
      */
-    int updProposedDescriptionInfo(ProposedDescription proposedDescription);
+    int updProposedDescriptionInfo(ProposedDescription proposedDescription) throws Exception;
 
 
 }
