@@ -44,7 +44,7 @@ public interface SectionService {
      * @return
      * @throws Exception
      */
-    Object addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId)throws Exception;
+    Integer addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId)throws Exception;
 
 
 }

@@ -69,17 +69,18 @@ public class SectionServiceImpl implements SectionService {
 
 
     @Override
-    public Object addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId) {
+    public Integer addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId) {
         Integer save=0;
         Integer add=0;
         Integer ok=0;
         try {
             SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
-            if(sectionType.getSectionTypeName()=="检查"){
+            System.out.println(sectionType.getSectionTypeName());
+            if(sectionType.getSectionTypeName().equals("检查")){
                 save=checkResultMapper.addCheckResult(checkResult);
-            }else if(sectionType.getSectionTypeName()=="检验"){
-                add=checkResultMapper.addCheckResult(checkResult);
-                save=medicalEventsMapper.addMedicalEvent(medicalEvents);
+            }else if(sectionType.getSectionTypeName().equals("检验")){
+                save=checkResultMapper.addCheckResult(checkResult);
+                add=medicalEventsMapper.addMedicalEvent(medicalEvents);
             }else{
                 save=checkResultMapper.addCheckResult(checkResult);
             }
