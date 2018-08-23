@@ -24,7 +24,7 @@ public interface CompanyInfoMapper {
      * @param companyInfo
      * @return
      */
-    Integer updCompanyInfo(CompanyInfo companyInfo);
+    Integer updCompanyInfo(CompanyInfo companyInfo)throws  Exception;
 
     /**
      * 李文荣
@@ -32,5 +32,5 @@ public interface CompanyInfoMapper {
      * @param companyInfo
      * @return
      */
-    Integer addCompanyInfo(CompanyInfo companyInfo);
+    Integer addCompanyInfo(CompanyInfo companyInfo)throws  Exception;
 }
