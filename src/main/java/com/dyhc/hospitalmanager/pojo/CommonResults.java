@@ -10,6 +10,16 @@ public class CommonResults {
     private Integer isPositive;
     private Integer isDelete;
 
+    public ProposedDescription getProposedDescription() {
+        return proposedDescription;
+    }
+
+    public void setProposedDescription(ProposedDescription proposedDescription) {
+        this.proposedDescription = proposedDescription;
+    }
+
+    private  ProposedDescription proposedDescription;
+
     public Integer getCommonResultsId() {
         return commonResultsId;
     }

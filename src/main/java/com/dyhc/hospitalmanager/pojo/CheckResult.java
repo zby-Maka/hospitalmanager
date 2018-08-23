@@ -16,6 +16,24 @@ public class CheckResult {
     private Date checkDate;
     private Integer checkResultFinally;
     private Integer checkAdvice;
+    private  CommonResults commonResults;
+    private  MedicalEvents medicalEvents;
+
+    public CommonResults getCommonResults() {
+        return commonResults;
+    }
+
+    public void setCommonResults(CommonResults commonResults) {
+        this.commonResults = commonResults;
+    }
+
+    public MedicalEvents getMedicalEvents() {
+        return medicalEvents;
+    }
+
+    public void setMedicalEvents(MedicalEvents medicalEvents) {
+        this.medicalEvents = medicalEvents;
+    }
 
     public int getCheckResultId() {
         return checkResultId;
