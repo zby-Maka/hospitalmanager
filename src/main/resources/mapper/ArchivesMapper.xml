@@ -16,7 +16,7 @@
 
     <!--添加档案信息-->
     <insert id="addArchivesInfo">
-    INSERT INTO archives VALUES(#archivesId,#personId,NOW())
+    INSERT INTO archives VALUES(#{archivesId},#{personId},NOW())
     </insert>
 
 
