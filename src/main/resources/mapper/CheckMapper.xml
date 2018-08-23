@@ -81,4 +81,12 @@ is_enable=1 where check_id=#{checkId}
     <select id="getAllCheckList" resultType="com.dyhc.hospitalmanager.pojo.Check">
         SELECT * FROM `check`
     </select>
+
+    <!-- 根据体检编号查询体检项信息 -->
+    <select id="getCheckByPhysicalExaminationId" resultType="com.dyhc.hospitalmanager.pojo.Check">
+        SELECT * FROM `check` WHERE `check_id` IN
+        (SELECT `check_id` FROM `physical_examination_and_ check`
+        WHERE `physical_examination_id` = #{physicalExaminationId})
+    </select>
+
 </mapper>

@@ -32,12 +32,12 @@ public class PhysicalExaminationServiceImpl implements PhysicalExaminationServic
      * @throws Exception
      */
     @Override
-    public String getPhysicalExaminationOrderByMedicalTime(){
-        String now = "" ;
+    public String getPhysicalExaminationOrderByMedicalTime(String medicalTime){
+        /*String now = "" ;*/
         try {
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
-            now = df.format(new Date());
-            return physicalExaminationMapper.getPhysicalExaminationOrderByMedicalTime(now);
+            /*SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+            now = df.format(new Date());*/
+            return physicalExaminationMapper.getPhysicalExaminationOrderByMedicalTime(medicalTime);
         }catch (Exception e){
             e.printStackTrace();
             return null;

@@ -15,9 +15,9 @@ public interface PhysicalExaminationService {
 
     /**
      * crf
-     * 根据当前日期查询体检表倒叙第一条的体检编号
+     * 根据当前日期查询体检表倒序第一条的体检编号
      * @return
      */
-    String getPhysicalExaminationOrderByMedicalTime();
+    String getPhysicalExaminationOrderByMedicalTime(String medicalTime);
 
 }
