@@ -75,4 +75,10 @@
             AND `person_id_card` = #{personIdCard}
         </if>
     </select>
+    
+    <!-- 根据人员id查询人员信息 -->
+    <select id="getPersonInfoByPersonId" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
+        SELECT * FROM `person_info` WHERE `person_id` = #{personId}
+    </select>
+    
 </mapper>

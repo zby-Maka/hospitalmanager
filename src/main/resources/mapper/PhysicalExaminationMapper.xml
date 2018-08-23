@@ -35,4 +35,10 @@
         ORDER BY `medical_time` DESC LIMIT 0,1
     </select>
 
+    <!-- 根据人员Id查询体检编号 -->
+    <select id="getPhysicalExaminationByPersonId" resultType="java.lang.String">
+        SELECT `physical_examination_id` FROM `physical_examination` WHERE `person_id` = #{personId}
+        ORDER BY `medical_time` DESC LIMIT 0,1
+    </select>
+
 </mapper>
