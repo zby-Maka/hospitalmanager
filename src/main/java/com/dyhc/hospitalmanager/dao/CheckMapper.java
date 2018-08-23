@@ -30,6 +30,22 @@ public interface CheckMapper {
      */
     List<Check> getAllCheckList() throws Exception;
 
+    /**
+     * 添加体检项信息
+     * author ycy
+     * @param check
+     * @return
+     */
+    int addCheckInfo(Check check);
+
+    /**
+     * 修改体检项信息
+     * author ycy
+     * @param check
+     * @return
+     */
+    int updCheckInfo(Check check);
+
     /**王娇娇
      * 根据体检编号查询人员在该科室下的体检项
      * @param peacId

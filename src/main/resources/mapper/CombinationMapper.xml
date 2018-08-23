@@ -4,6 +4,28 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CombinationMapper">
 
+
+
+    <!--添加组合项信息-->
+    <insert id="addCombinationInfo">
+       INSERT INTO combination VALUES(null,#{sectionId},#{combinationName},#{pinyinCode},#{promptInformation},#{resultToWay},#{isSpecimen},#{specimenType},1)
+    </insert>
+
+    <!--修改组合项信息-->
+    <update id="updCombinationInfo">
+    UPDATE
+          `combination`
+        SET
+          `section_id` = #{sectionId},
+          `combination_name` = #{combinationName},
+          `pinyin_code` = #{pinyinCode},
+          `prompt_information` = #{promptInformation},
+          `result_to_way` = #{resultToWay},
+          `is_specimen` = #{isSpecimen},
+          `specimen_type` = #{specimenType},
+          `is_enable` = #{isEnable}
+        WHERE `combination_id` = #{combinationId}
+    </update>
     <!-- 查询所有组合项，及其下的体检项 -->
     <select id="getAllCombinationList" resultMap="comCheck">
         SELECT com.*,c.* FROM `combination` com
