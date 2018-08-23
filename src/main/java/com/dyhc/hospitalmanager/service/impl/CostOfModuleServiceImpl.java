@@ -72,6 +72,11 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
         }
     }
 
+    /**
+     * 添加费用明细信息
+     * @param costDetail
+     * @return
+     */
     @Override
     public Integer addCostDetail(CostDetail costDetail) {
         try {
