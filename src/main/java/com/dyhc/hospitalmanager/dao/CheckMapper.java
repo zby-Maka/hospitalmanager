@@ -17,11 +17,11 @@ public interface CheckMapper {
     List<Check> getCheckById(@Param("checkId")Integer checkId)throws Exception;
     /**
      * 根据体检编号，查询人员体检项 白文鑫
-     * @param physicalExaminationAndCombinationId
+     * @param physicalExaminationId
      * @return
      * @throws Exception
      */
-    List<Check>  getCheckList(@Param("physicalExaminationAndCombinationId")String  physicalExaminationAndCombinationId) throws  Exception;
+    List<Check>  getCheckList(@Param("physicalExaminationId")String  physicalExaminationId) throws  Exception;
 
     /**
      * 查询所有的体检项
@@ -29,6 +29,22 @@ public interface CheckMapper {
      * @return
      */
     List<Check> getAllCheckList() throws Exception;
+
+    /**
+     * 添加体检项信息
+     * author ycy
+     * @param check
+     * @return
+     */
+    int addCheckInfo(Check check);
+
+    /**
+     * 修改体检项信息
+     * author ycy
+     * @param check
+     * @return
+     */
+    int updCheckInfo(Check check);
 
     /**王娇娇
      * 根据体检编号查询人员在该科室下的体检项

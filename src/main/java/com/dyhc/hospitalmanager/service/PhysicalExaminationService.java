@@ -11,7 +11,7 @@ public interface PhysicalExaminationService {
      * @param physicalExamination
      * @return
      */
-    int addPhysicalExaminationInfo(PhysicalExamination physicalExamination)throws  Exception;
+    int addPhysicalExaminationInfo(PhysicalExamination physicalExamination);
 
     /**
      * crf

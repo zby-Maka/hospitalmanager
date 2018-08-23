@@ -8,6 +8,24 @@
           SELECT * FROM common_results WHERE check_id=#{checkId} LIMIT 1
       </select>
 
+    <!--添加常见结果信息-->
+    <insert id="addCommonResultsInfo">
+        INSERT INTO common_results VALUES(NULL,#{checkId},#{resultDesc},#{pinyinCod},#{isPositive},1)
+    </insert>
+
+    <!--修改常见结果信息-->
+    <update id="updCommonResultsInfo">
+     UPDATE
+      common_results
+    SET
+      check_id=#{checkId},
+      result_desc=#{resultDesc},
+      pinyin_cod=#{pinyinCod},
+      is_positive=#{isPositive},
+      is_delete=#{isDelete}
+      WHERE common_results_id=#{commonResultsId}
+    </update>
+
 
 
 </mapper>

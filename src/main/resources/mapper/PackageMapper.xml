@@ -56,4 +56,19 @@
         SELECT * FROM `package`
         WHERE package_id = #{packageId}
     </select>
+    <!--添加套餐信息-->
+    <insert id="addPackageInfo">
+      INSERT INTO package VALUES(NULL,#{packageName},#{scopeApplication},#{note},1)
+    </insert>
+    <!--修改套餐信息-->
+    <update id="updPackageInfo">
+    update
+      package
+    set
+      package_name=#{packageName},
+      scope_application=#{scopeApplication},
+      note=#{note},
+      is_enable=#{isEnable}
+      where package_id=#{packageId}
+    </update>
 </mapper>

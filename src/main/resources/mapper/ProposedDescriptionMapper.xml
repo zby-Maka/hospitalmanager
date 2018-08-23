@@ -8,4 +8,20 @@
          SELECT * FROM `proposed_description` WHERE result_id=#{resultId} LIMIT 1
      </select>
 
+    <!--添加建议描述信息-->
+    <insert id="addProposedDescriptionInfo">
+    insert into proposed_description VALUES(NULL,#{resultId},#{sciencePopularization},#{adviceContent},1)
+    </insert>
+
+    <!--修改建议描述信息-->
+    <update id="updProposedDescriptionInfo">
+          UPDATE
+      proposed_description
+    SET
+      result_id=#{resultId},
+      science_popularization=#{sciencePopularization},
+      advice_content=#{adviceContent},
+      is_delete=#{isDelete}
+      WHERE `proposed_description_id`=#{proposedDescriptionId}
+    </update>
 </mapper>

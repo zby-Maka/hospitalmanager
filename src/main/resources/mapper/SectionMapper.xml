@@ -4,4 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.SectionMapper">
 
+<!--添加科室信息-->
+    <insert id="addSectionInfo">
+        INSERT INTO section  VALUES(NULL,#{sectionName},#{sectionTypeId},1,#{remark})
+    </insert>
+
+    <!--修改科室信息-->
+    <update id="updSectionInfo">
+        update section set section_name=#{sectionName},section_type_id=#{sectionTypeId},remark=#{remark}
+        where section_id=#{sectionId}
+    </update>
 </mapper>
