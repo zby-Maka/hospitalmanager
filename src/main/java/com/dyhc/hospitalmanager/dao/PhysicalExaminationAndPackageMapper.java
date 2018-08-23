@@ -16,7 +16,7 @@ public interface PhysicalExaminationAndPackageMapper {
      * @param packageId 套餐Id
      * @return
      */
-    Integer addPhysicalExaminationAndPackageMapper(@Param("physicalExaminationId") String physicalExaminationId,@Param("packageId")Integer packageId);
+    Integer addPhysicalExaminationAndPackageMapper(@Param("physicalExaminationId") String physicalExaminationId,@Param("packageId")Integer packageId)throws Exception;
 
     /**
      * 李文荣
@@ -24,5 +24,5 @@ public interface PhysicalExaminationAndPackageMapper {
      * @param physicalExaminationAndPackage
      * @return
      */
-    Integer addPhyAndPackage(PhysicalExaminationAndPackage physicalExaminationAndPackage);
+    Integer addPhyAndPackage(PhysicalExaminationAndPackage physicalExaminationAndPackage)throws Exception;
 }

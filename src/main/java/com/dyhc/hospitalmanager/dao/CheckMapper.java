@@ -36,7 +36,7 @@ public interface CheckMapper {
      * @param check
      * @return
      */
-    int addCheckInfo(Check check);
+    int addCheckInfo(Check check) throws Exception;
 
     /**
      * 修改体检项信息
@@ -44,7 +44,7 @@ public interface CheckMapper {
      * @param check
      * @return
      */
-    int updCheckInfo(Check check);
+    int updCheckInfo(Check check)throws Exception;
 
     /**王娇娇
      * 根据体检编号查询人员在该科室下的体检项

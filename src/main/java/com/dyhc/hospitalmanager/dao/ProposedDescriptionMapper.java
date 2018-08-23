@@ -1,10 +1,13 @@
 package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.ProposedDescription;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Mapper
+@Repository
 public interface ProposedDescriptionMapper {
 
     /**王娇娇
@@ -21,7 +24,7 @@ public interface ProposedDescriptionMapper {
      * @param proposedDescription
      * @return
      */
-    int addProposedDescriptionInfo(ProposedDescription proposedDescription);
+    int addProposedDescriptionInfo(ProposedDescription proposedDescription)throws Exception;
 
     /**
      * 修改建议描述信息
@@ -29,7 +32,7 @@ public interface ProposedDescriptionMapper {
      * @param proposedDescription
      * @return
      */
-    int updProposedDescriptionInfo(ProposedDescription proposedDescription);
+    int updProposedDescriptionInfo(ProposedDescription proposedDescription) throws Exception;
 
 
 }

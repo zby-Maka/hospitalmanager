@@ -25,7 +25,7 @@ public interface PersonInfoMapper {
      * @param personInfo 用户信息
      * @return
      */
-    Integer addPersonInfo(PersonInfo personInfo);
+    Integer addPersonInfo(PersonInfo personInfo)throws  Exception;
 
     /**
      * crf
@@ -33,7 +33,7 @@ public interface PersonInfoMapper {
      * @param personTelephone 手机号属性
      * @return 返回一个人员信息对象
      */
-    PersonInfo getPersonInfoByPersonTelephone(@Param("personTelephone")String personTelephone);
+    PersonInfo getPersonInfoByPersonTelephone(@Param("personTelephone")String personTelephone)throws  Exception;
 
     /**
      * 周冰洋
@@ -41,7 +41,7 @@ public interface PersonInfoMapper {
      * @param personInfo 用户信息
      * @return
      */
-    Integer updPersonInfo(PersonInfo personInfo);
+    Integer updPersonInfo(PersonInfo personInfo)throws  Exception;
 
     /**
      * 李文荣
@@ -49,5 +49,5 @@ public interface PersonInfoMapper {
      * @param personIdCard 身份证号码
      * @return
      */
-    PersonInfo findPersonInfoPersonIdCard(@Param("personIdCard") String personIdCard);
+    PersonInfo findPersonInfoPersonIdCard(@Param("personIdCard") String personIdCard)throws  Exception;
 }
