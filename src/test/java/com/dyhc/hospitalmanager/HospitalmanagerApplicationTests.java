@@ -5,6 +5,8 @@ import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
+import com.dyhc.hospitalmanager.pojo.Cost;
+import com.dyhc.hospitalmanager.service.CostOfModuleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +17,19 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class HospitalmanagerApplicationTests {
 
+    @Autowired
+    private CostOfModuleService costOfModuleService;
+
+    /**
+     * 收费/退费
+     * physicalStatu收费/退费：0/1
+     */
     @Test
     public void contextLoads() {
         addCompanyInfo();
@@ -102,14 +112,23 @@ public class HospitalmanagerApplicationTests {
      */
     public void test04(){
         try {
-            CompanyInfo list = companyInfoMapper.showCompanyInfo("北大青鸟");
-            System.out.println(list.getCompanyName());
-        } catch (Exception e) {
+            Cost cost = new Cost();
+            cost.setCostType("收费");
+            cost.setHealthExaminationId("2018010103");
+            cost.setCostAmount(new BigDecimal(200.00));
+            System.out.println(costOfModuleService.addCost(cost,0));
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    public void test05(){
+    /**
+     * 根据Id查询人员信息
+     * personld:人员id
+     * physicalStatu收费/退费：0/1
+     */
+    @Test
+    public void contextLoads01() {
         try {
             CompanyInfo list = companyInfoMapper.showCompanyInfo("北大青鸟");
             System.out.println(list.getCompanyName());
@@ -186,6 +205,8 @@ public class HospitalmanagerApplicationTests {
         try {
             Integer a = medicalEventsMapper.addMedicalEvent(medicalEvents);
         } catch (Exception e) {
+            System.out.println(costOfModuleService.getPersonInfoByPersonInfoId(1,0));
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
