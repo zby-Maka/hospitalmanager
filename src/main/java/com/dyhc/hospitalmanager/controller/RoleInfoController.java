@@ -7,14 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
+
 @RestController
 public class RoleInfoController{
 
     @Autowired
     private RoleInfoService roleInfoService;
     @RequestMapping(value = "login.do")
-    public String getLogin(String userName,String password,Integer roletypeid) throws  Exception{
+    public String getLogin(String userName, String password, Integer roletypeid, HttpSession session) throws  Exception{
         RoleInfo roleInfo=roleInfoService.getRoleInfoLogin(userName,password);
+        session.setAttribute("roleInfo",roleInfo);
         if (roleInfo==null){
             return JSON.toJSONString("用户名和密码错误");
         }else {
