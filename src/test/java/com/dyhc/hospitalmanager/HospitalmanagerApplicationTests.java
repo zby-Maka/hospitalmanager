@@ -204,8 +204,6 @@ public class HospitalmanagerApplicationTests {
         medicalEvents.setEventsName("aaa");
         try {
             Integer a = medicalEventsMapper.addMedicalEvent(medicalEvents);
-        } catch (Exception e) {
-            System.out.println(costOfModuleService.getPersonInfoByPersonInfoId(1,0));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -225,6 +223,7 @@ public class HospitalmanagerApplicationTests {
 
 
     /**
+     * 李文荣
      * 添加单位分组以及人员信息
      *  以及人员信息所属的分组信息
      *  并且添加人员信息的时候进行
@@ -265,7 +264,7 @@ public class HospitalmanagerApplicationTests {
 
 
     /**
-     * 测试根据公司名称查询公司信息
+     * 测试根据公司名称查询公司信息 李文荣
      */
     public void showCompanyInfo(){
         CompanyInfo companyInfo = unitReservationService.showCompanyInfo("北大青鸟");
@@ -274,7 +273,7 @@ public class HospitalmanagerApplicationTests {
 
 
     /**
-     * 核实公司信息进行修改
+     * 核实公司信息进行修改 李文荣
      */
     public void updCompanyInfo(){
         CompanyInfo companyInfo = new CompanyInfo();
@@ -288,11 +287,11 @@ public class HospitalmanagerApplicationTests {
     }
 
     /**
-     * 添加公司信息
+     * 添加公司信息 李文荣
      */
     public void addCompanyInfo(){
         CompanyInfo companyInfo = new CompanyInfo();
-        companyInfo.setCompanyName("刘杰公司111");
+        companyInfo.setCompanyName("刘杰公司22");
         companyInfo.setSpellCode("lwrgs");
         companyInfo.setCompanyPrincipal("李文荣");
         companyInfo.setTelephone("13753524527");
