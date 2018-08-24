@@ -4,7 +4,6 @@ import com.dyhc.hospitalmanager.dao.CompanyInfoMapper;
 import com.dyhc.hospitalmanager.dao.GroupMapper;
 import com.dyhc.hospitalmanager.dao.PersonInfoMapper;
 import com.dyhc.hospitalmanager.pojo.*;
-import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +25,8 @@ public class UnitReservationServiceImpl implements UnitReservationService {
 
     /**
      * 根据单位名称查询单位表
+     * 如果不存在 进行添加单位信息 addCompanyInfo()
+     * 如果存在显示单位信息进行核实 , 如果公司信息不正确 执行公司信息修改updCompanyInfo()
      * @param companyName 单位名称
      * @return
      */
@@ -77,7 +78,10 @@ public class UnitReservationServiceImpl implements UnitReservationService {
     }
 
     /**
-     *  添加单位分组以及人员信息以及人员信息所属的分组信息
+     *  添加单位分组以及人员信息
+     *  以及人员信息所属的分组信息
+     *  并且添加人员信息的时候进行
+     *  判断这个人是否存在 如果存在就不对这个人进行添加
      * @param group 单位分组
      * @param personInfos 人员信息集合
      * @return
