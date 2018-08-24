@@ -4,6 +4,7 @@ import com.dyhc.hospitalmanager.pojo.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface SectionService {
 
@@ -16,21 +17,13 @@ public interface SectionService {
     List<Check> getPersonCheckBySectionId(@Param("peacId")String peacId, @Param("sectionId")Integer sectionId) throws  Exception;
 
 
-
-
     /**王娇娇
      * 科室是检查:根据体检项id查常见结果表，默认显示第一条
+     * 科室是检查:根据结果id查建议描述表，默认显示第一条
      * @param checkId
      * @return
      */
-    List<CommonResults> getCommResultsByCheckId(@Param("checkId")Integer checkId)throws Exception;
-
-    /**王娇娇
-     * 科室是检查:根据结果id查建议描述表，默认显示第一条
-     * @param resultId
-     * @return
-     */
-    List<ProposedDescription> getProposedByResultId(@Param("resultId") Integer resultId)throws Exception;
+    Map<String,Object> getCheckResultAndProposed(@Param("checkId")Integer checkId, @Param("resultId") Integer resultId,Integer sectionId)throws Exception;
 
 
     /**
