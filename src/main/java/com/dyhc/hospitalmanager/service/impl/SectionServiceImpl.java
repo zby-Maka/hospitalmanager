@@ -48,7 +48,7 @@ public class SectionServiceImpl implements SectionService {
         Map<String,Object> map=null;
         try {
             SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
-            if(sectionType.getSectionTypeName()=="检查"){
+            if(sectionType.getSectionTypeName().equals("检查")){
                 map=new HashMap<>();
                 List<CommonResults> list=commonResultsMapper.getCommResultsByCheckId(checkId);
                 List<ProposedDescription> list1=proposedDescriptionMapper.getProposedByResultId(resultId);
