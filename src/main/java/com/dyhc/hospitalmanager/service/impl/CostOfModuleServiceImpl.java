@@ -5,7 +5,6 @@ import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.service.CostOfModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -40,7 +39,6 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
             e.printStackTrace();
             return null;
         }
-
     }
 
     /**

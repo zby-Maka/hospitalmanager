@@ -2,6 +2,8 @@ package com.dyhc.hospitalmanager.service;
 
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +11,8 @@ import java.util.List;
  * 李文荣
  * 单位预约模块
  */
+@Mapper
+@Repository
 public interface UnitReservationService {
 
 
