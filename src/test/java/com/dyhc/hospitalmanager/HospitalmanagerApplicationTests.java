@@ -67,7 +67,7 @@ public class HospitalmanagerApplicationTests {
         //test21();
 //        addCompanyInfo();
     }
-    //科室是检查的时候查询检查结果合建议
+    //科室是检查的时候查询检查结果和建议   wjj
      public void test20(){
          Map<String,Object> map=null;
          try {
@@ -96,7 +96,7 @@ public class HospitalmanagerApplicationTests {
 
 
 
-    //判断是检查还是检验进行相应的添加操作
+    //判断是检查还是检验进行相应的添加操作  wjj
     public void test21() {
              CheckResult checkResult = new CheckResult();
              checkResult.setPhysicalExaminationId("2018010102");
@@ -263,6 +263,11 @@ public class HospitalmanagerApplicationTests {
         per.add(personInfo2);
         per.add(personInfo3);
         Integer a = unitReservationService.addGroupAndPersonInfo(group,per);
+        if(a>0){
+            System.out.println("成功");
+        }else{
+            System.out.println("失败");
+        }
 
     }
 
@@ -311,11 +316,7 @@ public class HospitalmanagerApplicationTests {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if(a>0){
-            System.out.println("成功");
-        }else{
-            System.out.println("失败");
-        }
+
 
 
     }
