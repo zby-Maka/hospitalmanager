@@ -109,6 +109,7 @@ public class PersonalReservationImpl implements PersonalReservation {
             phyNo = phyDate + phyNo;
             physicalExamination.setPhysicalExaminationId(phyNo);
             physicalExamination.setPersonId(personInfo.getPersonId());
+            physicalExamination.setMedicalTime(Yudate);
             //给这个人员生成体检编号
             result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
             if (result < 0) {
@@ -122,16 +123,6 @@ public class PersonalReservationImpl implements PersonalReservation {
             return -1;
         }
         return result;
-    }
-
-    /**
-     * 给用户发送短息
-     * @param PersonPhone 用户手机号
-     * @return
-     */
-    @Override
-    public int sendNew(String PersonPhone){
-        return 0;
     }
 
     /**

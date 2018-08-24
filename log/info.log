@@ -94,3 +94,12 @@
 =======
 >>>>>>> origin/master
 >>>>>>> cf0aa082de354b2b914d24072916c3a16f605208
+2018-08-23 18:20:24.451 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on DESKTOP-KAF6VDO with PID 8100 (E:\hospitalmanager\target\classes started by aixiaobai in E:\hospitalmanager)
+2018-08-23 18:20:24.529 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-23 18:20:41.356 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 19.368 seconds (JVM running for 28.068)
+2018-08-23 18:22:03.490 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on DESKTOP-KAF6VDO with PID 9436 (E:\hospitalmanager\target\classes started by aixiaobai in E:\hospitalmanager)
+2018-08-23 18:22:03.509 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-23 18:22:22.255 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 19.525 seconds (JVM running for 29.423)
+2018-08-23 18:23:02.734 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on DESKTOP-KAF6VDO with PID 6444 (E:\hospitalmanager\target\classes started by aixiaobai in E:\hospitalmanager)
+2018-08-23 18:23:02.740 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-23 18:23:11.272 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.403 seconds (JVM running for 15.073)

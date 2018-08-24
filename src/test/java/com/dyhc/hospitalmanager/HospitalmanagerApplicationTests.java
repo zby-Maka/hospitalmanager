@@ -145,7 +145,11 @@ public class HospitalmanagerApplicationTests {
         companyInfo.setCompanyNature("国企");
         companyInfo.setAuthorizedStrength(200);
         companyInfo.setIsDelete(1);
-        Integer info = companyInfoMapper.addCompanyInfo(companyInfo);
+        try {
+            Integer info = companyInfoMapper.addCompanyInfo(companyInfo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -156,7 +160,11 @@ public class HospitalmanagerApplicationTests {
         CompanyInfo companyInfo = new CompanyInfo();
         companyInfo.setCompanyName("李文荣公司1");
         companyInfo.setCompanyId(5);
-        Integer info = companyInfoMapper.updCompanyInfo(companyInfo);
+        try {
+            Integer info = companyInfoMapper.updCompanyInfo(companyInfo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void test09(){

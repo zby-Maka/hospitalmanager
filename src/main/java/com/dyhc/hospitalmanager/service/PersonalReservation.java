@@ -2,12 +2,7 @@ package com.dyhc.hospitalmanager.service;
 
 import com.dyhc.hospitalmanager.pojo.Check;
 import com.dyhc.hospitalmanager.pojo.Combination;
-import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
-import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -33,13 +28,6 @@ public interface PersonalReservation {
      *          -3添加预约表失败
      */
     int addPersonInfo(PersonInfo personInfo,Date Yudate);
-
-    /**
-     * 给用户发送短息
-     * @param PersonPhone 用户手机号
-     * @return
-     */
-    int sendNew(String PersonPhone);
 
     /**
      * 获取所有的检查项
