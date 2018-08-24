@@ -8,7 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Service("SectionService")
@@ -41,31 +43,26 @@ public class SectionServiceImpl implements SectionService {
         return list;
     }
 
-
-
     @Override
-    public List<CommonResults> getCommResultsByCheckId(Integer checkId) throws Exception {
-        List<CommonResults> list=null;
+    public Map<String,Object> getCheckResultAndProposed(Integer checkId, Integer resultId,Integer sectionId) throws Exception {
+        Map<String,Object> map=null;
         try {
-            list=commonResultsMapper.getCommResultsByCheckId(checkId);
+            SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
+            if(sectionType.getSectionTypeName()=="检查"){
+                map=new HashMap<>();
+                List<CommonResults> list=commonResultsMapper.getCommResultsByCheckId(checkId);
+                List<ProposedDescription> list1=proposedDescriptionMapper.getProposedByResultId(resultId);
+                map.put("list",list);
+                map.put("list1",list1);
+            }
         }catch (Exception e){
             logger.error("您的查询有误");
             e.printStackTrace();
         }
-        return list;
+        return map;
     }
 
-    @Override
-    public List<ProposedDescription> getProposedByResultId(Integer resultId) throws Exception {
-        List<ProposedDescription> list=null;
-        try {
-            list=proposedDescriptionMapper.getProposedByResultId(resultId);
-        }catch (Exception e){
-            logger.error("您的查询有误");
-            e.printStackTrace();
-        }
-        return list;
-    }
+
 
 
     @Override
