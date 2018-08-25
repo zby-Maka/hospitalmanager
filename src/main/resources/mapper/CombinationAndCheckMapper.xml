@@ -12,4 +12,9 @@
         WHERE cac.`combination_id` = #{comId}
     </select>
 
+    <!-- 添加组合项和体检项的关系 -->
+    <insert id="addCombinationAndCheck">
+        INSERT INTO `combination_and_ check` VALUES(NULL,#{combinationAndCheck.combinationId},#{combinationAndCheck.checkId})
+    </insert>
+
 </mapper>
