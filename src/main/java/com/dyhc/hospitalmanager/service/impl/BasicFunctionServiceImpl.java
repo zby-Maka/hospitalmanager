@@ -89,7 +89,7 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     //----------------------------------组合项项维护
 
     @Override
-    public int addCombinationInfo(Combination combination) {
+    public int addCombinationInfo(Combination combination,List<Check>checkList) {
         int result=0;
         try {
             result=combinationMapper.addCombinationInfo(combination);
@@ -115,7 +115,7 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
 
     //----------------------------------套餐项维护
     @Override
-    public int addPackageInfo(Package pack) {
+    public int addPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList) {
         int result=0;
         try {
             result=packageMapper.addPackageInfo(pack);
