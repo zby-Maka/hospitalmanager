@@ -73,7 +73,7 @@ public interface BasicFunctionService {
      * @param combination
      * @return
      */
-    int updCombinationInfo(Combination combination);
+    int updCombinationInfo(Combination combination,List<Check>checkList);
 
 
 
@@ -95,7 +95,7 @@ public interface BasicFunctionService {
      * @return
      * @throws Exception
      */
-    int updPackageInfo(Package pack);
+    int updPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList);
 
 
 

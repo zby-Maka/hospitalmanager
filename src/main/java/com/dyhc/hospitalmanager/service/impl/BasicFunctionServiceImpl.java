@@ -101,7 +101,7 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     }
 
     @Override
-    public int updCombinationInfo(Combination combination) {
+    public int updCombinationInfo(Combination combination,List<Check>checkList) {
         int result=0;
         try {
             result=combinationMapper.updCombinationInfo(combination);
@@ -127,12 +127,12 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     }
 
     @Override
-    public int updPackageInfo(Package pack) {
+    public int updPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList) {
         int result=0;
         try {
             result=packageMapper.updPackageInfo(pack);
         } catch (Exception e) {
-            logger.error("添加套餐失败!");
+            logger.error("修改套餐失败!");
             e.printStackTrace();
         }
         return result;
