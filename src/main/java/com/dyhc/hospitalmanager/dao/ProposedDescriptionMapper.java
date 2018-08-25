@@ -34,7 +34,6 @@ public interface ProposedDescriptionMapper {
 
     /**
      * 根据主键id查询建议描述信息
-     * author ycy
      * @param proposedDescriptionId
      * @return
      * @throws Exception
