@@ -160,9 +160,9 @@ public class HospitalmanagerApplicationTests {
      */
     public void test07(){
         CompanyInfo companyInfo = new CompanyInfo();
-        companyInfo.setCompanyName("李文荣公司");
+        companyInfo.setCompanyName("白文鑫公司");
         companyInfo.setSpellCode("lwrgs");
-        companyInfo.setCompanyPrincipal("李文荣");
+        companyInfo.setCompanyPrincipal("白文鑫");
         companyInfo.setTelephone("13753524527");
         companyInfo.setPostalCode("031400");
         companyInfo.setAddress("山西霍州");
@@ -183,7 +183,7 @@ public class HospitalmanagerApplicationTests {
      */
     public void test08(){
         CompanyInfo companyInfo = new CompanyInfo();
-        companyInfo.setCompanyName("李文荣公司1");
+        companyInfo.setCompanyName("白文鑫公司");
         companyInfo.setCompanyId(5);
         try {
             Integer info = companyInfoMapper.updCompanyInfo(companyInfo);
@@ -261,7 +261,7 @@ public class HospitalmanagerApplicationTests {
 
 
     /**
-     * 测试根据公司名称查询公司信息 李文荣
+     * 测试根据公司名称查询公司信息
      */
     public void showCompanyInfo(){
         CompanyInfo companyInfo = unitReservationService.showCompanyInfo("北大青鸟");
@@ -270,11 +270,11 @@ public class HospitalmanagerApplicationTests {
 
 
     /**
-     * 核实公司信息进行修改 李文荣
+     * 核实公司信息进行修改
      */
     public void updCompanyInfo(){
         CompanyInfo companyInfo = new CompanyInfo();
-        companyInfo.setCompanyName("李文荣公司2");
+        companyInfo.setCompanyName("白文鑫公司2");
         companyInfo.setCompanyId(5);
         try {
             Integer info = unitReservationService.updCompanyInfo(companyInfo);
@@ -288,9 +288,9 @@ public class HospitalmanagerApplicationTests {
      */
     public void addCompanyInfo(){
         CompanyInfo companyInfo = new CompanyInfo();
-        companyInfo.setCompanyName("刘杰公司22");
+        companyInfo.setCompanyName("杜晓宇公司22");
         companyInfo.setSpellCode("lwrgs");
-        companyInfo.setCompanyPrincipal("李文荣");
+        companyInfo.setCompanyPrincipal("白文鑫");
         companyInfo.setTelephone("13753524527");
         companyInfo.setPostalCode("031400");
         companyInfo.setAddress("山西霍州");
