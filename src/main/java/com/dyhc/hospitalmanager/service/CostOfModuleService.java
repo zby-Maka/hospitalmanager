@@ -14,7 +14,6 @@ public interface CostOfModuleService {
     PersonInfo getPersonInfoByPersonInfoId(Integer personId,Integer physicalStatu);
 
     /**
-     * crf
      * 新增费用信息
      * @param cost
      * @return
@@ -22,7 +21,6 @@ public interface CostOfModuleService {
     Integer addCost(Cost cost,Integer physicalStatu);
 
     /**
-     * crf
      * 新增费用明细信息
      * @param costDetail
      * @return
