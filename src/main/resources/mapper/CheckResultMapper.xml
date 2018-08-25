@@ -38,6 +38,6 @@ WHERE cr.`physical_examination_id` =#{physicalExaminationId}
         </association>
     </resultMap>
         <insert id="addCheckResults">
-                 INSERT INTO check_result VALUES(NULL,#{physicalExaminationId},#{checkId},#{roleInfoId},now(),#{checkResultFinally},#{checkAdvice})
+                 INSERT INTO ch eck_result VALUES(NULL,#{physicalExaminationId},#{checkId},#{roleInfoId},now(),#{checkResultFinally},#{checkAdvice})
         </insert>
 </mapper>
