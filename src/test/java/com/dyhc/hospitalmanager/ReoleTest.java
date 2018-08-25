@@ -1,6 +1,5 @@
 package com.dyhc.hospitalmanager;
 
-import com.dyhc.hospitalmanager.dao.CheckResultMapper;
 import com.dyhc.hospitalmanager.pojo.CheckResult;
 import com.dyhc.hospitalmanager.service.CheckResultService;
 import org.junit.Test;
