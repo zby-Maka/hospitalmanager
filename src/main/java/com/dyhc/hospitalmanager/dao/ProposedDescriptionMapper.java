@@ -34,5 +34,14 @@ public interface ProposedDescriptionMapper {
      */
     int updProposedDescriptionInfo(ProposedDescription proposedDescription) throws Exception;
 
+    /**
+     * 根据主键id查询建议描述信息
+     * author ycy
+     * @param proposedDescriptionId
+     * @return
+     * @throws Exception
+     */
+    List<ProposedDescription>getAllProposedDescriptionInfoById(@Param("proposedDescriptionId")Integer proposedDescriptionId)throws Exception;
+
 
 }

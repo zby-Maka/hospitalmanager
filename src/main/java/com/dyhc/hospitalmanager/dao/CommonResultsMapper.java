@@ -33,4 +33,11 @@ public interface CommonResultsMapper {
      */
     int updCommonResultsInfo(CommonResults commonResults) throws Exception;
 
+    /**
+     * 根据主键id查询常见结果信息
+     * @param commonResultsId
+     * @return
+     */
+    List<CommonResults> getAllCommonResultsById(@Param("commonResultsId")Integer commonResultsId)throws Exception;
+
 }
