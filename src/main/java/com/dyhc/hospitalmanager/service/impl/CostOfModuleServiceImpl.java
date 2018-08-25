@@ -2,7 +2,10 @@ package com.dyhc.hospitalmanager.service.impl;
 
 import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
+import com.dyhc.hospitalmanager.service.BasicFunctionService;
 import com.dyhc.hospitalmanager.service.CostOfModuleService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -10,6 +13,7 @@ import java.util.List;
 @Service
 public class CostOfModuleServiceImpl implements CostOfModuleService {
 
+    private Logger logger= LoggerFactory.getLogger(BasicFunctionService.class);
     @Autowired
     private PersonInfoMapper personInfoMapper;
     @Autowired
@@ -36,6 +40,7 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
             return personInfo;
         }catch (Exception e){
             e.printStackTrace();
+            logger.error("根据Id查询人员信息失败");
             return null;
         }
     }
@@ -64,6 +69,7 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
             }
         }catch (Exception e){
             e.printStackTrace();
+            logger.error("新增费用信息失败");
             return 0;
         }
     }
@@ -84,6 +90,7 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
             }
         }catch (Exception e){
             e.printStackTrace();
+            logger.error("添加费用明细信息失败");
             return 0;
         }
     }
