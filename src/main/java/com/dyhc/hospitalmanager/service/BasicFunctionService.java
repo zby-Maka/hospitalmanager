@@ -52,7 +52,7 @@ public interface BasicFunctionService {
 
     /**
      * 添加体检项信息
-     * author ycy
+     * author
      * @param check
      * @return
      */
@@ -147,7 +147,7 @@ public interface BasicFunctionService {
 
     /**
      * 修改建议描述信息
-     * author ycy
+     * author
      * @param proposedDescription
      * @return
      */
@@ -156,7 +156,7 @@ public interface BasicFunctionService {
 
     /**
      * 根据主键id查询建议描述信息
-     * author ycy
+     * author
      * @param proposedDescriptionId
      * @return
      * @throws Exception
