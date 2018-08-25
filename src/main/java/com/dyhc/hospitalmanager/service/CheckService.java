@@ -9,7 +9,6 @@ public interface CheckService {
 
     /**
      * 查询所有的体检项
-     * zby
      * @return
      */
     List<Check> getAllCheckList();

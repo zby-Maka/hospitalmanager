@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * 李文荣
  * 单位预约模块
  */
 @Mapper
@@ -17,7 +16,6 @@ public interface UnitReservationService {
 
 
     /**
-     * 李文荣
      *  根据单位名称查询单位表
      * @param companyName 单位名称
      * @return
@@ -25,7 +23,6 @@ public interface UnitReservationService {
     CompanyInfo showCompanyInfo(String companyName);
 
     /**
-     * 李文荣
      * 修改单位信息
      * @param companyInfo
      * @return
@@ -33,7 +30,6 @@ public interface UnitReservationService {
     Integer updCompanyInfo(CompanyInfo companyInfo);
 
     /**
-     * 李文荣
      * 添加单位信息
      * @param companyInfo
      * @return

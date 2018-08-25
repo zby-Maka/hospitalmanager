@@ -22,7 +22,6 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
     private CostDetailMapper costDetailMapper;
 
     /**
-     * crf
      * 根据Id查询人员信息
      * @param personId
      * @return
@@ -42,7 +41,6 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
     }
 
     /**
-     * crf
      * 新增费用信息
      * @param cost
      * @return

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 基础功能维护
- * author ycy
+ * author
  */
 public interface BasicFunctionService {
 
@@ -18,7 +18,7 @@ public interface BasicFunctionService {
 
     /**
      * 添加科室信息
-     * author ycy
+     * author
      * @param section
      * @return
      */
@@ -26,7 +26,7 @@ public interface BasicFunctionService {
 
     /**
      * 修改科室信息
-     * author ycy
+     * author
      * @param section
      * @return
      */
@@ -34,7 +34,7 @@ public interface BasicFunctionService {
 
     /**
      * 根据id查询科室信息
-     * author ycy
+     * author
      * @param sectionId
      * @return
      */
@@ -45,7 +45,7 @@ public interface BasicFunctionService {
 
     /**
      * 查询所有的体检项
-     * zby
+     *
      * @return
      */
     List<Check> getAllCheckList();
@@ -60,7 +60,7 @@ public interface BasicFunctionService {
 
     /**
      * 修改体检项信息
-     * author ycy
+     * author
      * @param check
      * @return
      */
@@ -69,7 +69,7 @@ public interface BasicFunctionService {
 //----------------------------------组合项项维护
     /**
      * 添加组合项信息
-     * author ycy
+     * author
      * @param combination
      * checkList 体检项集合
      * @return
@@ -78,7 +78,7 @@ public interface BasicFunctionService {
 
     /**
      * 修改组合项信息
-     * author ycy
+     * author
      * @param combination
      * @return
      */
@@ -90,7 +90,7 @@ public interface BasicFunctionService {
 
     /**
      * 添加套餐信息
-     * author ycy
+     * author
      * combinationList 组合项集合
      * checkList  体检项集合
      * @return
@@ -100,7 +100,7 @@ public interface BasicFunctionService {
 
     /**
      * 修改套餐信息
-     * author ycy
+     * author
      * @return
      * @throws Exception
      */
@@ -112,7 +112,7 @@ public interface BasicFunctionService {
 
     /**
      * 添加常见结果信息
-     * author ycy
+     * author
      * @param commonResults
      * @return
      */
@@ -120,7 +120,7 @@ public interface BasicFunctionService {
 
     /**
      * 修改常见结果信息
-     * author ycy
+     * author
      * @param commonResults
      * @return
      */
@@ -132,7 +132,7 @@ public interface BasicFunctionService {
 
     /**
      * 添加建议描述信息
-     *   author ycy
+     *   author
      * @param proposedDescription
      * @return
      */
