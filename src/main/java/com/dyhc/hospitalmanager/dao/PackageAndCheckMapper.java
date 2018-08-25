@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface PackageAndCheckMapper {
 
     /**
-     * 李文荣
      * 添加体检与套餐关系
      * @param packageAndCheck
      * @return

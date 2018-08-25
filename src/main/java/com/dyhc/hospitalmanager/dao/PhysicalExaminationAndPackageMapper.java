@@ -11,7 +11,6 @@ public interface PhysicalExaminationAndPackageMapper {
 
     /**
      * 新增用户选择的套餐
-     * zby
      * @param physicalExaminationId 体检表Id
      * @param packageId 套餐Id
      * @return
@@ -19,7 +18,6 @@ public interface PhysicalExaminationAndPackageMapper {
     Integer addPhysicalExaminationAndPackageMapper(@Param("physicalExaminationId") String physicalExaminationId,@Param("packageId")Integer packageId)throws Exception;
 
     /**
-     * 李文荣
      * 添加体检与套餐关系
      * @param physicalExaminationAndPackage
      * @return

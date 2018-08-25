@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface PhysicalExaminationAndCheckMapper {
 
     /**
-     * zby
      * 新增用户的体检项
      * @param physicalExaminationId 体检表Id
      * @param checkId 体检项Id

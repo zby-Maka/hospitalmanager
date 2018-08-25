@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface GroupMapper {
     /**
-     * lwr
      * 添加单位分组信息
      * @param group
      * @return

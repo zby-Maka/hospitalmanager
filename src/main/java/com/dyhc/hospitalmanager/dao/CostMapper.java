@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface CostMapper {
 
     /**
-     * crf
      * 添加费用表
      * @param cost 费用表对象
      * @return 返回处理结果

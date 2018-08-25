@@ -12,7 +12,6 @@ public interface CombinationMapper {
 
     /**
      * 添加组合项信息
-     * author ycy
      * @param combination
      * @return
      */
@@ -20,7 +19,6 @@ public interface CombinationMapper {
 
     /**
      * 修改组合项信息
-     * author ycy
      * @param combination
      * @return
      */
@@ -28,13 +26,11 @@ public interface CombinationMapper {
 
     /**
      * 查询所有组合项，及其下的体检项
-     * zby
      * @return
      */
     List<Combination> getAllCombinationList() throws Exception;
 
     /**
-     * crf
      * 根据体检Id查询组合信息
      * @return
      */

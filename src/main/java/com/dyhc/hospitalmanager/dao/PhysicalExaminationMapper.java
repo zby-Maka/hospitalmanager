@@ -14,7 +14,6 @@ public interface PhysicalExaminationMapper {
 
     /**
      * 添加体检项目信息
-     * author ycy
      * @param physicalExamination
      * @return
      */
@@ -22,14 +21,12 @@ public interface PhysicalExaminationMapper {
 
     /**
      * 根据用户Id查询历史体检记录
-     * zby
      * @param personId 人员编号
      * @return
      */
     List<PhysicalExamination> getPersonPhysicalExaminationList(@Param("personId") Integer personId) throws Exception;
 
     /**
-     * crf
      * 根据当前日期查询体检表倒叙第一条的体检编号
      * @param medicalTime 当前时间
      * @return 返回一个检查编号
@@ -39,7 +36,6 @@ public interface PhysicalExaminationMapper {
 
     /**
      * 根据档案编号查询体检信息
-     * author ycy
      * @param archivesId
      * @return
      */
@@ -49,7 +45,6 @@ public interface PhysicalExaminationMapper {
     /**
      * 修改体检表档案编号和时间
      * @param physicalExamination
-     * author ycy
      * @return
      */
     int updPhysicalExaminationInfo(PhysicalExamination physicalExamination)throws Exception;
@@ -57,13 +52,11 @@ public interface PhysicalExaminationMapper {
     /**
      * 查询体检表最后一位倒序
      * @return
-     * author ycy
      * @throws Exception
      */
     PhysicalExamination getPhysicalExaminationIdByDesc() throws Exception;
 
     /**
-     * crf
      * 根据人员Id查询体检编号
      * @return
      * @throws Exception

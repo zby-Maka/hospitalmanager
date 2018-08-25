@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface ProposedDescriptionMapper {
 
-    /**王娇娇
+    /**
      * 科室是检查:根据结果id查建议描述表，默认显示第一条
      * @param resultId
      * @return
@@ -20,7 +20,6 @@ public interface ProposedDescriptionMapper {
 
     /**
      * 添加建议描述信息
-     *   author ycy
      * @param proposedDescription
      * @return
      */
@@ -28,7 +27,6 @@ public interface ProposedDescriptionMapper {
 
     /**
      * 修改建议描述信息
-     * author ycy
      * @param proposedDescription
      * @return
      */

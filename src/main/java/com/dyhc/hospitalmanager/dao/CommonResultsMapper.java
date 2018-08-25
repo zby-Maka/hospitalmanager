@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface CommonResultsMapper {
 
-    /**王娇娇
+    /**
      * 科室是检查:根据体检项id查常见结果表，默认显示第一条
      * @param checkId
      * @return
@@ -19,7 +19,6 @@ public interface CommonResultsMapper {
 
     /**
      * 添加常见结果信息
-     * author ycy
      * @param commonResults
      * @return
      */
@@ -27,7 +26,6 @@ public interface CommonResultsMapper {
 
     /**
      * 修改常见结果信息
-     * author ycy
      * @param commonResults
      * @return
      */

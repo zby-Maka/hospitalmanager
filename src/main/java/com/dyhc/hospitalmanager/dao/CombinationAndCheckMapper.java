@@ -15,7 +15,6 @@ import org.springframework.stereotype.Repository;
 public interface CombinationAndCheckMapper {
 
     /**
-     * 周冰洋
      * 根据组合项Id，查询其下的所有体检项
      * @param comId 组合项Id
      * @return
@@ -23,7 +22,6 @@ public interface CombinationAndCheckMapper {
     List<Check> getCheckByCombinationId(@Param("comId")Integer comId)throws  Exception;
 
     /**
-     * crf
      * 添加组合项和体检项的关系
      * @param combinationAndCheck
      * @return

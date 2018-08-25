@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface PackageAndCombinationMapper {
 
     /**
-     * crf
      * 添加套餐与组合项的关系
      * @param packageAndCombination
      * @return

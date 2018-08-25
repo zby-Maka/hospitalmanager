@@ -11,7 +11,6 @@ import java.util.List;
 @Repository
 public interface CompanyInfoMapper {
     /**
-     * 李文荣
      *  根据单位名称查询单位表
      * @param companyName 单位名称
      * @return
@@ -19,7 +18,6 @@ public interface CompanyInfoMapper {
     CompanyInfo showCompanyInfo(@Param("companyName") String companyName)throws  Exception;
 
     /**
-     * 李文荣
      * 修改单位信息
      * @param companyInfo
      * @return
@@ -27,7 +25,6 @@ public interface CompanyInfoMapper {
     Integer updCompanyInfo(CompanyInfo companyInfo)throws  Exception;
 
     /**
-     * 李文荣
      * 添加单位信息
      * @param companyInfo
      * @return

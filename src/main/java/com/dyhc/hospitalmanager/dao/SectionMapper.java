@@ -14,7 +14,6 @@ public interface SectionMapper {
 
     /**
      * 添加科室信息
-     * author ycy
      * @param section
      * @return
      */
@@ -22,7 +21,6 @@ public interface SectionMapper {
 
     /**
      * 修改科室信息
-     * author ycy
      * @param section
      * @return
      */
@@ -31,7 +29,6 @@ public interface SectionMapper {
 
     /**
      * 根据id查询科室信息
-     * author ycy
      * @param sectionId
      * @return
      */
