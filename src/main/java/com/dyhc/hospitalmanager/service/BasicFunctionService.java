@@ -62,9 +62,10 @@ public interface BasicFunctionService {
      * 添加组合项信息
      * author ycy
      * @param combination
+     * checkList 体检项集合
      * @return
      */
-    int addCombinationInfo(Combination combination);
+    int addCombinationInfo(Combination combination,List<Check>checkList);
 
     /**
      * 修改组合项信息
@@ -72,7 +73,7 @@ public interface BasicFunctionService {
      * @param combination
      * @return
      */
-    int updCombinationInfo(Combination combination);
+    int updCombinationInfo(Combination combination,List<Check>checkList);
 
 
 
@@ -81,10 +82,12 @@ public interface BasicFunctionService {
     /**
      * 添加套餐信息
      * author ycy
+     * combinationList 组合项集合
+     * checkList  体检项集合
      * @return
      * @throws Exception
      */
-    int addPackageInfo(Package pack);
+    int addPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList);
 
     /**
      * 修改套餐信息
@@ -92,7 +95,7 @@ public interface BasicFunctionService {
      * @return
      * @throws Exception
      */
-    int updPackageInfo(Package pack);
+    int updPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList);
 
 
 

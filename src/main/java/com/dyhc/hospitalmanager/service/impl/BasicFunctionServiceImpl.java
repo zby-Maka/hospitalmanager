@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.naming.ldap.PagedResultsControl;
 import java.util.List;
 
 public class BasicFunctionServiceImpl implements BasicFunctionService {
@@ -25,6 +26,12 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     private CommonResultsMapper commonResultsMapper;
     @Autowired
     private ProposedDescriptionMapper proposedDescriptionMapper;
+    @Autowired
+    private CombinationAndCheckMapper combinationAndCheckMapper;
+    @Autowired
+    private PackageAndCheckMapper packageAndCheckMapper;
+    @Autowired
+    private PackageAndCombinationMapper packageAndCombinationMapper;
 
     //----------------------------------科室维护
     @Override
@@ -89,10 +96,17 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     //----------------------------------组合项项维护
 
     @Override
-    public int addCombinationInfo(Combination combination) {
+    public int addCombinationInfo(Combination combination,List<Check>checkList) {
         int result=0;
         try {
             result=combinationMapper.addCombinationInfo(combination);
+            //添加组合与体检项的关系
+            for(Check check : checkList){
+                CombinationAndCheck combinationAndCheck = new CombinationAndCheck();
+                combinationAndCheck.setCombinationId(result);
+                combinationAndCheck.setCheckId(check.getCheckId());
+                combinationAndCheckMapper.addCombinationAndCheck(combinationAndCheck);
+            }
         } catch (Exception e) {
             logger.error("组合项添加失败!");
             e.printStackTrace();
@@ -101,7 +115,7 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     }
 
     @Override
-    public int updCombinationInfo(Combination combination) {
+    public int updCombinationInfo(Combination combination,List<Check>checkList) {
         int result=0;
         try {
             result=combinationMapper.updCombinationInfo(combination);
@@ -115,10 +129,24 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
 
     //----------------------------------套餐项维护
     @Override
-    public int addPackageInfo(Package pack) {
+    public int addPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList) {
         int result=0;
         try {
             result=packageMapper.addPackageInfo(pack);
+            //添加套餐与组合项的关系
+            for (Combination combination : combinationList){
+                PackageAndCombination packageAndCombination = new PackageAndCombination();
+                packageAndCombination.setPackageId(result);
+                packageAndCombination.setCombinationId(combination.getCombinationId());
+                packageAndCombinationMapper.addPackageAndCombination(packageAndCombination);
+            }
+            //添加套餐与体检项的关系
+            for (Check check : checkList){
+                PackageAndCheck packageAndCheck = new PackageAndCheck();
+                packageAndCheck.setPackageId(result);
+                packageAndCheck.setCheckId(check.getCheckId());
+                packageAndCheckMapper.addPackageAndCheckInfo(packageAndCheck);
+            }
         } catch (Exception e) {
             logger.error("添加套餐失败!");
             e.printStackTrace();
@@ -127,12 +155,12 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     }
 
     @Override
-    public int updPackageInfo(Package pack) {
+    public int updPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList) {
         int result=0;
         try {
             result=packageMapper.updPackageInfo(pack);
         } catch (Exception e) {
-            logger.error("添加套餐失败!");
+            logger.error("修改套餐失败!");
             e.printStackTrace();
         }
         return result;

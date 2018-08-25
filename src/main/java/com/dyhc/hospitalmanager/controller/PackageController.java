@@ -13,9 +13,4 @@ public class PackageController{
 
     @Autowired
     private PackageService packageService;
-
-    @GetMapping("/getPackage")
-    public List<Package> getPackage() {
-        return packageService.getPackage();
-    }
 }

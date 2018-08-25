@@ -37,4 +37,24 @@
             #{physicalStatu}
           );
     </insert>
+
+    <!-- 新增用户所选的套餐 -->
+    <insert id="addBatchPhyAndPackage">
+        INSERT INTO `health_examination_system`.`physical_examination_and_package` (
+          `physical_examination_and_package_id`,
+          `physical_examination_id`,
+          `package_id`,
+          `physical_statu`
+        )
+        VALUES
+        <foreach collection="packId" item="pid" index="index" separator=",">
+            (
+            null ,
+            #{physicalExaminationId},
+            #{pid},
+            0
+            )
+        </foreach>
+    </insert>
+
 </mapper>

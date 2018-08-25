@@ -10,4 +10,6 @@ public class PhysicalExaminationAndPackageServiceImpl implements PhysicalExamina
 
     @Autowired
     private PhysicalExaminationAndPackageMapper physicalExaminationAndPackageMapper;
+
+
 }

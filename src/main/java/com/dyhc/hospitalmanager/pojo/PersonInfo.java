@@ -3,7 +3,6 @@ package com.dyhc.hospitalmanager.pojo;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.security.auth.message.callback.PrivateKeyCallback;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;

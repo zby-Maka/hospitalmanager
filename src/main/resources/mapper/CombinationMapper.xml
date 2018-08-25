@@ -7,9 +7,10 @@
 
 
     <!--添加组合项信息-->
-    <insert id="addCombinationInfo">
+    <insert id="addCombinationInfo" useGeneratedKeys="true" keyProperty="combinationId" keyColumn="combination_id">
        INSERT INTO combination VALUES(null,#{sectionId},#{combinationName},#{pinyinCode},#{promptInformation},#{resultToWay},#{isSpecimen},#{specimenType},1)
     </insert>
+
 
     <!--修改组合项信息-->
     <update id="updCombinationInfo">

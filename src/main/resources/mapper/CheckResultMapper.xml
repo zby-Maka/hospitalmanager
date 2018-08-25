@@ -37,4 +37,5 @@ WHERE cr.`physical_examination_id` =#{physicalExaminationId}
             <id column="medical_events_id" property="medicalEventsId"/>
         </association>
     </resultMap>
+
 </mapper>

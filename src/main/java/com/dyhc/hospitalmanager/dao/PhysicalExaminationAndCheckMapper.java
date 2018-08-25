@@ -15,5 +15,5 @@ public interface PhysicalExaminationAndCheckMapper {
      * @param checkId 体检项Id
      * @return
      */
-    Integer addPhysicalExaminationAndCheck(@Param("physicalExaminationId") String physicalExaminationId, @Param("checkId") Integer checkId);
+    Integer addBatchPhysicalExaminationAndCheck(@Param("physicalExaminationId") String physicalExaminationId, @Param("checkId") Integer[] checkId) throws Exception;
 }
