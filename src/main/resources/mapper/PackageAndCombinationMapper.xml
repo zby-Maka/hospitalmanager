@@ -4,4 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.PackageAndCombinationMapper">
 
+    <!-- 添加套餐与组合项的关系 -->
+    <insert id="addPackageAndCombination">
+        INSERT INTO `package_and_ combination` VALUES(NULL,#{packageAndCombination.packageId},#{packageAndCombination.combinationId})
+    </insert>
+
 </mapper>

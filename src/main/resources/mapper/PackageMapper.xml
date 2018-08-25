@@ -57,7 +57,7 @@
         WHERE package_id = #{packageId}
     </select>
     <!--添加套餐信息-->
-    <insert id="addPackageInfo">
+    <insert id="addPackageInfo" useGeneratedKeys="true" keyProperty="packageId" keyColumn="package_id">
       INSERT INTO package VALUES(NULL,#{packageName},#{scopeApplication},#{note},1)
     </insert>
     <!--修改套餐信息-->

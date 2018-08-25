@@ -21,4 +21,13 @@ public interface CombinationAndCheckMapper {
      * @return
      */
     List<Check> getCheckByCombinationId(@Param("comId")Integer comId)throws  Exception;
+
+    /**
+     * crf
+     * 添加组合项和体检项的关系
+     * @param combinationAndCheck
+     * @return
+     * @throws Exception
+     */
+    Integer addCombinationAndCheck(@Param("combinationAndCheck")CombinationAndCheck combinationAndCheck)throws Exception;
 }
