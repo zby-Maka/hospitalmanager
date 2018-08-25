@@ -7,14 +7,13 @@ public interface PhysicalExaminationService {
 
     /**
      * 添加体检信息
-     * author ycy
+     * author
      * @param physicalExamination
      * @return
      */
     int addPhysicalExaminationInfo(PhysicalExamination physicalExamination);
 
     /**
-     * crf
      * 根据当前日期查询体检表倒序第一条的体检编号
      * @return
      */

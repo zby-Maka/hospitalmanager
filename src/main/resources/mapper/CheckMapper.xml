@@ -46,7 +46,7 @@ is_enable=1 where check_id=#{checkId}
   INNER JOIN `check` c ON peac.`check_id` = c.`check_id`
   WHERE pe.`physical_examination_id` = #{physicalExaminationId}
     </select>
-    <!--wjj根据体检编号查询人员在该科室下的体检项和组合项-->
+    <!--根据体检编号查询人员在该科室下的体检项和组合项-->
    <select id="getPersonCheckBySectionId" resultType="com.dyhc.hospitalmanager.pojo.Check">
        SELECT * FROM (
     SELECT c.* FROM `physical_examination` pe

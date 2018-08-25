@@ -26,6 +26,11 @@
       WHERE common_results_id=#{commonResultsId}
     </update>
 
+    <!--根据主键id查询常见结果信息-->
+    <select id="getAllCommonResultsById" resultType="com.dyhc.hospitalmanager.pojo.CommonResults">
+          SELECT * FROM common_results WHERE common_results_id=#{commonResultsId}
+      </select>
+
 
 
 </mapper>

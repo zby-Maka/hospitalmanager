@@ -1,15 +1,10 @@
 package com.dyhc.hospitalmanager;
 
-
-
-import com.alibaba.druid.sql.ast.statement.SQLForeignKeyImpl;
 import com.dyhc.hospitalmanager.pojo.CheckResult;
 import com.dyhc.hospitalmanager.pojo.MedicalEvents;
 import com.dyhc.hospitalmanager.service.SectionService;
-import com.dyhc.hospitalmanager.service.SectionTypeService;
 import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
-import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import com.dyhc.hospitalmanager.pojo.Cost;
 import com.dyhc.hospitalmanager.service.CostOfModuleService;
@@ -20,8 +15,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Map;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -80,7 +73,6 @@ public class HospitalmanagerApplicationTests {
          }
 
     /**
-     *  李文荣
      *  根据姓名和身份证查询用户信息
      * @return
      */
@@ -95,8 +87,9 @@ public class HospitalmanagerApplicationTests {
     }
 
 
-
-    //判断是检查还是检验进行相应的添加操作  wjj
+    /**
+     * 判断是检查还是检验进行相应的添加操作
+     */
     public void test21() {
              CheckResult checkResult = new CheckResult();
              checkResult.setPhysicalExaminationId("2018010102");
@@ -110,7 +103,6 @@ public class HospitalmanagerApplicationTests {
              }
          }
     /**
-     * 李文荣
      *  根据单位名称查询单位表
      * @return
      */
@@ -142,7 +134,6 @@ public class HospitalmanagerApplicationTests {
     }
 
     /**
-     * lwr
      * 添加单位分组信息
      */
     public void test06(){
@@ -164,7 +155,6 @@ public class HospitalmanagerApplicationTests {
     }
 
     /**
-     * 李文荣
      * 添加单位信息
      * @return
      */
@@ -189,7 +179,6 @@ public class HospitalmanagerApplicationTests {
     }
 
     /**
-     * 李文荣
      * 修改单位信息
      */
     public void test08(){
@@ -227,7 +216,6 @@ public class HospitalmanagerApplicationTests {
 
 
     /**
-     * 李文荣
      * 添加单位分组以及人员信息
      *  以及人员信息所属的分组信息
      *  并且添加人员信息的时候进行
@@ -296,7 +284,7 @@ public class HospitalmanagerApplicationTests {
     }
 
     /**
-     * 添加公司信息 李文荣
+     * 添加公司信息
      */
     public void addCompanyInfo(){
         CompanyInfo companyInfo = new CompanyInfo();

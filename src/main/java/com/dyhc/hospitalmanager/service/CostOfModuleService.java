@@ -7,7 +7,6 @@ import com.dyhc.hospitalmanager.pojo.PersonInfo;
 public interface CostOfModuleService {
 
     /**
-     * crf
      * 根据Id查询人员信息
      * @param personId
      * @return
