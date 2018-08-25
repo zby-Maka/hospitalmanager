@@ -65,6 +65,7 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         try {
             list=sectionMapper.getSectionInfoById(sectionId);
         } catch (Exception e) {
+            logger.error("根据主键id查询科室信息失败");
             e.printStackTrace();
         }
         return list;
@@ -205,6 +206,18 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return result;
     }
 
+    @Override
+    public List<CommonResults> getAllCommonResultsById(Integer commonResultsId) {
+        List<CommonResults>list=null;
+        try {
+            list=commonResultsMapper.getAllCommonResultsById(commonResultsId);
+        } catch (Exception e) {
+            logger.error("根据主键id查询常见结果信息失败");
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 
     //----------------------------------建议描述维护
 
@@ -230,5 +243,17 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
             e.printStackTrace();
         }
         return result;
+    }
+
+    @Override
+    public List<ProposedDescription> getAllProposedDescriptionInfoById(Integer proposedDescriptionId) {
+        List<ProposedDescription>list=null;
+        try {
+            list=proposedDescriptionMapper.getAllProposedDescriptionInfoById(proposedDescriptionId);
+        } catch (Exception e) {
+            logger.error("根据主键id查询建议描述信息失败");
+            e.printStackTrace();
+        }
+        return list;
     }
 }

@@ -126,6 +126,13 @@ public interface BasicFunctionService {
      */
     int updCommonResultsInfo(CommonResults commonResults);
 
+    /**
+     * 根据主键id查询常见结果信息
+     * @param commonResultsId
+     * @return
+     */
+    List<CommonResults> getAllCommonResultsById(@Param("commonResultsId")Integer commonResultsId);
+
 
 //----------------------------------建议描述维护
 
@@ -145,6 +152,16 @@ public interface BasicFunctionService {
      * @return
      */
     int updProposedDescriptionInfo(ProposedDescription proposedDescription);
+
+
+    /**
+     * 根据主键id查询建议描述信息
+     * author ycy
+     * @param proposedDescriptionId
+     * @return
+     * @throws Exception
+     */
+    List<ProposedDescription>getAllProposedDescriptionInfoById(@Param("proposedDescriptionId")Integer proposedDescriptionId);
 
 
 }

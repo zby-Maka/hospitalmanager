@@ -24,4 +24,9 @@
       is_delete=#{isDelete}
       WHERE `proposed_description_id`=#{proposedDescriptionId}
     </update>
+
+    <!--根据主键id查询建议描述信息-->
+    <select id="getAllProposedDescriptionInfoById" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
+         SELECT * FROM `proposed_description` WHERE `proposed_description_id`=#{proposedDescriptionId}
+     </select>
 </mapper>

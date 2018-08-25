@@ -23,4 +23,16 @@ public class CheckResultServiceImpl implements CheckResultService {
             return null;
         }
     }
+
+    @Override
+    public int addCheckResults(CheckResult checkResult) {
+        int result=0;
+        try {
+            result=checkResultMapper.addCheckResults(checkResult);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+        return result;
+    }
 }
