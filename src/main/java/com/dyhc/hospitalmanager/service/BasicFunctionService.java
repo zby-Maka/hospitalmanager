@@ -3,6 +3,7 @@ package com.dyhc.hospitalmanager.service;
 
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -30,6 +31,14 @@ public interface BasicFunctionService {
      * @return
      */
     int updSectionInfo(Section section);
+
+    /**
+     * 根据id查询科室信息
+     * author ycy
+     * @param sectionId
+     * @return
+     */
+    List<Section>getSectionInfoById(@Param("sectionId")Integer sectionId);
 
 
 //----------------------------------体检项维护

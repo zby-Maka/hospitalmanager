@@ -14,4 +14,9 @@
         update section set section_name=#{sectionName},section_type_id=#{sectionTypeId},remark=#{remark}
         where section_id=#{sectionId}
     </update>
+
+    <!--根据id查询科室信息-->
+    <select id="getSectionInfoById" resultType="com.dyhc.hospitalmanager.pojo.Section">
+    select * from section where section_id=#{sectionId}
+    </select>
 </mapper>
