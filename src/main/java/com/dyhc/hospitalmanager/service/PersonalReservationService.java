@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 个人预约业务
  */
-public interface PersonalReservation {
+public interface PersonalReservationService {
 
     /**
      * 根据身份证号查询用户信息表
@@ -27,7 +27,7 @@ public interface PersonalReservation {
      *          -2添加用户信息失败
      *          -3添加预约表失败
      */
-    int addPersonInfo(PersonInfo personInfo,Date Yudate);
+    int UserReservation(PersonInfo personInfo,Date Yudate);
 
     /**
      * 获取所有的检查项
