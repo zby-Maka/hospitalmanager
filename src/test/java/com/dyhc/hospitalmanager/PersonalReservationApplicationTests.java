@@ -4,7 +4,7 @@ import com.dyhc.hospitalmanager.pojo.Check;
 import com.dyhc.hospitalmanager.pojo.Combination;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
-import com.dyhc.hospitalmanager.service.PersonalReservation;
+import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import java.util.List;
 public class PersonalReservationApplicationTests {
 
     @Autowired
-    private PersonalReservation personalReservation;
+    private PersonalReservationService personalReservation;
 
     /**
      * 根据身份证号查询用户信息表
@@ -43,7 +43,7 @@ public class PersonalReservationApplicationTests {
     public void addPersonInfo() {
         PersonInfo personInfo = new PersonInfo();
         personInfo.setPersonIdCard("141024199703260019");
-        Integer result = personalReservation.addPersonInfo(personInfo,new Date());
+        Integer result = personalReservation.UserReservation(personInfo,new Date());
         System.out.println(result);
     }
 
