@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.PersonInfoMapper">
-    <!--李文荣  根据用户姓名与身份证号查询用户信息-->
+    <!-- 根据用户姓名与身份证号查询用户信息-->
     <select id="findPersonInfos" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
         SELECT * FROM `person_info` WHERE 1 = 1
         <if test="personName != null and personName != ''">

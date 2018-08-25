@@ -3,12 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CompanyInfoMapper">
-    <!--李文荣 根据单位名称查询单位表-->
+    <!-- 根据单位名称查询单位表-->
     <select id="showCompanyInfo" resultType="com.dyhc.hospitalmanager.pojo.CompanyInfo">
           SELECT * FROM `company_info` WHERE `company_name` = #{companyName};
     </select>
 
-    <!--李文荣 修改单位信息-->
+    <!--修改单位信息-->
     <update id="updCompanyInfo">
         UPDATE
           `health_examination_system`.`company_info`
@@ -53,7 +53,7 @@
             </if>
         </trim>
     </update>
-    <!--李文荣 添加单位信息-->
+    <!-- 添加单位信息-->
     <insert id="addCompanyInfo" useGeneratedKeys = "true" keyProperty="companyId">
         INSERT INTO `health_examination_system`.`company_info` (`company_id`,`company_name`,`spell_code`,`company_principal`,
           `telephone`,`postal_code`,`address`,`bank_name`,`bank_number`,`company_nature`,`authorized_strength`,
