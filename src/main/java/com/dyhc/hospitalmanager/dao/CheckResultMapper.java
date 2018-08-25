@@ -33,4 +33,8 @@ public interface CheckResultMapper {
      * 通过体检编号查询常见结果和建议
      */
     List<CheckResult> getCheckResults(@Param("physicalExaminationId")String physicalExaminationId) throws Exception;
+    /**
+     * 总检医生生成报告单
+     */
+    int   addCheckResults(CheckResult checkResult) throws Exception;
 }

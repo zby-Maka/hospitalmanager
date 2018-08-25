@@ -1,3 +1,4 @@
+
 2018-08-21 12:18:17.611 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-21 17:32:36.140 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-21 17:33:10.954 [http-nio-8080-exec-1] DEBUG c.d.hospitalmanager.dao.PackageMapper.getPackage - ==>  Preparing: SELECT p.*,com.*,c.*,cp.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
@@ -252,45 +253,45 @@
 2018-08-21 22:47:18.059 [main] DEBUG c.d.h.d.P.addPhysicalExaminationAndPackageMapper - <==    Updates: 1
 =======
 2018-08-22 09:03:15.915 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-22 09:03:31.695 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` 
-2018-08-22 09:03:31.793 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-08-22 09:03:31.695 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package`
+2018-08-22 09:03:31.793 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters:
 2018-08-22 09:03:31.862 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 4
-2018-08-22 09:03:31.864 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 09:03:31.864 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-22 09:03:31.873 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
 2018-08-22 09:03:31.936 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
-2018-08-22 09:03:31.937 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-22 09:03:31.937 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
 2018-08-22 09:03:31.937 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
 2018-08-22 09:03:31.994 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
-2018-08-22 09:03:31.994 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 09:03:31.994 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-22 09:03:31.995 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
 2018-08-22 09:03:32.067 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
-2018-08-22 09:03:32.067 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-22 09:03:32.067 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
 2018-08-22 09:03:32.068 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
 2018-08-22 09:03:32.123 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
-2018-08-22 09:03:32.124 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 09:03:32.124 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-22 09:03:32.124 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
 2018-08-22 09:03:32.181 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
-2018-08-22 09:03:32.182 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-22 09:03:32.182 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
 2018-08-22 09:03:32.182 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
 2018-08-22 09:03:32.238 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
-2018-08-22 09:03:32.239 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-22 09:03:32.239 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ?
 2018-08-22 09:03:32.239 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
 2018-08-22 09:03:32.296 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
-2018-08-22 09:03:32.297 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 09:03:32.297 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-22 09:03:32.298 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
 2018-08-22 09:03:32.352 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
-2018-08-22 09:03:32.352 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-22 09:03:32.352 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=?
 2018-08-22 09:03:32.352 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
 2018-08-22 09:03:32.412 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
-2018-08-22 09:03:32.412 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-22 09:03:32.412 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ?
 2018-08-22 09:03:32.413 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
 2018-08-22 09:03:32.466 [http-nio-8080-exec-1] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
 2018-08-22 10:34:23.679 [main] DEBUG c.d.h.HospitalmanagerApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-22 10:34:35.270 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 10:34:35.270 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-22 10:34:35.461 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
 2018-08-22 10:34:35.615 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
 2018-08-22 10:36:37.920 [main] DEBUG c.d.h.HospitalmanagerApplicationTests - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-22 10:36:52.909 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-22 10:36:52.909 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=?
 2018-08-22 10:36:53.180 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
 2018-08-22 10:36:53.711 [main] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 3
 <<<<<<< HEAD
@@ -324,19 +325,19 @@
 2018-08-23 17:15:45.456 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 17:17:53.188 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 17:22:55.303 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 17:23:10.463 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ? 
+2018-08-23 17:23:10.463 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ?
 2018-08-23 17:23:11.021 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==> Parameters: 2018010101(String)
 2018-08-23 17:26:48.227 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 17:26:54.025 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 17:27:07.928 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ? 
+2018-08-23 17:27:07.928 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ?
 2018-08-23 17:27:08.353 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==> Parameters: 2018010101(String)
 2018-08-23 17:27:34.803 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 17:27:44.040 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 17:27:56.221 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ? 
+2018-08-23 17:27:56.221 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ?
 2018-08-23 17:27:56.384 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==> Parameters: 2018010101(String)
 2018-08-23 17:27:56.485 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - <==      Total: 1
 2018-08-23 17:29:00.204 [main] DEBUG com.dyhc.hospitalmanager.ReoleTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 17:29:11.458 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ? 
+2018-08-23 17:29:11.458 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==>  Preparing: SELECT * FROM `check_result` cr LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id` INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id` WHERE cr.`physical_examination_id` = ?
 2018-08-23 17:29:11.643 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - ==> Parameters: 2018010101(String)
 2018-08-23 17:29:11.746 [main] DEBUG c.d.h.dao.CheckResultMapper.getCheckresults - <==      Total: 1
 2018-08-23 17:34:23.692 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
@@ -352,24 +353,24 @@
 2018-08-23 17:48:55.303 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 17:54:25.014 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 17:57:56.579 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 17:58:12.456 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=? 
+2018-08-23 17:58:12.456 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
 2018-08-23 17:58:12.599 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 123(String)
 2018-08-23 17:58:12.704 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
-2018-08-23 17:58:20.129 [http-nio-8080-exec-4] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=? 
+2018-08-23 17:58:20.129 [http-nio-8080-exec-4] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
 2018-08-23 17:58:20.129 [http-nio-8080-exec-4] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 321(String)
 2018-08-23 17:58:20.197 [http-nio-8080-exec-4] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 0
-2018-08-23 17:58:27.132 [http-nio-8080-exec-6] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=? 
+2018-08-23 17:58:27.132 [http-nio-8080-exec-6] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
 2018-08-23 17:58:27.132 [http-nio-8080-exec-6] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 123(String)
 2018-08-23 17:58:27.204 [http-nio-8080-exec-6] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
 2018-08-23 18:20:24.480 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 18:22:03.506 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-23 18:23:02.738 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-08-23 18:23:16.047 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=? 
+2018-08-23 18:23:16.047 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
 2018-08-23 18:23:16.193 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 123(String)
 2018-08-23 18:23:16.285 [http-nio-8080-exec-1] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
-2018-08-23 18:23:19.703 [http-nio-8080-exec-2] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=? 
+2018-08-23 18:23:19.703 [http-nio-8080-exec-2] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
 2018-08-23 18:23:19.704 [http-nio-8080-exec-2] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 123(String)
 2018-08-23 18:23:19.769 [http-nio-8080-exec-2] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
-2018-08-23 18:23:27.390 [http-nio-8080-exec-7] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=? 
+2018-08-23 18:23:27.390 [http-nio-8080-exec-7] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=?
 2018-08-23 18:23:27.391 [http-nio-8080-exec-7] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: wyf(String), 13(String)
 2018-08-23 18:23:27.456 [http-nio-8080-exec-7] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 0

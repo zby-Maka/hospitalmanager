@@ -103,3 +103,4 @@
 2018-08-23 18:23:02.734 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on DESKTOP-KAF6VDO with PID 6444 (E:\hospitalmanager\target\classes started by aixiaobai in E:\hospitalmanager)
 2018-08-23 18:23:02.740 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
 2018-08-23 18:23:11.272 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.403 seconds (JVM running for 15.073)
+
