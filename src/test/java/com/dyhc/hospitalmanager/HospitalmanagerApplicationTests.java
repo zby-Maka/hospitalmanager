@@ -56,6 +56,7 @@ public class HospitalmanagerApplicationTests {
      */
     @Test
     public void contextLoads() {
+        test01();
        // test20();
         //test21();
 //        addCompanyInfo();
