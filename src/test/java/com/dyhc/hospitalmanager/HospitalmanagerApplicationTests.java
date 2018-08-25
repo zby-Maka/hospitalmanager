@@ -304,13 +304,5 @@ public class HospitalmanagerApplicationTests {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
     }
-
-
-
-
-
 }
