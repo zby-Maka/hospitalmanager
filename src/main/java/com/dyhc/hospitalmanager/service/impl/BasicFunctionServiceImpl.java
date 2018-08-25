@@ -59,6 +59,18 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     }
 
 
+    @Override
+    public List<Section> getSectionInfoById(Integer sectionId) {
+        List<Section>list=null;
+        try {
+            list=sectionMapper.getSectionInfoById(sectionId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+
     //----------------------------------体检项维护
 
     @Override
