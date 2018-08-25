@@ -6,7 +6,7 @@ import com.dyhc.hospitalmanager.pojo.Combination;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
-import com.dyhc.hospitalmanager.service.PersonalReservation;
+import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,9 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class PersonalReservationImpl implements PersonalReservation {
+public class PersonalReservationServiceImpl implements PersonalReservationService {
 
-    private Logger logger = LoggerFactory.getLogger(PersonalReservationImpl.class);;
+    private Logger logger = LoggerFactory.getLogger(PersonalReservationServiceImpl.class);;
 
     //人员信息表Mapper
     @Autowired
@@ -78,7 +78,7 @@ public class PersonalReservationImpl implements PersonalReservation {
      */
     @Override
     @Transactional
-    public int addPersonInfo(PersonInfo personInfo,Date Yudate) {
+    public int UserReservation(PersonInfo personInfo,Date Yudate) {
         int result = 0;
         try {
             PersonInfo per=personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
