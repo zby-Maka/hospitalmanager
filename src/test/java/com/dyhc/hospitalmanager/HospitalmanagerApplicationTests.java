@@ -33,7 +33,6 @@ public class HospitalmanagerApplicationTests {
     private CheckMapper checkMapper;
     @Autowired
     private CheckResultMapper checkResultMapper;
-
     @Autowired
     private PackageMapper packageMapper;
     @Autowired
@@ -46,7 +45,6 @@ public class HospitalmanagerApplicationTests {
     private PhysicalExaminationAndPackageMapper physicalExaminationAndPackageMapper;
     @Autowired
     private UnitReservationService unitReservationService;
-
     @Autowired
     private CostOfModuleService costOfModuleService;
 
