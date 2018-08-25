@@ -60,7 +60,7 @@ public class HospitalmanagerApplicationTests {
         //test21();
 //        addCompanyInfo();
     }
-    //科室是检查的时候查询检查结果和建议   wjj
+    //科室是检查的时候查询检查结果和建议
      public void test20(){
          Map<String,Object> map=null;
          try {
