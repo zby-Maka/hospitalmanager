@@ -20,7 +20,7 @@ $(function() {
 	});
 
 	//获取体检项
-	$("input[name='checkItem'],input[name='combineItem'],input[name='packageItem']").change(function() {
+	$("input[name='checkItem'],input[name='combineItem'],input[name='packageItem']").on("change",function() {
 		var result = $(this).parent().text();
 		//判断是否选中
 		var check = $(this).prop("checked");
@@ -32,11 +32,11 @@ $(function() {
 		}
 	});
 	
-	$("input[name='combineItem'],input[name='packageItem']").mouseenter(function(){
+	$("input[name='combineItem'],input[name='packageItem']").on("mouseenter",function(){
 		var result=$(this).children("input").val();
 		$(".childBox").show();
 	});
-	$("input[name='combineItem'],input[name='packageItem']").mouseleave(function(){
+	$("input[name='combineItem'],input[name='packageItem']").on("mouseleave",function(){
 		var result=$(this).children("input").val();
 		$(".childBox").hide();
 	});
