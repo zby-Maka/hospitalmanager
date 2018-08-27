@@ -37,10 +37,10 @@ public class SectionServiceImpl implements SectionService {
         Map<String,Object> maplist=null;
         try {
             maplist=new HashMap<>();
-            List<Check> list=checkMapper.getPersonCheckBySectionId(peacId,sectionId);
-            List<PersonInfo> list1=personInfoMapper.getPersonBypeacId(peacId);
-            maplist.put("list",list);
-            maplist.put("list1",list1);
+            List<Check> map=checkMapper.getPersonCheckBySectionId(peacId,sectionId);
+            List<PersonInfo> map1=personInfoMapper.getPersonBypeacId(peacId);
+            maplist.put("map",map);
+            maplist.put("map1",map1);
         }catch (Exception e){
             logger.error("您的查询有误");
             e.printStackTrace();

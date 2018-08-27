@@ -27,6 +27,12 @@ public class SectionController {
         Map<String,Object> map = sectionService.getPersonCheckBySectionId(peacId, 1);
         return JSON.toJSONString(map);
     }
+    @RequestMapping("ResultAndProposed.html")
+    @ResponseBody
+    public String getResultAndProposed(@RequestParam("checkId")Integer checkId, @RequestParam("resultId")Integer resultId){
+        Map<String,Object> map=sectionService.getCheckResultAndProposed(checkId,resultId,1);
+        return JSON.toJSONString(map);
+    }
 
 
 
