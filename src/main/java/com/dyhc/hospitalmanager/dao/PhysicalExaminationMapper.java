@@ -63,4 +63,5 @@ public interface PhysicalExaminationMapper {
      */
     String getPhysicalExaminationByPersonId(@Param("personId")Integer personId)throws Exception;
 
+
 }

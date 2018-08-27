@@ -13,26 +13,26 @@
 					<tr>
 						<td colspan="4" align="center">
 							<span>体检编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physical_examination_id" size="40" style="height:30px; font-size: 16px;"/>
-							<input type="button" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;"/>
+							<input type="button" class="select" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;"/>
 						</td>
 					</tr>
 					<tr>
-						<td align="center">姓名:XXXX</td>
-						<td align="center">年龄:XXXX</td>
-						<td align="center">性别:XXXX</td>
-						<td align="center">婚否:XXXX</td>
+						<td align="center">姓名:<label name="personName"/></td>
+						<td align="center">年龄:<label  name="personAge"/></td>
+						<td align="center">性别:<label  name="personSex"/></td>
+						<td align="center">婚否:<label  name="isMarry"/></td>
 					</tr>
 				</thead>
 			</table>
 			<div style="width:100%; height: 500px;">
-				<div style="width: 180px; height: 500px; float: left;">
-					<p align="center" style="color: red; font-size: 18px; margin-top: 16px; margin-bottom: 10px;">体&nbsp;检&nbsp;项</p>
-					<ul>
-						<a href="#"><li>体重</li></a>
-						<a href="#"><li>身高</li></a>
-						<a href="#"><li>视力</li></a>
-						<a href="#"><li>听力</li></a>
-						<a href="#"><li>肺活量</li></a>
+				<div style="width: 180px; height: 500px; float: left;" >
+					<p align="center" style="color: red; font-size: 18px; margin-top: 16px; margin-bottom: 10px;" >体&nbsp;检&nbsp;项</p>
+					<ul id="check">
+						<!--<a href="#"><li>体重</li></a>-->
+						<!--<a href="#"><li>身高</li></a>-->
+						<!--<a href="#"><li>视力</li></a>-->
+						<!--<a href="#"><li>听力</li></a>-->
+						<!--<a href="#"><li>肺活量</li></a>-->
 					</ul>
 				</div>
 				<div style="width: 730px; height: 500px; float: right;">
@@ -73,8 +73,29 @@
 			$("ul").on("mouseout","li",function(){
 				$(this).css("background","greenyellow");
 			});
+            $(".select").click(function () {
+                getPerson();
+            })
 		});
-		
+	  function  getPerson() {
+	      var peacId=$("input[name=physical_examination_id]").val();
+		  $.getJSON("http://localhost:8080/Person.html",{"peacId":peacId},function (date) {
+            $.each(date.map1,function (i,m) {
+                alert(m.personName);
+                $("label[name=personName]").text(m.personName);
+                $("label[name=personAge]").text(m.personAge);
+                $("label[name=personSex]").text(m.personSex);
+                $("label[name=isMarry]").text(m.isMarry);
+            });
+            console.log(date);
+            alert(date.map);
+            var content="<ul></ul>";
+            $.each(date.map,function (b,n) {
+                    content+="<a href=\"#\"><li>"+n.checkName+"</li></a>"
+            });
+            $("#check").html(content);
+          });
+      }
 		
 	</script>
 </html>

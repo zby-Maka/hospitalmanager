@@ -14,6 +14,16 @@ public class RoleInfoController{
 
     @Autowired
     private RoleInfoService roleInfoService;
+
+    /**
+     * 用户选择登录
+     * @param userName
+     * @param password
+     * @param roletypeid
+     * @param session
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "login.do")
     public String getLogin(String userName, String password, Integer roletypeid, HttpSession session) throws  Exception{
         RoleInfo roleInfo=roleInfoService.getRoleInfoLogin(userName,password);
