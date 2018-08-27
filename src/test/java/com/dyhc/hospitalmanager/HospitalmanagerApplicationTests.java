@@ -60,16 +60,16 @@ public class HospitalmanagerApplicationTests {
 //        addCompanyInfo();
     }
     //科室是检查的时候查询检查结果和建议
-     public void test20(){
-         Map<String,Object> map=null;
-         try {
-             map =sectionService.getCheckResultAndProposed(1,2,1);
-             System.out.println(map.get("list"));
-             System.out.println(map.get("list1"));
-         }catch (Exception e){
-             e.printStackTrace();
-         }
-         }
+//     public void test20(){
+//         Map<String,Object> map=null;
+//         try {
+//             map =sectionService.getCheckResultAndProposed(1,2,1);
+//             System.out.println(map.get("list"));
+//             System.out.println(map.get("list1"));
+//         }catch (Exception e){
+//             e.printStackTrace();
+//         }
+//         }
 
     /**
      *  根据姓名和身份证查询用户信息
