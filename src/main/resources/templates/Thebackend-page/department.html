@@ -17,7 +17,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td align="center">姓名:XXXX</td>
+						<td align="center"><input type="text" name="">姓名:XXXX</td>
 						<td align="center">年龄:XXXX</td>
 						<td align="center">性别:XXXX</td>
 						<td align="center">婚否:XXXX</td>
@@ -74,7 +74,14 @@
 				$(this).css("background","greenyellow");
 			});
 		});
-		
+	  function  getPerson() {
+	      var peacId=$("input[name=physical_examination_id]").val();
+		  $.getJSON("http://localhost:8080/Person.html",{"peacId":peacId},function (date) {
+            $.each(date.list,function (i,e) {
+				var
+            })
+          })
+      }
 		
 	</script>
 </html>
