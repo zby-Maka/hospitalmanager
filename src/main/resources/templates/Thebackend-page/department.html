@@ -91,11 +91,17 @@
             alert(date.map);
             var content="<ul></ul>";
             $.each(date.map,function (b,n) {
-                    content+="<a href=\"#\"><li>"+n.checkName+"</li></a>"
+                    content+="<a href=\"#\" onclick='result("+n.checkId+")'><li>"+n.checkName+"</li></a>"
             });
             $("#check").html(content);
           });
       }
+      function  result(checkId) {
+		  $.getJSON("http://localhost:8080/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
+			   $("")
+          });
+      }
+
 		
 	</script>
 </html>

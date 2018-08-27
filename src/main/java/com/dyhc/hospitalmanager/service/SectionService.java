@@ -17,14 +17,19 @@ public interface SectionService {
      */
     Map<String,Object> getPersonCheckBySectionId(@Param("peacId")String peacId, @Param("sectionId")Integer sectionId);
 
-
     /**
      * 科室是检查:根据体检项id查常见结果表，默认显示第一条
-     * 科室是检查:根据结果id查建议描述表，默认显示第一条
      * @param checkId
      * @return
      */
-    Map<String,Object> getCheckResultAndProposed(@Param("checkId")Integer checkId, @Param("resultId") Integer resultId,Integer sectionId);
+    List<CommonResults> getCommResultsByCheckId(@Param("checkId")Integer checkId,Integer sectionId);
+
+    /**
+     * 科室是检查:根据结果id查建议描述表，默认显示第一条
+     * @param resultId
+     * @return
+     */
+    List<ProposedDescription> getProposedByResultId(@Param("resultId") Integer resultId,Integer sectionId);
 
 
     /**
