@@ -74,7 +74,9 @@
 					<table>
 						<tr>
 							<td>单位名称：</td>
-							<td><input type="text" class="input" name="companyName" /></td>
+							<td>
+								<input type="hidden" class="input" name="companyId" />
+								<input type="text" class="input" name="companyName" /></td>
 						</tr>
 						<tr>
 							<td>拼音简码：</td>
@@ -113,7 +115,7 @@
 							<td colspan="2">
 								<a href="#" name="download">下载</a>
 								<a href="#" name="upload">上传</a>
-								<input type="button" value="确定" name="confirm" class="button"/>
+								<input type="button" value="确定" name="confirm" class="button" />
 								<input type="reset" value="取消" name="cancel" class="button"/>
 							</td>
 						</tr>
@@ -128,5 +130,6 @@
 		<script src="/js/common.js"></script>
 		<script src="/js/index.js"></script>
 		<script src="/js/booking.js"></script>
+		<script src="/js/companybooking.js"></script>
 	</body>
 </html>
