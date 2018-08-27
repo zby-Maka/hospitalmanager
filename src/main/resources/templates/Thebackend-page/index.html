@@ -1,0 +1,82 @@
+<html>
+
+	<head>
+		<title>QR-Code Clock</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../css/code128.css" />
+		<!--<link rel="stylesheet" href="code128.css" type="text/css" media="screen" charset="utf-8">-->
+		<script type="text/javascript" src="../js/code128.js"></script>
+		<!--<script src="code128.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			(function(divId) {
+				var divElement, oldOnLoad = window.onload;
+
+				function getTimeString() {
+					var pad = function(n) {
+							return n < 10 ? '0' + n.toString(10) : n.toString(10);
+						},
+						dt = new Date();
+					return [pad(dt.getHours()), pad(dt.getMinutes()), pad(dt.getSeconds())].join(':');
+				}
+				function UpdateClock() {
+					var timeText = getTimeString();
+					divElement.innerHTML = code128(timeText);
+				}
+				window.onload = function() {
+					createBarcode('div128','2015-08-08','A');
+					divElement = document.getElementById(divId);
+					UpdateClock();
+					setInterval(UpdateClock, 1000);
+					if(typeof oldOnLoad == 'function') oldOnLoad.apply(this, arguments);
+				}
+			})('div1');
+		</script>
+	</head>
+	<body>
+		<input type="button" value="生成" onclick="createBarcode('div128','2015-08-08','A');" />
+
+		<div style="width: 210mm; height: 297mm;">
+			<div style="width: 180mm; height: 12mm;border-bottom: 1px solid black;text-align:center;margin-left: 15mm;">
+				<h2>太原市小店区三甲大院体检指引单</h2>
+			</div>
+			<div style="width: 180mm; margin-left: 15mm;border-bottom: 1px solid black;height: 30mm;">
+				<div style="font-size: 14px;padding-top:5mm;float: left;">
+					姓名：<label>春意</label>&nbsp;&nbsp;&nbsp;&nbsp;性別：<label>男性</label>&nbsp;&nbsp;&nbsp;&nbsp;年齡：<label>30</label>&nbsp;&nbsp;&nbsp;&nbsp;
+					日期：<label>2016-05-05</label>
+					<br /><br />
+					工作单位：<label>个人</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					联系电话：<label>13546247909</label>
+				</div>
+				<div class="barcode2" id="div128"style="float: right;margin-top: -15mm;" ></div>
+			</div>
+			
+			<div style="width: 180mm; margin-left: 15mm;border-bottom: 1px solid black;">
+				<div style="width: 90mm;float: left;">
+					<h3 style="display: block; text-align: center;width: 90mm;line-height: 40px;margin-top: 1mm;">体检项目</h3>
+				</div>
+				<div style="width: 90mm;float: right;">
+					<h3 style="display: block; text-align: center;width: 90mm; line-height: 40px;margin-top: 1mm;">备注</h3>
+				</div>
+			</div>
+			
+			<div style="width: 180mm;  margin-left: 15mm;">
+				<div style="width: 90mm;float: left;border-top: 1px solid black; margin-top: 20px;">
+					<div style="margin-left: 5mm;">1:<label>身高</label></div>
+				</div>
+				<div style="width: 90mm;float: left;text-align: center;border-top: 1px solid black; margin-top: 20px;">
+					<label>123奥斯卡觉得噶框时间
+					</label>
+				</div>
+			</div>
+			<div style="width: 180mm;  margin-left: 15mm;">
+				<div style="width: 90mm;float: left;border-top: 1px solid black; margin-top: 20px;">
+					<div style="margin-left: 5mm;">1:<label>身高</label></div>
+				</div>
+				<div style="width: 90mm;float: left;text-align: center;border-top: 1px solid black; margin-top: 20px;">
+					<label>去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201去二楼 201
+					</label>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

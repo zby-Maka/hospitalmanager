@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>体检项</title>
+	</head>
+
+	<body>
+		<h2 style="display: block;text-align: center;">体检项信息</h2>
+		<div style="margin: 0 auto;width: 60%; height: 279mm;background-color: red;">
+			<form>
+			<table>
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">是否启用：</td>
+					<td colspan="3" width="300mm">
+						<input type="radio" value="1" name="yesorno" />是
+						<input type="radio" value="0" name="yesorno" />否
+					</td>
+				</tr>
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">所属科室：</td>
+					<td colspan="3">
+						<input type="text" readonly="readonly" name="keshi" value="" />
+					</td>
+				</tr>
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">体检项名称：</td>
+					<td><input type="text" name="tjName" id="tjName" value="" /></td>
+					<td style="text-align: right;">拼音简码：</td>
+					<td><input type="text" name="pyjm" value="" /></td>
+				</tr>
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">适合性别：</td>
+					<td colspan="3" width="300mm">
+						<input type="radio" value="1" name="sex" />男
+						<input type="radio" value="0" name="sex" />女
+					</td>
+				</tr>
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">位置提示信息：</td>
+					<td colspan="3"><input type="text" name="address" value="" /></td>
+				</tr>
+
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">参考上限：</td>
+					<td><input type="text" name="cksx" value="" /></td>
+					<td style="text-align: right;">参考下限：</td>
+					<td><input type="text" name="dw" value="" /></td>
+				</tr>
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">最大值：</td>
+					<td><input type="text" name="zdz" value="" /></td>
+					<td style="text-align: right;">最小值：</td>
+					<td><input type="text" name="zxz" value="" /></td>
+				</tr>
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">偏高提示：</td>
+					<td><input type="text" name="pgts" value="" /></td>
+					<td style="text-align: right;">偏低提示：</td>
+					<td><input type="text" name="pdts" value="" /></td>
+				</tr>
+				<tr style="height: 50px;">
+					<td style="text-align: right;" width="150mm">备注：</td>
+					<td colspan="3">
+						<textarea cols="80" rows="10">
+						
+						</textarea>
+					</td>
+				</tr>
+			</table>
+			<input type="button" value="提交" />
+			<input type="reset" value="重置" />
+			</form>
+		</div>
+	</body>
+
+</html>

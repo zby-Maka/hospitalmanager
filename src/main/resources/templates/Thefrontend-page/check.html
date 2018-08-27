@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>选择体检项</title>
+		<script src="/js/jquery-3.2.1.js"></script>
+		<script src="/js/check.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/check.css" />
+	</head>
+
+	<body>
+		<div class="tab_menu" id="body">
+			<ul>
+				<li>
+					<a class="selected" href="#">体检项</a>
+				</li>
+				<li>
+					<a href="#">组合项</a>
+				</li>
+				<li>
+					<a href="#">套餐</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab_box">
+			<div>
+				<table>
+					<tr>
+						<td name="t"><input type="checkbox" name="checkItem" value="t1" />身高</td>
+						<td name="t"><input type="checkbox" name="checkItem" value="t2" />体重</td>
+						<td name="t"><input type="checkbox" name="checkItem" value="t3" />血压</td>
+						<td name="t"><input type="checkbox" name="checkItem" value="t4" />血脂</td>
+						<td name="t"><input type="checkbox" name="checkItem" value="t5" />血糖</td>
+					</tr>
+				</table>
+			</div>
+			<div class="hide">
+				<table>
+					<tr>
+						<td name="c"><input type="checkbox" name="combineItem" value="c1" />内科</td>
+						<td name="c"><input type="checkbox" name="combineItem" value="c2" />外科</td>
+						<td name="c"><input type="checkbox" name="combineItem" value="c3" />儿科</td>
+						<td name="c"><input type="checkbox" name="combineItem" value="c4" />五官科</td>
+						<td name="c"><input type="checkbox" name="combineItem" value="c5" />耳鼻喉科</td>
+					</tr>
+				</table>
+			</div>
+			<div class="hide">
+				<table>
+					<tr>
+						<td name="p"><input type="checkbox" name="packageItem" value="p1"/>家庭套餐</td>
+						<td name="p"><input type="checkbox" name="packageItem" value="p2" />老人套餐</td>
+						<td name="p"><input type="checkbox" name="packageItem" value="p3" />妇女套餐</td>
+						<td name="p"><input type="checkbox" name="packageItem" value="p4" />儿童套餐</td>
+						<td name="p"><input type="checkbox" name="packageItem" value="p5" />男士套餐</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="checked"></div>
+		<div style=" width: 500px; height: 50px; margin-left: 300px; text-align: center;">
+			<input type="button" name="back" value="上一步" class="button" />
+			<input type="button" name="submit" value="确定预约" class="button" />
+		</div>
+		<div class="childBox">
+			<table>
+					<tr>
+						<td style="font-weight: bolder; text-align: center;">身高</td>
+						<td style="font-weight: bolder; text-align: center;">体重</td>
+						<td style="font-weight: bolder; text-align: center;">血压</td>
+						<td style="font-weight: bolder; text-align: center;">血脂</td>
+						<td style="font-weight: bolder; text-align: center;">血糖</td>
+					</tr>
+				</table>
+		</div>
+	</body>
+</html>

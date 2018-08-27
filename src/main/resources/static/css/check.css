@@ -1,0 +1,93 @@
+* {
+	margin: 0 auto;
+}
+
+#body {
+	margin-top: 50px;
+	margin-left: 300px;
+}
+
+.button {
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	margin: 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+	border-top-left-radius: 5em;
+	border-top-right-radius: 5em;
+	border-bottom-left-radius: 5em;
+	border-bottom-right-radius: 5em;
+}
+
+.check{
+	text-align: center;
+	margin-left: 25px;
+	line-height: 45px;
+}
+
+body {
+	background-image: url(../images/common/5a2be376994f8.jpg);
+	background-size: 100%;
+}
+
+td {
+	line-height: 45px;
+	width: 96px;
+}
+
+.childBox{
+	position:absolute;
+	right:50px;
+	top: 100px;;
+	width: 500px;
+	height:500px;
+	display: none;
+}
+
+.checked {
+	border: 1px solid #CCCCCC;
+	width: 500px;
+	height: 120px;
+	margin-left: 300px;
+	margin-top: 10px;
+	background-color: #f8f8f8;
+}
+
+.tab_box {
+	margin-left: 300px;
+	width: 500px;
+	height: 300px;
+	-moz-opacity: 0;
+	border-radius: 4px;
+	overflow: auto;
+}
+
+.selected {
+	background-color: white;
+	color: black;
+}
+
+.tab_menu ul li {
+	font-weight: bolder;
+	-moz-opacity: 0;
+	width: 164px;
+	display: inline-block;
+	text-align: center;
+}
+
+.tab_menu ul li a {
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.hide {
+	display: none;
+}

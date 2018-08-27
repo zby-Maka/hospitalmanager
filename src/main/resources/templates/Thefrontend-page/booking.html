@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>预约</title>
+		<script src="/js/jquery-3.2.1.js"></script>
+		<script src="/js/jQuery.Hz2Py-min.js.js"></script>
+		<script src="/js/getBankNameByCardId.js"></script>
+		<script src="/js/common.js"></script>
+		<script src="/js/index.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/index.css" />
+	</head>
+
+	<body>
+		<div class="tab_menu" id="body">
+			<ul>
+				<li>
+					<a class="selected" href="#">个人预约</a>
+				</li>
+				<li>
+					<a href="#">单位预约</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab_box">
+			<div>
+				<form>
+					<table>
+						<tr>
+							<td>姓名：</td>
+							<td><input type="text" class="input" name="personName" /></td>
+						</tr>
+						<tr>
+							<td>拼音简码：</td>
+							<td><input type="text" class="input" name="personNameSpellCode" readonly="readonly" style="background-color: #ccc;border: 0; padding: 2px;" /></td>
+						</tr>
+						<tr>
+							<td>身份证号：</td>
+							<td><input type="text" class="input" name="personIdCard" /></td>
+							<td class="error" name="checkIdCard"></td>
+						</tr>
+						<tr>
+							<td>年龄：</td>
+							<td><input type="text" class="input" name="personAge" readonly="readonly" style="background-color: #ccc;border: 0; padding: 2px;" /></td>
+						</tr>
+						<tr>
+							<td>出生日期：</td>
+							<td><input type="text" class="input" name="personBirthday" readonly="readonly" style="background-color: #ccc;border: 0; padding: 2px;" /></td>
+						</tr>
+						<tr>
+							<td>性别：</td>
+							<td><input type="text" class="input" name="personSex" readonly="readonly" style="background-color: #ccc;border: 0; padding: 2px;" /></td>
+						</tr>
+						<tr>
+							<td>婚否：</td>
+							<td><input type="radio" name="isMarry" value="未婚" checked="checked" />未婚<input type="radio" name="isMarry" value="已婚" style="margin-left: 30px;" />已婚</td>
+						</tr>
+						<tr>
+							<td>联系电话：</td>
+							<td><input type="text" class="input" name="personTelephone" /></td>
+							<td class="error" name="checkTelephone"></td>
+						</tr>
+						<tr>
+							<td>联系地址：</td>
+							<td><input type="text" class="input" name="personAddress" /></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="button" value="下一步" name="next" class="button"/>
+								<input type="reset" value="取消" name="cancel" class="button"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="hide">
+				<form>
+					<table>
+						<tr>
+							<td>单位名称：</td>
+							<td><input type="text" class="input" name="companyName" /></td>
+						</tr>
+						<tr>
+							<td>拼音简码：</td>
+							<td><input type="text" class="input" name="spellCode" readonly="readonly" style="background-color: #ccc;border: 0; padding: 2px;" /></td>
+						</tr>
+						<tr>
+							<td>负责人：</td>
+							<td><input type="text" class="input" name="companyPrincipal" /></td>
+						</tr>
+						<tr>
+							<td>联系电话：</td>
+							<td><input type="text" class="input" name="telephone"/></td>
+						</tr>
+						<tr>
+							<td>联系地址：</td>
+							<td><input type="text" class="input" name="address"/></td>
+						</tr>
+						<tr>
+							<td>银行账号：</td>
+							<td><input type="text" class="input" name="bankNumber"/></td>
+							<td class="error" name="checkBankNumber"></td>
+						</tr>
+						<tr>
+							<td>银行名称：</td>
+							<td><input type="text" class="input" name="banName" readonly="readonly" style="background-color: #ccc;border: 0; padding: 2px;"/></td>
+						</tr>
+						<tr>
+							<td>企业性质：</td>
+							<td><input type="text" class="input" name="companyNature" /></td>
+						</tr>
+						<tr>
+							<td>编制人数：</td>
+							<td><input type="text" class="input" name="authorizedStrength" /></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<a href="#" name="download">下载</a>
+								<a href="#" name="upload">上传</a>
+								<input type="button" value="确定" name="confirm" class="button"/>
+								<input type="reset" value="取消" name="cancel" class="button"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
