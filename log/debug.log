@@ -9,3 +9,279 @@
 2018-08-27 09:16:25.402 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-27 09:17:16.443 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
 2018-08-27 09:17:30.773 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 09:23:15.092 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 09:35:12.306 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 09:53:31.722 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 09:54:11.689 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 09:58:05.837 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:10:37.905 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:12:30.398 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:12:53.968 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:12:54.053 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:12:54.254 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:22:00.062 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:22:21.922 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:22:21.978 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:22:22.057 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:22:49.424 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:23:02.796 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:23:02.851 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:23:02.923 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:26:38.404 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:28:21.845 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:28:21.904 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:28:21.981 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:29:48.723 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:30:02.469 [http-nio-8080-exec-8] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:30:02.526 [http-nio-8080-exec-8] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:30:02.600 [http-nio-8080-exec-8] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:32:35.572 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:32:53.330 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:32:53.386 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:32:53.471 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:33:17.783 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:33:17.783 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:33:17.840 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:33:26.384 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:38:03.268 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:38:03.325 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:38:03.410 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:38:21.572 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:38:42.412 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:38:42.466 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:38:42.540 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:46:06.777 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 10:47:06.409 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 10:47:06.469 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 10:47:06.550 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 10:51:47.834 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:00:48.799 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:00:48.868 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:00:48.965 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:01:05.930 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:01:34.228 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:01:34.284 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:01:34.355 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:10:51.333 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:10:51.334 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:10:51.390 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:11:38.762 [http-nio-8080-exec-8] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:11:38.762 [http-nio-8080-exec-8] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:11:38.827 [http-nio-8080-exec-8] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:17:43.607 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:18:01.646 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:18:01.704 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:18:01.780 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:18:31.656 [http-nio-8080-exec-7] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:18:31.656 [http-nio-8080-exec-7] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:18:31.717 [http-nio-8080-exec-7] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:19:06.148 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:19:06.148 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:19:06.205 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:19:22.836 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:19:22.837 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:19:22.902 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:19:57.757 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:19:57.757 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:19:57.814 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:22:29.718 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:22:49.781 [http-nio-8080-exec-2] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:22:49.836 [http-nio-8080-exec-2] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:22:49.916 [http-nio-8080-exec-2] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:24:10.030 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:24:34.047 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:24:34.106 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:24:34.191 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:25:42.347 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:25:56.985 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:25:57.041 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:25:57.118 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:27:50.342 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:28:08.317 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:28:08.382 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:28:08.462 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:28:35.737 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:28:46.339 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:28:46.393 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:28:46.559 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:30:34.430 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:31:02.404 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:31:02.470 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:31:02.699 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:31:12.994 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:31:12.994 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:31:13.086 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:31:39.611 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:31:53.451 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:31:53.529 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:31:53.611 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:32:14.461 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:32:14.462 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:32:14.532 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:44:32.714 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:45:44.673 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:45:44.730 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:45:44.807 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:46:17.287 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:46:30.698 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:46:30.762 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:46:30.873 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:47:09.006 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:47:28.696 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:47:28.759 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:47:28.856 [http-nio-8080-exec-3] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:48:19.017 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:48:36.091 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:48:36.158 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:48:36.237 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:50:46.901 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:51:35.663 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:52:01.759 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:52:01.822 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:52:01.894 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:52:22.926 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:53:08.099 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 11:53:08.164 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 11:53:08.248 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 11:53:46.502 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:54:00.393 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 11:59:27.756 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 12:00:12.385 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 12:00:12.448 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 12:00:12.533 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 12:00:28.176 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 12:00:28.176 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 12:00:28.242 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 12:00:50.422 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 12:01:45.425 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 12:01:45.502 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 12:01:45.573 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 12:02:31.459 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 12:02:31.459 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 12:02:31.519 [http-nio-8080-exec-9] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 12:05:58.647 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 12:14:58.493 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 12:16:16.182 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 12:17:00.146 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-08-27 12:17:00.206 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-08-27 12:17:00.279 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-08-27 12:17:09.103 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` 
+2018-08-27 12:17:09.103 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` 
+2018-08-27 12:17:09.105 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-08-27 12:17:09.105 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-08-27 12:17:09.118 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` 
+2018-08-27 12:17:09.121 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-08-27 12:17:09.168 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 4
+2018-08-27 12:17:09.169 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 4
+2018-08-27 12:17:09.170 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:09.172 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-08-27 12:17:09.186 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 4
+2018-08-27 12:17:09.232 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-27 12:17:09.234 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:09.234 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-08-27 12:17:09.292 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:17:09.292 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:09.293 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-08-27 12:17:09.360 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-27 12:17:09.360 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:09.360 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-08-27 12:17:09.419 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:17:09.420 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:09.420 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-08-27 12:17:09.481 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-27 12:17:09.481 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:09.482 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-08-27 12:17:09.537 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:17:09.538 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-27 12:17:09.538 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-08-27 12:17:09.598 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-27 12:17:09.598 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:09.598 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-08-27 12:17:09.660 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-27 12:17:09.661 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:09.661 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-08-27 12:17:09.715 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-08-27 12:17:09.716 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-27 12:17:09.716 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-08-27 12:17:09.775 [http-nio-8080-exec-6] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-27 12:17:11.006 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` 
+2018-08-27 12:17:11.006 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` 
+2018-08-27 12:17:11.006 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-08-27 12:17:11.007 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-08-27 12:17:11.022 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` 
+2018-08-27 12:17:11.022 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-08-27 12:17:11.064 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 4
+2018-08-27 12:17:11.073 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 4
+2018-08-27 12:17:11.075 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:11.076 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-08-27 12:17:11.093 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 4
+2018-08-27 12:17:11.148 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-27 12:17:11.149 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:11.149 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-08-27 12:17:11.217 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:17:11.218 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:11.218 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-08-27 12:17:11.279 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-27 12:17:11.280 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:11.280 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-08-27 12:17:11.345 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:17:11.346 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:11.346 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-08-27 12:17:11.413 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-27 12:17:11.413 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:11.414 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-08-27 12:17:11.475 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:17:11.476 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-27 12:17:11.476 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-08-27 12:17:11.551 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-27 12:17:11.552 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:11.552 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-08-27 12:17:11.612 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-27 12:17:11.613 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:17:11.613 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-08-27 12:17:11.682 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-08-27 12:17:11.683 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-27 12:17:11.683 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-08-27 12:17:11.752 [http-nio-8080-exec-2] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-27 12:23:57.623 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 12:28:32.572 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 12:28:51.554 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-27 12:29:31.049 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` 
+2018-08-27 12:29:31.049 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` 
+2018-08-27 12:29:31.049 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` 
+2018-08-27 12:29:31.147 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-08-27 12:29:31.147 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-08-27 12:29:31.147 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-08-27 12:29:31.223 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 4
+2018-08-27 12:29:31.224 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 4
+2018-08-27 12:29:31.228 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 4
+2018-08-27 12:29:31.228 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:29:31.232 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-08-27 12:29:31.297 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-27 12:29:31.298 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:29:31.298 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-08-27 12:29:31.356 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:29:31.356 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:29:31.356 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-08-27 12:29:31.419 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-27 12:29:31.420 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:29:31.421 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-08-27 12:29:31.499 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:29:31.500 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:29:31.500 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-08-27 12:29:31.556 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-27 12:29:31.558 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:29:31.558 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-08-27 12:29:31.625 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-27 12:29:31.626 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-27 12:29:31.626 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-08-27 12:29:31.683 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-27 12:29:31.684 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:29:31.684 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-08-27 12:29:31.745 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-27 12:29:31.746 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-27 12:29:31.746 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-08-27 12:29:31.811 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-08-27 12:29:31.812 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-27 12:29:31.812 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-08-27 12:29:31.884 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1

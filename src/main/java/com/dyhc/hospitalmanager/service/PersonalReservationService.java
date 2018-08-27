@@ -3,6 +3,8 @@ package com.dyhc.hospitalmanager.service;
 import com.dyhc.hospitalmanager.pojo.Check;
 import com.dyhc.hospitalmanager.pojo.Combination;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.Date;
 import java.util.List;
 
@@ -26,8 +28,13 @@ public interface PersonalReservationService {
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
+     *          -4用户选择套餐失败
+     *          -5用户选择体检项失败
+     *          -6用户选择体检项失败
      */
-    int UserReservation(PersonInfo personInfo,Date Yudate);
+    int UserReservation(PersonInfo personInfo,Date Yudate,@RequestParam("packId[]") Integer[] packId,
+                        @RequestParam("comId[]") Integer[] comId,
+                        @RequestParam("checkId[]") Integer[] checkId);
 
     /**
      * 获取所有的检查项

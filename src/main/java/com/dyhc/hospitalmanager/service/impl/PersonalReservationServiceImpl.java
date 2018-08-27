@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -75,10 +77,15 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
+     *          -4用户选择套餐失败
+     *          -5用户选择体检项失败
+     *          -6用户选择体检项失败
      */
     @Override
-    @Transactional
-    public int UserReservation(PersonInfo personInfo,Date Yudate) {
+    @Transactional(rollbackFor=Exception.class)
+    public int UserReservation(PersonInfo personInfo,Date Yudate,@RequestParam("packId[]") Integer[] packId,
+                               @RequestParam("comId[]") Integer[] comId,
+                               @RequestParam("checkId[]") Integer[] checkId) {
         int result = 0;
         try {
             PersonInfo per=personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
@@ -116,6 +123,24 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                 //添加用户预约编号失败
                 logger.error("添加用户预约编号失败");
                 return -3;
+            }
+            if(packId!=null)
+                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(phyNo,packId);
+            if(result<0){
+                logger.error("用户选择套餐失败");
+                return -4;
+            }
+            if(comId!=null)
+            result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(phyNo,comId);
+            if(result<0){
+                logger.error("用户选择体检项失败");
+                return -5;
+            }
+            if(checkId!=null)
+            result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(phyNo,checkId);
+            if(result<0){
+                logger.error("用户选择体检项失败");
+                return -6;
             }
         } catch (Exception e) {
             logger.error("预约失败，"+e.getMessage());

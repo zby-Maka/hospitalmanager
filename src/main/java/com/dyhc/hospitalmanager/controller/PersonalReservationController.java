@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
 /**
  * 个人预约
  */
+@RestController
 public class PersonalReservationController {
 
     @Autowired
@@ -39,10 +41,16 @@ public class PersonalReservationController {
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
+     *          -4用户选择套餐失败
+     *          -5用户选择体检项失败
+     *          -6用户选择体检项失败
      */
     @PostMapping("/UserReservation.do")
-    public int UserReservation(@RequestParam("personInfo") PersonInfo personInfo,@RequestParam("Yudate") Date Yudate){
-        return personalReservation.UserReservation(personInfo,Yudate);
+    public int UserReservation(@RequestParam("personInfo") PersonInfo personInfo,@RequestParam("Yudate") Date Yudate, @RequestParam("packId[]") Integer[] packId,
+                               @RequestParam("comId[]") Integer[] comId,
+                               @RequestParam("checkId[]") Integer[] checkId){
+
+        return personalReservation.UserReservation(personInfo,Yudate,packId,comId,checkId);
     }
 
     /**
@@ -67,7 +75,7 @@ public class PersonalReservationController {
      * 获取所有套餐
      * @return
      */
-    @GetMapping("/ExhibitionAllPackages")
+    @GetMapping("/ExhibitionAllPackages.do")
     public List<Package> getPackages(){
         return personalReservation.getPackages();
     }
