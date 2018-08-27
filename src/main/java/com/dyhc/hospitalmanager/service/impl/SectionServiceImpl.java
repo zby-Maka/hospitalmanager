@@ -28,23 +28,29 @@ public class SectionServiceImpl implements SectionService {
     private ProposedDescriptionMapper proposedDescriptionMapper;
     @Autowired
     private SectionTypeMapper sectionTypeMapper;
+    @Autowired
+    private PersonInfoMapper personInfoMapper;
 
 
     @Override
-    public List<Check> getPersonCheckBySectionId(String peacId, Integer sectionId) throws Exception {
-        List<Check> list=null;
+    public  Map<String,Object> getPersonCheckBySectionId(String peacId, Integer sectionId){
+        Map<String,Object> maplist=null;
         try {
-            list=checkMapper.getPersonCheckBySectionId(peacId,sectionId);
+            maplist=new HashMap<>();
+            List<Check> list=checkMapper.getPersonCheckBySectionId(peacId,sectionId);
+            List<PersonInfo> list1=personInfoMapper.getPersonBypeacId(peacId);
+            maplist.put("list",list);
+            maplist.put("list1",list1);
         }catch (Exception e){
             logger.error("您的查询有误");
             e.printStackTrace();
 
         }
-        return list;
+        return maplist;
     }
 
     @Override
-    public Map<String,Object> getCheckResultAndProposed(Integer checkId, Integer resultId,Integer sectionId) throws Exception {
+    public Map<String,Object> getCheckResultAndProposed(Integer checkId, Integer resultId,Integer sectionId){
         Map<String,Object> map=null;
         try {
             SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
