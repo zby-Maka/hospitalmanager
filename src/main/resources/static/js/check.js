@@ -18,10 +18,11 @@ $(function() {
 			$(".tab_box > div").eq(index).show().siblings().hide();
 		});
 	});
-
+	//
 	//获取体检项
-	$("input[name='checkItem'],input[name='combineItem'],input[name='packageItem']").on("change",function() {
+	$(".tab_box").on("click","input[name='checkItem'],input[name='combineItem'],input[name='packageItem']",function() {
 		var result = $(this).parent().text();
+		alert(result);
 		//判断是否选中
 		var check = $(this).prop("checked");
 		if(check){
