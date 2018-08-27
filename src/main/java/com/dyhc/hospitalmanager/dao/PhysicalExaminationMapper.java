@@ -63,10 +63,5 @@ public interface PhysicalExaminationMapper {
      */
     String getPhysicalExaminationByPersonId(@Param("personId")Integer personId)throws Exception;
 
-    /**
-     * 根据体检编号查询人员信息
-     * @return
-     */
-    List<PhysicalExamination> getPersonBypeacId(@Param("peacId")String peacId);
 
 }
