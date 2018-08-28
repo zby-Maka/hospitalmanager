@@ -90,6 +90,11 @@ public class PersonalReservationController {
         return personalReservation.addPersonCheck(physicalExaminationId,packId,comId,checkId);
     }
 
+    @RequestMapping("listDate")
+    @ResponseBody
+    public Object listDate(){
+        return personalReservation.listDate();
+    }
 
     /**
      * 获取该组合项下的所有体检项

@@ -15,6 +15,12 @@ public class PersonInfoServiceImpl implements PersonInfoService {
 
     @Override
     public List<PersonInfo> getPersonBypeacId(String peacId) {
-        return  personInfoMapper.getPersonBypeacId(peacId);
+        try {
+            return  personInfoMapper.getPersonBypeacId(peacId);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            return null;
+        }
     }
 }
