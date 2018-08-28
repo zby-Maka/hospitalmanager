@@ -5,9 +5,10 @@
 		<meta charset="utf-8" />
 		<title>检查科室</title>
 		<link rel="stylesheet" type="text/css" href="/css/department.css"/>
-		<script src="js/department.js"></script>
+		<script src="/js/jquery-3.2.1.js"></script>
+		<script src="/js/department.js"></script>
 	</head>
-	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+	<body style="background-image: url(/images/bgimg.jpg);background-size: 100% 100%;">
 		<div id="content">
 			<header style="height: 50px; text-align: center; line-height:50px; font-weight: bold; font-size: 25px;">检&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科</header>
 			<table style="width: 100%;">
@@ -40,8 +41,8 @@
 						<!--<a href="#"><li>肺活量</li></a>-->
 					</ul>
 				</div>
-				<div style="width: 730px; height: 500px; float: right; margin-right: 100px;">
-					<table style="width: 730px;">
+				<div style="width: 630px; height: 500px; float: right; margin-right: 100px;">
+					<table style="width: 630px;">
 						<thead>
 							<tr>
 								<td align="center">检查结果</td>
@@ -71,12 +72,12 @@
 			</div>
 		</div>
 	</body>
-	<script src="/js/jquery-3.2.1.js"></script>
+
 	<script>
 		$(function(){
 			$("ul").on("click","li",function(){
 				$("ul li").css("background","white");
-				$(this).css("background","red");
+				$(this).css("background","white");
 			});
 		});
 		
