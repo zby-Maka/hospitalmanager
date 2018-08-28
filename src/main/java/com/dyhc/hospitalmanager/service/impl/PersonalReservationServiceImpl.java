@@ -52,10 +52,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     //组合项和体检项的关系Mapper
     @Autowired
     private CombinationAndCheckMapper combinationAndCheckMapper;
-
     @Autowired
     RedisDao redisDao;
-
 
 
     /**
