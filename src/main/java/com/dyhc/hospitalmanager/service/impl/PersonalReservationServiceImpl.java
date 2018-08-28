@@ -1,12 +1,14 @@
 package com.dyhc.hospitalmanager.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import com.dyhc.hospitalmanager.util.GetFetureDate;
 import com.dyhc.hospitalmanager.util.MessageProducer;
+import org.apache.activemq.command.ActiveMQQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.jms.Destination;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -58,7 +61,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Autowired
     private MessageProducer messageProducer;
 
-    public Map<String,Object> map=new HashMap<>();
+    public String result;
 
 
     /**
@@ -117,6 +120,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         try {
             PersonInfo per=personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
             if (per==null) {
+                personInfo.setPersonType("个人");
                 result = personInfoMapper.addPersonInfo(personInfo);
             }else {
                 personInfo.setPersonId(per.getPersonId());
@@ -206,21 +210,65 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         return "ok";
     }
 
-//    public Map<String,Object> UserReservation(PersonInfo personInfo,String Yudate){
-//        Destination destination = new ActiveMQQueue("reservation");
-//        //发送消息
-//        messageProducer.sendMessage(destination,personInfo);
-//        return map;
-//    }
+    @Override
+    @Transactional(rollbackFor=Exception.class)
+    public String userReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId){
+        Destination destination = new ActiveMQQueue("reservation");
+        Map<String,Object> map=new HashMap<>();
+        map.put("personInfo",personInfo);
+        map.put("yuDate",Yudate);
+        map.put("packId",packId);
+        map.put("comId",comId);
+        map.put("checkId",checkId);
+        //发送消息
+        messageProducer.sendMessage(destination,JSON.toJSONString(map));
+        return result;
+    }
 
     /**
      * 监听消息
      * @param object
      */
-    @JmsListener(destination = "test")
-    public void test(Object object){
+    @JmsListener(destination = "reservation")
+    public void test(String object){
         //此处接受到消息将redis中的数量减少1进行数据处理
-        map.put("测试",object);
+        Map json = (Map) JSONObject.parse(object);
+        //转套餐
+        Object packIdObject=json.get("packId");
+        String packIdStr=packIdObject.toString().substring(1,packIdObject.toString().length()-1);
+        String[] packIds=packIdStr.split(",");
+        Integer[] packId=new Integer[packIds.length];
+        for (int i=0;i< packIds.length;i++){
+            packId[i]=Integer.parseInt(packIds[i]);
+        }
+        //转组合项
+        Object comIdObject=json.get("comId");
+        String comIdStr=comIdObject.toString().substring(1,comIdObject.toString().length()-1);
+        String[] comIds=comIdStr.split(",");
+        Integer[] comId=new Integer[comIds.length];
+        for (int i=0;i< comIds.length;i++){
+            comId[i]=Integer.parseInt(comIds[i]);
+        }
+        //转体检项
+        Object checkIdObject=json.get("checkId");
+        String checkIdStr=checkIdObject.toString().substring(1,checkIdObject.toString().length()-1);
+        String[] checkIds=checkIdStr.split(",");
+        Integer[] checkId=new Integer[checkIds.length];
+        for (int i=0;i< checkIds.length;i++){
+            checkId[i]=Integer.parseInt(checkIds[i]);
+        }
+        String yuDate=json.get("yuDate").toString();
+        //获取person对象
+        String personInfoStr=json.get("personInfo").toString();
+        JSONObject object1 = JSONObject.parseObject(personInfoStr);
+        PersonInfo personInfo=JSONObject.toJavaObject(object1,PersonInfo.class);
+        try {
+            redisDao.decr(yuDate,1);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        result=UserReservation(personInfo,yuDate,packId,comId,checkId);
+
     }
 
     /**

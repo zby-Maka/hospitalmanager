@@ -48,11 +48,13 @@ public class PersonalReservationController {
      */
     @RequestMapping("/UserReservation.do")
     public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue,
-                                  @RequestParam(value = "packId[]",required = false) Integer[] packId,
-                                  @RequestParam(value = "comId[]",required = false) Integer[] comId,
-                                  @RequestParam(value = "checkId[]",required = false) Integer[] checkId){
-        return personalReservation.UserReservation(personInfo,yue,packId,comId,checkId);
+                                  @RequestParam("packId[]") Integer[] packId,
+                                  @RequestParam("comId[]") Integer[] comId,
+                                  @RequestParam("checkId[]") Integer[] checkId){
+        return personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
     }
+
+
 
     /**
      * 获取所有的检查项

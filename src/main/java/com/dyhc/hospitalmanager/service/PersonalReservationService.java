@@ -38,6 +38,8 @@ public interface PersonalReservationService {
      */
     Object listDate();
 
+    String userReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId);
+
     /**
      * 获取所有的检查项
      * @return
