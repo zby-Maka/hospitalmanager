@@ -34,7 +34,7 @@ public class PersonalReservationController {
      * 用户预约
      * @param personInfo 用户信息
      * @param yue 预约时间
-     * @return 1成功
+     * @return ok成功
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
