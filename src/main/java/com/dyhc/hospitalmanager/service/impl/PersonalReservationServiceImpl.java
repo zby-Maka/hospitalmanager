@@ -106,10 +106,11 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
+     *
      */
     @Override
     @Transactional(rollbackFor=Exception.class)
-    public String UserReservation(PersonInfo personInfo,String Yudate) {
+    public String UserReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId) {
         Integer result = 0;
         try {
             PersonInfo per=personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
@@ -119,7 +120,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                 personInfo.setPersonId(per.getPersonId());
                 result = personInfoMapper.updPersonInfo(personInfo);
             }
-            if (result < 0) {
+            personInfo = personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
+            if (result == 0) {
                 //添加(修改)用户信息失败
                 logger.error("添加用户信息失败");
                 return -2+"";
@@ -130,6 +132,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             //根据预约日期查询预约日期的最后一位编号
             String physicalExaminationId = physicalExaminationMapper.getPhysicalExaminationOrderByMedicalTime(Yudate);
             if(physicalExaminationId!=null){
+                //给这个人员生成体检编号
                 //编号
                 String phyNo = physicalExaminationId.substring(8,physicalExaminationId.length());
                 //日期
@@ -141,34 +144,64 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                 physicalExamination.setPhysicalExaminationId(phyNo);
                 physicalExamination.setPersonId(personInfo.getPersonId());
                 physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
-                //给这个人员生成体检编号
+                //新增
                 result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
-                if (result < 0) {
+                if (result == 0) {
                     //添加用户预约编号失败
                     logger.error("添加用户预约编号失败");
                     return -3+"";
                 }
-                return phyNo;
+                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(phyNo,packId);
+                if(result==0){
+                    logger.error("添加用户套餐项错误");
+                    return -4+"";
+                }
+                result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(phyNo,comId);
+                if(result==0){
+                    logger.error("添加用户组合项错误");
+                    return -5+"";
+                }
+                result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(phyNo,checkId);
+                if(result==0) {
+                    logger.error("添加用户体检项错误");
+                    return -6 + "";
+                }
             }else {
+                //给这个人员生成体检编号
                 String[] date = Yudate.split("-");
                 physicalExaminationId=date[0]+date[1]+date[2]+"01";
                 physicalExamination.setPhysicalExaminationId(physicalExaminationId);
                 physicalExamination.setPersonId(personInfo.getPersonId());
                 physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
-                //给这个人员生成体检编号
+                //新增
                 result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
-                if (result < 0) {
+                if (result ==0) {
                     //添加用户预约编号失败
-                    logger.error("添加用户预约编号失败");
+                    logger.error("添加用户错误");
                     return -3+"";
                 }
-                return physicalExaminationId;
+                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(physicalExaminationId,packId);
+                if(result==0){
+                    logger.error("添加用户套餐项错误");
+                    return -4+"";
+                }
+                result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(physicalExaminationId,comId);
+                if(result==0){
+                    logger.error("添加用户组合项错误");
+                    return -5+"";
+                }
+                result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId,checkId);
+                if(result==0) {
+                    logger.error("添加用户体检项错误");
+                    return -6 + "";
+                }
             }
         } catch (Exception e) {
             logger.error("预约失败，"+e.getMessage());
             e.printStackTrace();
             return -1+"";
         }
+        return "ok";
     }
 
 //    public Map<String,Object> UserReservation(PersonInfo personInfo,String Yudate){
