@@ -113,33 +113,33 @@ function makeAnAppointment() {
             checkId.push(checkIdControl[i].value);
     }
 
-    //用户预约
-    var persionInfo=sessionStorage.getItem("personInfoSer");
-    alert(persionInfo);
-    var date = $.param({"yue":"2018-08-22","packId":packId, "comId":comId,"checkId":checkId})+ "&" + persionInfo;
-    $.ajax({
-        type: "get",
-        url: "/UserReservation.do?"+date,
-        date: {},
-        dataType: "text",
-        success: function(result){
-            alert(result);
-            console.log(result);
-            if(result=="ok")
-                alert("预约成功！");
-            // var physicalExaminationId=Number(result);
-            // if(physicalExaminationId>0){
-            //     //用户套餐参数
-            //     var param = $.param({"physicalExaminationId":physicalExaminationId,"packId":packId, "comId":comId,"checkId":checkId});
-            //     $.post("/addPersonCheck",param,function(result){
-            //         alert(result);
-            //         if(result>0){
-            //             alert("预约成功！");
-            //         }
-            //     },"text");
-            // }
-        }
-    });
+    if(packId.length==0&&comId.length==0&&checkId.length==0){
+        alert("请选择套餐项！");
+    }else {
+        //用户预约
+        var persionInfo = sessionStorage.getItem("personInfoSer");
+        alert(persionInfo);
+        var date = $.param({
+            "yue": "2018-08-22",
+            "packId": packId,
+            "comId": comId,
+            "checkId": checkId
+        }) + "&" + persionInfo;
+        $.ajax({
+            type: "get",
+            url: "/UserReservation.do?" + date,
+            date: {},
+            dataType: "text",
+            success: function (result) {
+                alert(result);
+                console.log(result);
+                if (result == "ok") {
+                    alert("预约成功！");
+                    sessionStorage.setItem("personInfo",null);
+                }
+            }
+        });
+    }
 }
 
 /**

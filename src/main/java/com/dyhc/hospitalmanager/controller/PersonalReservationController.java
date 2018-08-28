@@ -27,7 +27,11 @@ public class PersonalReservationController {
      */
     @GetMapping("/getPersonInfoByNameAndCard.do")
     public PersonInfo getPersonInfoByNameAndCard(@RequestParam("personIdCard") String personIdCard){
-        return personalReservation.getPersonInfoByNameAndCard(personIdCard);
+        PersonInfo personInfo=personalReservation.getPersonInfoByNameAndCard(personIdCard);
+        if(personInfo==null){
+            return new PersonInfo();
+        }
+        return personInfo;
     }
 
     /**
@@ -44,9 +48,9 @@ public class PersonalReservationController {
      */
     @RequestMapping("/UserReservation.do")
     public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue,
-                                  @RequestParam("packId[]") Integer[] packId,
-                                  @RequestParam("comId[]") Integer[] comId,
-                                  @RequestParam("checkId[]") Integer[] checkId){
+                                  @RequestParam(value = "packId[]",required = false) Integer[] packId,
+                                  @RequestParam(value = "comId[]",required = false) Integer[] comId,
+                                  @RequestParam(value = "checkId[]",required = false) Integer[] checkId){
         return personalReservation.UserReservation(personInfo,yue,packId,comId,checkId);
     }
 
