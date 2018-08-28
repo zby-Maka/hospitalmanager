@@ -3,95 +3,66 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>组合项</title>
+
 	</head>
 	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+	<form id="addform">
 		<div style="width: 80%; height: 297mm; margin: 0 auto;background-color: #f8f8f8; opacity: 0.8;">
 			<h2 style="display: block;text-align: center;">组合项信息维护</h2>
 			<div>
 				<table style="height: 300px;">
 					<tr>
 						<td style="width: 150px; text-align: right;">是否启用：</td>
-						<td><input type="radio" value="1" name="yesorno" />是</td>
-						<td><input type="radio" value="1" name="yesorno" />否</td>
+						<td><input type="radio" value="1" name="isEnable"  />是</td>
+						<td><input type="radio" value="1" name="isEnable"  />否</td>
 					</tr>
 					<tr>
 						<td style="width: 150px; text-align: right;">所属科室：</td>
 						<td colspan="2" >
-							<input type="text" readonly="readonly" name="" value="" />
+							<input type="text" readonly="readonly" name="sectionId" value="1" />
 						</td>
 					</tr>
 					<tr>
 						<td style="width: 150px; text-align: right;">组合项名称：</td>
-						<td><input type="text" name="" value=""/></td>
+						<td><input type="text" name="combinationName" value=""/></td>
 						<td>拼音简码：<label>xxx</label></td>
 					</tr>
 					<tr>
-						<td style="width: 150px; text-align: right;">适合性别：</td>
-						<td><input type="radio" value="1" name="sex" />男</td>
-						<td><input type="radio" value="1" name="sex" />女</td>
+						<td style="width: 150px; text-align: right;">提示信息：</td>
+						<td colspan="2" >
+							<input type="text" name="promptInformation" value="" />
+						</td>
 					</tr>
 					<tr>
-						<td style="width: 150px; text-align: right;">所属科室：</td>
+						<td style="width: 150px; text-align: right;">获取结果方式：</td>
 						<td colspan="2" >
-							<input type="text" name="" value="" />
+							<input type="text" name="resultToWay" value="" />
 						</td>
 					</tr>
 					<tr>
 						<td style="width: 150px; text-align: right;">是否需要标本：</td>
-						<td><input type="radio" value="1" name="s" />是</td>
-						<td><input type="radio" value="1" name="s" />否</td>
+						<td><input type="radio" value="1" name="isSpecimen"/>是</td>
+						<td><input type="radio" value="1" name="isSpecimen" />否</td>
 					</tr>
 					<tr>
-						<td style="width: 150px; text-align: right;">所属科室：</td>
+						<td style="width: 150px; text-align: right;">标本类型：</td>
 						<td colspan="2" >
-							<input type="text" name="" value="" />
+							<input type="text" name="specimenType" value="" />
 						</td>
 					</tr>
 				</table>
 			</div>
 			<div style="margin-top: 50px;"><table style="width: 100%; height: 200px;">
 				<thead>
-					<tr>
-						<td>体检项1</td>
-						<td>体检项2</td>
-						<td>体检项3</td>
-						<td>checkbox</td>
-						<td>checkbox</td>
-					</tr>
+
 				</thead>
-				<tbody>
-					<tr>
-						<td><input type="checkbox" name="1" value="" />体检项1</td>
-						<td><input type="checkbox" name="1" value="" />体检项2</td>
-						<td><input type="checkbox" name="1" value="" />体检项3</td>
-						<td><input type="checkbox" name="1" value="" />checkbox</td>
-						<td><input type="checkbox" name="1" value="" />checkbox</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="1" value="" />体检项1</td>
-						<td><input type="checkbox" name="1" value="" />体检项2</td>
-						<td><input type="checkbox" name="1" value="" />体检项3</td>
-						<td><input type="checkbox" name="1" value="" />checkbox</td>
-						<td><input type="checkbox" name="1" value="" />checkbox</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="1" value="" />体检项1</td>
-						<td><input type="checkbox" name="1" value="" />体检项2</td>
-						<td><input type="checkbox" name="1" value="" />体检项3</td>
-						<td><input type="checkbox" name="1" value="" />checkbox</td>
-						<td><input type="checkbox" name="1" value="" />checkbox</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="1" value="" />体检项1</td>
-						<td><input type="checkbox" name="1" value="" />体检项2</td>
-						<td><input type="checkbox" name="1" value="" />体检项3</td>
-						<td><input type="checkbox" name="1" value="" />checkbox</td>
-						<td><input type="checkbox" name="1" value="" />checkbox</td>
-					</tr>
-					
+				<tbody id="content">
 				</tbody>
 			</table></div>
-			<input type="button" value="点击提交" />
+			<input type="button" value="点击提交" onclick="addcom()"/>
 		</div>
+	</form>
 	</body>
+	<script src="../../static/js/jquery-3.2.1.js"></script>
+<script src="../../static/js/zhx.js"></script>
 </html>
