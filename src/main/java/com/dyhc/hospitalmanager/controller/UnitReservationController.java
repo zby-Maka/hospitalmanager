@@ -134,4 +134,15 @@ public class UnitReservationController {
         return JSON.toJSONString(list);
     }
 
+    /**
+     * 查询所有单位信息
+     * @return
+     */
+    @RequestMapping("showCompanyInfo.do")
+    @ResponseBody
+    public String showCompanyInfo(){
+        List<CompanyInfo> list = unitReservationService.showAllCompanyInfo();
+        return JSON.toJSONString(list);
+    }
+
 }
