@@ -11,8 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -78,6 +81,43 @@ public class UnitReservationController {
             content = 2;
         }
         return JSON.toJSONString(content);
+    }
+
+
+    /**
+     * 用户上传Excel到指定的文件夹
+     * @param file
+     * @param request
+     * @return
+     */
+    @RequestMapping("/admin/import")
+    @ResponseBody
+    public String addUser(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
+        Integer content = 0;
+        //上传文件保存到指定文件夹下边
+        String contentType = file.getContentType();
+        String fileName = file.getOriginalFilename();
+        //	String filePath = request.getSession().getServletContext().getRealPath("templates/imgupload/");
+        //指定文件存放路径，可以是相对路径或者绝对路径
+        String filePath = "./src/main/resources/excelfile/";
+        try {
+            uploadFile(file.getBytes(), filePath, fileName);
+            content = 1;
+        } catch (Exception e) {
+            content = 3;
+        }
+        return JSON.toJSONString(content);
+    }
+
+    public static void uploadFile(byte[] file, String filePath, String fileName) throws Exception {
+        File targetFile = new File(filePath);
+        if (!targetFile.exists()) {
+            targetFile.mkdirs();
+        }
+        FileOutputStream out = new FileOutputStream(filePath + fileName);
+        out.write(file);
+        out.flush();
+        out.close();
     }
 
 }

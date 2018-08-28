@@ -70,7 +70,7 @@
 				</form>
 			</div>
 			<div class="hide">
-				<form id="companyInfo">
+				<form id="companyInfo" method="POST" enctype="multipart/form-data" action="admin/import">
 					<table>
 						<tr>
 							<td>单位名称：</td>
@@ -113,10 +113,15 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<a href="admin/model">下载模板</a>
-								<a href="#" name="upload">上传</a>
-								<input type="button" value="确定" name="confirm" class="button" />
-								<input type="reset" value="取消" name="cancel" class="button"/>
+								<a href="admin/model">下载模板</a>&nbsp;&nbsp;&nbsp;
+								<input type="file" name="file" id="file" value = "上传"/>
+								<input type="button" value="上传" name="upload" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="button" value="确定" name="confirm" class="button" /></td>
+								<td><input type="reset" value="取消" name="cancel" class="button"/>
 							</td>
 						</tr>
 					</table>
