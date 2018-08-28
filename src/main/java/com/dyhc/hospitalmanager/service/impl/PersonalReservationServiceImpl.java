@@ -1,17 +1,20 @@
 package com.dyhc.hospitalmanager.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.dyhc.hospitalmanager.dao.*;
-import com.dyhc.hospitalmanager.pojo.Check;
-import com.dyhc.hospitalmanager.pojo.Combination;
+import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
-import com.dyhc.hospitalmanager.pojo.PersonInfo;
-import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
+import com.dyhc.hospitalmanager.util.GetFetureDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -46,6 +49,13 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     //用户和体检项的关系Mapper
     @Autowired
     private PhysicalExaminationAndCheckMapper physicalExaminationAndCheckMapper;
+    //组合项和体检项的关系Mapper
+    @Autowired
+    private CombinationAndCheckMapper combinationAndCheckMapper;
+
+    @Autowired
+    RedisDao redisDao;
+
 
 
     /**
@@ -67,6 +77,20 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         }
     }
 
+    @RequestMapping("/listDate")
+    @ResponseBody
+    public Object listDate(){
+        List<RedisKeyValue> list=new ArrayList<>();
+        for (int i=0;i<7;i++){
+            RedisKeyValue redisKeyValue=new RedisKeyValue();
+            redisKeyValue.setKey(GetFetureDate.getFetureDate(i));
+            String value=redisDao.getValue(redisKeyValue.getKey());
+            redisKeyValue.setValue(value);
+            list.add(redisKeyValue);
+        }
+        return JSON.toJSONString(list);
+    }
+
     /**
      * 用户预约
      * @param personInfo 用户信息
@@ -77,9 +101,9 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      *          -3添加预约表失败
      */
     @Override
-    @Transactional
-    public int UserReservation(PersonInfo personInfo,Date Yudate) {
-        int result = 0;
+    @Transactional(rollbackFor=Exception.class)
+    public String UserReservation(PersonInfo personInfo,String Yudate) {
+        Integer result = 0;
         try {
             PersonInfo per=personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
             if (per==null) {
@@ -91,38 +115,53 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             if (result < 0) {
                 //添加(修改)用户信息失败
                 logger.error("添加用户信息失败");
-                return -2;
+                return -2+"";
             }
             PhysicalExamination physicalExamination = new PhysicalExamination();
             //把日期转换为字符串yyy-MM-dd
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            String YudateS = simpleDateFormat.format(Yudate);
             //根据预约日期查询预约日期的最后一位编号
-            String physicalExaminationId = physicalExaminationMapper.getPhysicalExaminationOrderByMedicalTime(YudateS);
-            //编号
-            String phyNo = physicalExaminationId.substring(8,physicalExaminationId.length());
-            //日期
-            String phyDate = physicalExaminationId.substring(0,8);
-            //生成新的编号
-            Integer no = Integer.parseInt(phyNo)+1;
-            phyNo = no.toString().length()==1?"0"+no+"":no + "";
-            phyNo = phyDate + phyNo;
-            physicalExamination.setPhysicalExaminationId(phyNo);
-            physicalExamination.setPersonId(personInfo.getPersonId());
-            physicalExamination.setMedicalTime(Yudate);
-            //给这个人员生成体检编号
-            result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
-            if (result < 0) {
-                //添加用户预约编号失败
-                logger.error("添加用户预约编号失败");
-                return -3;
+            String physicalExaminationId = physicalExaminationMapper.getPhysicalExaminationOrderByMedicalTime(Yudate);
+            if(physicalExaminationId!=null){
+                //编号
+                String phyNo = physicalExaminationId.substring(8,physicalExaminationId.length());
+                //日期
+                String phyDate = physicalExaminationId.substring(0,8);
+                //生成新的编号
+                Integer no = Integer.parseInt(phyNo)+1;
+                phyNo = no.toString().length()==1?"0"+no+"":no + "";
+                phyNo = phyDate + phyNo;
+                physicalExamination.setPhysicalExaminationId(phyNo);
+                physicalExamination.setPersonId(personInfo.getPersonId());
+                physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
+                //给这个人员生成体检编号
+                result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
+                if (result < 0) {
+                    //添加用户预约编号失败
+                    logger.error("添加用户预约编号失败");
+                    return -3+"";
+                }
+                return phyNo;
+            }else {
+                String[] date = Yudate.split("-");
+                physicalExaminationId=date[0]+date[1]+date[2]+"01";
+                physicalExamination.setPhysicalExaminationId(physicalExaminationId);
+                physicalExamination.setPersonId(personInfo.getPersonId());
+                physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
+                //给这个人员生成体检编号
+                result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
+                if (result < 0) {
+                    //添加用户预约编号失败
+                    logger.error("添加用户预约编号失败");
+                    return -3+"";
+                }
+                return physicalExaminationId;
             }
         } catch (Exception e) {
             logger.error("预约失败，"+e.getMessage());
             e.printStackTrace();
-            return -1;
+            return -1+"";
         }
-        return result;
     }
 
     /**
@@ -211,5 +250,36 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             return null;
         }
         return 1;
+    }
+
+    /**
+     * 获取该组合项下的所有体检项
+     * @param comId 组合项Id
+     * @return
+     */
+    @Override
+    public List<Check> getComCheck(Integer comId) {
+        try {
+            return combinationAndCheckMapper.getCheckByCombinationId(comId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("获取该组合项下的所有体检项:"+e.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * 获取该套餐项下的所有体检项
+     * @param packId 套餐id
+     * @return
+     */
+    @Override
+    public Package getPackCheck(Integer packId) {
+        try {
+            return packageMapper.getPackageCheck(packId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

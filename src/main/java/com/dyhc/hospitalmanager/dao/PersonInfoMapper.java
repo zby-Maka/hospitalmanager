@@ -59,6 +59,6 @@ public interface PersonInfoMapper {
      * 根据体检编号查询人员信息
      * @return
      */
-    List<PersonInfo> getPersonBypeacId(@Param("peacId")String peacId);
+    List<PersonInfo> getPersonBypeacId(@Param("peacId")String peacId)throws Exception;
 
 }

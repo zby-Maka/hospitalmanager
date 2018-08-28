@@ -19,7 +19,7 @@
 //    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
 //        RoleInfo roleInfo=(RoleInfo) request.getSession().getAttribute("roleInfo");
 //        if (roleInfo==null){
-//            response.sendRedirect("/login");
+//            response.sendRedirect("/login.html");
 //            return false;
 //        }
 //        return true;

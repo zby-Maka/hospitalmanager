@@ -31,20 +31,6 @@ public class PersonalReservationApplicationTests {
     }
 
     /**
-     * 用户预约
-     *          -1失败
-     *          -2添加用户信息失败
-     *          -3添加预约表失败
-     */
-    @Test
-    public void addPersonInfo() {
-        PersonInfo personInfo = new PersonInfo();
-        personInfo.setPersonIdCard("141024199703260019");
-        Integer result = personalReservation.UserReservation(personInfo,new Date());
-        System.out.println(result);
-    }
-
-    /**
      * 获取所有的检查项
      * @return
      */

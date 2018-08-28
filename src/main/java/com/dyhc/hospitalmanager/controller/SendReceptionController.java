@@ -29,11 +29,6 @@ public class SendReceptionController {
         return "Thefrontend-page/house_list";
     }
 
-    @GetMapping("/receptionIndex.html")
-    public String sendIndex(){
-        return "Thefrontend-page/index";
-    }
-
     @GetMapping("/introduce.html")
     public String sendIntroduce(){
         return "Thefrontend-page/introduce";
@@ -47,5 +42,25 @@ public class SendReceptionController {
     @GetMapping("/loupanchart.html")
     public String sendLoupanchart(){
         return "Thefrontend-page/loupanchart";
+    }
+
+    @GetMapping("/index.html")
+    public String sendIndex(){
+        return "Thefrontend-page/index";
+    }
+
+    @GetMapping("DepartmentIndex.html")
+    public String sendDepartmentIndex(){
+        return "Thefrontend-page/DepartmentIndex";
+    }
+
+    @GetMapping("/CashiersIndex.html")
+    public String sendCashiersIndex(){
+        return "Thefrontend-page/CashiersIndex";
+    }
+
+    @GetMapping("AlwaysCheckIndex.html")
+    public String snedAlwaysCheckIndex(){
+        return "Thefrontend-page/AlwaysCheckIndex";
     }
 }

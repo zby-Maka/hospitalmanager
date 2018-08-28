@@ -3,7 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>SCT-后台系统</title>
-<link href="style/authority/login_css.css" rel="stylesheet" type="text/css" />
+<link href="/style/authority/login_css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/scripts/jquery/jquery-1.7.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#login_sub").click(function(){
+			$("#submitForm").attr("action", "index.html").submit();
+		});
+	});
+	
+	/*回车事件*/
+	function EnterPress(e){ //传入 event 
+		var e = e || window.event; 
+		if(e.keyCode == 13){ 
+			$("#submitForm").attr("action", "index.html").submit();
+		} 
+	} 
+</script>
 </head>
 <body>
 	<div id="login_center">
@@ -15,20 +31,13 @@
 							<span id="login_err" class="sty_txt2"></span>
 						</div>
 						<div>
-							 用户名：<input type="text" name="userName" class="userName" id="userName">
+							 用户名：<input type="text" name="userEntity.userCode" class="username" id="name">
 						</div>
 						<div>
-							密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" class="pwd" id="pwd">
-						</div>
-						<div>
-							<input type="radio" name="roletypeid" value="1" />系统管理员
-							<input type="radio" name="roletypeid" value="2" />护士
-							<input type="radio" name="roletypeid" value="3" />总检医生
-							<input type="radio" name="roletypeid" value="4"/>科室医生
-							<input type="radio" name="roletypeid" value="5" />收费处
+							密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="userEntity.password" class="pwd" id="pwd" onkeypress="EnterPress(event)" onkeydown="EnterPress()">
 						</div>
 						<div id="btn_area">
-							<input type="button" class="login_btn" id="login_sub"  value="登  录" onclick="getlogins()">
+							<input type="button" class="login_btn" id="login_sub"  value="登  录">
 							<input type="reset" class="login_btn" id="login_ret" value="重 置">
 						</div>
 					</form>
@@ -38,40 +47,4 @@
 	</div>
 
 </body>
-<script type="text/javascript" src="scripts/jquery/jquery-1.7.1.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-    });
-
-    //登录
-    function getlogins(){
-        var userName=$("[name=userName]").val();
-        var password=$("[name=password]").val();
-        var roletypeid=$("input[name='roletypeid']:checked").val();
-        $.post("http://localhost:8080/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
-            var roletype="";
-            if (data>0) {
-                alert("登录成功！");
-                if (roletypeid==1){
-                    roletype="系统管理员";
-                    location.href="http://localhost:8080/.html"
-				}else if(roletypeid==2){
-                    roletype="护士";
-				}else if (roletypeid==3){
-                    roletype="总检医生";
-                    location.href="http://localhost:8080/AlwaysCheck.html"
-				}else  if (roletypeid==4){
-                    roletype="科室医生"
-                    location.href="http://localhost:8080/department.html"
-				} else {
-                    roletype="收费处";
-                    location.href="http://localhost:8080/Cashiers.html"
-				}
-            }else{
-                alert("登录失败");
-                location.href="http://localhost:8080/login.html"
-            }
-        },"json")
-    }
-</script>
 </html>

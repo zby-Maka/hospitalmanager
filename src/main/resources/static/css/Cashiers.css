@@ -5,10 +5,11 @@
 
 /*页面主体div*/
 #content{
-	width: 60%;
+	width: 80%;
 	height:700px;
 	margin: 0 auto;
-	background: greenyellow;
+	background-color: #f8f8f8;
+	opacity: 0.8;
 }
 /**
  * 设置tr行高
@@ -23,7 +24,6 @@
                 height: 80px;
                 overflow-y: scroll;
             }
-            
             table thead,
             tbody tr {
                 display: table;
@@ -33,8 +33,7 @@
             /*关键设置：滚动条默认宽度是16px 将thead的宽度减16px*/
             table thead {
                 width: calc( 100% - 1em)
-            }            
-            
+            }
             table thead th {
                background: #ccc;
            }

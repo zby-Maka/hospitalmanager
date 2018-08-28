@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface MedicalEventsMapper {
+
     /**
      * 科室是检验:将检验结果添加到检验明细表中
      * @param medicalEvents

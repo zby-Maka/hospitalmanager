@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CheckResultMapper">
    <!--将体检结果插入体检结果表中-->
-    <insert id="addCheckResult">
+    <insert id="addCheckResult" useGeneratedKeys="true" keyProperty="checkResultId" keyColumn="check_result _id">
        INSERT INTO `check_result` VALUES(NULL,#{physicalExaminationId},#{checkId},#{roleInfoId},now(),#{checkResultFinally},#{checkAdvice})
    </insert>
     <!--根据体检编号和体检项ID查询体检结果表-->

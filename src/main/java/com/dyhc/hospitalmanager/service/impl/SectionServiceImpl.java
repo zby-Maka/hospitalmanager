@@ -50,23 +50,53 @@ public class SectionServiceImpl implements SectionService {
     }
 
     @Override
-    public Map<String,Object> getCheckResultAndProposed(Integer checkId, Integer resultId,Integer sectionId){
-        Map<String,Object> map=null;
+    public List<CommonResults> getCommResultsByCheckId(Integer checkId,Integer sectionId) {
+        List<CommonResults> list=null;
         try {
             SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
-            if(sectionType.getSectionTypeName().equals("检查")){
-                map=new HashMap<>();
-                List<CommonResults> list=commonResultsMapper.getCommResultsByCheckId(checkId);
-                List<ProposedDescription> list1=proposedDescriptionMapper.getProposedByResultId(resultId);
-                map.put("list",list);
-                map.put("list1",list1);
+            if(sectionType.getSectionTypeName().equals("检查")) {
+                list = commonResultsMapper.getCommResultsByCheckId(checkId);
             }
         }catch (Exception e){
             logger.error("您的查询有误");
             e.printStackTrace();
         }
-        return map;
+        return list;
     }
+
+    @Override
+    public List<ProposedDescription> getProposedByResultId(Integer resultId,Integer sectionId) {
+        List<ProposedDescription> list=null;
+        try {
+            SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
+            if(sectionType.getSectionTypeName().equals("检查")) {
+                list = proposedDescriptionMapper.getProposedByResultId(resultId);
+            }
+        }catch (Exception e){
+            logger.error("您的查询有误");
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+//    @Override
+//    public Map<String,Object> getCheckResultAndProposed(Integer checkId, Integer resultId,Integer sectionId){
+//        Map<String,Object> map=null;
+//        try {
+//            SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
+//            if(sectionType.getSectionTypeName().equals("检查")){
+//                map=new HashMap<>();
+//                List<CommonResults> list=commonResultsMapper.getCommResultsByCheckId(checkId);
+//                List<ProposedDescription> list1=proposedDescriptionMapper.getProposedByResultId(resultId);
+//                map.put("list",list);
+//                map.put("list1",list1);
+//            }
+//        }catch (Exception e){
+//            logger.error("您的查询有误");
+//            e.printStackTrace();
+//        }
+//        return map;
+//    }
 
 
 
@@ -88,9 +118,9 @@ public class SectionServiceImpl implements SectionService {
                 save=checkResultMapper.addCheckResult(checkResult);
             }
             if(add>0&&save>0){
-                ok=1;
+                ok=2;
             }else{
-                ok=0;
+                ok=1;
             }
         }catch (Exception e){
             logger.error("增加出错了");
