@@ -104,43 +104,41 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             //根据预约日期查询预约日期的最后一位编号
             String physicalExaminationId = physicalExaminationMapper.getPhysicalExaminationOrderByMedicalTime(Yudate);
-            //编号
-            String phyNo = physicalExaminationId.substring(8,physicalExaminationId.length());
-            //日期
-            String phyDate = physicalExaminationId.substring(0,8);
-            //生成新的编号
-            Integer no = Integer.parseInt(phyNo)+1;
-            phyNo = no.toString().length()==1?"0"+no+"":no + "";
-            phyNo = phyDate + phyNo;
-            physicalExamination.setPhysicalExaminationId(phyNo);
-            physicalExamination.setPersonId(personInfo.getPersonId());
-            physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
-            //给这个人员生成体检编号
-            result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
-            if (result < 0) {
-                //添加用户预约编号失败
-                logger.error("添加用户预约编号失败");
-                return -3+"";
+            if(physicalExaminationId!=null){
+                //编号
+                String phyNo = physicalExaminationId.substring(8,physicalExaminationId.length());
+                //日期
+                String phyDate = physicalExaminationId.substring(0,8);
+                //生成新的编号
+                Integer no = Integer.parseInt(phyNo)+1;
+                phyNo = no.toString().length()==1?"0"+no+"":no + "";
+                phyNo = phyDate + phyNo;
+                physicalExamination.setPhysicalExaminationId(phyNo);
+                physicalExamination.setPersonId(personInfo.getPersonId());
+                physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
+                //给这个人员生成体检编号
+                result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
+                if (result < 0) {
+                    //添加用户预约编号失败
+                    logger.error("添加用户预约编号失败");
+                    return -3+"";
+                }
+                return phyNo;
+            }else {
+                String[] date = Yudate.split("-");
+                physicalExaminationId=date[0]+date[1]+date[2]+"01";
+                physicalExamination.setPhysicalExaminationId(physicalExaminationId);
+                physicalExamination.setPersonId(personInfo.getPersonId());
+                physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
+                //给这个人员生成体检编号
+                result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
+                if (result < 0) {
+                    //添加用户预约编号失败
+                    logger.error("添加用户预约编号失败");
+                    return -3+"";
+                }
+                return physicalExaminationId;
             }
-            return phyNo;
-//            if(packId!=null)
-//                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(phyNo,packId);
-//            if(result<0){
-//                logger.error("用户选择套餐失败");
-//                return -4;
-//            }
-//            if(comId!=null)
-//            result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(phyNo,comId);
-//            if(result<0){
-//                logger.error("用户选择体检项失败");
-//                return -5;
-//            }
-//            if(checkId!=null)
-//            result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(phyNo,checkId);
-//            if(result<0){
-//                logger.error("用户选择体检项失败");
-//                return -6;
-//            }
         } catch (Exception e) {
             logger.error("预约失败，"+e.getMessage());
             e.printStackTrace();

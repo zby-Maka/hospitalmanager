@@ -1,1 +1,96 @@
 2018-08-28 08:21:42.613 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-28 11:07:14.703 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-28 11:07:38.337 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` 
+2018-08-28 11:07:38.354 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` 
+2018-08-28 11:07:38.355 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` 
+2018-08-28 11:07:38.411 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-08-28 11:07:38.411 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-08-28 11:07:38.412 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-08-28 11:07:38.512 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 4
+2018-08-28 11:07:38.516 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:07:38.520 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 4
+2018-08-28 11:07:38.521 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-08-28 11:07:38.524 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-08-28 11:07:38.596 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-28 11:07:38.597 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:07:38.598 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-08-28 11:07:38.770 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-28 11:07:38.771 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:07:38.772 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-08-28 11:07:38.871 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-28 11:07:38.871 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:07:38.871 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-08-28 11:07:38.938 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-28 11:07:38.938 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:07:38.939 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-08-28 11:07:39.008 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-28 11:07:39.008 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:07:39.008 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-08-28 11:07:39.080 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-28 11:07:39.080 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-28 11:07:39.081 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-08-28 11:07:39.144 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-28 11:07:39.145 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:07:39.145 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-08-28 11:07:39.214 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-28 11:07:39.215 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:07:39.215 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-08-28 11:07:39.283 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-08-28 11:07:39.284 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-28 11:07:39.284 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-08-28 11:07:39.344 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-28 11:35:02.858 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-28 11:35:13.618 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` 
+2018-08-28 11:35:13.618 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` 
+2018-08-28 11:35:13.618 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` 
+2018-08-28 11:35:13.722 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-08-28 11:35:13.723 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-08-28 11:35:13.722 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-08-28 11:35:13.791 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 4
+2018-08-28 11:35:13.794 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 4
+2018-08-28 11:35:13.794 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:13.799 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-08-28 11:35:13.800 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-08-28 11:35:13.862 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-28 11:35:13.863 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:13.863 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-08-28 11:35:13.918 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-28 11:35:13.920 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:13.920 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-08-28 11:35:13.982 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-08-28 11:35:13.983 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:13.983 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-08-28 11:35:14.047 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-28 11:35:14.048 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:14.048 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-08-28 11:35:14.102 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-28 11:35:14.103 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:14.103 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-08-28 11:35:14.163 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-08-28 11:35:14.163 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-28 11:35:14.163 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-08-28 11:35:14.219 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-28 11:35:14.219 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:14.220 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-08-28 11:35:14.276 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-08-28 11:35:14.277 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:14.277 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-08-28 11:35:14.334 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-08-28 11:35:14.334 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-08-28 11:35:14.334 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-08-28 11:35:14.404 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-28 11:35:15.665 [http-nio-8080-exec-6] DEBUG c.d.h.d.C.getCheckByCombinationId - ==>  Preparing: SELECT * FROM `check` c INNER JOIN `combination_and_ check` cac ON c.`check_id` = cac.`check_id` WHERE cac.`combination_id` = ? 
+2018-08-28 11:35:15.666 [http-nio-8080-exec-6] DEBUG c.d.h.d.C.getCheckByCombinationId - ==> Parameters: 2(Integer)
+2018-08-28 11:35:15.682 [http-nio-8080-exec-7] DEBUG c.d.h.d.C.getCheckByCombinationId - ==>  Preparing: SELECT * FROM `check` c INNER JOIN `combination_and_ check` cac ON c.`check_id` = cac.`check_id` WHERE cac.`combination_id` = ? 
+2018-08-28 11:35:15.683 [http-nio-8080-exec-7] DEBUG c.d.h.d.C.getCheckByCombinationId - ==> Parameters: 1(Integer)
+2018-08-28 11:35:15.722 [http-nio-8080-exec-6] DEBUG c.d.h.d.C.getCheckByCombinationId - <==      Total: 2
+2018-08-28 11:35:15.748 [http-nio-8080-exec-7] DEBUG c.d.h.d.C.getCheckByCombinationId - <==      Total: 2
+2018-08-28 11:35:23.923 [http-nio-8080-exec-8] DEBUG c.d.h.d.C.getCheckByCombinationId - ==>  Preparing: SELECT * FROM `check` c INNER JOIN `combination_and_ check` cac ON c.`check_id` = cac.`check_id` WHERE cac.`combination_id` = ? 
+2018-08-28 11:35:23.924 [http-nio-8080-exec-8] DEBUG c.d.h.d.C.getCheckByCombinationId - ==> Parameters: 1(Integer)
+2018-08-28 11:35:23.987 [http-nio-8080-exec-8] DEBUG c.d.h.d.C.getCheckByCombinationId - <==      Total: 2
+2018-08-28 11:35:27.197 [http-nio-8080-exec-9] DEBUG c.d.h.d.C.getCheckByCombinationId - ==>  Preparing: SELECT * FROM `check` c INNER JOIN `combination_and_ check` cac ON c.`check_id` = cac.`check_id` WHERE cac.`combination_id` = ? 
+2018-08-28 11:35:27.198 [http-nio-8080-exec-9] DEBUG c.d.h.d.C.getCheckByCombinationId - ==> Parameters: 2(Integer)
+2018-08-28 11:35:27.259 [http-nio-8080-exec-9] DEBUG c.d.h.d.C.getCheckByCombinationId - <==      Total: 2
+2018-08-28 11:35:47.983 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-08-28 11:35:47.984 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-08-28 11:35:48.046 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
