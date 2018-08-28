@@ -1,6 +1,8 @@
 package com.dyhc.hospitalmanager.pojo;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Check {
@@ -21,6 +23,33 @@ public class Check {
     private Double maxValue;
     private String remark;
     private Integer isEnable;
+    private List<MedicalEvents> medicalEventsList=new ArrayList<MedicalEvents>();
+    private  CommonResults commonResults;
+    private ProposedDescription proposedDescription;
+
+    public CommonResults getCommonResults() {
+        return commonResults;
+    }
+
+    public void setCommonResults(CommonResults commonResults) {
+        this.commonResults = commonResults;
+    }
+
+    public ProposedDescription getProposedDescription() {
+        return proposedDescription;
+    }
+
+    public void setProposedDescription(ProposedDescription proposedDescription) {
+        this.proposedDescription = proposedDescription;
+    }
+
+    public List<MedicalEvents> getMedicalEventsList() {
+        return medicalEventsList;
+    }
+
+    public void setMedicalEventsList(List<MedicalEvents> medicalEventsList) {
+        this.medicalEventsList = medicalEventsList;
+    }
 
     public Integer getCheckId() {
         return checkId;
