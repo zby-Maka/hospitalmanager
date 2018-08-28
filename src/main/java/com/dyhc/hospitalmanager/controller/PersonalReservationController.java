@@ -44,8 +44,10 @@ public class PersonalReservationController {
      */
     @RequestMapping("/UserReservation.do")
     public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue){
-        return personalReservation.UserReservation(personInfo,yue);
+        return personalReservation.userReservation(personInfo,yue);
     }
+
+
 
     /**
      * 获取所有的检查项

@@ -1,12 +1,14 @@
 package com.dyhc.hospitalmanager.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import com.dyhc.hospitalmanager.util.GetFetureDate;
 import com.dyhc.hospitalmanager.util.MessageProducer;
+import org.apache.activemq.command.ActiveMQQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.jms.Destination;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -58,7 +61,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Autowired
     private MessageProducer messageProducer;
 
-    public Map<String,Object> map=new HashMap<>();
+    public String result;
 
 
     /**
@@ -171,21 +174,25 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         }
     }
 
-//    public Map<String,Object> UserReservation(PersonInfo personInfo,String Yudate){
-//        Destination destination = new ActiveMQQueue("reservation");
-//        //发送消息
-//        messageProducer.sendMessage(destination,personInfo);
-//        return map;
-//    }
+    @Override
+    public String userReservation(PersonInfo personInfo,String Yudate){
+        Destination destination = new ActiveMQQueue("reservation");
+        personInfo.setYuDate(Yudate);
+        //发送消息
+        messageProducer.sendMessage(destination,JSON.toJSONString(personInfo));
+        return result;
+    }
 
     /**
      * 监听消息
      * @param object
      */
-    @JmsListener(destination = "test")
-    public void test(Object object){
+    @JmsListener(destination = "reservation")
+    public void test(String object){
         //此处接受到消息将redis中的数量减少1进行数据处理
-        map.put("测试",object);
+        System.out.println("我我我我我我看"+object);
+        JSONObject jsonObject=JSONObject.parseObject(object);
+        result="";
     }
 
     /**
