@@ -25,6 +25,15 @@ spring:
           merge-sql: true
           slow-sql-millis: 5000
       use-global-data-source-stat: true # 合并多个DruidDataSource的监控数据
+  #配置activeMQ--刘杰
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin
+  #配置redis--刘杰
+  redis:
+    host: 120.79.200.87
+    port: 6379
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml #映射指定mapper下的所有SQL映射文件
   configuration:
