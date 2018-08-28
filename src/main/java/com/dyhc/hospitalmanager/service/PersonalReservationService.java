@@ -33,6 +33,12 @@ public interface PersonalReservationService {
     String UserReservation(PersonInfo personInfo,String Yudate);
 
     /**
+     * 获取redis中的所有键值
+     * @return
+     */
+    Object listDate();
+
+    /**
      * 获取所有的检查项
      * @return
      */

@@ -6,9 +6,11 @@ import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import com.dyhc.hospitalmanager.util.GetFetureDate;
+import com.dyhc.hospitalmanager.util.MessageProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class PersonalReservationServiceImpl implements PersonalReservationService {
@@ -55,6 +55,11 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Autowired
     RedisDao redisDao;
 
+    @Autowired
+    private MessageProducer messageProducer;
+
+    public Map<String,Object> map=new HashMap<>();
+
 
     /**
      * 根据身份证号查询用户信息表
@@ -75,6 +80,10 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         }
     }
 
+    /**
+     * 获取redis中的所有键值
+     * @return
+     */
     @RequestMapping("/listDate")
     @ResponseBody
     public Object listDate(){
@@ -160,6 +169,23 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             e.printStackTrace();
             return -1+"";
         }
+    }
+
+//    public Map<String,Object> UserReservation(PersonInfo personInfo,String Yudate){
+//        Destination destination = new ActiveMQQueue("reservation");
+//        //发送消息
+//        messageProducer.sendMessage(destination,personInfo);
+//        return map;
+//    }
+
+    /**
+     * 监听消息
+     * @param object
+     */
+    @JmsListener(destination = "test")
+    public void test(Object object){
+        //此处接受到消息将redis中的数量减少1进行数据处理
+        map.put("测试",object);
     }
 
     /**

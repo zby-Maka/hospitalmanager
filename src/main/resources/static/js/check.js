@@ -1,17 +1,4 @@
 $(function() {
-
-    $.ajax({
-        
-    })
-	
-	//上一步按钮
-	$("input[name=back]").click(function () {
-		location.href="/booking.html";
-    });
-
-	//查询所有体检项，组合项，套餐项
-    selAllCheck();
-
 	//选项卡设计交互
 	$(function() {
 		var li_a = $(".tab_menu ul li a");
@@ -157,7 +144,7 @@ function selAllCheck() {
             comContent+="<td name=\"c\"><input type=\"checkbox\" name=\"combineItem\" value=\""+e.combinationId+"\" />"+e.combinationName+"</td>";
         })
         comContent+="</tr>";
-        
+
         $("#com").html(comContent);
     })
 
