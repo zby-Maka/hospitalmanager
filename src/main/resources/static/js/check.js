@@ -18,6 +18,12 @@ $(function() {
 			$(".tab_box > div").eq(index).show().siblings().hide();
 		});
 	});
+
+    //上一步按钮
+    $("input[name=back]").click(function () {
+        location.href="/booking.html";
+    });
+
 	//查询所有体检项，组合项，套餐项
     selAllCheck();
 
@@ -44,7 +50,6 @@ $(function() {
                 checkCom+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
             })
             checkCom+="</tr></table>";
-            alert(checkCom);
             $(".childBox").html(checkCom);
             $(".childBox").show();
         })
@@ -111,24 +116,28 @@ function makeAnAppointment() {
     //用户预约
     var persionInfo=sessionStorage.getItem("personInfoSer");
     alert(persionInfo);
-    var date = $.param({"yue":"2018-08-22"})+ "&" + persionInfo;
+    var date = $.param({"yue":"2018-08-22","packId":packId, "comId":comId,"checkId":checkId})+ "&" + persionInfo;
     $.ajax({
         type: "get",
         url: "/UserReservation.do?"+date,
         date: {},
-        dataType: "json",
+        dataType: "text",
         success: function(result){
-            var physicalExaminationId=Number(result);
-            if(physicalExaminationId>0){
-                //用户套餐参数
-                var param = $.param({"physicalExaminationId":physicalExaminationId,"packId":packId, "comId":comId,"checkId":checkId});
-                $.post("/addPersonCheck",param,function(result){
-                    alert(result);
-                    if(result>0){
-                        alert("预约成功！");
-                    }
-                },"text");
-            }
+            alert(result);
+            console.log(result);
+            if(result=="ok")
+                alert("预约成功！");
+            // var physicalExaminationId=Number(result);
+            // if(physicalExaminationId>0){
+            //     //用户套餐参数
+            //     var param = $.param({"physicalExaminationId":physicalExaminationId,"packId":packId, "comId":comId,"checkId":checkId});
+            //     $.post("/addPersonCheck",param,function(result){
+            //         alert(result);
+            //         if(result>0){
+            //             alert("预约成功！");
+            //         }
+            //     },"text");
+            // }
         }
     });
 }

@@ -50,4 +50,6 @@ public interface UnitReservationService {
      */
     List<Package> showPackage();
 
+    List<CompanyInfo> showAllCompanyInfo();
+
 }
