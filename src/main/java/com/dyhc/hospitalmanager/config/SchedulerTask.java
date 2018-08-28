@@ -22,7 +22,7 @@ public class SchedulerTask {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         String result=format.format(date);
         redisDao.delete(result);
-        String newKey=getFetureDate(7);
+        String newKey=getFetureDate(8);
         redisDao.setKey(newKey,"50");
     }
 
