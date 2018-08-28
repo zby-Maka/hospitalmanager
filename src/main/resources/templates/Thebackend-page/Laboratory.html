@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>检验科室</title>
+		<link rel="stylesheet" type="text/css" href="../css/department.css" />
+	</head>
+
+	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+		<div id="content">
+			<header style="height: 50px; text-align: center; line-height:50px; font-weight: bold; font-size: 25px;">检&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科</header>
+			<table style="width: 100%;">
+				<thead>
+					<tr>
+						<td colspan="4" align="center">
+							<span>体检编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physical_examination_id" size="40" style="height:30px; font-size: 16px;" />
+							<input type="button" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center">姓名:XXXX</td>
+						<td align="center">年龄:XXXX</td>
+						<td align="center">性别:XXXX</td>
+						<td align="center">婚否:XXXX</td>
+					</tr>
+				</thead>
+			</table>
+			<div style="width:100%; height: 500px;">
+				<div style="width: 180px; height: 500px; float: left; margin-left: 100px;">
+					<p align="center" style="color: red; font-size: 18px; margin-top: 16px; margin-bottom: 10px;">体&nbsp;检&nbsp;项</p>
+					<ul>
+						<a href="#">
+							<li>体重</li>
+						</a>
+						<a href="#">
+							<li>身高</li>
+						</a>
+						<a href="#">
+							<li>视力</li>
+						</a>
+						<a href="#">
+							<li>听力</li>
+						</a>
+						<a href="#">
+							<li>肺活量</li>
+						</a>
+					</ul>
+				</div>
+				<div style="width: 730px; height: 500px; float: right; margin-right: 100px;">
+					<table style="width: 730px;">
+						<thead>
+							<tr>
+								<th colspan="5" align="center">
+									<h2>血&nbsp;&nbsp;&nbsp;液</h2></th>
+							</tr>
+							<tr>
+								<td align="center">检验项</td>
+								<td align="center">单位</td>
+								<td align="center">参考范围</td>
+								<td align="center">结果</td>
+								<td align="center">提示</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td align="center">血小板</td>
+								<td align="center">个</td>
+								<td align="center">50-100</td>
+								<td align="center">12</td>
+								<td align="center">↓</td>
+							</tr>
+							<tr>
+								<td align="center">白细胞</td>
+								<td align="center">个</td>
+								<td align="center">50-100</td>
+								<td align="center">99</td>
+								<td align="center">↑</td>
+							</tr>
+							<tr>
+								<td align="center">淋巴细胞</td>
+								<td align="center">个</td>
+								<td align="center">50-100</td>
+								<td align="center">12</td>
+								<td align="center">↓</td>
+							</tr>
+							<tr>
+								<td align="center">红细胞</td>
+								<td align="center">个</td>
+								<td align="center">50-100</td>
+								<td align="center">12</td>
+								<td align="center">↑</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="5" align="center" style="margin-top: 20px;">
+									<input type="button" value="保存" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>
+									<input type="button" value="重置" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>	
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$("ul").on("click", "li", function() {
+				$("ul li").css("background","white");
+				$(this).css("background", "red");
+			});
+		});
+	</script>
+
+</html>
