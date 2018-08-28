@@ -47,6 +47,7 @@ public class SectionController {
         List<ProposedDescription> list=sectionService.getProposedByResultId(resultId,3);
         return JSON.toJSONString(list);
     }
+    //检查增加体检结果，检验增加体检结果和检验明细
     @RequestMapping("addResultAndMedicalEvent.html")
     @ResponseBody
     public String addResultAndMedicalEvent(CheckResult checkResult, MedicalEvents medicalEvents){
