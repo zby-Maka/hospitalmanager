@@ -1,10 +1,4 @@
 $(function () {
-    $("ul").on("mouseover","li",function(){
-        $(this).css("background","red");
-    });
-    $("ul").on("mouseout","li",function(){
-        $(this).css("background","greenyellow");
-    });
     $(".select").click(function () {
         getPerson();
     });

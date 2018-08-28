@@ -1,4 +1,13 @@
 $(function() {
+    $.ajax({
+        url:"/listDate",
+        dataType:"json",
+        success:function (res) {
+            for (var i=0;i<res.length;i++){
+                console.log(res[i]);
+            }
+        }
+    })
 	//选项卡设计交互
 	$(function() {
 		var li_a = $(".tab_menu ul li a");
