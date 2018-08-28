@@ -106,7 +106,9 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
-     *
+     *          -4添加用户套餐失败
+     *          -5添加用户组合失败
+     *          -6添加用户体检项失败
      */
     @Override
     @Transactional(rollbackFor=Exception.class)
