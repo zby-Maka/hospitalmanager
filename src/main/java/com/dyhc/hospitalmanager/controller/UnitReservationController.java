@@ -2,6 +2,7 @@ package com.dyhc.hospitalmanager.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.dyhc.hospitalmanager.pojo.CompanyInfo;
+import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import com.dyhc.hospitalmanager.service.impl.ExcelServiceImpl;
 import com.dyhc.hospitalmanager.util.ResponseUtils;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * 单位预约
@@ -118,6 +120,18 @@ public class UnitReservationController {
         out.write(file);
         out.flush();
         out.close();
+    }
+
+
+    /**
+     * 查询所有套餐信息
+     * @return
+     */
+    @RequestMapping("showPackage.do")
+    @ResponseBody
+    public String showPackage(){
+        List<Package> list = unitReservationService.showPackage();
+        return JSON.toJSONString(list);
     }
 
 }

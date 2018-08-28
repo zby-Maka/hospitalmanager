@@ -1,18 +1,19 @@
 package com.dyhc.hospitalmanager.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.dyhc.hospitalmanager.dao.*;
-import com.dyhc.hospitalmanager.pojo.Check;
-import com.dyhc.hospitalmanager.pojo.Combination;
+import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
-import com.dyhc.hospitalmanager.pojo.PersonInfo;
-import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
+import com.dyhc.hospitalmanager.util.GetFetureDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -52,6 +53,9 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Autowired
     private CombinationAndCheckMapper combinationAndCheckMapper;
 
+    @Autowired
+    RedisDao redisDao;
+
 
 
     /**
@@ -71,6 +75,20 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             e.printStackTrace();
             return null;
         }
+    }
+
+    @RequestMapping("/listDate")
+    @ResponseBody
+    public Object listDate(){
+        List<RedisKeyValue> list=new ArrayList<>();
+        for (int i=0;i<7;i++){
+            RedisKeyValue redisKeyValue=new RedisKeyValue();
+            redisKeyValue.setKey(GetFetureDate.getFetureDate(i));
+            String value=redisDao.getValue(redisKeyValue.getKey());
+            redisKeyValue.setValue(value);
+            list.add(redisKeyValue);
+        }
+        return JSON.toJSONString(list);
     }
 
     /**

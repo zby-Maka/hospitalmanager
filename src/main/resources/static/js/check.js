@@ -1,4 +1,8 @@
 $(function() {
+
+    $.ajax({
+
+    })
 	
 	//上一步按钮
 	$("input[name=back]").click(function () {
