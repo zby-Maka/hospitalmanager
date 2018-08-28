@@ -127,6 +127,12 @@
             <artifactId>poi</artifactId>
             <version>3.10-FINAL</version>
         </dependency>
+
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
         <!--上传Excel所需要的依赖-->
         <dependency>
             <groupId>org.apache.poi</groupId>

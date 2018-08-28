@@ -33,6 +33,7 @@ public class SectionController {
         Map<String,Object> map = sectionService.getPersonCheckBySectionId(peacId, 3);
         return JSON.toJSONString(map);
     }
+
     //检查:结果
     @RequestMapping("getCommResultsByCheckId.html")
     @ResponseBody
