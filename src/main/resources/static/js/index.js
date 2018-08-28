@@ -7,6 +7,7 @@ $(function() {
 	$("input[name='companyName']").on("keyup keydown change blur", function() {
 		$("input[name='spellCode']").val($(this).toPinyin());
 	});
+
 	//验证身份证并根据身份证获取年龄、出生日期、性别
 	$("input[name='personIdCard']").on("blur", function() {
 		var idCard = $("input[name='personIdCard']").val();
@@ -23,6 +24,16 @@ $(function() {
 				if(birthday == false) {
 					$("input[name='personBirthday']").val("");
 				} else {
+					//根据身份证查询用户是否体检过，并赋值历史信息
+					$.getJSON("/getPersonInfoByNameAndCard.do",{"personIdCard":idCard},function (date) {
+						$("input[name=personTelephone]").val(date.personTelephone);
+						$("input[name=personAddress]").val(date.personAddress);
+                        var isMarry=$("input[name=isMarry]");
+                        if("未婚"==date.isMarry)
+                        	$(isMarry[0]).prop("checked",true);
+                        else if("已婚"==date.isMarry)
+                            $(isMarry[1]).prop("checked",true);
+					})
 					$("input[name='personBirthday']").val(birthday);
 					var age = GetAge(birthday);
 					$("input[name='personAge']").val(age);
