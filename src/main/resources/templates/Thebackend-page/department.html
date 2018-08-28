@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="utf-8" />
-		<title>科室</title>
+		<title>检查科室</title>
 		<link rel="stylesheet" type="text/css" href="../css/department.css"/>
 
 	</head>
-	<body>
+	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
 		<div id="content">
 			<form>
-			<header style="height: 50px; text-align: center; line-height:50px; font-weight: bold; font-size: 25px;">外&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科</header>
+				<header style="height: 50px; text-align: center; line-height:50px; font-weight: bold; font-size: 25px;">检&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科</header>
 			<table style="width: 100%;">
 				<thead>
 					<tr>
@@ -74,22 +74,14 @@
 	</body>
 	<script src="../js/jquery-3.2.1.js"></script>
 	<script src="../js/department.js"></script>
-	<!--<script>-->
-		<!--$(function(){-->
-			<!--$("ul").on("mouseover","li",function(){-->
-				<!--$(this).css("background","red");-->
-			<!--});-->
-			<!--$("ul").on("mouseout","li",function(){-->
-				<!--$(this).css("background","greenyellow");-->
-			<!--});-->
-            <!--$(".select").click(function () {-->
-                <!--getPerson();-->
-            <!--});-->
-			<!--$("#save").click(function () {-->
-                <!--addResultAndMedicalEvent();-->
-            <!--})-->
-		<!--});-->
+	<script>
+        $(function(){
+            $("ul").on("click","li",function(){
+                $("ul li").css("background","white");
+                $(this).css("background","red");
+            });
+        });
 
 
-	<!--</script>-->
+	</script>
 </html>

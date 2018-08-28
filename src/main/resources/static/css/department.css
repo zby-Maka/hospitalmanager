@@ -5,10 +5,11 @@
 
 /*页面主体div*/
 #content{
-	width: 60%;
+	width: 80%;
 	height:700px;
 	margin: 0 auto;
-	background: greenyellow;
+	background-color: #f8f8f8;
+	opacity: 0.8;
 }
 /**
  * 设置tr行高
