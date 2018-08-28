@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="utf-8" />
 		<title>科室</title>
 		<link rel="stylesheet" type="text/css" href="../css/department.css"/>
+
 	</head>
 	<body>
 		<div id="content">
+			<form>
 			<header style="height: 50px; text-align: center; line-height:50px; font-weight: bold; font-size: 25px;">外&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科</header>
 			<table style="width: 100%;">
 				<thead>
 					<tr>
+						<!--获取角色id-->
+						<input type="hidden" name="roleInfoId" th:value="${session.roleInfo.roleInfoId}">
 						<td colspan="4" align="center">
-							<span>体检编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physical_examination_id" size="40" style="height:30px; font-size: 16px;"/>
+							<span>体检编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physicalExaminationId" size="40" style="height:30px; font-size: 16px;"/>
 							<input type="button" class="select" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;"/>
 						</td>
 					</tr>
@@ -25,8 +29,9 @@
 				</thead>
 			</table>
 			<div style="width:100%; height: 500px;">
-				<div style="width: 180px; height: 500px; float: left;" >
+				<div style="width: 160px; height: 500px; float: left;" >
 					<p align="center" style="color: red; font-size: 18px; margin-top: 16px; margin-bottom: 10px;" >体&nbsp;检&nbsp;项</p>
+					<input type="hidden" name="checkId">
 					<ul id="check">
 						<!--<a href="#"><li>体重</li></a>-->
 						<!--<a href="#"><li>身高</li></a>-->
@@ -35,8 +40,8 @@
 						<!--<a href="#"><li>肺活量</li></a>-->
 					</ul>
 				</div>
-				<div style="width: 730px; height: 500px; float: right;">
-					<table style="width: 730px;">
+				<div style="width: 620px; height: 500px; float: right;">
+					<table style="width: 550px;">
 						<thead>
 							<tr>
 								<td align="center">检查结果</td>
@@ -45,63 +50,46 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td style="width: 360px;" id="result">
-									<textarea style="width: 360px; height: 380px;">123</textarea>
+								<td style="width: 300px;" id="checkResultFinally">
+									<input type="hidden" name="checkResultFinally">
+									<textarea style="width: 300px; height: 380px;">结果</textarea>
 								</td>
-								<td style="width: 360px;" id="jianyi">
-									<textarea style="width: 360px; height: 380px;">123</textarea>
+								<td style="width: 300px;" id="checkAdvice">
+									<input type="hidden" name="checkAdvice">
+									<textarea style="width: 300px; height: 380px;">建议</textarea>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2" align="center" style="line-height: 10px;">
-									<input type="button" value="保存" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>
-									<input type="button" value="重置" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>	
+									<input type="button" value="保存" id="save" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>
+									<input type="reset" value="重置" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
+			</form>
 		</div>
 	</body>
 	<script src="../js/jquery-3.2.1.js"></script>
-	<script>
-		$(function(){
-			$("ul").on("mouseover","li",function(){
-				$(this).css("background","red");
-			});
-			$("ul").on("mouseout","li",function(){
-				$(this).css("background","greenyellow");
-			});
-            $(".select").click(function () {
-                getPerson();
-            })
-		});
-	  function  getPerson() {
-	      var peacId=$("input[name=physical_examination_id]").val();
-		  $.getJSON("http://localhost:8080/Person.html",{"peacId":peacId},function (date) {
-            $.each(date.map1,function (i,m) {
-                alert(m.personName);
-                $("label[name=personName]").text(m.personName);
-                $("label[name=personAge]").text(m.personAge);
-                $("label[name=personSex]").text(m.personSex);
-                $("label[name=isMarry]").text(m.isMarry);
-            });
-            console.log(date);
-            alert(date.map);
-            var content="<ul></ul>";
-            $.each(date.map,function (b,n) {
-                    content+="<a href=\"#\" onclick='result("+n.checkId+")'><li>"+n.checkName+"</li></a>"
-            });
-            $("#check").html(content);
-          });
-      }
-      function  result(checkId) {
-		  $.getJSON("http://localhost:8080/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
-			   $("")
-          });
-      }
+	<script src="../js/department.js"></script>
+	<!--<script>-->
+		<!--$(function(){-->
+			<!--$("ul").on("mouseover","li",function(){-->
+				<!--$(this).css("background","red");-->
+			<!--});-->
+			<!--$("ul").on("mouseout","li",function(){-->
+				<!--$(this).css("background","greenyellow");-->
+			<!--});-->
+            <!--$(".select").click(function () {-->
+                <!--getPerson();-->
+            <!--});-->
+			<!--$("#save").click(function () {-->
+                <!--addResultAndMedicalEvent();-->
+            <!--})-->
+		<!--});-->
 
-		
-	</script>
+
+	<!--</script>-->
 </html>

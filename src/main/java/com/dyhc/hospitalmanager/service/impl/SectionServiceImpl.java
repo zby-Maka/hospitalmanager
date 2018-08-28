@@ -118,9 +118,9 @@ public class SectionServiceImpl implements SectionService {
                 save=checkResultMapper.addCheckResult(checkResult);
             }
             if(add>0&&save>0){
-                ok=1;
+                ok=2;
             }else{
-                ok=0;
+                ok=1;
             }
         }catch (Exception e){
             logger.error("增加出错了");
