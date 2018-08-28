@@ -52,7 +52,6 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     //组合项和体检项的关系Mapper
     @Autowired
     private CombinationAndCheckMapper combinationAndCheckMapper;
-
     @Autowired
     RedisDao redisDao;
 
@@ -60,7 +59,6 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     private MessageProducer messageProducer;
 
     public Map<String,Object> map=new HashMap<>();
-
 
 
     /**
@@ -301,11 +299,23 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      */
     @Override
     public Package getPackCheck(Integer packId) {
+        Package packageCombination=null;
+        Package packageCheck=null;
+        Package pack = null;
         try {
-            return packageMapper.getPackageCheck(packId);
+            packageCombination =  packageMapper.getPackageCombination(packId);
+            packageCheck =  packageMapper.getPackageCheck(packId);
+            if(packageCombination!=null){
+                if(packageCheck!=null)
+                    packageCombination.setPackageCheckList(packageCheck.getPackageCheckList());
+            }else {
+                pack= packageMapper.selPackageById(packId);
+                if(packageCheck!=null)
+                    pack.setPackageCheckList(packageCheck.getPackageCheckList());
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
+        return packageCombination;
     }
 }

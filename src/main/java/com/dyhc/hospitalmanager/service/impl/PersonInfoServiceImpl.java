@@ -18,7 +18,6 @@ public class PersonInfoServiceImpl implements PersonInfoService {
         try {
             return  personInfoMapper.getPersonBypeacId(peacId);
         } catch (Exception e) {
-
             e.printStackTrace();
             return null;
         }
