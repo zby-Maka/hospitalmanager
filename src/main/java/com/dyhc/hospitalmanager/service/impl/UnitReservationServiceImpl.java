@@ -2,8 +2,10 @@ package com.dyhc.hospitalmanager.service.impl;
 
 import com.dyhc.hospitalmanager.dao.CompanyInfoMapper;
 import com.dyhc.hospitalmanager.dao.GroupMapper;
+import com.dyhc.hospitalmanager.dao.PackageMapper;
 import com.dyhc.hospitalmanager.dao.PersonInfoMapper;
 import com.dyhc.hospitalmanager.pojo.*;
+import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +23,8 @@ public class UnitReservationServiceImpl implements UnitReservationService {
     private CompanyInfoMapper companyInfoMapper;
     @Autowired
     private GroupMapper groupMapper;
+    @Autowired
+    private PackageMapper packageMapper;
 
 
     /**
@@ -116,5 +120,18 @@ public class UnitReservationServiceImpl implements UnitReservationService {
         return personResult;
     }
 
+    /**
+     * 显示所有套餐信息
+     * @return
+     */
+    public List<Package> showPackage(){
+        List<Package> list = null;
+        try {
+            list = packageMapper.showAllPackage();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
 }

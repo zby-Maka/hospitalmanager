@@ -43,8 +43,7 @@ $("input[name=companyName]").blur(function () {
         },
         dataType: "json"
     });
-
-
+});
     //确定事件
     $("input[name=confirm]").click(function () {
         var companyId = $("input[name=companyId]").val();
@@ -91,8 +90,6 @@ $("input[name=companyName]").blur(function () {
                 }
             });
         }
-
-    });
 });
 
 //上传按钮

@@ -2,6 +2,7 @@ package com.dyhc.hospitalmanager.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 跳转后台页面
@@ -54,5 +55,10 @@ public class SendBackstageController {
     @GetMapping("/zhx.html")
     public String sendZhx(){
         return "Thebackend-page/zhx";
+    }
+
+    @GetMapping("danweifenuzu.html")
+    public String danweifenuzu(){
+        return "Thebackend-page/danweifenuzu";
     }
 }

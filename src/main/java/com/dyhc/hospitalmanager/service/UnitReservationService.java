@@ -44,5 +44,10 @@ public interface UnitReservationService {
      */
     Integer addGroupAndPersonInfo(Group group,List<PersonInfo> personInfos);
 
+    /**
+     * 查询所有套餐信息
+     * @return
+     */
+    List<Package> showPackage();
 
 }
