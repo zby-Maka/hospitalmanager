@@ -9,7 +9,9 @@ $(function() {
 			$(".tab_box > div").eq(index).show().siblings().hide();
 		});
 	});
-	//
+	//查询所有体检项，组合项，套餐项
+    selAllCheck();
+
 	//获取体检项
 	$(".tab_box").on("click","input[name='checkItem'],input[name='combineItem'],input[name='packageItem']",function() {
 		var result = $(this).parent().text();
