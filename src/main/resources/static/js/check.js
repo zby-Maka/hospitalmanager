@@ -8,6 +8,10 @@ $(function() {
             }
         }
     })
+
+    $("input[name='submit']").click(function(){
+        $("div[name='chooseDate']").show();
+    });
 	//选项卡设计交互
 	$(function() {
 		var li_a = $(".tab_menu ul li a");
