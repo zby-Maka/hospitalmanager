@@ -120,7 +120,7 @@ function makeAnAppointment() {
         var persionInfo = sessionStorage.getItem("personInfoSer");
         alert(persionInfo);
         var date = $.param({
-            "yue": "2018-08-22",
+            "yue": "2018-08-28",
             "packId": packId,
             "comId": comId,
             "checkId": checkId
@@ -146,7 +146,6 @@ function makeAnAppointment() {
  * 查询所有体检项，组合项，套餐项
  */
 function selAllCheck() {
-
 	//获取所有检查项
 	$.getJSON("/ExhibitionAllCheck.do",{},function (check) {
 		var checkContent = "<tr>";
