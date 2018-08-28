@@ -1,7 +1,9 @@
 package com.dyhc.hospitalmanager.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.dyhc.hospitalmanager.dao.GroupMapper;
 import com.dyhc.hospitalmanager.pojo.CompanyInfo;
+import com.dyhc.hospitalmanager.pojo.Group;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import com.dyhc.hospitalmanager.service.impl.ExcelServiceImpl;
@@ -132,6 +134,42 @@ public class UnitReservationController {
     public String showPackage(){
         List<Package> list = unitReservationService.showPackage();
         return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询所有单位信息
+     * @return
+     */
+    @RequestMapping("showAllCompanyInfo.do")
+    @ResponseBody
+    public String showCompanyInfo(){
+        List<CompanyInfo> list = unitReservationService.showAllCompanyInfo();
+        String json=JSON.toJSONString(unitReservationService.showAllCompanyInfo(),true);
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 根据公司id查询单位分组信息
+     * @param companyId
+     * @return
+     */
+    @RequestMapping("showGroupInfo.do")
+    @ResponseBody
+    public String showGroupInfo(@RequestParam("companyId") Integer companyId){
+        List<Group> list  = unitReservationService.groupListByCompanyId(companyId);
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 根据公司id查询公司信息
+     * @param companyId
+     * @return
+     */
+    @RequestMapping("showCompanyInfoById.do")
+    @ResponseBody
+    public String showCompanyInfoById(@RequestParam("companyId") Integer companyId){
+        CompanyInfo companyInfo = unitReservationService.showCompanyInfoById(companyId);
+        return JSON.toJSONString(companyInfo);
     }
 
 

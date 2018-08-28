@@ -446,24 +446,27 @@
 					element.init();
 				});
 				$(".selected2").on("click", function() {
-					$("#oneul").html("<li class='layui-nav-item'>" +
-						"<a href='javascript:void(0);' class='daohang'>单位</a>" +
-						"<dl class='layui-nav-child'>" +
-						"<dd>" +
-						"<a href='javascript:;' onclick='danwei()'>单位1</a>" +
-						"<dl class='layui-nav-child'>" +
-						"<dd>" +
-						"<a href='javascript:;' onclick='danweifenzu()'>单位分组1</a>" +
-						
-						"</dd>" +
-						"<dd>" +
-						"<a href='javascript:;' onclick='danweifenzu()'>单位分组2</a>" +
-						
-						"</dd>" +
-						"</dl>" +
-						"</dd>" +
-						"</dl>" +
-						"</li>");
+				    var content="<li class='layui-nav-item'>" +
+                    "<a href='javascript:void(0);' class='daohang'>单位</a>";
+                    //查询所有单位信息
+                    $.ajax({
+                        url: "/showAllCompanyInfo.do",
+                        data: {},
+                        type: "get",
+                        dataType: "json",
+                        success: function (data) {
+                            $.each(data,function (i,e) {
+								content+="<dl class='layui-nav-child'>" +
+                                    "<dd id='companyName'>" +
+                                    "<a href='javascript:;' class='fz' onclick='danwei("+e.companyId+")' name='"+e.companyId+"'>"+e.companyName+"</a>"+
+                                "</dd>" +
+                                "</dl>" ;
+                            });
+                            $("#oneul").html(content);
+                            element.init();
+                        }
+                    });
+
 					$(".daohang").text("单位");
 					$("#here_area").text("当前所在项：套餐信息维护");
 					element.init();
@@ -559,28 +562,34 @@
 			function taocan () {
 				$("#rightMain").attr("src", "/Thebackend-page/tc.html")
 			}
-			
+
+			/*单位分组*/
 			function danweifenzu () {
+
 				$("#rightMain").attr("src", "/Thebackend-page/danweifenuzu.html")
 			}
 			
-			function danwei(){
-			    //查询所有单位信息
+			function danwei(companyId){
+			    localStorage.comid=companyId;
+			   // localStorage[name];
+				//查询所有单位分组信息
+				var content = "<dl class='layui-nav-child fzInfo'>";
                 $.ajax({
-                    url: "/showCompanyInfo.do",
-                    data: {},
+                    url: "/showGroupInfo.do",
+                    data: {companyId:companyId},
                     type: "get",
                     dataType: "json",
                     success: function (data) {
-                        alert(data);
-                        var content = "<tr>";
                         $.each(data,function (i,e) {
                             content +=
-                                "<td><input type='radio' name='packageId' value='"+e.packageId+"' />"+e.packageName+"</td>" ;
-
-
+                                "<dd>" +
+                                "<a href='javascript:;' onclick='danweifenzu()'>"+e.groupName+"</a>" +
+                                "</dd>" ;
                         });
-                        $("#packageMes").html(content);
+                        content += "</dl>";
+						$(".fzInfo").remove();
+                        $("a[name='"+companyId+"']").after(content);
+                        element.init();
                     }
                 });
 				$("#rightMain").attr("src", "/Thebackend-page/unit.html")
