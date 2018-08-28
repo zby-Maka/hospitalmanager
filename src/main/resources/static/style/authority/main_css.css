@@ -91,7 +91,7 @@ html,body {
 #main {
 	position: absolute;
 	left: 280px;
-	top: 140px;
+	top: 70px;
 	bottom: 0px;
 	right: 0px;
 	width: auto;
@@ -100,7 +100,7 @@ html,body {
 }
 
 #top_nav {
-	position: fixed;
+	/*position: fixed;
 	width: 77%;
 	top: 70px;
 	left: 304px;
@@ -108,7 +108,7 @@ html,body {
 	line-height: 70px;
 	color: #8A8A8A;
 	font-size: 14px;
-	border-bottom: 1px solid #EDEDED;
+	border-bottom: 1px solid #EDEDED;*/
 }
 
 #left_menu {

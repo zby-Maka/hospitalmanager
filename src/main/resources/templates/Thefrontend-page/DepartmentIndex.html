@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>SCT-科室医生</title>
+		<link href="/style/authority/main_css.css" rel="stylesheet" type="text/css" />
+		<link href="/style/authority/zTreeStyle.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/css/layui.css" />
+		<!--<script type="text/javascript" src="../scripts/jquery/jquery-1.7.1.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="/scripts/zTree/jquery.ztree.core-3.2.js"></script>
+		<script type="text/javascript" src="/scripts/authority/commonAll.js"></script>
+		<script src="/js/nowdate.js"></script>
+		<script type="text/javascript" src="/layui.js"></script>
+		<script>
+			var element;
+			layui.use('element', function() {
+				element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+				//监听导航点击
+				element.on('nav(demo)', function(elem) {
+					//console.log(elem)
+					layer.msg(elem.text());
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			/**退出系统**/
+			function logout() {
+				if(confirm("您确定要退出本系统吗？")) {
+					window.location.href = "login.html";
+				}
+			}
+		</script>
+
+	</head>
+
+	<body onload="getDate01()">
+		<div style="background-image:url(../images/bgimg.jpg);background-size: 100% 100%;">
+			<div id="top">
+				<div id="top_logo">
+					<img alt="logo" src="/images/common/logo.jpg" width="274" height="49" style="vertical-align:middle;">
+				</div>
+				<div id="top_links">
+					<div id="top_op">
+						<ul>
+							<li>
+								<img alt="当前用户" src="/images/common/user.jpg">：
+								<span>admin</span>
+							</li>
+							<li>
+								<img alt="今天是" src="/images/common/date.jpg">：
+								<span id="nowdate"></span>
+							</li>
+						</ul>
+					</div>
+					<div id="top_close">
+						<a href="javascript:void(0);" onclick="logout();" target="_parent">
+							<img alt="退出系统" title="退出系统" src="/images/common/close.jpg" style="position: relative; top: 10px; left: 25px;">
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- side menu start -->
+			<div id="side">
+				<div id="left_menu">
+					<ul id="TabPage2" style="height:200px; margin-top:50px;">
+						<li id="left_tab1" class="selected" title="体检项" onclick="leftone()">
+							<img alt="业务模块" title="体检项" src="/images/common/1_hover.jpg" width="33" height="31">
+						</li>
+						<li id="left_tab2" title="检验项" onclick="lefttwo()">
+							<img alt="系统管理" title="检验项" src="/images/common/2.jpg" width="33" height="31">
+						</li>
+					</ul>
+
+					<div id="nav_show" style="position:absolute; bottom:0px; padding:10px;">
+						<a href="javascript:;" id="show_hide_btn">
+							<img alt="显示/隐藏" title="显示/隐藏" src="/images/common/nav_hide.png" width="35" height="35">
+						</a>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(function() {
+
+					$('#nav_module').find("h2").text("科室信息维护");
+					$(".daohang").on("click", function() {
+						var width = $("#oneul").css("width");
+						if(width == "220px")
+							$("#oneul").css("width", "200px");
+						else
+							$("#oneul").css("width", "220px");
+						//$("#oneul").css("width", "200px");
+					});
+
+					$('#TabPage2 li').click(function() {
+						var index = $(this).index();
+						if(index == 0) {
+							$('#nav_module').find("h2").text("科室信息维护");
+						} else if(index == 1) {
+							$('#nav_module').find("h2").text("套餐信息维护");
+						} else if(index == 2) {
+							$('#nav_module').find("h2").text("单位信息维护");
+						}
+						$(this).find('img').attr('src', '/images/common/' + (index + 1) + '_hover.jpg');
+						$(this).css({
+							background: '#fff'
+						});
+						$('#nav_module').find('img').attr('src', '/images/common/module_' + (index + 1) + '.png');
+						$('#TabPage2 li').each(function(i, ele) {
+							if(i != index) {
+								$(ele).find('img').attr('src', '/images/common/' + (i + 1) + '.jpg');
+								$(ele).css({
+									background: '#044599'
+								});
+							}
+						});
+						// 显示侧边栏
+						switchSysBar(true);
+					});
+
+					// 显示隐藏侧边栏
+					$("#show_hide_btn").click(function() {
+						switchSysBar();
+					});
+				});
+
+				function leftone() {
+					$("#rightMain").attr("src","/Thebackend-page/department.html");
+				}
+
+				function lefttwo() {
+					$("#rightMain").attr("src","/Thebackend-page/Laboratory.html")
+				}
+
+				/**隐藏或者显示侧边栏**/
+				function switchSysBar(flag) {
+					var side = $('#side');
+					var left_menu_cnt = $('#left_menu_cnt');
+					if(flag == true) { // flag==true
+						left_menu_cnt.show(500, 'linear');
+						side.css({
+							width: '280px'
+						});
+						$('#top_nav').css({
+							width: '77%',
+							left: '304px'
+						});
+						$('#main').css({
+							left: '280px'
+						});
+					} else {
+						if(left_menu_cnt.is(":visible")) {
+							left_menu_cnt.hide(10, 'linear');
+							side.css({
+								width: '60px'
+							});
+							$('#top_nav').css({
+								width: '100%',
+								left: '60px',
+								'padding-left': '28px'
+							});
+							$('#main').css({
+								left: '60px'
+							});
+							$("#show_hide_btn").find('img').attr('src', '/images/common/nav_show.png');
+						} else {
+							left_menu_cnt.show(500, 'linear');
+							side.css({
+								width: '280px'
+							});
+							$('#top_nav').css({
+								width: '77%',
+								left: '304px',
+								'padding-left': '0px'
+							});
+							$('#main').css({
+								left: '280px'
+							});
+							$("#show_hide_btn").find('img').attr('src', '/images/common/nav_hide.png');
+						}
+					}
+				}
+			</script>
+			
+			<div id="main" style="margin-left: -200px; background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+				<iframe name="right" id="rightMain" src="/Thebackend-page/department.html" frameborder="no" scrolling="auto" width="100%" height="100%" allowtransparency="true" />
+			</div>
+		</div>
+	</body>
+
+</html>
