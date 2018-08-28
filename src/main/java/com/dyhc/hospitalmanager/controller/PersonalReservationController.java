@@ -47,9 +47,7 @@ public class PersonalReservationController {
                                   @RequestParam("packId[]") Integer[] packId,
                                   @RequestParam("comId[]") Integer[] comId,
                                   @RequestParam("checkId[]") Integer[] checkId){
-        return personalReservation.UserReservation(personInfo,yue,packId,comId,checkId);
-    public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue){
-        return personalReservation.userReservation(personInfo,yue);
+        return personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
     }
 
 
