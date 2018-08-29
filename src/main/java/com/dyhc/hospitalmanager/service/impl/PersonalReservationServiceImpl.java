@@ -233,7 +233,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     public void test(String object){
         //此处接受到消息将redis中的数量减少1进行数据处理
         Map json = (Map) JSONObject.parse(object);
-        //转套餐
+        //从map中获取json转套餐
         Object packIdObject=json.get("packId");
         String packIdStr=packIdObject.toString().substring(1,packIdObject.toString().length()-1);
         String[] packIds=packIdStr.split(",");
