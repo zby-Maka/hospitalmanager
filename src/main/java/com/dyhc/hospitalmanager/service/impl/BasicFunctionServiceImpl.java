@@ -121,7 +121,7 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
             //添加组合与体检项的关系
             for(Integer checkId : checkList){
                 CombinationAndCheck combinationAndCheck = new CombinationAndCheck();
-                combinationAndCheck.setCombinationId(result);
+                combinationAndCheck.setCombinationId(combination.getCombinationId());
                 combinationAndCheck.setCheckId(checkId);
                 combinationAndCheckMapper.addCombinationAndCheck(combinationAndCheck);
             }
@@ -165,14 +165,14 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
             //添加套餐与组合项的关系
             for (Integer comid : combinationList){
                 PackageAndCombination packageAndCombination = new PackageAndCombination();
-                packageAndCombination.setPackageId(result);
+                packageAndCombination.setPackageId(pack.getPackageId());
                 packageAndCombination.setCombinationId(comid);
                 packageAndCombinationMapper.addPackageAndCombination(packageAndCombination);
             }
             //添加套餐与体检项的关系
             for (Integer checkId  : checkList){
                 PackageAndCheck packageAndCheck = new PackageAndCheck();
-                packageAndCheck.setPackageId(result);
+                packageAndCheck.setPackageId(pack.getPackageId());
                 packageAndCheck.setCheckId(checkId);
                 packageAndCheckMapper.addPackageAndCheckInfo(packageAndCheck);
             }
