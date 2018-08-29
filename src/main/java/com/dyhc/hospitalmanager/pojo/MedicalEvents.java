@@ -1,8 +1,9 @@
 package com.dyhc.hospitalmanager.pojo;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class MedicalEvents {
+public class MedicalEvents implements Serializable {
     private Integer medicalEventsId;
     private String eventsName;
     private String unit;
@@ -12,6 +13,7 @@ public class MedicalEvents {
     private String upperLimit;
     private String lowerLimit;
 
+
     public String getUpperLimit() {
         return upperLimit;
     }
@@ -19,7 +21,6 @@ public class MedicalEvents {
     public void setUpperLimit(String upperLimit) {
         this.upperLimit = upperLimit;
     }
-
     public String getLowerLimit() {
         return lowerLimit;
     }
