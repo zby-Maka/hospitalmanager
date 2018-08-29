@@ -27,18 +27,14 @@ public class PersonalReservationController {
      */
     @GetMapping("/getPersonInfoByNameAndCard.do")
     public PersonInfo getPersonInfoByNameAndCard(@RequestParam("personIdCard") String personIdCard){
-        PersonInfo personInfo=personalReservation.getPersonInfoByNameAndCard(personIdCard);
-        if(personInfo==null){
-            return new PersonInfo();
-        }
-        return personInfo;
+        return personalReservation.getPersonInfoByNameAndCard(personIdCard);
     }
 
     /**
      * 用户预约
      * @param personInfo 用户信息
      * @param yue 预约时间
-     * @return ok成功
+     * @return 1成功
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
@@ -47,14 +43,9 @@ public class PersonalReservationController {
      *          -6用户选择体检项失败
      */
     @RequestMapping("/UserReservation.do")
-    public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue,
-                                  @RequestParam("packId[]") Integer[] packId,
-                                  @RequestParam("comId[]") Integer[] comId,
-                                  @RequestParam("checkId[]") Integer[] checkId){
-        return personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
+    public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue){
+        return personalReservation.UserReservation(personInfo,yue);
     }
-
-
 
     /**
      * 获取所有的检查项
