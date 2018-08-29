@@ -61,15 +61,14 @@ public class BasicFunctionController {
     /**
      * 添加组合项
      * @param combination
-     * @param combinationCheckList
+     * @param comAncCheckList
      * @return
      */
     @RequestMapping("addCombinationInfo")
     @ResponseBody
-    public String addCombination(Combination combination,Long[] combinationCheckList) throws Exception{
-        System.out.println(combination.getCombinationId());
-        //int result=basicFunctionService.addCombinationInfo(combination,combinationCheckList);
-        return "1";
+    public String addCombination(Combination combination,@RequestParam("comAncCheckList[]") Integer[] comAncCheckList) throws Exception{
+        int result=basicFunctionService.addCombinationInfo(combination,comAncCheckList);
+        return JSON.toJSONString(result);
     }
 
 
