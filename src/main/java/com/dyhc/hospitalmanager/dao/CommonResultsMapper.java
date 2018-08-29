@@ -37,5 +37,17 @@ public interface CommonResultsMapper {
      * @return
      */
     List<CommonResults> getAllCommonResultsById(@Param("commonResultsId")Integer commonResultsId)throws Exception;
+    /**
+     * 查询所有的常见结果
+     */
+    List<CommonResults> getCommResultslist() throws Exception;
+
+    /**
+     * 根据id查询常见结果(唯一)
+     * @param commonResultsId
+     * @return
+     * @throws Exception
+     */
+    CommonResults getCommonResultsid(@Param("commonResultsId")Integer commonResultsId) throws Exception;
 
 }

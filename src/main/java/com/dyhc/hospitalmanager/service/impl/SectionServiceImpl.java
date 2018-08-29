@@ -30,6 +30,8 @@ public class SectionServiceImpl implements SectionService {
     private SectionTypeMapper sectionTypeMapper;
     @Autowired
     private PersonInfoMapper personInfoMapper;
+    @Autowired
+    private  SectionMapper sectionMapper;
 
 
     @Override
@@ -129,9 +131,17 @@ public class SectionServiceImpl implements SectionService {
         return ok;
     }
 
-
-
-
+    @Override
+    public int addSectionInfo(Section section) {
+        int result=0;
+        try {
+            result=sectionMapper.addSectionInfo(section);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = 0;
+        }
+        return result;
+    }
 
 
 }

@@ -13,11 +13,10 @@ import java.util.List;
 public class CheckResultController {
     @Autowired
     private CheckResultService checkResultService;
-    @RequestMapping(value = "AlwaysCheck.do")
+    @RequestMapping(value = "checkResults.do")
     public  String getCheckResult(String physicalexaminationid){
         List<CheckResult> checkResultList=checkResultService.getCheckResults(physicalexaminationid);
         String json= JSON.toJSONString(checkResultList);
-        System.out.println(json);
         return json;
     }
 }

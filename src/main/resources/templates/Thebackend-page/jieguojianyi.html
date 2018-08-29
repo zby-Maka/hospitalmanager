@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 	<head>
 		<meta charset="UTF-8">
 		<title>结果建议</title>
 	</head>
 
-	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+	<body style="background-image: url(/images/bgimg.jpg);background-size: 100% 100%;">
 		<div style="width: 80%; height: 279mm; margin: 0 auto; background-color: #f8f8f8; opacity: 0.8;text-align: center;">
 			<h2 style="display: block; text-align: center;">结果建议维护</h2>
 			<div style="margin-left: 30px;text-align: center;">
-				<h3 style="display: inline;">所属体检项：</h3><label>----</label>
+				<h3 style="display: inline;">所属体检项：</h3><label name="checkId"></label>
 				<table style="width: 300px; margin-top: 20px; margin-left: 10px;">
 					<thead>
 						<tr>
@@ -19,54 +19,64 @@
 							<td>操作</td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>正常</td>
-							<td>
-								<a href="javaScript:void(0)">编辑</a>
-							</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>非正常</td>
-							<td>
-								<a href="javaScript:void(0)">编辑</a>
-							</td>
-						</tr>
+					<tbody id="nums">
+
 					</tbody>
 				</table>
 			</div>
 			<div style="margin-left: 30px; margin-top: 20px;">
 				<form>
 					<table style="width: 300px; height: 150px;">
+						<input type="hidden" id="id" value="${commonResults.commonResultsId == null ? 0 : commonResults.commonResultsId}">
 						<tbody>
 							<tr>
 								<td style="text-align: right;">是否启用：</td>
-								<td><input type="radio" value="1" name="yesorno" />是</td>
-								<td><input type="radio" value="0" name="yesorno" />否</td>
+								<td><input type="radio" value="1" name="isDelete" />是</td>
+								<td><input type="radio" value="0" name="isDelete" />否</td>
 							</tr>
 							<tr>
 								<td style="text-align: right;">所属体检项：</td>
-								<td colspan="2">------</td>
+								<td colspan="2"><input type="text" name="checkid"/></td>
 							</tr>
 							<tr>
 								<td style="text-align: right;">结果描述：</td>
-								<td colspan="2"><input type="text" name="miaoshu" value="" /></td>
+								<td colspan="2">
+									<input type="text" name="resultDesc" th:value="${commonResults.resultDesc}"></td>
 							</tr>
 							<tr>
 								<td style="text-align: right;">是否阳性：</td>
-								<td><input type="radio" value="1" name="sfyx" />是</td>
-								<td><input type="radio" value="0" name="sfyx" />否</td>
+								<td><input type="radio" value="1" name="isPositive" />是</td>
+								<td><input type="radio" value="0" name="isPositive" />否</td>
 							</tr>
 						</tbody>
 					</table>
 					<div style="text-align: center;">
-					<input type="button" value="提交" />
+					<input type="button" value="提交"  onclick="getinsertcommonresult()"/>
 					<input type="reset" value="重置" />
 					</div>
 				</form>
 			</div>
 		</div>
 	</body>
+	<script  type="text/javascript" src="/js/jieguojianyi.js"></script>
+	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        getcommonresult();
+    });
+    //查询常见结果
+    function getcommonresult() {
+        $.post("http://localhost:8080/commonresult.do",function (data) {
+            var content="";
+            $.each(data,function (i,e) {
+                content+="<tr>" +
+                    "<td>"+e.commonResultsId+"</td>" +
+                    "<td>"+e.resultDesc+"</td>" +
+                    "<td id='last'><a href='javascript:void(0)' onclick='getupdatecommonresult(" + e.commonResultsId + ")' >编辑</a></td>" +
+                    "</tr>";
+            })
+            $("#nums").html(content);
+        },"json")
+    }
+</script>
 </html>

@@ -19,8 +19,8 @@
       check_address=#{checkAddress},unit=#{unit},reference_floor=#{referenceFloor},reference_ceil=#{referenceCeil},prompt_flat=#{promptFlat},prompt_high=#{promptHigh},min_value=#{minValue},max_value=#{maxValue},remark=#{remark},
       is_enable=1 where check_id=#{checkId}
     </update>
-    <select id="getCheckList" resultType="com.dyhc.hospitalmanager.pojo.Check">
-            SELECT c.* FROM `physical_examination` pe
+    <select id="getCheckList" resultMap="getRc">
+             SELECT a.*,me.*,me.`unit` AS eunit,comr.*,pd.*  FROM(SELECT c.* FROM `physical_examination` pe
       INNER JOIN `physical_examination_and_package` pep
       ON pe.`physical_examination_id` = pep.`physical_examination_id`
       INNER JOIN `package_and_ combination` pac ON pep.`package_id` = pac.`package_id`
@@ -33,7 +33,7 @@
       ON pe.`physical_examination_id` = peap.`physical_examination_id`
       INNER JOIN `package_and_ check` pac ON peap.package_id = pac.package_id
       INNER JOIN `check` c ON c.`check_id` = pac.check_id
-      WHERE peap.physical_examination_id = #{physicalExaminationId}
+      WHERE peap.physical_examination_id =#{physicalExaminationId}
       UNION
       SELECT c.* FROM `physical_examination` pe
       INNER JOIN `physical_examination_and_ combination` pac ON pe.`physical_examination_id` = pac.`physical_examination_id`
@@ -44,8 +44,27 @@
       SELECT c.* FROM `physical_examination` pe
       INNER JOIN `physical_examination_and_ check` peac ON pe.`physical_examination_id` = peac.`physical_examination_id`
       INNER JOIN `check` c ON peac.`check_id` = c.`check_id`
-      WHERE pe.`physical_examination_id` = #{physicalExaminationId}
+      WHERE pe.`physical_examination_id` =#{physicalExaminationId}) a
+      LEFT JOIN `medical_events` me ON a.check_id = me.`check_result_id`
+      INNER JOIN `check_result` cr ON cr.`check_id` = a.check_id
+      INNER JOIN common_results  comr ON  cr.check_result_finally=comr.common_results_id
+      INNER JOIN proposed_description pd ON pd.proposed_description_id=cr.`check_advice`
+    WHERE cr.`physical_examination_id` = #{physicalExaminationId}
     </select>
+
+    <resultMap id="getRc" type="com.dyhc.hospitalmanager.pojo.Check">
+        <id column="check_id" property="checkId"/>
+        <association property="commonResults" javaType="com.dyhc.hospitalmanager.pojo.CommonResults">
+            <id column="common_results_id" property="commonResultsId"/>
+        </association>
+        <association property="proposedDescription" javaType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
+            <id column="proposed_description_id" property="proposedDescriptionId"/>
+        </association>
+        <collection property="medicalEventsList" javaType="com.dyhc.hospitalmanager.pojo.MedicalEvents">
+            <id column="medical_events_id" property="medicalEventsId"/>
+            <result column="eunit" property="unit"/>
+        </collection>
+    </resultMap>
     <!--根据体检编号查询人员在该科室下的体检项和组合项-->
    <select id="getPersonCheckBySectionId" resultType="com.dyhc.hospitalmanager.pojo.Check">
        SELECT * FROM (
