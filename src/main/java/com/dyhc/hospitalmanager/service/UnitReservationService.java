@@ -3,6 +3,7 @@ package com.dyhc.hospitalmanager.service;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -49,5 +50,11 @@ public interface UnitReservationService {
      * @return
      */
     List<Package> showPackage();
+
+    List<CompanyInfo> showAllCompanyInfo();
+
+    List<Group> groupListByCompanyId(@Param("companyId") Integer companyId);
+
+    CompanyInfo showCompanyInfoById(Integer companyId);
 
 }
