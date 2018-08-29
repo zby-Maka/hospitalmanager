@@ -1,13 +1,75 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<meta charset="utf-8" />
-		<title>检查科室</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>SCT-科室医生</title>
+		<link href="/style/authority/main_css.css" rel="stylesheet" type="text/css" />
+		<link href="/style/authority/zTreeStyle.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="/css/department.css"/>
+
+		<link rel="stylesheet" href="/css/layui.css" />
+		<!--<script type="text/javascript" src="../scripts/jquery/jquery-1.7.1.js"></script>-->
+		<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="/scripts/zTree/jquery.ztree.core-3.2.js"></script>
+		<script type="text/javascript" src="/scripts/authority/commonAll.js"></script>
+		<script src="../js/nowdate.js"></script>
+		<script type="text/javascript" src="/layui.js"></script>
 		<script src="/js/jquery-3.2.1.js"></script>
 		<script src="/js/department.js"></script>
+		<script>
+            var element;
+            layui.use('element', function() {
+                element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+                //监听导航点击
+                element.on('nav(demo)', function(elem) {
+                    //console.log(elem)
+                    layer.msg(elem.text());
+                });
+            });
+		</script>
+		<script type="text/javascript">
+            $(function () {
+                $("ul li").on("click",function () {
+                    $("ul li")
+                });
+            });
+            /**退出系统**/
+            function logout() {
+                if(confirm("您确定要退出本系统吗？")) {
+                    window.location.href = "login.html";
+                }
+            }
+		</script>
+
 	</head>
-	<body style="background-image: url(/images/bgimg.jpg);background-size: 100% 100%;">
+	<body>
+	<div style="">
+		<div id="top">
+		<div id="top_logo">
+			<img alt="logo" src="/images/common/logo.jpg" width="274" height="49" style="vertical-align:middle;">
+		</div>
+		<div id="top_links">
+			<div id="top_op">
+				<ul>
+					<li>
+						<img alt="当前用户" src="/images/common/user.jpg">：
+						<span>admin</span>
+					</li>
+					<li>
+						<img alt="今天是" src="/images/common/date.jpg">：
+						<span id="nowdate"></span>
+					</li>
+				</ul>
+			</div>
+			<div id="top_close">
+				<a href="javascript:void(0);" onclick="logout();" target="_parent">
+					<img alt="退出系统" title="退出系统" src="/images/common/close.jpg" style="position: relative; top: 10px; left: 25px;">
+				</a>
+			</div>
+		</div>
+	</div>
+		<div style="margin-top: 70px;width:100%;height:700px;background-image:url(/images/bgimg.jpg);background-size: 100% 100%;">
 		<div id="content">
 			<form>
 			<header style="height: 50px; text-align: center; line-height:50px; font-weight: bold; font-size: 25px;">检&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科</header>
@@ -34,11 +96,7 @@
 					<p align="center" style="color: red; font-size: 18px; margin-top: 16px; margin-bottom: 10px;">体&nbsp;检&nbsp;项</p>
 					<input type="hidden" name="checkId">
 					<ul  id="check">
-						<!--<a href="#"><li>体重</li></a>-->
-						<!--<a href="#"><li>身高</li></a>-->
-						<!--<a href="#"><li>视力</li></a>-->
-						<!--<a href="#"><li>听力</li></a>-->
-						<!--<a href="#"><li>肺活量</li></a>-->
+
 					</ul>
 				</div>
 				<div style="width: 630px; height: 500px; float: right; margin-right: 100px;">
@@ -72,16 +130,15 @@
 			</div>
 			</form>
 		</div>
+		</div>
+	</div>
 	</body>
-
 	<script>
 		$(function(){
-			$("ul").on("click","li",function(){
-				$("ul li").css("background","white");
+			$("ul").on("click",".checkli",function(){
+				$(".checkli").css("background","white");
 				$(this).css("background","red");
 			});
 		});
-		
-		
 	</script>
 </html>

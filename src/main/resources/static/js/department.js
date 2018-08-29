@@ -21,7 +21,7 @@ function  getPerson() {
         alert(date.map);
         var content="<ul></ul>";
         $.each(date.map,function (b,n) {
-            content+="<a href='javascript:result("+n.checkId+")'><li>"+n.checkName+"</li></a>"
+            content+="<a href='javascript:result("+n.checkId+")'><li class='checkli'>"+n.checkName+"</li></a>"
         });
         $("#check").html(content);
     });
@@ -50,16 +50,32 @@ function getProposedByResultId(commonResultsId) {
 }
 //增加
 function  addResultAndMedicalEvent() {
-    var arr=$("form").serialize();
-    console.log(arr);
-    console.log(this.data);
-    $.getJSON("http://localhost:8080/addResultAndMedicalEvent.html",arr,function (date) {
-        console.log(date);
-        if(date.stat=="ok"){
-            alert("success");
-        }else{
-            alert("error");
+    var arr = formToJson($("form").serialize());
+    var par = {checkResult: arr,medicalEventsList:null};
+    $.ajax({
+        url: 'http://localhost:8080/addResultAndMedicalEvent.html',
+        data: JSON.stringify(par),
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        type: "post",
+        success: function (date) {
+            console.log(date);
+            if (date.stat == "ok") {
+                alert("success");
+            } else {
+                alert("error");
+            }
         }
-    })
+    });
+}
+
+//form表单转为json对象
+function formToJson(data){
+    data= decodeURIComponent(data,true);//防止中文乱码
+    data = data.replace(/&/g, "','" );
+    data = data.replace(/=/g, "':'" );
+    data = "({'" +data + "'})" ;
+    obj = eval(data);
+    return obj;
 }
 

@@ -1,13 +1,13 @@
 package com.dyhc.hospitalmanager.controller;
 
-import com.dyhc.hospitalmanager.pojo.Check;
-import com.dyhc.hospitalmanager.pojo.Combination;
+import com.alibaba.fastjson.JSON;
+import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
-import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -35,10 +35,38 @@ public class PersonalReservationController {
     }
 
     /**
+     * 获取所有体检项组合项以及套餐
+     * @return
+     */
+    @RequestMapping("/getAll.do")
+    public String getAll(){
+        List<Check> checks=personalReservation.getAllCheck();
+        List<Combination> combinations=personalReservation.getAllCombination();
+        List<Package> packages=personalReservation.getPackages();
+        List<Object> allMedicals=new ArrayList<Object>();       //定义集合存放数组
+        AllMedical allMedical=new AllMedical();     //体检项1
+        allMedical.setId(1);
+        allMedical.setTitle("体检项");
+        allMedical.setAllCheck(checks);
+        allMedicals.add(allMedical);
+        AllMedical allMedical1=new AllMedical();    //组合项
+        allMedical1.setId(2);
+        allMedical1.setTitle("组合项");
+        allMedical1.setAllCombination(combinations);
+        allMedicals.add(allMedical1);
+        AllMedical allMedical2=new AllMedical();    //套餐项
+        allMedical2.setId(3);
+        allMedical2.setTitle("套餐项");
+        allMedical2.setAllPackage(packages);
+        allMedicals.add(allMedical2);
+        return JSON.toJSONString(allMedicals);
+    }
+
+    /**
      * 用户预约
      * @param personInfo 用户信息
      * @param yue 预约时间
-     * @return ok成功
+     * @return 1成功
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
@@ -48,9 +76,9 @@ public class PersonalReservationController {
      */
     @RequestMapping("/UserReservation.do")
     public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue,
-                                  @RequestParam("packId[]") Integer[] packId,
-                                  @RequestParam("comId[]") Integer[] comId,
-                                  @RequestParam("checkId[]") Integer[] checkId){
+                                  @RequestParam(value = "packId[]",required = false) Integer[] packId,
+                                  @RequestParam(value = "comId[]",required = false) Integer[] comId,
+                                  @RequestParam(value = "checkId[]",required = false) Integer[] checkId){
         return personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
     }
 

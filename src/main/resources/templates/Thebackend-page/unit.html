@@ -14,7 +14,9 @@
 				<form>
 				<tbody>
 						<tr>
-							<th style="width: 100px;" align="right">单位名称:</th>
+							<th style="width: 100px;" align="right">单位名称:
+							<input type="hidden" value="" name="companyId"/>
+							</th>
 							<td align="center"><input type="text" name="companyName" size="40" style="height:30px; font-size: 16px;" placeholder="请输入单位名称" readonly="readonly" /></td>
 							<th style="width: 100px;" align="right">拼音简码:</th>
 							<td align="center"><input type="text" name="spellCode" size="40" style="height:30px; font-size: 16px;" placeholder="请输入拼音简码" readonly="readonly" /></td>
@@ -56,7 +58,7 @@
 				<tfoot>
 					<tr>
 						<td colspan="4" align="center">
-							<input type="button" value="添加分组" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" />
+							<input type="button" value="添加分组" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" name="groupAdd" />
 						</td>
 					</tr>
 				</tfoot>
@@ -79,6 +81,7 @@
                 type: "get",
                 dataType: "json",
                 success: function (data) {
+                    $("input[name=companyId]").val(data.companyId);
                     $("input[name=companyName]").val(data.companyName);
                     $("input[name=spellCode]").val(data.spellCode);
                     $("input[name=companyPrincipal]").val(data.companyPrincipal);
@@ -93,5 +96,14 @@
                 }
             });
         }
+
+        //添加分组
+		$("input[name=groupAdd]").click(function () {
+		    var companyName = $("input[name=companyName]").val();
+		    var companyId = $("input[name=companyId]").val();
+		    alert(companyId);
+		    location.href = "/Thebackend-page/danweifenuzu.html?companyName="+companyName+"&companyId="+companyId;
+            //$("#rightMain").attr("src", "/Thebackend-page/danweifenuzu.html")
+        });
 	</script>
 </html>
