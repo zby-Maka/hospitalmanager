@@ -54,6 +54,15 @@ public class SendBackstageController {
         return "/Thebackend-page/keshiweihu";
     }
 
+    @GetMapping("/Thebackend-page/thewaylist.html")
+    public String indexs(){
+        return "/Thebackend-page/thewaylist";
+    }
+
+    @GetMapping("/Thebackend-page/total.html")
+    public String total(){
+        return "/Thebackend-page/total";
+    }
     @GetMapping("/Thebackend-page/tc.html")
     public String Tc(){
         return "/Thebackend-page/tc";
