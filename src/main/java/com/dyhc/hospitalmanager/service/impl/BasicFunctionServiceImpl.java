@@ -155,6 +155,29 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return list;
     }
 
+    @Override
+    public List<Check> getSectionAndCheckAndCombinationInfo() {
+        List<Check>list=null;
+        try {
+            list=sectionMapper.getSectionAndCheckAndCombinationInfo();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    @Override
+    public List<Check> getSectionAndCheckAndCombinationInfoById(Integer sectionId) {
+
+        List<Check>list=null;
+        try {
+            list=sectionMapper.getSectionAndCheckAndCombinationInfoById(sectionId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 
     //----------------------------------套餐项维护
     @Override
