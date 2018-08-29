@@ -75,15 +75,15 @@ public class SectionController {
     public String addResultAndMedicalEvent(@RequestBody JSONObject params, HttpServletRequest request){
         HttpSession session=request.getSession();
         CheckResult checkResult= params.getObject("checkResult",CheckResult.class);
-        JSONArray jsonArray =params.getJSONArray("medicalEventsList");
-        String arrJSON = JSON.toJSONString(jsonArray);
-        List<MedicalEvents> medicalEvents = JSONArray.parseArray(arrJSON,MedicalEvents.class);
-
-        for (MedicalEvents m:medicalEvents) {
-            System.out.println(m.getEventsName());
-        }
         Integer sectionId=(Integer) session.getAttribute("sectionId");
+        List<MedicalEvents> medicalEvents = null;
+        if(params.getJSONArray("medicalEventsList")!=null){
+            JSONArray jsonArray =params.getJSONArray("medicalEventsList");
+            String arrJSON = JSON.toJSONString(jsonArray);
+            medicalEvents = JSONArray.parseArray(arrJSON,MedicalEvents.class);
+        }
         Integer add=sectionService.addCheckResultAndMedicalEvent(checkResult,medicalEvents,sectionId);
+
         String json="";
         System.out.println(add);
         if(add>0){
