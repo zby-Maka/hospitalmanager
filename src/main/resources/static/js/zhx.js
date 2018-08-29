@@ -15,7 +15,7 @@ function showcomandcheckinfo() {
         success: function (data) {
             var content = "";
             $.each(data, function (i, e) {
-                content+="<tr><td><input type='radio' name='checkId' value='"+e.checkId+"'>"+e.checkName+"</td></tr>";
+                content+="<tr><td><input type='checkbox' value='"+e.checkId+"'>"+e.checkName+"</td></tr>";
             })
             $("#content").html(content);
         }, error: function () {
@@ -28,19 +28,21 @@ function showcomandcheckinfo() {
 //添加组合项信息
 function addcom() {
     var combination = $("#addform").serialize();
-    var checkid=$("input[name='checkId']:checked").val();
-    for(var i=0;i<checkid.length;i++){
-        var arr=new Array();
-        //console.log(arr);
-        arr.push(1);
-        arr.push(checkid);
-    }
+    var checkID = [];//定义一个空数组
+
+    $("input[type='checkbox']:checked").each(function(i){//把所有被选中的复选框的值存入数组
+        checkID[i] =$(this).val();
+    })
+
+    var date = $.param({
+        "comAncCheckList": checkID
+    })+"&"+combination;
 
     $.ajax({
         url: "http://localhost:8080/addCombinationInfo",
-        data:combination,combinationCheckList:arr,
+        data:date,
         dataType: "json",
-        type: "post",
+        type: "get",
         traditional:true,
         success: function (data) {
             if (data==1)
