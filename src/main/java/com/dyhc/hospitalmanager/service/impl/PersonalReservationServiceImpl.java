@@ -263,6 +263,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         JSONObject object1 = JSONObject.parseObject(personInfoStr);
         PersonInfo personInfo=JSONObject.toJavaObject(object1,PersonInfo.class);
         Integer value=Integer.parseInt(redisDao.getValue(yuDate));
+        System.out.println(value);
         if (value>1){
             redisDao.decr(yuDate,1);
             result=UserReservation(personInfo,yuDate,packId,comId,checkId);

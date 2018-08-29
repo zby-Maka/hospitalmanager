@@ -9,7 +9,7 @@ $(function() {
             $.each(res,function (i,e) {
                 if(e.value>0){
                     var myDate = new Date(Date.parse(e.key.replace(/-/g, "/")));
-                    divControl[i+1].innerHTML=weekDay[myDate.getDay()]+"\n"+e.key;
+                    divControl[i+1].innerHTML=weekDay[myDate.getDay()]+"\n"+"<lable>"+e.key+"</lable>";
                 }else {
                     divControl[i+1].innerHTML="约满了";
                 }
@@ -17,14 +17,41 @@ $(function() {
         }
     })
 
+    var packId = new Array();
+    var comId = new Array();
+    var checkId = new Array();
+
     $("#chooseDate>div").not(":eq(0)").click(function () {
-        makeAnAppointment();
+        makeAnAppointment($(this).find("lable").text(),packId,comId,checkId);
         $("#chooseDate").hide();
     });
 
     //点击预约选择时间
     $("input[name='submit']").click(function(){
-        $("#chooseDate").show();
+        //获取所有选中的套餐项Id
+        var packIdControl = document.getElementsByName('packageItem');
+        for(var i = 0; i < packIdControl.length; i++){
+            if(packIdControl[i].checked)
+                packId.push(packIdControl[i].value);
+        }
+
+        //获取所有选中的组合项Id
+        var comIdControl = document.getElementsByName('combineItem');
+        for(var i = 0; i < comIdControl.length; i++){
+            if(comIdControl[i].checked)
+                comId.push(comIdControl[i].value);
+        }
+        //获取所有选中的组合项Id
+        var checkIdControl = document.getElementsByName('checkItem');
+        for(var i = 0; i < checkIdControl.length; i++){
+            if(checkIdControl[i].checked)
+                checkId.push(checkIdControl[i].value);
+        }
+        if(packId.length==0&&comId.length==0&&checkId.length==0){
+            alert("请选择体检项目！");
+        }else {
+            $("#chooseDate").show();
+        }
     });
 
 	//选项卡设计交互
@@ -108,39 +135,12 @@ $(function() {
 /**
  * 预约
  */
-function makeAnAppointment() {
-	//获取所有选中的套餐项Id
-    var packIdControl = document.getElementsByName('packageItem');
-    var packId = new Array();
-    for(var i = 0; i < packIdControl.length; i++){
-        if(packIdControl[i].checked)
-            packId.push(packIdControl[i].value);
-    }
-
-    //获取所有选中的组合项Id
-    var comIdControl = document.getElementsByName('combineItem');
-    var comId = new Array();
-    for(var i = 0; i < comIdControl.length; i++){
-        if(comIdControl[i].checked)
-            comId.push(comIdControl[i].value);
-    }
-
-    //获取所有选中的组合项Id
-    var checkIdControl = document.getElementsByName('checkItem');
-    var checkId = new Array();
-    for(var i = 0; i < checkIdControl.length; i++){
-        if(checkIdControl[i].checked)
-            checkId.push(checkIdControl[i].value);
-    }
-
-    if(packId.length==0&&comId.length==0&&checkId.length==0){
-        alert("请选择套餐项！");
-    }else {
+function makeAnAppointment(yue,packId,comId,checkId) {
         //用户预约
         var persionInfo = sessionStorage.getItem("personInfoSer");
         alert(persionInfo);
         var date = $.param({
-            "yue": "2018-08-29",
+            "yue": yue,
             "packId": packId,
             "comId": comId,
             "checkId": checkId
@@ -160,7 +160,6 @@ function makeAnAppointment() {
                 }
             }
         });
-    }
 }
 
 /**
