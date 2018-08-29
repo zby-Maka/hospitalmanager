@@ -138,7 +138,6 @@ $(function() {
 function makeAnAppointment(yue,packId,comId,checkId) {
         //用户预约
         var persionInfo = sessionStorage.getItem("personInfoSer");
-        alert(persionInfo);
         var date = $.param({
             "yue": yue,
             "packId": packId,
