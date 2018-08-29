@@ -66,14 +66,21 @@ public interface BasicFunctionService {
      * checkList 体检项集合
      * @return
      */
-    int addCombinationInfo(Combination combination,List<Check>checkList);
+    int addCombinationInfo(Combination combination,Integer[] CheckList);
 
     /**
      * 修改组合项信息
      * @param combination
      * @return
      */
-    int updCombinationInfo(Combination combination,List<Check>checkList);
+    int updCombinationInfo(Combination combination,Integer[] CheckList);
+
+    /**
+     * 根据组合项id查询组合项信息以及下的体检项信息
+     * @param combinationId
+     * @return
+     */
+    List<Check> getCheckByCombinationId(@Param("combinationId")Integer combinationId);
 
 
 
@@ -86,14 +93,14 @@ public interface BasicFunctionService {
      * @return
      * @throws Exception
      */
-    int addPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList);
+    int addPackageInfo(Package pack,Integer[] CombiantionList,Integer[] CheckList);
 
     /**
      * 修改套餐信息
      * @return
      * @throws Exception
      */
-    int updPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList);
+    int updPackageInfo(Package pack,Integer[] CombiantionList,Integer[] CheckList);
 
 
 

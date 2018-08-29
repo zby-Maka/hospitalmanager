@@ -1,106 +1,66 @@
-<<<<<<< HEAD
-2018-08-22 08:44:17.257 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 8272 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 08:44:17.351 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
-2018-08-22 08:44:34.507 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 18.73 seconds (JVM running for 23.314)
-2018-08-22 08:49:56.935 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 9536 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 08:49:56.935 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
-2018-08-22 08:50:09.571 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 13.343 seconds (JVM running for 15.165)
-2018-08-22 08:55:35.443 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 8920 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 08:55:35.458 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
-2018-08-22 08:55:44.789 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 10.034 seconds (JVM running for 11.796)
-2018-08-22 08:57:03.227 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 5348 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 08:57:03.243 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
-2018-08-22 08:57:12.414 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 9.874 seconds (JVM running for 11.725)
-2018-08-22 09:13:06.772 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 9848 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 09:13:06.892 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
-2018-08-22 09:13:26.652 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 22.054 seconds (JVM running for 35.593)
-2018-08-22 10:44:31.513 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 11800 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 10:44:31.629 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
-2018-08-22 10:45:14.513 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 45.89 seconds (JVM running for 58.0)
-2018-08-22 18:20:55.116 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 5720 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 18:20:55.218 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
-2018-08-22 18:21:14.616 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 21.296 seconds (JVM running for 30.214)
-2018-08-22 18:22:14.033 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 9172 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 18:22:14.047 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
-2018-08-22 18:22:24.108 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 10.825 seconds (JVM running for 14.64)
-2018-08-22 18:22:42.520 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 3788 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 18:22:42.525 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
-2018-08-22 18:22:51.656 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 10.136 seconds (JVM running for 14.882)
-2018-08-22 18:23:28.444 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Starting CheckResultTest on DESKTOP-KAF6VDO with PID 2620 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 18:23:28.447 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - No active profile set, falling back to default profiles: default
-2018-08-22 18:23:37.220 [main] INFO  com.dyhc.hospitalmanager.CheckResultTest - Started CheckResultTest in 9.319 seconds (JVM running for 11.474)
-2018-08-22 18:23:50.665 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Starting CheckTest on DESKTOP-KAF6VDO with PID 11568 (started by aixiaobai in E:\hospitalmanager)
-2018-08-22 18:23:50.669 [main] INFO  com.dyhc.hospitalmanager.CheckTest - No active profile set, falling back to default profiles: default
-2018-08-22 18:23:59.624 [main] INFO  com.dyhc.hospitalmanager.CheckTest - Started CheckTest in 9.443 seconds (JVM running for 11.505)
-=======
-2018-08-21 12:18:17.608 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 10560 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 12:18:17.613 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 12:18:25.313 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.987 seconds (JVM running for 11.001)
-2018-08-21 17:32:36.135 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 11828 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 17:32:36.143 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 17:32:48.316 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.05 seconds (JVM running for 16.602)
-2018-08-21 17:35:22.144 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 2936 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 17:35:22.149 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 17:35:29.751 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.229 seconds (JVM running for 9.532)
-2018-08-21 17:47:36.533 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 13428 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 17:47:36.540 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 17:47:44.365 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.269 seconds (JVM running for 10.004)
-2018-08-21 18:01:58.933 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 13640 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 18:01:58.937 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 18:02:07.518 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.061 seconds (JVM running for 10.745)
-2018-08-21 18:02:43.346 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 13916 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 18:02:43.352 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 18:02:51.536 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.634 seconds (JVM running for 10.106)
-2018-08-21 18:03:15.479 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 11600 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 18:03:15.484 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 18:03:23.938 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.814 seconds (JVM running for 10.922)
-2018-08-21 18:03:33.052 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 11900 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 18:03:33.059 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 18:03:42.077 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.452 seconds (JVM running for 11.758)
-2018-08-21 18:05:20.902 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 11324 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 18:05:20.908 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 18:05:29.400 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.888 seconds (JVM running for 10.874)
-2018-08-21 18:06:01.070 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 14208 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 18:06:01.074 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 18:06:08.714 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.972 seconds (JVM running for 9.46)
-2018-08-21 20:20:13.020 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 14772 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 20:20:13.038 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 20:20:20.630 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.997 seconds (JVM running for 9.506)
-2018-08-21 20:26:21.969 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 13920 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 20:26:21.973 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 20:26:29.584 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.128 seconds (JVM running for 9.5)
-2018-08-21 20:51:38.544 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 14708 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-21 20:51:38.550 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-21 20:51:45.776 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.579 seconds (JVM running for 9.104)
-2018-08-22 09:03:15.909 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 11120 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-22 09:03:15.918 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-22 09:03:25.706 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.249 seconds (JVM running for 12.211)
-2018-08-22 10:34:23.678 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on Makah with PID 7076 (started by Administrator in E:\hospitalmanager)
-2018-08-22 10:34:23.685 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
-2018-08-22 10:34:34.935 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 11.674 seconds (JVM running for 13.565)
-2018-08-22 10:36:37.848 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Starting HospitalmanagerApplicationTests on Makah with PID 10684 (started by Administrator in E:\hospitalmanager)
-2018-08-22 10:36:37.923 [main] INFO  c.d.h.HospitalmanagerApplicationTests - No active profile set, falling back to default profiles: default
-2018-08-22 10:36:52.748 [main] INFO  c.d.h.HospitalmanagerApplicationTests - Started HospitalmanagerApplicationTests in 15.683 seconds (JVM running for 17.567)
-<<<<<<< HEAD
-2018-08-22 18:24:12.089 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 9748 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-22 18:24:12.095 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-22 18:24:26.704 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 15.09 seconds (JVM running for 17.788)
-2018-08-22 18:25:38.772 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 9980 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-22 18:25:38.777 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-22 18:25:47.185 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.808 seconds (JVM running for 10.658)
-2018-08-22 18:32:04.319 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 7664 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
-2018-08-22 18:32:04.324 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-22 18:32:12.756 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.792 seconds (JVM running for 10.584)
-=======
->>>>>>> origin/master
->>>>>>> cf0aa082de354b2b914d24072916c3a16f605208
-2018-08-23 18:20:24.451 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on DESKTOP-KAF6VDO with PID 8100 (E:\hospitalmanager\target\classes started by aixiaobai in E:\hospitalmanager)
-2018-08-23 18:20:24.529 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-23 18:20:41.356 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 19.368 seconds (JVM running for 28.068)
-2018-08-23 18:22:03.490 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on DESKTOP-KAF6VDO with PID 9436 (E:\hospitalmanager\target\classes started by aixiaobai in E:\hospitalmanager)
-2018-08-23 18:22:03.509 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-23 18:22:22.255 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 19.525 seconds (JVM running for 29.423)
-2018-08-23 18:23:02.734 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on DESKTOP-KAF6VDO with PID 6444 (E:\hospitalmanager\target\classes started by aixiaobai in E:\hospitalmanager)
-2018-08-23 18:23:02.740 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
-2018-08-23 18:23:11.272 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.403 seconds (JVM running for 15.073)
-
+2018-08-28 14:07:50.212 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 11524 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 14:07:50.229 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 14:07:58.231 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.421 seconds (JVM running for 9.945)
+2018-08-28 14:13:18.888 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 9176 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 14:13:18.896 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 14:13:27.529 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.022 seconds (JVM running for 10.699)
+2018-08-28 14:19:15.195 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 9160 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 14:19:15.201 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 14:19:24.258 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.49 seconds (JVM running for 11.071)
+2018-08-28 14:33:49.804 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 1780 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 14:33:49.810 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 14:33:59.661 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.512 seconds (JVM running for 12.035)
+2018-08-28 14:35:42.919 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 8764 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 14:35:42.925 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 14:35:52.805 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.507 seconds (JVM running for 12.322)
+2018-08-28 14:37:32.145 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 10440 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 14:37:32.151 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 14:37:41.438 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.918 seconds (JVM running for 11.677)
+2018-08-28 14:40:21.069 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 11052 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 14:40:21.073 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 14:40:30.619 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.03 seconds (JVM running for 11.507)
+2018-08-28 16:20:49.222 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 7584 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 16:20:49.228 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 16:20:59.799 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.15 seconds (JVM running for 13.147)
+2018-08-28 16:23:21.716 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 11524 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 16:23:21.722 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 16:23:35.193 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.86 seconds (JVM running for 15.838)
+2018-08-28 16:33:46.024 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 12972 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 16:33:46.030 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 16:33:54.428 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 8.939 seconds (JVM running for 11.587)
+2018-08-28 16:35:49.274 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 10844 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 16:35:49.280 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 16:35:56.170 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 7.322 seconds (JVM running for 9.184)
+2018-08-28 18:19:54.072 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 8408 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:19:54.079 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:20:03.729 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.361 seconds (JVM running for 11.989)
+2018-08-28 18:21:26.344 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 10748 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:21:26.348 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:21:36.102 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.285 seconds (JVM running for 12.34)
+2018-08-28 18:22:34.006 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 13148 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:22:34.011 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:22:44.282 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.907 seconds (JVM running for 12.283)
+2018-08-28 18:23:29.767 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 8736 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:23:29.772 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:23:40.230 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.894 seconds (JVM running for 12.948)
+2018-08-28 18:28:45.168 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 12028 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:28:45.175 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:28:54.837 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.281 seconds (JVM running for 12.171)
+2018-08-28 18:30:27.237 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 8560 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:30:27.243 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:30:39.425 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.683 seconds (JVM running for 14.537)
+2018-08-28 18:32:49.988 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 12500 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:32:49.993 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:32:59.472 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.965 seconds (JVM running for 12.249)
+2018-08-28 18:33:58.149 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 9304 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:33:58.154 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:34:09.162 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.439 seconds (JVM running for 13.45)
+2018-08-28 18:36:09.446 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 13020 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:36:09.452 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:36:18.867 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.092 seconds (JVM running for 11.973)
+2018-08-28 18:38:45.909 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 13128 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:38:45.914 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:38:55.250 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.066 seconds (JVM running for 12.067)
+2018-08-28 18:47:18.877 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 10640 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-28 18:47:18.881 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-28 18:47:28.153 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.757 seconds (JVM running for 11.15)

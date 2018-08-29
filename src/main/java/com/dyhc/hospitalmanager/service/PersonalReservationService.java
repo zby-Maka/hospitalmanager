@@ -2,7 +2,10 @@ package com.dyhc.hospitalmanager.service;
 
 import com.dyhc.hospitalmanager.pojo.Check;
 import com.dyhc.hospitalmanager.pojo.Combination;
+import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.Date;
 import java.util.List;
 
@@ -27,7 +30,15 @@ public interface PersonalReservationService {
      *          -2添加用户信息失败
      *          -3添加预约表失败
      */
-    int UserReservation(PersonInfo personInfo,Date Yudate);
+    String UserReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId);
+
+    /**
+     * 获取redis中的所有键值
+     * @return
+     */
+    Object listDate();
+
+    String userReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId);
 
     /**
      * 获取所有的检查项
@@ -56,4 +67,18 @@ public interface PersonalReservationService {
      * @return null
      */
     Integer addPersonCheck(String physicalExaminationId,Integer[] packId,Integer[] comId,Integer[] checkId);
+
+    /**
+     * 获取该组合项下的所有体检项
+     * @param comId 组合项Id
+     * @return
+     */
+    List<Check> getComCheck(Integer comId);
+
+    /**
+     * 获取该套餐项下的所有体检项
+     * @param packId 套餐id
+     * @return
+     */
+    Package getPackCheck(Integer packId);
 }

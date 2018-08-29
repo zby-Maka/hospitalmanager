@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>单位信息维护</title>
+		<link rel="stylesheet" type="text/css" href="/css/department.css" />
+	</head>
+
+	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+		<div id="content">
+			<header style="height: 50px; text-align: center; line-height:50px; font-weight: bold; font-size: 25px;">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;维&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;护</header>
+			<table style="margin: 0 auto;">
+				<form>
+				<tbody>
+						<tr>
+							<th style="width: 100px;" align="right">单位名称:</th>
+							<td align="center"><input type="text" name="companyName" size="40" style="height:30px; font-size: 16px;" placeholder="请输入单位名称" readonly="readonly" /></td>
+							<th style="width: 100px;" align="right">拼音简码:</th>
+							<td align="center"><input type="text" name="spellCode" size="40" style="height:30px; font-size: 16px;" placeholder="请输入拼音简码" readonly="readonly" /></td>
+						</tr>
+						<tr>
+							<th style="width: 100px;" align="right">单位负责人:</th>
+							<td align="center"><input type="text" name="companyPrincipal" size="40" style="height:30px; font-size: 16px;" placeholder="请输入单位负责人" readonly="readonly" /></td>
+							<th style="width: 100px;" align="right">联系电话:</th>
+							<td align="center"><input type="text" name="telephone" size="40" style="height:30px; font-size: 16px;" placeholder="请输入联系电话" readonly="readonly" /></td>
+						</tr>
+						<tr>
+							<th style="width: 100px;" align="right">邮政编码:</th>
+							<td align="center"><input type="text" name="postalCode" size="40" style="height:30px; font-size: 16px;" placeholder="请输入邮政编码" readonly="readonly" /></td>
+							<th style="width: 100px;" align="right">联系地址:</th>
+							<td align="center"><input type="text" name="address" size="40" style="height:30px; font-size: 16px;" placeholder="请输入联系地址" readonly="readonly"/></td>
+						</tr>
+						<tr>
+							<th style="width: 100px;" align="right">银行名称:</th>
+							<td align="center"><input type="text" name="bankName" size="40" style="height:30px; font-size: 16px;" placeholder="请输入业务银行名称" readonly="readonly"/></td>
+							<th style="width: 100px;" align="right">银行账号:</th>
+							<td align="center"><input type="text" name="bankNumber" size="40" style="height:30px; font-size: 16px;" placeholder="请输入银行账号" readonly="readonly" /></td>
+						</tr>
+						<tr>
+							<th style="width: 100px;" align="right">企业性质:</th>
+							<td align="center"><input type="text" name="companyNature" size="40" style="height:30px; font-size: 16px;" placeholder="请输入企业性质" readonly="readonly" /></td>
+							<th style="width: 100px;" align="right">编制人数:</th>
+							<td align="center"><input type="text" name="authorizedStrength" size="40" style="height:30px; font-size: 16px;" placeholder="请输入编制人数" readonly="readonly" /></td>
+						</tr>
+						<tr>
+							<th style="width: 100px;" align="right">备注:</th>
+							<td align="center"><textarea cols="44" rows="10" placeholder="请输入备注信息" style="font-size: 15px; font-weight: bold;" readonly="readonly" name="remark"></textarea></td>
+							<th style="width: 100px;" align="right">是否删除:</th>
+							<td align="left">
+								&nbsp;&nbsp;&nbsp;<input type="radio" name="isDelete" value="1" />是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="is_delete" value="0"  checked="checked"/>否
+							</td>
+						</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="4" align="center">
+							<input type="button" value="添加分组" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" />
+						</td>
+					</tr>
+				</tfoot>
+				</form>
+			</table>
+
+		</div>
+	</body>
+	<script src="/js/jquery-3.2.1.js"></script>
+	<script>
+		$(function () {
+			showCompanyInfoById();
+        });
+		/*根据公司id显示公司信息*/
+		function showCompanyInfoById() {
+		    var companyId = localStorage["comid"];
+            $.ajax({
+                url: "/showCompanyInfoById.do",
+                data: {companyId:companyId},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    $("input[name=companyName]").val(data.companyName);
+                    $("input[name=spellCode]").val(data.spellCode);
+                    $("input[name=companyPrincipal]").val(data.companyPrincipal);
+                    $("input[name=telephone]").val(data.telephone);
+                    $("input[name=postalCode]").val(data.postalCode);
+                    $("input[name=address]").val(data.address);
+                    $("input[name=bankName]").val(data.bankName);
+                    $("input[name=bankNumber]").val(data.bankNumber);
+                    $("input[name=companyNature]").val(data.companyNature);
+                    $("input[name=authorizedStrength]").val(data.authorizedStrength);
+                    $("input[name=remark]").val(data.remark);
+                }
+            });
+        }
+	</script>
+</html>

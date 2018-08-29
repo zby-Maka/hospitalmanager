@@ -2,8 +2,10 @@ package com.dyhc.hospitalmanager.service.impl;
 
 import com.dyhc.hospitalmanager.dao.CompanyInfoMapper;
 import com.dyhc.hospitalmanager.dao.GroupMapper;
+import com.dyhc.hospitalmanager.dao.PackageMapper;
 import com.dyhc.hospitalmanager.dao.PersonInfoMapper;
 import com.dyhc.hospitalmanager.pojo.*;
+import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +23,8 @@ public class UnitReservationServiceImpl implements UnitReservationService {
     private CompanyInfoMapper companyInfoMapper;
     @Autowired
     private GroupMapper groupMapper;
+    @Autowired
+    private PackageMapper packageMapper;
 
 
     /**
@@ -116,5 +120,54 @@ public class UnitReservationServiceImpl implements UnitReservationService {
         return personResult;
     }
 
+    /**
+     * 显示所有套餐信息
+     * @return
+     */
+    public List<Package> showPackage(){
+        List<Package> list = null;
+        try {
+            list = packageMapper.showAllPackage();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
+     * 查询所有的单位信息
+     * @return
+     */
+    @Override
+    public List<CompanyInfo> showAllCompanyInfo() {
+        try {
+            List<CompanyInfo> list = companyInfoMapper.showAllCompanyInfo();
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 根据单位id查询单位分组信息
+     * @param companyId
+     * @return
+     */
+    @Override
+    public List<Group> groupListByCompanyId(Integer companyId) {
+        List<Group> list =groupMapper.groupListByCompanyId(companyId);
+        return list;
+    }
+
+    @Override
+    public CompanyInfo showCompanyInfoById(Integer companyId) {
+        try {
+            return companyInfoMapper.showCompanyInfoById(companyId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 }

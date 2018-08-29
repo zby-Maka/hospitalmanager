@@ -60,16 +60,16 @@ public class HospitalmanagerApplicationTests {
 //        addCompanyInfo();
     }
     //科室是检查的时候查询检查结果和建议
-     public void test20(){
-         Map<String,Object> map=null;
-         try {
-             map =sectionService.getCheckResultAndProposed(1,2,1);
-             System.out.println(map.get("list"));
-             System.out.println(map.get("list1"));
-         }catch (Exception e){
-             e.printStackTrace();
-         }
-         }
+//     public void test20(){
+//         Map<String,Object> map=null;
+//         try {
+//             map =sectionService.getCheckResultAndProposed(1,2,1);
+//             System.out.println(map.get("list"));
+//             System.out.println(map.get("list1"));
+//         }catch (Exception e){
+//             e.printStackTrace();
+//         }
+//         }
 
     /**
      *  根据姓名和身份证查询用户信息
@@ -86,21 +86,21 @@ public class HospitalmanagerApplicationTests {
     }
 
 
-    /**
-     * 判断是检查还是检验进行相应的添加操作
-     */
-    public void test21() {
-             CheckResult checkResult = new CheckResult();
-             checkResult.setPhysicalExaminationId("2018010102");
-             MedicalEvents medicalEvents = new MedicalEvents();
-             medicalEvents.setEventsName("AD");
-             Integer a = 0;
-             try {
-                 a = sectionService.addCheckResultAndMedicalEvent(checkResult, medicalEvents, 2);
-             } catch (Exception e) {
-                 e.printStackTrace();
-             }
-         }
+//    /**
+//     * 判断是检查还是检验进行相应的添加操作
+//     */
+//    public void test21() {
+//             CheckResult checkResult = new CheckResult();
+//             checkResult.setPhysicalExaminationId("2018010102");
+//             MedicalEvents medicalEvents = new MedicalEvents();
+//             medicalEvents.setEventsName("AD");
+//             Integer a = 0;
+//             try {
+//                 a = sectionService.addCheckResultAndMedicalEvent(checkResult, medicalEvents, 2);
+//             } catch (Exception e) {
+//                 e.printStackTrace();
+//             }
+//         }
     /**
      *  根据单位名称查询单位表
      * @return

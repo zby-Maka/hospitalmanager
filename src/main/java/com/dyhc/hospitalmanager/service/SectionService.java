@@ -9,21 +9,27 @@ import java.util.Map;
 public interface SectionService {
 
     /**
+     * 根据体检编号查询人员
      * 根据体检编号查询人员在该科室下的体检项
      * @param peacId
      * @return
      * @throws Exception
      */
-    List<Check> getPersonCheckBySectionId(@Param("peacId")String peacId, @Param("sectionId")Integer sectionId) throws  Exception;
-
+    Map<String,Object> getPersonCheckBySectionId(@Param("peacId")String peacId, @Param("sectionId")Integer sectionId);
 
     /**
      * 科室是检查:根据体检项id查常见结果表，默认显示第一条
-     * 科室是检查:根据结果id查建议描述表，默认显示第一条
      * @param checkId
      * @return
      */
-    Map<String,Object> getCheckResultAndProposed(@Param("checkId")Integer checkId, @Param("resultId") Integer resultId,Integer sectionId)throws Exception;
+    List<CommonResults> getCommResultsByCheckId(@Param("checkId")Integer checkId,Integer sectionId);
+
+    /**
+     * 科室是检查:根据结果id查建议描述表，默认显示第一条
+     * @param resultId
+     * @return
+     */
+    List<ProposedDescription> getProposedByResultId(@Param("resultId") Integer resultId,Integer sectionId);
 
 
     /**
@@ -35,7 +41,7 @@ public interface SectionService {
      * @return
      * @throws Exception
      */
-    Integer addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId)throws Exception;
+    Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId);
 
 
 }

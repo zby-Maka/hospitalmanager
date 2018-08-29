@@ -6,9 +6,7 @@ import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -16,6 +14,7 @@ import java.util.List;
 /**
  * 个人预约
  */
+@RestController
 public class PersonalReservationController {
 
     @Autowired
@@ -28,22 +27,34 @@ public class PersonalReservationController {
      */
     @GetMapping("/getPersonInfoByNameAndCard.do")
     public PersonInfo getPersonInfoByNameAndCard(@RequestParam("personIdCard") String personIdCard){
-        return personalReservation.getPersonInfoByNameAndCard(personIdCard);
+        PersonInfo personInfo=personalReservation.getPersonInfoByNameAndCard(personIdCard);
+        if(personInfo==null){
+            return new PersonInfo();
+        }
+        return personInfo;
     }
 
     /**
      * 用户预约
      * @param personInfo 用户信息
-     * @param Yudate 预约时间
-     * @return 1成功
+     * @param yue 预约时间
+     * @return ok成功
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
+     *          -4用户选择套餐失败
+     *          -5用户选择体检项失败
+     *          -6用户选择体检项失败
      */
-    @PostMapping("/UserReservation.do")
-    public int UserReservation(@RequestParam("personInfo") PersonInfo personInfo,@RequestParam("Yudate") Date Yudate){
-        return personalReservation.UserReservation(personInfo,Yudate);
+    @RequestMapping("/UserReservation.do")
+    public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue,
+                                  @RequestParam("packId[]") Integer[] packId,
+                                  @RequestParam("comId[]") Integer[] comId,
+                                  @RequestParam("checkId[]") Integer[] checkId){
+        return personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
     }
+
+
 
     /**
      * 获取所有的检查项
@@ -67,7 +78,7 @@ public class PersonalReservationController {
      * 获取所有套餐
      * @return
      */
-    @GetMapping("/ExhibitionAllPackages")
+    @GetMapping("/ExhibitionAllPackages.do")
     public List<Package> getPackages(){
         return personalReservation.getPackages();
     }
@@ -80,11 +91,37 @@ public class PersonalReservationController {
      * @param checkId 所选的体检项
      * @return null
      */
-    @PostMapping("/")
+    @PostMapping("/addPersonCheck")
     public Integer addPersonCheck(@RequestParam("physicalExaminationId") String physicalExaminationId,
                                   @RequestParam("packId[]") Integer[] packId,
                                   @RequestParam("comId[]") Integer[] comId,
                                   @RequestParam("checkId[]") Integer[] checkId){
         return personalReservation.addPersonCheck(physicalExaminationId,packId,comId,checkId);
+    }
+
+    @RequestMapping("listDate")
+    @ResponseBody
+    public Object listDate(){
+        return personalReservation.listDate();
+    }
+
+    /**
+     * 获取该组合项下的所有体检项
+     * @param comId 组合项Id
+     * @return
+     */
+    @GetMapping("/getComCheck")
+    public List<Check> getComCheck(Integer comId) {
+         return personalReservation.getComCheck(comId);
+    }
+
+    /**
+     * 获取该套餐项下的所有体检项
+     * @param packId 套餐id
+     * @return
+     */
+    @GetMapping("/getPackCheck")
+    public Package getPackCheck(Integer packId) {
+        return personalReservation.getPackCheck(packId);
     }
 }

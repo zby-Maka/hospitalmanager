@@ -1,2 +1,0 @@
-2018-08-23 18:38:13.375 [main] ERROR c.d.h.service.impl.PersonalReservationImpl - 用户选择套餐、组合项、体检项：Invalid bound statement (not found): com.dyhc.hospitalmanager.dao.PhysicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination
-2018-08-23 18:40:32.106 [main] ERROR c.d.h.service.impl.PersonalReservationImpl - 用户选择套餐、组合项、体检项：Invalid bound statement (not found): com.dyhc.hospitalmanager.dao.PhysicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination

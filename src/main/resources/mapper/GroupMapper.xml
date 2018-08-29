@@ -15,4 +15,8 @@
             #{termIsMarry},#{termAgeFloor},#{termAgeCeil},#{packageId},1
           );
     </insert>
+    <!--根据公司名称查询单位分组信息-->
+    <select id="groupListByCompanyId" resultType="com.dyhc.hospitalmanager.pojo.Group">
+        SELECT * FROM `group` WHERE `company_id`=#{companyId}
+    </select>
 </mapper>

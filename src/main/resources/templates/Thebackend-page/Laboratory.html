@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>检验科室</title>
+		<link rel="stylesheet" type="text/css" href="/css/department.css" />
+	</head>
+
+	<body style="background-image: url(/images/bgimg.jpg);background-size: 100% 100%;">
+		<div id="content">
+			<form>
+			<header style="height: 50px; text-align: center; line-height:50px; font-weight: bold; font-size: 25px;">检&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科</header>
+			<table style="width: 100%;">
+				<thead>
+					<tr>
+						<td colspan="4" align="center">
+							<!--获取角色id-->
+							<input type="hidden" name="roleInfoId" th:value="${session.roleInfo.roleInfoId}">
+							<span>体检编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physicalExaminationId" size="40" style="height:30px; font-size: 16px;" />
+							<input type="button" value="查询" class="select" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center">姓名:<label name="personName"/></td>
+						<td align="center">年龄:<label  name="personAge"/></td>
+						<td align="center">性别:<label  name="personSex"/></td>
+						<td align="center">婚否:<label  name="isMarry"/></td>
+					</tr>
+				</thead>
+			</table>
+			<div style="width:100%; height: 500px;">
+				<div style="width: 180px; height: 500px; float: left; margin-left: 100px;">
+					<p align="center" style="color: red; font-size: 18px; margin-top: 16px; margin-bottom: 10px;">体&nbsp;检&nbsp;项</p>
+					<input type="hidden" name="checkId">
+					<ul id="check">
+						<!--<a href="#">-->
+							<!--<li>体重</li>-->
+						<!--</a>-->
+						<!--<a href="#">-->
+							<!--<li>身高</li>-->
+						<!--</a>-->
+						<!--<a href="#">-->
+							<!--<li>视力</li>-->
+						<!--</a>-->
+						<!--<a href="#">-->
+							<!--<li>听力</li>-->
+						<!--</a>-->
+						<!--<a href="#">-->
+							<!--<li>肺活量</li>-->
+						<!--</a>-->
+					</ul>
+				</div>
+				<div style="width:630px; height: 500px; float: right; margin-right: 100px;">
+					<table style="width: 630px;">
+						<thead>
+							<tr>
+								<th colspan="5" align="center">
+									<h2>血&nbsp;&nbsp;&nbsp;液</h2></th>
+							</tr>
+							<tr>
+								<td align="center">检验项</td>
+								<td align="center">单位</td>
+								<td align="center">参考范围</td>
+								<td align="center">结果</td>
+								<td align="center">提示</td>
+							</tr>
+						</thead>
+						<tbody id="show">
+							<tr>
+								<td align="center">血小板</td>
+								<td align="center">个</td>
+								<td align="center">50-100</td>
+								<td align="center">12</td>
+								<td align="center">↓</td>
+							</tr>
+							<tr>
+								<td align="center">白细胞</td>
+								<td align="center">个</td>
+								<td align="center">50-100</td>
+								<td align="center">99</td>
+								<td align="center">↑</td>
+							</tr>
+							<tr>
+								<td align="center">淋巴细胞</td>
+								<td align="center">个</td>
+								<td align="center">50-100</td>
+								<td align="center">12</td>
+								<td align="center">↓</td>
+							</tr>
+							<tr>
+								<td align="center">红细胞</td>
+								<td align="center">个</td>
+								<td align="center">50-100</td>
+								<td align="center">12</td>
+								<td align="center">↑</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="5" align="center" style="margin-top: 20px;">
+									<input type="button" value="保存" id="save" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>
+									<input type="button" value="重置" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>	
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+			</form>
+		</div>
+	</body>
+	<script src="/js/jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$("ul").on("click", "li", function() {
+				$("ul li").css("background","white");
+				$(this).css("background", "red");
+			});
+            $(".select").click(function () {
+                getPerson();
+            });
+            $("#save").click(function () {
+                addResultAndMedicalEvent();
+            })
+		});
+        //查询全部
+        function  getPerson() {
+            var peacId=$("input[name=physicalExaminationId]").val();
+            $.getJSON("http://localhost:8080/Person.html",{"peacId":peacId},function (date) {
+                $.each(date.map1,function (i,m) {
+                    alert(m.personName);
+                    $("label[name=personName]").text(m.personName);
+                    $("label[name=personAge]").text(m.personAge);
+                    $("label[name=personSex]").text(m.personSex);
+                    $("label[name=isMarry]").text(m.isMarry);
+                });
+                alert(date.map);
+                var content="<ul></ul>";
+                $.each(date.map,function (b,n) {
+                    content+="<a href='javascript:result("+n.checkId+")'><li>"+n.checkName+"</li></a>"
+                });
+                $("#check").html(content);
+            });
+        }
+
+        var dataArry;
+
+        function result(checkId){
+            $("input[name=checkId]").val(checkId);
+            alert(checkId);
+            $.getJSON("http://localhost:8080/getYan.html",{"checkId":checkId},function (date) {
+				var content="";
+				console.log(date);
+				console.log($.param(date));
+                dataArry=date;
+                $.each(date,function (i,e) {
+                    var jian="";
+                    if(e.medicalResultData="偏高"){
+                        jian="↑";
+					}else if(e.medicalResultData="正常"){
+                        jian="-";
+					}else{
+                        jian="↓";
+					}
+                   content+="<tr>" +
+                       "<td align=\"center\">"+e.eventsName+"</td>" +
+                       "<td align=\"center\">"+e.unit+"</td>" +
+                       "<td align=\"center\">"+e.upperLimit+"-"+e.lowerLimit+"</td>" +
+                       "<td align=\"center\">"+e.medicalResultData+"</td>" +
+                       "<td align=\"center\">"+jian+"</td>" +
+                       "</tr>";
+                });
+                $("#show").html(content);
+            });
+		}
+        //增加
+        function  addResultAndMedicalEvent() {
+            var arr = $("form").serialize();
+            console.log(dataArry);
+            var dataStr = JSON.stringify(dataArry);
+            console.log(dataStr);
+            var par = $.param({"medicalEvents":dataStr})+"&"+ $("form").serialize();
+            console.log(par);
+                $.getJSON("http://localhost:8080/addResultAndMedicalEvent.html", par, function (date) {
+                console.log(date);
+                if (date.stat == "ok") {
+                    alert("success");
+                } else {
+                    alert("error");
+                }
+            });
+        }
+	</script>
+
+</html>

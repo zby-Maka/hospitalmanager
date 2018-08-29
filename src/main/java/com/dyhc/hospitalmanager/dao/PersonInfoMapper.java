@@ -1,6 +1,7 @@
 package com.dyhc.hospitalmanager.dao;
 
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
+import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -52,5 +53,12 @@ public interface PersonInfoMapper {
      * @return
      */
     PersonInfo getPersonInfoByPersonId(@Param("personId")Integer personId)throws  Exception;
+
+
+    /**
+     * 根据体检编号查询人员信息
+     * @return
+     */
+    List<PersonInfo> getPersonBypeacId(@Param("peacId")String peacId)throws Exception;
 
 }

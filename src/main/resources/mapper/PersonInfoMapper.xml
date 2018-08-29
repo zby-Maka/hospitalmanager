@@ -80,5 +80,13 @@
     <select id="getPersonInfoByPersonId" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
         SELECT * FROM `person_info` WHERE `person_id` = #{personId}
     </select>
-    
+    <!--根据体检编号查询人员信息-->
+    <select id="getPersonBypeacId" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
+          SELECT p.* FROM `person_info` p
+           INNER JOIN `physical_examination` pe
+           ON p.`person_id`=pe.`person_id`
+            WHERE pe.`physical_examination_id`=#{peacId}
+     </select>
+
+
 </mapper>
