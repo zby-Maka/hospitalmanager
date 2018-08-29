@@ -1,6 +1,7 @@
 package com.dyhc.hospitalmanager.service;
 
 import com.dyhc.hospitalmanager.pojo.RoleInfo;
+import com.dyhc.hospitalmanager.pojo.Section;
 import org.apache.ibatis.annotations.Param;
 
 public interface RoleInfoService {
@@ -18,5 +19,5 @@ public interface RoleInfoService {
      * @param roleInfoId
      * @return
      */
-    Integer getSectionIdByRoleInfoId(@Param("roleInfoId") Integer roleInfoId);
+    Section getSectionIdByRoleInfoId(@Param("roleInfoId") Integer roleInfoId);
 }

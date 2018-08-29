@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>SCT-后台系统</title>
-<link href="style/authority/login_css.css" rel="stylesheet" type="text/css" />
+<link href="/style/authority/login_css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div id="login_center">
@@ -38,7 +38,7 @@
 	</div>
 
 </body>
-<script type="text/javascript" src="scripts/jquery/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery-1.7.1.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
     });
@@ -50,7 +50,7 @@
         var roletypeid=$("input[name='roletypeid']:checked").val();
         $.post("http://localhost:8080/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
             var roletype="";
-            if (data>0) {
+            if (data.roletypeid>0) {
                 alert("登录成功！");
                 if (roletypeid==1){
                     roletype="系统管理员";
@@ -61,8 +61,15 @@
                     roletype="总检医生";
                     location.href="http://localhost:8080/AlwaysCheck.html"
 				}else  if (roletypeid==4){
+                    var section_type_id=data.sectiontypeid;
                     roletype="科室医生"
-                    location.href="http://localhost:8080/DepartmentIndex.html"
+					if(section_type_id==1){
+                        location.href="http://localhost:8080/DepartmentIndex.html";
+					}else if(section_type_id==2){
+                        location.href="http://localhost:8080/LaboratoryIndex.html";
+					}else if(section_type_id==3){
+                        location.href="http://localhost:8080/LaboratoryIndex.html";
+					}
 				} else {
                     roletype="收费处";
                     location.href="http://localhost:8080/Cashiers.html"
