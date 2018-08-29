@@ -43,8 +43,11 @@ public class PersonalReservationController {
      *          -6用户选择体检项失败
      */
     @RequestMapping("/UserReservation.do")
-    public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue){
-        return personalReservation.UserReservation(personInfo,yue);
+    public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue,
+                                  @RequestParam("packId[]") Integer[] packId,
+                                  @RequestParam("comId[]") Integer[] comId,
+                                  @RequestParam("checkId[]") Integer[] checkId){
+        return personalReservation.UserReservation(personInfo,yue,packId,comId,checkId);
     }
 
     /**
