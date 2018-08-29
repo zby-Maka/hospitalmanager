@@ -30,13 +30,15 @@ public interface PersonalReservationService {
      *          -2添加用户信息失败
      *          -3添加预约表失败
      */
-    String UserReservation(PersonInfo personInfo,String Yudate);
+    String UserReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId);
 
     /**
      * 获取redis中的所有键值
      * @return
      */
     Object listDate();
+
+    String userReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId);
 
     /**
      * 获取所有的检查项

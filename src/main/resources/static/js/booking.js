@@ -1,5 +1,4 @@
 $(function () {
-
     assignmentPersonInfo();
 
     //下一步按钮
@@ -20,7 +19,6 @@ $(function () {
             location.href = "/check.html";
         }
     });
-
 });
 
 /**

@@ -63,4 +63,13 @@
             #{address},#{bankName},#{bankNumber},#{companyNature},#{authorizedStrength},1,
            #{remark});
     </insert>
+
+    <!--查询所有单位信息-->
+    <select id="showAllCompanyInfo" resultType="com.dyhc.hospitalmanager.pojo.CompanyInfo">
+      SELECT * FROM `company_info`;
+    </select>
+
+    <select id="showCompanyInfoById" resultType="com.dyhc.hospitalmanager.pojo.CompanyInfo">
+      SELECT * FROM `company_info` WHERE company_id = #{companyId}
+    </select>
 </mapper>

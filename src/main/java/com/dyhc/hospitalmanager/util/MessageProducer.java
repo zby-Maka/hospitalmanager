@@ -18,7 +18,7 @@ public class MessageProducer {
      * @param destination 消息队列地址
      * @param message   消息
      */
-    public void sendMessage(Destination destination, Object message){
-        this.jmsTemplate.convertAndSend(destination, message);
+    public void sendMessage(Destination destination, String message){
+        this.jmsTemplate.convertAndSend(destination,message);
     }
 }

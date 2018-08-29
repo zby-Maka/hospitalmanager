@@ -12,4 +12,11 @@ public interface RoleInfoService {
      * @throws Exception
      */
     RoleInfo getRoleInfoLogin( String userName, String password) throws Exception;
+
+    /**
+     * 根据角色id获取科室id
+     * @param roleInfoId
+     * @return
+     */
+    Integer getSectionIdByRoleInfoId(@Param("roleInfoId") Integer roleInfoId);
 }
