@@ -1,10 +1,4 @@
 $(function () {
-    $("ul").on("mouseover","li",function(){
-        $(this).css("background","red");
-    });
-    $("ul").on("mouseout","li",function(){
-        $(this).css("background","greenyellow");
-    });
     $(".select").click(function () {
         getPerson();
     });
@@ -27,7 +21,7 @@ function  getPerson() {
         alert(date.map);
         var content="<ul></ul>";
         $.each(date.map,function (b,n) {
-            content+="<a href=\"#\" onclick='result("+n.checkId+")'><li>"+n.checkName+"</li></a>"
+            content+="<a href='javascript:result("+n.checkId+")'><li>"+n.checkName+"</li></a>"
         });
         $("#check").html(content);
     });
@@ -58,6 +52,7 @@ function getProposedByResultId(commonResultsId) {
 function  addResultAndMedicalEvent() {
     var arr=$("form").serialize();
     console.log(arr);
+    console.log(this.data);
     $.getJSON("http://localhost:8080/addResultAndMedicalEvent.html",arr,function (date) {
         console.log(date);
         if(date.stat=="ok"){

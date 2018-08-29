@@ -16,7 +16,7 @@ public class HttpClient {
     /**
      * get方法
      */
-    public void httpGet(String url) {
+    public String httpGet(String url) {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         try {
             // 创建httpget.
@@ -32,8 +32,8 @@ public class HttpClient {
                 if (entity != null) {
                     // 打印响应内容长度
                     System.out.println("Response content length: " + entity.getContentLength());
-                    // 打印响应内容
-                    System.out.println("Response content: " + EntityUtils.toString(entity));
+                    String content = EntityUtils.toString(entity);
+                    return content;
                 }
                 System.out.println("------------------------------------");
             } finally {
@@ -53,5 +53,6 @@ public class HttpClient {
                 e.printStackTrace();
             }
         }
+        return null;
     }
 }

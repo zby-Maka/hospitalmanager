@@ -7,10 +7,12 @@ import com.dyhc.hospitalmanager.service.BasicFunctionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.naming.ldap.PagedResultsControl;
 import java.util.List;
 
+@Service
 public class BasicFunctionServiceImpl implements BasicFunctionService {
 
     private Logger logger= LoggerFactory.getLogger(BasicFunctionService.class);
@@ -32,6 +34,7 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     private PackageAndCheckMapper packageAndCheckMapper;
     @Autowired
     private PackageAndCombinationMapper packageAndCombinationMapper;
+
 
     //----------------------------------科室维护
     @Override
@@ -108,16 +111,18 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
 
     //----------------------------------组合项项维护
 
+
+
     @Override
-    public int addCombinationInfo(Combination combination,List<Check>checkList) {
+    public int addCombinationInfo(Combination combination,Integer[] checkList) {
         int result=0;
         try {
             result=combinationMapper.addCombinationInfo(combination);
             //添加组合与体检项的关系
-            for(Check check : checkList){
+            for(Integer checkId : checkList){
                 CombinationAndCheck combinationAndCheck = new CombinationAndCheck();
-                combinationAndCheck.setCombinationId(result);
-                combinationAndCheck.setCheckId(check.getCheckId());
+                combinationAndCheck.setCombinationId(combination.getCombinationId());
+                combinationAndCheck.setCheckId(checkId);
                 combinationAndCheckMapper.addCombinationAndCheck(combinationAndCheck);
             }
         } catch (Exception e) {
@@ -128,7 +133,7 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
     }
 
     @Override
-    public int updCombinationInfo(Combination combination,List<Check>checkList) {
+    public int updCombinationInfo(Combination combination,Integer[] checkList) {
         int result=0;
         try {
             result=combinationMapper.updCombinationInfo(combination);
@@ -139,25 +144,36 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return result;
     }
 
+    @Override
+    public List<Check> getCheckByCombinationId(Integer combinationId) {
+        List<Check> list=null;
+        try {
+            list=combinationAndCheckMapper.getCheckByCombinationId(combinationId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 
     //----------------------------------套餐项维护
     @Override
-    public int addPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList) {
+    public int addPackageInfo(Package pack,Integer[] combinationList,Integer[] checkList) {
         int result=0;
         try {
             result=packageMapper.addPackageInfo(pack);
             //添加套餐与组合项的关系
-            for (Combination combination : combinationList){
+            for (Integer comid : combinationList){
                 PackageAndCombination packageAndCombination = new PackageAndCombination();
-                packageAndCombination.setPackageId(result);
-                packageAndCombination.setCombinationId(combination.getCombinationId());
+                packageAndCombination.setPackageId(pack.getPackageId());
+                packageAndCombination.setCombinationId(comid);
                 packageAndCombinationMapper.addPackageAndCombination(packageAndCombination);
             }
             //添加套餐与体检项的关系
-            for (Check check : checkList){
+            for (Integer checkId  : checkList){
                 PackageAndCheck packageAndCheck = new PackageAndCheck();
-                packageAndCheck.setPackageId(result);
-                packageAndCheck.setCheckId(check.getCheckId());
+                packageAndCheck.setPackageId(pack.getPackageId());
+                packageAndCheck.setCheckId(checkId);
                 packageAndCheckMapper.addPackageAndCheckInfo(packageAndCheck);
             }
         } catch (Exception e) {
@@ -167,8 +183,10 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return result;
     }
 
+
+
     @Override
-    public int updPackageInfo(Package pack,List<Combination> combinationList,List<Check> checkList) {
+    public int updPackageInfo(Package pack,Integer[] CombiantionList,Integer[] CheckList) {
         int result=0;
         try {
             result=packageMapper.updPackageInfo(pack);

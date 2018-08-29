@@ -2,6 +2,7 @@ package com.dyhc.hospitalmanager.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.dyhc.hospitalmanager.pojo.RoleInfo;
+import com.dyhc.hospitalmanager.pojo.Section;
 import com.dyhc.hospitalmanager.service.RoleInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -28,15 +29,19 @@ public class RoleInfoController{
      */
     @RequestMapping(value = "login.do")
     public String getLogin(String userName, String password, Integer roletypeid, HttpServletRequest request) throws  Exception{
+        String json="";
         RoleInfo roleInfo=roleInfoService.getRoleInfoLogin(userName,password);
-        System.out.println(roleInfo.getRoleInfoId());
+        Section section=roleInfoService.getSectionIdByRoleInfoId(roleInfo.getRoleInfoId());
+        //System.out.println(roleInfo.getRoleInfoId());
         if (roleInfo==null){
             return JSON.toJSONString("用户名和密码错误");
         }else {
             if (roleInfo.getRoleTypeId()==roletypeid){
                 HttpSession session=request.getSession();
                 session.setAttribute("roleInfo",roleInfo);
-                return JSON.toJSONString(roleInfo.getRoleTypeId());
+                session.setAttribute("sectionId",section.getSectionId());
+                json="{\"roletypeid\":\""+roleInfo.getRoleTypeId()+"\",\"sectiontypeid\":\""+section.getSectionTypeId()+"\"}";
+                return json;
             }else {
                 return JSON.toJSONString("科室类型编号错误");
             }

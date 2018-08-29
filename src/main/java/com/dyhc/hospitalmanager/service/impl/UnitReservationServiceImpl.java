@@ -134,4 +134,40 @@ public class UnitReservationServiceImpl implements UnitReservationService {
         return list;
     }
 
+    /**
+     * 查询所有的单位信息
+     * @return
+     */
+    @Override
+    public List<CompanyInfo> showAllCompanyInfo() {
+        try {
+            List<CompanyInfo> list = companyInfoMapper.showAllCompanyInfo();
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 根据单位id查询单位分组信息
+     * @param companyId
+     * @return
+     */
+    @Override
+    public List<Group> groupListByCompanyId(Integer companyId) {
+        List<Group> list =groupMapper.groupListByCompanyId(companyId);
+        return list;
+    }
+
+    @Override
+    public CompanyInfo showCompanyInfoById(Integer companyId) {
+        try {
+            return companyInfoMapper.showCompanyInfoById(companyId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

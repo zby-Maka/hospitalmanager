@@ -7,73 +7,74 @@
 	</head>
 
 	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
-		
+	<form id="addform">
 		<div style="width: 80%; height: 279mm;background-color: #f8f8f8; opacity: 0.8;text-align: center;margin: 0 auto;">
 			<h2 style="display: block;text-align: center;">体检项信息</h2>
-			<form>
+
 			<table>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">是否启用：</td>
 					<td colspan="3" width="300mm">
-						<input type="radio" value="1" name="yesorno" />是
-						<input type="radio" value="0" name="yesorno" />否
+						<input type="radio" value="1" name="isEnable" />是
+						<input type="radio" value="0" name="isEnable" />否
 					</td>
 				</tr>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">所属科室：</td>
 					<td colspan="3">
-						<input type="text" readonly="readonly" name="keshi" value="" />
+						<input type="text" readonly="readonly" name="sectionId" value="1" />
 					</td>
 				</tr>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">体检项名称：</td>
-					<td><input type="text" name="tjName" id="tjName" value="" /></td>
+					<td><input type="text" name="tjName" id="checkName" value="" /></td>
 					<td style="text-align: right;">拼音简码：</td>
-					<td><input type="text" name="pyjm" value="" /></td>
+					<td><input type="text" name="checkSpellCode" value="" /></td>
 				</tr>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">适合性别：</td>
 					<td colspan="3" width="300mm">
-						<input type="radio" value="1" name="sex" />男
-						<input type="radio" value="0" name="sex" />女
+						<input type="radio" value="1" name="termSex" />男
+						<input type="radio" value="0" name="termSex" />女
 					</td>
 				</tr>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">位置提示信息：</td>
-					<td colspan="3"><input type="text" name="address" value="" /></td>
+					<td colspan="3"><input type="text" name="checkAddress" value="" /></td>
 				</tr>
 
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">参考上限：</td>
-					<td><input type="text" name="cksx" value="" /></td>
+					<td><input type="text" name="referenceCeil" value="" /></td>
 					<td style="text-align: right;">参考下限：</td>
-					<td><input type="text" name="dw" value="" /></td>
+					<td><input type="text" name="referenceFloor" value="" /></td>
 				</tr>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">最大值：</td>
-					<td><input type="text" name="zdz" value="" /></td>
+					<td><input type="text" name="maxValue" value="" /></td>
 					<td style="text-align: right;">最小值：</td>
-					<td><input type="text" name="zxz" value="" /></td>
+					<td><input type="text" name="minValue" value="" /></td>
 				</tr>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">偏高提示：</td>
-					<td><input type="text" name="pgts" value="" /></td>
+					<td><input type="text" name="promptHigh" value="" /></td>
 					<td style="text-align: right;">偏低提示：</td>
-					<td><input type="text" name="pdts" value="" /></td>
+					<td><input type="text" name="promptFlat" value="" /></td>
 				</tr>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">备注：</td>
 					<td colspan="3">
-						<textarea cols="80" rows="10">
+						<textarea cols="80" rows="10" name="remark">
 						
 						</textarea>
 					</td>
 				</tr>
 			</table>
-			<input type="button" value="提交" />
+			<input type="button" value="提交" onclick="addcheck()"/>
 			<input type="reset" value="重置" />
-			</form>
 		</div>
+		</form>
 	</body>
-
+	<script src="../../static/js/jquery-3.2.1.js"></script>
+	<script src="../../static/js/tjx.js"></script>
 </html>

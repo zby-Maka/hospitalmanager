@@ -34,6 +34,8 @@ public class SectionServiceImpl implements SectionService {
     private  SectionMapper sectionMapper;
 
 
+
+
     @Override
     public  Map<String,Object> getPersonCheckBySectionId(String peacId, Integer sectionId){
         Map<String,Object> maplist=null;
@@ -81,30 +83,9 @@ public class SectionServiceImpl implements SectionService {
         return list;
     }
 
-//    @Override
-//    public Map<String,Object> getCheckResultAndProposed(Integer checkId, Integer resultId,Integer sectionId){
-//        Map<String,Object> map=null;
-//        try {
-//            SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
-//            if(sectionType.getSectionTypeName().equals("检查")){
-//                map=new HashMap<>();
-//                List<CommonResults> list=commonResultsMapper.getCommResultsByCheckId(checkId);
-//                List<ProposedDescription> list1=proposedDescriptionMapper.getProposedByResultId(resultId);
-//                map.put("list",list);
-//                map.put("list1",list1);
-//            }
-//        }catch (Exception e){
-//            logger.error("您的查询有误");
-//            e.printStackTrace();
-//        }
-//        return map;
-//    }
-
-
-
 
     @Override
-    public Integer addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId) {
+    public Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId) {
         Integer save=0;
         Integer add=0;
         Integer ok=0;
@@ -115,7 +96,10 @@ public class SectionServiceImpl implements SectionService {
                 save=checkResultMapper.addCheckResult(checkResult);
             }else if(sectionType.getSectionTypeName().equals("检验")){
                 save=checkResultMapper.addCheckResult(checkResult);
-                add=medicalEventsMapper.addMedicalEvent(medicalEvents);
+                for (MedicalEvents list:medicalEvents) {
+                    list.setCheckResultId(save);
+                    add=medicalEventsMapper.addMedicalEvent(list);
+                }
             }else{
                 save=checkResultMapper.addCheckResult(checkResult);
             }

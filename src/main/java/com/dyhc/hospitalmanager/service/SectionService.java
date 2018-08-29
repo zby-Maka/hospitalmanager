@@ -48,6 +48,7 @@ public interface SectionService {
      * @return
      */
     int addSectionInfo(Section section);
+    Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId);
 
 
 }

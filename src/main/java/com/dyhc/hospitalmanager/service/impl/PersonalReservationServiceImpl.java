@@ -1,12 +1,14 @@
 package com.dyhc.hospitalmanager.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import com.dyhc.hospitalmanager.util.GetFetureDate;
 import com.dyhc.hospitalmanager.util.MessageProducer;
+import org.apache.activemq.command.ActiveMQQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.jms.Destination;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -52,15 +55,13 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     //组合项和体检项的关系Mapper
     @Autowired
     private CombinationAndCheckMapper combinationAndCheckMapper;
-
     @Autowired
     RedisDao redisDao;
 
     @Autowired
     private MessageProducer messageProducer;
 
-    public Map<String,Object> map=new HashMap<>();
-
+    public String result;
 
 
     /**
@@ -104,24 +105,29 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      * 用户预约
      * @param personInfo 用户信息
      * @param Yudate 预约时间
-     * @return 1成功
+     * @return ok成功
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
+     *          -4添加用户套餐失败
+     *          -5添加用户组合失败
+     *          -6添加用户体检项失败
      */
     @Override
     @Transactional(rollbackFor=Exception.class)
-    public String UserReservation(PersonInfo personInfo,String Yudate) {
+    public String UserReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId) {
         Integer result = 0;
         try {
             PersonInfo per=personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
             if (per==null) {
+                personInfo.setPersonType("个人");
                 result = personInfoMapper.addPersonInfo(personInfo);
             }else {
                 personInfo.setPersonId(per.getPersonId());
                 result = personInfoMapper.updPersonInfo(personInfo);
             }
-            if (result < 0) {
+            personInfo = personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
+            if (result == 0) {
                 //添加(修改)用户信息失败
                 logger.error("添加用户信息失败");
                 return -2+"";
@@ -132,6 +138,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             //根据预约日期查询预约日期的最后一位编号
             String physicalExaminationId = physicalExaminationMapper.getPhysicalExaminationOrderByMedicalTime(Yudate);
             if(physicalExaminationId!=null){
+                //给这个人员生成体检编号
                 //编号
                 String phyNo = physicalExaminationId.substring(8,physicalExaminationId.length());
                 //日期
@@ -143,51 +150,125 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                 physicalExamination.setPhysicalExaminationId(phyNo);
                 physicalExamination.setPersonId(personInfo.getPersonId());
                 physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
-                //给这个人员生成体检编号
+                //新增
                 result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
-                if (result < 0) {
+                if (result == 0) {
                     //添加用户预约编号失败
                     logger.error("添加用户预约编号失败");
                     return -3+"";
                 }
-                return phyNo;
+                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(phyNo,packId);
+                if(result==0){
+                    logger.error("添加用户套餐项错误");
+                    return -4+"";
+                }
+                result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(phyNo,comId);
+                if(result==0){
+                    logger.error("添加用户组合项错误");
+                    return -5+"";
+                }
+                result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(phyNo,checkId);
+                if(result==0) {
+                    logger.error("添加用户体检项错误");
+                    return -6 + "";
+                }
             }else {
+                //给这个人员生成体检编号
                 String[] date = Yudate.split("-");
                 physicalExaminationId=date[0]+date[1]+date[2]+"01";
                 physicalExamination.setPhysicalExaminationId(physicalExaminationId);
                 physicalExamination.setPersonId(personInfo.getPersonId());
                 physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
-                //给这个人员生成体检编号
+                //新增
                 result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
-                if (result < 0) {
+                if (result ==0) {
                     //添加用户预约编号失败
-                    logger.error("添加用户预约编号失败");
+                    logger.error("添加用户错误");
                     return -3+"";
                 }
-                return physicalExaminationId;
+                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(physicalExaminationId,packId);
+                if(result==0){
+                    logger.error("添加用户套餐项错误");
+                    return -4+"";
+                }
+                result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(physicalExaminationId,comId);
+                if(result==0){
+                    logger.error("添加用户组合项错误");
+                    return -5+"";
+                }
+                result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId,checkId);
+                if(result==0) {
+                    logger.error("添加用户体检项错误");
+                    return -6 + "";
+                }
             }
         } catch (Exception e) {
             logger.error("预约失败，"+e.getMessage());
             e.printStackTrace();
             return -1+"";
         }
+        return "ok";
     }
 
-//    public Map<String,Object> UserReservation(PersonInfo personInfo,String Yudate){
-//        Destination destination = new ActiveMQQueue("reservation");
-//        //发送消息
-//        messageProducer.sendMessage(destination,personInfo);
-//        return map;
-//    }
+    @Override
+    @Transactional(rollbackFor=Exception.class)
+    public String userReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId){
+        Destination destination = new ActiveMQQueue("reservation");
+        Map<String,Object> map=new HashMap<>();
+        map.put("personInfo",personInfo);
+        map.put("yuDate",Yudate);
+        map.put("packId",packId);
+        map.put("comId",comId);
+        map.put("checkId",checkId);
+        //发送消息
+        messageProducer.sendMessage(destination,JSON.toJSONString(map));
+        return result;
+    }
 
     /**
      * 监听消息
      * @param object
      */
-    @JmsListener(destination = "test")
-    public void test(Object object){
+    @JmsListener(destination = "reservation")
+    public void test(String object){
         //此处接受到消息将redis中的数量减少1进行数据处理
-        map.put("测试",object);
+        Map json = (Map) JSONObject.parse(object);
+        //从map中获取json转套餐
+        Object packIdObject=json.get("packId");
+        String packIdStr=packIdObject.toString().substring(1,packIdObject.toString().length()-1);
+        String[] packIds=packIdStr.split(",");
+        Integer[] packId=new Integer[packIds.length];
+        for (int i=0;i< packIds.length;i++){
+            packId[i]=Integer.parseInt(packIds[i]);
+        }
+        //转组合项
+        Object comIdObject=json.get("comId");
+        String comIdStr=comIdObject.toString().substring(1,comIdObject.toString().length()-1);
+        String[] comIds=comIdStr.split(",");
+        Integer[] comId=new Integer[comIds.length];
+        for (int i=0;i< comIds.length;i++){
+            comId[i]=Integer.parseInt(comIds[i]);
+        }
+        //转体检项
+        Object checkIdObject=json.get("checkId");
+        String checkIdStr=checkIdObject.toString().substring(1,checkIdObject.toString().length()-1);
+        String[] checkIds=checkIdStr.split(",");
+        Integer[] checkId=new Integer[checkIds.length];
+        for (int i=0;i< checkIds.length;i++){
+            checkId[i]=Integer.parseInt(checkIds[i]);
+        }
+        String yuDate=json.get("yuDate").toString();
+        //获取person对象
+        String personInfoStr=json.get("personInfo").toString();
+        JSONObject object1 = JSONObject.parseObject(personInfoStr);
+        PersonInfo personInfo=JSONObject.toJavaObject(object1,PersonInfo.class);
+        Integer value=Integer.parseInt(redisDao.getValue(yuDate));
+        if (value>1){
+            redisDao.decr(yuDate,1);
+            result=UserReservation(personInfo,yuDate,packId,comId,checkId);
+        }else{
+            result="-1";
+        }
     }
 
     /**
@@ -301,11 +382,23 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      */
     @Override
     public Package getPackCheck(Integer packId) {
+        Package packageCombination=null;
+        Package packageCheck=null;
+        Package pack = null;
         try {
-            return packageMapper.getPackageCheck(packId);
+            packageCombination =  packageMapper.getPackageCombination(packId);
+            packageCheck =  packageMapper.getPackageCheck(packId);
+            if(packageCombination!=null){
+                if(packageCheck!=null)
+                    packageCombination.setPackageCheckList(packageCheck.getPackageCheckList());
+            }else {
+                pack= packageMapper.selPackageById(packId);
+                if(packageCheck!=null)
+                    pack.setPackageCheckList(packageCheck.getPackageCheckList());
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
+        return packageCombination;
     }
 }
