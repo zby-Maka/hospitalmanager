@@ -20,7 +20,7 @@
       is_enable=1 where check_id=#{checkId}
     </update>
     <select id="getCheckList" resultType="com.dyhc.hospitalmanager.pojo.Check">
-            SELECT c.* FROM `physical_examination` pe
+      SELECT c.* FROM `physical_examination` pe
       INNER JOIN `physical_examination_and_package` pep
       ON pe.`physical_examination_id` = pep.`physical_examination_id`
       INNER JOIN `package_and_ combination` pac ON pep.`package_id` = pac.`package_id`

@@ -18,6 +18,20 @@ public interface CompanyInfoMapper {
     CompanyInfo showCompanyInfo(@Param("companyName") String companyName)throws  Exception;
 
     /**
+     *  根据单位id查询单位表
+     * @param companyId 单位id
+     * @return
+     */
+    CompanyInfo showCompanyInfoById(@Param("companyId") Integer companyId)throws  Exception;
+
+    /**
+     * 查询所有单位信息
+     * @return
+     * @throws Exception
+     */
+    List<CompanyInfo> showAllCompanyInfo()throws  Exception;
+
+    /**
      * 修改单位信息
      * @param companyInfo
      * @return

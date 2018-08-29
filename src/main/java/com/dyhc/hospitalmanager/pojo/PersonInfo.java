@@ -27,6 +27,17 @@ public class PersonInfo {
     private Date createDate;
     private List<Check> checkList;
 
+
+    private String yuDate;
+
+    public String getYuDate() {
+        return yuDate;
+    }
+
+    public void setYuDate(String yuDate) {
+        this.yuDate = yuDate;
+    }
+
     public List<Check> getCheckList() {
         return checkList;
     }
