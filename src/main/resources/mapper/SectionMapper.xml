@@ -20,8 +20,8 @@
     select * from section where section_id=#{sectionId}
     </select>
 
-    <select id="getSectionIdByRoleInfoId" resultType="int">
-        SELECT s.`section_id` FROM `role_info` r
+    <select id="getSectionIdByRoleInfoId" resultType="com.dyhc.hospitalmanager.pojo.Section">
+        SELECT s.* FROM `role_info` r
         INNER JOIN `section` s
         ON r.`section_id`=s.`section_id`
         WHERE r.`role_info_id`=#{roleInfoId}
