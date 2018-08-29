@@ -39,5 +39,5 @@ public interface SectionMapper {
      * @param roleInfoId
      * @return
      */
-    Integer getSectionIdByRoleInfoId(@Param("roleInfoId") Integer roleInfoId)throws Exception;
+    Section getSectionIdByRoleInfoId(@Param("roleInfoId") Integer roleInfoId)throws Exception;
 }
