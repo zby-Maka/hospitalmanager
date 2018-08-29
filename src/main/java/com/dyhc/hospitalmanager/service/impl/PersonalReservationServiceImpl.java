@@ -152,25 +152,11 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                 physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
                 //新增
                 result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
+                physicalExaminationId=phyNo;
                 if (result == 0) {
                     //添加用户预约编号失败
                     logger.error("添加用户预约编号失败");
                     return -3+"";
-                }
-                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(phyNo,packId);
-                if(result==0){
-                    logger.error("添加用户套餐项错误");
-                    return -4+"";
-                }
-                result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(phyNo,comId);
-                if(result==0){
-                    logger.error("添加用户组合项错误");
-                    return -5+"";
-                }
-                result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(phyNo,checkId);
-                if(result==0) {
-                    logger.error("添加用户体检项错误");
-                    return -6 + "";
                 }
             }else {
                 //给这个人员生成体检编号
@@ -186,18 +172,24 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                     logger.error("添加用户错误");
                     return -3+"";
                 }
-                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(physicalExaminationId,packId);
-                if(result==0){
+            }
+            if(packId!=null) {
+                result = physicalExaminationAndPackageMapper.addBatchPhyAndPackage(physicalExaminationId, packId);
+                if (result == 0) {
                     logger.error("添加用户套餐项错误");
-                    return -4+"";
+                    return -4 + "";
                 }
-                result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(physicalExaminationId,comId);
-                if(result==0){
+            }
+            if(comId!=null) {
+                result = physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(physicalExaminationId, comId);
+                if (result == 0) {
                     logger.error("添加用户组合项错误");
-                    return -5+"";
+                    return -5 + "";
                 }
-                result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId,checkId);
-                if(result==0) {
+            }
+            if(checkId!=null) {
+                result = physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId, checkId);
+                if (result == 0) {
                     logger.error("添加用户体检项错误");
                     return -6 + "";
                 }
