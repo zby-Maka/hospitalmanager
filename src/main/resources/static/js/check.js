@@ -23,6 +23,7 @@ $(function() {
 
     $("#chooseDate>div").not(":eq(0)").click(function () {
         makeAnAppointment($(this).find("lable").text(),packId,comId,checkId);
+        EV_closeAlert();
         $("#chooseDate").hide();
     });
 
@@ -50,7 +51,8 @@ $(function() {
         if(packId.length==0&&comId.length==0&&checkId.length==0){
             alert("请选择体检项目！");
         }else {
-            $("#chooseDate").show();
+            EV_modeAlert('chooseDate');
+            //$("#chooseDate").show();
         }
     });
 
