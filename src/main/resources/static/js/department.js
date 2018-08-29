@@ -21,7 +21,7 @@ function  getPerson() {
         alert(date.map);
         var content="<ul></ul>";
         $.each(date.map,function (b,n) {
-            content+="<li><a href='javascript:result("+n.checkId+")'>"+n.checkName+"</a></li>"
+            content+="<a href='javascript:result("+n.checkId+")'><li class='checkli'>"+n.checkName+"</li></a>"
         });
         $("#check").html(content);
     });

@@ -135,8 +135,8 @@
 	</body>
 	<script>
 		$(function(){
-			$("#check ul").on("click","li",function(){
-				$("ul li").css("background","white");
+			$("ul").on("click",".checkli",function(){
+				$(".checkli").css("background","white");
 				$(this).css("background","red");
 			});
 		});

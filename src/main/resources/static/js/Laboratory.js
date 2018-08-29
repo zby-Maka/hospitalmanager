@@ -1,3 +1,4 @@
+var dataArry;
 $(function () {
     $(".select").click(function () {
         getPerson();
@@ -20,13 +21,12 @@ $(function () {
             alert(date.map);
             var content="";
             $.each(date.map,function (b,n) {
-                content+="<li><a href='javascript:getYan("+n.checkId+")'>"+n.checkName+"</a></li>";
+                content+="<a href='javascript:getYan("+n.checkId+")'><li class='checkli'>"+n.checkName+"</li></a>";
             });
             $("#check").html(content);
         });
     }
 
-    var dataArry;
     //form表单转为json对象
     function formToJson(data){
         data= decodeURIComponent(data,true);//防止中文乱码
