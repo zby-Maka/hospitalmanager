@@ -1,17 +1,32 @@
+var weekDay = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
 $(function() {
+    //查询预约时间
     $.ajax({
         url:"/listDate",
         dataType:"json",
         success:function (res) {
-            for (var i=0;i<res.length;i++){
-                console.log(res[i]);
-            }
+            var divControl = document.getElementById("chooseDate").getElementsByTagName("div");
+            $.each(res,function (i,e) {
+                if(e.value>0){
+                    var myDate = new Date(Date.parse(e.key.replace(/-/g, "/")));
+                    divControl[i+1].innerHTML=weekDay[myDate.getDay()]+"\n"+e.key;
+                }else {
+                    divControl[i+1].innerHTML="约满了";
+                }
+            })
         }
     })
 
-    $("input[name='submit']").click(function(){
-        $("div[name='chooseDate']").show();
+    $("#chooseDate>div").not(":eq(0)").click(function () {
+        alert("时间");
+        $("#chooseDate").hide();
     });
+
+    //点击预约选择时间
+    $("input[name='submit']").click(function(){
+        $("#chooseDate").show();
+    });
+
 	//选项卡设计交互
 	$(function() {
 		var li_a = $(".tab_menu ul li a");
@@ -83,10 +98,11 @@ $(function() {
 	// 	$(".childBox").hide();
 	// });
 
+
 	//确定预约
-	$("input[name=submit]").click(function () {
-        makeAnAppointment();
-    })
+	// $("input[name=submit]").click(function () {
+     //    makeAnAppointment();
+    // })
 });
 
 /**
@@ -129,6 +145,7 @@ function makeAnAppointment() {
             "comId": comId,
             "checkId": checkId
         }) + "&" + persionInfo;
+
         $.ajax({
             type: "get",
             url: "/UserReservation.do?" + date,
