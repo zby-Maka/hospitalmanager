@@ -235,27 +235,36 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         Map json = (Map) JSONObject.parse(object);
         //从map中获取json转套餐
         Object packIdObject=json.get("packId");
-        String packIdStr=packIdObject.toString().substring(1,packIdObject.toString().length()-1);
-        String[] packIds=packIdStr.split(",");
-        Integer[] packId=new Integer[packIds.length];
-        for (int i=0;i< packIds.length;i++){
-            packId[i]=Integer.parseInt(packIds[i]);
+        Integer[] packId=null;
+        if (packIdObject!=null&&packIdObject!=""){
+            String packIdStr=packIdObject.toString().substring(1,packIdObject.toString().length()-1);
+            String[] packIds=packIdStr.split(",");
+            packId=new Integer[packIds.length];
+            for (int i=0;i< packIds.length;i++){
+                packId[i]=Integer.parseInt(packIds[i]);
+            }
         }
         //转组合项
         Object comIdObject=json.get("comId");
-        String comIdStr=comIdObject.toString().substring(1,comIdObject.toString().length()-1);
-        String[] comIds=comIdStr.split(",");
-        Integer[] comId=new Integer[comIds.length];
-        for (int i=0;i< comIds.length;i++){
-            comId[i]=Integer.parseInt(comIds[i]);
+        Integer[] comId=null;
+        if (comIdObject!=null&&comIdObject!=""){
+            String comIdStr=comIdObject.toString().substring(1,comIdObject.toString().length()-1);
+            String[] comIds=comIdStr.split(",");
+            comId=new Integer[comIds.length];
+            for (int i=0;i< comIds.length;i++){
+                comId[i]=Integer.parseInt(comIds[i]);
+            }
         }
         //转体检项
         Object checkIdObject=json.get("checkId");
-        String checkIdStr=checkIdObject.toString().substring(1,checkIdObject.toString().length()-1);
-        String[] checkIds=checkIdStr.split(",");
-        Integer[] checkId=new Integer[checkIds.length];
-        for (int i=0;i< checkIds.length;i++){
-            checkId[i]=Integer.parseInt(checkIds[i]);
+        Integer[] checkId=null;
+        if (checkIdObject!=null&&checkIdObject!=""){
+            String checkIdStr=checkIdObject.toString().substring(1,checkIdObject.toString().length()-1);
+            String[] checkIds=checkIdStr.split(",");
+            checkId=new Integer[checkIds.length];
+            for (int i=0;i< checkIds.length;i++){
+                checkId[i]=Integer.parseInt(checkIds[i]);
+            }
         }
         String yuDate=json.get("yuDate").toString();
         //获取person对象
