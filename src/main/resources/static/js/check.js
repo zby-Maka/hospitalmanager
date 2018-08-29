@@ -18,7 +18,7 @@ $(function() {
     })
 
     $("#chooseDate>div").not(":eq(0)").click(function () {
-        alert("时间");
+        makeAnAppointment();
         $("#chooseDate").hide();
     });
 
@@ -140,7 +140,7 @@ function makeAnAppointment() {
         var persionInfo = sessionStorage.getItem("personInfoSer");
         alert(persionInfo);
         var date = $.param({
-            "yue": "2018-08-28",
+            "yue": "2018-08-29",
             "packId": packId,
             "comId": comId,
             "checkId": checkId
