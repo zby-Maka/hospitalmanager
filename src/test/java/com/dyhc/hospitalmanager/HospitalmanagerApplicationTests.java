@@ -111,7 +111,6 @@ public class HospitalmanagerApplicationTests {
             cost.setCostType("收费");
             cost.setHealthExaminationId("2018010103");
             cost.setCostAmount(new BigDecimal(200.00));
-            System.out.println(costOfModuleService.addCost(cost,0));
         }catch (Exception e){
             e.printStackTrace();
         }

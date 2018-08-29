@@ -1,25 +1,34 @@
 package com.dyhc.hospitalmanager.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.dyhc.hospitalmanager.dao.GroupMapper;
 import com.dyhc.hospitalmanager.pojo.CompanyInfo;
 import com.dyhc.hospitalmanager.pojo.Group;
 import com.dyhc.hospitalmanager.pojo.Package;
+import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import com.dyhc.hospitalmanager.service.impl.ExcelServiceImpl;
+import com.dyhc.hospitalmanager.util.ImportExcelUtil;
 import com.dyhc.hospitalmanager.util.ResponseUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ResourceUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -170,6 +179,76 @@ public class UnitReservationController {
     public String showCompanyInfoById(@RequestParam("companyId") Integer companyId){
         CompanyInfo companyInfo = unitReservationService.showCompanyInfoById(companyId);
         return JSON.toJSONString(companyInfo);
+    }
+
+    /**
+     * 解析上传的Excel
+     * @return
+     */
+    @RequestMapping("/uploadPersonInfo.do")
+    @ResponseBody
+    public String showPersonInfo(@RequestParam("companyName") String companyName){
+        File cfgFile = null;
+        try {
+            cfgFile = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "excelfile/"+companyName+".xlsx");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ImportExcelUtil importExcelUtil=new ImportExcelUtil();
+        File file=new File(String.valueOf(cfgFile));
+        List<PersonInfo> info = new ArrayList<>();
+        try {
+            InputStream in=new FileInputStream(file);
+            List<List<Object>> infos=importExcelUtil.getBankListByExcel(in,file.getName());
+            for (List<Object> str:infos){
+                PersonInfo c = new PersonInfo();
+                c.setPersonName((String) str.get(0));
+                String a = (String) str.get(1);
+                c.setPersonAge(Integer.parseInt(a));
+                String bir = (String) str.get(2);
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(bir);
+                c.setPersonBirthday(date);
+                c.setPersonSex((String) str.get(3));
+                c.setPersonIdCard((String) str.get(4));
+                c.setIsMarry((String) str.get(5));
+                c.setPersonTelephone((String) str.get(6));
+                c.setPersonAddress((String) str.get(7));
+                c.setPersonNameSpellCode((String) str.get(8));
+                info.add(c);
+            }
+            System.out.println(info.size());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return JSON.toJSONString(info);
+    }
+
+    /**
+     * 添加分组信息并且对人员信息进行添加
+     * @param str
+     * @return
+     */
+    @RequestMapping("/uploadGroupPerson.do")
+    @ResponseBody
+    public String addGroupPerson(@RequestBody JSONObject str){
+        JSONArray jsonArray = str.getJSONArray("persionarray");
+        Object obj=jsonArray.get(jsonArray.size()-1);
+        String json=JSON.toJSONString(obj);
+        Group group=JSONObject.parseObject(json,Group.class);
+        jsonArray.remove(jsonArray.size()-1);
+        String json2=jsonArray.toJSONString();
+        List<PersonInfo> personInfos=JSONObject.parseArray(json2,PersonInfo.class);
+        System.out.println("身份证号:"+personInfos.get(0).getPersonIdCard());
+        //添加方法
+        Integer result = unitReservationService.addGroupAndPersonInfo(group,personInfos);
+        Integer perG = 0;
+        if(result>0){
+            perG = 1;
+        }
+        return JSON.toJSONString(perG);
+
     }
 
 

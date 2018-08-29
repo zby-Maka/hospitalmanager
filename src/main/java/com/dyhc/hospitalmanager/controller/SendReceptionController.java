@@ -69,4 +69,5 @@ public class SendReceptionController {
     public String sendLaboratoryIndex(){
         return "Thefrontend-page/LaboratoryIndex";
     }
+
 }
