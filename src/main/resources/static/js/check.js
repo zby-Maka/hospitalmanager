@@ -151,7 +151,9 @@ function makeAnAppointment(yue,packId,comId,checkId) {
             date: {},
             dataType: "text",
             success: function (result) {
-                if (result == "") {
+                alert(result);
+                console.log(result);
+                if (result == "ok") {
                     alert("预约成功！");
                     sessionStorage.setItem("personInfo",null);
                 }
