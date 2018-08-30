@@ -110,7 +110,7 @@ public class UnitReservationController {
         //上传文件保存到指定文件夹下边
         String contentType = file.getContentType();
         String fileName = file.getOriginalFilename();
-        //	String filePath = request.getSession().getServletContext().getRealPath("templates/imgupload/");
+
         //指定文件存放路径，可以是相对路径或者绝对路径
         String filePath = "./src/main/resources/excelfile/";
         try {
