@@ -40,7 +40,6 @@ public interface SectionMapper {
      * @param roleInfoId
      * @return
      */
-    Integer getSectionIdByRoleInfoId(@Param("roleInfoId") Integer roleInfoId)throws Exception;
 
     /**
      * 查询科室下的体检项和组合项
@@ -54,6 +53,10 @@ public interface SectionMapper {
      */
     List<Check>getSectionAndCheckAndCombinationInfoById(@Param("sectionId")Integer sectionId)throws Exception;
 
-
-    Section getSectionByRoleInfoId(@Param("roleInfoId") Integer roleInfoId)throws Exception;
+    /**
+     * 根据角色id获取科室对象
+     * @param roleInfoId
+     * @return
+     */
+    Section getSectionIdByRoleInfoId(@Param("roleInfoId") Integer roleInfoId)throws Exception;
 }
