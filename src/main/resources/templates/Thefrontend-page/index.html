@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN">
-
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>SCT-后台系统</title>
@@ -305,7 +304,6 @@
 			}
 		</script>
 	</head>
-
 	<body onload="getDate01()">
 		<div id="top">
 			<div id="top_logo">
@@ -358,10 +356,10 @@
 				</div>
 				<div id="nav_resource">
 					<!--<ul id="dleft_tab1" class="ztree">
-		 			<li>123</li>
-		 			<li>123</li>
-		 			<li>123</li>
-		 		</ul>-->
+						<li>123</li>
+						<li>123</li>
+						<li>123</li>
+		 			</ul>-->
 					<ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user" id="oneul" style="width: 220px;">
 						<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
 						<!--<li class="layui-nav-item ">
@@ -401,6 +399,10 @@
 				
 				//科室维护页面 跳转
 				$(".selected").on("click", function() {
+
+				    
+
+
 					$("#oneul").html("<li class='layui-nav-item'>" +
 						"<a href='javascript:void(0);' class='daohang'>科室</a>" +
 						"<dl class='layui-nav-child'>" +
