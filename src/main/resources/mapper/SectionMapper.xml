@@ -8,7 +8,10 @@
     <insert id="addSectionInfo">
         INSERT INTO section  VALUES(NULL,#{sectionName},#{sectionTypeId},1,#{remark})
     </insert>
-
+    <!--科室id赋值-->
+    <select id="getSectionsectionId" resultType="com.dyhc.hospitalmanager.pojo.Section">
+         select * from section where section_id=#{sectionId}
+    </select>
     <!--修改科室信息-->
     <update id="updSectionInfo">
         update section set section_name=#{sectionName},section_type_id=#{sectionTypeId},remark=#{remark}
