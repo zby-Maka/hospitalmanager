@@ -21,7 +21,7 @@
     </select>
 <!--查询科室信息以及下的体检项和组合项-->
     <select id="getSectionAndCheckAndCombinationInfo" resultMap="secCheck">
-                           SELECT
+            SELECT
             section.section_id,
             section.section_name,
             `check`.check_id,
@@ -55,6 +55,11 @@
         INNER JOIN `section` s
         ON r.`section_id`=s.`section_id`
         WHERE r.`role_info_id`=#{roleInfoId}
+    </select>
+
+    <!-- 查询所有科室信息 -->
+    <select id="getSectionList" resultType="com.dyhc.hospitalmanager.pojo.Section">
+        SELECT * FROM `section` s
     </select>
 
     <resultMap id="secCheck" type="com.dyhc.hospitalmanager.pojo.Section">
