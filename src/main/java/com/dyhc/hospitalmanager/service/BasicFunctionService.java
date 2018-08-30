@@ -86,6 +86,19 @@ public interface BasicFunctionService {
 
 //----------------------------------套餐项维护
 
+
+    /**
+     * 查询科室下的体检项和组合项
+     * @return
+     */
+    List<Check>getSectionAndCheckAndCombinationInfo();
+
+    /**
+     * 根据科室id查询科室下的体检项和组合项
+     * @return
+     */
+    List<Check>getSectionAndCheckAndCombinationInfoById(@Param("sectionId")Integer sectionId);
+
     /**
      * 添加套餐信息
      * combinationList 组合项集合

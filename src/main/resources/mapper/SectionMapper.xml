@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.SectionMapper">
 
-<!--添加科室信息-->
+    <!--添加科室信息-->
     <insert id="addSectionInfo">
         INSERT INTO section  VALUES(NULL,#{sectionName},#{sectionTypeId},1,#{remark})
     </insert>
@@ -19,6 +19,36 @@
     <select id="getSectionInfoById" resultType="com.dyhc.hospitalmanager.pojo.Section">
     select * from section where section_id=#{sectionId}
     </select>
+<!--查询科室信息以及下的体检项和组合项-->
+    <select id="getSectionAndCheckAndCombinationInfo" resultMap="secCheck">
+                           SELECT
+            section.section_id,
+            section.section_name,
+            `check`.check_id,
+            `check`.check_name,
+            combination.combination_id,
+            combination.combination_name
+            FROM
+            section
+            INNER JOIN `check` ON section.section_id = `check`.check_id
+            INNER JOIN combination ON section.section_id = combination.section_id
+    </select>
+
+    <!--根据科室id查询科室信息以及下的体检项和组合项-->
+    <select id="getSectionAndCheckAndCombinationInfoById" resultMap="secCheck">
+            SELECT
+        section.section_id,
+        section.section_name,
+        `check`.check_id,
+        `check`.check_name,
+        combination.combination_id,
+        combination.combination_name
+        FROM
+        section
+        INNER JOIN `check` ON section.section_id = `check`.check_id
+        INNER JOIN combination ON section.section_id = combination.section_id
+        where section.section_id=#{sectionId}
+    </select>
 
     <select id="getSectionIdByRoleInfoId" resultType="com.dyhc.hospitalmanager.pojo.Section">
         SELECT s.* FROM `role_info` r
@@ -26,4 +56,14 @@
         ON r.`section_id`=s.`section_id`
         WHERE r.`role_info_id`=#{roleInfoId}
     </select>
+
+    <resultMap id="secCheck" type="com.dyhc.hospitalmanager.pojo.Section">
+        <id property="sectionId" column="section_id"/>
+        <collection property="sectioandcombinationList" javaType="com.dyhc.hospitalmanager.pojo.Combination">
+            <id property="combinationId" column="combination_id"/>
+        </collection>
+        <collection property="sectionandcheckList" javaType="com.dyhc.hospitalmanager.pojo.Check">
+            <id property="checkId" column="check_id"/>
+        </collection>
+    </resultMap>
 </mapper>

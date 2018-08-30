@@ -13,6 +13,12 @@ import java.util.List;
 public class CheckResultController {
     @Autowired
     private CheckResultService checkResultService;
+
+    /**
+     * 根据体检编号查询所有的体检项
+     * @param physicalexaminationid
+     * @return
+     */
     @RequestMapping(value = "checkResults.do")
     public  String getCheckResult(String physicalexaminationid){
         List<CheckResult> checkResultList=checkResultService.getCheckResults(physicalexaminationid);

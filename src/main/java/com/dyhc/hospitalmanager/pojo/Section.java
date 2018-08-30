@@ -1,5 +1,7 @@
 package com.dyhc.hospitalmanager.pojo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Section {
@@ -8,6 +10,28 @@ public class Section {
     private Integer sectionTypeId;
     private Integer sectionStatus;
     private String remark;
+
+
+    //科室下的组合项目
+    List<Combination>sectioandcombinationList=new ArrayList<Combination>();
+    //科室下的单个体检项目
+    List<Check>sectionandcheckList=new ArrayList<Check>();
+
+    public List<Combination> getSectioandcombinationList() {
+        return sectioandcombinationList;
+    }
+
+    public void setSectioandcombinationList(List<Combination> sectioandcombinationList) {
+        this.sectioandcombinationList = sectioandcombinationList;
+    }
+
+    public List<Check> getSectionandcheckList() {
+        return sectionandcheckList;
+    }
+
+    public void setSectionandcheckList(List<Check> sectionandcheckList) {
+        this.sectionandcheckList = sectionandcheckList;
+    }
 
     public Integer getSectionId() {
         return sectionId;

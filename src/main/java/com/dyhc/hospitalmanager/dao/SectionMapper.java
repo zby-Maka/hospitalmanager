@@ -1,5 +1,6 @@
 package com.dyhc.hospitalmanager.dao;
 
+import com.dyhc.hospitalmanager.pojo.Check;
 import com.dyhc.hospitalmanager.pojo.Section;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -36,6 +37,24 @@ public interface SectionMapper {
 
     /**
      * 根据角色id获取科室id
+     * @param roleInfoId
+     * @return
+     */
+
+    /**
+     * 查询科室下的体检项和组合项
+     * @return
+     */
+    List<Check>getSectionAndCheckAndCombinationInfo()throws  Exception;
+
+    /**
+     * 根据科室id查询科室下的体检项和组合项
+     * @return
+     */
+    List<Check>getSectionAndCheckAndCombinationInfoById(@Param("sectionId")Integer sectionId)throws Exception;
+
+    /**
+     * 根据角色id获取科室对象
      * @param roleInfoId
      * @return
      */
