@@ -2,6 +2,8 @@ function  getpersoninfo() {
     var physicalexaminationid=$("input[name=physicalexaminationid]").val();
     //通过体检编号查询体检人员
     $.post("http://localhost:8080/personInfo.do",{"physicalexaminationid":physicalexaminationid},function (data) {
+        sessionStorage.setItem("one",JSON.stringify(data));
+        $("#dayin").removeAttr("disabled");
         $.each(data,function (i,e) {
             $("label[name=personName]").text(e.personName);
             $("label[name=personAge]").text(e.personAge);
@@ -16,6 +18,7 @@ function  getpersoninfo() {
     },"json");
     //通过体检编号查询体检人员的检查项
     $.post("http://localhost:8080/checkList.do",{"physicalExaminationId":physicalexaminationid},function (date) {
+        sessionStorage.setItem("two",JSON.stringify(date));
         var contents="";
         var comt="";
         var jianyan="";
@@ -77,6 +80,7 @@ function  getpersoninfo() {
         $("#checknum").html(contents);
     },"json");
     $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (result) {
+        sessionStorage.setItem("three",JSON.stringify(result));
         var content="";
         $.each(result,function (i,n) {
             content+=n.commonResults.resultDesc+"\n";
@@ -84,6 +88,7 @@ function  getpersoninfo() {
         $("#one").val(content);
     },"json");
     $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (results) {
+        sessionStorage.setItem("four",JSON.stringify(results));
         var contens="";
         $.each(results,function (i,e) {
             contens+=e.commonResults.proposedDescription.adviceContent+"\n";
