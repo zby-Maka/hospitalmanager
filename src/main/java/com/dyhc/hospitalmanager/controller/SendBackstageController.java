@@ -80,4 +80,8 @@ public class SendBackstageController {
     public String Unit(){
         return "/Thebackend-page/unit";
     }
+    @GetMapping("/Thebackend-page/jieguojianyi.html")
+    public String jieguojianyi(){
+        return "/Thebackend-page/jieguojianyi";
+    }
 }

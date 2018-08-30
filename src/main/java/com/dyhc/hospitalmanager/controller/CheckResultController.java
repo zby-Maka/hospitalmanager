@@ -23,7 +23,6 @@ public class CheckResultController {
     public  String getCheckResult(String physicalexaminationid){
         List<CheckResult> checkResultList=checkResultService.getCheckResults(physicalexaminationid);
         String json= JSON.toJSONString(checkResultList);
-        System.out.println(json);
         return json;
     }
 }

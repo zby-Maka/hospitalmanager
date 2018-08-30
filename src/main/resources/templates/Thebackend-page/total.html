@@ -1,433 +1,360 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-			body {
-				margin: 0 auto;
-				width: 210mm;
-				height: 297mm;
-			}
-		</style>
-		<style id="oneStyle" type="text/css">
-
-			table.oneTable {
-				font-family: verdana, arial, sans-serif;
-				font-size: 11px;
-				color: #333333;
-				border-width: 1px;
-				border-color: #666666;
-				border-collapse: collapse;
-			}
-			table.oneTable td {
-				border-width: 1px;
-				padding: 8px;
-				border-style: solid;
-				border-color: #666666;
-				background-color: #ffffff;
-			}
-		</style>
-	</head>
-	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="/js/LodopFuncs.js"></script>
-	<script type="text/javascript" src="/js/lodopPrint.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<title>总检报告单</title>
+</head>
+<script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
+<script language="javascript" src="/js/jquery.jqprint-0.3.js"></script>
 <script>
-    /*打印*/
-    var Loop;//声明全局变量
-    //表单打印预览
-    function onePreview() {
-        OneTable();
-        //打印窗口设置
-        //LODOP.SET_PREVIEW_WINDOW(100, 1, 1, 760, 540, "")//预览比例，工具条和按钮，打印按钮是否，宽，高，预览窗口和打印按钮的名称组合
-        LODOP.PREVIEW();
+    function aa(){
+        $("#printInfo").jqprint();
     }
-
-    //表单生成pdf文件
-    function onePrint() {
-        OneTable();
-        //设置打印份数
-        //LODOP. SET_PRINT_COPIES(2);
-        LODOP.PRINT();
-    }
-
-    //表单一选择打印机打印
-    function onePrintA() {
-        OneTable();
-        LODOP.PRINTA();
-    }
-
-    //对表单一进行打印设置
-    function setPrint() {
-        OneTable();
-        LODOP.PRINT_SETUP();
-    }
-
-    function printDesign() {
-        OneTable();
-        LODOP.PRINT_DESIGN();
-    }
-
-    //表单
-    function OneTable() {
-        var oneStyle = "<style>" + $("#oneStyle").html() + "</style>";
-        var strOne = oneStyle + $("#oneForm").html();
-        LODOP = getLodop();
-        LODOP.PRINT_INIT("实现打印");
-        LODOP.SET_PRINT_STYLE("FontSize", 20);//设置打印字体大小
-        LODOP.SET_PRINT_STYLE("Bold", 3);//设定纯文本打印项是否粗体
-        LODOP.SET_PRINT_PAGESIZE(0, 0, 0, "A4"); //规定纸张大小；使用A4纸。
-        LODOP.ADD_PRINT_HTM(100, 50, 500, 600, strOne);
-        LODOP.ADD_PRINT_TEXT(200, 200, 500, 500);//上，左，宽，高
-    };
 </script>
-	<body style="background-color: #f8f8f8;">
-		<div style="margin: 0 auto;" id="oneForm">
-			<h1 style="text-align: center; letter-spacing: 15px;">总检报告单</h1>
-			<table style="width: 80%; margin: 0 auto;">
-				<tr>
-					<td>姓名：<label>白文鑫</label></td>
-					<td>年龄：<label>20</label></td>
-					<td>性别：<label>男</label></td>
-					<td>婚否：<label>未婚</label></td>
-				</tr>
-			</table>
-			<hr />
-			<div>
-				<table style="margin-left: 48px;">
+<body style="background-color: #f8f8f8;">
+<div style="margin: 0 auto; width: 210mm; height: 297mm;" id="printInfo">
+	<h1 style="text-align: center; letter-spacing: 15px;">总检报告单</h1>
+	<table style="width: 80%; margin: 0 auto;">
+		<tr>
+			<td>姓名：<label>白文鑫</label></td>
+			<td>年龄：<label>20</label></td>
+			<td>性别：<label>男</label></td>
+			<td>婚否：<label>未婚</label></td>
+		</tr>
+	</table>
+	<hr />
+	<div>
+		<table style="margin-left: 48px;">
+			<tr>
+				<td align="right">体检项：</td>
+				<td>身高</td>
+			</tr>
+			<tr>
+				<td align="right">体检结果：</td>
+				<td>身高正常 170</td>
+			</tr>
+			<tr>
+				<td align="right">建&nbsp;&nbsp;&nbsp;&nbsp;议：</td>
+				<td>
+					<div style="width:  150mm;">
+						一天三包烟，10瓶酒、每天熬夜通宵
+					</div>
+				</td>
+			</tr>
+		</table>
+		<hr />
+		<table style="margin-left: 48px;">
+			<tr>
+				<td align="right">体检项：</td>
+				<td>身高</td>
+			</tr>
+			<tr>
+				<td align="right">体检结果：</td>
+				<td>身高正常 170</td>
+			</tr>
+			<tr>
+				<td align="right">建&nbsp;&nbsp;&nbsp;&nbsp;议：</td>
+				<td>
+					<div style="width:  150mm;">
+						一天三包烟，10瓶酒、每天熬夜通宵
+					</div>
+				</td>
+			</tr>
+		</table>
+		<hr />
+		<table style="margin-left: 48px;">
+			<tr>
+				<td align="right">体检项：</td>
+				<td>身高</td>
+			</tr>
+			<tr>
+				<td align="right">体检结果：</td>
+				<td>身高正常 170</td>
+			</tr>
+			<tr>
+				<td align="right">建&nbsp;&nbsp;&nbsp;&nbsp;议：</td>
+				<td>
+					<div style="width:  150mm;">
+						一天三包烟，10瓶酒、每天熬夜通宵
+					</div>
+				</td>
+			</tr>
+		</table>
+		<hr />
+	</div>
+	<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
+		<tr>
+			<td align="center">体检项：</td>
+			<td align="center">血液</td>
+		</tr>
+		<tr>
+			<td align="left">体检结果：</td>
+			<td>
+				<table border="1" style="width: 150mm;">
+					<thead>
+					<td align="center">检验项</td>
+					<td align="center">单位</td>
+					<td align="center">参考范围</td>
+					<td align="center">结果</td>
+					<td align="center">提示</td>
+					</thead>
+					<tbody>
 					<tr>
-						<td align="right">体检项：</td>
-						<td>身高</td>
+						<td align="center">血小板</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
 					</tr>
 					<tr>
-						<td align="right">体检结果：</td>
-						<td>身高正常 170</td>
+						<td align="center">白细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">99</td>
+						<td align="center">↑</td>
 					</tr>
 					<tr>
-						<td align="right">建&nbsp;&nbsp;&nbsp;&nbsp;议：</td>
-						<td>
-							<div style="width:  150mm;">
-								一天三包烟，10瓶酒、每天熬夜通宵
-							</div>
-						</td>
+						<td align="center">淋巴细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
 					</tr>
+					<tr>
+						<td align="center">红细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↑</td>
+					</tr>
+					</tbody>
 				</table>
-				<hr /> 
-				<table style="margin-left: 48px;">
+			</td>
+		</tr>
+	</table>
+	<hr />
+	<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
+		<tr>
+			<td align="center">体检项：</td>
+			<td align="center">血液</td>
+		</tr>
+		<tr>
+			<td align="left">体检结果：</td>
+			<td>
+				<table border="1" style="width: 150mm;">
+					<thead>
+					<td align="center">检验项</td>
+					<td align="center">单位</td>
+					<td align="center">参考范围</td>
+					<td align="center">结果</td>
+					<td align="center">提示</td>
+					</thead>
+					<tbody>
 					<tr>
-						<td align="right">体检项：</td>
-						<td>身高</td>
+						<td align="center">血小板</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
 					</tr>
 					<tr>
-						<td align="right">体检结果：</td>
-						<td>身高正常 170</td>
+						<td align="center">白细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">99</td>
+						<td align="center">↑</td>
 					</tr>
 					<tr>
-						<td align="right">建&nbsp;&nbsp;&nbsp;&nbsp;议：</td>
-						<td>
-							<div style="width:  150mm;">
-								一天三包烟，10瓶酒、每天熬夜通宵
-							</div>
-						</td>
+						<td align="center">淋巴细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
 					</tr>
+					<tr>
+						<td align="center">红细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↑</td>
+					</tr>
+					</tbody>
 				</table>
-				<hr /> 
-				<table style="margin-left: 48px;">
+			</td>
+		</tr>
+	</table>
+	<hr />
+	<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
+		<tr>
+			<td align="center">体检项：</td>
+			<td align="center">血液</td>
+		</tr>
+		<tr>
+			<td align="left">体检结果：</td>
+			<td>
+				<table border="1" style="width: 150mm;">
+					<thead>
+					<td align="center">检验项</td>
+					<td align="center">单位</td>
+					<td align="center">参考范围</td>
+					<td align="center">结果</td>
+					<td align="center">提示</td>
+					</thead>
+					<tbody>
 					<tr>
-						<td align="right">体检项：</td>
-						<td>身高</td>
+						<td align="center">血小板</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
 					</tr>
 					<tr>
-						<td align="right">体检结果：</td>
-						<td>身高正常 170</td>
+						<td align="center">白细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">99</td>
+						<td align="center">↑</td>
 					</tr>
 					<tr>
-						<td align="right">建&nbsp;&nbsp;&nbsp;&nbsp;议：</td>
-						<td>
-							<div style="width:  150mm;">
-								一天三包烟，10瓶酒、每天熬夜通宵
-							</div>
-						</td>
+						<td align="center">淋巴细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
 					</tr>
+					<tr>
+						<td align="center">红细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↑</td>
+					</tr>
+					</tbody>
 				</table>
-				<hr /> 
-			</div> 
-			<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
+			</td>
+		</tr>
+	</table>
+	<hr />
+	<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
+		<tr>
+			<td align="center">体检项：</td>
+			<td align="center">血液</td>
+		</tr>
+		<tr>
+			<td align="left">体检结果：</td>
+			<td>
+				<table border="1" style="width: 150mm;">
+					<thead>
+					<td align="center">检验项</td>
+					<td align="center">单位</td>
+					<td align="center">参考范围</td>
+					<td align="center">结果</td>
+					<td align="center">提示</td>
+					</thead>
+					<tbody>
 					<tr>
-						<td align="center">体检项：</td>
-						<td align="center">血液</td>
+						<td align="center">血小板</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
 					</tr>
 					<tr>
-						<td align="left">体检结果：</td>
-						<td>
-							<table border="1" style="width: 150mm;">
-								<thead>
-									<td align="center">检验项</td>
-									<td align="center">单位</td>
-									<td align="center">参考范围</td>
-									<td align="center">结果</td>
-									<td align="center">提示</td>
-								</thead>
-								<tbody>
-									<tr>
-										<td align="center">血小板</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">白细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">99</td>
-										<td align="center">↑</td>
-									</tr>
-									<tr>
-										<td align="center">淋巴细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">红细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↑</td>
-									</tr>
-								</tbody>
-							</table>
-						</td>
+						<td align="center">白细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">99</td>
+						<td align="center">↑</td>
 					</tr>
+					<tr>
+						<td align="center">淋巴细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
+					</tr>
+					<tr>
+						<td align="center">红细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↑</td>
+					</tr>
+					</tbody>
 				</table>
-			<hr />
-			<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
+			</td>
+		</tr>
+	</table>
+	<hr />
+	<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
+		<tr>
+			<td align="center">体检项：</td>
+			<td align="center">血液</td>
+		</tr>
+		<tr>
+			<td align="left">体检结果：</td>
+			<td>
+				<table border="1" style="width: 150mm;">
+					<thead>
+					<td align="center">检验项</td>
+					<td align="center">单位</td>
+					<td align="center">参考范围</td>
+					<td align="center">结果</td>
+					<td align="center">提示</td>
+					</thead>
+					<tbody>
 					<tr>
-						<td align="center">体检项：</td>
-						<td align="center">血液</td>
+						<td align="center">血小板</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
 					</tr>
 					<tr>
-						<td align="left">体检结果：</td>
-						<td>
-							<table border="1" style="width: 150mm;">
-								<thead>
-									<td align="center">检验项</td>
-									<td align="center">单位</td>
-									<td align="center">参考范围</td>
-									<td align="center">结果</td>
-									<td align="center">提示</td>
-								</thead>
-								<tbody>
-									<tr>
-										<td align="center">血小板</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">白细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">99</td>
-										<td align="center">↑</td>
-									</tr>
-									<tr>
-										<td align="center">淋巴细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">红细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↑</td>
-									</tr>
-								</tbody>
-							</table>
-						</td>
+						<td align="center">白细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">99</td>
+						<td align="center">↑</td>
 					</tr>
+					<tr>
+						<td align="center">淋巴细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↓</td>
+					</tr>
+					<tr>
+						<td align="center">红细胞</td>
+						<td align="center">个</td>
+						<td align="center">50-100</td>
+						<td align="center">12</td>
+						<td align="center">↑</td>
+					</tr>
+					</tbody>
 				</table>
-			<hr />
-			<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
-					<tr>
-						<td align="center">体检项：</td>
-						<td align="center">血液</td>
-					</tr>
-					<tr>
-						<td align="left">体检结果：</td>
-						<td>
-							<table border="1" style="width: 150mm;">
-								<thead>
-									<td align="center">检验项</td>
-									<td align="center">单位</td>
-									<td align="center">参考范围</td>
-									<td align="center">结果</td>
-									<td align="center">提示</td>
-								</thead>
-								<tbody>
-									<tr>
-										<td align="center">血小板</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">白细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">99</td>
-										<td align="center">↑</td>
-									</tr>
-									<tr>
-										<td align="center">淋巴细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">红细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↑</td>
-									</tr>
-								</tbody>
-							</table>
-						</td>
-					</tr>
-				</table>
-			<hr />
-			<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
-					<tr>
-						<td align="center">体检项：</td>
-						<td align="center">血液</td>
-					</tr>
-					<tr>
-						<td align="left">体检结果：</td>
-						<td>
-							<table border="1" style="width: 150mm;">
-								<thead>
-									<td align="center">检验项</td>
-									<td align="center">单位</td>
-									<td align="center">参考范围</td>
-									<td align="center">结果</td>
-									<td align="center">提示</td>
-								</thead>
-								<tbody>
-									<tr>
-										<td align="center">血小板</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">白细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">99</td>
-										<td align="center">↑</td>
-									</tr>
-									<tr>
-										<td align="center">淋巴细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">红细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↑</td>
-									</tr>
-								</tbody>
-							</table>
-						</td>
-					</tr>
-				</table>
-			<hr />
-			<table style="margin-bottom: 15px; margin-left:56px; line-height: 30px;">
-					<tr>
-						<td align="center">体检项：</td>
-						<td align="center">血液</td>
-					</tr>
-					<tr>
-						<td align="left">体检结果：</td>
-						<td>
-							<table border="1" style="width: 150mm;">
-								<thead>
-									<td align="center">检验项</td>
-									<td align="center">单位</td>
-									<td align="center">参考范围</td>
-									<td align="center">结果</td>
-									<td align="center">提示</td>
-								</thead>
-								<tbody>
-									<tr>
-										<td align="center">血小板</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">白细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">99</td>
-										<td align="center">↑</td>
-									</tr>
-									<tr>
-										<td align="center">淋巴细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↓</td>
-									</tr>
-									<tr>
-										<td align="center">红细胞</td>
-										<td align="center">个</td>
-										<td align="center">50-100</td>
-										<td align="center">12</td>
-										<td align="center">↑</td>
-									</tr>
-								</tbody>
-							</table>
-						</td>
-					</tr>
-				</table>
-			<hr />
-			<table style="margin-left: 10mm;">
-				<tr>
-					<td>
-						<textarea style="width: 90mm;height: 60mm;"></textarea>
-					</td>
-					<td>
-						<textarea style="width: 90mm;height: 60mm;"></textarea>
-					</td>
-				</tr>
-			</table>
-			<hr />
-			<div style="font-size: 20px; margin-left: 100mm;line-height: 20mm;">
-				医师签字：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 日期：
-			</div>
-
-		</div>
-		<div style="margin-left: 510px">
-			<input type="button" value="打印预览" onclick="onePreview()">&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="button" value="打印维护" onclick="setPrint()">
-		</div>
-	</body>
-
+			</td>
+		</tr>
+	</table>
+	<hr />
+	<table style="margin-left: 10mm;">
+		<tr>
+			<td>
+				<textarea style="width: 90mm;height: 60mm;"></textarea>
+			</td>
+			<td>
+				<textarea style="width: 90mm;height: 60mm;"></textarea>
+			</td>
+		</tr>
+	</table>
+	<hr />
+	<div style="font-size: 20px; margin-left: 100mm;line-height: 20mm;">
+		医师签字：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 日期：
+	</div>
+</div>
+<div style="margin-left: 510px">
+	<input type="button" onclick="aa()" value="打印"/>
+</div>
+</body>
 </html>

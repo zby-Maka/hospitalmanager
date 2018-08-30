@@ -23,4 +23,14 @@ public class CheckServiceImpl implements CheckService {
             return null;
         }
     }
+
+    @Override
+    public List<Check> getCheckList(String physicalExaminationId) {
+        try {
+            return CheckMapper.getCheckList(physicalExaminationId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
