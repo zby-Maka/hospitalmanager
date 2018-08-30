@@ -36,7 +36,7 @@ public class RoleInfoServiceImpl implements RoleInfoService {
     public Section getSectionIdByRoleInfoId(Integer roleInfoId) {
         Section section=null;
         try {
-            section= sectionMapper.getSectionByRoleInfoId(roleInfoId);
+            section= sectionMapper.getSectionIdByRoleInfoId(roleInfoId);
         }catch (Exception e){
            e.printStackTrace();
         }
