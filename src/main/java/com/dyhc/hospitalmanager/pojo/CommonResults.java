@@ -9,6 +9,7 @@ public class CommonResults {
     private String pinyinCod;
     private Integer isPositive;
     private Integer isDelete;
+    private  Check check;
 
     public ProposedDescription getProposedDescription() {
         return proposedDescription;

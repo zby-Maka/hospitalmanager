@@ -41,6 +41,13 @@ public interface SectionService {
      * @return
      * @throws Exception
      */
+    Integer addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId);
+    /**
+     * 添加科室信息
+     * @param section
+     * @return
+     */
+    int addSectionInfo(Section section);
     Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId);
 
 

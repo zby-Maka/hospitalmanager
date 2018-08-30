@@ -12,4 +12,11 @@ public interface CheckService {
      * @return
      */
     List<Check> getAllCheckList();
+    /**
+     * 根据体检编号，查询人员体检项
+     * @param physicalExaminationId
+     * @return
+     * @throws Exception
+     */
+    List<Check>  getCheckList(String  physicalExaminationId);
 }
