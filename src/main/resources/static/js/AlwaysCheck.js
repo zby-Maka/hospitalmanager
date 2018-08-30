@@ -16,16 +16,12 @@ function  getpersoninfo() {
     },"json");
     //通过体检编号查询体检人员的检查项
     $.post("http://localhost:8080/checkList.do",{"physicalExaminationId":physicalexaminationid},function (date) {
-        console.log(date);
-        alert(date)
         var contents="";
         var comt="";
         var jianyan="";
         $("#content").html("<table border=\"1\" style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\" id=\"checknum\"></table>");
         $.each(date,function (i,e) {
-            console.log(e);
             jianyan="";
-            alert(e.medicalEventsList.length);
             if (e.medicalEventsList.length==0) {
                 contents+="<tr>" +
                     "<td align=\"right\">体检项：</td>" +
@@ -78,7 +74,6 @@ function  getpersoninfo() {
             }
             $("#content").append(jianyan);
         })
-        alert(contents);
         $("#checknum").html(contents);
     },"json");
     $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (result) {

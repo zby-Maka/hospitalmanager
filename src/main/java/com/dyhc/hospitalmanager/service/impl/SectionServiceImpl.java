@@ -83,6 +83,11 @@ public class SectionServiceImpl implements SectionService {
         return list;
     }
 
+    @Override
+    public Integer addCheckResultAndMedicalEvent(CheckResult checkResult, MedicalEvents medicalEvents, Integer sectionId) {
+        return null;
+    }
+
 
     @Override
     public Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId) {

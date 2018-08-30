@@ -19,5 +19,6 @@ public class CheckResultController {
         String json= JSON.toJSONString(checkResultList);
         return json;
     }
+
 }
 

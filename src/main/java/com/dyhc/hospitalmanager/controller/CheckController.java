@@ -22,4 +22,11 @@ public class CheckController{
         System.out.println(json);
         return json;
     }
+    @RequestMapping(value = "checkall.do")
+    public String getChecklist(){
+        List<Check> checkList=checkService.getAllCheckList();
+        String json=JSON.toJSONString(checkList);
+        System.out.println(json);
+        return json;
+    }
 }
