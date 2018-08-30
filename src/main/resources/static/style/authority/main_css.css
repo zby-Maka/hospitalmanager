@@ -57,7 +57,7 @@ html,body {
 }
 
 #top_links a:link,#nav_links a:visited,#nav_links a:hover,#nav_links a:active
-	{
+{
 	list-style: none;
 	text-decoration: none;
 	color: #fff;
@@ -78,10 +78,19 @@ html,body {
 	vertical-align: text-top;
 }
 
+#side {
+	position: absolute;
+	left: 0;
+	top: 70px;
+	bottom: 0px;
+	width: 280px;
+	overflow: hidden;
+	/* 	border-right: 5px solid #DDDDDD; */
+}
 
 #main {
 	position: absolute;
-	left: 1px;
+	left: 280px;
 	top: 70px;
 	bottom: 0px;
 	right: 0px;
@@ -102,5 +111,42 @@ html,body {
 	border-bottom: 1px solid #EDEDED;*/
 }
 
+#left_menu {
+	width: 60px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	background: #044599;
+	overflow: hidden;
+}
 
+#left_menu_cnt {
+	width: 220px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 60px;
+	overflow: auto;
+	background: #F1F1F1;
+}
 
+#left_menu_cnt #nav_module {
+	position: fixed;
+	padding-left: 10px;
+	background: #F1F1F1;
+}
+
+#left_menu_cnt #nav_resource {
+	margin-top: 60px;
+	overflow: auto;
+}
+
+#TabPage2 li {
+	padding: 19px 9px 19px 15px;
+	cursor: pointer;
+}
+
+.selected {
+	background: #FFF;
+	cursor: pointer;
+}
