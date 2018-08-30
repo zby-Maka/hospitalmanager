@@ -152,25 +152,11 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                 physicalExamination.setMedicalTime(simpleDateFormat.parse(Yudate));
                 //新增
                 result = physicalExaminationMapper.addPhysicalExaminationInfo(physicalExamination);
+                physicalExaminationId=phyNo;
                 if (result == 0) {
                     //添加用户预约编号失败
                     logger.error("添加用户预约编号失败");
                     return -3+"";
-                }
-                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(phyNo,packId);
-                if(result==0){
-                    logger.error("添加用户套餐项错误");
-                    return -4+"";
-                }
-                result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(phyNo,comId);
-                if(result==0){
-                    logger.error("添加用户组合项错误");
-                    return -5+"";
-                }
-                result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(phyNo,checkId);
-                if(result==0) {
-                    logger.error("添加用户体检项错误");
-                    return -6 + "";
                 }
             }else {
                 //给这个人员生成体检编号
@@ -186,18 +172,24 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                     logger.error("添加用户错误");
                     return -3+"";
                 }
-                result=physicalExaminationAndPackageMapper.addBatchPhyAndPackage(physicalExaminationId,packId);
-                if(result==0){
+            }
+            if(packId!=null) {
+                result = physicalExaminationAndPackageMapper.addBatchPhyAndPackage(physicalExaminationId, packId);
+                if (result == 0) {
                     logger.error("添加用户套餐项错误");
-                    return -4+"";
+                    return -4 + "";
                 }
-                result=physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(physicalExaminationId,comId);
-                if(result==0){
+            }
+            if(comId!=null) {
+                result = physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(physicalExaminationId, comId);
+                if (result == 0) {
                     logger.error("添加用户组合项错误");
-                    return -5+"";
+                    return -5 + "";
                 }
-                result=physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId,checkId);
-                if(result==0) {
+            }
+            if(checkId!=null) {
+                result = physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId, checkId);
+                if (result == 0) {
                     logger.error("添加用户体检项错误");
                     return -6 + "";
                 }
@@ -233,29 +225,38 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     public void test(String object){
         //此处接受到消息将redis中的数量减少1进行数据处理
         Map json = (Map) JSONObject.parse(object);
-        //转套餐
+        //从map中获取json转套餐
         Object packIdObject=json.get("packId");
-        String packIdStr=packIdObject.toString().substring(1,packIdObject.toString().length()-1);
-        String[] packIds=packIdStr.split(",");
-        Integer[] packId=new Integer[packIds.length];
-        for (int i=0;i< packIds.length;i++){
-            packId[i]=Integer.parseInt(packIds[i]);
+        Integer[] packId=null;
+        if (packIdObject!=null&&packIdObject!=""){
+            String packIdStr=packIdObject.toString().substring(1,packIdObject.toString().length()-1);
+            String[] packIds=packIdStr.split(",");
+            packId=new Integer[packIds.length];
+            for (int i=0;i< packIds.length;i++){
+                packId[i]=Integer.parseInt(packIds[i]);
+            }
         }
         //转组合项
         Object comIdObject=json.get("comId");
-        String comIdStr=comIdObject.toString().substring(1,comIdObject.toString().length()-1);
-        String[] comIds=comIdStr.split(",");
-        Integer[] comId=new Integer[comIds.length];
-        for (int i=0;i< comIds.length;i++){
-            comId[i]=Integer.parseInt(comIds[i]);
+        Integer[] comId=null;
+        if (comIdObject!=null&&comIdObject!=""){
+            String comIdStr=comIdObject.toString().substring(1,comIdObject.toString().length()-1);
+            String[] comIds=comIdStr.split(",");
+            comId=new Integer[comIds.length];
+            for (int i=0;i< comIds.length;i++){
+                comId[i]=Integer.parseInt(comIds[i]);
+            }
         }
         //转体检项
         Object checkIdObject=json.get("checkId");
-        String checkIdStr=checkIdObject.toString().substring(1,checkIdObject.toString().length()-1);
-        String[] checkIds=checkIdStr.split(",");
-        Integer[] checkId=new Integer[checkIds.length];
-        for (int i=0;i< checkIds.length;i++){
-            checkId[i]=Integer.parseInt(checkIds[i]);
+        Integer[] checkId=null;
+        if (checkIdObject!=null&&checkIdObject!=""){
+            String checkIdStr=checkIdObject.toString().substring(1,checkIdObject.toString().length()-1);
+            String[] checkIds=checkIdStr.split(",");
+            checkId=new Integer[checkIds.length];
+            for (int i=0;i< checkIds.length;i++){
+                checkId[i]=Integer.parseInt(checkIds[i]);
+            }
         }
         String yuDate=json.get("yuDate").toString();
         //获取person对象
@@ -263,6 +264,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         JSONObject object1 = JSONObject.parseObject(personInfoStr);
         PersonInfo personInfo=JSONObject.toJavaObject(object1,PersonInfo.class);
         Integer value=Integer.parseInt(redisDao.getValue(yuDate));
+        System.out.println(value);
         if (value>1){
             redisDao.decr(yuDate,1);
             result=UserReservation(personInfo,yuDate,packId,comId,checkId);

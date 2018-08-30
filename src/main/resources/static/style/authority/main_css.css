@@ -57,7 +57,7 @@ html,body {
 }
 
 #top_links a:link,#nav_links a:visited,#nav_links a:hover,#nav_links a:active
-	{
+{
 	list-style: none;
 	text-decoration: none;
 	color: #fff;
@@ -85,7 +85,7 @@ html,body {
 	bottom: 0px;
 	width: 280px;
 	overflow: hidden;
-/* 	border-right: 5px solid #DDDDDD; */
+	/* 	border-right: 5px solid #DDDDDD; */
 }
 
 #main {

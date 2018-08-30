@@ -1,17 +1,61 @@
+var weekDay = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
 $(function() {
+    //查询预约时间
     $.ajax({
         url:"/listDate",
         dataType:"json",
         success:function (res) {
-            for (var i=0;i<res.length;i++){
-                console.log(res[i]);
-            }
+            var divControl = document.getElementById("chooseDate").getElementsByTagName("div");
+            $.each(res,function (i,e) {
+                if(e.value>0){
+                    var myDate = new Date(Date.parse(e.key.replace(/-/g, "/")));
+                    divControl[i+1].innerHTML=weekDay[myDate.getDay()]+"\n"+"<lable>"+e.key+"</lable>";
+                }else {
+                    divControl[i+1].innerHTML="约满了";
+                }
+            })
         }
     })
 
-    $("input[name='submit']").click(function(){
-        $("div[name='chooseDate']").show();
+    var packId = new Array();
+    var comId = new Array();
+    var checkId = new Array();
+
+    $("#chooseDate>div").not(":eq(0)").click(function () {
+        makeAnAppointment($(this).find("lable").text(),packId,comId,checkId);
+        EV_closeAlert();
+        $("#chooseDate").hide();
     });
+
+    //点击预约选择时间
+    $("input[name='submit']").click(function(){
+        //获取所有选中的套餐项Id
+        var packIdControl = document.getElementsByName('packageItem');
+        for(var i = 0; i < packIdControl.length; i++){
+            if(packIdControl[i].checked)
+                packId.push(packIdControl[i].value);
+        }
+
+        //获取所有选中的组合项Id
+        var comIdControl = document.getElementsByName('combineItem');
+        for(var i = 0; i < comIdControl.length; i++){
+            if(comIdControl[i].checked)
+                comId.push(comIdControl[i].value);
+        }
+        //获取所有选中的组合项Id
+        var checkIdControl = document.getElementsByName('checkItem');
+        for(var i = 0; i < checkIdControl.length; i++){
+            if(checkIdControl[i].checked)
+                checkId.push(checkIdControl[i].value);
+        }
+        if(packId.length==0&&comId.length==0&&checkId.length==0){
+            alert("请选择体检项目！");
+        }else {
+            EV_modeAlert('chooseDate');
+            //$("#chooseDate").show();
+        }
+    });
+
 	//选项卡设计交互
 	$(function() {
 		var li_a = $(".tab_menu ul li a");
@@ -83,52 +127,26 @@ $(function() {
 	// 	$(".childBox").hide();
 	// });
 
+
 	//确定预约
-	$("input[name=submit]").click(function () {
-        makeAnAppointment();
-    })
+	// $("input[name=submit]").click(function () {
+     //    makeAnAppointment();
+    // })
 });
 
 /**
  * 预约
  */
-function makeAnAppointment() {
-	//获取所有选中的套餐项Id
-    var packIdControl = document.getElementsByName('packageItem');
-    var packId = new Array();
-    for(var i = 0; i < packIdControl.length; i++){
-        if(packIdControl[i].checked)
-            packId.push(packIdControl[i].value);
-    }
-
-    //获取所有选中的组合项Id
-    var comIdControl = document.getElementsByName('combineItem');
-    var comId = new Array();
-    for(var i = 0; i < comIdControl.length; i++){
-        if(comIdControl[i].checked)
-            comId.push(comIdControl[i].value);
-    }
-
-    //获取所有选中的组合项Id
-    var checkIdControl = document.getElementsByName('checkItem');
-    var checkId = new Array();
-    for(var i = 0; i < checkIdControl.length; i++){
-        if(checkIdControl[i].checked)
-            checkId.push(checkIdControl[i].value);
-    }
-
-    if(packId.length==0&&comId.length==0&&checkId.length==0){
-        alert("请选择套餐项！");
-    }else {
+function makeAnAppointment(yue,packId,comId,checkId) {
         //用户预约
         var persionInfo = sessionStorage.getItem("personInfoSer");
-        alert(persionInfo);
         var date = $.param({
-            "yue": "2018-08-28",
+            "yue": yue,
             "packId": packId,
             "comId": comId,
             "checkId": checkId
         }) + "&" + persionInfo;
+
         $.ajax({
             type: "get",
             url: "/UserReservation.do?" + date,
@@ -143,7 +161,6 @@ function makeAnAppointment() {
                 }
             }
         });
-    }
 }
 
 /**

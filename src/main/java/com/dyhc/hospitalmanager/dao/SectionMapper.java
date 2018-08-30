@@ -53,4 +53,7 @@ public interface SectionMapper {
      * @return
      */
     List<Check>getSectionAndCheckAndCombinationInfoById(@Param("sectionId")Integer sectionId)throws Exception;
+
+
+    Section getSectionByRoleInfoId(@Param("roleInfoId") Integer roleInfoId)throws Exception;
 }

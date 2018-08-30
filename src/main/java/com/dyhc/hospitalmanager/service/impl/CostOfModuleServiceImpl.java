@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -26,7 +28,7 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
     private CostDetailMapper costDetailMapper;
 
     /**
-     * 根据Id查询人员信息
+     * 根据人员Id查询人员信息
      * @param personId
      * @return
      */
@@ -47,12 +49,21 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
 
     /**
      * 新增费用信息
-     * @param cost
+     * @param personId
+     * @param physicalStatu
      * @return
      */
     @Override
-    public Integer addCost(Cost cost,Integer physicalStatu) {
+    public Integer addCost(Integer personId,BigDecimal aggregate,Integer physicalStatu) {
         try {
+            Cost cost = new Cost();
+            if (physicalStatu==1){
+                cost.setCostType("退费");
+            }else{
+                cost.setCostType("收费");
+            }
+            cost.setHealthExaminationId(physicalExaminationMapper.getPhysicalExaminationByPersonId(personId));
+            cost.setCostAmount(aggregate);
             List<Check> list = checkMapper.getCheckByPhysicalExaminationIdList(cost.getHealthExaminationId(),physicalStatu);
             Integer costId = costMapper.addCost(cost);
             if (costId>0){
@@ -92,6 +103,27 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
             e.printStackTrace();
             logger.error("添加费用明细信息失败");
             return 0;
+        }
+    }
+
+    /**
+     * 根据人员id查询该体检人是否已缴费/是否已退费
+     * @param personId
+     * @return
+     */
+    @Override
+    public String getCostTypeByPersonId(Integer personId,String costTypes) {
+        try {
+            String costType = costMapper.getCostTypeByPersonId(personId,costTypes);
+            if (costType!=""){
+                return costType;
+            }else{
+                return "";
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("根据人员id查询该体检人是否已缴费/是否已退费失败");
+            return "";
         }
     }
 }

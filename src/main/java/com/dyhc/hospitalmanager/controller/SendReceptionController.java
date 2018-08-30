@@ -2,6 +2,7 @@ package com.dyhc.hospitalmanager.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 跳转前台页面
@@ -63,4 +64,10 @@ public class SendReceptionController {
     public String snedAlwaysCheckIndex(){
         return "Thefrontend-page/AlwaysCheckIndex";
     }
+
+    @GetMapping("/LaboratoryIndex.html")
+    public String sendLaboratoryIndex(){
+        return "Thefrontend-page/LaboratoryIndex";
+    }
+
 }
