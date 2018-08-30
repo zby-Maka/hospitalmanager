@@ -2,6 +2,7 @@
 function  getclearcommonresult() {
     $("input[name='resultDesc']").val("");
 }
+
 //添加常见结果
 function getinsertcommonresult() {
     var content = $('form').serialize();
