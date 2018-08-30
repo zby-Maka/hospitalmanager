@@ -63,4 +63,11 @@ public interface SectionMapper {
      * 通过科室id赋值
      */
     Section getSectionsectionId(@Param("sectionId")Integer sectionId) throws Exception;
+
+    /**
+     * 查询所有科室信息
+     * @return
+     */
+    List<Section> getSectionList()throws Exception;
+
 }

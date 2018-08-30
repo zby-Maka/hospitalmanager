@@ -106,4 +106,14 @@ public class BasicFunctionController {
         return JSON.toJSONString(result);
     }
 
+    /**
+     * 查询所有的科室信息及科室下的组合与套餐
+     * @return
+     */
+    @RequestMapping("/getSectionList.do")
+    @ResponseBody
+    public Object getSectionList(){
+        return JSON.toJSONString(basicFunctionService.getSectionList());
+    }
+
 }
