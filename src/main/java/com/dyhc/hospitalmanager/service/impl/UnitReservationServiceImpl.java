@@ -108,6 +108,7 @@ public class UnitReservationServiceImpl implements UnitReservationService {
                     if(personInfo == null){
                         //不存在人员信息进行添加
                         personInfos.get(i).setGroupId(group.getGroupId());
+                        personInfos.get(i).setPersonType("单位");
                         personResult = personInfoMapper.addPersonInfo(personInfos.get(i));
                     }
                 }

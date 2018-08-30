@@ -1,6 +1,8 @@
 package com.dyhc.hospitalmanager.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.dyhc.hospitalmanager.pojo.CheckResult;
 import com.dyhc.hospitalmanager.pojo.CommonResults;
 import com.dyhc.hospitalmanager.pojo.MedicalEvents;
@@ -66,15 +68,22 @@ public class SectionController {
         return content;
     }
 
-
+    //CheckResult checkResult,
     //检查增加体检结果，检验增加体检结果和检验明细
     @RequestMapping("addResultAndMedicalEvent.html")
     @ResponseBody
-    public String addResultAndMedicalEvent(CheckResult checkResult, @RequestParam(value = "medicalEvents",required = false)List<MedicalEvents> medicalEventString, HttpServletRequest request){
+    public String addResultAndMedicalEvent(@RequestBody JSONObject params, HttpServletRequest request){
         HttpSession session=request.getSession();
+        CheckResult checkResult= params.getObject("checkResult",CheckResult.class);
         Integer sectionId=(Integer) session.getAttribute("sectionId");
-        List<MedicalEvents> medicalEvents = new ArrayList<>();
+        List<MedicalEvents> medicalEvents = null;
+        if(params.getJSONArray("medicalEventsList")!=null){
+            JSONArray jsonArray =params.getJSONArray("medicalEventsList");
+            String arrJSON = JSON.toJSONString(jsonArray);
+            medicalEvents = JSONArray.parseArray(arrJSON,MedicalEvents.class);
+        }
         Integer add=sectionService.addCheckResultAndMedicalEvent(checkResult,medicalEvents,sectionId);
+
         String json="";
         System.out.println(add);
         if(add>0){

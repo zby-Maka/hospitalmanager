@@ -73,6 +73,27 @@ public class BasicFunctionController {
 
 
     /**
+     * 查询科室信息以及下的组合项信息和体检项信息
+     * @return
+     */
+    @RequestMapping("getSecionAndCheckAndCombinationInfo")
+    @ResponseBody
+    public String getSecionAndCheckAndCombinationInfo(){
+        List<Check>list=basicFunctionService.getSectionAndCheckAndCombinationInfo();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 根据查询科室信息以及下的组合项信息和体检项信息
+     */
+    @RequestMapping("getSecionAndCheckAndCombinationInfoById")
+    @ResponseBody
+    public String getSecionAndCheckAndCombinationInfoById(@Param("sectionId")Integer sectionId){
+        List<Check>list=basicFunctionService.getSectionAndCheckAndCombinationInfoById(sectionId);
+        return JSON.toJSONString(list);
+    }
+
+    /**
      * 添加套餐项
      * @param pack
      * @param checkList
@@ -80,7 +101,7 @@ public class BasicFunctionController {
      */
     @RequestMapping("addPackageInfo")
     @ResponseBody
-    public String addPackage(Package pack,Integer[] checkList,Integer[] combinationList){
+    public String addPackage(Package pack,@RequestParam("sectionandcheckList[]") Integer[] checkList,@RequestParam("sectionandcombinationList[]") Integer[] combinationList){
         int result=basicFunctionService.addPackageInfo(pack,combinationList,checkList);
         return JSON.toJSONString(result);
     }

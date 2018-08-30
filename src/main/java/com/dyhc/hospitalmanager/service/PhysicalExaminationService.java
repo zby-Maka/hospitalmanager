@@ -7,7 +7,6 @@ public interface PhysicalExaminationService {
 
     /**
      * 添加体检信息
-     * author
      * @param physicalExamination
      * @return
      */

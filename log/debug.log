@@ -602,3 +602,4 @@
 2018-08-29 09:11:50.384 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
 2018-08-29 09:11:50.384 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
 2018-08-29 09:11:50.449 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-08-30 08:52:14.877 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE

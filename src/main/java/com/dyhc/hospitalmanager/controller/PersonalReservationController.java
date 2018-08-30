@@ -66,7 +66,7 @@ public class PersonalReservationController {
      * 用户预约
      * @param personInfo 用户信息
      * @param yue 预约时间
-     * @return ok成功
+     * @return 1成功
      *          -1失败
      *          -2添加用户信息失败
      *          -3添加预约表失败
@@ -76,9 +76,9 @@ public class PersonalReservationController {
      */
     @RequestMapping("/UserReservation.do")
     public String UserReservation(PersonInfo personInfo, @RequestParam(value = "yue") String yue,
-                                  @RequestParam("packId[]") Integer[] packId,
-                                  @RequestParam("comId[]") Integer[] comId,
-                                  @RequestParam("checkId[]") Integer[] checkId){
+                                  @RequestParam(value = "packId[]",required = false) Integer[] packId,
+                                  @RequestParam(value = "comId[]",required = false) Integer[] comId,
+                                  @RequestParam(value = "checkId[]",required = false) Integer[] checkId){
         return personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
     }
 

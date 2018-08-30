@@ -9,7 +9,6 @@ import java.util.List;
 
 /**
  * 基础功能维护
- * author
  */
 public interface BasicFunctionService {
 
@@ -18,7 +17,6 @@ public interface BasicFunctionService {
 
     /**
      * 添加科室信息
-     * author
      * @param section
      * @return
      */
@@ -26,7 +24,6 @@ public interface BasicFunctionService {
 
     /**
      * 修改科室信息
-     * author
      * @param section
      * @return
      */
@@ -34,7 +31,6 @@ public interface BasicFunctionService {
 
     /**
      * 根据id查询科室信息
-     * author
      * @param sectionId
      * @return
      */
@@ -45,14 +41,12 @@ public interface BasicFunctionService {
 
     /**
      * 查询所有的体检项
-     *
      * @return
      */
     List<Check> getAllCheckList();
 
     /**
      * 添加体检项信息
-     * author
      * @param check
      * @return
      */
@@ -60,7 +54,6 @@ public interface BasicFunctionService {
 
     /**
      * 修改体检项信息
-     * author
      * @param check
      * @return
      */
@@ -69,7 +62,6 @@ public interface BasicFunctionService {
 //----------------------------------组合项项维护
     /**
      * 添加组合项信息
-     * author
      * @param combination
      * checkList 体检项集合
      * @return
@@ -78,7 +70,6 @@ public interface BasicFunctionService {
 
     /**
      * 修改组合项信息
-     * author
      * @param combination
      * @return
      */
@@ -95,9 +86,21 @@ public interface BasicFunctionService {
 
 //----------------------------------套餐项维护
 
+
+    /**
+     * 查询科室下的体检项和组合项
+     * @return
+     */
+    List<Check>getSectionAndCheckAndCombinationInfo();
+
+    /**
+     * 根据科室id查询科室下的体检项和组合项
+     * @return
+     */
+    List<Check>getSectionAndCheckAndCombinationInfoById(@Param("sectionId")Integer sectionId);
+
     /**
      * 添加套餐信息
-     * author
      * combinationList 组合项集合
      * checkList  体检项集合
      * @return
@@ -107,7 +110,6 @@ public interface BasicFunctionService {
 
     /**
      * 修改套餐信息
-     * author
      * @return
      * @throws Exception
      */

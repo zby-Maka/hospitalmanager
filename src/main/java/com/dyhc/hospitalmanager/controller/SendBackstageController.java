@@ -3,6 +3,10 @@ package com.dyhc.hospitalmanager.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * 跳转后台页面
@@ -50,13 +54,25 @@ public class SendBackstageController {
         return "/Thebackend-page/keshiweihu";
     }
 
+    @GetMapping("/Thebackend-page/thewaylist.html")
+    public String indexs(){
+        return "/Thebackend-page/thewaylist";
+    }
+
+    @GetMapping("/Thebackend-page/total.html")
+    public String total(){
+        return "/Thebackend-page/total";
+    }
     @GetMapping("/Thebackend-page/tc.html")
     public String Tc(){
         return "/Thebackend-page/tc";
     }
 
     @GetMapping("/Thebackend-page/danweifenuzu.html")
-    public String DangWeiFenZu(){
+    public String DangWeiFenZu(@RequestParam("companyName") String companyName,@RequestParam("companyId") Integer companyId, HttpServletRequest request){
+        HttpSession session=request.getSession();
+        session.setAttribute("companyName",companyName);
+        session.setAttribute("companyId",companyId);
         return "/Thebackend-page/danweifenuzu";
     }
 
