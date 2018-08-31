@@ -91,11 +91,8 @@ function sessionStorageData() {
                 "</table><hr/>";
         }
     });
-    $("#jiancha").after(jianyan);
     $("#jiancha").html(jiancha);
-
-    console.log(resultInfo);
-    console.log(commInfo);
+    $("#jiancha").after(jianyan);
     $.each(JSON.parse(resultInfo),function (i,n) {
         $($("textarea").get(0)).append(n.commonResults.resultDesc+"\n");
     });
