@@ -29,6 +29,9 @@ public class LoginConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/scripts/**")
                 .excludePathPatterns("/templates/**")
                 .excludePathPatterns("/login.do")
+                .excludePathPatterns("/Thebackend-page/guideList.html")
+                .excludePathPatterns("/booking.html")
+                .excludePathPatterns("/check.html")
                 .excludePathPatterns("/login.html");
     }
 
