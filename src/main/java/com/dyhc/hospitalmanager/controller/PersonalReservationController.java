@@ -1,6 +1,8 @@
 package com.dyhc.hospitalmanager.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * 个人预约
@@ -38,7 +41,7 @@ public class PersonalReservationController {
      * 获取所有体检项组合项以及套餐
      * @return
      */
-    @RequestMapping("/getAll.do")
+    @RequestMapping(value = "/getAll.do")
     public String getAll(){
         List<Check> checks=personalReservation.getAllCheck();
         List<Combination> combinations=personalReservation.getAllCombination();
@@ -61,6 +64,53 @@ public class PersonalReservationController {
         allMedicals.add(allMedical2);
         return JSON.toJSONString(allMedicals);
     }
+    /*
+     * @return 1成功
+     *          -1失败
+     *          -2添加用户信息失败
+     *          -3添加预约表失败
+     *          -4用户选择套餐失败
+     *          -5用户选择体检项失败
+     *          -6用户选择体检项失败
+    */
+    @RequestMapping(value = "/wxUserReservation.do",method=RequestMethod.POST)
+    @ResponseBody
+    public String wxUserReservation(@RequestBody JSONObject json){
+
+
+        JSONArray tjx1=json.getJSONArray("tjx");        //体检项转集合
+        String tjcjson=JSON.toJSONString(tjx1);
+        List<Integer> number1=JSONObject.parseArray(tjcjson,Integer.class);
+        Integer[] tjx=new Integer[number1.size()];
+        for (int i = 0;i<number1.size();i++){
+            tjx[i]=number1.get(i);
+        }
+
+        JSONArray zhx1=json.getJSONArray("zhx");        //组合项数组
+        String zhxjson=JSON.toJSONString(zhx1);
+        List<Integer> number2=JSONObject.parseArray(zhxjson,Integer.class);
+        Integer[] zhx=new Integer[number2.size()];
+        for (int i = 0;i<number2.size();i++){
+            zhx[i]=number2.get(i);
+        }
+
+        JSONArray pac1=json.getJSONArray("pac");        //套餐
+        String pacjson=JSON.toJSONString(pac1);
+        List<Integer> number3=JSONObject.parseArray(pacjson,Integer.class);
+        Integer[] pac=new Integer[number3.size()];
+        for (int i = 0;i<number3.size();i++){
+            pac[i]=number3.get(i);
+        }
+
+        Object object=json.get("userInfo");
+        String jsontext=JSON.toJSONString(object);
+        PersonInfo personInfo=JSONObject.parseObject(jsontext,PersonInfo.class);
+        String datetime=json.getString("dateTime");
+        String num=personalReservation.userReservation(personInfo,datetime,pac,zhx,tjx);
+        System.out.println(num);
+        return num;
+    }
+
 
     /**
      * 用户预约
@@ -79,7 +129,8 @@ public class PersonalReservationController {
                                   @RequestParam(value = "packId[]",required = false) Integer[] packId,
                                   @RequestParam(value = "comId[]",required = false) Integer[] comId,
                                   @RequestParam(value = "checkId[]",required = false) Integer[] checkId){
-        return personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
+        String result = personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
+        return result;
     }
 
 
@@ -90,6 +141,7 @@ public class PersonalReservationController {
      */
     @GetMapping("/ExhibitionAllCheck.do")
     public List<Check> getAllCheck(){
+        System.out.println(JSON.toJSONString(personalReservation.getAllCheck(),true));
         return personalReservation.getAllCheck();
     }
 
@@ -127,7 +179,7 @@ public class PersonalReservationController {
         return personalReservation.addPersonCheck(physicalExaminationId,packId,comId,checkId);
     }
 
-    @RequestMapping("listDate")
+    @RequestMapping("listDate.do")
     @ResponseBody
     public Object listDate(){
         return personalReservation.listDate();
