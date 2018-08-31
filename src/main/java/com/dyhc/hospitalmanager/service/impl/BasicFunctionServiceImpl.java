@@ -297,4 +297,9 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         }
         return list;
     }
+
+    @Override
+    public List<Section> getSectionList() {
+        return null;
+    }
 }

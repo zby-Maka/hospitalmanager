@@ -2,6 +2,7 @@ package com.dyhc.hospitalmanager.service.impl;
 
 import com.dyhc.hospitalmanager.dao.CheckMapper;
 import com.dyhc.hospitalmanager.pojo.Check;
+import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.service.CheckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,10 @@ public class CheckServiceImpl implements CheckService {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public List<PersonInfo> personInfo(String peacId) {
+        return null;
     }
 }
