@@ -41,7 +41,7 @@ public class CheckServiceImpl implements CheckService {
     @Override
     public List<PersonInfo> personInfo(String peacId) {
         try {
-            List<PersonInfo> list = personInfoMapper.getPersonBypeacId(peacId);
+            List<PersonInfo> list  = personInfoMapper.getPersonBypeacId(peacId);
             return list;
         } catch (Exception e) {
             e.printStackTrace();
