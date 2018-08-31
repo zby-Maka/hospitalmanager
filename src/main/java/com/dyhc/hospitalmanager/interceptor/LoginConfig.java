@@ -3,10 +3,8 @@ package com.dyhc.hospitalmanager.interceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.*;
+
 @Configuration
 public class LoginConfig implements WebMvcConfigurer {
 
@@ -30,7 +28,7 @@ public class LoginConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/style/**")
                 .excludePathPatterns("/scripts/**")
                 .excludePathPatterns("/templates/**")
-                .excludePathPatterns("/login.do")
+                .excludePathPatterns("/*.do")
                 .excludePathPatterns("/Thebackend-page/guideList.html")
                 .excludePathPatterns("/booking.html")
                 .excludePathPatterns("/Thebackend-page/thewaylist.html")
