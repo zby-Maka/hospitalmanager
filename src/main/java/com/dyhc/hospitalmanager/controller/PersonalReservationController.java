@@ -128,7 +128,7 @@ public class PersonalReservationController {
         return personalReservation.addPersonCheck(physicalExaminationId,packId,comId,checkId);
     }
 
-    @RequestMapping("listDate")
+    @RequestMapping("listDate.do")
     @ResponseBody
     public Object listDate(){
         return personalReservation.listDate();
