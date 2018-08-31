@@ -1,6 +1,7 @@
 package com.dyhc.hospitalmanager.service;
 
 import com.dyhc.hospitalmanager.pojo.Check;
+import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,4 +20,11 @@ public interface CheckService {
      * @throws Exception
      */
     List<Check>  getCheckList(String  physicalExaminationId);
+
+    /**
+     * 根据体检编号查询体检信息
+     * @param peacId
+     * @return
+     */
+    List<PersonInfo> personInfo(String peacId);
 }
