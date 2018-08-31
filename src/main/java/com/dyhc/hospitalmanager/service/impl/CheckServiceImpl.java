@@ -1,6 +1,7 @@
 package com.dyhc.hospitalmanager.service.impl;
 
 import com.dyhc.hospitalmanager.dao.CheckMapper;
+import com.dyhc.hospitalmanager.dao.PersonInfoMapper;
 import com.dyhc.hospitalmanager.pojo.Check;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.service.CheckService;
@@ -14,6 +15,8 @@ public class CheckServiceImpl implements CheckService {
 
     @Autowired
     private CheckMapper CheckMapper;
+    @Autowired
+    private PersonInfoMapper personInfoMapper;
 
     @Override
     public List<Check> getAllCheckList() {
@@ -37,6 +40,12 @@ public class CheckServiceImpl implements CheckService {
 
     @Override
     public List<PersonInfo> personInfo(String peacId) {
-        return null;
+        try {
+            List<PersonInfo> list  = personInfoMapper.getPersonBypeacId(peacId);
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

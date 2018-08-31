@@ -298,8 +298,24 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return list;
     }
 
+    /**
+     *查询科室信息以及其下的组合项和体检项信息
+     * @return
+     */
     @Override
     public List<Section> getSectionList() {
-        return null;
+        try {
+            List<Section> list = sectionMapper.getSectionList();
+            for (Section section : list){
+                section.setSectionandcheckList(checkMapper.getCheckListBySectionId(section.getSectionId()));
+                section.setSectioandcombinationList(combinationMapper.getCombinationList(section.getSectionId()));
+            }
+            return list;
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("查询科室信息以及其下的组合项和体检项信息失败");
+            return null;
+        }
     }
+
 }

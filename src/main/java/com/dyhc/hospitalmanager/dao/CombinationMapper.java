@@ -35,4 +35,12 @@ public interface CombinationMapper {
      * @return
      */
     List<Combination> getCombinationByPhysicalExaminationId(@Param("physicalExaminationId")String physicalExaminationId)throws Exception;
+
+    /**
+     * 根据科室编号查询组合项信息
+     * @param sectionId
+     * @return
+     * @throws Exception
+     */
+    List<Combination> getCombinationList(@Param("sectionId")Integer sectionId)throws Exception;
 }

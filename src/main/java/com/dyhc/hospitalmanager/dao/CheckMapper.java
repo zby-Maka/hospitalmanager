@@ -67,4 +67,10 @@ public interface CheckMapper {
      */
     List<Check> getCheckByPhysicalExaminationIdList(@Param("physicalExaminationId")String physicalExaminationId,@Param("physicalStatu")Integer physicalStatu)throws Exception;
 
+    /**
+     * 根据科室编号查询体检项信息
+     * @return
+     */
+    List<Check> getCheckListBySectionId(@Param("sectionId")Integer sectionId)throws Exception;
+
 }
