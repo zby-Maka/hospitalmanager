@@ -19,7 +19,33 @@ $(function () {
             location.href = "/check.html";
         }
     });
+
+
 });
+
+/**
+ * 根据身份证号查询人员信息
+ */
+function assignmentPersonInfo() {
+    var persionInfo = sessionStorage.getItem("personInfo");
+    var persion = JSON.parse(persionInfo);
+    if (persion!=null) {
+        console.log(persion);
+        $("input[name=personName]").val(persion.personName);
+        $("input[name=personNameSpellCode]").val(persion.personNameSpellCode);
+        $("input[name=personIdCard]").val(persion.personIdCard);
+        $("input[name=personAge]").val(persion.personAge);
+        $("input[name=personBirthday]").val(persion.personBirthday);
+        $("input[name=personSex]").val(persion.personSex);
+        var isMarry=$("input[name=isMarry]");
+        if("未婚"==persion.isMarry)
+            $(isMarry[0]).prop("checked",true);
+        else if("已婚"==persion.isMarry)
+            $(isMarry[1]).prop("checked",true);
+        $("input[name=personTelephone]").val(persion.personTelephone);
+        $("input[name=personAddress]").val(persion.personAddress);
+    }
+}
 
 /**
  * 用户点击上一步时赋值
