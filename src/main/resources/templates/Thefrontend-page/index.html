@@ -12,7 +12,6 @@
 		<script type="text/javascript" src="/scripts/authority/commonAll.js"></script>
 		<script src="/js/nowdate.js"></script>
 		<script type="text/javascript" src="/layui.js"></script>
-
 		<script>
 			var element;
 			layui.use('element', function() {
@@ -304,7 +303,6 @@
 				$("#ajaxDialog").hide();
 			}
 		</script>
-		<script type="text/javascript" src="/js/daohang.js"></script>
 	</head>
 	<body onload="getDate01()">
 		<div id="top">
@@ -395,120 +393,59 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-
-			//绑定科室导航栏
-			function daohang(){
-                $.ajax({
-                    url:"/getSectionList.do",
-                    data: {},
-                    type: "get",
-                    dataType: "json",
-                    success:function (date) {
-                        if (date!=null){
-                            var str = "<li class='layui-nav-item'>" +
-                                "<a href='javascript:void(0);' class='daohang'>科室</a>";
-                            $.each(date,function (i1,e1) {
-                                str += "<dl class='layui-nav-child'>" +
-                                    "<dd>" +
-                                    "<a href='javascript:;' onclick='kswh()'>"+e1.sectionName+"</a><input name='sectionId' type='hidden' value='"+e1.sectionId+"'>" +
-                                    "<dl class='layui-nav-child'><dd><a href='javascript:;' onclick='tj()' class='tj'>体检项</a>";
-
-                                $.each(e1.sectionandcheckList,function (i2,e2) {
-                                    str +="<dl class='layui-nav-child'>" +
-                                        "<dd>" +
-                                        "<a href='javascript:;'>"+e2.checkName+"</a><input name='sectionId' type='hidden' value='"+e2.checkId+"'>" +
-                                        "</dd>" +
-                                        "</dl>";
-                                })
-                                str += "</dd><dd>" +
-                                    "<a href='javascript:;' onclick='zhx()' class='zh'>组和项</a>";
-                                $.each(e1.sectioandcombinationList,function (i3,e3) {
-                                    str +="<dl class='layui-nav-child'>" +
-                                        "<dd>" +
-                                        "<a href='javascript:;'>"+e3.combinationName+"</a><input name='sectionId' type='hidden' value='"+e3.combinationId+"'>" +
-                                        "</dd>" +
-                                        "</dl>" ;
-                                })
-                                str += "</dd></dl></dd></dl>";
-                            })
-                            str += "</li>";
-                            $("#oneul").html(str);
-                            $(".daohang").text("科室");
-                            $("#here_area").text("当前所在项：科室信息信息维护");
-                            element.init();
-                        } else {
-                            alert("网络异常");
-                        }
-                    }
-                })
-			}
-
 			$(function() {
 				//第一次页面加载
 				//diyici();
-                daohang();
+				
 				//科室维护页面 跳转
 				$(".selected").on("click", function() {
-				    daohang();
-                    /*$("#oneul").html("<li class='layui-nav-item'>" +
-                        "<a href='javascript:void(0);' class='daohang'>科室</a>" +
 
-                        "<dl class='layui-nav-child'>" +
-                        "<dd>" +
-                        "<a href='javascript:;' onclick='kswh()'>科室1</a>" +
-                        "<dl class='layui-nav-child'>" +
+				    
 
-                        "<dd>" +
-                        "<a href='javascript:;' onclick='tj()' class='tj'>体检项</a>" +
-                        "<dl class='layui-nav-child'>" +
-                        "<dd>" +
-                        "<a href='javascript:;'>体检1</a>" +
-                        "</dd>" +
-                        "</dl>" +
-                        "</dd>" +
 
-                        "<dd>" +
-                        "<a href='javascript:;' onclick='zhx()' class='zh'>组和项</a>" +
-                        "<dl class='layui-nav-child'>" +
-                        "<dd>" +
-                        "<a href='javascript:;'>组和1</a>" +
-                        "</dd>" +
-                        "</dl>" +
-                        "</dd>" +
-
-                        "</dl>" +
-                        "</dd>" +
-                        "</dl>" +
-
-                        "</li>");*/
+					$("#oneul").html("<li class='layui-nav-item'>" +
+						"<a href='javascript:void(0);' class='daohang'>科室</a>" +
+						"<dl class='layui-nav-child'>" +
+						"<dd>" +
+						"<a href='javascript:;' onclick='kswh()'>科室1</a>" +
+						"<dl class='layui-nav-child'>" +
+						"<dd>" +
+						"<a href='javascript:;' onclick='tj()' class='tj'>体检项</a>" +
+						"<dl class='layui-nav-child'>" +
+						"<dd>" +
+						"<a href='javascript:;'>体检1</a>" +
+						"</dd>" +
+						"</dl>" +
+						"</dd>" +
+						"<dd>" +
+						"<a href='javascript:;' onclick='zhx()' class='zh'>组和项</a>" +
+						"<dl class='layui-nav-child'>" +
+						"<dd>" +
+						"<a href='javascript:;'>组和1</a>" +
+						"</dd>" +
+						"</dl>" +
+						"</dd>" +
+						"</dl>" +
+						"</dd>" +
+						"</dl>" +
+						"</li>");
+					$(".daohang").text("科室");
+					$("#here_area").text("当前所在项：科室信息信息维护");
+					element.init();
 				});
-
 				$(".selected1").on("click", function() {
-				    $.ajax({
-						url:"/showPackage.do",
-						data:{},
-						type:"get",
-						dataType:"json",
-						success:function (date) {
-							if (date!=null){
-							    var str = "<li class='layui-nav-item'><a href='javascript:void(0);' class='daohang'>套餐</a>";
-							    $.each(date,function (i,e) {
-									str += "<dl class='layui-nav-child'>" +
-                                        "<dd>" +
-                                        "<a href='javascript:;' onclick='taocan()'>"+e.packageName+"</a><input name='sectionId' type='hidden' value='"+e.packageId+"'>"+
-                                        "</dd>" +
-                                        "</dl>";
-                                })
-								str += "</li>";
-                                $("#oneul").html(str);
-                                $(".daohang").text("套餐");
-                                $("#here_area").text("当前所在项：套餐信息维护");
-                                element.init();
-							} else {
-                                alert("网络异常");
-							}
-                        }
-					})
+					$("#oneul").html("<li class='layui-nav-item'>" +
+						"<a href='javascript:void(0);' class='daohang'>套餐</a>" +
+						"<dl class='layui-nav-child'>" +
+						"<dd>" +
+						"<a href='javascript:;' onclick='taocan()'>套餐1</a>" +
+						
+						"</dd>" +
+						"</dl>" +
+						"</li>");
+					$(".daohang").text("套餐");
+					$("#here_area").text("当前所在项：套餐信息维护");
+					element.init();
 				});
 				$(".selected2").on("click", function() {
 				    var content="<li class='layui-nav-item'>" +

@@ -48,10 +48,5 @@
           (SELECT `combination_id` FROM `physical_examination_and_ combination`
           WHERE `physical_examination_id` = #{physicalExaminationId})
     </select>
-
-    <!-- 根据科室编号查询组合项信息 -->
-    <select id="getCombinationList" resultType="com.dyhc.hospitalmanager.pojo.Combination">
-        SELECT * FROM `combination` WHERE `section_id` = #{sectionId}
-    </select>
-
+    
 </mapper>
