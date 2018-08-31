@@ -84,4 +84,9 @@ public class SendBackstageController {
     public String jieguojianyi(){
         return "/Thebackend-page/jieguojianyi";
     }
+
+    @GetMapping("/Thebackend-page/guideList.html")
+    public String guideList(){
+        return "/Thebackend-page/GuideList";
+    }
 }
