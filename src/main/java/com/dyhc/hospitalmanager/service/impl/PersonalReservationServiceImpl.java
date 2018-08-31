@@ -57,7 +57,6 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     private CombinationAndCheckMapper combinationAndCheckMapper;
     @Autowired
     RedisDao redisDao;
-
     @Autowired
     private MessageProducer messageProducer;
 

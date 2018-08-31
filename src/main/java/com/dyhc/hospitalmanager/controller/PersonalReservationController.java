@@ -79,7 +79,8 @@ public class PersonalReservationController {
                                   @RequestParam(value = "packId[]",required = false) Integer[] packId,
                                   @RequestParam(value = "comId[]",required = false) Integer[] comId,
                                   @RequestParam(value = "checkId[]",required = false) Integer[] checkId){
-        return personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
+        String result = personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
+        return result;
     }
 
 
