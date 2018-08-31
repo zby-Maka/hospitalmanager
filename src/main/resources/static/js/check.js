@@ -11,7 +11,7 @@ $(function() {
                     var myDate = new Date(Date.parse(e.key.replace(/-/g, "/")));
                     divControl[i+1].innerHTML=weekDay[myDate.getDay()]+"\n"+"<lable>"+e.key+"</lable>";
                 }else {
-                    divControl[i+1].innerHTML="约满了";
+                    divControl[i+1].innerHTML="<lable>约满了</lable>";
                 }
             })
         }
@@ -22,9 +22,14 @@ $(function() {
     var checkId = new Array();
 
     $("#chooseDate>div").not(":eq(0)").click(function () {
-        makeAnAppointment($(this).find("lable").text(),packId,comId,checkId);
-        EV_closeAlert();
-        $("#chooseDate").hide();
+        var yue = $(this).find("lable").text();
+        if(yue!="约满了"){
+            makeAnAppointment(yue,packId,comId,checkId);
+            EV_closeAlert();
+            $("#chooseDate").hide();
+        }else {
+            alert("该日期约满了，请选择其他日期！");
+        }
     });
 
     //点击预约选择时间
@@ -89,7 +94,7 @@ $(function() {
 	});
 
 	//浮动组合项时显示该项下边的体检项
-    $("#com").on("mouseenter","td[name=c]",function () {
+    $("#com").on("mouseover","td[name=c]",function () {
         var comId=$(this).children("input").val();
         $.getJSON("/getComCheck",{"comId":comId},function (comCheck) {
             var checkCom = "<table><tr>";
@@ -104,34 +109,28 @@ $(function() {
     })
 
     //浮动套餐时显示该项下边的体检项
-    $("#package").on("mouseenter","td[name=p]",function () {
+    $("#package").on("mouseover","td[name=p]",function () {
         var packId=$(this).children("input").val();
-        var checkPack = "";
+        var checkPack = "<table><tr>";
         $.getJSON("/getPackCheck",{"packId":packId},function (packCheck) {
             console.log(packCheck);
-            // $.each(packCheck,function (i,e) {
-            //     checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
-            // })
+            $.each(packCheck.packageCombinationList,function (i,e) {
+                checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.combinationName+"</td>";
+            })
+            $.each(packCheck.packageCheckList,function (i,e) {
+                checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
+            })
+            checkPack+="</tr></table>";
+            $(".childBox").html(checkPack);
+            $(".childBox").show();
         })
-        $("#c").html(checkPack);
-        $(".childBox").show();
     })
 
-	// $("input[name='combineItem']").on("mouseenter",function(){
-	// 	var result=$(this).children("input").val();
-	// 	$(".childBox").show();
-	// });
-    //
-	// $("input[name='combineItem'],input[name='packageItem']").on("mouseleave",function(){
-	// 	var result=$(this).children("input").val();
-	// 	$(".childBox").hide();
-	// });
-
-
-	//确定预约
-	// $("input[name=submit]").click(function () {
-     //    makeAnAppointment();
-    // })
+    //移出事件
+	$(".tab_box").on("mouseout","input[name='combineItem'],input[name='packageItem']",function(){
+        $("#c").html("");
+        $(".childBox").hide();
+	});
 });
 
 /**

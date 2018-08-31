@@ -110,7 +110,7 @@ public class UnitReservationController {
         //上传文件保存到指定文件夹下边
         String contentType = file.getContentType();
         String fileName = file.getOriginalFilename();
-        //	String filePath = request.getSession().getServletContext().getRealPath("templates/imgupload/");
+
         //指定文件存放路径，可以是相对路径或者绝对路径
         String filePath = "./src/main/resources/excelfile/";
         try {
@@ -189,13 +189,10 @@ public class UnitReservationController {
     @ResponseBody
     public String showPersonInfo(@RequestParam("companyName") String companyName){
         File cfgFile = null;
-        try {
-            cfgFile = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "excelfile/"+companyName+".xlsx");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+            File file1 = new File("./src/main/resources/excelfile/"+companyName+".xlsx");
+            //cfgFile = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "excelfile/"+companyName+".xlsx");
         ImportExcelUtil importExcelUtil=new ImportExcelUtil();
-        File file=new File(String.valueOf(cfgFile));
+        File file=new File(String.valueOf(file1));
         List<PersonInfo> info = new ArrayList<>();
         try {
             InputStream in=new FileInputStream(file);
@@ -203,6 +200,7 @@ public class UnitReservationController {
             for (List<Object> str:infos){
                 PersonInfo c = new PersonInfo();
                 c.setPersonName((String) str.get(0));
+                System.out.println();
                 String a = (String) str.get(1);
                 c.setPersonAge(Integer.parseInt(a));
                 String bir = (String) str.get(2);

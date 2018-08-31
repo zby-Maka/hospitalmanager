@@ -23,8 +23,8 @@
         SELECT * FROM `check_result` cr
 LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id
 LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id`
-INNER JOIN `medical_events` me ON me.`check_result _id` = cr.`check_result _id`
-WHERE cr.`physical_examination_id` =#{physicalExaminationId}
+INNER JOIN `medical_events` me ON me.`check_result_id` = cr.`check_result _id`
+WHERE cr.`physical_examination_id` = #{physicalExaminationId}
     </select>
     <resultMap id="getResult" type="com.dyhc.hospitalmanager.pojo.CheckResult">
         <association property="commonResults" javaType="com.dyhc.hospitalmanager.pojo.CommonResults">

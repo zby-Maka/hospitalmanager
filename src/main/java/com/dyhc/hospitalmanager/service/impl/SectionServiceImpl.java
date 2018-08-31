@@ -30,6 +30,8 @@ public class SectionServiceImpl implements SectionService {
     private SectionTypeMapper sectionTypeMapper;
     @Autowired
     private PersonInfoMapper personInfoMapper;
+    @Autowired
+    private  SectionMapper sectionMapper;
 
 
 
@@ -81,6 +83,11 @@ public class SectionServiceImpl implements SectionService {
         return list;
     }
 
+    @Override
+    public Integer addCheckResultAndMedicalEvent(CheckResult checkResult, MedicalEvents medicalEvents, Integer sectionId) {
+        return null;
+    }
+
 
     @Override
     public Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId) {
@@ -113,9 +120,39 @@ public class SectionServiceImpl implements SectionService {
         return ok;
     }
 
+    @Override
+    public Section getSectionsectionId(Integer sectionId) {
+        try {
+            return sectionMapper.getSectionsectionId(sectionId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
+    @Override
+    public int updSectionInfo(Section section) {
+        int result=0;
+        try {
+            result=sectionMapper.updSectionInfo(section);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result=0;
+        }
+        return result;
+    }
 
-
+    @Override
+    public int addSectionInfo(Section section) {
+        int result=0;
+        try {
+            result=sectionMapper.addSectionInfo(section);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = 0;
+        }
+        return result;
+    }
 
 
 }

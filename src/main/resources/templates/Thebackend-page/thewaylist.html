@@ -1,195 +1,131 @@
 <html>
 
-	<head>
-		<title>QR-Code Clock</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="../css/code128.css" />
-		<style id="oneStyle" type="text/css">
+<head>
+	<title>太原市小店区三甲大院体检指引单</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../css/code128.css" />
+	<script type="text/javascript" src="../js/code128.js"></script>
+	<script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
+	<script language="javascript" src="/js/jquery.jqprint-0.3.js"></script>
+	<script type="text/javascript">
+        (function(divId) {
+            var divElement, oldOnLoad = window.onload;
 
-			table.oneTable {
-				font-family: verdana, arial, sans-serif;
-				font-size: 11px;
-				color: #333333;
-				border-width: 1px;
-				border-color: #666666;
-				border-collapse: collapse;
-			}
-			table.oneTable td {
-				border-width: 1px;
-				padding: 8px;
-				border-style: solid;
-				border-color: #666666;
-				background-color: #ffffff;
-			}
-		</style>
-		<script type="text/javascript" src="../js/code128.js"></script>
-		<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="/js/LodopFuncs.js"></script>
-		<script type="text/javascript" src="/js/lodopPrint.js"></script>
-		<script type="text/javascript">
-			(function(divId) {
-				var divElement, oldOnLoad = window.onload;
-
-				function getTimeString() {
-					var pad = function(n) {
-							return n < 10 ? '0' + n.toString(10) : n.toString(10);
-						},
-						dt = new Date();
-					return [pad(dt.getHours()), pad(dt.getMinutes()), pad(dt.getSeconds())].join(':');
-				}
-				function UpdateClock() {
-					var timeText = getTimeString();
-					divElement.innerHTML = code128(timeText);
-				}
-				window.onload = function() {
-					createBarcode('div128','2015082810','A');
-					divElement = document.getElementById(divId);
-					UpdateClock();
-					setInterval(UpdateClock, 1000);
-					if(typeof oldOnLoad == 'function') oldOnLoad.apply(this, arguments);
-				}
-			})('div1');
-            /*打印*/
-            var Loop;//声明全局变量
-            //表单打印预览
-            function onePreview() {
-                OneTable();
-                //打印窗口设置
-                //LODOP.SET_PREVIEW_WINDOW(100, 1, 1, 760, 540, "")//预览比例，工具条和按钮，打印按钮是否，宽，高，预览窗口和打印按钮的名称组合
-                LODOP.PREVIEW();
+            function getTimeString() {
+                var pad = function(n) {
+                        return n < 10 ? '0' + n.toString(10) : n.toString(10);
+                    },
+                    dt = new Date();
+                return [pad(dt.getHours()), pad(dt.getMinutes()), pad(dt.getSeconds())].join(':');
             }
-
-            //表单生成pdf文件
-            function onePrint() {
-                OneTable();
-                //设置打印份数
-                //LODOP. SET_PRINT_COPIES(2);
-                LODOP.PRINT();
+            function UpdateClock() {
+                var timeText = getTimeString();
+                divElement.innerHTML = code128(timeText);
             }
+           /* window.onload = function() {
+                createBarcode('div128','2015082810','A');
+                divElement = document.getElementById(divId);
+                UpdateClock();
+                setInterval(UpdateClock, 1000);
+                if(typeof oldOnLoad == 'function') oldOnLoad.apply(this, arguments);
+            }*/
+        })('div1');
+        function aa(){
+            $("#printInfo").jqprint();
+        }
+        $(function () {
+            showPersonInfo();
 
-            //表单一选择打印机打印
-            function onePrintA() {
-                OneTable();
-                LODOP.PRINTA();
-            }
+        });
+        //显示人员信息
+        function showPersonInfo() {
+            var physicalExaminationId =localStorage["physicalExaminationId"];
+            $.ajax({
+                url: "/selectInfoByselectByPhysicalExaminationId.do?physicalExaminationId="+physicalExaminationId,
+                data:{},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    $("#personName").text(data.personName);
+                    $("#personSex").text(data.personSex);
+                    $("#personAge").text(data.personAge);
+                    $("#personBirthday").text(data.personBirthday);
+                    $("#personType").text(data.personType);
+                    $("#telephone").text(data.personTelephone);
+					//$("#div128").attr('background',"url('/code/"+physicalExaminationId+".png')");
+					$("#showsTiao").attr("src","/code/"+physicalExaminationId+".png");
+                    showCheckInfos();
+                }
+            });
+        }
 
-            //对表单一进行打印设置
-            function setPrint() {
-                OneTable();
-                LODOP.PRINT_SETUP();
-            }
-
-            function printDesign() {
-                OneTable();
-                LODOP.PRINT_DESIGN();
-            }
-
-            //表单
-            function OneTable() {
-                var oneStyle = "<style>" + $("#oneStyle").html() + "</style>";
-                var strOne = oneStyle + $("#oneForm").html();
-                LODOP = getLodop();
-                LODOP.PRINT_INIT("实现打印");
-                LODOP.SET_PRINT_STYLE("FontSize", 20);//设置打印字体大小
-                LODOP.SET_PRINT_STYLE("Bold", 3);//设定纯文本打印项是否粗体
-                LODOP.SET_PRINT_PAGESIZE(0, 0, 0, "A4"); //规定纸张大小；使用A4纸。
-                LODOP.ADD_PRINT_HTM(100, 50, 350, 600, strOne);
-                LODOP.ADD_PRINT_TEXT(200, 200, 500, 500);//上，左，宽，高
-            };
-		</script>
-		<style>
-			table tr{
-				line-height: 50px;
-			}
-		</style>
-	</head>
-	<body style="background-color: #f8f8f8;">
-	<form id="oneForm">
-		<div style="width: 210mm; height: 297mm;">
-			<div style="width: 180mm; height: 12mm;border-bottom: 1px solid black;text-align:center;">
-				<h2>太原市小店区三甲大院体检指引单</h2>
-			</div>
-			<div style="width: 180mm; border-bottom: 1px solid black;height: 30mm;">
-				<div style="font-size: 14px;padding-top:5mm;float: left;">
-					姓名：<label>春意</label>&nbsp;&nbsp;&nbsp;&nbsp;性別：<label>男性</label>&nbsp;&nbsp;&nbsp;&nbsp;年齡：<label>30</label>&nbsp;&nbsp;&nbsp;&nbsp;
-					日期：<label>2016-05-05</label>
-					<br /><br />
-					工作单位：<label>个人</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					联系电话：<label>13546247909</label>
-				</div>
-				<div class="barcode2" id="div128" style="float: right;" ></div>
-			</div>
-			<table style="width: 180mm; border-bottom: 1px solid black;height: 30mm;">
-				<thead>
-					<th>体检项</th>
-					<th>备注</th>
-				</thead>
-				<tbody>
-					<tr>
-						<td align="right">心电图肝硬化体重视力听力肺活量</td>
-						<td align="center">1号楼3层东南角左侧楼道306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角左侧楼道306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角左侧楼道306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角左侧楼道306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角左侧楼道306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角左侧楼道306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角306检查科</td>
-					</tr>
-					<tr>
-						<td align="center">身高</td>
-						<td align="center">1号楼3层东南角306检查科</td>
-					</tr>
-				</tbody>
-			</table>
-
-
+        /**
+		 * 根据体检编号显示所有体检信息
+         */
+        function showCheckInfos() {
+            var physicalExaminationId =localStorage["physicalExaminationId"];
+            $.ajax({
+                url: "/showCheckedDetail.do?physicalExaminationId="+physicalExaminationId,
+                data:{},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    alert(data);
+                    var content = "";
+					$.each(data,function (i,e) {
+						content += "<tr>\n" +
+                            "<td align=\"right\">"+e.checkName+"</td>" +
+                            "<td align=\"center\">"+e.checkAddress+"</td>" +
+                            "</tr>";
+                    });
+					$("#showInfo").html(content);
+                }
+            });
+        }
+	</script>
+	<style>
+		#printInfo table tr{
+			line-height: 50px;
+		}
+	</style>
+</head>
+<body style="background-color: #f8f8f8;">
+<div style="width: 210mm; height: 297mm; margin: 0 auto;" id="printInfo">
+	<div style="width: 180mm; height: 12mm;border-bottom: 1px solid black;text-align:center;margin-left: 15mm;">
+		<h2>太原市小店区三甲大院体检指引单</h2>
+	</div>
+	<div style="width: 180mm; margin-left: 15mm;border-bottom: 1px solid black;height: 30mm;">
+		<div style="font-size: 14px;padding-top:5mm;float: left;">
+			姓名：<label id="personName"></label>&nbsp;&nbsp;&nbsp;&nbsp;性別：<label id="personSex"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+			年齡：<label id="personAge"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+			日期：<label id="personBirthday"></label>
+			<br /><br />
+			工作单位：<label id="personType"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			联系电话：<label id="telephone"></label>
 		</div>
-		<div style="margin-left:900px;margin-top: -180px">
-			<input type="button" value="打印预览" onclick="onePreview()">&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="button" value="打印维护" onclick="setPrint()">
+		<div class="barcode2" id="div128" style="float: right;margin-top: -18mm;" >
+			<img src="" id="showsTiao"/>
 		</div>
-	</form>
-	</body>
+	</div>
+	<table style="width: 180mm; margin-left: 15mm;border-bottom: 1px solid black;height: 30mm;">
+		<thead>
+			<th  align="right">体检项</th>
+			<th align="center">备注</th>
+		</thead>
+		<tbody id="showInfo">
+		<!--<tr>
+			<td align="right">心电图肝硬化体重视力听力肺活量</td>
+			<td align="center">1号楼3层东南角左侧楼道306检查科</td>
+		</tr>-->
+		</tbody>
+		<!--<tfoot>
+		    <input type="button" onclick="aa()" value="打印"/>
+		</tfoot>-->
+	</table>
+
+</div>
+<div style="margin-left:900px;margin-top: -180px">
+	<input type="button" onclick="aa()" value="打印"/>
+</div>
+</body>
 </html>

@@ -47,6 +47,9 @@ public class RoleInfoController{
                 }else{
                     json="{\"roletypeid\":\""+roleInfo.getRoleTypeId()+"\"}";
                 }
+//                session.setAttribute("sectionId",section.getSectionId());
+                //\"sectiontypeid\":\""+section.getSectionTypeId()+"\"
+                json="{\"roletypeid\":\""+roleInfo.getRoleTypeId()+"\"}";
                 return json;
             }else {
                 return JSON.toJSONString("科室类型编号错误");
