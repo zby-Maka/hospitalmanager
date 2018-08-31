@@ -410,7 +410,7 @@
                             $.each(date,function (i1,e1) {
                                 str += "<dl class='layui-nav-child'>" +
                                     "<dd>" +
-                                    "<a href='javascript:;' onclick='kswh()'>"+e1.sectionName+"</a><input name='sectionId' type='hidden' value='"+e1.sectionId+"'>" +
+                                    "<a href='javascript:;' onclick='kswh(this)'>"+e1.sectionName+"</a><input name='sectionId' type='hidden' value='"+e1.sectionId+"'>" +
                                     "<dl class='layui-nav-child'><dd><a href='javascript:;' onclick='tj()' class='tj'>体检项</a>";
 
                                 $.each(e1.sectionandcheckList,function (i2,e2) {
@@ -620,8 +620,12 @@
 				$("#rightMain").attr("src", "/Thebackend-page/zhx.html")
 			}
 			
-			function kswh() {
+			function kswh(that) {
 				$("#rightMain").attr("src", "/Thebackend-page/keshiweihu.html");
+                var sectionid=$(that).next().val();
+                localStorage.keid=sectionid;
+                //var id=localStorage["keid"];
+                //findById(sectionid);
 			}
 			
 			function taocan () {

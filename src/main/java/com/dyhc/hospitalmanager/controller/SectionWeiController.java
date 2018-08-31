@@ -18,6 +18,7 @@ public class SectionWeiController {
     @ResponseBody
     public  String getaddkeshiweihuId(@RequestParam("sectionId")Integer sectionId){
         Section section=sectionService.getSectionsectionId(sectionId);
+        System.out.println(section.getRemark());
         return JSON.toJSONString(section);
     }
     @RequestMapping(value = "keshiweihu.do")

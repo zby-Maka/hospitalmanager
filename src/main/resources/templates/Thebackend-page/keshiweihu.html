@@ -15,7 +15,7 @@
 		<table>
 			<tr>
 				<td style="text-align: right;" width="150mm">是否启用：</td>
-				<input type="hidden" id="sectionid" value="">
+				<input type="hidden" id="sectionid">
 				<td width="300mm">
 					<input type="radio" value="1" name="sectionStatus" checked="checked" />是
 					<input type="radio" value="0" name="sectionStatus" />否
@@ -43,11 +43,16 @@
 				</td>
 			</tr>
 		</table>
-		<input type="button" value="提交"  onclick="getinsertsection()"/>
-		<input type="reset" value="重置" />
+		<input type="button" value="保存"  onclick="getinsertsection()"/>
+		<input type="button" value="新增" onclick="resetInsert()" />
 		</form>
 		</div>
 	</body>
 	<script  type="text/javascript" src="/js/sectionwei.js"></script>
 	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+<script>
+	$(function () {
+        findByIds();
+    })
+</script>
 </html>
