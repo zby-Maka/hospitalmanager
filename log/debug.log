@@ -5941,3 +5941,115 @@
 2018-08-31 11:34:36.063 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 24(Integer)
 2018-08-31 11:34:36.129 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 0
 2018-08-31 11:35:06.302 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-31 19:03:07.675 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-08-31 19:04:51.735 [http-nio-8080-exec-3] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==>  Preparing: SELECT * FROM role_info WHERE user_name=? AND `password`=? 
+2018-08-31 19:04:52.435 [http-nio-8080-exec-3] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - ==> Parameters: ycy(String), 0107(String)
+2018-08-31 19:04:52.542 [http-nio-8080-exec-3] DEBUG c.d.h.dao.RoleInfoMapper.getRoleInfoLogin - <==      Total: 1
+2018-08-31 19:04:56.122 [http-nio-8080-exec-10] DEBUG c.d.h.dao.SectionMapper.getSectionList - ==>  Preparing: select * from `section` 
+2018-08-31 19:04:56.124 [http-nio-8080-exec-10] DEBUG c.d.h.dao.SectionMapper.getSectionList - ==> Parameters: 
+2018-08-31 19:04:56.187 [http-nio-8080-exec-10] DEBUG c.d.h.dao.SectionMapper.getSectionList - <==      Total: 6
+2018-08-31 19:04:56.188 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:04:56.189 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 2(Integer)
+2018-08-31 19:04:56.251 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 2
+2018-08-31 19:04:56.251 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:04:56.252 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 2(Integer)
+2018-08-31 19:04:56.312 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 2
+2018-08-31 19:04:56.313 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:04:56.313 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 3(Integer)
+2018-08-31 19:04:56.379 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 1
+2018-08-31 19:04:56.385 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:04:56.386 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 3(Integer)
+2018-08-31 19:04:56.451 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 1
+2018-08-31 19:04:56.453 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:04:56.453 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 4(Integer)
+2018-08-31 19:04:56.518 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 0
+2018-08-31 19:04:56.519 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:04:56.519 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 4(Integer)
+2018-08-31 19:04:56.584 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 1
+2018-08-31 19:04:56.584 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:04:56.584 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 5(Integer)
+2018-08-31 19:04:56.642 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 0
+2018-08-31 19:04:56.643 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:04:56.643 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 5(Integer)
+2018-08-31 19:04:56.709 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 0
+2018-08-31 19:04:56.709 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:04:56.709 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 9(Integer)
+2018-08-31 19:04:56.769 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 0
+2018-08-31 19:04:56.770 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:04:56.770 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 9(Integer)
+2018-08-31 19:04:56.835 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 0
+2018-08-31 19:04:56.836 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:04:56.836 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 25(Integer)
+2018-08-31 19:04:56.897 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 0
+2018-08-31 19:04:56.898 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:04:56.898 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 25(Integer)
+2018-08-31 19:04:56.962 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 0
+2018-08-31 19:05:08.690 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - ==>  Preparing: SELECT * FROM common_results 
+2018-08-31 19:05:08.691 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - ==> Parameters: 
+2018-08-31 19:05:08.753 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - <==      Total: 4
+2018-08-31 19:05:08.876 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.getProposedDescriptionlist - ==>  Preparing: SELECT * FROM `proposed_description` 
+2018-08-31 19:05:08.877 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.getProposedDescriptionlist - ==> Parameters: 
+2018-08-31 19:05:08.941 [http-nio-8080-exec-5] DEBUG c.d.h.d.P.getProposedDescriptionlist - <==      Total: 2
+2018-08-31 19:05:17.473 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.addProposedDescriptionInfo - ==>  Preparing: insert into proposed_description VALUES(NULL,?,?,?,1) 
+2018-08-31 19:05:17.497 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.addProposedDescriptionInfo - ==> Parameters: null, qq(String), qq(String)
+2018-08-31 19:05:17.656 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.addProposedDescriptionInfo - <==    Updates: 1
+2018-08-31 19:05:19.158 [http-nio-8080-exec-7] DEBUG c.d.h.d.P.getProposedDescriptionlist - ==>  Preparing: SELECT * FROM `proposed_description` 
+2018-08-31 19:05:19.159 [http-nio-8080-exec-7] DEBUG c.d.h.d.P.getProposedDescriptionlist - ==> Parameters: 
+2018-08-31 19:05:19.216 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - ==>  Preparing: SELECT * FROM common_results 
+2018-08-31 19:05:19.218 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - ==> Parameters: 
+2018-08-31 19:05:19.226 [http-nio-8080-exec-7] DEBUG c.d.h.d.P.getProposedDescriptionlist - <==      Total: 3
+2018-08-31 19:05:19.282 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - <==      Total: 4
+2018-08-31 19:05:20.720 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.getProposedDescriptionByid - ==>  Preparing: SELECT * FROM `proposed_description` WHERE `proposed_description_id`=? 
+2018-08-31 19:05:20.721 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.getProposedDescriptionByid - ==> Parameters: 7(Integer)
+2018-08-31 19:05:20.778 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.getProposedDescriptionByid - <==      Total: 1
+2018-08-31 19:05:23.863 [http-nio-8080-exec-2] DEBUG c.d.h.d.P.updProposedDescriptionInfo - ==>  Preparing: UPDATE proposed_description SET result_id=?, science_popularization=?, advice_content=?, is_delete=? WHERE `proposed_description_id`=? 
+2018-08-31 19:05:23.913 [http-nio-8080-exec-2] DEBUG c.d.h.d.P.updProposedDescriptionInfo - ==> Parameters: null, ww(String), ww(String), null, 7(Integer)
+2018-08-31 19:05:24.061 [http-nio-8080-exec-2] DEBUG c.d.h.d.P.updProposedDescriptionInfo - <==    Updates: 1
+2018-08-31 19:05:24.849 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.getProposedDescriptionlist - ==>  Preparing: SELECT * FROM `proposed_description` 
+2018-08-31 19:05:24.849 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.getProposedDescriptionlist - ==> Parameters: 
+2018-08-31 19:05:24.850 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - ==>  Preparing: SELECT * FROM common_results 
+2018-08-31 19:05:24.850 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - ==> Parameters: 
+2018-08-31 19:05:24.911 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.getProposedDescriptionlist - <==      Total: 3
+2018-08-31 19:05:24.912 [http-nio-8080-exec-4] DEBUG c.d.h.dao.CommonResultsMapper.getCommResultslist - <==      Total: 4
+2018-08-31 19:05:36.133 [http-nio-8080-exec-6] DEBUG c.d.h.dao.SectionMapper.getSectionList - ==>  Preparing: select * from `section` 
+2018-08-31 19:05:36.133 [http-nio-8080-exec-6] DEBUG c.d.h.dao.SectionMapper.getSectionList - ==> Parameters: 
+2018-08-31 19:05:36.197 [http-nio-8080-exec-6] DEBUG c.d.h.dao.SectionMapper.getSectionList - <==      Total: 6
+2018-08-31 19:05:36.197 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:05:36.198 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 2(Integer)
+2018-08-31 19:05:36.265 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 2
+2018-08-31 19:05:36.265 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:05:36.266 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 2(Integer)
+2018-08-31 19:05:36.325 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 2
+2018-08-31 19:05:36.325 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:05:36.325 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 3(Integer)
+2018-08-31 19:05:36.392 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 1
+2018-08-31 19:05:36.394 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:05:36.394 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 3(Integer)
+2018-08-31 19:05:36.458 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 1
+2018-08-31 19:05:36.458 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:05:36.458 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 4(Integer)
+2018-08-31 19:05:36.526 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 0
+2018-08-31 19:05:36.527 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:05:36.527 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 4(Integer)
+2018-08-31 19:05:36.586 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 1
+2018-08-31 19:05:36.586 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:05:36.586 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 5(Integer)
+2018-08-31 19:05:36.650 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 0
+2018-08-31 19:05:36.651 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:05:36.651 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 5(Integer)
+2018-08-31 19:05:36.715 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 0
+2018-08-31 19:05:36.715 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:05:36.715 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 9(Integer)
+2018-08-31 19:05:36.777 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 0
+2018-08-31 19:05:36.777 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:05:36.777 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 9(Integer)
+2018-08-31 19:05:36.833 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 0
+2018-08-31 19:05:36.833 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==>  Preparing: SELECT * FROM `check` WHERE `section_id` = ? 
+2018-08-31 19:05:36.834 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - ==> Parameters: 25(Integer)
+2018-08-31 19:05:36.898 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getCheckListBySectionId - <==      Total: 0
+2018-08-31 19:05:36.899 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==>  Preparing: SELECT * FROM `combination` WHERE `section_id` = ? 
+2018-08-31 19:05:36.899 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - ==> Parameters: 25(Integer)
+2018-08-31 19:05:36.956 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getCombinationList - <==      Total: 0
+2018-08-31 19:05:53.698 [http-nio-8080-exec-8] DEBUG c.d.h.dao.SectionMapper.getSectionsectionId - ==>  Preparing: select * from section where section_id=? 
+2018-08-31 19:05:53.698 [http-nio-8080-exec-8] DEBUG c.d.h.dao.SectionMapper.getSectionsectionId - ==> Parameters: 2(Integer)
+2018-08-31 19:05:53.761 [http-nio-8080-exec-8] DEBUG c.d.h.dao.SectionMapper.getSectionsectionId - <==      Total: 1
