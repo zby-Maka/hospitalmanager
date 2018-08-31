@@ -3,10 +3,8 @@ package com.dyhc.hospitalmanager.interceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.*;
+
 @Configuration
 public class LoginConfig implements WebMvcConfigurer {
 
@@ -18,9 +16,9 @@ public class LoginConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(getLoginInterceptor())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/error")
-                .excludePathPatterns("/code/**")
+                .addPathPatterns("**")
+                .excludePathPatterns("/static/**");
+               /* .excludePathPatterns("/code/**")
                 .excludePathPatterns("/css/**")
                 .excludePathPatterns("/font/**")
                 .excludePathPatterns("/images/**")
@@ -35,7 +33,7 @@ public class LoginConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/booking.html")
                 .excludePathPatterns("/Thebackend-page/thewaylist.html")
                 .excludePathPatterns("/check.html")
-                .excludePathPatterns("/login.html");
+                .excludePathPatterns("/login.html");*/
     }
 
     @Override
