@@ -4,6 +4,7 @@ import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.service.BasicFunctionService;
 import com.dyhc.hospitalmanager.service.CostOfModuleService;
+import javafx.scene.control.Alert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,16 +29,15 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
     private CostDetailMapper costDetailMapper;
 
     /**
-     * 根据人员Id查询人员信息
-     * @param personId
+     * 根据体检编号查询人员信息及其体检信息
+     * @param physical_examination_id
      * @return
      */
     @Override
-    public PersonInfo getPersonInfoByPersonInfoId(Integer personId,Integer physicalStatu) {
+    public PersonInfo getPersonInfoByPersonInfoId(String physical_examination_id,Integer physicalStatu) {
         PersonInfo personInfo = null ;
         try {
-            personInfo = personInfoMapper.getPersonInfoByPersonId(personId);
-            String physical_examination_id = physicalExaminationMapper.getPhysicalExaminationByPersonId(personInfo.getPersonId());
+            personInfo = personInfoMapper.getPersonInfoByPhysical_Examination_Id(physical_examination_id);
             personInfo.setCheckList(checkMapper.getCheckByPhysicalExaminationIdList(physical_examination_id,physicalStatu));
             return personInfo;
         }catch (Exception e){
@@ -49,12 +49,12 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
 
     /**
      * 新增费用信息
-     * @param personId
+     * @param physical_examination_id
      * @param physicalStatu
      * @return
      */
     @Override
-    public Integer addCost(Integer personId,BigDecimal aggregate,Integer physicalStatu) {
+    public Integer addCost(String physical_examination_id,BigDecimal aggregate,Integer physicalStatu) {
         try {
             Cost cost = new Cost();
             if (physicalStatu==1){
@@ -62,14 +62,16 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
             }else{
                 cost.setCostType("收费");
             }
-            cost.setHealthExaminationId(physicalExaminationMapper.getPhysicalExaminationByPersonId(personId));
+            cost.setHealthExaminationId(physical_examination_id);
             cost.setCostAmount(aggregate);
             List<Check> list = checkMapper.getCheckByPhysicalExaminationIdList(cost.getHealthExaminationId(),physicalStatu);
             Integer costId = costMapper.addCost(cost);
+            Integer cId = costMapper.getCostIdByPhysical_Examination_IdAndCostType(cost.getHealthExaminationId(),cost.getCostType());
+            System.out.println(cId);
             if (costId>0){
                 for (Check check : list){
                     CostDetail costDetail = new CostDetail();
-                    costDetail.setCostId(costId);
+                    costDetail.setCostId(cId);
                     costDetail.setCostDetailPrice(check.getCheckPrice());
                     costDetail.setCheckId(check.getCheckId());
                     this.addCostDetail(costDetail);
@@ -114,7 +116,8 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
     @Override
     public String getCostTypeByPersonId(Integer personId,String costTypes) {
         try {
-            String costType = costMapper.getCostTypeByPersonId(personId,costTypes);
+            String physical_examination_id = physicalExaminationMapper.getPhysicalExaminationByPersonId(personId);
+            String costType = costMapper.getCostTypeByPhysical_Examination_Id(physical_examination_id,costTypes);
             if (costType!=""){
                 return costType;
             }else{

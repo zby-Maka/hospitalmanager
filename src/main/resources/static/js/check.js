@@ -2,7 +2,7 @@ var weekDay = ["星期天", "星期一", "星期二", "星期三", "星期四", 
 $(function() {
     //查询预约时间
     $.ajax({
-        url:"/listDate",
+        url:"/listDate.do",
         dataType:"json",
         success:function (res) {
             var divControl = document.getElementById("chooseDate").getElementsByTagName("div");
@@ -111,7 +111,7 @@ $(function() {
     //浮动套餐时显示该项下边的体检项
     $("#package").on("mouseover","td[name=p]",function () {
         var packId=$(this).children("input").val();
-        var checkPack = "";
+        var checkPack = "<table><tr>";
         $.getJSON("/getPackCheck",{"packId":packId},function (packCheck) {
             console.log(packCheck);
             $.each(packCheck.packageCombinationList,function (i,e) {
@@ -120,8 +120,8 @@ $(function() {
             $.each(packCheck.packageCheckList,function (i,e) {
                 checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
             })
-            alert(checkPack);
-            $("#c").html(checkPack);
+            checkPack+="</tr></table>";
+            $(".childBox").html(checkPack);
             $(".childBox").show();
         })
     })
@@ -157,6 +157,10 @@ function makeAnAppointment(yue,packId,comId,checkId) {
                 if (result == "ok") {
                     alert("预约成功！");
                     sessionStorage.setItem("personInfo",null);
+                    checkId=[];
+                    comId=[];
+                    packId=[];
+                    location.href="/booking.html";
                 }
             }
         });

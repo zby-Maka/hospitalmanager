@@ -12,8 +12,6 @@
 		<script type="text/javascript" src="/scripts/authority/commonAll.js"></script>
 		<script src="/js/nowdate.js"></script>
 		<script type="text/javascript" src="/layui.js"></script>
-
-
 		<script>
 			var element;
 			layui.use('element', function() {
@@ -310,7 +308,7 @@
 	<body onload="getDate01()">
 		<div id="top">
 			<div id="top_logo">
-				<img alt="logo" src="/images/common/logo.jpg" width="274" height="49" style="vertical-align:middle;">
+				<img alt="logo" src="/images/common/logo.jpg" width="245" height="49" style="vertical-align:middle;">
 			</div>
 			<div id="top_links">
 				<div id="top_op">
@@ -617,7 +615,9 @@
 				$("#rightMain").attr("src", "/Thebackend-page/zhx.html")
 			}
 			
-			function kswh() {
+			function kswh(that) {
+                var sectionid=$(that).next().val();
+                localStorage.keid=sectionid;
 				$("#rightMain").attr("src", "/Thebackend-page/keshiweihu.html");
 			}
 

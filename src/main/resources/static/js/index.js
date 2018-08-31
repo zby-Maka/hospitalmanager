@@ -26,6 +26,7 @@ $(function() {
 				} else {
 					//根据身份证查询用户是否体检过，并赋值历史信息
 					$.getJSON("/getPersonInfoByNameAndCard.do",{"personIdCard":idCard},function (date) {
+						alert(date);
 						if(date==null){
                             $("input[name=personTelephone]").val("");
                             $("input[name=personAddress]").val("");
@@ -75,13 +76,13 @@ $(function() {
 			console.log(bankName);
 			if(bankName == "error") {
 				$("td[name='checkBankNumber']").text("请输入正确的银行卡号");
-				$("input[name='banName']").val("");
+				$("input[name='bankName']").val("");
 				return;
 			}
-			$("input[name='banName']").val(bankName.bankName);
+			$("input[name='bankName']").val(bankName.bankName);
 			$("td[name='checkBankNumber']").text("");
 		}else{
-			$("input[name='banName']").val("");
+			$("input[name='bankName']").val("");
 			$("td[name='checkBankNumber']").text("");
 		}
 	});

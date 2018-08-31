@@ -2,8 +2,8 @@ function  getpersoninfo() {
     var physicalexaminationid=$("input[name=physicalexaminationid]").val();
     //通过体检编号查询体检人员
     $.post("http://localhost:8080/personInfo.do",{"physicalexaminationid":physicalexaminationid},function (data) {
-        sessionStorage.setItem("one",JSON.stringify(data));
         $("#dayin").removeAttr("disabled");
+        sessionStorage.setItem("one",JSON.stringify(data));
         $.each(data,function (i,e) {
             $("label[name=personName]").text(e.personName);
             $("label[name=personAge]").text(e.personAge);
@@ -95,4 +95,9 @@ function  getpersoninfo() {
         });
         $("#two").val(contens);
     },"json");
+}
+
+//跳转打印页面
+function sendTotal() {
+    location.href="/Thebackend-page/total.html";
 }

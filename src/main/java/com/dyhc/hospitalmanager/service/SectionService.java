@@ -49,6 +49,16 @@ public interface SectionService {
      */
     int addSectionInfo(Section section);
     Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId);
+    /**
+     * 通过科室id赋值
+     */
+    Section getSectionsectionId(@Param("sectionId")Integer sectionId);
+    /**
+     * 修改科室信息
+     * @param section
+     * @return
+     */
+    int updSectionInfo(Section section);
 
 
 }

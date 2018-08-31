@@ -37,6 +37,7 @@
         SELECT com.*,c.* FROM `combination` com
         INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id`
         INNER JOIN `check` c ON c.`check_id`=cac.`check_id`
+        WHERE com.is_enable = 1
     </select>
 
     <!-- 查询所有组合项，及其下的体检项 -->
@@ -58,5 +59,6 @@
     <select id="getCombinationList" resultType="com.dyhc.hospitalmanager.pojo.Combination">
         SELECT * FROM `combination` WHERE `section_id` = #{sectionId}
     </select>
+
 
 </mapper>

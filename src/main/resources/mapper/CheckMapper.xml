@@ -107,6 +107,7 @@
     <!-- 查询所有体检项 -->
     <select id="getAllCheckList" resultType="com.dyhc.hospitalmanager.pojo.Check">
         SELECT * FROM `check`
+        WHERE is_enable = 1
     </select>
 
     <!-- 根据体检编号查询体检项信息 -->
