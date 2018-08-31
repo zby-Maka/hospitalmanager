@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指引单查询</title>
+</head>
+<body>
+体检编号:<input type="text" name="physicalExaminationId" value=""/><input type="button" name="isSelect" value="查询"/>
+<p style="display: none; color: red;">暂无信息</p>
+</body>
+<script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
+<script>
+    /*查询按钮*/
+    $("input[name=isSelect]").click(function () {
+        var physicalExaminationId = $("input[name=physicalExaminationId]").val();
+        localStorage.physicalExaminationId=physicalExaminationId;
+       // localStorage["physicalExaminationId"]
+        $.ajax({
+            url: "/selectByPhysicalExaminationId.do?physicalExaminationId="+physicalExaminationId,
+            data:{},
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                if(data>0){
+                   location.href = "/Thebackend-page/thewaylist.html";
+                }
+                $("p").show();
+
+            }
+        });
+    })
+</script>
+</html>
