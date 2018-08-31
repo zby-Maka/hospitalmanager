@@ -9,20 +9,20 @@ import java.math.BigDecimal;
 public interface CostOfModuleService {
 
     /**
-     * 根据Id查询人员信息
-     * @param personId
+     * 根据体检编号查询人员信息及其体检信息
+     * @param physical_examination_id
      * @return
      */
-    PersonInfo getPersonInfoByPersonInfoId(Integer personId,Integer physicalStatu);
+    PersonInfo getPersonInfoByPersonInfoId(String physical_examination_id,Integer physicalStatu);
 
     /**
      * 新增费用信息
-     * @param personId
+     * @param physical_examination_id
      * @param aggregate
      * @param physicalStatu
      * @return
      */
-    Integer addCost(Integer personId, BigDecimal aggregate, Integer physicalStatu);
+    Integer addCost(String physical_examination_id, BigDecimal aggregate, Integer physicalStatu);
 
     /**
      * 新增费用明细信息

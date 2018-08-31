@@ -12,7 +12,7 @@
 				<thead>
 					<tr>
 						<td colspan="4" align="center">
-							<span>人员编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physical_examination_id" size="40" style="height:30px; font-size: 16px;"/>
+							<span>体检编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physical_examination_id" size="40" style="height:30px; font-size: 16px;"/>
 							<input type="button" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" onclick="getPersonInfo()"/>
 						</td>
 					</tr>
@@ -89,12 +89,12 @@
 			alert("请先查询人员信息！");
         }
 
-		//根据人员id查询体检信息
+		//根据体检编号查询体检信息
 		function getPersonInfo() {
-		    var personId = $("input[name=physical_examination_id]").val();
+		    var physical_examination_id = $("input[name=physical_examination_id]").val();
 			$.ajax({
 				url:"/getPersonInfoByPersonId.do",
-				data:{personId:personId,physicalStatu:0},
+				data:{physical_examination_id:physical_examination_id,physicalStatu:0},
 				dataType:"json",
 				success:function (date) {
 					if (date!=null){
@@ -168,11 +168,11 @@
 
         //结算
         function operationCost() {
-            var personId = $("input[name=physical_examination_id]").val();
+            var physical_examination_id = $("input[name=physical_examination_id]").val();
             var aggregate = $(".aggregate").html();
             $.ajax({
 				url:"/operationCost.do",
-				data:{personId:personId,aggregate:aggregate,physicalStatu:0},
+				data:{physical_examination_id:physical_examination_id,aggregate:aggregate,physicalStatu:0},
 				dataType:"json",
 				success:function (date) {
 					if (date>0) {

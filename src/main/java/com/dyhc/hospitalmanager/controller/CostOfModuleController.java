@@ -17,30 +17,30 @@ public class CostOfModuleController {
     private CostOfModuleService costOfModuleService;
 
     /**
-     * 根据人员Id查询人员信息
-     * @param personId
+     * 根据体检编号查询人员信息及其体检信息
+     * @param
      * @param physicalStatu
      * @return
      */
     @RequestMapping("getPersonInfoByPersonId.do")
     @ResponseBody
-    public Object getPersonInfoByPersonId(Integer personId,Integer physicalStatu){
-        PersonInfo personInfo = costOfModuleService.getPersonInfoByPersonInfoId(personId,physicalStatu);
+    public Object getPersonInfoByPersonId(String physical_examination_id,Integer physicalStatu){
+        PersonInfo personInfo = costOfModuleService.getPersonInfoByPersonInfoId(physical_examination_id,physicalStatu);
         String json = JSON.toJSONString(personInfo);
         return json;
     }
 
     /**
      * 收费/退费
-     * @param personId
+     * @param physical_examination_id
      * @param aggregate
      * @param physicalStatu
      * @return
      */
     @RequestMapping("operationCost.do")
     @ResponseBody
-    public Object operationCost(Integer personId, String aggregate, Integer physicalStatu){
-        String json = JSON.toJSONString(costOfModuleService.addCost(personId,new BigDecimal(aggregate),physicalStatu));
+    public Object operationCost(String physical_examination_id, String aggregate, Integer physicalStatu){
+        String json = JSON.toJSONString(costOfModuleService.addCost(physical_examination_id,new BigDecimal(aggregate),physicalStatu));
         return json;
     }
 

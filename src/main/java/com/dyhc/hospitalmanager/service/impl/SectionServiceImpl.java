@@ -121,6 +121,28 @@ public class SectionServiceImpl implements SectionService {
     }
 
     @Override
+    public Section getSectionsectionId(Integer sectionId) {
+        try {
+            return sectionMapper.getSectionsectionId(sectionId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public int updSectionInfo(Section section) {
+        int result=0;
+        try {
+            result=sectionMapper.updSectionInfo(section);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result=0;
+        }
+        return result;
+    }
+
+    @Override
     public int addSectionInfo(Section section) {
         int result=0;
         try {

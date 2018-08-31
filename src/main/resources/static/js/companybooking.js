@@ -57,7 +57,7 @@ $("input[name=companyName]").blur(function () {
                 dataType:"json",
                 success:function (data) {
                     if(data>0){
-                        alert("操作成功");
+                        alert("修改成功");
                         $("input[name=companyId]").val("");
                         $("input[name=companyPrincipal]").val("");
                         $("input[name=telephone]").val("");
@@ -77,7 +77,7 @@ $("input[name=companyName]").blur(function () {
                 dataType:"json",
                 success: function (data) {
                     if (data > 0) {
-                        alert("操作成功");
+                        alert("添加成功");
                         $("input[name=companyName]").val("");
                         $("input[name=companyId]").val("");
                         $("input[name=companyPrincipal]").val("");

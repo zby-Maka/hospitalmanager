@@ -3,6 +3,7 @@ package com.dyhc.hospitalmanager.controller;
 import com.alibaba.fastjson.JSON;
 import com.dyhc.hospitalmanager.pojo.Check;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
+import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
 import com.dyhc.hospitalmanager.service.CheckService;
 import com.dyhc.hospitalmanager.util.BarCodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,9 @@ public class GuideListController {
     @RequestMapping("selectByPhysicalExaminationId.do")
     @ResponseBody
     public String selectByPhysicalExaminationId(@RequestParam("physicalExaminationId") String physicalExaminationId){
-        List<Check> list = checkService.getCheckList(physicalExaminationId);
+        PhysicalExamination list = checkService.selectPhysical(physicalExaminationId);
         Integer result = 0;
-        if (list.size() > 0 ){
+        if (list != null ){
             result = 1;
         }
         return JSON.toJSONString(result);
@@ -60,6 +61,7 @@ public class GuideListController {
 
 
 
+
     /**
      *  根据体检编号查询用户信息
      * @param physicalExaminationId
@@ -68,7 +70,8 @@ public class GuideListController {
     @RequestMapping("/showCheckedDetail.do")
     @ResponseBody
     public String showCheckedDetail(@RequestParam("physicalExaminationId") String physicalExaminationId){
-        List<Check> lsit = checkService.getCheckList(physicalExaminationId);
+        List<Check> lsit = checkService.showListCheckLwr(physicalExaminationId);
+        System.out.println("体检信息:"+lsit.size());
         return JSON.toJSONString(lsit);
     }
 }
