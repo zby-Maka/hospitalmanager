@@ -22,7 +22,7 @@ html,body {
 	margin: 0 auto;
 	width: 812px;
 	height: 408px;
-	background: url('../../images/login/20180830162840.png') -60px;
+	background: url('/images/login/20180830162840.png') -60px;
 	background-size: 100%;
 	border-radius: 10px;
 	position: relative;
@@ -76,7 +76,7 @@ html,body {
 	border-style: none;
 	cursor: pointer;
 	font-family: "Microsoft YaHei", "微软雅黑", "sans-serif";
-	background: url('../../images/login/btn.jpg') 0px -1px no-repeat;
+	background: url('/images/login/btn.jpg') 0px -1px no-repeat;
 }
 
 .login_btn:hover {
@@ -87,6 +87,6 @@ html,body {
 	border-style: none;
 	cursor: pointer;
 	font-family: "Microsoft YaHei", "微软雅黑", "sans-serif";
-	background: url('../../images/login/btn_hover.jpg') 0px 0px no-repeat;
+	background: url('/images/login/btn_hover.jpg') 0px 0px no-repeat;
 	color: #fff;
 }
