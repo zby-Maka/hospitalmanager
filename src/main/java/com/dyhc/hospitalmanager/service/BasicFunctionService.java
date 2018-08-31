@@ -172,5 +172,10 @@ public interface BasicFunctionService {
      */
     List<ProposedDescription>getAllProposedDescriptionInfoById(@Param("proposedDescriptionId")Integer proposedDescriptionId);
 
+    /**
+     *查询科室信息以及其下的组合项和体检项信息
+     * @return
+     */
+    List<Section> getSectionList();
 
 }
