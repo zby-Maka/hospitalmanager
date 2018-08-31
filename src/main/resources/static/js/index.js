@@ -75,13 +75,13 @@ $(function() {
 			console.log(bankName);
 			if(bankName == "error") {
 				$("td[name='checkBankNumber']").text("请输入正确的银行卡号");
-				$("input[name='banName']").val("");
+				$("input[name='bankName']").val("");
 				return;
 			}
-			$("input[name='banName']").val(bankName.bankName);
+			$("input[name='bankName']").val(bankName.bankName);
 			$("td[name='checkBankNumber']").text("");
 		}else{
-			$("input[name='banName']").val("");
+			$("input[name='bankName']").val("");
 			$("td[name='checkBankNumber']").text("");
 		}
 	});
