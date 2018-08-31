@@ -48,11 +48,11 @@ public interface PersonInfoMapper {
     PersonInfo findPersonInfoPersonIdCard(@Param("personIdCard") String personIdCard)throws  Exception;
 
     /**
-     * 根据人员id查询人员信息
-     * @param personId
+     * 根据体检编号查询人员信息
+     * @param physical_examination_id
      * @return
      */
-    PersonInfo getPersonInfoByPersonId(@Param("personId")Integer personId)throws  Exception;
+    PersonInfo getPersonInfoByPhysical_Examination_Id(@Param("physical_examination_id")String physical_examination_id)throws  Exception;
 
 
     /**

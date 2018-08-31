@@ -5,15 +5,18 @@
 <mapper namespace="com.dyhc.hospitalmanager.dao.CostMapper">
 
     <!-- 添加费用表 -->
-    <insert id="addCost" useGeneratedKeys="true" keyProperty="costId" >
-        INSERT INTO `cost` VALUE(NULL,#{cost.costType},#{cost.healthExaminationId},#{cost.costAmount},NOW())
+    <insert id="addCost">
+        INSERT INTO `cost` VALUE(0,#{cost.costType},#{cost.healthExaminationId},#{cost.costAmount},NOW())
     </insert>
 
-    <!-- 根据人员id查询该体检人是否已缴费/是否已退费 -->
-    <select id="getCostTypeByPersonId" resultType="java.lang.String">
-        SELECT `cost_type` FROM `cost` WHERE `health_examination_id` =
-        (SELECT `physical_examination_id` FROM `physical_examination` WHERE `person_id` = #{personId}
-        ORDER BY `medical_time` DESC LIMIT 0,1)  AND `cost_type` = #{costType}
+    <!-- 根据体检编号查询该体检人是否已缴费/是否已退费 -->
+    <select id="getCostTypeByPhysical_Examination_Id" resultType="java.lang.String">
+        SELECT `cost_type` FROM `cost` WHERE `health_examination_id` = #{physical_examination_id} AND `cost_type` = #{costType}
+    </select>
+
+    <!-- 根据体检编号和收费类型获取费用表id -->
+    <select id="getCostIdByPhysical_Examination_IdAndCostType" resultType="java.lang.Integer">
+        SELECT `cost_id` FROM `cost` WHERE `health_examination_id` = #{physical_examination_id} AND `cost_type` = #{costType}
     </select>
 
 </mapper>
