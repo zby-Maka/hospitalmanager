@@ -39,8 +39,9 @@ public class RoleInfoController{
             if (roleInfo.getRoleTypeId()==roletypeid){
                 HttpSession session=request.getSession();
                 session.setAttribute("roleInfo",roleInfo);
-                session.setAttribute("sectionId",section.getSectionId());
-                json="{\"roletypeid\":\""+roleInfo.getRoleTypeId()+"\",\"sectiontypeid\":\""+section.getSectionTypeId()+"\"}";
+//                session.setAttribute("sectionId",section.getSectionId());
+                //\"sectiontypeid\":\""+section.getSectionTypeId()+"\"
+                json="{\"roletypeid\":\""+roleInfo.getRoleTypeId()+"\"}";
                 return json;
             }else {
                 return JSON.toJSONString("科室类型编号错误");
