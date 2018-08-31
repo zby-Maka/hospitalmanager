@@ -44,6 +44,7 @@
     <!-- 获取所有套餐的Id -->
     <select id="getAllPackageId" resultType="int">
         SELECT package_id FROM `package`
+        WHERE is_enable = 1
     </select>
 
     <!--查询所有套餐-->

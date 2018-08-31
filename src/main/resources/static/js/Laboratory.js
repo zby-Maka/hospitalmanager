@@ -72,15 +72,23 @@ function getYan(checkId){
         var content="";
         console.log(date);
         dataArry=date;
+        var jian="";
         $.each(date,function (i,e) {
-            var jian="";
-            if(e.medicalResult="偏高"){
-                jian="↑";
-            }else if(e.medicalResult="正常"){
-                jian="-";
-            }else {
+            if(e.medicalResultData<e.lowerLimit){       //如果小于参考下限
                 jian="↓";
+            }else if (e.medicalResultData>e.upperLimit) {   //如果大于参考上限
+                jian="↑";
+            }else {
+                jian="-";
             }
+            // if(e.medicalResult="偏高"){
+            //     jian="↑";
+            // }else if(e.medicalResult="正常"){
+            //     jian="-";
+            // }else {
+            //     jian="↓";
+            // }
+
             content+="<tr>" +
                 "<td align=\"center\">"+e.eventsName+"</td>" +
                 "<td align=\"center\">"+e.unit+"</td>" +

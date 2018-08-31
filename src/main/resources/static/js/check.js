@@ -2,7 +2,7 @@ var weekDay = ["星期天", "星期一", "星期二", "星期三", "星期四", 
 $(function() {
     //查询预约时间
     $.ajax({
-        url:"/listDate",
+        url:"/listDate.do",
         dataType:"json",
         success:function (res) {
             var divControl = document.getElementById("chooseDate").getElementsByTagName("div");
