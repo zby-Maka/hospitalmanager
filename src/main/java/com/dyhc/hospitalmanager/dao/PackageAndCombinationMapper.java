@@ -16,4 +16,12 @@ public interface PackageAndCombinationMapper {
      */
     Integer addPackageAndCombination(@Param("packageAndCombination")PackageAndCombination packageAndCombination)throws Exception;
 
+
+    /**
+     * 修改套餐与组合项的关系
+     * @param packageAndCombination
+     * @return
+     */
+    Integer updPackageAndCombination(@Param("packageAndCombination")PackageAndCombination packageAndCombination)throws Exception;
+
 }

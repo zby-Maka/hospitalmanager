@@ -65,4 +65,18 @@ public interface PackageMapper {
      */
     List<Package> getPackageByPhysicalExaminationId(@Param("physicalExaminationId")String physicalExaminationId)throws Exception;
 
+    /**
+     * 根据套餐id查询套餐信息以及下的组合项
+     * @param packageId
+     * @return
+     */
+    List<Package>getPackageAndCombinationInfoById(@Param("packageId")Integer packageId) throws Exception;
+
+    /**
+     * 根据套餐id查询套餐信息以及下的体检项
+     * @param packageId
+     * @return
+     */
+    List<Package>getPackageAndCheckInfoById(@Param("packageId")Integer packageId) throws Exception;
+
 }

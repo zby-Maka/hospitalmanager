@@ -60,6 +60,42 @@
     <insert id="addPackageInfo" useGeneratedKeys="true" keyProperty="packageId" keyColumn="package_id">
       INSERT INTO package VALUES(NULL,#{packageName},#{scopeApplication},#{note},1)
     </insert>
+    <!--根据套餐id查询套餐信息以及下组合项信息-->
+    <select id="getPackageAndCombinationInfoById" resultMap="getPC">
+                     SELECT
+        package.package_id,
+        package.package_name,
+        package.scope_application,
+        package.note,
+        package.is_enable,
+        combination.combination_id,
+        combination.combination_name
+        FROM
+        package
+        INNER JOIN `package_and_ combination` ON package.package_id = `package_and_ combination`.package_id
+        INNER JOIN combination ON combination.combination_id = `package_and_ combination`.combination_id
+        where package.package_id=#{packageId}
+
+     </select>
+
+    <!--根据套餐id查询套餐信息以及下体检项信息-->
+    <select id="getPackageAndCheckInfoById" resultMap="getPC">
+                           SELECT
+                package.package_id,
+                package.package_name,
+                package.scope_application,
+                package.note,
+                package.is_enable,
+                `check`.check_id,
+                `check`.check_name
+                FROM
+                `check`
+                INNER JOIN `package_and_ check` ON `check`.check_id = `package_and_ check`.check_id
+                INNER JOIN package ON package.package_id = `package_and_ check`.package_id
+
+                where package.package_id=#{packageId}
+     </select>
+
     <!--修改套餐信息-->
     <update id="updPackageInfo">
     update

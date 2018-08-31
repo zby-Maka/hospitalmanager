@@ -9,4 +9,15 @@
         INSERT INTO `package_and_ combination` VALUES(NULL,#{packageAndCombination.packageId},#{packageAndCombination.combinationId})
     </insert>
 
+    <!-- 修改套餐与组合项的关系 -->
+    <update id="updPackageAndCombination">
+    update `package_and_ combination`
+    set
+     `package_id`=#{packageId}
+     `combination_id`=#{combinationId}
+     where `package_and_ combination_id`=#{packageAndCombinationId}
+    </update>
+
+
+
 </mapper>
