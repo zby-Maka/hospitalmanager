@@ -7,11 +7,16 @@
      <select id="getProposedByResultId" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
          SELECT * FROM `proposed_description` WHERE result_id=#{resultId} LIMIT 1
      </select>
-
+    <select id="getProposedDescriptionlist" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
+          SELECT * FROM `proposed_description`
+    </select>
     <!--添加建议描述信息-->
     <insert id="addProposedDescriptionInfo">
     insert into proposed_description VALUES(NULL,#{resultId},#{sciencePopularization},#{adviceContent},1)
     </insert>
+    <select id="getProposedDescriptionByid" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
+           SELECT * FROM `proposed_description` WHERE `proposed_description_id`=#{proposedDescriptionId}
+    </select>
 
     <!--修改建议描述信息-->
     <update id="updProposedDescriptionInfo">
