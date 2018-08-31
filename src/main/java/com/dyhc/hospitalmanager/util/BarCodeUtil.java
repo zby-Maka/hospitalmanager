@@ -17,7 +17,9 @@ public class BarCodeUtil {
      * @return
      */
     public static File generateFile(String msg) {
-        File file = new File(ResourceUtils.CLASSPATH_URL_PREFIX+"static/code/"+msg+".png");
+        //ResourceUtils.CLASSPATH_URL_PREFIX+"static/code/"
+
+        File file = new File("./src/main/resources/static/code/"+msg+".png");
         try {
             generate(msg, new FileOutputStream(file));
         } catch (FileNotFoundException e) {
