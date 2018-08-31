@@ -4,7 +4,6 @@ function findByIds() {
     var keid=localStorage["keid"];
     if(keid!=0){
         $.post("http://localhost:8080/addkeshiweihu.do?sectionId="+keid,function (data) {
-            console.log(data);
             if(data.sectionStatus == 1){
                 $("input[name=sectionStatus]").eq(0).prop("checked",true);
             }else{
