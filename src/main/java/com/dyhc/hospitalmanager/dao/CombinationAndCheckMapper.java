@@ -28,4 +28,12 @@ public interface CombinationAndCheckMapper {
      * @throws Exception
      */
     Integer addCombinationAndCheck(@Param("combinationAndCheck")CombinationAndCheck combinationAndCheck)throws Exception;
+
+    /**
+     * 修改组合项和体检项的关系
+     * @param combinationAndCheck
+     * @return
+     * @throws Exception
+     */
+    Integer updCombinationAndCheck(@Param("combinationAndCheck")CombinationAndCheck combinationAndCheck)throws Exception;
 }

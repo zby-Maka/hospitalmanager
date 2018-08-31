@@ -4,7 +4,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>体检项</title>
-	</head>
+
+    </head>
 
 	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
 	<form id="addform">
@@ -22,12 +23,12 @@
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">所属科室：</td>
 					<td colspan="3">
-						<input type="text" readonly="readonly" name="sectionId" value="1" />
+						<input type="text" readonly="readonly" id="sectionname" value=""/><input type="hidden" name="sectionId" value="">
 					</td>
 				</tr>
 				<tr style="height: 50px;">
 					<td style="text-align: right;" width="150mm">体检项名称：</td>
-					<td><input type="text" name="tjName" id="checkName" value="" /></td>
+					<td><input type="text" name="checkName"  value="" /><input type="hidden" name="checkId" value=""><input type="hidden" id="ckid" value=""></td>
 					<td style="text-align: right;">拼音简码：</td>
 					<td><input type="text" name="checkSpellCode" value="" /></td>
 				</tr>
@@ -70,11 +71,12 @@
 					</td>
 				</tr>
 			</table>
-			<input type="button" value="提交" onclick="addcheck()"/>
+			<input type="button" value="提交" onclick="addandupd()">
 			<input type="reset" value="重置" />
 		</div>
 		</form>
 	</body>
-	<script src="../../static/js/jquery-3.2.1.js"></script>
-	<script src="../../static/js/tjx.js"></script>
+
+    <script src="/js/jquery-3.2.1.js"></script>
+	<script src="/js/tjx.js"></script>
 </html>

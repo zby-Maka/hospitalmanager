@@ -14,4 +14,11 @@ public interface PackageAndCheckMapper {
      * @return
      */
     Integer addPackageAndCheckInfo(PackageAndCheck packageAndCheck)throws  Exception;
+
+    /**
+     * 修改体检与套餐关系
+     * @param packageAndCheck
+     * @return
+     */
+    Integer updPackageAndCheckInfo(PackageAndCheck packageAndCheck)throws  Exception;
 }

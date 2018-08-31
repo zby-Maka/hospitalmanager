@@ -52,6 +52,14 @@ public interface BasicFunctionService {
      */
     int addCheckInfo(Check check);
 
+
+    /**
+     * 根据体检项id查询体检项信息
+     * @return
+     * @throws Exception
+     */
+    List<Check>getAllCheckInfoById(@Param("checkId") Integer checkId);
+
     /**
      * 修改体检项信息
      * @param check
@@ -68,19 +76,23 @@ public interface BasicFunctionService {
      */
     int addCombinationInfo(Combination combination,Integer[] CheckList);
 
+
+
+
     /**
      * 修改组合项信息
      * @param combination
      * @return
      */
-    int updCombinationInfo(Combination combination,Integer[] CheckList);
+    int updCombinationInfo(Combination combination);
 
     /**
      * 根据组合项id查询组合项信息以及下的体检项信息
      * @param combinationId
      * @return
      */
-    List<Check> getCheckByCombinationId(@Param("combinationId")Integer combinationId);
+   // List<Check> getCheckByCombinationId(@Param("combinationId")Integer combinationId);
+    List<Combination> getCheckByCombinationId(@Param("combinationId") Integer combinationId);
 
 
 
@@ -99,6 +111,14 @@ public interface BasicFunctionService {
      */
     List<Check>getSectionAndCheckAndCombinationInfoById(@Param("sectionId")Integer sectionId);
 
+
+
+    /**
+     * 查询套餐信息
+     * @return
+     */
+    List<Package> showAllPackage();
+
     /**
      * 添加套餐信息
      * combinationList 组合项集合
@@ -109,11 +129,26 @@ public interface BasicFunctionService {
     int addPackageInfo(Package pack,Integer[] CombiantionList,Integer[] CheckList);
 
     /**
+     * 根据套餐id查询套餐信息以及下的组合项
+     * @param packageId
+     * @return
+     */
+    List<Package>getPackageAndCombinationInfoById(@Param("packageId")Integer packageId);
+
+    /**
+     * 根据套餐id查询套餐信息以及下的体检项
+     * @param packageId
+     * @return
+     */
+    List<Package>getPackageAndCheckInfoById(@Param("packageId")Integer packageId);
+
+
+    /**
      * 修改套餐信息
      * @return
      * @throws Exception
      */
-    int updPackageInfo(Package pack,Integer[] CombiantionList,Integer[] CheckList);
+    int updPackageInfo(Package pack);
 
 
 

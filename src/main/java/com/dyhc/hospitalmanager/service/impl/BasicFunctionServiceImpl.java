@@ -94,6 +94,22 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return result;
     }
 
+    /**
+     * 根据体检项id查询体检项信息
+     * @param checkId
+     * @return
+     */
+    @Override
+    public List<Check> getAllCheckInfoById(Integer checkId) {
+        List<Check>list=null;
+        try {
+            list=checkMapper.getAllCheckInfoById(checkId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     @Override
     public int updCheckInfo(Check check) {
         int result=0;
@@ -132,8 +148,15 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return result;
     }
 
+
+    /**
+     * 修改组合项信息
+     * @param combination
+     * @param
+     * @return
+     */
     @Override
-    public int updCombinationInfo(Combination combination,Integer[] checkList) {
+    public int updCombinationInfo(Combination combination) {
         int result=0;
         try {
             result=combinationMapper.updCombinationInfo(combination);
@@ -144,11 +167,16 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return result;
     }
 
+    /**
+     * 根据组合项id查询组合项以及下的体检项信息
+     * @param combinationId
+     * @return
+     */
     @Override
-    public List<Check> getCheckByCombinationId(Integer combinationId) {
-        List<Check> list=null;
+    public List<Combination> getCheckByCombinationId(Integer combinationId) {
+        List<Combination> list=null;
         try {
-            list=combinationAndCheckMapper.getCheckByCombinationId(combinationId);
+            list=combinationMapper.getCheckByCombinationId(combinationId);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -178,8 +206,23 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return list;
     }
 
-
     //----------------------------------套餐项维护
+
+    /**
+     * 获取所有套餐信息
+     * @return
+     */
+    @Override
+    public List<Package> showAllPackage() {
+        List<Package>list=null;
+        try {
+            list=packageMapper.showAllPackage();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     @Override
     public int addPackageInfo(Package pack,Integer[] combinationList,Integer[] checkList) {
         int result=0;
@@ -206,10 +249,43 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return result;
     }
 
+    /**
+     * 根据套餐id查询套餐信息以及下的组合项信息
+     * @param packageId
+     * @return
+     */
+    @Override
+    public List<Package> getPackageAndCombinationInfoById(Integer packageId) {
+        List<Package>list=null;
+        try {
+            list=packageMapper.getPackageAndCombinationInfoById(packageId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
+     * 根据套餐id查询套餐信息以及下的体检项下的信息
+     * @param packageId
+     * @return
+     */
+    @Override
+    public List<Package> getPackageAndCheckInfoById(Integer packageId) {
+        List<Package>list=null;
+        try {
+            list=packageMapper.getPackageAndCheckInfoById(packageId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+
 
 
     @Override
-    public int updPackageInfo(Package pack,Integer[] CombiantionList,Integer[] CheckList) {
+    public int updPackageInfo(Package pack) {
         int result=0;
         try {
             result=packageMapper.updPackageInfo(pack);
