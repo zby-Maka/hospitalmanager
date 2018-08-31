@@ -17,10 +17,19 @@ public interface CostMapper {
     Integer addCost(@Param("cost")Cost cost)throws Exception;
 
     /**
-     * 根据人员id查询该体检人是否已缴费/是否已退费
-     * @param personId
+     * 根据体检编号查询该体检人是否已缴费/是否已退费
+     * @param physical_examination_id
      * @return
      */
-    String getCostTypeByPersonId(@Param("personId")Integer personId,@Param("costType")String costType)throws Exception;
+    String getCostTypeByPhysical_Examination_Id(@Param("physical_examination_id")String physical_examination_id,@Param("costType")String costType)throws Exception;
+
+    /**
+     * 根据体检编号和收费类型获取费用表id
+     * @param physical_examination_id
+     * @param costType
+     * @return
+     * @throws Exception
+     */
+    Integer getCostIdByPhysical_Examination_IdAndCostType(@Param("physical_examination_id")String physical_examination_id,@Param("costType")String costType)throws Exception;
 
 }
