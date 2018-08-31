@@ -189,13 +189,10 @@ public class UnitReservationController {
     @ResponseBody
     public String showPersonInfo(@RequestParam("companyName") String companyName){
         File cfgFile = null;
-        try {
-            cfgFile = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "excelfile/"+companyName+".xlsx");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+            File file1 = new File("./src/main/resources/excelfile/"+companyName+".xlsx");
+            //cfgFile = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "excelfile/"+companyName+".xlsx");
         ImportExcelUtil importExcelUtil=new ImportExcelUtil();
-        File file=new File(String.valueOf(cfgFile));
+        File file=new File(String.valueOf(file1));
         List<PersonInfo> info = new ArrayList<>();
         try {
             InputStream in=new FileInputStream(file);
