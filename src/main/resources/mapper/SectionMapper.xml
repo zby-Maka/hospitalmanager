@@ -69,4 +69,10 @@
             <id property="checkId" column="check_id"/>
         </collection>
     </resultMap>
+
+    <!-- 查询所有科室信息 -->
+    <select id="getSectionList" resultType="com.dyhc.hospitalmanager.pojo.Section">
+        select * from `section`
+    </select>
+    
 </mapper>
