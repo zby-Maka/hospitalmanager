@@ -65,37 +65,6 @@
         var userName=$("[name=userName]").val();
         var password=$("[name=password]").val();
         var roletypeid=$("input[name='roletypeid']:checked").val();
-        $.post("http://localhost:8080/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
-            var roletype="";
-            if (data.roletypeid>0) {
-                alert("登录成功！");
-                if (roletypeid==1){
-                    roletype="系统管理员";
-                    location.href="http://localhost:8080/index.html"
-				}else if(roletypeid==2){
-                    roletype="护士";
-				}else if (roletypeid==3){
-                    roletype="总检医生";
-                    location.href="http://localhost:8080/AlwaysCheckIndex.html"
-				}else  if (roletypeid==4){
-                    var section_type_id=data.sectiontypeid;
-                    roletype="科室医生"
-					if(section_type_id==1){
-                        location.href="http://localhost:8080/Thebackend-page/department.html";
-					}else if(section_type_id==2){
-                        location.href="http://localhost:8080/Thebackend-page/Laboratory.html";
-					}else if(section_type_id==3){
-                        location.href="http://localhost:8080/Thebackend-page/Laboratory.html";
-					}
-				} else {
-                    roletype="收费处";
-                    location.href="http://localhost:8080/Cashiers.html"
-				}
-            }else{
-                alert("登录失败");
-                location.href="http://localhost:8080/login.html"
-            }
-        },"json")
         if(userName==""){
             $("#check_username").text("请输入用户名！");
 			flag=false;
@@ -106,40 +75,39 @@
             alert("请选择登陆的角色类型！");
             flag=false;
 		}
-		// if(flag){
-         //    $.post("http://localhost:8080/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
-         //        var roletype="";
-         //        if (data.roletypeid>0) {
-         //            alert("登录成功！");
-         //            if (roletypeid==1){
-         //                roletype="系统管理员";
-         //                location.href="http://localhost:8080/index.html"
-         //            }else if(roletypeid==2){
-         //                roletype="护士";
-         //                location.href="http://localhost:8080/booking.html"
-         //            }else if (roletypeid==3){
-         //                roletype="总检医生";
-         //                location.href="http://localhost:8080/AlwaysCheckIndex.html"
-         //            }else  if (roletypeid==4){
-         //                var section_type_id=data.sectiontypeid;
-         //                roletype="科室医生"
-         //                if(section_type_id==1){
-         //                    location.href="http://localhost:8080/Thebackend-page/department.html";
-         //                }else if(section_type_id==2){
-         //                    location.href="http://localhost:8080/Thebackend-page/Laboratory.html";
-         //                }else if(section_type_id==3){
-         //                    location.href="http://localhost:8080/Thebackend-page/Laboratory.html";
-         //                }
-         //            } else {
-         //                roletype="收费处";
-         //                location.href="http://localhost:8080/CashiersIndex.html";
-         //            }
-         //        }else{
-         //            alert("登录失败");
-         //            location.href="http://localhost:8080/login.html"
-         //        }
-         //    },"json");
-		// }
+		if(flag){
+            $.post("http://localhost:8080/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
+                var roletype="";
+                if (data.roletypeid>0) {
+                    alert("登录成功！");
+                    if (roletypeid==1){
+                        roletype="系统管理员";
+                        location.href="http://localhost:8080/index.html"
+                    }else if(roletypeid==2){
+                        roletype="护士";
+                    }else if (roletypeid==3){
+                        roletype="总检医生";
+                        location.href="http://localhost:8080/AlwaysCheckIndex.html"
+                    }else  if (roletypeid==4){
+                        var section_type_id=data.sectiontypeid;
+                        roletype="科室医生"
+                        if(section_type_id==1){
+                            location.href="http://localhost:8080/Thebackend-page/department.html";
+                        }else if(section_type_id==2){
+                            location.href="http://localhost:8080/Thebackend-page/Laboratory.html";
+                        }else if(section_type_id==3){
+                            location.href="http://localhost:8080/Thebackend-page/Laboratory.html";
+                        }
+                    } else {
+                        roletype="收费处";
+                        location.href="http://localhost:8080/Cashiers.html"
+                    }
+                }else{
+                    alert("登录失败");
+                    location.href="http://localhost:8080/login.html"
+                }
+            },"json");
+		}
     }
 </script>
 </html>
