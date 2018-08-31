@@ -1,3 +1,344 @@
+2018-08-31 08:22:21.343 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7564 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:22:21.500 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:22:43.491 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 24.61 seconds (JVM running for 34.975)
+2018-08-31 08:24:47.032 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 10236 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:24:47.090 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:24:57.612 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.193 seconds (JVM running for 13.444)
+2018-08-31 08:27:32.314 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5728 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:27:32.318 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:27:42.526 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.753 seconds (JVM running for 14.448)
+2018-08-31 08:29:10.761 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 816 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:29:10.768 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:29:21.052 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.829 seconds (JVM running for 13.061)
+2018-08-31 08:32:52.769 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6604 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:32:52.776 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:33:05.059 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.936 seconds (JVM running for 15.628)
+2018-08-31 08:34:26.604 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5556 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:34:26.610 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:34:38.018 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.08 seconds (JVM running for 13.856)
+2018-08-31 08:44:45.632 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9248 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:44:45.640 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:44:57.971 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.065 seconds (JVM running for 14.997)
+2018-08-31 08:47:05.023 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9228 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:47:05.030 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:47:16.014 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.851 seconds (JVM running for 13.711)
+2018-08-31 08:48:05.753 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6160 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:48:05.758 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:48:15.357 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.072 seconds (JVM running for 12.023)
+2018-08-31 08:48:36.181 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8604 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:48:36.187 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:48:46.221 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.669 seconds (JVM running for 12.976)
+2018-08-31 08:51:37.468 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9316 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:51:37.477 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:51:47.561 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.885 seconds (JVM running for 13.944)
+2018-08-31 08:55:04.612 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 1180 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:55:04.617 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:55:14.966 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.875 seconds (JVM running for 14.224)
+2018-08-31 08:56:02.285 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8656 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:56:02.291 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 08:56:12.606 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.801 seconds (JVM running for 13.13)
+2018-08-31 08:59:51.593 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6012 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 08:59:51.598 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:00:01.638 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.485 seconds (JVM running for 12.684)
+2018-08-31 09:05:59.870 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 1408 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:05:59.877 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:06:10.239 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.916 seconds (JVM running for 12.636)
+2018-08-31 09:17:38.625 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8340 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:17:38.632 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:17:51.421 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.282 seconds (JVM running for 15.105)
+2018-08-31 09:19:16.549 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 948 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:19:16.555 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:19:26.170 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.199 seconds (JVM running for 12.573)
+2018-08-31 09:20:51.064 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6552 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:20:51.070 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:21:00.597 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.028 seconds (JVM running for 12.579)
+2018-08-31 09:22:47.242 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3436 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:22:47.249 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:22:57.481 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.784 seconds (JVM running for 12.78)
+2018-08-31 09:24:40.093 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8332 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:24:40.099 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:24:49.616 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.151 seconds (JVM running for 11.973)
+2018-08-31 09:25:59.490 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7340 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:25:59.495 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:26:08.892 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.962 seconds (JVM running for 11.729)
+2018-08-31 09:30:51.563 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5348 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:30:51.571 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:31:02.104 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.068 seconds (JVM running for 12.812)
+2018-08-31 09:32:16.638 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8392 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:32:16.649 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:32:26.872 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.751 seconds (JVM running for 12.282)
+2018-08-31 09:35:05.494 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6816 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:35:05.499 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:35:15.042 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.088 seconds (JVM running for 11.516)
+2018-08-31 09:38:33.458 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3716 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:38:33.465 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:38:44.716 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.789 seconds (JVM running for 13.904)
+2018-08-31 09:40:50.598 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7164 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:40:50.605 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:41:03.126 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.106 seconds (JVM running for 14.905)
+2018-08-31 09:43:41.216 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6020 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:43:41.222 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:43:51.640 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.95 seconds (JVM running for 12.762)
+2018-08-31 09:47:52.647 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7636 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:47:52.653 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:48:04.707 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.761 seconds (JVM running for 14.566)
+2018-08-31 09:50:46.117 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7720 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:50:46.122 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:50:56.028 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.472 seconds (JVM running for 12.343)
+2018-08-31 09:54:08.372 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3756 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:54:08.377 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:54:20.403 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.729 seconds (JVM running for 14.791)
+2018-08-31 09:54:29.766 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 1672 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:54:29.773 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:54:41.599 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.41 seconds (JVM running for 14.323)
+2018-08-31 09:56:09.577 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 4184 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:56:09.589 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:56:21.328 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.407 seconds (JVM running for 14.249)
+2018-08-31 09:58:12.489 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8444 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 09:58:12.495 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 09:58:24.764 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.062 seconds (JVM running for 14.611)
+2018-08-31 10:09:28.335 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 4692 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:09:28.341 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:09:39.163 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.37 seconds (JVM running for 13.042)
+2018-08-31 10:14:33.162 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 1988 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:14:33.171 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:14:43.940 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.525 seconds (JVM running for 13.577)
+2018-08-31 10:18:37.027 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3912 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:18:37.033 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:18:46.544 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.018 seconds (JVM running for 11.61)
+2018-08-31 10:29:38.134 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2440 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:29:38.140 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:29:48.634 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.101 seconds (JVM running for 13.313)
+2018-08-31 10:32:13.988 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6192 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:32:13.997 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:32:24.000 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.709 seconds (JVM running for 12.655)
+2018-08-31 10:33:16.862 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5728 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:33:16.869 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:33:27.032 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.218 seconds (JVM running for 13.043)
+2018-08-31 10:41:14.941 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3224 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:41:14.949 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:41:26.931 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.551 seconds (JVM running for 13.984)
+2018-08-31 10:43:33.916 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2084 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:43:33.923 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:43:44.809 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5540 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:43:44.815 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:44:01.168 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 16.965 seconds (JVM running for 18.72)
+2018-08-31 10:45:17.692 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9936 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:45:17.700 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:45:27.449 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.309 seconds (JVM running for 11.835)
+2018-08-31 10:46:51.884 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6320 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:46:51.899 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:47:02.081 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.79 seconds (JVM running for 12.878)
+2018-08-31 10:50:26.006 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 1052 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:50:26.012 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:50:36.394 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.944 seconds (JVM running for 12.563)
+2018-08-31 10:56:09.563 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5972 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:56:09.569 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:56:24.403 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 15.618 seconds (JVM running for 17.325)
+2018-08-31 10:58:16.822 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5976 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:58:16.829 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:58:33.190 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 16.951 seconds (JVM running for 19.23)
+2018-08-31 10:59:22.016 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3872 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 10:59:22.023 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 10:59:38.480 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 17.103 seconds (JVM running for 19.374)
+2018-08-31 11:11:32.500 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 4892 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:11:32.506 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:11:42.828 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.887 seconds (JVM running for 12.535)
+2018-08-31 11:16:12.440 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 4812 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:16:12.445 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:16:23.208 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.322 seconds (JVM running for 12.843)
+2018-08-31 11:18:20.000 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7768 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:18:20.006 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:18:32.150 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.708 seconds (JVM running for 14.251)
+2018-08-31 11:19:44.809 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3240 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:19:44.815 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:19:55.507 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.407 seconds (JVM running for 13.224)
+2018-08-31 11:24:05.232 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8552 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:24:05.238 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:24:17.835 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.165 seconds (JVM running for 14.981)
+2018-08-31 11:25:47.788 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7636 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:25:47.796 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:26:05.727 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 18.481 seconds (JVM running for 22.367)
+2018-08-31 11:28:13.751 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 332 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:28:13.762 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:28:31.673 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 18.583 seconds (JVM running for 21.663)
+2018-08-31 11:32:49.050 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9184 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:32:49.057 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:33:07.888 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 19.5 seconds (JVM running for 21.328)
+2018-08-31 11:42:58.693 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8592 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:42:58.698 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:43:11.638 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.488 seconds (JVM running for 15.133)
+2018-08-31 11:46:29.075 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3500 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:46:29.082 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:46:39.756 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.359 seconds (JVM running for 13.621)
+2018-08-31 11:48:29.101 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3632 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:48:29.108 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:48:41.622 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.155 seconds (JVM running for 14.948)
+2018-08-31 11:50:01.315 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8452 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:50:01.320 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:50:17.162 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 16.434 seconds (JVM running for 17.986)
+2018-08-31 11:54:20.889 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5412 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:54:20.894 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:54:33.493 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.129 seconds (JVM running for 14.831)
+2018-08-31 11:56:07.108 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8968 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:56:07.113 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:56:25.652 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 19.101 seconds (JVM running for 20.785)
+2018-08-31 11:57:42.565 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3884 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 11:57:42.574 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 11:57:59.650 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 17.597 seconds (JVM running for 19.497)
+2018-08-31 13:41:38.727 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3412 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 13:41:38.732 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 13:41:49.676 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.513 seconds (JVM running for 12.968)
+2018-08-31 13:46:00.936 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7760 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 13:46:00.943 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 13:46:10.444 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.033 seconds (JVM running for 12.02)
+2018-08-31 13:49:16.417 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7328 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 13:49:16.424 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 13:49:26.639 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.811 seconds (JVM running for 13.05)
+2018-08-31 13:51:04.615 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 10208 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 13:51:04.621 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 13:51:15.261 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.186 seconds (JVM running for 12.722)
+2018-08-31 13:56:09.723 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 4884 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 13:56:09.730 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 13:56:19.079 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.939 seconds (JVM running for 11.581)
+2018-08-31 13:58:54.112 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6328 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 13:58:54.119 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 13:59:06.730 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.374 seconds (JVM running for 15.023)
+2018-08-31 14:02:27.030 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2848 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 14:02:27.036 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 14:02:53.483 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 27.07 seconds (JVM running for 29.358)
+2018-08-31 14:05:01.860 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 10180 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 14:05:01.865 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 14:05:11.792 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.577 seconds (JVM running for 12.096)
+2018-08-31 14:14:23.491 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 10100 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 14:14:23.497 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 14:14:34.644 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.822 seconds (JVM running for 13.495)
+2018-08-31 14:16:18.004 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 1532 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 14:16:18.011 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 14:16:28.235 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.851 seconds (JVM running for 12.696)
+2018-08-31 14:41:08.306 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5972 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 14:41:08.313 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 14:41:24.640 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 16.975 seconds (JVM running for 19.451)
+2018-08-31 14:44:42.453 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 4352 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 14:44:42.460 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 14:44:52.171 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.387 seconds (JVM running for 11.832)
+2018-08-31 14:57:06.144 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2408 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 14:57:06.150 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 14:57:15.729 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.118 seconds (JVM running for 12.001)
+2018-08-31 15:00:07.497 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 968 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 15:00:07.513 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 15:00:16.889 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.983 seconds (JVM running for 11.653)
+2018-08-31 15:02:35.956 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 784 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 15:02:35.962 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 15:02:46.183 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.132 seconds (JVM running for 13.278)
+2018-08-31 15:05:03.927 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3716 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 15:05:03.933 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 15:05:16.693 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.319 seconds (JVM running for 14.909)
+2018-08-31 15:06:30.654 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2292 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 15:06:30.661 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 15:06:39.910 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.772 seconds (JVM running for 11.312)
+2018-08-31 15:11:56.178 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2400 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 15:11:56.182 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 15:12:17.708 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 22.041 seconds (JVM running for 23.731)
+2018-08-31 15:54:50.937 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 576 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 15:54:50.982 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 15:55:02.677 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.289 seconds (JVM running for 13.982)
+2018-08-31 16:26:24.228 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6676 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:26:24.238 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:31:18.330 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5240 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:31:18.342 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:31:28.585 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.817 seconds (JVM running for 12.376)
+2018-08-31 16:32:48.990 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 960 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:32:49.008 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:32:56.488 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9128 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:32:56.531 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:33:10.157 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 14.284 seconds (JVM running for 16.646)
+2018-08-31 16:38:22.811 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2008 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:38:22.816 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:38:32.504 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.262 seconds (JVM running for 11.789)
+2018-08-31 16:40:26.434 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8264 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:40:26.440 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:40:43.347 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 17.497 seconds (JVM running for 18.93)
+2018-08-31 16:42:03.600 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9364 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:42:03.606 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:42:22.826 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 19.839 seconds (JVM running for 21.281)
+2018-08-31 16:44:47.435 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2384 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:44:47.455 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:44:59.623 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 12.928 seconds (JVM running for 15.155)
+2018-08-31 16:52:59.891 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 748 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 16:52:59.899 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 16:53:41.467 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 42.458 seconds (JVM running for 44.361)
+2018-08-31 17:00:37.105 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 160 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:00:37.113 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:00:47.374 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.1 seconds (JVM running for 12.716)
+2018-08-31 17:02:14.642 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2756 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:02:14.729 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:02:45.813 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 31.691 seconds (JVM running for 33.323)
+2018-08-31 17:04:38.213 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8680 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:04:38.218 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:04:48.091 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.379 seconds (JVM running for 11.879)
+2018-08-31 17:11:39.477 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5940 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:11:39.481 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:11:49.680 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.764 seconds (JVM running for 12.657)
+2018-08-31 17:17:30.379 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9008 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:17:30.385 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:18:32.825 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8940 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:18:32.832 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:18:54.273 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 22.021 seconds (JVM running for 24.451)
+2018-08-31 17:22:01.955 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8396 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:22:02.004 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:22:11.888 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.559 seconds (JVM running for 12.239)
+2018-08-31 17:26:57.263 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7320 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:26:57.272 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:27:19.601 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3900 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:27:19.612 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:27:35.580 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 16.583 seconds (JVM running for 18.465)
+2018-08-31 17:32:06.497 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 444 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:32:06.522 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:32:17.055 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.141 seconds (JVM running for 12.655)
+2018-08-31 17:34:43.668 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 8480 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:34:43.674 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:34:53.798 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.73 seconds (JVM running for 12.47)
+2018-08-31 17:44:52.887 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 4756 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:44:52.916 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:45:02.231 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.889 seconds (JVM running for 11.429)
+2018-08-31 17:47:24.581 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 7332 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:47:24.588 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:47:37.296 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 13.276 seconds (JVM running for 15.207)
+2018-08-31 17:49:10.707 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 4148 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:49:10.713 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:49:20.197 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.99 seconds (JVM running for 11.748)
+2018-08-31 17:54:06.663 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5444 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:54:06.669 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:54:16.727 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.58 seconds (JVM running for 12.545)
+2018-08-31 17:57:51.101 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 3064 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 17:57:51.106 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 17:58:00.743 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.125 seconds (JVM running for 11.799)
+2018-08-31 18:02:21.508 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9716 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:02:21.515 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:02:31.923 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.909 seconds (JVM running for 12.505)
+2018-08-31 18:06:44.261 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2312 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:06:44.268 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:06:54.745 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.112 seconds (JVM running for 13.176)
+2018-08-31 18:10:18.430 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9412 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:10:18.436 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:10:29.087 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 11.428 seconds (JVM running for 12.885)
+2018-08-31 18:14:06.601 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 9044 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:14:06.607 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:14:15.919 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.809 seconds (JVM running for 11.649)
+2018-08-31 18:24:44.497 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 5164 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:24:44.503 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:24:54.748 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.836 seconds (JVM running for 12.341)
+2018-08-31 18:35:10.820 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 2808 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:35:10.830 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:35:30.792 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 20.648 seconds (JVM running for 22.521)
+2018-08-31 18:36:02.548 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6956 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:36:02.555 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:36:27.554 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 6736 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:36:27.561 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:37:38.367 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 832 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:37:38.375 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:38:56.720 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 78.898 seconds (JVM running for 80.873)
 2018-08-30 11:24:42.785 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 5208 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
 2018-08-30 11:24:42.790 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
 2018-08-30 11:24:52.083 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 9.666 seconds (JVM running for 11.645)
@@ -320,3 +661,6 @@
 2018-08-31 16:10:28.635 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on Makah with PID 12068 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
 2018-08-31 16:10:28.640 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
 2018-08-31 16:10:51.728 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 23.581 seconds (JVM running for 25.596)
+2018-08-31 18:56:29.096 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Starting HospitalmanagerApplication on ZOMBIE with PID 576 (E:\hospitalmanager\target\classes started by Administrator in E:\hospitalmanager)
+2018-08-31 18:56:29.102 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - No active profile set, falling back to default profiles: default
+2018-08-31 18:56:39.116 [restartedMain] INFO  c.dyhc.hospitalmanager.HospitalmanagerApplication - Started HospitalmanagerApplication in 10.604 seconds (JVM running for 12.224)
