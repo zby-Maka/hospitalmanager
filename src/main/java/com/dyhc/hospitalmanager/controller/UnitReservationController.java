@@ -200,6 +200,7 @@ public class UnitReservationController {
             for (List<Object> str:infos){
                 PersonInfo c = new PersonInfo();
                 c.setPersonName((String) str.get(0));
+                System.out.println();
                 String a = (String) str.get(1);
                 c.setPersonAge(Integer.parseInt(a));
                 String bir = (String) str.get(2);
