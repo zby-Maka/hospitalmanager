@@ -26,8 +26,9 @@ $(function () {
  */
 function assignmentPersonInfo() {
     var persionInfo = sessionStorage.getItem("personInfo");
-    if (persionInfo!=null) {
-        var persion = JSON.parse(persionInfo);
+    var persion = JSON.parse(persionInfo);
+    if (persion!=null) {
+        console.log(persion);
         $("input[name=personName]").val(persion.personName);
         $("input[name=personNameSpellCode]").val(persion.personNameSpellCode);
         $("input[name=personIdCard]").val(persion.personIdCard);

@@ -157,6 +157,10 @@ function makeAnAppointment(yue,packId,comId,checkId) {
                 if (result == "ok") {
                     alert("预约成功！");
                     sessionStorage.setItem("personInfo",null);
+                    checkId=[];
+                    comId=[];
+                    packId=[];
+                    location.href="/booking.html";
                 }
             }
         });
