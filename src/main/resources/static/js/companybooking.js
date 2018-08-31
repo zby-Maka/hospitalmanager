@@ -70,7 +70,6 @@ $("input[name=companyName]").blur(function () {
             });
         }else{
             var contents = $("#companyInfo").serialize();
-            alert(contents);
             $.ajax({
                 url: "/addCompanyInfo.do",
                 data: contents,
