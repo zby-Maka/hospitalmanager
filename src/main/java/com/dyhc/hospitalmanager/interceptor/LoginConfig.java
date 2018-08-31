@@ -16,9 +16,9 @@ public class LoginConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(getLoginInterceptor())
-                .addPathPatterns("**")
-                .excludePathPatterns("/static/**");
-               /* .excludePathPatterns("/code/**")
+                .addPathPatterns("/**")
+                .excludePathPatterns("/error")
+                .excludePathPatterns("/code/**")
                 .excludePathPatterns("/css/**")
                 .excludePathPatterns("/font/**")
                 .excludePathPatterns("/images/**")
@@ -28,12 +28,12 @@ public class LoginConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/style/**")
                 .excludePathPatterns("/scripts/**")
                 .excludePathPatterns("/templates/**")
-                .excludePathPatterns("/login.do")
+                .excludePathPatterns("/*.do")
                 .excludePathPatterns("/Thebackend-page/guideList.html")
                 .excludePathPatterns("/booking.html")
                 .excludePathPatterns("/Thebackend-page/thewaylist.html")
                 .excludePathPatterns("/check.html")
-                .excludePathPatterns("/login.html");*/
+                .excludePathPatterns("/login.html");
     }
 
     @Override
