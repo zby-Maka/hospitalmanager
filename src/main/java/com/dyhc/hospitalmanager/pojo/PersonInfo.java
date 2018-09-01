@@ -26,7 +26,15 @@ public class PersonInfo {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createDate;
     private List<Check> checkList;
+    private String dateTsmes;
 
+    public String getDateTsmes() {
+        return dateTsmes;
+    }
+
+    public void setDateTsmes(String dateTsmes) {
+        this.dateTsmes = dateTsmes;
+    }
 
     private String yuDate;
 
@@ -134,7 +142,7 @@ public class PersonInfo {
         this.personType = personType;
     }
 
-    public Integer getGroupId() {
+    public Integer getGroup1Id() {
         return groupId;
     }
 
