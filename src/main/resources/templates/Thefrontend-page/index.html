@@ -303,7 +303,7 @@
 				$("#ajaxDialog").hide();
 			}
 		</script>
-		<script type="text/javascript" src="/js/daohang.js"></script>
+		<!--<script type="text/javascript" src="/js/daohang.js"></script>-->
 	</head>
 	<body onload="getDate01()">
 		<div id="top">
@@ -351,7 +351,7 @@
 					</a>
 				</div>
 			</div>
-			<div id="left_menu_cnt" style="width: 240px">
+			<div id="left_menu_cnt">
 				<div id="nav_module" style="width: 210px; text-align: center;">
 					<h2 style="line-height: 58px;"></h2>
 				</div>
@@ -362,33 +362,7 @@
 						<li>123</li>
 		 			</ul>-->
 					<ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user" id="oneul" style="width: 220px;">
-						<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
-						<!--<li class="layui-nav-item ">
-							<a href="javascript:void(0);" class="daohang">科室</a>
-							<dl class="layui-nav-child">
-								<dd>
-									<a href="javascript:;">科室1</a>
-									<dl class="layui-nav-child">
-										<dd>
-											<a href="javascript:; " class="tj">体检项</a>
-											<dl class="layui-nav-child">
-												<dd>
-													<a href="javascript:;">体检1</a>
-												</dd>
-											</dl>
-										</dd>
-										<dd>
-											<a href="javascript:; " class="zh">组和项</a>
-											<dl class="layui-nav-child">
-												<dd>
-													<a href="javascript:;">组和1</a>
-												</dd>
-											</dl>
-										</dd>
-									</dl>
-								</dd>
-							</dl>
-						</li>-->
+
 					</ul>
 				</div>
 			</div>
@@ -409,22 +383,22 @@
                             $.each(date,function (i1,e1) {
                                 str += "<dl class='layui-nav-child'>" +
                                     "<dd>" +
-                                    "<a href='javascript:;' onclick='kswh(this)'>"+e1.sectionName+"</a><input name='sectionId' type='hidden' value='"+e1.sectionId+"'>" +
-                                    "<dl class='layui-nav-child'><dd><a href='javascript:;' onclick='tj()' class='tj'>体检项</a>";
+                                    "<a href='javascript:;' onclick='kswh(this)'>"+e1.sectionName+"</a><input id='sectionId' type='hidden' value='"+e1.sectionId+"'><input id='sectionName' type='hidden' value='"+e1.sectionName+"'>" +
+                                    "<dl class='layui-nav-child'><dd><a href='javascript:;' onclick='tj(this)' class='tj'>体检项</a>";
 
                                 $.each(e1.sectionandcheckList,function (i2,e2) {
                                     str +="<dl class='layui-nav-child'>" +
                                         "<dd>" +
-                                        "<a href='javascript:;'>"+e2.checkName+"</a><input name='sectionId' type='hidden' value='"+e2.checkId+"'>" +
+                                        "<a href='javascript:;' onclick='checkchuanid("+e2.checkId+")'>"+e2.checkName+"</a><input name='checkId' type='hidden' value='"+e2.checkId+"'><input name='hidsid' type='hidden' value='"+e1.sectionId+"'><input name='hidsname' type='hidden' value='"+e1.sectionName+"'>" +
                                         "</dd>" +
                                         "</dl>";
                                 })
                                 str += "</dd><dd>" +
-                                    "<a href='javascript:;' onclick='zhx()' class='zh'>组和项</a>";
+                                    "<a href='javascript:;' onclick='zhx(this)' class='zh'>组和项</a>";
                                 $.each(e1.sectioandcombinationList,function (i3,e3) {
                                     str +="<dl class='layui-nav-child'>" +
                                         "<dd>" +
-                                        "<a href='javascript:;'>"+e3.combinationName+"</a><input name='sectionId' type='hidden' value='"+e3.combinationId+"'>" +
+                                        "<a href='javascript:;' onclick='combinationchuanid("+e3.combinationId+")'>"+e3.combinationName+"</a><input name='sectionId' type='hidden' value='"+e3.combinationId+"'>" +
                                         "</dd>" +
                                         "</dl>" ;
                                 })
@@ -482,6 +456,7 @@
                         "</li>");*/
 				});
 
+				//绑定套餐导航栏-------------------------------------
 				$(".selected1").on("click", function() {
 				    $.ajax({
 						url:"/showPackage.do",
@@ -490,11 +465,11 @@
 						dataType:"json",
 						success:function (date) {
 							if (date!=null){
-							    var str = "<li class='layui-nav-item'><a href='javascript:void(0);' class='daohang'>套餐</a>";
+							    var str = "<li class='layui-nav-item'><a href='javascript:void(0);'onclick='gotc()' class='daohang'>套餐</a>";
 							    $.each(date,function (i,e) {
 									str += "<dl class='layui-nav-child'>" +
                                         "<dd>" +
-                                        "<a href='javascript:;' onclick='taocan()'>"+e.packageName+"</a><input name='sectionId' type='hidden' value='"+e.packageId+"'>"+
+                                        "<a href='javascript:;' onclick='taocan("+e.packageId+")'>"+e.packageName+"</a><input name='sectionId' type='hidden' value='"+e.packageId+"'>"+
                                         "</dd>" +
                                         "</dl>";
                                 })
@@ -608,14 +583,35 @@
 					$("#here_area").text("当前所在项：套餐信息维护");
 					element.init();
 			}
-			
-			
-
-			function tj() {
+			//传递体检项id值
+			function checkchuanid(checkid) {
+				localStorage.cid=checkid;
+                $("#rightMain").attr("src", "/Thebackend-page/tjx.html")
+            }
+			//传递科室信息
+			function tj(that) {
+                var sid= $(that).parent().parent().parent().find("#sectionId").val();//传递科室名称和科室id
+                var sname= $(that).parent().parent().parent().find("#sectionName").val();
+                localStorage.secid=sid;
+                localStorage.secname=sname;
+                localStorage.cid=null;
 				$("#rightMain").attr("src", "/Thebackend-page/tjx.html")
-			}
 
-			function zhx() {
+
+
+			}
+			//传递组合项目id值
+			function combinationchuanid(combinationid){
+			localStorage.comid=combinationid;//传递组合项目id
+                $("#rightMain").attr("src", "/Thebackend-page/zhx.html")
+			}
+			//传递科室信息
+			function zhx(that) {
+                var sid= $(that).parent().parent().parent().find("#sectionId").val();//传递科室名称和科室id
+                var sname= $(that).parent().parent().parent().find("#sectionName").val();
+                localStorage.secid=sid;
+                localStorage.secname=sname;
+				localStorage.comid=null;
 				$("#rightMain").attr("src", "/Thebackend-page/zhx.html")
 			}
 			
@@ -624,8 +620,15 @@
                 localStorage.keid=sectionid;
 				$("#rightMain").attr("src", "/Thebackend-page/keshiweihu.html");
 			}
-			
-			function taocan () {
+
+			function gotc() {
+                localStorage.pid=null;
+                $("#rightMain").attr("src", "/Thebackend-page/tc.html")
+            }
+			//传递套餐信息
+			function taocan (packageid) {
+			    localStorage.pid=packageid;//套餐id
+
 				$("#rightMain").attr("src", "/Thebackend-page/tc.html")
 			}
 

@@ -1,57 +1,164 @@
-
-
 $(function () {
-    showcomandcheckinfo()
+    var combinationid = localStorage["comid"];
+
+    if (combinationid != "null") {
+        var sname = localStorage["secname"];
+        var sid = localStorage["secid"];
+        $("#sectionname").val(sname);
+        $("input[name='sectionId']").val(sid);
+        showcheckcheckbox(combinationid);
+        getcombinationidByid(combinationid);
+    }else{
+        var sname = localStorage["secname"];
+        var sid = localStorage["secid"];
+        $("#sectionname").val(sname);
+        $("input[name='sectionId']").val(sid);
+    }
 })
 
 
-//查询组合项id查询下面的体检项信息
-function showcomandcheckinfo() {
+
+//添加修改判断
+function addandupd() {
+    var cmbid = $("#cmbid").val();
     $.ajax({
         url: "http://localhost:8080/getCombinationAndCheckInfo",
         type: "post",
         dataType: "json",
-        data: {"combinationId":1},
+        data: {"combinationId": cmbid},
         success: function (data) {
-            var content = "";
+            if (data.length==0) {
+                addcom();
+            }else{
+                updcom();
+            }
+        }
+
+    })
+}
+
+
+//修改绑定
+function getcombinationidByid(combinaid) {
+    $.ajax({
+        url: "http://localhost:8080/getCombinationAndCheckInfo",
+        type: "post",
+        dataType: "json",
+        data: {"combinationId": combinaid},
+        success: function (data) {
+            console.log(data)
             $.each(data, function (i, e) {
-                content+="<tr><td><input type='checkbox' value='"+e.checkId+"'>"+e.checkName+"</td></tr>";
+                if (e.isEnable == 0) {
+                    $("input[name='isEnable'],[value='0']").attr("checked", true);
+                } else {
+                    $("input[name='isEnable'],[value='1']").attr("checked", true);
+                }
+
+                $("input[name='combinationName']").val(e.combinationName)
+                $("input[name='combinationName']").attr("readonly",true)
+                $("input[name='combinationId']").val(e.combinationId);
+                $("#cmbid").val(e.combinationId);
+                $("input[name='promptInformation']").val(e.promptInformation)
+                $("input[name='promptInformation']").attr("readonly",true)
+                $("input[name='resultToWay']").val(e.resultToWay)
+                $("input[name='resultToWay']").attr("readonly",true)
+
+                if (e.isSpecimen == 0) {
+                    $("input[name='isSpecimen'],[value='0']").attr("checked", true);
+                } else {
+                    $("input[name='isSpecimen'],[value='1']").attr("checked", true);
+                }
+                $("input[name='isSpecimen']").attr("readonly",true)
+                $("input[name='specimenType']").val(e.specimenType);
+                $("input[name='specimenType']").attr("readonly",true)
+
             })
-            $("#content").html(content);
         }, error: function () {
             alert("发生错误")
         }
     })
 }
 
-
 //添加组合项信息
 function addcom() {
     var combination = $("#addform").serialize();
-    var checkID = [];//定义一个空数组
-
-    $("input[type='checkbox']:checked").each(function(i){//把所有被选中的复选框的值存入数组
-        checkID[i] =$(this).val();
-    })
-
-    var date = $.param({
-        "comAncCheckList": checkID
-    })+"&"+combination;
+    // var checkID = [];//定义一个空数组
+    //
+    // $("input[type='checkbox']:checked").each(function (i) {//把所有被选中的复选框的值存入数组
+    //     checkID[i] = $(this).val();
+    // })
+    //
+    // var date = $.param({
+    //     "comAncCheckList": checkID
+    // }) + "&" + combination;
 
     $.ajax({
         url: "http://localhost:8080/addCombinationInfo",
-        data:date,
+        data: combination,
         dataType: "json",
         type: "get",
-        traditional:true,
+        traditional: true,
         success: function (data) {
-            if (data==1)
+            if (data == 1)
                 alert("组合项表添加成功");
             else
                 alert("添加失败")
         },
         error: function () {
             alert("发生错误");
+        }
+    })
+}
+
+//修改组合项信息
+function updcom() {
+    var combination = $("#addform").serialize();
+    var checkID = [];//定义一个空数组
+
+    $("input[type='checkbox']:checked").each(function (i) {//把所有被选中的复选框的值存入数组
+        checkID[i] = $(this).val();
+    })
+
+    var date = $.param({
+        "comAncCheckList": checkID
+    }) + "&" + combination;
+
+    $.ajax({
+        url: "http://localhost:8080/updCombinationInfo",
+        data: date,
+        dataType: "json",
+        type: "get",
+        traditional: true,
+        success: function (data) {
+            if (data == 1)
+                alert("修改成功");
+            else
+                alert("修改失败")
+        },
+        error: function () {
+            alert("发生错误");
+        }
+    })
+}
+
+
+//查询组合项id查询下面的体检项信息
+function showcheckcheckbox(combid) {
+
+    $.ajax({
+        url: "http://localhost:8080/getCombinationAndCheckInfo",
+        type: "post",
+        dataType: "json",
+        data: {"combinationId": combid},
+        success: function (data) {
+            console.log(data)
+            var content = "";
+            $.each(data, function (i, e) {
+                content += "<tr><td><input type='checkbox' value='" + e.combinationCheckList[i].checkId + "'>" + e.combinationCheckList[i].checkName + "</td></tr>";
+            })
+            $("#content").html(content);
+        }, error: function () {
+            alert("发生错误")
         }
     })
 }

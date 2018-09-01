@@ -17,6 +17,14 @@ public interface CombinationMapper {
      */
     int addCombinationInfo(Combination combination)throws  Exception;
 
+
+    /**
+     * 根据组合项id查询组合项信息以及下的体检项信息
+     * @return
+     */
+    List<Combination> getCheckByCombinationId(@Param("combinationId") Integer combinationId)throws Exception;
+
+
     /**
      * 修改组合项信息
      * @param combination

@@ -13,18 +13,18 @@
 				<table style="height: 300px;">
 					<tr>
 						<td style="width: 150px; text-align: right;">是否启用：</td>
-						<td><input type="radio" value=1 name="isEnable"  />是</td>
-						<td><input type="radio" value=0 name="isEnable"  />否</td>
+						<td><input type="radio" value=1 name="isEnable" />是</td>
+						<td><input type="radio" value=0 name="isEnable" />否</td>
 					</tr>
 					<tr>
 						<td style="width: 150px; text-align: right;">所属科室：</td>
 						<td colspan="2" >
-							<input type="text" readonly="readonly" name="sectionId" value="1" />
+							<input type="text" readonly="readonly" id="sectionname" value="" /><input type="hidden" name="sectionId">
 						</td>
 					</tr>
 					<tr>
 						<td style="width: 150px; text-align: right;">组合项名称：</td>
-						<td><input type="text" name="combinationName"/></td>
+						<td><input type="text" name="combinationName"/><input type="hidden" name="combinationId"><input type="hidden" id="cmbid"></td>
 						<td>拼音简码：<label>xxx</label></td>
 					</tr>
 					<tr>
@@ -59,10 +59,10 @@
 				<tbody id="content">
 				</tbody>
 			</table></div>
-			<input type="button" value="点击提交" onclick="addcom()"/>
+			<input type="button" value="点击提交" onclick="addandupd()"/>
 		</div>
 	</form>
 	</body>
-	<script src="../../js/jquery-3.2.1.js"></script>
-<script src="../../js/zhx.js"></script>
+	<script src="/js/jquery-3.2.1.js"></script>
+<script src="/js/zhx.js"></script>
 </html>

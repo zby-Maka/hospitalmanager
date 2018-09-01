@@ -30,6 +30,13 @@ public interface CheckMapper {
     List<Check> getAllCheckList() throws Exception;
 
     /**
+     * 根据体检项id查询体检项信息
+     * @return
+     * @throws Exception
+     */
+    List<Check>getAllCheckInfoById(@Param("checkId") Integer checkId)throws Exception;
+
+    /**
      * 添加体检项信息
      * @param check
      * @return

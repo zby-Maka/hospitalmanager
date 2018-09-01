@@ -26,6 +26,7 @@ $(function() {
 				} else {
 					//根据身份证查询用户是否体检过，并赋值历史信息
 					$.getJSON("/getPersonInfoByNameAndCard.do",{"personIdCard":idCard},function (date) {
+						alert(date);
 						if(date==null){
                             $("input[name=personTelephone]").val("");
                             $("input[name=personAddress]").val("");

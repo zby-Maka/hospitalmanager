@@ -17,4 +17,12 @@
         INSERT INTO `combination_and_ check` VALUES(NULL,#{combinationAndCheck.combinationId},#{combinationAndCheck.checkId})
     </insert>
 
+    <!--修改组合项和体检项的关系-->
+    <update id="updCombinationAndCheck">
+      update `combination_and_ check` set
+      `check_id` = #{checkId},
+      `combination_id` = #{combinationId},
+      where   `combination_and_ medical_id` =#{combinationAndMedicalId}
+    </update>
+
 </mapper>

@@ -17,4 +17,13 @@
             #{checkId}
           );
     </insert>
+
+    <!--修改体检项与套餐项的信息-->
+    <update id="updPackageAndCheckInfo">
+    update `package_and_ check`
+    set
+     `package_id`=#{packageId}
+     `check_id`=#{checkId}
+     where `package_and_ check_id`=#{packageAndCheckId}
+    </update>
 </mapper>

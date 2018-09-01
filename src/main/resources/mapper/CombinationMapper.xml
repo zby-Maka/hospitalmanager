@@ -5,13 +5,18 @@
 <mapper namespace="com.dyhc.hospitalmanager.dao.CombinationMapper">
 
 
-
     <!--添加组合项信息-->
     <insert id="addCombinationInfo" useGeneratedKeys="true" keyProperty="combinationId" keyColumn="combination_id">
        INSERT INTO combination VALUES(null,#{sectionId},#{combinationName},#{pinyinCode},#{promptInformation},#{resultToWay},#{isSpecimen},#{specimenType},1)
     </insert>
+    <!--根据组合项id查询组合项信息以及下的体检项信息-->
+    <select id="getCheckByCombinationId" resultMap="comCheck">
+ SELECT com.*,c.* FROM `combination` com
+        INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id`
+        INNER JOIN `check` c ON c.`check_id`=cac.`check_id`
+        WHERE com.combination_id=#{combinationId}
 
-
+    </select>
     <!--修改组合项信息-->
     <update id="updCombinationInfo">
     UPDATE
@@ -37,9 +42,9 @@
 
     <!-- 查询所有组合项，及其下的体检项 -->
     <resultMap id="comCheck" type="com.dyhc.hospitalmanager.pojo.Combination">
-        <id property="combinationId" column="combination_id" />
+        <id property="combinationId" column="combination_id"/>
         <collection property="combinationCheckList" javaType="com.dyhc.hospitalmanager.pojo.Check">
-            <id property="checkId" column="check_id" />
+            <id property="checkId" column="check_id"/>
         </collection>
     </resultMap>
 

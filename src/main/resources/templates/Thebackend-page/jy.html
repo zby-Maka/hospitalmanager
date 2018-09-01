@@ -5,7 +5,6 @@
 		<meta charset="UTF-8">
 		<title>jy</title>
 	</head>
-
 	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
 		<div style="width: 80%; height: 279mm; margin: 0 auto;background-color: #f8f8f8; opacity: 0.8;">
 			<h2 style="display: block; text-align: center;">检验项维护</h2>
@@ -19,21 +18,8 @@
 							<td>操作</td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>正常</td>
-							<td>
-								<a href="javaScript:void(0)">编辑</a>
-							</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>非正常</td>
-							<td>
-								<a href="javaScript:void(0)">编辑</a>
-							</td>
-						</tr>
+					<tbody id="nums">
+
 					</tbody>
 				</table>
 			</div>
@@ -43,29 +29,75 @@
 						<tbody>
 							<tr>
 								<td style="text-align: right;">是否启用：</td>
-								<td><input type="radio" value="1" name="yesorno" />是</td>
-								<td><input type="radio" value="0" name="yesorno" />否</td>
+								<input type="hidden" id="proposedDescriptionIds" value="0">
+								<td><input type="radio" value="1" name="isDelete" />是</td>
+								<td><input type="radio" value="0" name="isDelete" />否</td>
 							</tr>
 							<tr>
 								<td style="text-align: right;">所属结果：</td>
-								<td colspan="2">------</td>
+								<td colspan="2">
+								<select name="commonResultsId" id="commonResultsid">
+								</select></td>
 							</tr>
 							<tr>
 								<td style="text-align: right;">建议内容：</td>
-								<td colspan="2"><input type="text" name="miaoshu" value="" /></td>
+								<td colspan="2"><input type="text" name="adviceContent" value="" /></td>
 							</tr>
 							<tr>
 								<td style="text-align: right;">科普说明：</td>
-								<td><input type="radio" value="1" name="sfyx" />是</td>
-								<td><input type="radio" value="0" name="sfyx" />否</td>
+								<td colspan="2"><input type="text" name="sciencePopularization" value="" /></td>
 							</tr>
 						</tbody>
 					</table>
-					<input type="button" value="提交" />
-					<input type="button" value="重置" />
+					<input type="button" value="提交" onclick="getinsertproposedDescription()" />
+					<input type="button" value="重置"  onclick="getclearproposedDescription()"/>
 				</form>
 			</div>
 		</div>
 	</body>
+	<script  type="text/javascript" src="/js/jy.js"></script>
+	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+	<script>
+	$(function () {
+	getproposedDescription();
+	getcommonresultxia();
+	});
+	//查询常见结果
+	function getproposedDescription() {
+	$.post("http://localhost:8080/proposedDescription.do",function (data) {
+	var content="";
+	$.each(data,function (i,e) {
+	content+="<tr>" +
+		"<td>"+e.proposedDescriptionId+"</td>" +
+        "<td>"+e.adviceContent+"</td>" +
+		"<td id='last'><a href='javascript:void(0)' onclick='findById("+e.proposedDescriptionId+")'>编辑</a></td>" +
+		"</tr>";
+	})
+	$("#nums").html(content);
+	},"json")
+	}
+	//获取下拉框的值
+	function getcommonresultxia() {
+	$.post("http://localhost:8080/commonresult.do",function (data) {
+	var content="";
+	$.each(data,function (i,e) {
+		content+="<option value='"+e.commonResultsId+"'>"+e.resultDesc+"</option>";
+	})
+	$("#commonResultsid").html(content);
+	},"json")
+	}
 
+	function findById(proposedDescriptionId) {
+	$.post("http://localhost:8080/addProposedDescription.do?proposedDescriptionId="+proposedDescriptionId,function (data) {
+	if(data.isDelete == 1){
+	$("input[name=isDelete]").get(0).checked = true;
+	}else{
+	$("input[name=isDelete]").get(1).checked = true;
+	}
+	$("#proposedDescriptionIds").val(data.proposedDescriptionId);
+	$("input[name=adviceContent]").val(data.adviceContent);
+	$("input[name=sciencePopularization]").val(data.sciencePopularization);
+	},"json")
+	}
+	</script>
 </html>
