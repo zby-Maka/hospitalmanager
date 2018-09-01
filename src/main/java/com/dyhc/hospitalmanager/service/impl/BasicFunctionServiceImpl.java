@@ -127,7 +127,21 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
 
     //----------------------------------组合项项维护
 
-
+    /**
+     * 根据科室id查询体检信息
+     * @param sectionId
+     * @return
+     */
+    @Override
+    public List<Check> getCheckListBySectionId(Integer sectionId) {
+        List<Check>list=null;
+        try {
+            list=checkMapper.getCheckListBySectionId(sectionId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
     @Override
     public int addCombinationInfo(Combination combination,Integer[] checkList) {

@@ -68,6 +68,14 @@ public interface BasicFunctionService {
     int updCheckInfo(Check check);
 
 //----------------------------------组合项项维护
+
+
+    /**
+     * 根据科室编号查询体检项信息
+     * @return
+     */
+    List<Check> getCheckListBySectionId(@Param("sectionId")Integer sectionId);
+
     /**
      * 添加组合项信息
      * @param combination

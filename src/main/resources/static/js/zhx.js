@@ -13,6 +13,7 @@ $(function () {
         var sid = localStorage["secid"];
         $("#sectionname").val(sname);
         $("input[name='sectionId']").val(sid);
+        getCheckInfoBySectionId(sid);
     }
 })
 
@@ -46,7 +47,6 @@ function getcombinationidByid(combinaid) {
         dataType: "json",
         data: {"combinationId": combinaid},
         success: function (data) {
-            console.log(data)
             $.each(data, function (i, e) {
                 if (e.isEnable == 0) {
                     $("input[name='isEnable'],[value='0']").attr("checked", true);
@@ -73,6 +73,27 @@ function getcombinationidByid(combinaid) {
                 $("input[name='specimenType']").attr("readonly",true)
 
             })
+        }, error: function () {
+            alert("发生错误")
+        }
+    })
+}
+
+//根据科室id查询体检项信息
+function getCheckInfoBySectionId(secid) {
+
+    $.ajax({
+        url: "http://localhost:8080/getCheckInfoBySectionId",
+        type: "post",
+        dataType: "json",
+        data: {"sectionId": secid},
+        success: function (data) {
+            console.log(data)
+            var content = "";
+            $.each(data, function (i, e) {
+                content += "<tr><td><input type='checkbox' value='" + e.checkId + "'>" + e.checkName + "</td></tr>";
+            })
+            $("#content").html(content);
         }, error: function () {
             alert("发生错误")
         }
@@ -151,7 +172,6 @@ function showcheckcheckbox(combid) {
         dataType: "json",
         data: {"combinationId": combid},
         success: function (data) {
-            console.log(data)
             var content = "";
             $.each(data, function (i, e) {
                 content += "<tr><td><input type='checkbox' value='" + e.combinationCheckList[i].checkId + "'>" + e.combinationCheckList[i].checkName + "</td></tr>";
