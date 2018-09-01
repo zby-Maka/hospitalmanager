@@ -16,7 +16,7 @@ public interface CommonResultsService {
     /**
      * 查询所有的常见结果
      */
-    List<CommonResults> getCommResultslist();
+    List<CommonResults> getCommResultslist(Integer checkId);
     /**
      * 修改常见结果信息
      * @param commonResults
