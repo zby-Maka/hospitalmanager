@@ -791,3 +791,4 @@
 2018-09-01 09:33:16.874 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ check` ( `physical_examination_and_ check_id`, `physical_examination_id`, `check_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
 2018-09-01 09:33:16.874 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==> Parameters: 2018090202(String), 2(Integer)
 2018-09-01 09:33:17.021 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - <==    Updates: 1
+2018-09-01 10:35:20.261 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
