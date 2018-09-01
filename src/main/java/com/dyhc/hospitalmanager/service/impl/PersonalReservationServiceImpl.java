@@ -60,7 +60,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Autowired
     private MessageProducer messageProducer;
 
-    public String result;
+    public String result="ok";
 
 
     /**

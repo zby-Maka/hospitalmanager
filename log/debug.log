@@ -146,3 +146,648 @@
 2018-09-01 09:08:45.478 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
 2018-09-01 09:08:45.478 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
 2018-09-01 09:08:45.925 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:14:29.107 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-01 09:15:04.500 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:15:04.501 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:15:04.502 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:15:04.638 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:15:04.638 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:15:04.638 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:15:04.728 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:15:04.732 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:04.736 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:15:04.737 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:15:04.743 [http-nio-8080-exec-10] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:15:04.835 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:15:04.836 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:04.837 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:15:04.906 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:15:04.908 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:04.909 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:15:05.444 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:15:05.446 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:05.446 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:15:05.521 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:15:05.522 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:05.522 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:15:05.583 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:15:05.584 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:15:05.584 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:15:05.585 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:05.586 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:15:05.649 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:15:05.652 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:15:05.652 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:15:05.653 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:15:05.714 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:15:05.714 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:05.715 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:15:05.786 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:15:05.786 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:05.787 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:15:05.858 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:15:05.858 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:15:05.859 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:15:05.921 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:15:05.922 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:05.925 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:15:06.001 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:15:06.002 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:15:06.003 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:15:06.065 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:15:33.675 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:15:33.676 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:15:33.763 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 0
+2018-09-01 09:15:33.765 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.addPersonInfo - ==>  Preparing: INSERT INTO `health_examination_system`.`person_info` (`person_id`,`person_name`,`person_age`,`person_birthday`,`person_sex`, `person_id_card`,`is_marry`,`person_telephone`,`person_address`,`person_name_spell_code`,`person_type`,`group_id`, `create_date`) VALUES(0,?,?,?,?,?,?,?, ?,?,?,?,now()); 
+2018-09-01 09:15:33.785 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.addPersonInfo - ==> Parameters: 曹锐峰(String), 21(Integer), 1997-06-01 00:00:00.0(Timestamp), 男(String), 142631199706015310(String), 未婚(String), 15713571645(String), 纽约(String), crf(String), 个人(String), null
+2018-09-01 09:15:33.967 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.addPersonInfo - <==    Updates: 1
+2018-09-01 09:15:33.968 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:15:33.968 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:15:34.038 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:15:34.039 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-09-01 09:15:34.044 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-09-02(String)
+2018-09-01 09:15:34.103 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
+2018-09-01 09:15:34.104 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,?) 
+2018-09-01 09:15:34.106 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018090202(String), 45(Integer), null, null, 2018-09-02 00:00:00.0(Timestamp)
+2018-09-01 09:17:49.026 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:17:49.027 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:17:49.027 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:17:49.028 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:17:49.028 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:17:49.028 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:17:49.327 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:17:49.351 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:17:49.352 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:49.352 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:17:49.354 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:17:49.530 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:17:49.530 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:49.531 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:17:49.718 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:17:49.719 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:49.719 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:17:49.858 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:17:49.860 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:17:49.862 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:17:49.862 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:49.863 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:17:50.475 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:17:50.475 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:50.476 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:17:51.370 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:17:51.927 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:17:51.928 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:51.928 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:17:52.251 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:17:52.252 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:17:52.252 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:17:52.671 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:17:52.672 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:52.672 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:17:52.799 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:17:52.799 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:52.800 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:17:52.868 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:17:52.869 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:17:52.869 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:17:52.927 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:17:52.928 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:52.928 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:17:53.018 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:17:53.019 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:53.019 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:17:53.153 [http-nio-8080-exec-4] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:17:55.200 [http-nio-8080-exec-9] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:17:55.200 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:17:55.200 [http-nio-8080-exec-8] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:17:55.200 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:17:55.200 [http-nio-8080-exec-8] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:17:55.200 [http-nio-8080-exec-9] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:17:55.304 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:17:55.305 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:55.305 [http-nio-8080-exec-9] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:17:55.305 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:17:55.363 [http-nio-8080-exec-8] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:17:55.386 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:17:55.387 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:55.387 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:17:55.514 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:17:55.515 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:55.515 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:17:55.781 [http-nio-8080-exec-9] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:17:55.781 [http-nio-8080-exec-9] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:17:55.782 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:17:55.782 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:55.782 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:17:55.943 [http-nio-8080-exec-9] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:17:55.944 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:17:55.944 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:55.945 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:17:56.306 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:17:56.307 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:56.307 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:17:56.385 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:17:56.386 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:17:56.386 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:17:56.449 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:17:56.450 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:56.450 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:17:56.620 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:17:56.620 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:56.621 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:17:56.720 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:17:56.720 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:17:56.720 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:17:56.785 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:17:56.786 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:56.787 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:17:56.982 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:17:56.982 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:17:56.982 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:17:57.205 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:18:05.036 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:18:05.037 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:18:05.094 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:18:05.100 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_name` = ?, `person_age` = ?, `person_birthday` = ?, `person_sex` = ?, `person_id_card` = ?, `is_marry` = ?, `person_telephone` = ?, `person_address` = ?, `person_name_spell_code` = ? WHERE `person_id` = ? 
+2018-09-01 09:18:05.104 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 曹锐峰(String), 21(Integer), 1997-06-01 00:00:00.0(Timestamp), 男(String), 142631199706015310(String), 未婚(String), 15713571645(String), 纽约(String), crf(String), 45(Integer)
+2018-09-01 09:18:05.255 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
+2018-09-01 09:18:05.255 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:18:05.256 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:18:05.341 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:18:05.342 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-09-01 09:18:05.343 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-09-02(String)
+2018-09-01 09:18:05.402 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
+2018-09-01 09:18:05.403 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,?) 
+2018-09-01 09:18:05.404 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018090202(String), 45(Integer), null, null, 2018-09-02 00:00:00.0(Timestamp)
+2018-09-01 09:19:12.909 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-01 09:21:09.807 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-01 09:21:50.576 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:21:50.591 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:21:50.592 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:21:50.717 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:21:50.723 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:21:50.724 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:21:50.817 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:21:50.818 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:21:50.821 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:50.825 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:21:50.832 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:21:50.893 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:21:50.894 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:50.895 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:21:50.955 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:21:50.959 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:50.960 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:21:51.496 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:21:51.497 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:51.497 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:21:51.593 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:21:51.594 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:51.594 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:21:51.697 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:21:51.698 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:21:51.698 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:51.698 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:21:51.698 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:21:51.774 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:21:51.775 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:21:51.776 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:21:51.777 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:21:51.835 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:21:51.835 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:51.835 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:21:51.898 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:21:51.899 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:51.899 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:21:51.961 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:21:51.962 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:21:51.962 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:21:52.018 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:21:52.019 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:52.021 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:21:52.077 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:21:52.078 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:21:52.080 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:21:52.136 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:21:58.770 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:21:58.771 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:21:58.832 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:21:58.839 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_name` = ?, `person_age` = ?, `person_birthday` = ?, `person_sex` = ?, `person_id_card` = ?, `is_marry` = ?, `person_telephone` = ?, `person_address` = ?, `person_name_spell_code` = ? WHERE `person_id` = ? 
+2018-09-01 09:21:58.844 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 曹锐峰(String), 21(Integer), 1997-06-01 00:00:00.0(Timestamp), 男(String), 142631199706015310(String), 已婚(String), 15713571645(String), 纽约(String), crf(String), 45(Integer)
+2018-09-01 09:21:58.994 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
+2018-09-01 09:21:58.995 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:21:58.995 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:21:59.050 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:21:59.051 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-09-01 09:21:59.054 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-09-02(String)
+2018-09-01 09:21:59.115 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
+2018-09-01 09:21:59.116 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,?) 
+2018-09-01 09:21:59.121 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018090202(String), 45(Integer), null, null, 2018-09-02 00:00:00.0(Timestamp)
+2018-09-01 09:23:27.545 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:23:27.546 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-09-01 09:23:27.642 [http-nio-8080-exec-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:23:32.214 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:23:32.216 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:23:32.283 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:23:32.284 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:23:32.285 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:23:32.297 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:23:32.311 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:23:32.359 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:23:32.360 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:32.363 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:23:32.395 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:23:32.446 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:23:32.447 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:32.448 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:23:32.509 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:23:32.510 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:32.510 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:23:32.590 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:23:32.591 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:32.591 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:23:32.637 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:23:32.637 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:23:32.712 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:23:32.713 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:32.713 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:23:32.717 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:23:32.783 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:23:32.783 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:32.784 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:23:32.851 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:23:32.852 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:23:32.853 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:23:32.920 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:23:32.921 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:32.923 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:23:33.003 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:23:33.004 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:33.004 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:23:33.069 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:23:33.070 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:23:33.070 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:23:33.144 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:23:33.145 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:33.145 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:23:33.231 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:23:33.231 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:23:33.231 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:23:33.301 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:23:54.902 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:23:54.902 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-09-01 09:23:55.073 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:23:55.074 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_name` = ?, `person_age` = ?, `person_birthday` = ?, `person_sex` = ?, `person_id_card` = ?, `is_marry` = ?, `person_telephone` = ?, `person_address` = ?, `person_name_spell_code` = ? WHERE `person_id` = ? 
+2018-09-01 09:23:55.075 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 周冰洋(String), 19(Integer), 1999-03-27 00:00:00.0(Timestamp), 男(String), 130527199903272216(String), 已婚(String), 17635692312(String), 杭州西湖(String), zby(String), 4(Integer)
+2018-09-01 09:23:55.279 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
+2018-09-01 09:23:55.280 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:23:55.280 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-09-01 09:23:55.343 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:23:55.344 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-09-01 09:23:55.344 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-09-06(String)
+2018-09-01 09:23:55.409 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 0
+2018-09-01 09:23:55.410 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,?) 
+2018-09-01 09:23:55.411 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018090601(String), 4(Integer), null, null, 2018-09-06 00:00:00.0(Timestamp)
+2018-09-01 09:23:55.603 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - <==    Updates: 1
+2018-09-01 09:23:55.606 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:23:55.607 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==> Parameters: 2018090601(String), 1(Integer)
+2018-09-01 09:23:55.801 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - <==    Updates: 1
+2018-09-01 09:23:55.802 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ combination` ( `physical_examination_and_ combination_id`, `physical_examination_id`, `combination_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:23:55.802 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==> Parameters: 2018090601(String), 1(Integer)
+2018-09-01 09:23:55.972 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - <==    Updates: 1
+2018-09-01 09:23:55.973 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ check` ( `physical_examination_and_ check_id`, `physical_examination_id`, `check_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:23:55.974 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==> Parameters: 2018090601(String), 1(Integer)
+2018-09-01 09:23:56.401 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - <==    Updates: 1
+2018-09-01 09:24:20.951 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:24:20.951 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:24:20.951 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:24:20.951 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:24:20.972 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:24:20.972 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:24:21.027 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:24:21.028 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:21.028 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:24:21.028 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:24:21.040 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:24:21.110 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:24:21.111 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:21.111 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:24:21.178 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:24:21.178 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:21.178 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:24:21.534 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:24:21.534 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:21.535 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:24:21.676 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:24:21.677 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:24:21.677 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:24:21.677 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:21.677 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:24:21.739 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:24:21.739 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:21.740 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:24:21.740 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:24:21.809 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:24:21.809 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:24:21.809 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:24:21.872 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:24:21.872 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:21.872 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:24:21.931 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:24:21.931 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:21.931 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:24:21.989 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:24:21.989 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:24:21.990 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:24:22.051 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:24:22.051 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:22.052 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:24:22.117 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:24:22.118 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:24:22.118 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:24:22.182 [http-nio-8080-exec-7] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:25:36.081 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:25:36.081 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:25:36.081 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:25:36.082 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:25:36.081 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:25:36.082 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:25:36.136 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:25:36.137 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.137 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:25:36.140 [http-nio-8080-exec-3] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:25:36.140 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:25:36.193 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:25:36.194 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.194 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:25:36.253 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:25:36.253 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.254 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:25:36.318 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:25:36.318 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.318 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:25:36.375 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:25:36.375 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.376 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:25:36.433 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:25:36.433 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:25:36.433 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:25:36.433 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.433 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:25:36.493 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:25:36.493 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:25:36.493 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:25:36.494 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:25:36.547 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:25:36.548 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.548 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:25:36.604 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:25:36.604 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.605 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:25:36.660 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:25:36.660 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:25:36.660 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:25:36.718 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:25:36.718 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.719 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:25:36.777 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:25:36.778 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:25:36.778 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:25:36.835 [http-nio-8080-exec-5] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:25:43.500 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:25:43.501 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-09-01 09:25:43.577 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:25:43.579 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_name` = ?, `person_age` = ?, `person_birthday` = ?, `person_sex` = ?, `person_id_card` = ?, `is_marry` = ?, `person_telephone` = ?, `person_address` = ?, `person_name_spell_code` = ? WHERE `person_id` = ? 
+2018-09-01 09:25:43.580 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 周冰洋(String), 19(Integer), 1999-03-27 00:00:00.0(Timestamp), 男(String), 130527199903272216(String), 已婚(String), 17635692312(String), 杭州西湖(String), zby(String), 4(Integer)
+2018-09-01 09:25:43.726 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
+2018-09-01 09:25:43.726 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:25:43.727 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 130527199903272216(String)
+2018-09-01 09:25:43.781 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:25:43.781 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-09-01 09:25:43.782 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-09-06(String)
+2018-09-01 09:25:43.839 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
+2018-09-01 09:25:43.840 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,?) 
+2018-09-01 09:25:43.841 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018090602(String), 4(Integer), null, null, 2018-09-06 00:00:00.0(Timestamp)
+2018-09-01 09:25:43.994 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - <==    Updates: 1
+2018-09-01 09:25:43.995 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:25:43.995 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==> Parameters: 2018090602(String), 2(Integer)
+2018-09-01 09:25:44.126 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - <==    Updates: 1
+2018-09-01 09:25:44.127 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ combination` ( `physical_examination_and_ combination_id`, `physical_examination_id`, `combination_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:25:44.127 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==> Parameters: 2018090602(String), 2(Integer)
+2018-09-01 09:25:44.266 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - <==    Updates: 1
+2018-09-01 09:25:44.267 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ check` ( `physical_examination_and_ check_id`, `physical_examination_id`, `check_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:25:44.267 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==> Parameters: 2018090602(String), 2(Integer)
+2018-09-01 09:25:44.415 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - <==    Updates: 1
+2018-09-01 09:26:36.991 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:26:36.991 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:26:37.046 [http-nio-8080-exec-4] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:26:48.404 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:26:48.404 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:26:48.457 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:26:48.457 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:26:48.457 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:26:48.458 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:26:48.460 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:26:48.515 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:26:48.526 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:26:48.527 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:48.529 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:26:48.589 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:26:48.590 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:48.590 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:26:48.659 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:26:48.659 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:48.660 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:26:48.708 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:26:48.709 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:26:48.723 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:26:48.723 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:48.723 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:26:48.775 [http-nio-8080-exec-5] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:26:48.786 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:26:48.787 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:48.787 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:26:48.845 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:26:48.845 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:48.845 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:26:48.909 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:26:48.909 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:26:48.910 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:26:48.971 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:26:48.974 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:48.975 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:26:49.029 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:26:49.030 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:49.030 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:26:49.097 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:26:49.097 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:26:49.097 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:26:49.153 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:26:49.154 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:49.154 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:26:49.216 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:26:49.216 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:26:49.217 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:26:49.277 [http-nio-8080-exec-10] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:27:00.427 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:27:00.427 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:27:00.486 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:27:00.487 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_name` = ?, `person_age` = ?, `person_birthday` = ?, `person_sex` = ?, `person_id_card` = ?, `is_marry` = ?, `person_telephone` = ?, `person_address` = ?, `person_name_spell_code` = ? WHERE `person_id` = ? 
+2018-09-01 09:27:00.488 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 曹瑞峰(String), 21(Integer), 1997-06-01 00:00:00.0(Timestamp), 男(String), 142631199706015310(String), 已婚(String), 15713571645(String), 纽约(String), crf(String), 45(Integer)
+2018-09-01 09:27:00.619 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
+2018-09-01 09:27:00.621 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:27:00.621 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:27:00.683 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:27:00.684 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-09-01 09:27:00.684 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-09-02(String)
+2018-09-01 09:27:00.746 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
+2018-09-01 09:27:00.746 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,?) 
+2018-09-01 09:27:00.747 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018090202(String), 45(Integer), null, null, 2018-09-02 00:00:00.0(Timestamp)
+2018-09-01 09:29:10.521 [restartedMain] DEBUG c.dyhc.hospitalmanager.HospitalmanagerApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-01 09:31:45.997 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:31:46.106 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:31:46.197 [http-nio-8080-exec-6] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:31:55.191 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:31:55.193 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:31:55.721 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:31:55.721 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:31:55.722 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:55.725 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:31:55.725 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:31:55.726 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:31:55.726 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:31:55.795 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:31:55.796 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:55.797 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:31:55.798 [http-nio-8080-exec-1] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:31:55.814 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:31:55.858 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:31:55.859 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:55.859 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:31:55.928 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:31:55.928 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:55.929 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:31:55.988 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:31:55.989 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:55.989 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:31:56.043 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:31:56.044 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:56.045 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:31:56.110 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:31:56.111 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:31:56.111 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:31:56.171 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:31:56.172 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:56.173 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:31:56.210 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:31:56.211 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:31:56.238 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:31:56.238 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:56.239 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:31:56.285 [http-nio-8080-exec-2] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:31:56.302 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:31:56.303 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:31:56.303 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:31:56.363 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:31:56.364 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:56.364 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:31:56.432 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:31:56.434 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:31:56.434 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:31:56.490 [http-nio-8080-exec-3] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:32:08.151 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:32:08.151 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:32:08.212 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:32:08.218 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_name` = ?, `person_age` = ?, `person_birthday` = ?, `person_sex` = ?, `person_id_card` = ?, `is_marry` = ?, `person_telephone` = ?, `person_address` = ?, `person_name_spell_code` = ? WHERE `person_id` = ? 
+2018-09-01 09:32:08.223 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 周冰洋(String), 21(Integer), 1997-06-01 00:00:00.0(Timestamp), 男(String), 142631199706015310(String), 已婚(String), 15713571645(String), 纽约(String), zby(String), 45(Integer)
+2018-09-01 09:32:08.368 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
+2018-09-01 09:32:08.368 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:32:08.369 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:32:08.431 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:32:08.432 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-09-01 09:32:08.437 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-09-02(String)
+2018-09-01 09:32:08.498 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 0
+2018-09-01 09:32:08.499 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,?) 
+2018-09-01 09:32:08.505 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018090201(String), 45(Integer), null, null, 2018-09-02 00:00:00.0(Timestamp)
+2018-09-01 09:32:08.668 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - <==    Updates: 1
+2018-09-01 09:32:08.671 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:32:08.673 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==> Parameters: 2018090201(String), 1(Integer)
+2018-09-01 09:32:08.832 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - <==    Updates: 1
+2018-09-01 09:32:08.833 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ combination` ( `physical_examination_and_ combination_id`, `physical_examination_id`, `combination_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:32:08.834 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - ==> Parameters: 2018090201(String), 1(Integer)
+2018-09-01 09:32:08.996 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCombination - <==    Updates: 1
+2018-09-01 09:32:08.997 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ check` ( `physical_examination_and_ check_id`, `physical_examination_id`, `check_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:32:08.998 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==> Parameters: 2018090201(String), 1(Integer)
+2018-09-01 09:32:09.173 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - <==    Updates: 1
+2018-09-01 09:32:58.573 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:32:58.574 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:32:58.649 [http-nio-8080-exec-10] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:33:05.526 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==>  Preparing: SELECT com.*,c.* FROM `combination` com INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id` INNER JOIN `check` c ON c.`check_id`=cac.`check_id` WHERE com.is_enable = 1 
+2018-09-01 09:33:05.526 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:33:05.527 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - ==> Parameters: 
+2018-09-01 09:33:05.527 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:33:05.591 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==>  Preparing: SELECT package_id FROM `package` WHERE is_enable = 1 
+2018-09-01 09:33:05.592 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - ==> Parameters: 
+2018-09-01 09:33:05.593 [http-nio-8080-exec-7] DEBUG c.d.h.dao.CombinationMapper.getAllCombinationList - <==      Total: 7
+2018-09-01 09:33:05.601 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:33:05.658 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getAllPackageId - <==      Total: 5
+2018-09-01 09:33:05.658 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:05.659 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 1(Integer)
+2018-09-01 09:33:05.727 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:33:05.729 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:05.730 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 1(Integer)
+2018-09-01 09:33:05.797 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:33:05.798 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:05.798 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 2(Integer)
+2018-09-01 09:33:05.873 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 4
+2018-09-01 09:33:05.873 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:05.873 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 2(Integer)
+2018-09-01 09:33:05.897 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==>  Preparing: SELECT * FROM `check` WHERE is_enable = 1 
+2018-09-01 09:33:05.897 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - ==> Parameters: 
+2018-09-01 09:33:05.944 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:33:05.944 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:05.944 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 3(Integer)
+2018-09-01 09:33:05.965 [http-nio-8080-exec-6] DEBUG c.d.h.dao.CheckMapper.getAllCheckList - <==      Total: 5
+2018-09-01 09:33:06.010 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:33:06.011 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:06.011 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 3(Integer)
+2018-09-01 09:33:06.070 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:33:06.070 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:33:06.072 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 3(Integer)
+2018-09-01 09:33:06.131 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:33:06.132 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:06.132 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 4(Integer)
+2018-09-01 09:33:06.199 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 0
+2018-09-01 09:33:06.202 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:06.202 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 4(Integer)
+2018-09-01 09:33:06.268 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 0
+2018-09-01 09:33:06.269 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==>  Preparing: SELECT * FROM `package` WHERE package_id = ? 
+2018-09-01 09:33:06.269 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - ==> Parameters: 4(Integer)
+2018-09-01 09:33:06.336 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.selPackageById - <==      Total: 1
+2018-09-01 09:33:06.337 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==>  Preparing: SELECT p.*,com.*,c.* FROM `package` p INNER JOIN `package_and_ combination` pac ON p.`package_id` = pac.`package_id` INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id` INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id` INNER JOIN `check` c ON c.`check_id` = cac.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:06.337 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - ==> Parameters: 6(Integer)
+2018-09-01 09:33:06.406 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCombination - <==      Total: 6
+2018-09-01 09:33:06.407 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==>  Preparing: SELECT * FROM `package` p INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id` INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id` WHERE p.`package_id`=? 
+2018-09-01 09:33:06.407 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - ==> Parameters: 6(Integer)
+2018-09-01 09:33:06.467 [http-nio-8080-exec-8] DEBUG c.d.h.dao.PackageMapper.getPackageCheck - <==      Total: 1
+2018-09-01 09:33:16.129 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:33:16.129 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:33:16.193 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:33:16.194 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==>  Preparing: UPDATE `health_examination_system`.`person_info` SET `person_name` = ?, `person_age` = ?, `person_birthday` = ?, `person_sex` = ?, `person_id_card` = ?, `is_marry` = ?, `person_telephone` = ?, `person_address` = ?, `person_name_spell_code` = ? WHERE `person_id` = ? 
+2018-09-01 09:33:16.195 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - ==> Parameters: 曹瑞峰(String), 21(Integer), 1997-06-01 00:00:00.0(Timestamp), 男(String), 142631199706015310(String), 已婚(String), 15713571645(String), 纽约(String), crf(String), 45(Integer)
+2018-09-01 09:33:16.357 [DefaultMessageListenerContainer-1] DEBUG c.d.h.dao.PersonInfoMapper.updPersonInfo - <==    Updates: 1
+2018-09-01 09:33:16.358 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==>  Preparing: SELECT * FROM `person_info` WHERE 1 = 1 AND `person_id_card` = ? 
+2018-09-01 09:33:16.358 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - ==> Parameters: 142631199706015310(String)
+2018-09-01 09:33:16.447 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.findPersonInfoPersonIdCard - <==      Total: 1
+2018-09-01 09:33:16.448 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==>  Preparing: SELECT `physical_examination_id` FROM `physical_examination` WHERE `medical_time` LIKE CONCAT('%',?,'%') ORDER BY `medical_time` DESC LIMIT 0,1 
+2018-09-01 09:33:16.448 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - ==> Parameters: 2018-09-02(String)
+2018-09-01 09:33:16.520 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.getPhysicalExaminationOrderByMedicalTime - <==      Total: 1
+2018-09-01 09:33:16.520 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==>  Preparing: INSERT INTO physical_examination VALUES (?,?,?,?,?) 
+2018-09-01 09:33:16.521 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - ==> Parameters: 2018090202(String), 45(Integer), null, null, 2018-09-02 00:00:00.0(Timestamp)
+2018-09-01 09:33:16.709 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addPhysicalExaminationInfo - <==    Updates: 1
+2018-09-01 09:33:16.710 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_package` ( `physical_examination_and_package_id`, `physical_examination_id`, `package_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:33:16.710 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - ==> Parameters: 2018090202(String), 4(Integer)
+2018-09-01 09:33:16.873 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhyAndPackage - <==    Updates: 1
+2018-09-01 09:33:16.874 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==>  Preparing: INSERT INTO `health_examination_system`.`physical_examination_and_ check` ( `physical_examination_and_ check_id`, `physical_examination_id`, `check_id`, `physical_statu` ) VALUES ( null , ?, ?, 0 ) 
+2018-09-01 09:33:16.874 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - ==> Parameters: 2018090202(String), 2(Integer)
+2018-09-01 09:33:17.021 [DefaultMessageListenerContainer-1] DEBUG c.d.h.d.P.addBatchPhysicalExaminationAndCheck - <==    Updates: 1
