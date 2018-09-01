@@ -26,7 +26,7 @@
                 //do something to find this file
                 File file=null;
                 try {
-                    file = ResourceUtils.getFile("classpath:static/model.xlsx");
+                    file = ResourceUtils.getFile("classpath:static/excelmodel/model.xlsx");
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }

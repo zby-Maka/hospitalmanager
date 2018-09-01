@@ -32,7 +32,7 @@
     <select id="getPhysicalExaminationOrderByMedicalTime" resultType="java.lang.String">
         SELECT `physical_examination_id` FROM `physical_examination`
         WHERE `medical_time` LIKE CONCAT('%',#{medicalTime},'%')
-        ORDER BY `medical_time` DESC LIMIT 0,1
+        ORDER BY `physical_examination_id` DESC LIMIT 0,1
     </select>
 
     <!-- 根据人员Id查询体检编号 -->

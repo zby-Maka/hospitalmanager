@@ -60,7 +60,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Autowired
     private MessageProducer messageProducer;
 
-    public String result;
+    public String result="ok";
 
 
     /**
@@ -213,6 +213,13 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         map.put("checkId",checkId);
         //发送消息
         messageProducer.sendMessage(destination,JSON.toJSONString(map));
+        Timer timer=new Timer();
+        TimerTask task=new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println(result);
+            }
+        };
         return result;
     }
 

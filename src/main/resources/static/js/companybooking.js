@@ -58,6 +58,8 @@ $("input[name=companyName]").blur(function () {
                 success:function (data) {
                     if(data>0){
                         alert("修改成功");
+                        location.href ="/booking.html" ;
+                        /*$("input[name=companyName]").val("");
                         $("input[name=companyId]").val("");
                         $("input[name=companyPrincipal]").val("");
                         $("input[name=telephone]").val("");
@@ -65,6 +67,11 @@ $("input[name=companyName]").blur(function () {
                         $("input[name=bankNumber]").val("");
                         $("input[name=companyNature]").val("");
                         $("input[name=authorizedStrength]").val("");
+                        var file = $("#file") ;
+                        file.after(file.clone().val(""));
+                        file.remove();
+                        $("input[name=spellCode]").val("");
+                        $("input[name=bankName]").val("");*/
                     }
                 }
             });
@@ -78,7 +85,8 @@ $("input[name=companyName]").blur(function () {
                 success: function (data) {
                     if (data > 0) {
                         alert("添加成功");
-                        $("input[name=companyName]").val("");
+                        location.href ="/booking.html" ;
+                       /* $("input[name=companyName]").val("");
                         $("input[name=companyId]").val("");
                         $("input[name=companyPrincipal]").val("");
                         $("input[name=telephone]").val("");
@@ -86,6 +94,11 @@ $("input[name=companyName]").blur(function () {
                         $("input[name=bankNumber]").val("");
                         $("input[name=companyNature]").val("");
                         $("input[name=authorizedStrength]").val("");
+                        var file = $("#file") ;
+                        file.after(file.clone().val(""));
+                        file.remove();
+                        $("input[name=spellCode]").val("");
+                        $("input[name=bankName]").val("");*/
                     }
                 }
             });
@@ -143,6 +156,7 @@ function upload() {
                 alert(result);
                 if (result == 1) {
                     alert("上传成功");
+
                 }
                 if (result == 2) {
                     alert("文件上传格式不正确,请重新选择");
