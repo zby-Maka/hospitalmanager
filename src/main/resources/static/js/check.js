@@ -172,37 +172,38 @@ function makeAnAppointment(yue,packId,comId,checkId) {
 function selAllCheck() {
 	//获取所有检查项
 	$.getJSON("/ExhibitionAllCheck.do",{},function (check) {
-		var checkContent = "";
+		var content = "<tr>";
 		$.each(check,function (i,e) {
-			checkContent+="<span style='text-align: center;margin-left: 15px;' name=\"t\"><input type=\"checkbox\" id='c"+i+"' name=\"checkItem\" value=\""+e.checkId+"\" /><label for='c"+i+"'>"+e.checkName+"</label></span>";
-            if((i+1)%5==0){
-                checkContent+="<br/>";
+            content+="<td><span style='text-align: center;margin-left: 15px;' name=\"t\"><input type=\"checkbox\" id='c"+i+"' name=\"checkItem\" value=\""+e.checkId+"\" /><label for='c"+i+"'>"+e.checkName+"</label></span></td>";
+            if((i+1)%3==0){
+                content+="</tr>";
             }
-        })
-		$("#check").html(checkContent);
-    })
+        });
+		$("#check").html(content);
+    });
 
 	//获取是所有组合项
     $.getJSON("/ExhibitionAllCombination.do",{},function (com) {
-        var comContent = "";
+        var content = "<tr>";
         $.each(com,function (i,e) {
-            comContent+="<span style='text-align: center;margin-left: 15px;' name=\"c\"><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span>";
-            if((i+1)%5==0){
-                comContent+="<br/>";
+            content+="<td><span style='text-align: center;margin-left: 15px;' name=\"c\"><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
+            if((i+1)%3==0){
+                content+="</tr>";
             }
-        })
-        $("#com").html(comContent);
-    })
+        });
+        $("#com").html(content);
+    });
 
 	//获取所有套餐项
     $.getJSON("/ExhibitionAllPackages.do",{},function (package) {
         var packageContent = "";
+        var content = "<tr>";
         $.each(package,function (i,e) {
-            packageContent+="<span style='text-align: center;margin-left: 15px;' name=\"p\"><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></span>";
-            if((i+1)%5==0){
-                packageContent+="<br/>";
+            content+="<td><span style='text-align: center;margin-left: 15px;' name=\"p\"><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></span></td>";
+            if((i+1)%3==0){
+                content +="</tr>";
             }
-        })
-        $("#package").html(packageContent);
+        });
+        $("#package").html(content);
     })
 }
