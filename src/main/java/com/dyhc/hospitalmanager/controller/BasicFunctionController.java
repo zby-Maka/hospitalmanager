@@ -84,6 +84,17 @@ public class BasicFunctionController {
     }
 
     /**
+     *根据科室id查询体检项信息
+     * @param sectionId
+     * @return
+     */
+    @RequestMapping("getCheckInfoBySectionId")
+    @ResponseBody
+    public String getCheckInfoBySectionId(@Param("sectionId")Integer sectionId){
+        List<Check>list=basicFunctionService.getCheckListBySectionId(sectionId);
+        return JSON.toJSONString(list);
+    }
+    /**
      * 添加组合项
      * @param combination
      * @param comAncCheckList
