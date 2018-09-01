@@ -190,7 +190,7 @@ public class PersonalReservationController {
      * @param comId 组合项Id
      * @return
      */
-    @GetMapping("/getComCheck")
+    @GetMapping("/getComCheck.do")
     public List<Check> getComCheck(Integer comId) {
          return personalReservation.getComCheck(comId);
     }
@@ -200,7 +200,7 @@ public class PersonalReservationController {
      * @param packId 套餐id
      * @return
      */
-    @GetMapping("/getPackCheck")
+    @GetMapping("/getPackCheck.do")
     public Package getPackCheck(Integer packId) {
         return personalReservation.getPackCheck(packId);
     }
