@@ -62,11 +62,14 @@ function  addResultAndMedicalEvent() {
             console.log(date);
             if (date.stat == "ok") {
                 alert("success");
+               qing();
             } else {
                 alert("error");
             }
         }
     });
+
+
 }
 
 //form表单转为json对象
@@ -77,5 +80,18 @@ function formToJson(data){
     data = "({'" +data + "'})" ;
     obj = eval(data);
     return obj;
+}
+//增加之后清空数据
+function  qing() {
+    $("input[name=physicalExaminationId]").val("");
+    $("label[name=personName]").text("");
+    $("label[name=personAge]").text("");
+    $("label[name=personSex]").text("");
+    $("label[name=isMarry]").text("");
+    $("#check").html("");
+    $("#checkResultFinally textarea").html("");
+    $("input[name=checkResultFinally]").val("");//结果id
+    $("#checkAdvice textarea").html("");
+    $("input[name=checkAdvice]").val("");//建议id
 }
 
