@@ -80,7 +80,7 @@
      </select>
 
     <!--根据套餐id查询套餐信息以及下体检项信息-->
-    <select id="getPackageAndCheckInfoById" resultMap="getPC">
+    <select id="getPackageAndCheckInfoById" resultMap="getC ">
                            SELECT
                 package.package_id,
                 package.package_name,
