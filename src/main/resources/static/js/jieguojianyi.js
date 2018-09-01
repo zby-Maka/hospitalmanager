@@ -9,6 +9,8 @@ function getinsertcommonresult() {
     var commonResultsId=$("#commonResultsIds").val();
     var resultDesc = $("[name=resultDesc]").val();
     var checkid=$("#checkid").val();
+    var resutltid=localStorage["rid"];
+    var getid="<input type='button' value='查看建议' onclick='getjianyi()'> "
     alert(checkid);
     if (commonResultsId==0){
         $.post("http://localhost:8080/insertcommonResults.do",content,function (data) {
@@ -28,5 +30,8 @@ function getinsertcommonresult() {
                 alert("修改失败")
             }
         },"json")
+    }
+    function getjianyi() {
+        window.location.href="http://localhost:8080/Thebackend-page/jy.html?rid="+commonResultsId;
     }
 }

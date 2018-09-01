@@ -14,9 +14,9 @@ public class ProposedDesriptionServiceImpl implements ProposedDesriptionService 
     private ProposedDescriptionMapper proposedDescriptionMapper;
 
     @Override
-    public List<ProposedDescription> getProposedDescriptionlist(){
+    public List<ProposedDescription> getProposedDescriptionlist(Integer resultId){
         try {
-            return proposedDescriptionMapper.getProposedDescriptionlist();
+            return proposedDescriptionMapper.getProposedDescriptionlist(resultId);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

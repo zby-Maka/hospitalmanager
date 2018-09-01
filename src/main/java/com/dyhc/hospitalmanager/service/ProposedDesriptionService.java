@@ -9,7 +9,7 @@ public interface ProposedDesriptionService {
     /**
      * 查询建议
      */
-    List<ProposedDescription> getProposedDescriptionlist();
+    List<ProposedDescription> getProposedDescriptionlist(Integer resultId);
     /**
      * 添加建议描述信息
      * @param proposedDescription

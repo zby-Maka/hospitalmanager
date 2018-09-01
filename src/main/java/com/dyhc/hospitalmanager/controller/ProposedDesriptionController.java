@@ -53,8 +53,8 @@ public class ProposedDesriptionController {
      */
     @RequestMapping(value = "proposedDescription.do")
     @ResponseBody
-    public String getProposedDescription(){
-        List<ProposedDescription> proposedDescriptionList=proposedDesriptionService.getProposedDescriptionlist();
+    public String getProposedDescription(Integer resultId){
+        List<ProposedDescription> proposedDescriptionList=proposedDesriptionService.getProposedDescriptionlist(resultId);
         String json=JSON.toJSONString(proposedDescriptionList);
         return json;
     }
