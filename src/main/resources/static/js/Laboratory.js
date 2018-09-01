@@ -57,6 +57,7 @@ $(function () {
                 console.log(resultJSON);
                 if (resultJSON.stat == "ok") {
                     alert("success");
+                    qing();
                 } else {
                     alert("error");
                 }
@@ -81,13 +82,6 @@ function getYan(checkId){
             }else {
                 jian="-";
             }
-            // if(e.medicalResult="偏高"){
-            //     jian="↑";
-            // }else if(e.medicalResult="正常"){
-            //     jian="-";
-            // }else {
-            //     jian="↓";
-            // }
 
             content+="<tr>" +
                 "<td align=\"center\">"+e.eventsName+"</td>" +
@@ -99,4 +93,15 @@ function getYan(checkId){
         });
         $("#show").html(content);
     });
+
+}
+//增加之后清空数据
+function  qing() {
+    $("input[name=physicalExaminationId]").val("");
+    $("label[name=personName]").text("");
+    $("label[name=personAge]").text("");
+    $("label[name=personSex]").text("");
+    $("label[name=isMarry]").text("");
+    $("#check").html("");
+    $("#show").html("");
 }

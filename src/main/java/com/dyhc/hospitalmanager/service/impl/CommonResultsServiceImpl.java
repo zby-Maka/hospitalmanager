@@ -25,9 +25,9 @@ public class CommonResultsServiceImpl implements CommonResultsService {
     }
 
     @Override
-    public List<CommonResults> getCommResultslist() {
+    public List<CommonResults> getCommResultslist(Integer checkId) {
         try {
-            return commonResultsMapper.getCommResultslist();
+            return commonResultsMapper.getCommResultslist(checkId);
         } catch (Exception e) {
             e.printStackTrace();
             return  null;

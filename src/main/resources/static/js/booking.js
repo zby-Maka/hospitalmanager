@@ -19,8 +19,6 @@ $(function () {
             location.href = "/check.html";
         }
     });
-
-
 });
 
 /**

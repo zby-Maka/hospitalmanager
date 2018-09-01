@@ -22,6 +22,7 @@ public class LoginConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/css/**")
                 .excludePathPatterns("/font/**")
                 .excludePathPatterns("/images/**")
+                .excludePathPatterns("/model.xlsx")
                 .excludePathPatterns("/img/**")
                 .excludePathPatterns("/js/**")
                 .excludePathPatterns("/lay/**")
@@ -33,7 +34,8 @@ public class LoginConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/booking.html")
                 .excludePathPatterns("/Thebackend-page/thewaylist.html")
                 .excludePathPatterns("/check.html")
-                .excludePathPatterns("/login.html");
+                .excludePathPatterns("/login.html")
+                .excludePathPatterns("/admin/**");
     }
 
     @Override

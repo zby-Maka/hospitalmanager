@@ -6,9 +6,9 @@
 /*页面主体div*/
 #content{
 	width: 80%;
-	height:700px;
+	height: 180mm;
 	background-color: #f8f8f8;
-	margin-left: 200px;
+	margin: 0 auto;
 	opacity: 0.8;
 }
 /**

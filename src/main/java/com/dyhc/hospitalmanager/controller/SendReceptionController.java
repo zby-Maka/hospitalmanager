@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * 跳转前台页面
  */
@@ -36,7 +38,8 @@ public class SendReceptionController {
     }
 
     @GetMapping("/login.html")
-    public String sendLogin(){
+    public String sendLogin(HttpSession session) {
+        session.invalidate();
         return "Thefrontend-page/login";
     }
 

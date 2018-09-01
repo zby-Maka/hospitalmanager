@@ -19,7 +19,7 @@ public interface ProposedDescriptionMapper {
     /**
      * 查询建议
      */
-    List<ProposedDescription> getProposedDescriptionlist() throws Exception;
+    List<ProposedDescription> getProposedDescriptionlist(@Param("resultId") Integer resultId) throws Exception;
     /**
      * 添加建议描述信息
      * @param proposedDescription

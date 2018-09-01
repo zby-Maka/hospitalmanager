@@ -58,7 +58,7 @@ public class UnitReservationController {
      * @return
      * @throws IOException
      */
-    @RequestMapping("/admin/model")
+    @RequestMapping("/admin/model.do")
     public ResponseEntity<byte[]> download2() throws IOException {
         File file = excelService.buildXlsById();
         return ResponseUtils.buildResponseEntity(file);

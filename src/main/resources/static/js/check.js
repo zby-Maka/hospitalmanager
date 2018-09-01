@@ -96,7 +96,7 @@ $(function() {
 	//浮动组合项时显示该项下边的体检项
     $("#com").on("mouseover","td[name=c]",function () {
         var comId=$(this).children("input").val();
-        $.getJSON("/getComCheck",{"comId":comId},function (comCheck) {
+        $.getJSON("/getComCheck.do",{"comId":comId},function (comCheck) {
             var checkCom = "<table><tr>";
             console.log(comCheck);
             $.each(comCheck,function (i,e) {
@@ -112,7 +112,7 @@ $(function() {
     $("#package").on("mouseover","td[name=p]",function () {
         var packId=$(this).children("input").val();
         var checkPack = "<table><tr>";
-        $.getJSON("/getPackCheck",{"packId":packId},function (packCheck) {
+        $.getJSON("/getPackCheck.do",{"packId":packId},function (packCheck) {
             console.log(packCheck);
             $.each(packCheck.packageCombinationList,function (i,e) {
                 checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.combinationName+"</td>";
@@ -127,8 +127,8 @@ $(function() {
     })
 
     //移出事件
-	$(".tab_box").on("mouseout","input[name='combineItem'],input[name='packageItem']",function(){
-        $("#c").html("");
+	$(".tab_box").on("mouseleave","td[name=t],td[name=p],td[name=c]",function(){
+        $(".childBox").html("");
         $(".childBox").hide();
 	});
 });
@@ -174,7 +174,7 @@ function selAllCheck() {
 	$.getJSON("/ExhibitionAllCheck.do",{},function (check) {
 		var checkContent = "<tr>";
 		$.each(check,function (i,e) {
-			checkContent+="<td name=\"t\"><input type=\"checkbox\" name=\"checkItem\" value=\""+e.checkId+"\" />"+e.checkName+"</td>";
+			checkContent+="<td name=\"t\"><input type=\"checkbox\" id='c"+i+"' name=\"checkItem\" value=\""+e.checkId+"\" /><label for='c"+i+"'>"+e.checkName+"</label></td>";
         })
         checkContent+="</tr>";
 		$("#check").html(checkContent);
@@ -184,7 +184,7 @@ function selAllCheck() {
     $.getJSON("/ExhibitionAllCombination.do",{},function (com) {
         var comContent = "<tr>";
         $.each(com,function (i,e) {
-            comContent+="<td name=\"c\"><input type=\"checkbox\" name=\"combineItem\" value=\""+e.combinationId+"\" />"+e.combinationName+"</td>";
+            comContent+="<td name=\"c\"><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></td>";
         })
         comContent+="</tr>";
 
@@ -195,7 +195,10 @@ function selAllCheck() {
     $.getJSON("/ExhibitionAllPackages.do",{},function (package) {
         var packageContent = "<tr>";
         $.each(package,function (i,e) {
-            packageContent+="<td name=\"p\"><input type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/>"+e.packageName+"</td>";
+            packageContent+="<td name=\"p\"><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></td>";
+            if((i+1)%3==0){
+                packageContent+="\n";
+            }
         })
 		packageContent+="</tr>";
         $("#package").html(packageContent);

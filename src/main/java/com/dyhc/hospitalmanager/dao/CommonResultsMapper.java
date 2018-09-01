@@ -40,7 +40,7 @@ public interface CommonResultsMapper {
     /**
      * 查询所有的常见结果
      */
-    List<CommonResults> getCommResultslist() throws Exception;
+    List<CommonResults> getCommResultslist(@Param("checkId")Integer checkId) throws Exception;
 
     /**
      * 根据id查询常见结果(唯一)
