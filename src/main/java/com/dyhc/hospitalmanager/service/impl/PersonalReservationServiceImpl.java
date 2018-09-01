@@ -215,6 +215,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         for (int i=0;i<=0;i--){
             value=redisDao.getValue(personInfo.getPersonIdCard());
             if (value!=null&&!"".equals(value)&&value!=""){
+                redisDao.delete(personInfo.getPersonIdCard());
                 break;
             }
         }
