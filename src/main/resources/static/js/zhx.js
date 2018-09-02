@@ -13,6 +13,7 @@ $(function () {
         var sid = localStorage["secid"];
         $("#sectionname").val(sname);
         $("input[name='sectionId']").val(sid);
+        getCheckInfoBySectionId(sid);
     }
 })
 
@@ -46,7 +47,6 @@ function getcombinationidByid(combinaid) {
         dataType: "json",
         data: {"combinationId": combinaid},
         success: function (data) {
-            console.log(data)
             $.each(data, function (i, e) {
                 if (e.isEnable == 0) {
                     $("input[name='isEnable'],[value='0']").attr("checked", true);
@@ -79,39 +79,29 @@ function getcombinationidByid(combinaid) {
     })
 }
 
-//添加组合项信息
-function addcom() {
-    var combination = $("#addform").serialize();
-    // var checkID = [];//定义一个空数组
-    //
-    // $("input[type='checkbox']:checked").each(function (i) {//把所有被选中的复选框的值存入数组
-    //     checkID[i] = $(this).val();
-    // })
-    //
-    // var date = $.param({
-    //     "comAncCheckList": checkID
-    // }) + "&" + combination;
+//根据科室id查询体检项信息
+function getCheckInfoBySectionId(secid) {
 
     $.ajax({
-        url: "http://localhost:8080/addCombinationInfo",
-        data: combination,
+        url: "http://localhost:8080/getCheckInfoBySectionId",
+        type: "post",
         dataType: "json",
-        type: "get",
-        traditional: true,
+        data: {"sectionId": secid},
         success: function (data) {
-            if (data == 1)
-                alert("组合项表添加成功");
-            else
-                alert("添加失败")
-        },
-        error: function () {
-            alert("发生错误");
+            console.log(data)
+            var content = "";
+            $.each(data, function (i, e) {
+                content += "<tr><td><input type='checkbox' value='" + e.checkId + "'>" + e.checkName + "</td></tr>";
+            })
+            $("#content").html(content);
+        }, error: function () {
+            alert("发生错误")
         }
     })
 }
 
-//修改组合项信息
-function updcom() {
+//添加组合项信息
+function addcom() {
     var combination = $("#addform").serialize();
     var checkID = [];//定义一个空数组
 
@@ -124,8 +114,39 @@ function updcom() {
     }) + "&" + combination;
 
     $.ajax({
-        url: "http://localhost:8080/updCombinationInfo",
+        url: "http://localhost:8080/addCombinationInfo",
         data: date,
+        dataType: "json",
+        type: "get",
+        traditional: true,
+        success: function (data) {
+            if (data == 1)
+                alert("添加成功");
+            else
+                alert("添加失败")
+        },
+        error: function () {
+            alert("发生错误");
+        }
+    })
+}
+
+//修改组合项信息
+function updcom() {
+    var combination = $("#addform").serialize();
+    // var checkID = [];//定义一个空数组
+    //
+    // $("input[type='checkbox']:checked").each(function (i) {//把所有被选中的复选框的值存入数组
+    //     checkID[i] = $(this).val();
+    // })
+    //
+    // var date = $.param({
+    //     "comAncCheckList": checkID
+    // }) + "&" + combination;
+
+    $.ajax({
+        url: "http://localhost:8080/updCombinationInfo",
+        data: combination,
         dataType: "json",
         type: "get",
         traditional: true,
@@ -151,7 +172,6 @@ function showcheckcheckbox(combid) {
         dataType: "json",
         data: {"combinationId": combid},
         success: function (data) {
-            console.log(data)
             var content = "";
             $.each(data, function (i, e) {
                 content += "<tr><td><input type='checkbox' value='" + e.combinationCheckList[i].checkId + "'>" + e.combinationCheckList[i].checkName + "</td></tr>";

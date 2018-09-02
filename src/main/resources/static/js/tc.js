@@ -124,7 +124,6 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
         dataType: "json",
         data: {"sectionId":sectionid},
         success: function (data) {
-            console.log(data)
             var content = "";
             $.each(data, function (i, e) {
                 $.each(e.sectioandcombinationList,function (i,e1) {
@@ -161,7 +160,6 @@ $("#combinationAndcheck").on("click","input[name='combiantionInfo'],input[name='
         if(checkorcom=="combiantionInfo"){
             $("#checkcombinationAndcheck").children("lable[name='"+checkorcom+"']").remove()
            var aa= $("#checkcombinationAndcheck").children("lable[name='"+checkorcom+"']").next().html();
-            alert(aa);
         }else if(checkorcom=="checkInfo"){
             $("#checkcombinationAndcheck").children("lable[name='"+checkorcom+"']").remove()
             $("#checkcombinationAndcheck").children("lable[name='"+checkorcom+"']").next().remove()

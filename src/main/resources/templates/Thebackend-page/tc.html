@@ -5,31 +5,31 @@
 		<meta charset="UTF-8">
 		<title>套餐维护</title>
 	</head>
-
+	<link rel="stylesheet" type="text/css" href="/css/index.css" />
 	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
 		<div style="width: 80%; height: 174mm; margin: 0 auto; background-color: #f8f8f8; opacity: 0.8;">
-			<h2 style="display: block;text-align: center;">套餐</h2>
+			<h2 style="display: block;text-align: center;letter-spacing: 15px;">套餐信息维护</h2>
 			<div>
 				<form id="addform">
 				<table style="width: 600px;">
 					<tbody>
-						<tr>
+						<tr style=" line-height: 50px;">
 							<td style="text-align: right;">是否启用：</td>
 							<td><input type="radio" value="1" name="isEnable" />是</td>
 							<td><input type="radio" value="0" name="isEnable" />否</td>
 						</tr>
-						<tr>
+						<tr style=" line-height: 50px;">
 							<td style="text-align: right;">套餐名称：</td>
-							<td colspan="2"><input type="text" name="packageName" value="" /><input type="hidden" id="#pacid" name="packageId"></td>
+							<td ><input type="text" name="packageName" value="" /><input type="hidden" id="#pacid" name="packageId"></td>
 						</tr>
-						<tr>
+						<tr style=" line-height: 50px;">
 							<td style="text-align: right;">备注：</td>
-							<td colspan="2"><input type="text" name="note" value="" /></td>
+							<td ><input type="text" name="note" value="" /></td>
 						</tr>
-						<tr>
+						<tr style=" line-height: 50px;">
 							<td style="text-align: right;">科普说明：</td>
-							<td colspan="2">
-								<textarea cols="50" rows="10" name="scopeApplication"></textarea>
+							<td >
+								<textarea cols="50" rows="10" name="scopeApplication" style="text-align:center;padding:20px;" ></textarea>
 							</td>
 
 						</tr>
@@ -38,7 +38,7 @@
 				</form>
 			</div>
 			<div style="width: 33.5%; height: 300px; float: left;overflow: auto; text-align: center;">
-				<div style="text-align: center; line-height: 30px;"id="secionContent">
+				<div style="text-align: center; line-height: 30px; margin-left: 30px;"id="secionContent">
 					<a href="javaScript:void(0)">第一个科室</a>
 				<hr />
 
@@ -56,12 +56,14 @@
 					<hr />
 
 				</div>
+				<div style="clear: both; margin-left: 100px; margin-top: 110px">
+					<input type="button" value="点击提交" onclick="updandadd()" class="button"/>
+				</div>
 			</div>
-			<div style="clear: both;">
-				<input type="button" value="点击提交" onclick="updandadd()"/>
-			</div>
+
 		</div>
 	</body>
+
 	<script src="../../js/jquery-3.2.1.js"></script>
 	<script src="../../js/tc.js"></script>
 
