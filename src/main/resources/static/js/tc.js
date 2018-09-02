@@ -48,8 +48,11 @@ function getPackageAndCombinationInfo(packaid) {
                 $("input[name='note']").val(e.note);
                 $("textarea[name='scopeApplication']").val(e.scopeApplication);
                 $("textarea[name='scopeApplication']").attr("readonly",true)
+                
+                $.each(e.packageCombinationList,function (o, r) {
+                    content+="<lable name='combiantionInfo'  value='"+r.combinationId+"'>"+r.combinationName+"</lable><hr/>"
+                })
 
-                content+="<lable name='combiantionInfo'  value='"+e.packageCombinationList[i].combinationId+"'>"+e.packageCombinationList[i].combinationName+"</lable><hr/>"
             })
             $("#checkcombinationAndcheck").append(content);
 
@@ -83,7 +86,11 @@ function getPackageAndCheckInfo(packaid) {
                 $("input[name='note']").attr("readonly",true)
                 $("textarea[name='scopeApplication']").val(e.scopeApplication);
                 $("textarea[name='scopeApplication']").attr("readonly",true)
-                content+="<lable name='combiantionInfo'  value='"+e.packageCheckList[i].checkId+"'>"+e.packageCheckList[i].checkName+"</lable><hr/>"
+
+                $.each(e.packageCheckList,function (o, r) {
+                    content+="<lable name='combiantionInfo'  value='"+r.checkId+"'>"+r.checkName+"</lable><hr/>"
+                })
+
             })
             $("#checkcombinationAndcheck").append(content);
         }, error: function () {
@@ -105,6 +112,7 @@ function showSectionAndCombinationAndCheck() {
         dataType: "json",
         data: {},
         success: function (data) {
+            console.log(data)
             var content = "";
             $.each(data, function (i, e) {
                 content+="<a onclick='showSectionAndCombinationAndCheckByid("+e.sectionId+")'>"+e.sectionName+"</a><hr/>";
@@ -124,6 +132,7 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
         dataType: "json",
         data: {"sectionId":sectionid},
         success: function (data) {
+            console.log(data)
             var content = "";
             $.each(data, function (i, e) {
                 $.each(e.sectioandcombinationList,function (i,e1) {
@@ -177,10 +186,10 @@ function addpack() {
     var a=$("#checkcombinationAndcheck > lable[name='checkInfo']").length;
     var b=$("#checkcombinationAndcheck > lable[name='combiantionInfo']").length;
     for (var i=0;i<b; i++){//循环属于组合项的lable
-        combinationID[i]=$("lable[name='combiantionInfo']").attr("value");
+        combinationID[i]=$("lable[name='combiantionInfo']").eq(i).attr("value");
     }
     for (var i=0;i<a; i++){//循环属于体检项的lable
-        checkID[i]=$("lable[name='checkInfo']").attr("value");
+        checkID[i]=$("lable[name='checkInfo']").eq(i).attr("value");
     }
     var date = $.param({
         "sectionandcheckList": checkID,
