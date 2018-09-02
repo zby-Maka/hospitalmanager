@@ -47,11 +47,12 @@ function getcombinationidByid(combinaid) {
         dataType: "json",
         data: {"combinationId": combinaid},
         success: function (data) {
+            console.log(data)
             $.each(data, function (i, e) {
-                if (e.isEnable == 0) {
-                    $("input[name='isEnable'],[value='0']").attr("checked", true);
+                if (e.isEnable == 1) {
+                    $("input[name='isEnable']").eq(0).prop("checked",true);
                 } else {
-                    $("input[name='isEnable'],[value='1']").attr("checked", true);
+                    $("input[name='isEnable']").eq(1).prop("checked",true);
                 }
 
                 $("input[name='combinationName']").val(e.combinationName)
@@ -63,10 +64,10 @@ function getcombinationidByid(combinaid) {
                 $("input[name='resultToWay']").val(e.resultToWay)
                 $("input[name='resultToWay']").attr("readonly",true)
 
-                if (e.isSpecimen == 0) {
-                    $("input[name='isSpecimen'],[value='0']").attr("checked", true);
+                if (e.isSpecimen == 1) {
+                    $("input[name='isSpecimen']").eq(0).prop("checked",true);
                 } else {
-                    $("input[name='isSpecimen'],[value='1']").attr("checked", true);
+                    $("input[name='isSpecimen']").eq(1).prop("checked", true);
                 }
                 $("input[name='isSpecimen']").attr("readonly",true)
                 $("input[name='specimenType']").val(e.specimenType);
@@ -120,10 +121,16 @@ function addcom() {
         type: "get",
         traditional: true,
         success: function (data) {
-            if (data == 1)
+            if (data == 1){
                 alert("添加成功");
-            else
+                $("input[name='combinationName']").val("");
+                $("input[name='promptInformation']").val("")
+                $("input[name='resultToWay']").val("")
+                $("input[name='specimenType']").val("");
+            }
+            else{
                 alert("添加失败")
+            }
         },
         error: function () {
             alert("发生错误");

@@ -36,10 +36,10 @@ function getPackageAndCombinationInfo(packaid) {
             console.log(data)
             var content="";
             $.each(data, function (i, e) {
-                if (e.isEnable == 0) {
-                    $("input[name='isEnable'],[value='0']").attr("checked", true);
+                if (e.isEnable == 1) {
+                    $("input[name='isEnable']").eq(0).prop("checked",true);
                 } else {
-                    $("input[name='isEnable'],[value='1']").attr("checked", true);
+                    $("input[name='isEnable']").eq(1).prop("checked",true);
                 }
                 $("input[name='packageName']").val(e.packageName);
                 $("input[name='packageName']").attr("readonly",true)
@@ -70,10 +70,10 @@ function getPackageAndCheckInfo(packaid) {
             console.log(data)
             var content="";
             $.each(data, function (i, e) {
-                if (e.isEnable == 0) {
-                    $("input[name='isEnable'],[value='0']").attr("checked", true);
+                if (e.isEnable == 1) {
+                    $("input[name='isEnable']").eq(0).prop("checked",true);
                 } else {
-                    $("input[name='isEnable'],[value='1']").attr("checked", true);
+                    $("input[name='isEnable']").eq(1).prop("checked",true);
                 }
                 $("input[name='packageName']").val(e.packageName);
                 $("input[name='packageName']").attr("readonly",true)
@@ -194,10 +194,16 @@ function addpack() {
         type: "get",
         traditional:true,
         success: function (data) {
-            if (data==1)
-                alert("套餐表添加成功");
-            else
+            if (data==1){
+                alert("套餐添加成功");
+                $("input[name='packageName']").val("");
+                $("input[name='note']").val("")
+                $("textarea[name='scopeApplication']").val("");
+            }
+            else{
                 alert("添加失败")
+            }
+
         },
         error: function () {
             alert("发生错误");
