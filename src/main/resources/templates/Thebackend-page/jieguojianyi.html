@@ -65,29 +65,40 @@
 <script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
 <script>
     $(function () {
-        getcommonresult();
-        getcommonresultxia();
+        var checkId = sessionStorage.getItem("checkId");
+        getcommonresult(checkId);
+        getcommonresultxia(checkId);
+
+        $("select[name=checkId]").change(function () {
+            getcommonresult($(this).val());
+        });
     });
+
     //查询常见结果
-    function getcommonresult() {
-        $.post("http://localhost:8080/commonresult.do",function (data) {
+    function getcommonresult(checkId) {
+        $.post("http://localhost:8080/commonresult.do",{"checkId":checkId},function (data) {
             var content="";
             $.each(data,function (i,e) {
                 content+="<tr>" +
                     "<td>"+e.commonResultsId+"</td>" +
                     "<td>"+e.resultDesc+"</td>" +
                     "<td id='last'><a href='javascript:void(0)' onclick='findById("+e.commonResultsId+")'>编辑</a></td>" +
+                    "<td id='last'><a href='javascript:void(0)' onclick='getjianyi("+e.commonResultsId+")'>查看建议</a></td>" +
                     "</tr>";
             })
             $("#nums").html(content);
         },"json")
     }
     //获取下拉框的值
-    function getcommonresultxia() {
+    function getcommonresultxia(checkId) {
         $.post("http://localhost:8080/checkall.do",function (data) {
             var content="";
             $.each(data,function (i,e) {
-                content+="<option value='"+e.checkId+"'>"+e.checkName+"</option>";
+                	if(parseInt(checkId)==e.checkId) {
+                        content += "<option selected='selected' value='" + e.checkId + "'>" + e.checkName + "</option>";
+                    }else{
+                        content+="<option value='"+e.checkId+"'>"+e.checkName+"</option>";
+					}
             })
             $("#checkid").html(content);
         },"json")
@@ -109,6 +120,9 @@
             $("input[name=resultDesc]").val(data.resultDesc);
 
         },"json")
+    }
+    function checkchuanid(commonResultsId) {
+        localStorage.cid = commonResultsid;
     }
 </script>
 </html>

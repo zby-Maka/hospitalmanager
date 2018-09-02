@@ -7,6 +7,9 @@ $(function () {
         $("#sectionname").val(sname);
         $("input[name='sectionId']").val(sid);
         showCheckById(checkid);
+        var getresult="<input type='button' value='查看结果'  onclick='goresult("+checkid+")'>"
+        $("input[type='reset']").after(getresult)
+
     } else {
         var sname = localStorage["secname"];
         var sid = localStorage["secid"];
@@ -130,4 +133,9 @@ function updcheck() {
             alert("发生错误");
         }
     })
+}
+function goresult(chkid) {
+    sessionStorage.setItem("checkId",chkid);
+    window.location.href="http://localhost:8080/Thebackend-page/jieguojianyi.html";
+    //   $("#rightMain").attr("src", "/Thebackend-page/jieguojianyi.html");
 }

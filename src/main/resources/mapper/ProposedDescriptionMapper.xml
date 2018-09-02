@@ -8,7 +8,7 @@
          SELECT * FROM `proposed_description` WHERE result_id=#{resultId} LIMIT 1
      </select>
     <select id="getProposedDescriptionlist" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
-          SELECT * FROM `proposed_description`
+          SELECT * FROM `proposed_description` WHERE result_id=#{resultId}
     </select>
     <!--添加建议描述信息-->
     <insert id="addProposedDescriptionInfo">

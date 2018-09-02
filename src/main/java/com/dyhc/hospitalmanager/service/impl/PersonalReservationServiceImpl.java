@@ -60,6 +60,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Autowired
     private MessageProducer messageProducer;
 
+    public String result="ok";
+
 
     /**
      * 根据身份证号查询用户信息表
@@ -211,14 +213,14 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         map.put("checkId",checkId);
         //发送消息
         messageProducer.sendMessage(destination,JSON.toJSONString(map));
-        String value="";
-        for (int i=0;i<=0;i--){
-            value=redisDao.getValue(personInfo.getPersonIdCard());
-            if (value!=null&&!"".equals(value)&&value!=""){
-                break;
+        Timer timer=new Timer();
+        TimerTask task=new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println(result);
             }
-        }
-        return value;
+        };
+        return result;
     }
 
     /**
@@ -271,10 +273,9 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         System.out.println(value);
         if (value>1){
             redisDao.decr(yuDate,1);
-            String result=UserReservation(personInfo,yuDate,packId,comId,checkId);
-            redisDao.setKey(personInfo.getPersonIdCard(),result);
+            result=UserReservation(personInfo,yuDate,packId,comId,checkId);
         }else{
-            redisDao.setKey(personInfo.getPersonIdCard(),"-1");
+            result="-1";
         }
     }
 
