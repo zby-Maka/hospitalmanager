@@ -214,6 +214,11 @@
             success: function (data) {
                 if(data>0){
                     alert("添加成功");
+                    $("input[name='groupName']").val("");
+                    //年龄上限
+                    $("input[name=ageUp]").val("");
+                    //年龄下限
+                    $("input[name=ageDown]").val("");
                 }else{
                     alert("人员信息已存在请勿重新添加");
                 }
