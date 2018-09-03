@@ -129,7 +129,30 @@ var choose = false;
 
 //上传按钮
 $("input[name=upload]").click(function () {
-    upload();
+    var textControl = $("#companyInfo input");
+    $.each(textControl,function (i,e) {
+        if(e.type=="text" && e.value=="") {
+            flag = false;
+            alert("请先完善公司信息！");
+            return false;
+        }
+    });
+    if(flag){
+        //获取公司名称
+        var companyName = $("input[name=companyName]").val();
+        alert("这个公司的名称:"+companyName);
+        //获取上传文件的文件名称
+        //           C:\fakepath\北大青鸟.xlsx
+        var file=$("#file").val();
+        var fileNames=file.substring(file.lastIndexOf("\\")+1,file.indexOf("."));
+        if(companyName == fileNames){
+            upload();
+        }else{
+            alert("文件名与公司名不匹配");
+        }
+
+    }
+   /* */
 });
 
 //绑定type=file的元素的onchange事件的处理函数
