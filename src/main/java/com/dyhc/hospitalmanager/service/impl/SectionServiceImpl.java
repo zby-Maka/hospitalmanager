@@ -32,6 +32,8 @@ public class SectionServiceImpl implements SectionService {
     private PersonInfoMapper personInfoMapper;
     @Autowired
     private  SectionMapper sectionMapper;
+    @Autowired
+    private PhysicalExaminationAndCheckMapper physicalExaminationAndCheckMapper;
 
 
 
@@ -83,10 +85,6 @@ public class SectionServiceImpl implements SectionService {
         return list;
     }
 
-    @Override
-    public Integer addCheckResultAndMedicalEvent(CheckResult checkResult, MedicalEvents medicalEvents, Integer sectionId) {
-        return null;
-    }
 
 
     @Override
@@ -116,6 +114,23 @@ public class SectionServiceImpl implements SectionService {
         }catch (Exception e){
             logger.error("增加出错了");
             e.printStackTrace();
+        }
+        return ok;
+    }
+
+    @Override
+    public Integer updateStatu(String peaId,Integer checkId) {
+        Integer update=0;
+        Integer ok=0;
+        try {
+            update=physicalExaminationAndCheckMapper.updateStatu(peaId,checkId);
+            if(update>0){
+                ok=2;
+            }else{
+                ok=1;
+            }
+        }catch (Exception e){
+           e.printStackTrace();
         }
         return ok;
     }
