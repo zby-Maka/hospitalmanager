@@ -17,13 +17,15 @@ function  getPerson() {
             $("label[name=personSex]").text(m.personSex);
             $("label[name=isMarry]").text(m.isMarry);
         });
-        console.log(date);
-        alert(date.map);
-        var content="<ul></ul>";
-        $.each(date.map,function (b,n) {
-            content+="<a href='javascript:result("+n.checkId+")'><li class='checkli'>"+n.checkName+"</li></a>"
-        });
-        $("#check").html(content);
+        if($.trim(date.map)==''){
+            alert("该体检人员暂无此科室体检项");
+        }else{
+            var content="<ul></ul>";
+            $.each(date.map,function (b,n) {
+                content+="<a href='javascript:result("+n.checkId+")'><li class='checkli'>"+n.checkName+"</li></a>"
+            });
+            $("#check").html(content);
+        }
     });
 }
 //获取结果

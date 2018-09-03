@@ -17,11 +17,16 @@ $(function () {
                 $("label[name=personSex]").text(m.personSex);
                 $("label[name=isMarry]").text(m.isMarry);
             });
-            var content="";
-            $.each(date.map,function (b,n) {
-                content+="<a href='javascript:getYan("+n.checkId+")'><li class='checkli'>"+n.checkName+"</li></a>";
-            });
-            $("#check").html(content);
+            if($.trim(date.map)==''){
+                alert("该体检人员暂无此科室体检项");
+            }else{
+                var content="";
+                $.each(date.map,function (b,n) {
+                    content+="<a href='javascript:getYan("+n.checkId+")'><li class='checkli'>"+n.checkName+"</li></a>";
+                });
+                $("#check").html(content);
+            }
+
         });
     }
 
