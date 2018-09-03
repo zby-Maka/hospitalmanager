@@ -10,7 +10,7 @@ function getinsertcommonresult() {
     var resultDesc = $("[name=resultDesc]").val();
     var checkid=$("#checkid").val();
     var crId=localStorage["cid"];
-    $("input[type='button']").parent().append(get());
+    //$("input[type='button']").parent().append(get());
     alert(checkid);
     if (commonResultsId==0){
         $.post("http://localhost:8080/insertcommonResults.do",content,function (data) {
@@ -22,7 +22,7 @@ function getinsertcommonresult() {
             }
         },"json")
     } else {
-        $.post("http://localhost:8080/insertcommonResults.do?commonResultsId="+commonResultsId+"&resultDesc="+resultDesc,function (data) {
+        $.post("http://localhost:8080/insertcommonResults.do?commonResultsId="+commonResultsId,content,function (data) {
             if (data.status==1){
                 alert("修改成功");
                 location.href="http://localhost:8080/Thebackend-page/jieguojianyi.html"
