@@ -68,7 +68,6 @@ public class SectionController {
         return content;
     }
 
-    //CheckResult checkResult,
     //检查增加体检结果，检验增加体检结果和检验明细
     @RequestMapping("addResultAndMedicalEvent.html")
     @ResponseBody
@@ -83,7 +82,6 @@ public class SectionController {
             medicalEvents = JSONArray.parseArray(arrJSON,MedicalEvents.class);
         }
         Integer add=sectionService.addCheckResultAndMedicalEvent(checkResult,medicalEvents,sectionId);
-
         String json="";
         System.out.println(add);
         if(add>0){
@@ -92,5 +90,11 @@ public class SectionController {
             json="{\"stat\":\"no\"}";
         }
         return json;
+    }
+    @RequestMapping("/update.html")
+    @ResponseBody
+    public String updateStatu(@RequestParam("peaId")String peaId,@RequestParam("checkId")Integer checkId){
+        Integer update=sectionService.updateStatu(peaId,checkId);
+        return  JSON.toJSONString(update);
     }
 }
