@@ -9,10 +9,6 @@ $(function () {
         showCheckById(checkid);
         var getresult="<input type='button' value='查看结果'  onclick='goresult("+checkid+")'>"
         $("input[type='reset']").after(getresult)
-
-
-        var getresult="<input type='button' value='查看结果'  onclick='goresult("+checkid+")'>"
-        $("input[type='reset']").after(getresult)
     } else {
         var sname = localStorage["secname"];
         var sid = localStorage["secid"];
