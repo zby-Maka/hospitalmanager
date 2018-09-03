@@ -37,6 +37,7 @@ $("input[name=companyName]").blur(function () {
                 $("input[name=bankNumber]").val(data.bankNumber);
                 $("input[name=companyNature]").val(data.companyNature);
                 $("input[name=authorizedStrength]").val(data.authorizedStrength);
+                $("input[name=bankName]").val(data.bankName);
             }
 
 
@@ -44,65 +45,86 @@ $("input[name=companyName]").blur(function () {
         dataType: "json"
     });
 });
+var flag=true;
+var choose = false;
     //确定事件
     $("input[name=confirm]").click(function () {
+
+        var textControl = $("#companyInfo input");
         var companyId = $("input[name=companyId]").val();
-        if(companyId > 0){
-            //执行修改操作
-            var content = $("#companyInfo").serialize();
-            $.ajax({
-                url:"/updCompanyInfo.do",
-                data:content,
-                type:"get",
-                dataType:"json",
-                success:function (data) {
-                    if(data>0){
-                        alert("修改成功");
-                        location.href ="/booking.html" ;
-                        /*$("input[name=companyName]").val("");
-                        $("input[name=companyId]").val("");
-                        $("input[name=companyPrincipal]").val("");
-                        $("input[name=telephone]").val("");
-                        $("input[name=address]").val("");
-                        $("input[name=bankNumber]").val("");
-                        $("input[name=companyNature]").val("");
-                        $("input[name=authorizedStrength]").val("");
-                        var file = $("#file") ;
-                        file.after(file.clone().val(""));
-                        file.remove();
-                        $("input[name=spellCode]").val("");
-                        $("input[name=bankName]").val("");*/
-                    }
-                }
-            });
-        }else{
-            var contents = $("#companyInfo").serialize();
-            $.ajax({
-                url: "/addCompanyInfo.do",
-                data: contents,
-                type: "get",
-                dataType:"json",
-                success: function (data) {
-                    if (data > 0) {
-                        alert("添加成功");
-                        location.href ="/booking.html" ;
-                       /* $("input[name=companyName]").val("");
-                        $("input[name=companyId]").val("");
-                        $("input[name=companyPrincipal]").val("");
-                        $("input[name=telephone]").val("");
-                        $("input[name=address]").val("");
-                        $("input[name=bankNumber]").val("");
-                        $("input[name=companyNature]").val("");
-                        $("input[name=authorizedStrength]").val("");
-                        var file = $("#file") ;
-                        file.after(file.clone().val(""));
-                        file.remove();
-                        $("input[name=spellCode]").val("");
-                        $("input[name=bankName]").val("");*/
-                    }
-                }
-            });
+        $.each(textControl,function (i,e) {
+            if(e.type=="text" && e.value=="") {
+                flag = false;
+                alert("请完善公司信息！");
+                return false;
+            }
+        });
+        if($.trim($("#file").val())==''){
+            flag = false;
+            alert("请选择Excel文件");
+            return false;
         }
+        if(flag && choose){
+            if(companyId > 0){
+                //执行修改操作
+                var content = $("#companyInfo").serialize();
+                $.ajax({
+                    url:"/updCompanyInfo.do",
+                    data:content,
+                    type:"get",
+                    dataType:"json",
+                    success:function (data) {
+                        if(data>0){
+                            alert("修改成功");
+                            location.href ="/booking.html" ;
+                            /*$("input[name=companyName]").val("");
+                            $("input[name=companyId]").val("");
+                            $("input[name=companyPrincipal]").val("");
+                            $("input[name=telephone]").val("");
+                            $("input[name=address]").val("");
+                            $("input[name=bankNumber]").val("");
+                            $("input[name=companyNature]").val("");
+                            $("input[name=authorizedStrength]").val("");
+                            var file = $("#file") ;
+                            file.after(file.clone().val(""));
+                            file.remove();
+                            $("input[name=spellCode]").val("");
+                            $("input[name=bankName]").val("");*/
+                        }
+                    }
+                });
+            }else{
+                var contents = $("#companyInfo").serialize();
+                $.ajax({
+                    url: "/addCompanyInfo.do",
+                    data: contents,
+                    type: "get",
+                    dataType:"json",
+                    success: function (data) {
+                        if (data > 0) {
+                            alert("添加成功");
+                            location.href ="/booking.html" ;
+                            /* $("input[name=companyName]").val("");
+                             $("input[name=companyId]").val("");
+                             $("input[name=companyPrincipal]").val("");
+                             $("input[name=telephone]").val("");
+                             $("input[name=address]").val("");
+                             $("input[name=bankNumber]").val("");
+                             $("input[name=companyNature]").val("");
+                             $("input[name=authorizedStrength]").val("");
+                             var file = $("#file") ;
+                             file.after(file.clone().val(""));
+                             file.remove();
+                             $("input[name=spellCode]").val("");
+                             $("input[name=bankName]").val("");*/
+                        }
+                    }
+                });
+            }
+        }else {
+            alert("请将Excel文件上传");
+        }
+
 });
 
 //上传按钮
@@ -128,8 +150,14 @@ function upload() {
     var ext = file.slice(file.lastIndexOf(".")+1).toLowerCase();
     alert(ext);
     /*if(!/\.(xlsx|xls|XLSX|XLS)$/.test(ext)){*/
+    if($.trim($("#file").val())==''){
+        alert("请选择Excel文件");
+        flag = false;
+        return false;
+    }
     if ("xls" != ext && "xlsx" != ext) {
         alert("只能上传Excle文件");
+        flag = false;
         return false;
     }
     else {
@@ -155,13 +183,16 @@ function upload() {
             success: function (result) {
                 alert(result);
                 if (result == 1) {
+                    choose = true;
                     alert("上传成功");
 
                 }
                 if (result == 2) {
+                    flag = false;
                     alert("文件上传格式不正确,请重新选择");
                 }
                 if (result == 3) {
+                    flag = false;
                     alert("请重新核实文件数据");
                 }
                 //$("#result").html(result.data);

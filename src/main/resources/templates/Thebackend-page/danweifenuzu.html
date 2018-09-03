@@ -17,8 +17,8 @@
                 <table>
                     <tr>
                         <td style="width: 150px; text-align: right;">是否启用：</td>
-                        <td><input type="radio" value="0" name="yesorno"/>是</td>
-                        <td><input type="radio" value="1" name="yesorno"/>否</td>
+                        <td><input type="radio" value="0" name="yesorno" disabled="=disabled"/>是</td>
+                        <td><input type="radio" value="1" name="yesorno" checked="checked"  disabled="=disabled"/>否</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -214,6 +214,11 @@
             success: function (data) {
                 if(data>0){
                     alert("添加成功");
+                    $("input[name='groupName']").val("");
+                    //年龄上限
+                    $("input[name=ageUp]").val("");
+                    //年龄下限
+                    $("input[name=ageDown]").val("");
                 }else{
                     alert("人员信息已存在请勿重新添加");
                 }

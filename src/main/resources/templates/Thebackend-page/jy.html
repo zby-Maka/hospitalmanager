@@ -59,12 +59,14 @@
 	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
 	<script>
 	$(function () {
-	getproposedDescription();
-	getcommonresultxia();
+        var commonResultsId = sessionStorage.getItem("commonResultsId");
+		getproposedDescription(commonResultsId);
+		getcommonresultxia(commonResultsId);
 	});
 	//查询常见结果
-	function getproposedDescription() {
-	$.post("http://localhost:8080/proposedDescription.do",function (data) {
+	function getproposedDescription(commonResultsId) {
+	    alert(commonResultsId)
+	$.post("http://localhost:8080/proposedDescription.do",{"resultId":commonResultsId},function (data) {
 	var content="";
 	$.each(data,function (i,e) {
 	content+="<tr>" +
@@ -77,11 +79,16 @@
 	},"json")
 	}
 	//获取下拉框的值
-	function getcommonresultxia() {
-	$.post("http://localhost:8080/commonresult.do",function (data) {
+	function getcommonresultxia(commonResultsId) {
+	$.post("http://localhost:8080/commonresult.do",{checkId:commonResultsId},function (data) {
 	var content="";
 	$.each(data,function (i,e) {
-		content+="<option value='"+e.commonResultsId+"'>"+e.resultDesc+"</option>";
+	    if(e.commonResultsId==parseInt(commonResultsId)){
+            content+="<option value="+e.commonResultsId+">"+e.resultDesc+"</option>";
+		}else {
+            content+="<option value="+e.commonResultsId+">"+e.resultDesc+"</option>";
+		}
+
 	})
 	$("#commonResultsid").html(content);
 	},"json")

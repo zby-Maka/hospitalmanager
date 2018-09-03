@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CommonResultsMapper">
     <select id="getCommResultslist" resultType="com.dyhc.hospitalmanager.pojo.CommonResults">
-        SELECT * FROM common_results
+        SELECT * FROM common_results where check_id=#{checkId}
     </select>
     <!-- 根据体检项id查常见结果表，默认显示第一条 -->
       <select id="getCommResultsByCheckId" resultType="com.dyhc.hospitalmanager.pojo.CommonResults">

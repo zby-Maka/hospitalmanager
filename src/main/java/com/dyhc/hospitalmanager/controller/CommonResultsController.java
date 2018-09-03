@@ -60,6 +60,7 @@ public class CommonResultsController {
     public String getCommonResult(Integer checkId){
         List<CommonResults> commonResultsList=commonResultsService.getCommResultslist(checkId);
         String json=JSON.toJSONString(commonResultsList);
+        System.out.println(json);
         return json;
     }
 }
