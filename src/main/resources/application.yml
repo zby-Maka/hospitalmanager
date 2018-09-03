@@ -2,6 +2,7 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.jdbc.Driver
+      #192.168.50.158:3306
       url: jdbc:mysql://120.79.200.87:3306/health_examination_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: root
       password: Project123..
