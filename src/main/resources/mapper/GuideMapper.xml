@@ -31,4 +31,25 @@
       INNER JOIN `check` c ON peac.`check_id` = c.`check_id`
       WHERE pe.`physical_examination_id` =#{physicalExaminationId}
     </select>
+
+  <!--根据身份证号查询该套餐-->
+  <select id="getPackageId" resultType="int">
+    SELECT g.`package_id` FROM person_info per
+    INNER JOIN `group` g ON per.`group_id` = g.`group_id`
+    INNER JOIN package p ON p.`package_id` = g.`package_id`
+    WHERE per.`person_id_card` = #{personIdCard};
+  </select>
+
+  <select id="listCheckId" resultType="com.dyhc.hospitalmanager.pojo.Check">
+    SELECT c.* FROM `package` p
+    INNER JOIN `package_and_ check` pac ON p.package_id = pac.`package_id`
+    INNER JOIN `check` c ON c.`check_id` = pac.check_id
+    WHERE p.package_id = #{packageId}
+    UNION
+    SELECT c.* FROM `package` p
+    INNER JOIN `package_and_ combination` pac ON pac.`package_id` = p.package_id
+    INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id`
+    INNER JOIN `check` c ON c.`check_id` = cac.`check_id`
+    WHERE p.package_id= #{packageId}
+  </select>
 </mapper>

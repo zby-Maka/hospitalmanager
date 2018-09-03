@@ -57,4 +57,26 @@ public interface UnitReservationService {
 
     CompanyInfo showCompanyInfoById(Integer companyId);
 
+    /**
+     *  根据用户身份证号码查询用户信息
+     * @param personIdCard 身份证号码
+     * @return
+     */
+    PersonInfo findPersonInfoPersonIdCard(@Param("personIdCard") String personIdCard);
+
+    /**
+     * 根据身份证号查询套餐id
+     * @param personIdCard
+     * @return
+     */
+    int getPackageId(@Param("personIdCard")String personIdCard);
+
+    /**
+     * 根据套餐id显示所有的体检信息
+     * @param personIdCard
+     * @return
+     * @throws Exception
+     */
+    List<Check> listCheckId(@Param("personIdCard")Integer personIdCard)throws Exception;
+
 }
