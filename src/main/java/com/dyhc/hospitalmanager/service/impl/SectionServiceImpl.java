@@ -119,7 +119,7 @@ public class SectionServiceImpl implements SectionService {
     }
 
     @Override
-    public Integer updateStatu(String peaId, Integer checkId) {
+    public Integer updateStatu(String peaId,Integer checkId) {
         Integer update=0;
         Integer ok=0;
         try {
