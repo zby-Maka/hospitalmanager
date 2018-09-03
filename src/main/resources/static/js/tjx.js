@@ -56,10 +56,12 @@ function showCheckById(checkid) {
                 }
                 $("input[name='checkName']").val(e.checkName)
                 $("input[name='checkName']").attr("readonly",true);
+
                 $("input[name='checkId']").val(e.checkId)
                 $("#ckid").val(e.checkId);
                 $("input[name='checkSpellCode']").val(e.checkSpellCode);
                 $("input[name='checkSpellCode']").attr("readonly",true);
+
                 if (e.termSex == "男") {
                     $("input[name='termSex']").eq(0).prop("checked", true);
                 } else if(e.termSex == "女") {
@@ -69,20 +71,30 @@ function showCheckById(checkid) {
                 }
                 $("input[name='termSex']").attr("readonly",true);
 
+                $("input[name='checkPrice']").val(e.checkPrice);
+                $("input[name='checkPrice']").attr("readonly",true);
+
                 $("input[name='checkAddress']").val(e.checkAddress);
                 $("input[name='checkAddress']").attr("readonly",true);
+
                 $("input[name='referenceCeil']").val(e.referenceCeil);
                 $("input[name='referenceCeil']").attr("readonly",true);
+
                 $("input[name='referenceFloor']").val(e.referenceFloor);
                 $("input[name='referenceFloor']").attr("readonly",true);
+
                 $("input[name='maxValue']").val(e.maxValue);
                 $("input[name='maxValue']").attr("readonly",true);
+
                 $("input[name='minValue']").val(e.minValue);
                 $("input[name='minValue']").attr("readonly",true);
+
                 $("input[name='promptHigh']").val(e.promptHigh);
                 $("input[name='promptHigh']").attr("readonly",true);
+
                 $("input[name='promptFlat']").val(e.promptFlat);
                 $("input[name='promptFlat']").attr("readonly",true);
+
                 $("textarea[name='remark']").val(e.remark);
                 $("textarea[name='remark']").attr("readonly",true);
 
@@ -108,6 +120,7 @@ function addcheck() {
                 alert("添加成功");
                 $("input[name='checkName']").val("");
                 $("input[name='checkSpellCode']").val("");
+                $("input[name='checkPrice']").val("");
                 $("input[name='checkAddress']").val("");
                 $("input[name='referenceCeil']").val("");
                 $("input[name='referenceFloor']").val("");
