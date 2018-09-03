@@ -129,6 +129,19 @@ var choose = false;
 
 //上传按钮
 $("input[name=upload]").click(function () {
+    var file=$("#file").val();
+    var ext = file.slice(file.lastIndexOf(".")+1).toLowerCase();
+    /*if(!/\.(xlsx|xls|XLSX|XLS)$/.test(ext)){*/
+    if($.trim($("#file").val())==''){
+        alert("请选择Excel文件");
+        flag = false;
+        return false;
+    }
+    if ("xls" != ext && "xlsx" != ext) {
+        alert("只能上传Excle文件");
+        flag = false;
+        return false;
+    }
     var textControl = $("#companyInfo input");
     $.each(textControl,function (i,e) {
         if(e.type=="text" && e.value=="") {
@@ -171,7 +184,6 @@ $(':file').change(
 function upload() {
     var file=$("#file").val();
     var ext = file.slice(file.lastIndexOf(".")+1).toLowerCase();
-    alert(ext);
     /*if(!/\.(xlsx|xls|XLSX|XLS)$/.test(ext)){*/
     if($.trim($("#file").val())==''){
         alert("请选择Excel文件");
