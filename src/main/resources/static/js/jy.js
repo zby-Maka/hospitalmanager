@@ -3,7 +3,7 @@ function  getclearproposedDescription() {
     $("input[name='sciencePopularization']").val("");
     $("input[name='adviceContent']").val("");
 }
-//添加常见结果
+//添加常见建议
 function getinsertproposedDescription() {
     var content = $('form').serialize();
     var proposedDescriptionId=$("#proposedDescriptionIds").val();

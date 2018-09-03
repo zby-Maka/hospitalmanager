@@ -63,7 +63,7 @@
     </insert>
     <!--根据套餐id查询套餐信息以及下组合项信息-->
     <select id="getPackageAndCombinationInfoById" resultMap="getPC">
-                     SELECT
+      SELECT
         package.package_id,
         package.package_name,
         package.scope_application,

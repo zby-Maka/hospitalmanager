@@ -20,7 +20,7 @@
     </select>
     <!--通过体检编号查询常见结果以及建议-->
     <select id="getCheckResults" resultMap="getResult">
-        SELECT * FROM `check_result` cr
+SELECT * FROM `check_result` cr
 LEFT JOIN `common_results` comre ON cr.check_result_finally=comre.common_results_id
 LEFT JOIN `proposed_description` pd ON pd.`result_id` = comre.`common_results_id`
 INNER JOIN `medical_events` me ON me.`check_result_id` = cr.`check_result _id`
