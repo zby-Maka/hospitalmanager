@@ -38,4 +38,10 @@ public interface CostOfModuleService {
      */
     String getCostTypeByPersonId(Integer personId,String costType);
 
+    /**
+     * 根据体检编号与费用类型判断该用户是否已进行缴费
+     * @return
+     */
+    Integer getCostIdByPhysical_Examination_IdAndCostType(String physical_examination_id);
+
 }

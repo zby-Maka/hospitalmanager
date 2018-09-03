@@ -3,6 +3,7 @@ package com.dyhc.hospitalmanager.controller;
 import com.alibaba.fastjson.JSON;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.service.CostOfModuleService;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -55,6 +56,13 @@ public class CostOfModuleController {
     public Object getCostTypeByPersonId(Integer personId,String costType){
         String str = costOfModuleService.getCostTypeByPersonId(personId,costType);
         String json = JSON.toJSONString(str);
+        return json;
+    }
+
+    @RequestMapping("getNumber.do")
+    @ResponseBody
+    public Object getNumber(String physical_examination_id){
+        String json = JSON.toJSONString(costOfModuleService.getCostIdByPhysical_Examination_IdAndCostType(physical_examination_id));
         return json;
     }
 
