@@ -113,9 +113,9 @@ function  updateStatu() {
     $.getJSON("http://localhost:8080/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
         var ok=0;
         if(data>0){
-            ok="1"
+            ok=1;
         }else{
-            ok="0";
+            ok=0;
         }
     })
 

@@ -181,7 +181,10 @@ function showcheckcheckbox(combid) {
         success: function (data) {
             var content = "";
             $.each(data, function (i, e) {
-                content += "<tr><td><input type='checkbox' value='" + e.combinationCheckList[i].checkId + "'>" + e.combinationCheckList[i].checkName + "</td></tr>";
+                $.each(e.combinationCheckList,function (o,r) {
+                    content += "<tr><td><input type='checkbox' value='" + r.checkId + "'>" + r.checkName + "</td></tr>";
+                })
+
             })
             $("#content").html(content);
         }, error: function () {
