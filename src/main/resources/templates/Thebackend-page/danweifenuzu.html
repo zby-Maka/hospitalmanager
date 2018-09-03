@@ -17,8 +17,8 @@
                 <table>
                     <tr>
                         <td style="width: 150px; text-align: right;">是否启用：</td>
-                        <td><input type="radio" value="0" name="yesorno" disabled="=disabled"/>是</td>
-                        <td><input type="radio" value="1" name="yesorno" checked="checked"  disabled="=disabled"/>否</td>
+                        <td><input type="radio" value="1" name="isDelete"  checked="checked"  />是</td>
+                        <td><input type="radio" value="0" name="isDelete"/>否</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -194,8 +194,8 @@
 
         var groupInfo ={companyId:""+$("input[name='companyId']").val()+"",groupName:""+$("input[name='groupName']").val()+"",
             termSex:""+sex+"",termIsMarry:""+isMarry+"",
-            termAgeFloor:""+ageDown+"",termAgeCeil:""+ageUp+"",packageId:""+$("input[name=packageId]:checked").val()+""
-        };//$("#groupPerson").serialize();
+            termAgeFloor:""+ageDown+"",termAgeCeil:""+ageUp+"",packageId:""+$("input[name=packageId]:checked").val()+"",
+            isDelete:""+$("input[name='isDelete']:checked").val()+""};//$("#groupPerson").serialize();
         console.log(perList);
         console.log(groupInfo);
 

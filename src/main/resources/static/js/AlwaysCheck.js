@@ -90,6 +90,7 @@ function  getpersoninfo() {
     $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (results) {
         sessionStorage.setItem("four",JSON.stringify(results));
         var contens="";
+        alert(results)
         $.each(results,function (i,e) {
             contens+=e.commonResults.proposedDescription.adviceContent+"\n";
         });

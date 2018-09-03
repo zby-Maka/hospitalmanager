@@ -56,6 +56,7 @@ $(function () {
             success: function (resultJSON) {
                 console.log(resultJSON);
                 if (resultJSON.stat == "ok") {
+                    updateStatu();
                     alert("success");
                     qing();
                 } else {
@@ -104,4 +105,18 @@ function  qing() {
     $("label[name=isMarry]").text("");
     $("#check").html("");
     $("#show").html("");
+}
+//体检成功之后修改状态
+function  updateStatu() {
+    var peaId=$("input[name=physicalExaminationId]").val();
+    var checkId=$("input[name=checkId]").val();
+    $.getJSON("http://localhost:8080/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
+        var ok=0;
+        if(data>0){
+            ok=1;
+        }else{
+            ok=0;
+        }
+    })
+
 }

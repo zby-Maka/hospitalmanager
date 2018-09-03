@@ -6,10 +6,10 @@
 		<title>jy</title>
 	</head>
 	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
-		<div style="width: 80%; height: 279mm; margin: 0 auto;background-color: #f8f8f8; opacity: 0.8;">
+		<div style="width: 80%; height: 200mm; margin: 0 auto;background-color: #f8f8f8; opacity: 0.8;">
 			<h2 style="display: block; text-align: center;">检验项维护</h2>
 			<div style="margin-left: 30px;">
-				<h3 style="display: inline;">所属结果：</h3><label>----</label>
+				<h3 style="display: inline;">所属结果：</h3><label></label>
 				<table style="width: 300px; margin-top: 20px; margin-left: 10px;">
 					<thead>
 						<tr>
@@ -36,7 +36,7 @@
 							<tr>
 								<td style="text-align: right;">所属结果：</td>
 								<td colspan="2">
-								<select name="commonResultsId" id="commonResultsid">
+								<select name="resultId" id="commonResultsid">
 								</select></td>
 							</tr>
 							<tr>
@@ -63,7 +63,7 @@
 		getproposedDescription(commonResultsId);
 		getcommonresultxia(commonResultsId);
 	});
-	//查询常见结果
+	//查询建议
 	function getproposedDescription(commonResultsId) {
 	    alert(commonResultsId)
 	$.post("http://localhost:8080/proposedDescription.do",{"resultId":commonResultsId},function (data) {
@@ -80,7 +80,10 @@
 	}
 	//获取下拉框的值
 	function getcommonresultxia(commonResultsId) {
-	$.post("http://localhost:8080/commonresult.do",{checkId:commonResultsId},function (data) {
+	    alert(commonResultsId);
+	$.post("http://localhost:8080/commonresult.do",
+		{"checkId":commonResultsId},function (data) {
+	    alert(data)
 	var content="";
 	$.each(data,function (i,e) {
 	    if(e.commonResultsId==parseInt(commonResultsId)){
@@ -88,7 +91,6 @@
 		}else {
             content+="<option value="+e.commonResultsId+">"+e.resultDesc+"</option>";
 		}
-
 	})
 	$("#commonResultsid").html(content);
 	},"json")

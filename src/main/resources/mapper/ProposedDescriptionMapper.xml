@@ -5,7 +5,7 @@
 <mapper namespace="com.dyhc.hospitalmanager.dao.ProposedDescriptionMapper">
     <!-- 根据结果id查建议描述表，默认显示第一条 -->
      <select id="getProposedByResultId" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
-         SELECT * FROM `proposed_description` WHERE result_id=#{resultId} LIMIT 1
+         SELECT * FROM `proposed_description` WHERE result_id=#{resultId} AND is_delete=1 LIMIT 1
      </select>
     <select id="getProposedDescriptionlist" resultType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
           SELECT * FROM `proposed_description` WHERE result_id=#{resultId}

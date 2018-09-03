@@ -33,7 +33,7 @@ public interface SectionMapper {
      * @param sectionId
      * @return
      */
-    List<Section>getSectionInfoById(@Param("sectionId")Integer sectionId)throws Exception;
+    List<Section> getSectionInfoById(@Param("sectionId")Integer sectionId)throws Exception;
 
     /**
      * 根据角色id获取科室id
@@ -69,8 +69,5 @@ public interface SectionMapper {
      * @return
      */
     List<Section> getSectionList()throws Exception;
-
-
-
 
 }
