@@ -57,7 +57,7 @@ public class CommonResultsController {
      */
     @RequestMapping(value = "commonresult.do")
     @ResponseBody
-    public String getCommonResult(Integer checkId){
+    public String getCommonResult(@RequestParam("checkId") Integer checkId){
         List<CommonResults> commonResultsList=commonResultsService.getCommResultslist(checkId);
         String json=JSON.toJSONString(commonResultsList);
         System.out.println(json);

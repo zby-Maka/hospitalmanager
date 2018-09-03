@@ -129,4 +129,28 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
             return "";
         }
     }
+
+    /**
+     * 根据体检编号与费用类型判断该用户是否已进行缴费
+     * @param physical_examination_id
+     * @return
+     */
+    @Override
+    public Integer getCostIdByPhysical_Examination_IdAndCostType(String physical_examination_id) {
+        try {
+            Integer a = costMapper.getCostIdByPhysical_Examination_IdAndCostType(physical_examination_id,"收费");
+            if (a!=null){
+                return a;
+            }else {
+                return 0;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("根据体检编号与费用类型判断该用户是否已进行缴费失败");
+            return 0;
+        }
+
+
+    }
 }

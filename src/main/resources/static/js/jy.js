@@ -12,7 +12,6 @@ function getinsertproposedDescription() {
     alert(proposedDescriptionId);
     if (proposedDescriptionId==0){
         $.post("http://localhost:8080/insertProposedDescription.do",content,function (data) {
-            alert(data);
             if (data.status==1){
                 alert("添加成功");
                 location.href="http://localhost:8080/Thebackend-page/jy.html"
@@ -21,7 +20,7 @@ function getinsertproposedDescription() {
             }
         },"json")
     } else {
-        $.post("http://localhost:8080/insertProposedDescription.do?proposedDescriptionId="+proposedDescriptionId+"&sciencePopularization="+sciencePopularization+"&adviceContent="+adviceContent,function (data) {
+        $.post("http://localhost:8080/insertProposedDescription.do?proposedDescriptionId="+proposedDescriptionId,content,function (data) {
             if (data.status==1){
                 alert("修改成功");
                 $("#proposedDescriptionIds").val(0);
