@@ -83,7 +83,6 @@ public class SectionController {
             medicalEvents = JSONArray.parseArray(arrJSON,MedicalEvents.class);
         }
         Integer add=sectionService.addCheckResultAndMedicalEvent(checkResult,medicalEvents,sectionId);
-
         String json="";
         System.out.println(add);
         if(add>0){
@@ -92,5 +91,11 @@ public class SectionController {
             json="{\"stat\":\"no\"}";
         }
         return json;
+    }
+    @RequestMapping("/update.html")
+    @ResponseBody
+    public String updateStatu(@RequestParam("peaId")String peaId,@RequestParam("checkId")Integer checkId){
+        Integer update=sectionService.updateStatu(peaId,checkId);
+        return JSON.toJSONString(update);
     }
 }

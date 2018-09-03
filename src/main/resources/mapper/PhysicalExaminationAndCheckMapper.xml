@@ -22,4 +22,9 @@
             )
         </foreach>
     </insert>
+   <update id="updateStatu">
+       update `physical_examination_and_ check`
+        set `physical_statu`=1
+      where `physical_examination_id`=#{peaId} AND `check_id`=#{checkId}
+   </update>
 </mapper>

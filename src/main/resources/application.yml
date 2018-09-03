@@ -2,9 +2,9 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://120.79.200.87:3306/health_examination_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
-      username: root
-      password: Project123..
+      url: jdbc:mysql://192.168.51.161/health_examination_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: dxy
+      password: 123456
       db-type: com.alibaba.druid.pool.DruidDataSource #指定使用druid连接池作为数据源
       initial-size: 5 #初始化大小
       min-idle: 5 #最小空闲数

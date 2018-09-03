@@ -15,4 +15,12 @@ public interface PhysicalExaminationAndCheckMapper {
      * @return
      */
     Integer addBatchPhysicalExaminationAndCheck(@Param("physicalExaminationId") String physicalExaminationId, @Param("checkId") Integer[] checkId) throws Exception;
+
+    /**
+     *  根据体检编号和体检项id修改体检编号与体检关系表
+     * @param peaId
+     * @param checkId
+     * @return
+     */
+    Integer updateStatu(@Param("peaId")String peaId,@Param("checkId")Integer checkId)throws Exception;
 }

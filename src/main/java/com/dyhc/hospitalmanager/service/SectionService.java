@@ -41,14 +41,24 @@ public interface SectionService {
      * @return
      * @throws Exception
      */
-    Integer addCheckResultAndMedicalEvent(CheckResult checkResult,MedicalEvents medicalEvents,Integer sectionId);
+    Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId);
+    /**
+     *  根据体检编号和体检项id修改体检编号与体检关系表
+     * @param peaId
+     * @param checkId
+     * @return
+     */
+    Integer updateStatu(@Param("peaId")String peaId,@Param("checkId")Integer checkId);
+
+
+
     /**
      * 添加科室信息
      * @param section
      * @return
      */
     int addSectionInfo(Section section);
-    Integer addCheckResultAndMedicalEvent(CheckResult checkResult,List<MedicalEvents> medicalEvents,Integer sectionId);
+
     /**
      * 通过科室id赋值
      */
