@@ -48,7 +48,7 @@ public interface SectionService {
      * @param checkId
      * @return
      */
-    Integer updateStatu(@Param("peaId")String peaId,@Param("checkId")Integer checkId);
+    Integer updateStatu(@Param("peaId") String peaId,@Param("checkId")Integer checkId);
 
 
 
