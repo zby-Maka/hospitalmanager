@@ -94,8 +94,8 @@ $(function() {
 	});
 
 	//浮动组合项时显示该项下边的体检项
-    $("#com").on("mouseover","td[name=c]",function () {
-        var comId=$(this).children("input").val();
+    $("#com").on("mouseenter","td[name=c]",function () {
+        var comId=$(this).find("span input").val();
         $.getJSON("/getComCheck.do",{"comId":comId},function (comCheck) {
             var checkCom = "<table><tr>";
             console.log(comCheck);
@@ -109,8 +109,8 @@ $(function() {
     })
 
     //浮动套餐时显示该项下边的体检项
-    $("#package").on("mouseover","td[name=p]",function () {
-        var packId=$(this).children("input").val();
+    $("#package").on("mouseenter","td[name=p]",function () {
+        var packId=$(this).find("span input").val();
         var checkPack = "<table><tr>";
         $.getJSON("/getPackCheck.do",{"packId":packId},function (packCheck) {
             console.log(packCheck);
@@ -127,7 +127,7 @@ $(function() {
     })
 
     //移出事件
-	$(".tab_box").on("mouseleave","td[name=t],td[name=p],td[name=c]",function(){
+	$(".tab_box").on("mouseleave ","td[name=t],td[name=p],td[name=c]",function(){
         $(".childBox").html("");
         $(".childBox").hide();
 	});
@@ -186,7 +186,7 @@ function selAllCheck() {
     $.getJSON("/ExhibitionAllCombination.do",{},function (com) {
         var content = "<tr>";
         $.each(com,function (i,e) {
-            content+="<td><span style='text-align: center;margin-left: 15px;' name=\"c\"><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
+            content+="<td name='c'><span style='text-align: center;margin-left: 15px;'><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
             if((i+1)%3==0){
                 content+="</tr>";
             }
@@ -199,7 +199,7 @@ function selAllCheck() {
         var packageContent = "";
         var content = "<tr>";
         $.each(package,function (i,e) {
-            content+="<td><span style='text-align: center;margin-left: 15px;' name=\"p\"><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></span></td>";
+            content+="<td name='p'><span style='text-align: center;margin-left: 15px;'><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></span></td>";
             if((i+1)%3==0){
                 content +="</tr>";
             }

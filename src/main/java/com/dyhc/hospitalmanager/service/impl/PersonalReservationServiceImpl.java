@@ -60,6 +60,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Autowired
     private MessageProducer messageProducer;
 
+    public String result="ok";
+
 
     /**
      * 根据身份证号查询用户信息表
