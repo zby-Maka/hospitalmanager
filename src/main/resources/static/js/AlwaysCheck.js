@@ -22,6 +22,8 @@ function  getpersoninfo() {
         var contents="";
         var comt="";
         var jianyan="";
+        var one = "" ;
+        var two = "" ;
         $("#content").html("<table border=\"1\" style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\" id=\"checknum\"></table>");
         $.each(date,function (i,e) {
             jianyan="";
@@ -40,21 +42,24 @@ function  getpersoninfo() {
                     "<div style=\"width:  150mm;\">"+e.proposedDescription.adviceContent+"</div>" +
                     "</td>" +
                     "</tr>";
+                one += ""+e.commonResults.resultDesc+"";
+                two += ""+e.proposedDescription.adviceContent+"";
+
             }else {
                 //通过体检编号查询体检人员的检验项
-                $.each(e.medicalEventsList,function (i,c) {
-                    comt+= "<tr>" +
-                        "<td>"+c.eventsName+"</td>" +
-                        "<td>"+c.unit+"</td>" +
-                        "<td>"+c.upperLimit+"-"+c.lowerLimit+"</td>" +
-                        "<td>"+e.commonResults.resultDesc+"</td>" +
-                        "<td>"+c.medicalResult+"</td>" +
+                $.each(e.medicalEventsList, function (i, c) {
+                    comt += "<tr>" +
+                        "<td>" + c.eventsName + "</td>" +
+                        "<td>" + c.unit + "</td>" +
+                        "<td>" + c.upperLimit + "-" + c.lowerLimit + "</td>" +
+                        "<td>" + e.commonResults.resultDesc + "</td>" +
+                        "<td>" + c.medicalResult + "</td>" +
                         "</tr>";
                 });
-                jianyan="<table border=\"1\" style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\">\n" +
+                jianyan = "<table border=\"1\" style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\">\n" +
                     "<tbody><tr>" +
                     "<td align=\"right\">体检项：</td>" +
-                    "<td>"+e.checkName+"</td>" +
+                    "<td>" + e.checkName + "</td>" +
                     "</tr>" +
                     "<tr>" +
                     "<td align=\"right\">体检结果：</td>" +
@@ -69,7 +74,7 @@ function  getpersoninfo() {
                     "<td>提示</td>" +
                     "</tr>" +
                     "</thead>" +
-                    "<tbody>"+comt+"</tbody>" +
+                    "<tbody>" + comt + "</tbody>" +
                     "</table>\n" +
                     "</td>" +
                     "</tr>" +
@@ -77,24 +82,28 @@ function  getpersoninfo() {
             }
             $("#content").append(jianyan);
         })
+        $(".one").val(one);
+        $(".two").val(two);
         $("#checknum").html(contents);
     },"json");
     $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (result) {
         sessionStorage.setItem("three",JSON.stringify(result));
+        alert(result);
         var content="";
         $.each(result,function (i,n) {
             content+=n.commonResults.resultDesc+"\n";
         });
-        $("#one").val(content);
+        /*$("#one").val(content);*/
     },"json");
     $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (results) {
         sessionStorage.setItem("four",JSON.stringify(results));
+        alert(result);
         var contens="";
         alert(results)
         $.each(results,function (i,e) {
             contens+=e.commonResults.proposedDescription.adviceContent+"\n";
         });
-        $("#two").val(contens);
+        /*$("#two").val(contens);*/
     },"json");
 }
 
