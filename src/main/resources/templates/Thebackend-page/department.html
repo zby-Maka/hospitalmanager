@@ -136,7 +136,9 @@
 	<script>
 		$(function(){
 			$("ul").on("click",".checkli",function(){
+                $(".checkli").removeClass("xuan");
 				$(".checkli").css("background","white");
+				$(this).addClass("xuan");
 				$(this).css("background","red");
 			});
 		});

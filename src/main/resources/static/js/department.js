@@ -34,7 +34,6 @@ function  result(checkId) {
             $("#checkResultFinally textarea").html(e.resultDesc);
             getProposedByResultId(e.commonResultsId);
             $("input[name=checkResultFinally]").val(e.commonResultsId);//结果id
-
         });
 
     });
@@ -63,7 +62,8 @@ function  addResultAndMedicalEvent() {
             if (date.stat == "ok") {
                 updateStatu();
                 alert("success");
-               qing();
+                $(".xuan").parent().remove();
+                qing();
             } else {
                 alert("error");
             }
@@ -84,12 +84,15 @@ function formToJson(data){
 }
 //增加之后清空数据
 function  qing() {
-    $("input[name=physicalExaminationId]").val("");
-    $("label[name=personName]").text("");
-    $("label[name=personAge]").text("");
-    $("label[name=personSex]").text("");
-    $("label[name=isMarry]").text("");
-    $("#check").html("");
+    var checkli = $(".checkli");
+    if(checkli.length==0){
+        $("input[name=physicalExaminationId]").val("");
+        $("label[name=personName]").text("");
+        $("label[name=personAge]").text("");
+        $("label[name=personSex]").text("");
+        $("label[name=isMarry]").text("");
+        $("#check").html("");
+    }
     $("#checkResultFinally textarea").html("");
     $("input[name=checkResultFinally]").val("");//结果id
     $("#checkAdvice textarea").html("");

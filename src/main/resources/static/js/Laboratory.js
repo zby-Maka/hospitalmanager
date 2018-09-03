@@ -12,13 +12,11 @@ $(function () {
         var peacId=$("input[name=physicalExaminationId]").val();
         $.getJSON("http://localhost:8080/Person.html",{"peacId":peacId},function (date) {
             $.each(date.map1,function (i,m) {
-                alert(m.personName);
                 $("label[name=personName]").text(m.personName);
                 $("label[name=personAge]").text(m.personAge);
                 $("label[name=personSex]").text(m.personSex);
                 $("label[name=isMarry]").text(m.isMarry);
             });
-            alert(date.map);
             var content="";
             $.each(date.map,function (b,n) {
                 content+="<a href='javascript:getYan("+n.checkId+")'><li class='checkli'>"+n.checkName+"</li></a>";
@@ -58,6 +56,7 @@ $(function () {
                 if (resultJSON.stat == "ok") {
                     updateStatu();
                     alert("success");
+                    $(".xuan").parent().remove();
                     qing();
                 } else {
                     alert("error");
@@ -69,7 +68,6 @@ $(function () {
 //根据checkId获取传过来的lis 小项显示
 function getYan(checkId){
     $("input[name=checkId]").val(checkId);
-    alert(checkId);
     $.getJSON("http://localhost:8080/getYan.html",{"checkId":checkId},function (date) {
         var content="";
         console.log(date);
@@ -98,13 +96,19 @@ function getYan(checkId){
 }
 //增加之后清空数据
 function  qing() {
-    $("input[name=physicalExaminationId]").val("");
-    $("label[name=personName]").text("");
-    $("label[name=personAge]").text("");
-    $("label[name=personSex]").text("");
-    $("label[name=isMarry]").text("");
-    $("#check").html("");
-    $("#show").html("");
+    var checkli = $(".checkli");
+    if(checkli.length==0){
+        $("input[name=physicalExaminationId]").val("");
+        $("label[name=personName]").text("");
+        $("label[name=personAge]").text("");
+        $("label[name=personSex]").text("");
+        $("label[name=isMarry]").text("");
+        $("#check").html("");
+    }
+    $("#checkResultFinally textarea").html("");
+    $("input[name=checkResultFinally]").val("");//结果id
+    $("#checkAdvice textarea").html("");
+    $("input[name=checkAdvice]").val("");//建议id
 }
 //体检成功之后修改状态
 function  updateStatu() {

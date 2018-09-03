@@ -28,14 +28,15 @@ $(function() {
 					$.getJSON("/getPersonInfoByNameAndCard.do",{"personIdCard":idCard},function (date) {
 						alert(date);
 						if(date==null){
-                            $("input[name=personName]").val("");
-                            $("input[name=personNameSpellCode]").val("");
                             $("input[name=personTelephone]").val("");
                             $("input[name=personAddress]").val("");
                             document.getElementsByName('isMarry')[0].checked = true;
 						}else {
-                            $("input[name=personName]").val(date.personName);
-                            $("input[name=personNameSpellCode]").val(date.personNameSpellCode);
+							if(date.personName!=null)
+                                $("input[name=personName]").val(date.personName);
+                            if(date.personNameSpellCode!=null)
+                            	$("input[name=personNameSpellCode]").val(date.personNameSpellCode);
+
                             $("input[name=personTelephone]").val(date.personTelephone);
                             $("input[name=personAddress]").val(date.personAddress);
                             if("未婚"==date.isMarry)

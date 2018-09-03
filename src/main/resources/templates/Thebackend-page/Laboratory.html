@@ -29,8 +29,11 @@
 		<script>
             $(function() {
                 $("ul").on("click",".checkli",function(){
-                    $(".checkli").css("background","white");
-                    $(this).css("background","red");
+                        $(".checkli").removeClass("xuan");
+                        $(".checkli").css("background","white");
+                        $(this).addClass("xuan");
+                        $(this).css("background","red");
+                    	$(".name").html($(this).text());
                 });
             });
 		</script>
@@ -110,7 +113,7 @@
 						<thead>
 							<tr>
 								<th colspan="5" align="center">
-									<h2>血&nbsp;&nbsp;&nbsp;液</h2></th>
+									<h2 class="name"></h2></th>
 							</tr>
 							<tr>
 								<td align="center">检验项</td>

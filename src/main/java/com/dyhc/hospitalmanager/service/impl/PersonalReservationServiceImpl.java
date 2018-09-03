@@ -209,6 +209,9 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                     List<Integer> intB = Arrays.asList(checkId);
                     set = new HashSet<Integer>(intB);
                     set.addAll(comCheckId);
+                }else {
+                    List<Integer> intB = Arrays.asList(checkId);
+                    set = new HashSet<Integer>(intB);
                 }
                 checkList = new ArrayList(set);
                 result = physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId,checkList);
