@@ -22,7 +22,7 @@ public class LoginConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/css/**")
                 .excludePathPatterns("/font/**")
                 .excludePathPatterns("/images/**")
-                .excludePathPatterns("/model.xlsx")
+                .excludePathPatterns("/PhysicalPersonInfo.xlsx")
                 .excludePathPatterns("/img/**")
                 .excludePathPatterns("/js/**")
                 .excludePathPatterns("/lay/**")
