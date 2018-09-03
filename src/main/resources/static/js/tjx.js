@@ -70,9 +70,11 @@ function showCheckById(checkid) {
                 $("input[name='checkSpellCode']").val(e.checkSpellCode);
                 $("input[name='checkSpellCode']").attr("readonly",true);
                 if (e.termSex == "男") {
-                    $("input[name='termSex'],[value='1']").attr("checked", true);
-                } else {
-                    $("input[name='termSex'],[value='0']").attr("checked", true);
+                    $("input[name='termSex']").eq(0).prop("checked", true);
+                } else if(e.termSex == "女") {
+                    $("input[name='termSex']").eq(1).prop("checked", true);
+                }else{
+                    $("input[name='termSex']").eq(2).prop("checked", true);
                 }
                 $("input[name='termSex']").attr("readonly",true);
 
