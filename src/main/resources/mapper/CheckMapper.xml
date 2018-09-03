@@ -128,7 +128,9 @@
         IN(SELECT `combination_id` FROM `package_and_ combination` WHERE `package_id`
         IN (SELECT `package_id` FROM `package` WHERE `package_id` IN
         (SELECT `package_id` FROM  `physical_examination_and_package`
-        WHERE `physical_examination_id` = #{physicalExaminationId} AND `physical_statu` = #{physicalStatu}))))
+        WHERE `physical_examination_id` = #{physicalExaminationId} AND `physical_statu` = #{physicalStatu}))) UNION
+        SELECT `check_id` FROM `physical_examination_and_ check`
+        WHERE `physical_examination_id` = #{physicalExaminationId} AND `physical_statu` = #{physicalStatu})
     </select>
 
     <!-- 根据科室编号查询体检项信息 -->
