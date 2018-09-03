@@ -53,10 +53,10 @@ function showCheckById(checkid) {
             console.log(data)
             $.each(data, function (i, e) {
 
-                if (e.isEnable == 0) {
-                    $("input[name='isEnable'],[value='0']").attr("checked", true);
+                if (e.isEnable == 1) {
+                    $("input[name='isEnable']").eq(0).prop("checked",true);
                 } else {
-                    $("input[name='isEnable'],[value='1']").attr("checked", true);
+                    $("input[name='isEnable']").eq(1).prop("checked", true);
                 }
                 $("input[name='checkName']").val(e.checkName)
                 $("input[name='checkName']").attr("readonly",true);
@@ -100,17 +100,29 @@ function showCheckById(checkid) {
 //添加体检项
 function addcheck() {
     var a = $("#addform").serialize();
-    alert(a);
     $.ajax({
         url: "http://localhost:8080/addCheckInfo",
         data: a,
         dataType: "json",
         type: "post",
         success: function (data) {
-            if (data == 1)
+            if (data == 1){
                 alert("添加成功");
-            else
+                $("input[name='checkName']").val("");
+                $("input[name='checkSpellCode']").val("");
+                $("input[name='checkAddress']").val("");
+                $("input[name='referenceCeil']").val("");
+                $("input[name='referenceFloor']").val("");
+                $("input[name='maxValue']").val("");
+                $("input[name='minValue']").val("");
+                $("input[name='promptHigh']").val("");
+                $("input[name='promptFlat']").val("");
+                $("textarea[name='remark']").val("");
+            }
+            else{
                 alert("添加失败")
+            }
+
         },
         error: function () {
             alert("发生错误");

@@ -47,6 +47,11 @@ $("input[name=companyName]").blur(function () {
     //确定事件
     $("input[name=confirm]").click(function () {
         var companyId = $("input[name=companyId]").val();
+        if($.trim($("#file").val())==''){
+            alert("请选择Excel文件");
+            return false;
+        }
+
         if(companyId > 0){
             //执行修改操作
             var content = $("#companyInfo").serialize();
@@ -128,6 +133,10 @@ function upload() {
     var ext = file.slice(file.lastIndexOf(".")+1).toLowerCase();
     alert(ext);
     /*if(!/\.(xlsx|xls|XLSX|XLS)$/.test(ext)){*/
+    if($.trim($("#file").val())==''){
+        alert("请选择Excel文件");
+        return false;
+    }
     if ("xls" != ext && "xlsx" != ext) {
         alert("只能上传Excle文件");
         return false;
