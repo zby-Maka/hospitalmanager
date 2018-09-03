@@ -96,6 +96,6 @@ public class SectionController {
     @ResponseBody
     public String updateStatu(@RequestParam("peaId")String peaId,@RequestParam("checkId")Integer checkId){
         Integer update=sectionService.updateStatu(peaId,checkId);
-        return JSON.toJSONString(update);
+         return  JSON.toJSONString(update);
     }
 }
