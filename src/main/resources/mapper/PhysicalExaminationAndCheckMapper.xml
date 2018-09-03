@@ -13,13 +13,13 @@
           `physical_statu`
         )
         VALUES
-        <foreach collection="checkId" item="cId" index="index" separator=",">
-            (
-            null ,
-            #{physicalExaminationId},
-            #{cId},
-            0
-            )
-        </foreach>
+            <foreach collection="checkId" item="cId" index="index" separator=",">
+                (
+                null ,
+                #{physicalExaminationId},
+                #{cId},
+                0
+                )
+            </foreach>
     </insert>
 </mapper>

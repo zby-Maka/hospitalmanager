@@ -172,8 +172,13 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                     return -3+"";
                 }
             }
+            List<Integer> packCheckId = null;
+            List<Integer> comCheckId = null;
+            List checkList = null;
+            Set set=null;
             if(packId!=null) {
                 result = physicalExaminationAndPackageMapper.addBatchPhyAndPackage(physicalExaminationId, packId);
+                packCheckId = checkMapper.getPackIdCheckId(packId);
                 if (result == 0) {
                     logger.error("添加用户套餐项错误");
                     return -4 + "";
@@ -181,13 +186,32 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             }
             if(comId!=null) {
                 result = physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(physicalExaminationId, comId);
+                comCheckId =checkMapper.getComIdCheckId(comId);
                 if (result == 0) {
                     logger.error("添加用户组合项错误");
                     return -5 + "";
                 }
             }
-            if(checkId!=null) {
-                result = physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId, checkId);
+            if(checkId!=null || packCheckId!=null || comCheckId!=null) {
+                if(checkId!=null && packCheckId!=null && comCheckId!=null) {
+                    List<Integer> intB = Arrays.asList(checkId);
+                    set = new HashSet<Integer>(intB);
+                    set.addAll(packCheckId);
+                    set.addAll(comCheckId);
+                }else if(checkId!=null && packCheckId!=null) {
+                    List<Integer> intB = Arrays.asList(checkId);
+                    set = new HashSet<Integer>(intB);
+                    set.addAll(packCheckId);
+                }else if(packCheckId!=null && comCheckId!=null) {
+                    set = new HashSet<Integer>(packCheckId);
+                    set.addAll(comCheckId);
+                }else if(checkId!=null && comCheckId!=null) {
+                    List<Integer> intB = Arrays.asList(checkId);
+                    set = new HashSet<Integer>(intB);
+                    set.addAll(comCheckId);
+                }
+                checkList = new ArrayList(set);
+                result = physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId,checkList);
                 if (result == 0) {
                     logger.error("添加用户体检项错误");
                     return -6 + "";
@@ -344,29 +368,6 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             e.printStackTrace();
         }
         return packageList;
-    }
-
-    /**
-     * 新增用户选择的套餐、组合项、体检项
-     * @param physicalExaminationId 体检编号
-     * @param packId 所选的套餐项
-     * @param comId 所选的组合项
-     * @param checkId 所选的体检项
-     * @return null
-     */
-    @Override
-    @Transactional(rollbackFor=Exception.class)
-    public Integer addPersonCheck(String physicalExaminationId,Integer[] packId,Integer[] comId,Integer[] checkId){
-        try {
-            physicalExaminationAndPackageMapper.addBatchPhyAndPackage(physicalExaminationId,packId);
-            physicalExaminationAndCombinationMapper.addBatchPhysicalExaminationAndCombination(physicalExaminationId,comId);
-            physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId,checkId);
-        } catch (Exception e) {
-            logger.error("用户选择套餐、组合项、体检项："+e.getMessage());
-            e.printStackTrace();
-            return null;
-        }
-        return 1;
     }
 
     /**

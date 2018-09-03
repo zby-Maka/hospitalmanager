@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Mapper
 @Repository
 public interface PhysicalExaminationAndCheckMapper {
@@ -14,5 +16,6 @@ public interface PhysicalExaminationAndCheckMapper {
      * @param checkId 体检项Id
      * @return
      */
-    Integer addBatchPhysicalExaminationAndCheck(@Param("physicalExaminationId") String physicalExaminationId, @Param("checkId") Integer[] checkId) throws Exception;
+    Integer addBatchPhysicalExaminationAndCheck(@Param("physicalExaminationId") String physicalExaminationId,
+                                                @Param("checkId")List<Integer> checkId) throws Exception;
 }

@@ -163,22 +163,6 @@ public class PersonalReservationController {
         return personalReservation.getPackages();
     }
 
-    /**
-     * 新增用户选择的套餐、组合项、体检项
-     * @param physicalExaminationId 体检编号
-     * @param packId 所选的套餐项
-     * @param comId 所选的组合项
-     * @param checkId 所选的体检项
-     * @return null
-     */
-    @PostMapping("/addPersonCheck")
-    public Integer addPersonCheck(@RequestParam("physicalExaminationId") String physicalExaminationId,
-                                  @RequestParam("packId[]") Integer[] packId,
-                                  @RequestParam("comId[]") Integer[] comId,
-                                  @RequestParam("checkId[]") Integer[] checkId){
-        return personalReservation.addPersonCheck(physicalExaminationId,packId,comId,checkId);
-    }
-
     @RequestMapping("listDate.do")
     @ResponseBody
     public Object listDate(){

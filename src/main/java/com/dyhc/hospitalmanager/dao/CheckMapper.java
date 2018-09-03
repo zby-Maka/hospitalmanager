@@ -80,4 +80,17 @@ public interface CheckMapper {
      */
     List<Check> getCheckListBySectionId(@Param("sectionId")Integer sectionId)throws Exception;
 
+    /**
+     * 根据组合项Id查询其下的所有体检编号
+     * @param comId 组合项Id
+     * @return
+     */
+    List<Integer> getComIdCheckId(@Param("comId") Integer[] comId);
+
+    /**
+     * 根据套餐项Id查询其下的所有体检编号
+     * @param packId
+     * @return
+     */
+    List<Integer> getPackIdCheckId(@Param("packId") Integer[] packId);
 }
