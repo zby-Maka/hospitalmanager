@@ -25,7 +25,7 @@ public class Check {
     private Integer isEnable;
     private List<MedicalEvents> medicalEventsList=new ArrayList<MedicalEvents>();
     private  CommonResults commonResults;
-    private ProposedDescription proposedDescription;
+    private ProposedDescription proposedDescription =new ProposedDescription();
 
     public CommonResults getCommonResults() {
         return commonResults;
