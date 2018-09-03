@@ -68,7 +68,6 @@ public class SectionController {
         return content;
     }
 
-    //CheckResult checkResult,
     //检查增加体检结果，检验增加体检结果和检验明细
     @RequestMapping("addResultAndMedicalEvent.html")
     @ResponseBody
@@ -96,6 +95,6 @@ public class SectionController {
     @ResponseBody
     public String updateStatu(@RequestParam("peaId")String peaId,@RequestParam("checkId")Integer checkId){
         Integer update=sectionService.updateStatu(peaId,checkId);
-         return  JSON.toJSONString(update);
+        return  JSON.toJSONString(update);
     }
 }
