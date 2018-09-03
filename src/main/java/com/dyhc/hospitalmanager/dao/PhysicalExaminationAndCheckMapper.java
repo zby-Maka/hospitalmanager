@@ -22,5 +22,5 @@ public interface PhysicalExaminationAndCheckMapper {
      * @param checkId
      * @return
      */
-    Integer updateStatu(@Param("peaId")String peaId,@Param("checkId")Integer checkId)throws Exception;
+    Integer updateStatu(@Param("peaId") String peaId,@Param("checkId")Integer checkId)throws Exception;
 }
