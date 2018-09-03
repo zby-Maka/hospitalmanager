@@ -73,12 +73,12 @@ public class PersonalReservationApplicationTests {
      * 新增用户选择的套餐、组合项、体检项
      * @return
      */
-    @Test
+   /* @Test
     public void addPersonCheck(){
         String physicalExaminationId="123";
         Integer[] packId = {1,2};
         Integer[] comId ={1,2};
         Integer[] checkId = {2,2};
         personalReservation.addPersonCheck(physicalExaminationId,packId,comId,checkId);
-    }
+    }*/
 }

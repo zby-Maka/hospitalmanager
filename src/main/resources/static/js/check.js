@@ -1,4 +1,7 @@
 var weekDay = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+var packId = new Array();
+var comId = new Array();
+var checkId = new Array();
 $(function() {
     //查询预约时间
     $.ajax({
@@ -16,10 +19,6 @@ $(function() {
             })
         }
     })
-
-    var packId = new Array();
-    var comId = new Array();
-    var checkId = new Array();
 
     $("#chooseDate>div").not(":eq(0)").click(function () {
         var yue = $(this).find("lable").text();
@@ -47,6 +46,7 @@ $(function() {
             if(comIdControl[i].checked)
                 comId.push(comIdControl[i].value);
         }
+
         //获取所有选中的组合项Id
         var checkIdControl = document.getElementsByName('checkItem');
         for(var i = 0; i < checkIdControl.length; i++){
@@ -206,4 +206,11 @@ function selAllCheck() {
         });
         $("#package").html(content);
     })
+}
+//关闭预约时间弹框
+function closeDate() {
+    checkId=[];
+    comId=[];
+    packId=[];
+    EV_closeAlert();
 }

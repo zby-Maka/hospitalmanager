@@ -13,6 +13,7 @@
     import java.io.File;
     import java.io.FileNotFoundException;
     import java.io.InputStream;
+    import java.io.UnsupportedEncodingException;
     import java.util.ArrayList;
     import java.util.List;
 
@@ -22,11 +23,15 @@
         /**
          * 下载Excel模板
          */
-            public File buildXlsById(){
+            public File buildXlsById() throws UnsupportedEncodingException {
                 //do something to find this file
                 File file=null;
+                String fileName = "PhysicalPersonInfo";
+
                 try {
-                    file = ResourceUtils.getFile("classpath:static/excelmodel/model.xlsx");
+                    fileName=new String(fileName.getBytes(),"utf-8");
+                    file = ResourceUtils.getFile("classpath:static/excelmodel/"+fileName+".xlsx");
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }

@@ -3,13 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CheckMapper">
-
     <!--根据体检项id查出体检项数据，与接收的数据进行对比-->
-   <select id="getCheckById" resultType="com.dyhc.hospitalmanager.pojo.Check">
+    <select id="getCheckById" resultType="com.dyhc.hospitalmanager.pojo.Check">
        SELECT * FROM `check` WHERE check_id=#{checkId} AND `is_enable`=1
    </select>
 
-<!--添加体检项信息-->
+    <!--添加体检项信息-->
     <insert id="addCheckInfo">
         insert into `check` values (null,#{sectionId},#{checkName},#{termSex},#{checkSpellCode},#{checkPrice},#{checkAddress},#{unit},#{referenceFloor},#{referenceCeil},#{promptFlat},#{promptHigh},#{minValue},#{maxValue},#{remark},1)
     </insert>
@@ -74,7 +73,7 @@
     </resultMap>
 
     <!--根据体检编号查询人员在该科室下的体检项和组合项-->
-   <select id="getPersonCheckBySectionId" resultType="com.dyhc.hospitalmanager.pojo.Check">
+    <select id="getPersonCheckBySectionId" resultType="com.dyhc.hospitalmanager.pojo.Check">
        SELECT * FROM (
         SELECT c.* FROM `physical_examination` pe
         INNER JOIN `physical_examination_and_package` pep
@@ -138,4 +137,32 @@
         SELECT * FROM `check` WHERE `section_id` = #{sectionId}
     </select>
 
+    <!-- 根据组合项Id查询其下的所有体检编号 -->
+    <select id="getComIdCheckId" resultType="int">
+        SELECT c.check_id FROM `check` c
+        INNER JOIN `combination_and_ check` cac
+        ON c.`check_id` = cac.`check_id`
+        WHERE cac.`combination_id` in 
+        <foreach collection="comId" item="cid" open="(" close=")" separator=",">
+            #{cid}
+        </foreach>
+    </select>
+
+    <!-- 根据套餐项Id查询其下的所有体检编号 -->
+    <select id="getPackIdCheckId" resultType="int">
+
+        SELECT pac.`check_id` FROM `package` p
+        INNER JOIN `package_and_ check` pac ON p.`package_id` = pac.`package_id`
+        WHERE p.`package_id` IN
+        <foreach collection="packId" item="pid" open="(" close=")" separator=",">
+            #{pid}
+        </foreach>
+        UNION
+        SELECT cac.check_id FROM `combination_and_ check` cac
+        WHERE cac.combination_id IN(
+        SELECT com.`combination_id` FROM `package_and_ combination` com WHERE com.`package_id` IN <foreach
+            collection="packId" item="pid" open="(" close=")" separator=",">
+        #{pid}
+    </foreach>)
+    </select>
 </mapper>

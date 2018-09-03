@@ -99,6 +99,7 @@ function  getpersoninfo() {
         sessionStorage.setItem("four",JSON.stringify(results));
         alert(result);
         var contens="";
+        alert(results)
         $.each(results,function (i,e) {
             contens+=e.commonResults.proposedDescription.adviceContent+"\n";
         });

@@ -23,8 +23,8 @@
 						</div>
 						<div style="margin-top: 15px">
 							<label><input type="radio" name="roletypeid" value="1">系统管理员</label>&nbsp;&nbsp;&nbsp;
-							<label><input type="radio" name="roletypeid" value="2" />总检医生</label>&nbsp;&nbsp;&nbsp;
-							<label><input type="radio" name="roletypeid" value="3"/>科室医生</label>&nbsp;&nbsp;&nbsp;
+							<label><input type="radio" name="roletypeid" value="2"/>科室医生</label>&nbsp;&nbsp;&nbsp;
+							<label><input type="radio" name="roletypeid" value="3" />总检医生</label>&nbsp;&nbsp;&nbsp;
 							<label><input type="radio" name="roletypeid" value="4" />收费处</label>
 							<!--<input type="radio" name="roletypeid" value="2" />护士&nbsp;&nbsp;&nbsp;-->
 						</div>
@@ -83,10 +83,10 @@
                     if (roletypeid==1){
                         roletype="系统管理员";
                         location.href="http://localhost:8080/index.html"
-                    }else if (roletypeid==2){
+                    }else if (roletypeid==3){
                         roletype="总检医生";
                         location.href="http://localhost:8080/AlwaysCheckIndex.html"
-                    }else  if (roletypeid==3){
+                    }else  if (roletypeid==2){
                         var section_type_id=data.sectiontypeid;
                         roletype="科室医生"
                         if(section_type_id==1){

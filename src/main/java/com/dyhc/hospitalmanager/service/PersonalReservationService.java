@@ -59,16 +59,6 @@ public interface PersonalReservationService {
     List<com.dyhc.hospitalmanager.pojo.Package> getPackages();
 
     /**
-     * 新增用户选择的套餐、组合项、体检项
-     * @param physicalExaminationId 体检编号
-     * @param packId 所选的套餐项
-     * @param comId 所选的组合项
-     * @param checkId 所选的体检项
-     * @return null
-     */
-    Integer addPersonCheck(String physicalExaminationId,Integer[] packId,Integer[] comId,Integer[] checkId);
-
-    /**
      * 获取该组合项下的所有体检项
      * @param comId 组合项Id
      * @return
