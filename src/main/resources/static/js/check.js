@@ -129,7 +129,7 @@ $(function() {
     //移出事件
 	$(".tab_box").on("mouseleave ","td[name=t],td[name=p],td[name=c]",function(){
         $(".childBox").html("");
-        //$(".childBox").hide();
+        $(".childBox").hide();
 	});
 });
 
