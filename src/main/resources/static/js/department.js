@@ -30,6 +30,9 @@ function  getPerson() {
 function  result(checkId) {
     $("input[name=checkId]").val(checkId);
     $.getJSON("http://localhost:8080/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
+        alert(result);
+        alert("DSad");
+        console.log(result);
         $.each(result,function (i,e) {
             $("#checkResultFinally textarea").html(e.resultDesc);
             getProposedByResultId(e.commonResultsId);
@@ -42,6 +45,8 @@ function  result(checkId) {
 //根据结果获取建议
 function getProposedByResultId(commonResultsId) {
     $.getJSON("http://localhost:8080/getProposedByResultId.html",{"resultId":commonResultsId},function (result) {
+        alert(result);
+        console.log(result);
         $.each(result,function (i,e) {
             $("#checkAdvice textarea").html(e.adviceContent);
             $("input[name=checkAdvice]").val(e.proposedDescriptionId);//建议id
@@ -100,12 +105,11 @@ function  updateStatu() {
     var peaId=$("input[name=physicalExaminationId]").val();
     var checkId=$("input[name=checkId]").val();
     $.getJSON("http://localhost:8080/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
-        var ok=0;
+        var ok="0";
         if(data>0){
-           ok="1"
+           ok="1";
         }else{
             ok="0";
         }
     })
-
 }
