@@ -389,7 +389,7 @@
                                 $.each(e1.sectionandcheckList,function (i2,e2) {
                                     str +="<dl class='layui-nav-child'>" +
                                         "<dd>" +
-                                        "<a href='javascript:;' onclick='checkchuanid("+e2.checkId+")'>"+e2.checkName+"</a><input name='checkId' type='hidden' value='"+e2.checkId+"'><input name='hidsid' type='hidden' value='"+e1.sectionId+"'><input name='hidsname' type='hidden' value='"+e1.sectionName+"'>" +
+                                        "<a href='javascript:;' onclick='checkchuanid("+e2.checkId+","+e1.sectionTypeId+")'>"+e2.checkName+"</a><input name='checkId' type='hidden' value='"+e2.checkId+"'><input name='hidsid' type='hidden' value='"+e1.sectionId+"'><input name='hidsname' type='hidden' value='"+e1.sectionName+"'><input type='hidden' name='sectionTypeId' value='"+e1.sectionTypeId+"'>" +
                                         "</dd>" +
                                         "</dl>";
                                 })
@@ -584,8 +584,10 @@
 					element.init();
 			}
 			//传递体检项id值
-			function checkchuanid(checkid) {
+			function checkchuanid(checkid,typeid) {
 				localStorage.cid=checkid;
+				alert(typeid);
+				localStorage.tid=typeid;
                 $("#rightMain").attr("src", "/Thebackend-page/tjx.html")
             }
 			//传递科室信息

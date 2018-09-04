@@ -124,7 +124,7 @@ function showSectionAndCombinationAndCheck() {
     })
 }
 
-//根据id查询科室信息以及下的组合信息和体检信息
+//根据科室id查询科室信息以及下的组合信息和体检信息
 function showSectionAndCombinationAndCheckByid(sectionid) {
     $.ajax({
         url: "http://localhost:8080/getSecionAndCheckAndCombinationInfoById",

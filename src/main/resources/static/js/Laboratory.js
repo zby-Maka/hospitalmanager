@@ -1,6 +1,11 @@
 var dataArry;
 $(function () {
     $(".select").click(function () {
+        var peacId=$("input[name=physicalExaminationId]").val();
+        if(peacId == "") {
+            alert("请输入体检编号！");
+            return false;
+        }
         getPerson();
     });
     $("#save").click(function () {
