@@ -32,15 +32,12 @@ function  getPerson() {
 function  result(checkId) {
     $("input[name=checkId]").val(checkId);
     $.getJSON("http://localhost:8080/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
-        // $.each(result,function (i,e) {
-        //     $("#checkResultFinally textarea").html(e.resultDesc);
-        //     getProposedByResultId(e.commonResultsId);
-        //     $("input[name=checkResultFinally]").val(e.commonResultsId);//结果id
-        // });
         $("#checkResultFinally textarea").html(result.resultDesc);
+        //如果结果是正常的话建议为空
         if (result.resultDesc=="正常"){
             $("#checkAdvice textarea").html("");
         }else {
+            //否则赋值
             getProposedByResultId(result.commonResultsId);
             $("input[name=checkResultFinally]").val(result.commonResultsId);//结果id
         }
