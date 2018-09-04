@@ -7,7 +7,7 @@ function  getclearcommonresult() {
 function getinsertcommonresult() {
     var content = $('form').serialize();
     var commonResultsId=$("#commonResultsIds").val();
-    var resultDesc = $("[name=resultDesc]").val().readOnly();
+    var resultDesc = $("[name=resultDesc]").val();
     var checkid=$("#checkid").val();
     var crId=localStorage["cid"];
     //$("input[type='button']").parent().append(get());
