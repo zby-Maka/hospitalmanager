@@ -32,12 +32,18 @@ function  getPerson() {
 function  result(checkId) {
     $("input[name=checkId]").val(checkId);
     $.getJSON("http://localhost:8080/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
-        $.each(result,function (i,e) {
-            $("#checkResultFinally textarea").html(e.resultDesc);
-            getProposedByResultId(e.commonResultsId);
-            $("input[name=checkResultFinally]").val(e.commonResultsId);//结果id
-        });
-
+        // $.each(result,function (i,e) {
+        //     $("#checkResultFinally textarea").html(e.resultDesc);
+        //     getProposedByResultId(e.commonResultsId);
+        //     $("input[name=checkResultFinally]").val(e.commonResultsId);//结果id
+        // });
+        $("#checkResultFinally textarea").html(result.resultDesc);
+        if (result.resultDesc=="正常"){
+            $("#checkAdvice textarea").html("");
+        }else {
+            getProposedByResultId(result.commonResultsId);
+            $("input[name=checkResultFinally]").val(result.commonResultsId);//结果id
+        }
     });
 };
 //根据结果获取建议

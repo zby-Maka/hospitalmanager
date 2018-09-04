@@ -22,7 +22,7 @@ public interface SectionService {
      * @param checkId
      * @return
      */
-    List<CommonResults> getCommResultsByCheckId(@Param("checkId")Integer checkId,Integer sectionId);
+    CommonResults getCommResultsByCheckId(@Param("checkId")Integer checkId,Integer sectionId);
 
     /**
      * 科室是检查:根据结果id查建议描述表，默认显示第一条
