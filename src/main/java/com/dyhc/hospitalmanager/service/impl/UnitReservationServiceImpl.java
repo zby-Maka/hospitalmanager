@@ -154,7 +154,12 @@ public class UnitReservationServiceImpl implements UnitReservationService {
      */
     @Override
     public List<Group> groupListByCompanyId(Integer companyId) {
-        List<Group> list =groupMapper.groupListByCompanyId(companyId);
+        List<Group> list = null;
+        try {
+            list = groupMapper.groupListByCompanyId(companyId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return list;
     }
 
@@ -194,6 +199,36 @@ public class UnitReservationServiceImpl implements UnitReservationService {
     public List<Check> listCheckId(Integer packageId) {
         try {
             return guideMapper.listCheckId(packageId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public Integer updIsDel(Integer companyId, Integer isDelete) {
+        try {
+            return companyInfoMapper.updIsDel(companyId,isDelete);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public Group showGroupDetails(Integer groupId) {
+        try {
+            return groupMapper.showGroupDetails(groupId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public Integer updGroup(Integer isDelete,Integer groupId) {
+        try {
+            return groupMapper.updGroup(isDelete,groupId);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

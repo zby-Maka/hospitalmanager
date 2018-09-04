@@ -61,12 +61,12 @@
 	$(function () {
         var commonResultsId = sessionStorage.getItem("commonResultsId");
         var cid = sessionStorage.getItem("cid");
-		getproposedDescription(cid);
+		getproposedDescription(commonResultsId);
 		getcommonresultxia(commonResultsId,cid);
 	});
 	//查询建议
-	function getproposedDescription(cid) {
-	$.post("http://localhost:8080/proposedDescription.do",{"resultId":cid},function (data) {
+	function getproposedDescription(commonResultsId) {
+	$.post("http://localhost:8080/proposedDescription.do",{"resultId":commonResultsId},function (data) {
 	var content="";
 	$.each(data,function (i,e) {
 	content+="<tr>" +

@@ -11,7 +11,7 @@
     <!--修改单位信息-->
     <update id="updCompanyInfo">
         UPDATE
-          `health_examination_system`.`company_info`
+          `company_info`
         SET
         <trim suffixOverrides="," suffix="WHERE `company_id` = #{companyId}" >
             <if test="companyName!=null and companyName!=''">
@@ -72,4 +72,8 @@
     <select id="showCompanyInfoById" resultType="com.dyhc.hospitalmanager.pojo.CompanyInfo">
       SELECT * FROM `company_info` WHERE company_id = #{companyId}
     </select>
+
+    <update id="updIsDel">
+        update company_info set `is_delete` = #{isDelete} where `company_id` = #{companyId};
+    </update>
 </mapper>

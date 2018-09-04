@@ -11,7 +11,10 @@ function getinsertcommonresult() {
     var checkid=$("#checkid").val();
     var crId=localStorage["cid"];
     //$("input[type='button']").parent().append(get());
-    alert(checkid);
+    if (resultDesc==""){
+        alert("请输入建议描述")
+        return
+    }
     if (commonResultsId==0){
         $.post("http://localhost:8080/insertcommonResults.do",content,function (data) {
             if (data.status==1){

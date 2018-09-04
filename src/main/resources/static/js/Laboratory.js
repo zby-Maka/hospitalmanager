@@ -124,11 +124,11 @@ function  updateStatu() {
     var peaId=$("input[name=physicalExaminationId]").val();
     var checkId=$("input[name=checkId]").val();
     $.getJSON("http://localhost:8080/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
-        var ok=0;
+        var ok="0";
         if(data>0){
-            ok=1;
+            ok="1";
         }else{
-            ok=0;
+            ok="0";
         }
     })
 

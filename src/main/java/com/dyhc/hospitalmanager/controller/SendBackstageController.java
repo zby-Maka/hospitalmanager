@@ -100,4 +100,11 @@ public class SendBackstageController {
         return "/Thebackend-page/DanWeiGuide";
     }
 
+
+    @GetMapping("/Thebackend-page/GroupInfos.html")
+    public String group(){
+        return "/Thebackend-page/GroupInfos";
+    }
+
+
 }

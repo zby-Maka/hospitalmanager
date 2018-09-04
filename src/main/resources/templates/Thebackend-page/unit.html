@@ -50,15 +50,16 @@
 							<td align="center"><textarea cols="44" rows="10" placeholder="请输入备注信息" style="font-size: 15px; font-weight: bold;" readonly="readonly" name="remark"></textarea></td>
 							<th style="width: 100px;" align="right">是否删除:</th>
 							<td align="left">
-								&nbsp;&nbsp;&nbsp;<input type="radio" name="isDelete" value="1"  disabled="disabled"/>是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<input type="radio" name="isDelete" value="0"  checked="checked" disabled="disabled"/>否
+								&nbsp;&nbsp;&nbsp;<input type="radio" name="isDelete" value="0"  />是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="isDelete" value="1"  checked="checked" />否
 							</td>
 						</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td colspan="4" align="center">
-							<input type="button" value="添加分组" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" name="groupAdd" />
+							<input type="button" value="添加分组" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" name="groupAdd" />&nbsp;&nbsp;&nbsp;
+							<input type="button" value="保存" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" name="save" />
 						</td>
 					</tr>
 				</tfoot>
@@ -93,6 +94,11 @@
                     $("input[name=companyNature]").val(data.companyNature);
                     $("input[name=authorizedStrength]").val(data.authorizedStrength);
                     $("input[name=remark]").val(data.remark);
+                    if (data.isDelete == 0) {
+                        $("input[name='isDelete']").eq(0).prop("checked",true);
+                    } else {
+                        $("input[name='isDelete']").eq(1).prop("checked",true);
+                    }
                 }
             });
         }
@@ -104,6 +110,23 @@
 		    alert(companyId);
 		    location.href = "/Thebackend-page/danweifenuzu.html?companyName="+companyName+"&companyId="+companyId;
             //$("#rightMain").attr("src", "/Thebackend-page/danweifenuzu.html")
+        });
+
+		//修改公司是否启用
+		$("input[name=save]").click(function () {
+			var isDelete = $("input[name=isDelete]:checked").val();
+            var companyId = localStorage["comid"];
+            $.ajax({
+                url: "/updIsDel.do",
+                data: {isDelete: isDelete,companyId:companyId},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+					if(data>0){
+					    alert("保存成功");
+					}
+                }
+            });
         });
 	</script>
 </html>
