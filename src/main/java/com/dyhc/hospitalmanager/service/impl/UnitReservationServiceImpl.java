@@ -200,4 +200,14 @@ public class UnitReservationServiceImpl implements UnitReservationService {
         }
     }
 
+    @Override
+    public Integer updIsDel(Integer companyId, Integer isDelete) {
+        try {
+            return companyInfoMapper.updIsDel(companyId,isDelete);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

@@ -29,6 +29,11 @@ function findByIds() {
 function getinsertsection() {
     var content = $('form').serialize();
     var sectionid=$("#sectionid").val();
+    var  sectionName=$("input[name=sectionName]").val();
+    if (sectionName==""){
+        alert("请输入科室名称");
+        return;
+    }
     if (sectionid==0){
         $.post("http://localhost:8080/keshiweihu.do",content,function (data) {
             if (data.status==1){
