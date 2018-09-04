@@ -44,4 +44,6 @@ public interface CompanyInfoMapper {
      * @return
      */
     Integer addCompanyInfo(CompanyInfo companyInfo)throws  Exception;
+
+    Integer updIsDel(@Param("companyId") Integer companyId,@Param("isDelete") Integer isDelete)throws Exception;
 }

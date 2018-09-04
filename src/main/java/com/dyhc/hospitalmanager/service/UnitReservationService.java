@@ -79,4 +79,6 @@ public interface UnitReservationService {
      */
     List<Check> listCheckId(@Param("personIdCard")Integer personIdCard)throws Exception;
 
+    Integer updIsDel(@Param("companyId") Integer companyId,@Param("isDelete") Integer isDelete);
+
 }

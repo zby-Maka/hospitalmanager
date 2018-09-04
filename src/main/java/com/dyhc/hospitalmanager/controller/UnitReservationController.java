@@ -250,5 +250,21 @@ public class UnitReservationController {
     }
 
 
+    /**
+     * 对公司信息进行是否删除的修改
+     * @param
+     * @return
+     */
+    @RequestMapping("/updIsDel.do")
+    @ResponseBody
+    public String updIsDel(@RequestParam("companyId") Integer companyId,@RequestParam("isDelete")Integer isDelete){
+        System.out.println("公司id:"+companyId+"====是否删除:"+isDelete);
+        Integer content = 0;
+        Integer result = unitReservationService.updIsDel(companyId,isDelete);
+        if(result > 0){
+            content = 1;
+        }
+        return JSON.toJSONString(content);
+    }
 
 }
