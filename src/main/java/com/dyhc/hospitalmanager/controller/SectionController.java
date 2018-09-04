@@ -48,8 +48,8 @@ public class SectionController {
     public String getCommResultsByCheckId(@RequestParam("checkId")Integer checkId,HttpServletRequest request){
         HttpSession session=request.getSession();
         Integer sectionId=(Integer) session.getAttribute("sectionId");
-        List<CommonResults> list=sectionService.getCommResultsByCheckId(checkId,sectionId);
-        return JSON.toJSONString(list);
+        CommonResults commonResults=sectionService.getCommResultsByCheckId(checkId,sectionId);
+        return JSON.toJSONString(commonResults);
     }
     //检查:建议
     @RequestMapping("getProposedByResultId.html")

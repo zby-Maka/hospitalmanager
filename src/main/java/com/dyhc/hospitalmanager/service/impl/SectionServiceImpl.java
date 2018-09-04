@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 
 @Service("SectionService")
@@ -56,18 +57,29 @@ public class SectionServiceImpl implements SectionService {
     }
 
     @Override
-    public List<CommonResults> getCommResultsByCheckId(Integer checkId,Integer sectionId) {
+    public CommonResults getCommResultsByCheckId(Integer checkId,Integer sectionId) {
         List<CommonResults> list=null;
         try {
             SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
             if(sectionType.getSectionTypeName().equals("检查")) {
                 list = commonResultsMapper.getCommResultsByCheckId(checkId);
+                //如果list长度为1的话就默认获取第一个对象
+                if(list.size()==1){
+                    return list.get(0);
+                    //否则随机获取
+                }else if (list.size()>1){
+                    int max=list.size()-1;
+                    int min=0;
+                    Random random = new Random();
+                    int xiabiao = random.nextInt(max)%(max-min+1) + min;
+                    return list.get(xiabiao);
+                }
             }
         }catch (Exception e){
             logger.error("您的查询有误");
             e.printStackTrace();
         }
-        return list;
+        return null;
     }
 
     @Override

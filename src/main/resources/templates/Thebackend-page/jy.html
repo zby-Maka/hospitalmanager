@@ -60,13 +60,13 @@
 	<script>
 	$(function () {
         var commonResultsId = sessionStorage.getItem("commonResultsId");
-		getproposedDescription(commonResultsId);
-		getcommonresultxia(commonResultsId);
+        var cid = sessionStorage.getItem("cid");
+		getproposedDescription(cid);
+		getcommonresultxia(commonResultsId,cid);
 	});
 	//查询建议
-	function getproposedDescription(commonResultsId) {
-	    alert(commonResultsId)
-	$.post("http://localhost:8080/proposedDescription.do",{"resultId":commonResultsId},function (data) {
+	function getproposedDescription(cid) {
+	$.post("http://localhost:8080/proposedDescription.do",{"resultId":cid},function (data) {
 	var content="";
 	$.each(data,function (i,e) {
 	content+="<tr>" +
@@ -79,17 +79,17 @@
 	},"json")
 	}
 	//获取下拉框的值
-	function getcommonresultxia(commonResultsId) {
-	    alert(commonResultsId);
+	function getcommonresultxia(commonResultsId,cid) {
+	    alert(cid);
 	$.post("http://localhost:8080/commonresult.do",
-		{"checkId":commonResultsId},function (data) {
+		{"checkId":cid},function (data) {
 	    alert(data)
 	var content="";
 	$.each(data,function (i,e) {
 	    if(e.commonResultsId==parseInt(commonResultsId)){
-            content+="<option value="+e.commonResultsId+">"+e.resultDesc+"</option>";
+            content+="<option selected='selected' value='"+e.commonResultsId+"'>"+e.resultDesc+"</option>";
 		}else {
-            content+="<option value="+e.commonResultsId+">"+e.resultDesc+"</option>";
+            content+="<option value='"+e.commonResultsId+"'>"+e.resultDesc+"</option>";
 		}
 	})
 	$("#commonResultsid").html(content);

@@ -33,7 +33,9 @@ function getinsertcommonresult() {
     }
 }
 
-function getjianyi(commonResultsid) {
+function getjianyi(commonResultsid,cid) {
+    alert(cid);
     sessionStorage.setItem("commonResultsId",commonResultsid);
+    sessionStorage.setItem("cid",cid);
     window.location.href="http://localhost:8080/Thebackend-page/jy.html";
 }

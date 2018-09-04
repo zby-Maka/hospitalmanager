@@ -8,7 +8,7 @@
     </select>
     <!-- 根据体检项id查常见结果表，默认显示第一条 -->
       <select id="getCommResultsByCheckId" resultType="com.dyhc.hospitalmanager.pojo.CommonResults">
-          SELECT * FROM common_results WHERE check_id=#{checkId} AND is_delete=1 LIMIT 1
+          SELECT * FROM common_results WHERE check_id=#{checkId} AND is_delete=1
       </select>
 
     <!--添加常见结果信息-->
