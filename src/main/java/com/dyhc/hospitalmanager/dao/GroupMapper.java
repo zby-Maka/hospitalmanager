@@ -21,12 +21,26 @@ public interface GroupMapper {
      *根据公司id查询单位分组
      * @return
      */
-    List<Group> groupListByCompanyId(@Param("companyId") Integer companyId);
+    List<Group> groupListByCompanyId(@Param("companyId") Integer companyId)throws  Exception;
 
     /**
      * 根据分组id查询
      * @param groupId
      * @return
      */
-    Group groupInfoByGroupId(@Param("groupId") Integer groupId);
+    Group groupInfoByGroupId(@Param("groupId") Integer groupId)throws  Exception;
+
+    /**
+     * 根据单位分组id 查询信息
+     * @param groupId
+     * @return
+     */
+    Group showGroupDetails(@Param("groupId") Integer groupId)throws  Exception;
+
+    /**
+     * 修改单位状态
+     * @param isDelete
+     * @return
+     */
+    Integer updGroup(@Param("isDelete") Integer isDelete,@Param("groupId") Integer groupId)throws  Exception;
 }

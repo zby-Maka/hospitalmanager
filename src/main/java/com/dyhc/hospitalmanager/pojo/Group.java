@@ -13,6 +13,27 @@ public class Group {
     private Integer termAgeCeil;
     private Integer packageId;
     private Integer isDelete;
+    //公司名称
+    private String companyName;
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    //套餐名称
+    private String packageName;
 
     public Integer getGroupId() {
         return groupId;
