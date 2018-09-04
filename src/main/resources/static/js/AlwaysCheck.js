@@ -18,6 +18,7 @@ function  getpersoninfo() {
     },"json");
     //通过体检编号查询体检人员的检查项
     $.post("http://localhost:8080/checkList.do",{"physicalExaminationId":physicalexaminationid},function (date) {
+        console.log(date);
         sessionStorage.setItem("two",JSON.stringify(date));
         var contents="";
         var comt="";
@@ -26,24 +27,37 @@ function  getpersoninfo() {
         var two = "" ;
         $("#content").html("<table border=\"1\" style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\" id=\"checknum\"></table>");
         $.each(date,function (i,e) {
+            console.log(e);
             jianyan="";
             if (e.medicalEventsList.length==0) {
+                var cons="";
+                if(e.proposedDescription.adviceContent==undefined){
+                    cons=""
+                }else {
+                    cons=e.proposedDescription.adviceContent;
+                }
+                var conss="";
+                if (e.commonResults.resultDesc==undefined){
+                    conss="";
+                } else {
+                    conss=e.commonResults.resultDesc;
+                }
                 contents+="<tr>" +
                     "<td align=\"right\">体检项：</td>" +
                     "<td>"+e.checkName+"</td>" +
                     "</tr>" +
                     "<tr>" +
                     "<td align=\"right\">体检结果：</td>" +
-                    "<td>"+e.commonResults.resultDesc+"</td>" +
+                    "<td>"+conss+"</td>" +
                     "</tr>" +
                     "<tr>" +
                     "<td align=\"right\">建&nbsp;&nbsp;&nbsp;&nbsp;议：</td>" +
                     "<td>" +
-                    "<div style=\"width:  150mm;\">"+e.proposedDescription.adviceContent+"</div>" +
+                    "<div style=\"width:  150mm;\">"+cons+"</div>" +
                     "</td>" +
                     "</tr>";
-                one += ""+e.commonResults.resultDesc+"";
-                two += ""+e.proposedDescription.adviceContent+"";
+                one += ""+conss+"\n";
+                two += ""+cons+"\n";
 
             }else {
                 //通过体检编号查询体检人员的检验项
@@ -84,6 +98,7 @@ function  getpersoninfo() {
         })
         $(".one").val(one);
         $(".two").val(two);
+        alert(contents)
         $("#checknum").html(contents);
     },"json");
     $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (result) {
@@ -91,17 +106,23 @@ function  getpersoninfo() {
         alert(result);
         var content="";
         $.each(result,function (i,n) {
-            content+=n.commonResults.resultDesc+"\n";
+            content+=n.commonResults.resultDesc+"\n\r";
         });
         /*$("#one").val(content);*/
     },"json");
     $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (results) {
         sessionStorage.setItem("four",JSON.stringify(results));
-        alert(result);
+        alert(results);
         var contens="";
         alert(results)
         $.each(results,function (i,e) {
-            contens+=e.commonResults.proposedDescription.adviceContent+"\n";
+            var cons="";
+            if(e.commonResults.proposedDescription.adviceContent=="undefined"){
+                cons="";
+            }else {
+                cons=e.commonResults.proposedDescription.adviceContent;
+            }
+            contens+=cons+"\n\r";
         });
         /*$("#two").val(contens);*/
     },"json");

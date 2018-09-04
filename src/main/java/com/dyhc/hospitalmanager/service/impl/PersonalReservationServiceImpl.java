@@ -209,12 +209,18 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                     List<Integer> intB = Arrays.asList(checkId);
                     set = new HashSet<Integer>(intB);
                     set.addAll(comCheckId);
-                }else {
+                }else if(checkId!=null){
                     List<Integer> intB = Arrays.asList(checkId);
                     set = new HashSet<Integer>(intB);
+                }else if (comCheckId!=null){
+                    set = new HashSet<Integer>(comCheckId);
+                }else if(packCheckId!=null){
+                    set = new HashSet<Integer>(packCheckId);
                 }
-                checkList = new ArrayList(set);
-                result = physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId,checkList);
+                if (set!=null) {
+                    checkList = new ArrayList(set);
+                    result = physicalExaminationAndCheckMapper.addBatchPhysicalExaminationAndCheck(physicalExaminationId, checkList);
+                }
                 if (result == 0) {
                     logger.error("添加用户体检项错误");
                     return -6 + "";
