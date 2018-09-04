@@ -19,4 +19,17 @@
     <select id="groupListByCompanyId" resultType="com.dyhc.hospitalmanager.pojo.Group">
         SELECT * FROM `group` WHERE `company_id`=#{companyId}
     </select>
+
+    <!--根据单位分组id查询信息-->
+    <select id="showGroupDetails" resultType="com.dyhc.hospitalmanager.pojo.Group">
+        SELECT * FROM `group` g
+        INNER JOIN `company_info` c ON g.company_id = c.`company_id`
+        INNER JOIN package p ON p.package_id = g.package_id
+        WHERE g.group_id = #{groupId};
+    </select>
+
+    <!--修改分组的状态-->
+    <update id="updGroup">
+        UPDATE `group` SET `is_delete` = #{isDelete} where group_id = #{groupId}
+    </update>
 </mapper>

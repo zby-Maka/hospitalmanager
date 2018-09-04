@@ -267,4 +267,33 @@ public class UnitReservationController {
         return JSON.toJSONString(content);
     }
 
+    /**
+     * 根据分组id显示所有分组信息
+     * @param groupId
+     * @param companyId
+     * @return
+     */
+    @RequestMapping("/showGroup.do")
+    @ResponseBody
+    public String showGroupDetails(@RequestParam("groupId") Integer groupId,@RequestParam("companyId")Integer companyId){
+        Group group = unitReservationService.showGroupDetails(groupId);
+        return JSON.toJSONString(group);
+    }
+
+
+    /**
+     * 对分组信息进行是否删除的修改
+     * @param
+     * @return
+     */
+    @RequestMapping("/updGroupIsDel.do")
+    @ResponseBody
+    public String updGroupIsDel(@RequestParam("isDelete")Integer isDelete,@RequestParam("groupId") Integer groupId){
+        Integer content = 0;
+        Integer result = unitReservationService.updGroup(isDelete,groupId);
+        if(result > 0){
+            content = 1;
+        }
+        return JSON.toJSONString(content);
+    }
 }

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>单位分组</title>
+
+</head>
+
+<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+<div style="width: 80%;height: 174mm; margin: 0 auto; background-color: #f8f8f8;opacity: 0.8; ">
+    <h2 style="display: block; text-align: center;letter-spacing: 15px;">单位分组维护</h2>
+    <div style="width: 100%; height: 160mm; float: left;">
+        <div style="margin-top: 10%;">
+                <table>
+                    <tr>
+                        <td style="width: 150px; text-align: right;">是否启用：</td>
+                        <td><input type="radio" value="1" name="isDelete"  checked="checked"/>是</td>
+                        <td><input type="radio" value="0" name="isDelete"/>否</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;">所属单位：</td>
+                        <td colspan="3">
+                            <input type="text" name="companyName"  readonly="readonly"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;">分组名称：</td>
+                        <td colspan="3">
+                            <input type="hidden" name="groupId" value="" />
+                            <input type="text" name="groupName" value="" readonly="readonly"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;">性别条件：</td>
+                        <td><input type="radio" value="男" name="sex" disabled="disabled"/>男</td>
+                        <td><input type="radio" value="女" name="sex" disabled="disabled"/>女</td>
+                        <td><input type="radio" value="2" name="sex" disabled="disabled"/>不限</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;">婚否条件：</td>
+                        <td><input type="radio" value="已婚" name="hun" disabled="disabled"/>已婚</td>
+                        <td><input type="radio" value="未婚" name="hun"  disabled="disabled"/>未婚</td>
+                        <td><input type="radio" value="不限" name="hun" disabled="disabled"/>不限</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;">年龄上限：</td>
+                        <td><input type="text" value="" name="ageUp" readonly="readonly"/></td>
+                        <td style="width: 150px; text-align: right;">年龄下限</td>
+                        <td><input type="text" value="" name="ageDown" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;">所属套餐:</td>
+                        <td><input type="text" value="" name="packageName" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;"></td>
+                        <td>
+                           &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;"></td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; text-align: right;"></td>
+                        <td style="width: 150px; text-align: right;">&nbsp;</td>
+                        <td>
+                            <input name="tijiao" type="button" value="保存"/>
+                        </td>
+                     </tr>
+
+                </table>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery-3.2.1.js"></script>
+<script src="/js/jquery.form.js"></script>
+<script>
+    //单位分组js
+    $(function () {
+        showGroup();
+
+    });
+
+    //显示所有单位分组信息
+    function showGroup() {
+        //获取公司id
+        var companyId = localStorage["comid"];
+        //获取分组id
+        var groupId = localStorage["groupId"];
+        //根据公司id查询公司名称
+        $.ajax({
+            url: "/showGroup.do?companyId="+companyId+"&groupId="+groupId,
+            data: {},
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                if (data.isDelete == 0) {
+                    $("input[name='isDelete']").eq(1).prop("checked",true);
+                } else {
+                    $("input[name='isDelete']").eq(0).prop("checked",true);
+                }
+                $("input[name=groupId]").val(data.groupId);
+                $("input[name=companyName]").val(data.companyName);
+                $("input[name=groupName]").val(data.groupName);
+                $("input[name=ageUp]").val(data.termAgeCeil);
+                $("input[name=ageDown]").val(data.termAgeFloor);
+                $("input[name=packageName]").val(data.packageName);
+
+                if (data.termSex == "男") {
+                    $("input[name='sex']").eq(0).prop("checked",true);
+                } else if(data.termSex == "女") {
+                    $("input[name='sex']").eq(1).prop("checked",true);
+                }else{
+                    $("input[name='sex']").eq(2).prop("checked",true);
+                }
+
+
+                if (data.termIsMarry == "已婚") {
+                    $("input[name='hun']").eq(0).prop("checked",true);
+                } else if(data.termIsMarry == "未婚") {
+                    $("input[name='hun']").eq(1).prop("checked",true);
+                }else{
+                    $("input[name='hun']").eq(2).prop("checked",true);
+                }
+
+            }
+        });
+    }
+
+    //提交按钮
+    $("input[name=tijiao]").click(function () {
+        var isDelete = $("input[name=isDelete]:checked").val();
+        var groupId = $("input[name=groupId]").val();
+        $.ajax({
+            url: "/updGroupIsDel.do?isDelete="+isDelete+"&groupId="+groupId,
+            data: {},
+            type: "get",
+            dataType: "json",
+            success:function (data) {
+                if(data>0){
+                    alert("保存成功");
+                }
+            }
+        });
+    });
+
+
+
+
+</script>
+</html>

@@ -81,4 +81,18 @@ public interface UnitReservationService {
 
     Integer updIsDel(@Param("companyId") Integer companyId,@Param("isDelete") Integer isDelete);
 
+    /**
+     * 根据单位分组id 查询信息
+     * @param groupId
+     * @return
+     */
+    Group showGroupDetails(@Param("groupId") Integer groupId);
+
+    /**
+     * 修改单位分组状态
+     * @param isDelete
+     * @return
+     */
+    Integer updGroup(Integer isDelete,Integer groupId);
+
 }

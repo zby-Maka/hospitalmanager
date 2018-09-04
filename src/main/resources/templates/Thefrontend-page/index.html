@@ -639,10 +639,14 @@
 
 				$("#rightMain").attr("src", "/Thebackend-page/danweifenuzu.html")
 			}
+			function groupDetails(groupId) {
+                localStorage.groupId=groupId;
+                $("#rightMain").attr("src", "/Thebackend-page/GroupInfos.html")
+            }
 			
 			function danwei(companyId){
 			    localStorage.comid=companyId;
-			   // localStorage[name];
+			   // localStorage[comid];
 				//查询所有单位分组信息
 				var content = "<dl class='layui-nav-child fzInfo'>";
                 $.ajax({
@@ -654,7 +658,7 @@
                         $.each(data,function (i,e) {
                             content +=
                                 "<dd>" +
-                                "<a href='javascript:;' >"+e.groupName+"</a>" +
+                                "<a href='javascript:;' onclick='groupDetails("+e.groupId+")'>"+e.groupName+"</a>" +
                                 "</dd>" ;
                         });
                         content += "</dl>";
