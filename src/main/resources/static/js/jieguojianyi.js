@@ -7,11 +7,14 @@ function  getclearcommonresult() {
 function getinsertcommonresult() {
     var content = $('form').serialize();
     var commonResultsId=$("#commonResultsIds").val();
-    var resultDesc = $("[name=resultDesc]").val();
+    var resultDesc = $("[name=resultDesc]").val().readOnly();
     var checkid=$("#checkid").val();
     var crId=localStorage["cid"];
     //$("input[type='button']").parent().append(get());
-    alert(checkid);
+    if (resultDesc==""){
+        alert("请输入建议描述")
+        return
+    }
     if (commonResultsId==0){
         $.post("http://localhost:8080/insertcommonResults.do",content,function (data) {
             if (data.status==1){
