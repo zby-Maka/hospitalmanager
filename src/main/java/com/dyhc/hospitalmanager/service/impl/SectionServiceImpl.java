@@ -63,8 +63,10 @@ public class SectionServiceImpl implements SectionService {
             SectionType sectionType=sectionTypeMapper.getSectionTypeName(sectionId);
             if(sectionType.getSectionTypeName().equals("检查")) {
                 list = commonResultsMapper.getCommResultsByCheckId(checkId);
+                //如果list长度为1的话就默认获取第一个对象
                 if(list.size()==1){
                     return list.get(0);
+                    //否则随机获取
                 }else if (list.size()>1){
                     int max=list.size()-1;
                     int min=0;
