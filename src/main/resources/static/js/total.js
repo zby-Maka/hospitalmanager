@@ -28,7 +28,13 @@ function sessionStorageData() {
     var events="";
     //体检项
     $.each(JSON.parse(checkInfo),function (i,e) {
+        var jianyi="";
         if (e.medicalEventsList.length==0) {
+            if(e.proposedDescription.adviceContent!=undefined){
+                jianyi=e.proposedDescription.adviceContent;
+            }else {
+                jianyi="";
+            }
             jiancha+="<table style=\"margin-left: 48px;\">" +
                     "<tbody>" +
                         "<tr>" +
@@ -42,8 +48,8 @@ function sessionStorageData() {
                         "<tr>" +
                             "<td align=\"right\">建&nbsp;&nbsp;&nbsp;&nbsp;议：</td>" +
                             "<td>\n" +
-                                "<div style=\"width:  150mm;\">"
-                                    +e.proposedDescription.adviceContent+
+                                "<div style=\"width:  150mm;\">"+
+                                    jianyi +
                                 "</div>" +
                             "</td>" +
                         "</tr>" +
@@ -97,7 +103,9 @@ function sessionStorageData() {
         $($("textarea").get(0)).append(n.commonResults.resultDesc+"\n");
     });
     $.each(JSON.parse(commInfo),function (i,e) {
-        $($("textarea").get(1)).append(e.commonResults.proposedDescription.adviceContent+"\n");
+        if(e.commonResults.proposedDescription.adviceContent!=undefined){
+            $($("textarea").get(1)).append(e.commonResults.proposedDescription.adviceContent+"\n");
+        }
     });
 
     $("#Checkdate").text(getNowFormatDate());

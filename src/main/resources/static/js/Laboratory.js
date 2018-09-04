@@ -91,7 +91,6 @@ function getYan(checkId){
             }else {
                 jian="-";
             }
-
             content+="<tr>" +
                 "<td align=\"center\">"+e.eventsName+"</td>" +
                 "<td align=\"center\">"+e.unit+"</td>" +
