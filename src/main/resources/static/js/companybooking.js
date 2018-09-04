@@ -4,12 +4,12 @@ $("input[name='telephone']").on("blur", function() {
     if(phone != "") {
         var checkResult = checkPhone(phone);
         if(!checkResult) {
-            $("td[name='telephone']").text("请输入正确的电话号");
+            $("td[name='checkTelephone']").text("电话号格式不正确");
         } else {
-            $("td[name='telephone']").text("");
+            $("td[name='checkTelephone']").text("");
         }
     } else {
-        $("td[name='telephone']").text("");
+        $("td[name='checkTelephone']").text("");
     }
 });
 function checkPhone(telephone) {
