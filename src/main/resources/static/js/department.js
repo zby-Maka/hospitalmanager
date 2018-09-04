@@ -38,13 +38,14 @@ function  result(checkId) {
     $("input[name=checkId]").val(checkId);
     $.getJSON("http://localhost:8080/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
         $("#checkResultFinally textarea").html(result.resultDesc);
+        alert(result.commonResultsId);
+        $("input[name=checkResultFinally]").val(result.commonResultsId);//结果id
         //如果结果是正常的话建议为空
         if (result.resultDesc=="正常"){
             $("#checkAdvice textarea").html("");
         }else {
             //否则赋值
             getProposedByResultId(result.commonResultsId);
-            $("input[name=checkResultFinally]").val(result.commonResultsId);//结果id
         }
     });
 };

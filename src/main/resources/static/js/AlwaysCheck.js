@@ -98,34 +98,31 @@ function  getpersoninfo() {
         })
         $(".one").val(one);
         $(".two").val(two);
-        alert(contents)
         $("#checknum").html(contents);
     },"json");
-    $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (result) {
-        sessionStorage.setItem("three",JSON.stringify(result));
-        alert(result);
-        var content="";
-        $.each(result,function (i,n) {
-            content+=n.commonResults.resultDesc+"\n\r";
-        });
-        /*$("#one").val(content);*/
-    },"json");
-    $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (results) {
-        sessionStorage.setItem("four",JSON.stringify(results));
-        alert(results);
-        var contens="";
-        alert(results)
-        $.each(results,function (i,e) {
-            var cons="";
-            if(e.commonResults.proposedDescription.adviceContent=="undefined"){
-                cons="";
-            }else {
-                cons=e.commonResults.proposedDescription.adviceContent;
-            }
-            contens+=cons+"\n\r";
-        });
-        /*$("#two").val(contens);*/
-    },"json");
+
+    // $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (result) {
+    //     sessionStorage.setItem("three",JSON.stringify(result));
+    //     var content="";
+    //     $.each(result,function (i,n) {
+    //         content+=n.commonResults.resultDesc+"\n\r";
+    //     });
+    //     /*$("#one").val(content);*/
+    // },"json");
+    // $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (results) {
+    //     sessionStorage.setItem("four",JSON.stringify(results));
+    //     var contens="";
+    //     $.each(results,function (i,e) {
+    //         var cons="";
+    //         if(e.commonResults.proposedDescription.adviceContent=="undefined"){
+    //             cons="";
+    //         }else {
+    //             cons=e.commonResults.proposedDescription.adviceContent;
+    //         }
+    //         contens+=cons+"\n\r";
+    //     });
+    //     /*$("#two").val(contens);*/
+    // },"json");
 }
 
 //跳转打印页面

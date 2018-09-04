@@ -1,4 +1,10 @@
 $(function () {
+
+    //根据组合项名称获取姓名简拼
+    $("input[name='combinationName']").on("keyup keydown change blur", function() {
+        $("input[name='pinyinCode']").val($(this).toPinyin());
+    });
+
     var combinationid = localStorage["comid"];
 
     if (combinationid != "null") {
@@ -29,7 +35,7 @@ function addandupd() {
         data: {"combinationId": cmbid},
         success: function (data) {
             if (data.length==0) {
-                addcom();
+                add();
             }else{
                 updcom();
             }
@@ -55,6 +61,7 @@ function getcombinationidByid(combinaid) {
                     $("input[name='isEnable']").eq(1).prop("checked",true);
                 }
 
+
                 $("input[name='combinationName']").val(e.combinationName)
                 $("input[name='combinationName']").attr("readonly",true)
                 $("input[name='combinationId']").val(e.combinationId);
@@ -69,9 +76,12 @@ function getcombinationidByid(combinaid) {
                 } else {
                     $("input[name='isSpecimen']").eq(1).prop("checked", true);
                 }
-                $("input[name='isSpecimen']").attr("readonly",true)
+                $("input[name='isSpecimen']").attr("disabled",true);
                 $("input[name='specimenType']").val(e.specimenType);
                 $("input[name='specimenType']").attr("readonly",true)
+
+                $("input[type='checkbox']").attr("disabled",true);
+
 
             })
         }, error: function () {
@@ -101,6 +111,22 @@ function getCheckInfoBySectionId(secid) {
     })
 }
 
+function add() {
+    var textControl = $("#addform input");
+    var flag=true;
+    if(flag==true){
+            $.each(textControl,function (i,e) {
+                if(e.type=="text" && e.value=="") {
+                    flag = false;
+                    alert("请完善组合项信息！");
+                    return false;
+                }
+            })
+    }else{
+        addcom();
+    }
+
+}
 //添加组合项信息
 function addcom() {
     var combination = $("#addform").serialize();

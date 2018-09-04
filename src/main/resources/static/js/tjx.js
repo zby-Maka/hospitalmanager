@@ -1,4 +1,10 @@
 $(function () {
+
+    //根据体检项名称获取姓名简拼
+    $("input[name='checkName']").on("keyup keydown change blur", function() {
+        $("input[name='checkSpellCode']").val($(this).toPinyin());
+    });
+
     var checkid = localStorage["cid"];
 
     if (checkid != "null") {
@@ -34,7 +40,7 @@ function addandupd() {
         data: {"checkId": cid},
         success: function (data) {
             if (data.length==0) {
-            addcheck();
+                add();
             }else{
                 updcheck();
             }
@@ -111,7 +117,26 @@ function showCheckById(checkid) {
         }
     })
 }
+function add() {
 
+    var textControl = $("#addform input");
+    var text=$("textarea[name='remark']").val();
+    var flag=true;
+    if(flag==true){
+        if(text.trim()==""){
+        $.each(textControl,function (i,e) {
+            if(e.type=="text" && e.value=="") {
+                    flag = false;
+                    alert("请完善体检项目信息！");
+                    return false;
+            }
+        })
+        }
+    }else{
+        addcheck();
+    }
+
+}
 
 //添加体检项
 function addcheck() {
