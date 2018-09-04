@@ -13,11 +13,12 @@ $(function () {
 
     
 })
+var oncheck=[];//已选择的项目数组
 
 function updandadd() {
     var packid=localStorage["pid"];
     if(packid=="null"){
-        addpack();
+        add();
     }else{
         updpack();
 
@@ -48,7 +49,7 @@ function getPackageAndCombinationInfo(packaid) {
                 $("input[name='note']").val(e.note);
                 $("textarea[name='scopeApplication']").val(e.scopeApplication);
                 $("textarea[name='scopeApplication']").attr("readonly",true)
-                
+                $("#showxiang").removeAttr("onclick")
                 $.each(e.packageCombinationList,function (o, r) {
                     content+="<lable name='combiantionInfo'  value='"+r.combinationId+"'>"+r.combinationName+"</lable><hr/>"
                 })
@@ -86,7 +87,7 @@ function getPackageAndCheckInfo(packaid) {
                 $("input[name='note']").attr("readonly",true)
                 $("textarea[name='scopeApplication']").val(e.scopeApplication);
                 $("textarea[name='scopeApplication']").attr("readonly",true)
-
+                $("#showxiang").removeAttr("onclick")
                 $.each(e.packageCheckList,function (o, r) {
                     content+="<lable name='combiantionInfo'  value='"+r.checkId+"'>"+r.checkName+"</lable><hr/>"
                 })
@@ -115,7 +116,7 @@ function showSectionAndCombinationAndCheck() {
             console.log(data)
             var content = "";
             $.each(data, function (i, e) {
-                content+="<a onclick='showSectionAndCombinationAndCheckByid("+e.sectionId+")'>"+e.sectionName+"</a><hr/>";
+                content+="<a onclick='showSectionAndCombinationAndCheckByid("+e.sectionId+")' id='showxiang'>"+e.sectionName+"</a><hr/>";
             })
             $("#secionContent").html(content);
         }, error: function () {
@@ -126,6 +127,8 @@ function showSectionAndCombinationAndCheck() {
 
 //根据科室id查询科室信息以及下的组合信息和体检信息
 function showSectionAndCombinationAndCheckByid(sectionid) {
+    var flag=false;
+    var flag1=false;
     $.ajax({
         url: "http://localhost:8080/getSecionAndCheckAndCombinationInfoById",
         type: "post",
@@ -136,10 +139,31 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
             var content = "";
             $.each(data, function (i, e) {
                 $.each(e.sectioandcombinationList,function (i,e1) {
-                    content+="<input name='combiantionInfo' type='checkbox' value='"+e1.combinationId+"'><span>"+e1.combinationName+"</span><hr/>";
+                    flag=false;
+                    for(var i=0;i<oncheck.length;i++){
+                        if(oncheck[i][0]==e1.combinationId&&oncheck[i][1]==e1.combinationName){
+                            content+="<input name='combiantionInfo' type='checkbox' checked='checked' value='"+e1.combinationId+"'><span>"+e1.combinationName+"</span><hr/>";
+                            flag=true;
+                            break;
+                        }
+                    }
+                    if(flag==false){
+                        content+="<input name='combiantionInfo' type='checkbox' value='"+e1.combinationId+"'><span>"+e1.combinationName+"</span><hr/>";
+                    }
+
                 })
                 $.each(e.sectionandcheckList,function (i,e2) {
-                    content+="<input name='checkInfo' type='checkbox' value='"+e2.checkId+"'><span>"+e2.checkName+"</span><hr/>";
+                    flag1=false;
+                    for(var i=0;i<oncheck.length;i++){
+                        if(oncheck[i][0]==e2.checkId&&oncheck[i][1]==e2.checkName){
+                            content+="<input name='checkInfo' type='checkbox' checked='checked' value='"+e2.checkId+"'><span>"+e2.checkName+"</span><hr/>";
+                            flag1=true;
+                            break;
+                        }
+                    }
+                    if(flag1==false){
+                        content+="<input name='checkInfo' type='checkbox' value='"+e2.checkId+"'><span>"+e2.checkName+"</span><hr/>";
+                    }
                 })
             })
             $("#combinationAndcheck").html(content);
@@ -149,6 +173,7 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
     })
 };
 
+
 /**
  * 点击科室下的项添加到已选择
  */
@@ -157,27 +182,57 @@ $("#combinationAndcheck").on("click","input[name='combiantionInfo'],input[name='
     var xiangname = $(this).next().text();//选中checkbox的内容
     var check=$(this).prop("checked");//选中状态
     var checkorcom=$(this).attr("name");//选中checkbox的name属性的值
+    var arr1=[];
+    arr1.push(xiangid);
+    arr1.push(xiangname);
+    oncheck.push(arr1);
     if(check){
         var html="";
         if(checkorcom=="combiantionInfo"){
-             html="<lable name='combiantionInfo'  value='"+xiangid+"'>"+xiangname+"</lable><hr/>"
+             html="<lable name='combiantionInfo' id='"+xiangname+"'  value='"+xiangid+"'>"+xiangname+"</lable><hr/>"
         }else if(checkorcom=="checkInfo"){
-            html="<lable name='checkInfo' value='"+xiangid+"'>"+xiangname+"</lable><hr/>"
+            html="<lable name='checkInfo' id='"+xiangname+"' value='"+xiangid+"'>"+xiangname+"</lable><hr/>"
         }
         $("#checkcombinationAndcheck").append(html);
     }else{
+        for(var i=0;i<oncheck.length;i++){
+            if(xiangid==oncheck[i][0]&&xiangname==oncheck[i][1]){
+                oncheck.splice(i,1);
+            }
+        }
         if(checkorcom=="combiantionInfo"){
-            $("#checkcombinationAndcheck").children("lable[name='"+checkorcom+"']").remove()
-           var aa= $("#checkcombinationAndcheck").children("lable[name='"+checkorcom+"']").next().html();
+            $("#checkcombinationAndcheck").children("lable[id='"+xiangname+"']").remove()
+           var aa= $("#checkcombinationAndcheck").children("lable[id='"+xiangname+"']").next().html();
         }else if(checkorcom=="checkInfo"){
-            $("#checkcombinationAndcheck").children("lable[name='"+checkorcom+"']").remove()
-            $("#checkcombinationAndcheck").children("lable[name='"+checkorcom+"']").next().remove()
+            $("#checkcombinationAndcheck").children("lable[id='"+xiangname+"']").remove()
+            $("#checkcombinationAndcheck").children("lable[id='"+xiangname+"']").next().remove()
         }
 
     }
 
 })
 
+
+
+function add() {
+    var textControl = $("#addform input");
+    var text=$("textarea[name='scopeApplication']").val();
+    var flag=true;
+    if(flag==true){
+        if(text.trim()=="") {
+            $.each(textControl, function (i, e) {
+                if (e.type == "text" && e.value == "") {
+                    flag = false;
+                    alert("请完善套餐项信息！");
+                    return false;
+                }
+            })
+        }
+    }else{
+        addpack();
+    }
+
+}
 //添加套餐信息
 function addpack() {
     var combination = $("#addform").serialize();
