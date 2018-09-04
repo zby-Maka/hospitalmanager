@@ -39,17 +39,15 @@
 
     <!--根据科室id查询科室信息以及下的体检项和组合项-->
     <select id="getSectionAndCheckAndCombinationInfoById" resultMap="secCheck">
-            SELECT
+                    SELECT
         section.section_id,
         section.section_name,
         `check`.check_id,
         `check`.check_name,
         combination.combination_id,
-        combination.combination_name
-        FROM
-        section
-        INNER JOIN `check` ON section.section_id = `check`.check_id
-        INNER JOIN combination ON section.section_id = combination.section_id
+        combination.combination_name FROM section
+        RIGHT JOIN `check` ON section.section_id = `check`.section_id
+        LEFT JOIN combination ON section.section_id = combination.section_id
         where section.section_id=#{sectionId}
     </select>
 
