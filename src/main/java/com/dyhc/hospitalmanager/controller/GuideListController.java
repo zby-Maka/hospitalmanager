@@ -6,6 +6,7 @@ import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.pojo.PhysicalExamination;
 import com.dyhc.hospitalmanager.service.CheckService;
+import com.dyhc.hospitalmanager.service.GuideService;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import com.dyhc.hospitalmanager.util.BarCodeUtil;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -27,6 +30,8 @@ public class GuideListController {
     private CheckService checkService;
     @Autowired
     private UnitReservationService unitReservationService;
+    @Autowired
+    private GuideService guideService;
     /**
      * 根据体检编号查询体检信息
      * @param physicalExaminationId
@@ -90,9 +95,6 @@ public class GuideListController {
     @ResponseBody
     public String selectInfoByselectByPersonIdCard(@RequestParam("personIdCard") String personIdCard){
         PersonInfo list = unitReservationService.findPersonInfoPersonIdCard(personIdCard);
-
-        //显示条形码
-        BarCodeUtil.generateFile(list.getPersonIdCard());
         return JSON.toJSONString(list);
     }
 
@@ -108,7 +110,6 @@ public class GuideListController {
     @ResponseBody
     public String showCheckedDetail(@RequestParam("physicalExaminationId") String physicalExaminationId){
         List<Check> lsit = checkService.showListCheckLwr(physicalExaminationId);
-        System.out.println("体检信息:"+lsit.size());
         return JSON.toJSONString(lsit);
     }
 
@@ -118,16 +119,25 @@ public class GuideListController {
     @Autowired
     private PersonalReservationService personalReservationService;
     /**
-     *  根据身份证号查询套餐信息
+     *  根据身份证号查询套餐信息并且添加各种关系
      * @param
      * @return
      */
     @RequestMapping("/showPackageId.do")
     @ResponseBody
-    public String showPackageId(@RequestParam("personIdCard") String personIdCard){
-       int packageId = unitReservationService.getPackageId(personIdCard);
-        System.out.println(packageId);
+    public String showPackageId(@RequestParam("personIdCard") String personIdCard,@RequestParam("personId") Integer personId,HttpServletRequest request){
+        //套餐id
+        int packageId = unitReservationService.getPackageId(personIdCard);
         List<Check> list = null;
+        Integer[] pac={packageId};
+        String results = guideService.addRelationPerson(personId,pac,packageId);
+        if(results != null){
+            System.out.println("添加成功");
+        }
+        //根据体检编号显示条形码
+        BarCodeUtil.generateFile(results);
+        HttpSession session=request.getSession();
+        session.setAttribute("results",results);
         try {
             list = unitReservationService.listCheckId(packageId);
         } catch (Exception e) {
