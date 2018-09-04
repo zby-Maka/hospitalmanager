@@ -5,12 +5,37 @@
     <title>指引单查询</title>
 </head>
 <body>
-体检编号:<input type="text" name="physicalExaminationId" value=""/><input type="button" name="isSelect" value="查询"/>
-<p style="display: none; color: red;">暂无信息</p>
+<input type="radio" name="geren" value="0" checked="checked"/>个人
+&nbsp;&nbsp;
+<input type="radio" name="geren" value="1"/>单位
+<p id="tijian">
+    请输入体检编号:<input type="text" name="physicalExaminationId" value=""/>
+    <input type="button" name="isSelect" value="查询"/>
+</p>
+<p id="shenfen" style="display: none;">
+    请输入身份证号:<input type="text" name="personIdCard" value=""/>
+    <input type="button" name="danwei" value="查询"/>
+</p>
+
+<p style="display: none; color: red;" id="xianshi">暂无信息</p>
 </body>
 <script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
 <script>
-    /*查询按钮*/
+$("input[name=geren]").click(function () {
+    //判断选择的类型
+    var choose = $("input[name=geren]:checked").val();
+    if(choose == 0){
+        //个人
+        $("#tijian").show();
+        $("#shenfen").hide();
+    }
+    if(choose == 1){
+        $("#tijian").hide();
+        $("#shenfen").show();
+    }
+});
+
+    /*查询个人按钮*/
     $("input[name=isSelect]").click(function () {
         var physicalExaminationId = $("input[name=physicalExaminationId]").val();
         localStorage.physicalExaminationId=physicalExaminationId;
@@ -24,7 +49,28 @@
                 if(data>0){
                    location.href = "/Thebackend-page/thewaylist.html";
                 }
-                $("p").show();
+                $("#xianshi").show();
+            }
+        });
+    });
+
+    /*查询单位按钮*/
+    $("input[name=danwei]").click(function () {
+        //身份证号
+        var personIdCard = $("input[name=personIdCard]").val();
+        localStorage.personIdCard=personIdCard;
+        // localStorage["physicalExaminationId"]
+        $.ajax({
+            url: "/personIdCard.do?personIdCard="+personIdCard,
+            data:{},
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                if(data>0){
+                    alert("aaa");
+                    location.href = "/Thebackend-page/DanWeiGuide.html";
+                }
+                $("#xianshi").show();
 
             }
         });

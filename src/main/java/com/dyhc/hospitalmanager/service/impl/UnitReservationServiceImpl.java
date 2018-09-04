@@ -1,9 +1,6 @@
 package com.dyhc.hospitalmanager.service.impl;
 
-import com.dyhc.hospitalmanager.dao.CompanyInfoMapper;
-import com.dyhc.hospitalmanager.dao.GroupMapper;
-import com.dyhc.hospitalmanager.dao.PackageMapper;
-import com.dyhc.hospitalmanager.dao.PersonInfoMapper;
+import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
@@ -165,6 +162,38 @@ public class UnitReservationServiceImpl implements UnitReservationService {
     public CompanyInfo showCompanyInfoById(Integer companyId) {
         try {
             return companyInfoMapper.showCompanyInfoById(companyId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public PersonInfo findPersonInfoPersonIdCard(String personIdCard) {
+        try {
+            return personInfoMapper.findPersonInfoPersonIdCard(personIdCard);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Autowired
+    private GuideMapper guideMapper;
+    @Override
+    public int getPackageId(String personIdCard) {
+        try {
+            return guideMapper.getPackageId(personIdCard);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    @Override
+    public List<Check> listCheckId(Integer packageId) {
+        try {
+            return guideMapper.listCheckId(packageId);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

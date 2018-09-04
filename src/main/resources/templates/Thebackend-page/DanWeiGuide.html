@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <title>太原市小店区三甲大院体检指引单</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/code128.css" />
+    <script type="text/javascript" src="../js/code128.js"></script>
+    <script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
+    <script language="javascript" src="/js/jquery.jqprint-0.3.js"></script>
+    <script type="text/javascript">
+        (function(divId) {
+            var divElement, oldOnLoad = window.onload;
+
+            function getTimeString() {
+                var pad = function(n) {
+                        return n < 10 ? '0' + n.toString(10) : n.toString(10);
+                    },
+                    dt = new Date();
+                return [pad(dt.getHours()), pad(dt.getMinutes()), pad(dt.getSeconds())].join(':');
+            }
+            function UpdateClock() {
+                var timeText = getTimeString();
+                divElement.innerHTML = code128(timeText);
+            }
+            /* window.onload = function() {
+                 createBarcode('div128','2015082810','A');
+                 divElement = document.getElementById(divId);
+                 UpdateClock();
+                 setInterval(UpdateClock, 1000);
+                 if(typeof oldOnLoad == 'function') oldOnLoad.apply(this, arguments);
+             }*/
+        })('div1');
+        function aa(){
+            $("#printInfo").jqprint();
+        }
+        $(function () {
+            showPersonInfo();
+
+        });
+        //显示人员信息
+        function showPersonInfo() {
+            var personIdCard =localStorage["personIdCard"];
+            $.ajax({
+                url: "/selectInfoByselectByPersonIdCard.do?personIdCard="+personIdCard,
+                data:{},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    $("#personName").text(data.personName);
+                    $("#personSex").text(data.personSex);
+                    $("#personAge").text(data.personAge);
+                    $("#personBirthday").text(data.personBirthday);
+                    $("#personIdCard").text(data.personIdCard);
+                    $("#telephone").text(data.personTelephone);
+                    //$("#div128").attr('background',"url('/code/"+physicalExaminationId+".png')");
+                    $("#showsTiao").attr("src","/code/"+personIdCard+".png");
+                    showCheckInfos();
+                }
+            });
+        }
+
+        /**
+         * 根据套餐编号显示所有体检信息
+         */
+        function showCheckInfos() {
+            var personIdCard =localStorage["personIdCard"];
+            $.ajax({
+                url: "/showPackageId.do?personIdCard="+personIdCard,
+                data:{},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    alert(data);
+                    var content = "";
+                    $.each(data,function (i,e) {
+                        content += "<tr>\n" +
+                            "<td align=\"right\">"+e.checkName+"</td>" +
+                            "<td align=\"center\">"+e.checkAddress+"</td>" +
+                            "</tr>";
+                    });
+                    $("#showInfo").html(content);
+                }
+            });
+        }
+    </script>
+    <style>
+        #printInfo table tr{
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body style="background-color: #f8f8f8;">
+<div style="width: 210mm; height: 297mm; margin: 0 auto;" id="printInfo">
+    <div style="width: 180mm; height: 12mm;border-bottom: 1px solid black;text-align:center;margin-left: 15mm;">
+        <h2>太原市小店区三甲大院体检指引单</h2>
+    </div>
+    <div style="width: 180mm; margin-left: 15mm;border-bottom: 1px solid black;height: 30mm;">
+        <div style="font-size: 14px;padding-top:5mm;float: left;">
+            姓名：<label id="personName"></label>&nbsp;&nbsp;&nbsp;&nbsp;性別：<label id="personSex"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+            年齡：<label id="personAge"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+            日期：<label id="personBirthday"></label>
+            <br /><br />
+
+            联系电话：<label id="telephone"></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            身份证号：<label id="personIdCard"></label>
+        </div>
+        <div class="barcode2" id="div128" style="float: right;margin-top: -18mm;" >
+            <img src="" id="showsTiao"/>
+        </div>
+    </div>
+    <table style="width: 180mm; margin-left: 15mm;border-bottom: 1px solid black;height: 30mm;">
+        <thead>
+        <th  align="right">体检项</th>
+        <th align="center">备注</th>
+        </thead>
+        <tbody id="showInfo">
+        <!--<tr>
+            <td align="right">心电图肝硬化体重视力听力肺活量</td>
+            <td align="center">1号楼3层东南角左侧楼道306检查科</td>
+        </tr>-->
+        </tbody>
+        <!--<tfoot>
+            <input type="button" onclick="aa()" value="打印"/>
+        </tfoot>-->
+    </table>
+
+</div>
+<div style="margin-left:900px;margin-top: -180px">
+    <input type="button" onclick="aa()" value="打印"/>
+</div>
+</body>
+</html>
