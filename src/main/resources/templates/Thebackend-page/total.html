@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
 	<meta charset="UTF-8">
@@ -14,7 +14,7 @@
     }
 </script>
 <body style="background-color: #f8f8f8;">
-<div style="margin: 0 auto; width: 210mm; height: 297mm;" id="printInfo">
+<div style="margin: 0 auto; width: 210mm;" id="printInfo">
 	<h1 style="text-align: center; letter-spacing: 15px;">总检报告单</h1>
 	<table style="width: 80%; margin: 0 auto;">
 		<tr>
@@ -351,7 +351,7 @@
 	</table>
 	<hr/>
 	<div style="font-size: 20px; margin-left: 100mm;line-height: 20mm;">
-		医师签字：<label id=""></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 日期：<label id="Checkdate"></label>
+		医师签字：<p th:text="${session.roleInfo.realName}"></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 日期：<label id="Checkdate"></label>
 	</div>
 </div>
 <div style="margin-left: 510px">
