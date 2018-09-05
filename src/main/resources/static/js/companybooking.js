@@ -153,7 +153,6 @@ $("input[name=upload]").click(function () {
     if(flag){
         //获取公司名称
         var companyName = $("input[name=companyName]").val();
-        alert("这个公司的名称:"+companyName);
         //获取上传文件的文件名称
         //           C:\fakepath\北大青鸟.xlsx
         var file=$("#file").val();
