@@ -1,6 +1,7 @@
 //清空
 function  getclearcommonresult() {
     $("input[name='resultDesc']").val("");
+    $("input[name='resultDesc']").attr("readonly",false);
 }
 
 //添加常见结果

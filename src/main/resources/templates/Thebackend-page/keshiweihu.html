@@ -39,7 +39,7 @@
 			<tr>
 				<td style="text-align: right;" width="150mm">备注：</td>
 				<td width="300mm">
-					<textarea name="remark" style="width: 200mm; height: 50mm;"></textarea>
+					<textarea name="remark" style="width: 200mm; height: 50mm;" ></textarea>
 				</td>
 			</tr>
 		</table>
@@ -53,6 +53,32 @@
 <script>
 	$(function () {
         findByIds();
+
     })
+    //修改赋值
+    function findByIds() {
+        var keid=localStorage["keid"];
+        if(keid!=0){
+            $.post("http://localhost:8080/addkeshiweihu.do?sectionId="+keid,function (data) {
+                if(data.sectionStatus == 1){
+                    $("input[name=sectionStatus]").eq(0).prop("checked",true);
+                }else{
+                    $("input[name=sectionStatus]").eq(1).prop("checked",true);
+                }
+                if(data.sectionTypeId == 1){
+                    $("input[name=sectionTypeId]").eq(0).prop("checked",true);
+                }else if (data.sectionTypeId==2) {
+                    $("input[name=sectionTypeId]").eq(1).prop("checked",true);
+                }else {
+                    $("input[name=sectionTypeId]").eq(2).prop("checked",true);
+                }
+                $("#sectionid").val(data.sectionId);
+                $("textarea[name=remark]").val(data.remark);
+                $("input[name=sectionName]").val(data.sectionName);
+                $("textarea[name=remark]").attr("readonly",true);
+                $("input[name=sectionName]").attr("readonly",true);
+            },"json")
+        }
+    }
 </script>
 </html>

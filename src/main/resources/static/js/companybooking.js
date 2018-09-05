@@ -4,12 +4,12 @@ $("input[name='telephone']").on("blur", function() {
     if(phone != "") {
         var checkResult = checkPhone(phone);
         if(!checkResult) {
-            $("td[name='telephone']").text("请输入正确的电话号");
+            $("td[name='checkTelephone']").text("电话号格式不正确");
         } else {
-            $("td[name='telephone']").text("");
+            $("td[name='checkTelephone']").text("");
         }
     } else {
-        $("td[name='telephone']").text("");
+        $("td[name='checkTelephone']").text("");
     }
 });
 function checkPhone(telephone) {
@@ -153,7 +153,6 @@ $("input[name=upload]").click(function () {
     if(flag){
         //获取公司名称
         var companyName = $("input[name=companyName]").val();
-        alert("这个公司的名称:"+companyName);
         //获取上传文件的文件名称
         //           C:\fakepath\北大青鸟.xlsx
         var file=$("#file").val();
