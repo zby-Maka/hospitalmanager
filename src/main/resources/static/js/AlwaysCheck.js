@@ -40,7 +40,7 @@ function  getpersoninfo() {
                 } else {
                     conss=e.commonResults.resultDesc;
                 }
-                contents+="<tr>" +
+                contents+="<tbody style='padding-top: 20px;'><tr>" +
                     "<td align=\"right\">体检项：</td>" +
                     "<td>"+e.checkName+"</td>" +
                     "</tr>" +
@@ -53,7 +53,11 @@ function  getpersoninfo() {
                     "<td>" +
                     "<div style=\"width:  150mm;\">"+cons+"</div>" +
                     "</td>" +
-                    "</tr>";
+                    "</tr>" +
+                    "<tr style='border: 0px solid white; height: 20px;'>" +
+                    "<td style='border: 0px solid white;'></td>" +
+                    "<td style='border: 0px solid white;'></td>" +
+                    "</tr></tbody>";
                 one += ""+conss+"\n";
                 two += ""+cons+"\n";
 
