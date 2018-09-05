@@ -98,6 +98,7 @@
 				dataType:"json",
 				success:function (date) {
 					if (date!=null){
+                        getCostTypeByPersonId(date.personId);
 						$(".name").html("姓名:"+date.personName);
                         $(".age").html("年龄:"+date.personAge);
                         $(".sex").html("性别:"+date.personSex);
@@ -127,7 +128,6 @@
 						$(".aggregate").html(price);
                         $(".receivable").html(price);
                         $(".change").html("---");
-                        getCostTypeByPersonId(date.personId);
 					} else {
                         $(".name").html("姓名:----");
                         $(".age").html("年龄:----");
@@ -160,51 +160,25 @@
 						$(".operation").html(str)
 					}else{
                         var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                        $(".operation").html(str)
-                        getCheck();
-					}
-                }
-            })
-        }
-
-        //已结算显示结算的体检项
-        function getCheck() {
-            var physical_examination_id = $("input[name=physical_examination_id]").val();
-            $.ajax({
-                url:"/getPersonInfoByPersonId.do",
-                data:{physical_examination_id:physical_examination_id,physicalStatu:1},
-                dataType:"json",
-                success:function (date) {
-                    var checkLists = "" ;
-                    if (date!=null){
-                        $(".name").html("姓名:"+date.personName);
-                        $(".age").html("年龄:"+date.personAge);
-                        $(".sex").html("性别:"+date.personSex);
-                        $(".isMarry").html("婚否:"+date.isMarry);
-                        var price = 0 ;
-                        $.each(date.checkList,function (i,e) {
-                            checkLists += "<tr>\n" +
-                                "\t\t\t\t\t\t<td align=\"center\">"+(i+1)+"</td>\n" +
-                                "\t\t\t\t\t\t<td align=\"center\">"+e.checkName+"</td>\n" +
-                                "\t\t\t\t\t\t<td align=\"center\">"+e.checkPrice+"</td>\n" +
-                                "\t\t\t\t\t</tr>";
-                            price += e.checkPrice;
-                        })
-                        if(date.checkList==""){
-                            checkLists = "<tr>\n" +
-                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                                "\t\t\t\t\t</tr>\n" +
-                                "\t\t\t\t\t<tr>\n" +
-                                "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无已体检项信息</td>\n" +
-                                "\t\t\t\t\t</tr>" ;
-                        }
-                        $(".checkList").html(checkLists);
-                        $(".aggregate").html(price);
-                        $(".receivable").html(price);
+                        $(".name").html("姓名:----");
+                        $(".age").html("年龄:----");
+                        $(".sex").html("性别:----");
+                        $(".isMarry").html("婚否:----");
+                        var checkList = "<tr>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t</tr>\n" +
+                            "\t\t\t\t\t<tr>\n" +
+                            "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">已缴费</td>\n" +
+                            "\t\t\t\t\t</tr>" ;
+                        $(".checkList").html("---");
+                        $(".aggregate").html("---");
+                        $(".receivable").html("---");
                         $(".change").html("---");
-                    }
+                        $(".checkList").html(checkList);
+                        $(".operation").html(str)
+					}
                 }
             })
         }
@@ -220,8 +194,20 @@
 				success:function (date) {
 					if (date>0) {
 						alert("收费成功");
-                        /*$("input[name=physical_examination_id]").val("");*/
-                        getPersonInfo();
+                        $("input[name=physical_examination_id]").val("");
+                        $(".name").html("姓名:----");
+                        $(".age").html("年龄:----");
+                        $(".sex").html("性别:----");
+                        $(".isMarry").html("婚否:----");
+                        var checkList = "<tr>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t</tr>\n" +
+                            "\t\t\t\t\t<tr>\n" +
+                            "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无信息,请输入人员编号进行查询</td>\n" +
+                            "\t\t\t\t\t</tr>" ;
+                        $(".checkList").html(checkList);
 					}else{
 						alert("收费失败");
 					}
