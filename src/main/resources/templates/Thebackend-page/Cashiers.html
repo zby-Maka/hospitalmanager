@@ -13,7 +13,7 @@
 					<tr>
 						<td colspan="4" align="center">
 							<span>体检编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physical_examination_id" size="40" style="height:30px; font-size: 16px;"/>
-							<input type="button" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" onclick="getPersonInfo()"/>
+							<input type="button" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" onclick="getPersonInfo(0)"/>
 						</td>
 					</tr>
 					<tr>
@@ -90,11 +90,11 @@
         }
 
 		//根据体检编号查询体检信息
-		function getPersonInfo() {
+		function getPersonInfo(physicalStatu) {
 		    var physical_examination_id = $("input[name=physical_examination_id]").val();
 			$.ajax({
 				url:"/getPersonInfoByPersonId.do",
-				data:{physical_examination_id:physical_examination_id,physicalStatu:0},
+				data:{physical_examination_id:physical_examination_id,physicalStatu:physicalStatu},
 				dataType:"json",
 				success:function (date) {
 					if (date!=null){
@@ -161,7 +161,40 @@
 					}else{
                         var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                         $(".operation").html(str)
+                        getCheck();
 					}
+                }
+            })
+        }
+
+        //已结算显示结算的体检项
+        function getCheck() {
+            var physical_examination_id = $("input[name=physical_examination_id]").val();
+            $.ajax({
+                url:"/getPersonInfoByPersonId.do",
+                data:{physical_examination_id:physical_examination_id,physicalStatu:1},
+                dataType:"json",
+                success:function (date) {
+                    if (date!=null){
+                        $(".name").html("姓名:"+date.personName);
+                        $(".age").html("年龄:"+date.personAge);
+                        $(".sex").html("性别:"+date.personSex);
+                        $(".isMarry").html("婚否:"+date.isMarry);
+                        var checkList = "" ;
+                        var price = 0 ;
+                        $.each(date.checkList,function (i,e) {
+                            checkList += "<tr>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">"+(i+1)+"</td>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">"+e.checkName+"</td>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">"+e.checkPrice+"</td>\n" +
+                                "\t\t\t\t\t</tr>";
+                            price += e.checkPrice;
+                        })
+                        $(".checkList").html(checkList);
+                        $(".aggregate").html(price);
+                        $(".receivable").html(price);
+                        $(".change").html("---");
+                    }
                 }
             })
         }
