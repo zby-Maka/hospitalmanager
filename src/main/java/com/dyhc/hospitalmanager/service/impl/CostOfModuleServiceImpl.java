@@ -38,7 +38,9 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
         PersonInfo personInfo = null ;
         try {
             personInfo = personInfoMapper.getPersonInfoByPhysical_Examination_Id(physical_examination_id);
-            personInfo.setCheckList(checkMapper.getCheckByPhysicalExaminationIdList(physical_examination_id,physicalStatu));
+            if(personInfo!=null){
+                personInfo.setCheckList(checkMapper.getCheckByPhysicalExaminationIdList(physical_examination_id,physicalStatu));
+            }
             return personInfo;
         }catch (Exception e){
             e.printStackTrace();

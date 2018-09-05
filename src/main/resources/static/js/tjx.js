@@ -122,19 +122,21 @@ function add() {
     var textControl = $("#addform input");
     var text=$("textarea[name='remark']").val();
     var flag=true;
-    if(flag==true){
-        if(text.trim()==""){
-        $.each(textControl,function (i,e) {
-            if(e.type=="text" && e.value=="") {
+
+        if(text.trim()=="") {
+            $.each(textControl, function (i, e) {
+                if (e.type == "text" && e.value == "") {
                     flag = false;
                     alert("请完善体检项目信息！");
                     return false;
-            }
-        })
+                }
+            })
         }
-    }else{
+    if(flag){
         addcheck();
     }
+
+
 
 }
 

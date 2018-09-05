@@ -64,6 +64,8 @@ function getcombinationidByid(combinaid) {
 
                 $("input[name='combinationName']").val(e.combinationName)
                 $("input[name='combinationName']").attr("readonly",true)
+                $("input[name='pinyinCode']").val(e.pinyinCode)
+                $("input[name='pinyinCode']").attr("readonly",true)
                 $("input[name='combinationId']").val(e.combinationId);
                 $("#cmbid").val(e.combinationId);
                 $("input[name='promptInformation']").val(e.promptInformation)
@@ -114,7 +116,7 @@ function getCheckInfoBySectionId(secid) {
 function add() {
     var textControl = $("#addform input");
     var flag=true;
-    if(flag==true){
+
             $.each(textControl,function (i,e) {
                 if(e.type=="text" && e.value=="") {
                     flag = false;
@@ -122,9 +124,11 @@ function add() {
                     return false;
                 }
             })
-    }else{
-        addcom();
-    }
+  if(flag){
+      addcom();
+  }
+
+
 
 }
 //添加组合项信息
