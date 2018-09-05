@@ -27,7 +27,7 @@ spring:
       use-global-data-source-stat: true # 合并多个DruidDataSource的监控数据
   #配置activeMQ--
   activemq:
-    broker-url: tcp://localhost:61616
+    broker-url: tcp://120.79.200.87:61616
     user: admin
     password: admin
   #配置redis--
