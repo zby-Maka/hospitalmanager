@@ -97,12 +97,14 @@ $(function() {
     $("#com").on("mouseenter","td[name=c]",function () {
         var comId=$(this).find("span input").val();
         $.getJSON("/getComCheck.do",{"comId":comId},function (comCheck) {
-            var checkCom = "<table><tr>";
+            var checkCom = "<tr>";
             console.log(comCheck);
             $.each(comCheck,function (i,e) {
                 checkCom+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
+                if ((i+1)%4==0){
+                    checkCom+="</tr>";
+                }
             })
-            checkCom+="</tr></table>";
             $(".childBox").html(checkCom);
             $(".childBox").show();
         })
@@ -111,16 +113,21 @@ $(function() {
     //浮动套餐时显示该项下边的体检项
     $("#package").on("mouseenter","td[name=p]",function () {
         var packId=$(this).find("span input").val();
-        var checkPack = "<table><tr>";
         $.getJSON("/getPackCheck.do",{"packId":packId},function (packCheck) {
             console.log(packCheck);
+            var checkPack = "<tr>";
             $.each(packCheck.packageCombinationList,function (i,e) {
                 checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.combinationName+"</td>";
+                if ((i+1)%3==0){
+                    checkPack+="</tr>";
+                }
             })
             $.each(packCheck.packageCheckList,function (i,e) {
                 checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
+                if ((i+1)%3==0){
+                    checkPack+="</tr>";
+                }
             })
-            checkPack+="</tr></table>";
             $(".childBox").html(checkPack);
             $(".childBox").show();
         })
@@ -174,7 +181,7 @@ function selAllCheck() {
 	$.getJSON("/ExhibitionAllCheck.do",{},function (check) {
 		var content = "<tr>";
 		$.each(check,function (i,e) {
-            content+="<td><span style='text-align: center;margin-left: 15px;' name=\"t\"><input type=\"checkbox\" id='c"+i+"' name=\"checkItem\" value=\""+e.checkId+"\" /><label for='c"+i+"'>"+e.checkName+"</label></span></td>";
+            content+="<td style='width: auto'><span style='text-align: center;margin-left: 15px;' name=\"t\"><input type=\"checkbox\" id='c"+i+"' name=\"checkItem\" value=\""+e.checkId+"\" /><label for='c"+i+"'>"+e.checkName+"</label></span></td>";
             if((i+1)%3==0){
                 content+="</tr>";
             }
@@ -186,7 +193,7 @@ function selAllCheck() {
     $.getJSON("/ExhibitionAllCombination.do",{},function (com) {
         var content = "<tr>";
         $.each(com,function (i,e) {
-            content+="<td name='c'><span style='text-align: center;margin-left: 15px;'><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
+            content+="<td style='width: auto' name='c'><span style='text-align: center;margin-left: 15px;'><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
             if((i+1)%3==0){
                 content+="</tr>";
             }
@@ -199,7 +206,7 @@ function selAllCheck() {
         var packageContent = "";
         var content = "<tr>";
         $.each(package,function (i,e) {
-            content+="<td name='p'><span style='text-align: center;margin-left: 15px;'><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></span></td>";
+            content+="<td style='width: auto' name='p'><span style='text-align: center;margin-left: 15px;'><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></span></td>";
             if((i+1)%3==0){
                 content +="</tr>";
             }

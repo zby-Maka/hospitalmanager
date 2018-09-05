@@ -52,6 +52,7 @@ td {
 	margin-left: 300px;
 	margin-top: 10px;
 	background-color: #f8f8f8;
+	overflow: auto;
 }
 
 .tab_box {
