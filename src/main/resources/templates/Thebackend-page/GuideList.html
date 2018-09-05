@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <title>指引单查询</title>
 </head>
-<body>
-<input type="radio" name="geren" value="0" checked="checked"/>个人
-&nbsp;&nbsp;
-<input type="radio" name="geren" value="1"/>单位
-<p id="tijian">
-    请输入体检编号:<input type="text" name="physicalExaminationId" value=""/>
-    <input type="button" name="isSelect" value="查询"/>
-</p>
-<p id="shenfen" style="display: none;">
-    请输入身份证号:<input type="text" name="personIdCard" value=""/>
-    <input type="button" name="danwei" value="查询"/>
-</p>
-
-<p style="display: none; color: red;" id="xianshi">暂无信息</p>
+<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+<div style="width: 80%;height: 174mm; margin: 0 auto; background-color: #f8f8f8;opacity: 0.8; ">
+    <h2 style="display: block; text-align: center;letter-spacing: 15px;">太原市小店区三甲大院体检指引单查询</h2>
+    <div style="margin-left:450px;margin-top: 50px">
+        <input type="radio" name="geren" value="0" checked="checked"/>个人
+        &nbsp;&nbsp;
+        <input type="radio" name="geren" value="1"/>单位
+        <p id="tijian">
+            请输入体检编号:<input type="text" name="physicalExaminationId" value=""/>
+            <input type="button" name="isSelect" value="查询"/>
+        </p>
+        <p id="shenfen" style="display: none;">
+            请输入身份证号:<input type="text" name="personIdCard" value=""/>
+            <input type="button" name="danwei" value="查询"/>
+        </p>
+        <p style="display: none; color: red;" id="xianshi">暂无信息</p>
+    </div>
+</div>
 </body>
 <script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
 <script>
