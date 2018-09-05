@@ -5,7 +5,7 @@
 <mapper namespace="com.dyhc.hospitalmanager.dao.CompanyInfoMapper">
     <!-- 根据单位名称查询单位表-->
     <select id="showCompanyInfo" resultType="com.dyhc.hospitalmanager.pojo.CompanyInfo">
-          SELECT * FROM `company_info` WHERE `company_name` = #{companyName};
+          SELECT * FROM `company_info` WHERE `company_name` = #{companyName} and is_delete = 1;
     </select>
 
     <!--修改单位信息-->
