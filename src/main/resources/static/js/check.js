@@ -105,6 +105,7 @@ $(function() {
                     checkCom+="</tr>";
                 }
             })
+            checkCom+="</tr></table>";
             $(".childBox").html(checkCom);
             $(".childBox").show();
         })
