@@ -14,6 +14,7 @@ function getinsertproposedDescription() {
         return;
     }else if(adviceContent==""){
         alert("请输入科普说明")
+        return;
     }
     if (proposedDescriptionId==0){
         $.post("http://localhost:8080/insertProposedDescription.do",content,function (data) {
