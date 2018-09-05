@@ -2,6 +2,8 @@
 function  getclearproposedDescription() {
     $("input[name='sciencePopularization']").val("");
     $("input[name='adviceContent']").val("");
+    $("input[name=isDelete]").get(0).checked = true;
+    $("input[name=sciencePopularization]").val("");
     $("input[name=adviceContent]").attr("readonly",false);
     $("input[name=sciencePopularization]").attr("readonly",false);
 }

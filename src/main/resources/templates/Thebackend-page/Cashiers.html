@@ -175,22 +175,32 @@
                 data:{physical_examination_id:physical_examination_id,physicalStatu:1},
                 dataType:"json",
                 success:function (date) {
+                    var checkLists = "" ;
                     if (date!=null){
                         $(".name").html("姓名:"+date.personName);
                         $(".age").html("年龄:"+date.personAge);
                         $(".sex").html("性别:"+date.personSex);
                         $(".isMarry").html("婚否:"+date.isMarry);
-                        var checkList = "" ;
                         var price = 0 ;
                         $.each(date.checkList,function (i,e) {
-                            checkList += "<tr>\n" +
+                            checkLists += "<tr>\n" +
                                 "\t\t\t\t\t\t<td align=\"center\">"+(i+1)+"</td>\n" +
                                 "\t\t\t\t\t\t<td align=\"center\">"+e.checkName+"</td>\n" +
                                 "\t\t\t\t\t\t<td align=\"center\">"+e.checkPrice+"</td>\n" +
                                 "\t\t\t\t\t</tr>";
                             price += e.checkPrice;
                         })
-                        $(".checkList").html(checkList);
+                        if(date.checkList==""){
+                            checkLists = "<tr>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                "\t\t\t\t\t</tr>\n" +
+                                "\t\t\t\t\t<tr>\n" +
+                                "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无已体检项信息</td>\n" +
+                                "\t\t\t\t\t</tr>" ;
+                        }
+                        $(".checkList").html(checkLists);
                         $(".aggregate").html(price);
                         $(".receivable").html(price);
                         $(".change").html("---");
@@ -210,6 +220,7 @@
 				success:function (date) {
 					if (date>0) {
 						alert("收费成功");
+                        /*$("input[name=physical_examination_id]").val("");*/
                         getPersonInfo();
 					}else{
 						alert("收费失败");

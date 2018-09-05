@@ -16,7 +16,6 @@ function  getPerson() {
     var peacId=$("input[name=physicalExaminationId]").val();
     $.getJSON("http://localhost:8080/Person.html",{"peacId":peacId},function (date) {
         $.each(date.map1,function (i,m) {
-            alert(m.personName);
             $("label[name=personName]").text(m.personName);
             $("label[name=personAge]").text(m.personAge);
             $("label[name=personSex]").text(m.personSex);
@@ -38,7 +37,6 @@ function  result(checkId) {
     $("input[name=checkId]").val(checkId);
     $.getJSON("http://localhost:8080/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
         $("#checkResultFinally textarea").html(result.resultDesc);
-        alert(result.commonResultsId);
         $("input[name=checkResultFinally]").val(result.commonResultsId);//结果id
         //如果结果是正常的话建议为空
         if (result.resultDesc=="正常"){
@@ -72,11 +70,11 @@ function  addResultAndMedicalEvent() {
             console.log(date);
             if (date.stat == "ok") {
                 updateStatu();
-                alert("success");
+                alert("保存成功！");
                 $(".xuan").parent().remove();
                 qing();
             } else {
-                alert("error");
+                alert("保存失败！");
             }
         }
     });
