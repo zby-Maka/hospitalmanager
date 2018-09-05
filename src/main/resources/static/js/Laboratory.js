@@ -65,11 +65,11 @@ $(function () {
                 console.log(resultJSON);
                 if (resultJSON.stat == "ok") {
                     updateStatu();
-                    alert("success");
+                    alert("保存成功！");
                     $(".xuan").parent().remove();
                     qing();
                 } else {
-                    alert("error");
+                    alert("保存失败！");
                 }
             }
         });
