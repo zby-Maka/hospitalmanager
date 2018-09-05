@@ -14,8 +14,8 @@
     </select>
     <!--修改科室信息-->
     <update id="updSectionInfo">
-        update section set section_name=#{sectionName},section_type_id=#{sectionTypeId},remark=#{remark}
-        where section_id=#{sectionId}
+        UPDATE section SET section_name=#{sectionName},section_type_id=#{sectionTypeId},section_status=#{sectionStatus},remark=#{remark}
+        WHERE section_id=#{sectionId}
     </update>
 
     <!--根据id查询科室信息-->

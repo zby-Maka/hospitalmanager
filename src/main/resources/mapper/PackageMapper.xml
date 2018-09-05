@@ -11,7 +11,7 @@
         INNER JOIN `combination` com ON com.`combination_id` = pac.`combination_id`
         INNER JOIN `combination_and_ check` cac ON cac.`combination_id` = pac.`combination_id`
         INNER JOIN `check` c ON c.`check_id` = cac.`check_id`
-        WHERE p.`package_id`=#{packageId}
+        WHERE p.`package_id`=#{packageId} AND p.`is_enable` = 1
     </select>
 
     <!-- 根据套餐Id查询其下面的所有组合项 -->
@@ -30,7 +30,7 @@
         SELECT * FROM `package` p
         INNER JOIN `package_and_ check` pc ON pc.`package_id` = p.`package_id`
         INNER JOIN `check` cp ON cp.`check_id`=pc.`check_id`
-        WHERE p.`package_id`=#{packageId}
+        WHERE p.`package_id`=#{packageId} AND p.`is_enable` = 1
     </select>
 
     <!-- 根据套餐Id查询套餐下的体检项 -->
@@ -55,7 +55,7 @@
     <!-- 根据套餐Id，获取该套餐 -->
     <select id="selPackageById" resultType="com.dyhc.hospitalmanager.pojo.Package">
         SELECT * FROM `package`
-        WHERE package_id = #{packageId}
+        WHERE package_id = #{packageId}  AND is_enable = 1
     </select>
     <!--添加套餐信息-->
     <insert id="addPackageInfo" useGeneratedKeys="true" keyProperty="packageId" keyColumn="package_id">

@@ -21,9 +21,9 @@ function getinsertsection() {
         $.post("http://localhost:8080/keshiweihu.do?sectionId="+sectionid,content,function (data) {
             if (data.status==1){
                 alert("修改成功");
-                resetInsert();
+                findByIds();
             }else {
-                alert("修改成功");
+                alert("修改失败");
             }
         },"json");
     }
