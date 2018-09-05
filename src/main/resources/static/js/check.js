@@ -98,9 +98,11 @@ $(function() {
         var comId=$(this).find("span input").val();
         $.getJSON("/getComCheck.do",{"comId":comId},function (comCheck) {
             var checkCom = "<table><tr>";
-            console.log(comCheck);
             $.each(comCheck,function (i,e) {
                 checkCom+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
+                if ((i+1)%4==0){
+                    checkCom+="";
+                }
             })
             checkCom+="</tr></table>";
             $(".childBox").html(checkCom);
@@ -187,7 +189,7 @@ function selAllCheck() {
         var content = "<tr>";
         $.each(com,function (i,e) {
             content+="<td name='c'><span style='text-align: center;margin-left: 15px;'><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
-            if((i+1)%3==0){
+            if((i+1)%2==0){
                 content+="</tr>";
             }
         });
