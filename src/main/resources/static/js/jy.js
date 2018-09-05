@@ -2,6 +2,8 @@
 function  getclearproposedDescription() {
     $("input[name='sciencePopularization']").val("");
     $("input[name='adviceContent']").val("");
+    $("input[name=adviceContent]").attr("readonly",false);
+    $("input[name=sciencePopularization]").attr("readonly",false);
 }
 //添加常见建议
 function getinsertproposedDescription() {

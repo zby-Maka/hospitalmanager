@@ -18,7 +18,6 @@ function  getpersoninfo() {
     },"json");
     //通过体检编号查询体检人员的检查项
     $.post("http://localhost:8080/checkList.do",{"physicalExaminationId":physicalexaminationid},function (date) {
-        console.log(date);
         sessionStorage.setItem("two",JSON.stringify(date));
         var contents="";
         var comt="";
@@ -27,7 +26,6 @@ function  getpersoninfo() {
         var two = "" ;
         $("#content").html("<table border=\"1\" style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\" id=\"checknum\"></table>");
         $.each(date,function (i,e) {
-            console.log(e);
             jianyan="";
             if (e.medicalEventsList.length==0) {
                 var cons="";
