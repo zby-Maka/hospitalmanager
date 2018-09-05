@@ -124,13 +124,15 @@ function add() {
     var flag=true;
     if(flag==true){
         if(text.trim()==""){
-        $.each(textControl,function (i,e) {
-            if(e.type=="text" && e.value=="") {
+        alert("请完善体检项目信息!")
+        }else{
+            $.each(textControl,function (i,e) {
+                if(e.type=="text" && e.value=="") {
                     flag = false;
                     alert("请完善体检项目信息！");
                     return false;
-            }
-        })
+                }
+            })
         }
     }else{
         addcheck();

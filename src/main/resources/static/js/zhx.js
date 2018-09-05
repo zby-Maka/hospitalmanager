@@ -64,6 +64,8 @@ function getcombinationidByid(combinaid) {
 
                 $("input[name='combinationName']").val(e.combinationName)
                 $("input[name='combinationName']").attr("readonly",true)
+                $("input[name='pinyinCode']").val(e.pinyinCode)
+                $("input[name='pinyinCode']").attr("readonly",true)
                 $("input[name='combinationId']").val(e.combinationId);
                 $("#cmbid").val(e.combinationId);
                 $("input[name='promptInformation']").val(e.promptInformation)
