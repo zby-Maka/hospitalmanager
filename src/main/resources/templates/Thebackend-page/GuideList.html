@@ -37,43 +37,62 @@ $("input[name=geren]").click(function () {
 
     /*查询个人按钮*/
     $("input[name=isSelect]").click(function () {
+        var flat = true;
         var physicalExaminationId = $("input[name=physicalExaminationId]").val();
-        localStorage.physicalExaminationId=physicalExaminationId;
-       // localStorage["physicalExaminationId"]
-        $.ajax({
-            url: "/selectByPhysicalExaminationId.do?physicalExaminationId="+physicalExaminationId,
-            data:{},
-            type: "get",
-            dataType: "json",
-            success: function (data) {
-                if(data>0){
-                   location.href = "/Thebackend-page/thewaylist.html";
+        if($.trim(physicalExaminationId) == ''){
+            alert("请输入体检编号");
+            flat = false;
+            return false;
+        }
+        if(flat){
+            var physicalExaminationId = $("input[name=physicalExaminationId]").val();
+            localStorage.physicalExaminationId=physicalExaminationId;
+            // localStorage["physicalExaminationId"]
+            $.ajax({
+                url: "/selectByPhysicalExaminationId.do?physicalExaminationId="+physicalExaminationId,
+                data:{},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    if(data>0){
+                        location.href = "/Thebackend-page/thewaylist.html";
+                    }
+                    $("#xianshi").show();
                 }
-                $("#xianshi").show();
-            }
-        });
+            });
+        }
+
     });
 
     /*查询单位按钮*/
     $("input[name=danwei]").click(function () {
-        //身份证号
+        var flat = true;
         var personIdCard = $("input[name=personIdCard]").val();
-        localStorage.personIdCard=personIdCard;
-        // localStorage["physicalExaminationId"]
-        $.ajax({
-            url: "/personIdCard.do?personIdCard="+personIdCard,
-            data:{},
-            type: "get",
-            dataType: "json",
-            success: function (data) {
-                if(data>0){
-                    alert("aaa");
-                    location.href = "/Thebackend-page/DanWeiGuide.html";
-                }
-                $("#xianshi").show();
+        if($.trim(personIdCard) == ''){
+            alert("请输入身份证号");
+            flat = false;
+            return false;
+        }
+        if(flat) {
+            //身份证号
+            var personIdCard = $("input[name=personIdCard]").val();
+            localStorage.personIdCard = personIdCard;
+            // localStorage["physicalExaminationId"]
+            $.ajax({
+                url: "/personIdCard.do?personIdCard=" + personIdCard,
+                data: {},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    if (data > 0) {
+                        alert("aaa");
+                        location.href = "/Thebackend-page/DanWeiGuide.html";
+                    }
+                    $("#xianshi").show();
 
-            }
-        });
+                }
+            });
+        }
     })
 </script>
 </html>
