@@ -64,7 +64,8 @@ public class SectionController {
     @ResponseBody
     public String getYan(@RequestParam("checkId")Integer checkId){
         HttpClient httpClient=new HttpClient();
-        String content = httpClient.httpGet("http://ourmodel.xin/demo-0.0.1-SNAPSHOT/selEventsByCheckId?checkId="+checkId);
+        //String content = httpClient.httpGet("http://ourmodel.xin/demo-0.0.1-SNAPSHOT/selEventsByCheckId?checkId="+checkId);
+        String content = httpClient.httpGet("http://129.28.67.63:8080/demo-0.0.1-SNAPSHOT/selEventsByCheckId?checkId="+checkId);
         return content;
     }
 
