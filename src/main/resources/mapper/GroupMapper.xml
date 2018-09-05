@@ -32,4 +32,9 @@
     <update id="updGroup">
         UPDATE `group` SET `is_delete` = #{isDelete} where group_id = #{groupId}
     </update>
+
+    <!--根据分组名称查询分组是否存在-->
+    <select id="selectByGroupName" resultType="com.dyhc.hospitalmanager.pojo.Group">
+        SELECT  * FROM `group` WHERE group_name = #{groupName}
+    </select>
 </mapper>

@@ -235,4 +235,15 @@ public class UnitReservationServiceImpl implements UnitReservationService {
         }
     }
 
+    @Override
+    public Group selectByGroupName(String groupName) {
+        Group g = null;
+        try {
+           g = groupMapper.selectByGroupName(groupName);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return g;
+    }
+
 }

@@ -31,7 +31,7 @@
                     <tr>
                         <td style="width: 150px; text-align: right;">分组名称：</td>
                         <td colspan="3">
-                            <input type="text" name="groupName" value=""/>
+                            <input type="text" name="groupName" value=""/><span style="color: red;" id="error" ></span>
                         </td>
                     </tr>
                     <tr>
@@ -188,7 +188,7 @@
                     "\"personAddress\":" + personAddress + ",\"personNameSpellCode\":" + personNameSpellCode + "}";*/
 
                 perList.push(perJson);
-                $(trLength[i])...........,.remove();
+                $(trLength[i]).remove();
             }
         }
 
@@ -225,5 +225,25 @@
             }
         });
     });
+
+    //判断单位分组名称是否存在
+    $("input[name=groupName]").blur(function () {
+        var groupName = $("input[name=groupName]").val();
+        $.ajax({
+            url: "/selectGroupNameByExists.do?groupName="+groupName,
+            data: {},
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                if(data>0){
+                    $("#error").html("改分组名称已存在");
+                }else{
+                    $("#error").html("");
+                }
+
+            }
+        });
+    });
+
 </script>
 </html>
