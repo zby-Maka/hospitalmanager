@@ -95,4 +95,11 @@ public interface UnitReservationService {
      */
     Integer updGroup(Integer isDelete,Integer groupId);
 
+    /**
+     * 根据分组名称查询分组是否存在
+     * @param groupName
+     * @return
+     */
+    Group selectByGroupName(@Param("groupName") String groupName);
+
 }

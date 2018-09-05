@@ -1,7 +1,11 @@
 //清空
 function  getclearcommonresult() {
+    $("input[name=isDelete]").get(0).checked = true;
+    $("input[name=isPositive]").get(1).checked = true;
+    $("#commonResultsIds").val(0);
     $("input[name='resultDesc']").val("");
     $("input[name='resultDesc']").attr("readonly",false);
+
 }
 
 //添加常见结果

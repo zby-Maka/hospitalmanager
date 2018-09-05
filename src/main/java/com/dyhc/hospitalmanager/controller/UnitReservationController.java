@@ -296,4 +296,21 @@ public class UnitReservationController {
         }
         return JSON.toJSONString(content);
     }
+
+
+    /**
+     * 根据单位分组名称查询此单位是否存在
+     * @param groupName
+     * @return
+     */
+    @RequestMapping("/selectGroupNameByExists.do")
+    @ResponseBody
+    public String selectGroupNameByExists(@RequestParam("groupName") String groupName){
+        Group group = unitReservationService.selectByGroupName(groupName);
+        Integer result = 0;
+        if(group != null){
+            result = 1;
+        }
+        return JSON.toJSONString(result);
+    }
 }

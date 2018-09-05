@@ -181,11 +181,12 @@
             var shouldBeBack = $(".shouldBeBack").html();
             $.ajax({
                 url:"/operationCost.do",
-                data:{physical_examination_id:physical_examination_id,aggregate:shouldBeBack,physicalStatu:0},
+                data:{physical_examination_id:physical_examination_id,aggregate:shouldBeBack,physicalStatu:1},
                 dataType:"json",
                 success:function (date) {
                     if (date>0) {
                         alert("退费成功");
+                        $("input[name=physical_examination_id]").val("");
                         getPersonInfo();
                     }else{
                         alert("退费失败");
