@@ -79,7 +79,7 @@
                 dataType:"json",
                 success:function (date) {
 					if (date>0) {
-                        getPersonInfo();
+                        getCostTypeByPersonId();
 					}else{
                         var checkList = "<tr>\n" +
                             "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
@@ -136,7 +136,6 @@
                         $(".checkList").html(checkList);
                         $(".number").html(number);
                         $(".shouldBeBack").html(price);
-                        getCostTypeByPersonId(date.personId);
                     } else {
                         $(".name").html("姓名:----");
                         $(".age").html("年龄:----");
@@ -151,6 +150,8 @@
                             "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无信息,请输入人员编号进行查询</td>\n" +
                             "\t\t\t\t\t</tr>" ;
                         $(".checkList").html(checkList);
+                        $(".number").html("---");
+                        $(".shouldBeBack").html("---");
                         alert("查询失败,请重新输如人员编号！");
                     }
                 }
@@ -158,18 +159,35 @@
         }
 
         //根据人员id查询该体检人是否已缴费/是否已退费
-        function getCostTypeByPersonId(personId) {
+        function getCostTypeByPersonId() {
+            var physical_examination_id = $("input[name=physical_examination_id]").val();
             $.ajax({
                 url:"/getCostTypeByPersonId.do",
-                data:{personId:personId,costType:"退费"},
+                data:{physical_examination_id:physical_examination_id,costType:"退费"},
                 dataType:"json",
                 success:function (date) {
                     if (date!="退费"){
                         var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\"/>";
                         $(".operation").html(str)
+                        getPersonInfo();
                     }else{
                         var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                         $(".operation").html(str)
+                        $(".name").html("姓名:----");
+                        $(".age").html("年龄:----");
+                        $(".sex").html("性别:----");
+                        $(".isMarry").html("婚否:----");
+                        var checkList = "<tr>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t</tr>\n" +
+                            "\t\t\t\t\t<tr>\n" +
+                            "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">已退费</td>\n" +
+                            "\t\t\t\t\t</tr>" ;
+                        $(".checkList").html(checkList);
+                        $(".number").html("---");
+                        $(".shouldBeBack").html("---");
                     }
                 }
             })
@@ -187,7 +205,21 @@
                     if (date>0) {
                         alert("退费成功");
                         $("input[name=physical_examination_id]").val("");
-                        getPersonInfo();
+                        $(".name").html("姓名:----");
+                        $(".age").html("年龄:----");
+                        $(".sex").html("性别:----");
+                        $(".isMarry").html("婚否:----");
+                        var checkList = "<tr>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                            "\t\t\t\t\t</tr>\n" +
+                            "\t\t\t\t\t<tr>\n" +
+                            "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无信息,请输入人员编号进行查询</td>\n" +
+                            "\t\t\t\t\t</tr>" ;
+                        $(".checkList").html(checkList);
+                        $(".number").html("---");
+                        $(".shouldBeBack").html("---");
                     }else{
                         alert("退费失败");
                     }

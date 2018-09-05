@@ -47,14 +47,14 @@ public class CostOfModuleController {
 
     /**
      * 根据人员id判断是否已收费/退费
-     * @param personId
+     * @param physical_examination_id
      * @param costType
      * @return
      */
     @RequestMapping("getCostTypeByPersonId.do")
     @ResponseBody
-    public Object getCostTypeByPersonId(Integer personId,String costType){
-        String str = costOfModuleService.getCostTypeByPersonId(personId,costType);
+    public Object getCostTypeByPersonId(String physical_examination_id,String costType){
+        String str = costOfModuleService.getCostTypeByPersonId(physical_examination_id,costType);
         String json = JSON.toJSONString(str);
         return json;
     }

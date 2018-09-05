@@ -112,13 +112,12 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
 
     /**
      * 根据人员id查询该体检人是否已缴费/是否已退费
-     * @param personId
+     * @param physical_examination_id
      * @return
      */
     @Override
-    public String getCostTypeByPersonId(Integer personId,String costTypes) {
+    public String getCostTypeByPersonId(String physical_examination_id,String costTypes) {
         try {
-            String physical_examination_id = physicalExaminationMapper.getPhysicalExaminationByPersonId(personId);
             String costType = costMapper.getCostTypeByPhysical_Examination_Id(physical_examination_id,costTypes);
             if (costType!=""){
                 return costType;

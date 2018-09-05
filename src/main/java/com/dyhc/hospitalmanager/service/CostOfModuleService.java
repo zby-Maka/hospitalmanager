@@ -33,10 +33,10 @@ public interface CostOfModuleService {
 
     /**
      * 根据人员id查询该体检人是否已缴费/是否已退费
-     * @param personId
+     * @param physical_examination_id
      * @return
      */
-    String getCostTypeByPersonId(Integer personId,String costType);
+    String getCostTypeByPersonId(String physical_examination_id,String costType);
 
     /**
      * 根据体检编号与费用类型判断该用户是否已进行缴费
