@@ -116,7 +116,7 @@ function getCheckInfoBySectionId(secid) {
 function add() {
     var textControl = $("#addform input");
     var flag=true;
-    if(flag==true){
+
             $.each(textControl,function (i,e) {
                 if(e.type=="text" && e.value=="") {
                     flag = false;
@@ -124,9 +124,11 @@ function add() {
                     return false;
                 }
             })
-    }else{
-        addcom();
-    }
+  if(flag){
+      addcom();
+  }
+
+
 
 }
 //添加组合项信息

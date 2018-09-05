@@ -211,10 +211,7 @@ function add() {
     var textControl = $("#addform input");
     var text = $("textarea[name='scopeApplication']").val();
     var flag = true;
-    if (flag == true) {
         if (text.trim() == "") {
-        alert("请完善套餐项信息！")
-        } else {
             $.each(textControl, function (i, e) {
                 if (e.type == "text" && e.value == "") {
                     flag = false;
@@ -223,7 +220,8 @@ function add() {
                 }
             })
         }
-    } else {
+
+        if (flag) {
         addpack();
     }
 
