@@ -1,7 +1,7 @@
 function  getpersoninfo() {
     var physicalexaminationid=$("input[name=physicalexaminationid]").val();
     //通过体检编号查询体检人员
-    $.post("http://localhost:8080/personInfo.do",{"physicalexaminationid":physicalexaminationid},function (data) {
+    $.post("/hospitalOne/personInfo.do",{"physicalexaminationid":physicalexaminationid},function (data) {
         $("#dayin").removeAttr("disabled");
         sessionStorage.setItem("one",JSON.stringify(data));
         $.each(data,function (i,e) {
@@ -17,7 +17,7 @@ function  getpersoninfo() {
         $("#check").html(content);
     },"json");
     //通过体检编号查询体检人员的检查项
-    $.post("http://localhost:8080/checkList.do",{"physicalExaminationId":physicalexaminationid},function (date) {
+    $.post("/hospitalOne/checkList.do",{"physicalExaminationId":physicalexaminationid},function (date) {
         sessionStorage.setItem("two",JSON.stringify(date));
         var contents="";
         var comt="";
@@ -129,5 +129,5 @@ function  getpersoninfo() {
 
 //跳转打印页面
 function sendTotal() {
-    location.href="/Thebackend-page/total.html";
+    location.href="/hospitalOne/Thebackend-page/total.html";
 }
