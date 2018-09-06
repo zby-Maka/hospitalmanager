@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
+import com.dyhc.hospitalmanager.util.SendMes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +23,8 @@ public class PersonalReservationController {
 
     @Autowired
     private PersonalReservationService personalReservation;
+
+    private SendMes sendMes = new SendMes();
 
     /**
      * 根据身份证号查询用户信息表，绑定信息框
@@ -187,5 +190,10 @@ public class PersonalReservationController {
     @GetMapping("/getPackCheck.do")
     public Package getPackCheck(Integer packId) {
         return personalReservation.getPackCheck(packId);
+    }
+
+    @GetMapping("/smg.do")
+    public String sendSmg(String phone,String physicalExaminationId){
+        return JSON.toJSONString(sendMes.sendMes(phone,physicalExaminationId));
     }
 }

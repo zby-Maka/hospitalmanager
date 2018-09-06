@@ -8,6 +8,8 @@ import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
 import com.dyhc.hospitalmanager.util.GetFetureDate;
 import com.dyhc.hospitalmanager.util.MessageProducer;
+import com.dyhc.hospitalmanager.util.SendMes;
+import com.github.qcloudsms.SmsSingleSenderResult;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,7 +61,9 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     RedisDao redisDao;
     @Autowired
     private MessageProducer messageProducer;
-
+    //短信发送
+    @Autowired
+    private SendMes sendMes;
     public String result="ok";
 
 
@@ -116,6 +120,9 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Transactional(rollbackFor=Exception.class)
     public String UserReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId) {
         Integer result = 0;
+        JSONObject jsonObject = new JSONObject();
+        String phone = null;
+        String bianhao=null;
         try {
             PersonInfo per=personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
             if (per==null) {
@@ -126,6 +133,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                 result = personInfoMapper.updPersonInfo(personInfo);
             }
             personInfo = personInfoMapper.findPersonInfoPersonIdCard(personInfo.getPersonIdCard());
+            //jsonObject.put("phone", personInfo.getPersonTelephone());
+            phone=personInfo.getPersonTelephone();
             if (result == 0) {
                 //添加(修改)用户信息失败
                 logger.error("添加用户信息失败");
@@ -171,6 +180,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                     logger.error("添加用户错误");
                     return -3+"";
                 }
+                //jsonObject.put("physicalExaminationId", physicalExaminationId);
+                bianhao=physicalExaminationId;
             }
             List<Integer> packCheckId = null;
             List<Integer> comCheckId = null;
@@ -231,6 +242,16 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             e.printStackTrace();
             return -1+"";
         }
+        //jsonObject.put("errMsg","ok");
+        SmsSingleSenderResult smsSingleSenderResult =null;
+        do {
+            System.out.println("abcdefghijklmnopqrstuvwxyz");
+            System.out.println(smsSingleSenderResult.errMsg);
+            smsSingleSenderResult= sendMes.sendMes(phone,bianhao);
+            if(smsSingleSenderResult.errMsg=="ok"){
+                break;
+            }
+        }while (true);
         return "ok";
     }
 
