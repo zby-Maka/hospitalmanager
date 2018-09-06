@@ -179,7 +179,6 @@
                 var perSex = tdArr.eq(3).text();
                 var perIsMarry = tdArr.eq(5).text();
                 var perAge = tdArr.eq(1).text();
-                alert("xingbie:"+perSex);
                 if (sex == perSex && isMarry == perIsMarry && ageDown < perAge < ageUp) {
                     var personName = $("#"+i+"personName").text();
                     var personAge = $("#"+i+"personAge").text();
@@ -223,15 +222,28 @@
                 contentType:"application/json;charset=utf-8",
                 dataType: "json",
                 success: function (data) {
-                    if(data>0){
+                    if(data == 1){
                         alert("添加成功");
                         $("input[name='groupName']").val("");
                         //年龄上限
                         $("input[name=ageUp]").val("");
                         //年龄下限
                         $("input[name=ageDown]").val("");
-                    }else{
-                        alert("人员信息已存在请勿重新添加");
+                        $("input[name=sex]").eq(0).prop(":checked",true);
+                        $("input[name=hun]").eq(0).prop(":checked",true);
+                    }
+                    if(data == 2){
+                        alert("添加分组信息成功,没有符合的人员信息");
+                        $("input[name='groupName']").val("");
+                        //年龄上限
+                        $("input[name=ageUp]").val("");
+                        //年龄下限
+                        $("input[name=ageDown]").val("");
+                        $("input[name=sex]").eq(0).prop(":checked",true);
+                        $("input[name=hun]").eq(0).prop(":checked",true);
+                    }
+                    if(data == 0){
+                        alert("添加失败");
                     }
                 }
             });

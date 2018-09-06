@@ -214,7 +214,6 @@ public class UnitReservationController {
                 c.setPersonNameSpellCode((String) str.get(8));
                 info.add(c);
             }
-            System.out.println(info.size());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -238,12 +237,18 @@ public class UnitReservationController {
         jsonArray.remove(jsonArray.size()-1);
         String json2=jsonArray.toJSONString();
         List<PersonInfo> personInfos=JSONObject.parseArray(json2,PersonInfo.class);
-        System.out.println("身份证号:"+personInfos.get(0).getPersonIdCard());
-        //添加方法
-        Integer result = unitReservationService.addGroupAndPersonInfo(group,personInfos);
         Integer perG = 0;
-        if(result>0){
-            perG = 1;
+        Integer result = 0;
+        if(personInfos.size() == 0){
+            result = unitReservationService.addGroupAndPersonInfo(group,personInfos);
+            perG = 2;  //添加分组成功 人员不成功
+        }
+        if(personInfos.size()>0){
+            //添加方法
+            result = unitReservationService.addGroupAndPersonInfo(group,personInfos);
+            if(result>0){
+                perG = 1; //添加分组与人员信息成功
+            }
         }
         return JSON.toJSONString(perG);
 

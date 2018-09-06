@@ -95,8 +95,7 @@ public class UnitReservationServiceImpl implements UnitReservationService {
         try{
             //执行添加分组单位信息
             groupResult = groupMapper.addGroupInfo(group);
-            System.out.println("添加的分组id:"+group.getGroupId());
-            if(groupResult > 0){
+            if(groupResult > 0 && personInfos.size() >0){
                 //执行添加人员信息
                 for(int i =0; i<personInfos.size();i++){
                     //通过身份证号判断人员是否存在
