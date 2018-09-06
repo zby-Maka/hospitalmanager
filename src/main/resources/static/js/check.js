@@ -74,7 +74,7 @@ $(function() {
 
     //上一步按钮
     $("input[name=back]").click(function () {
-        location.href="/booking.html";
+        location.href="/hospitalOne/booking.html";
     });
 
 	//查询所有体检项，组合项，套餐项
@@ -96,7 +96,7 @@ $(function() {
 	//浮动组合项时显示该项下边的体检项
     $("#com").on("mouseenter","td[name=c]",function () {
         var comId=$(this).find("span input").val();
-        $.getJSON("/getComCheck.do",{"comId":comId},function (comCheck) {
+        $.getJSON("/hospitalOne/getComCheck.do",{"comId":comId},function (comCheck) {
             var checkCom = "<tr>";
             console.log(comCheck);
             $.each(comCheck,function (i,e) {
@@ -114,7 +114,7 @@ $(function() {
     //浮动套餐时显示该项下边的体检项
     $("#package").on("mouseenter","td[name=p]",function () {
         var packId=$(this).find("span input").val();
-        $.getJSON("/getPackCheck.do",{"packId":packId},function (packCheck) {
+        $.getJSON("/hospitalOne/getPackCheck.do",{"packId":packId},function (packCheck) {
             console.log(packCheck);
             var checkPack = "<tr>";
             $.each(packCheck.packageCombinationList,function (i,e) {
@@ -156,12 +156,10 @@ function makeAnAppointment(yue,packId,comId,checkId) {
 
         $.ajax({
             type: "get",
-            url: "/UserReservation.do?" + date,
+            url: "/hospitalOne/UserReservation.do?" + date,
             date: {},
             dataType: "text",
             success: function (result) {
-                alert(result);
-                console.log(result);
                 if (result == "ok") {
                     alert("预约成功！");
                     sessionStorage.setItem("personInfo",null);
@@ -179,7 +177,7 @@ function makeAnAppointment(yue,packId,comId,checkId) {
  */
 function selAllCheck() {
 	//获取所有检查项
-	$.getJSON("/ExhibitionAllCheck.do",{},function (check) {
+	$.getJSON("/hospitalOne/ExhibitionAllCheck.do",{},function (check) {
 		var content = "<tr>";
 		$.each(check,function (i,e) {
             content+="<td style='width: auto'><span style='text-align: center;margin-left: 15px;' name=\"t\"><input type=\"checkbox\" id='c"+i+"' name=\"checkItem\" value=\""+e.checkId+"\" /><label for='c"+i+"'>"+e.checkName+"</label></span></td>";
@@ -191,7 +189,7 @@ function selAllCheck() {
     });
 
 	//获取是所有组合项
-    $.getJSON("/ExhibitionAllCombination.do",{},function (com) {
+    $.getJSON("/hospitalOne/ExhibitionAllCombination.do",{},function (com) {
         var content = "<tr>";
         $.each(com,function (i,e) {
             content+="<td style='width: auto' name='c'><span style='text-align: center;margin-left: 15px;'><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
@@ -203,7 +201,7 @@ function selAllCheck() {
     });
 
 	//获取所有套餐项
-    $.getJSON("/ExhibitionAllPackages.do",{},function (package) {
+    $.getJSON("/hospitalOne/ExhibitionAllPackages.do",{},function (package) {
         var packageContent = "";
         var content = "<tr>";
         $.each(package,function (i,e) {

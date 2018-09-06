@@ -21,19 +21,19 @@ function getinsertcommonresult() {
         return
     }
     if (commonResultsId==0){
-        $.post("http://localhost:8080/insertcommonResults.do",content,function (data) {
+        $.post("/hospitalOne/insertcommonResults.do",content,function (data) {
             if (data.status==1){
                 alert("添加成功");
-                location.href="http://localhost:8080/Thebackend-page/jieguojianyi.html"
+                location.href="/hospitalOne/Thebackend-page/jieguojianyi.html"
             } else {
                 alert("添加失败")
             }
         },"json")
     } else {
-        $.post("http://localhost:8080/insertcommonResults.do?commonResultsId="+commonResultsId,content,function (data) {
+        $.post("/hospitalOne/insertcommonResults.do?commonResultsId="+commonResultsId,content,function (data) {
             if (data.status==1){
                 alert("修改成功");
-                location.href="http://localhost:8080/Thebackend-page/jieguojianyi.html"
+                location.href="/hospitalOne/Thebackend-page/jieguojianyi.html"
             } else {
                 alert("修改失败")
             }
@@ -44,5 +44,5 @@ function getinsertcommonresult() {
 function getjianyi(commonResultsid,cid) {
     sessionStorage.setItem("commonResultsId",commonResultsid);
     sessionStorage.setItem("cid",cid);
-    window.location.href="http://localhost:8080/Thebackend-page/jy.html";
+    window.location.href="/hospitalOne/Thebackend-page/jy.html";
 }

@@ -93,7 +93,7 @@
 		function getPersonInfo(physicalStatu) {
             var physical_examination_id = $("input[name=physical_examination_id]").val();
 			$.ajax({
-				url:"/getPersonInfoByPersonId.do",
+				url:"/hospitalOne/getPersonInfoByPersonId.do",
 				data:{physical_examination_id:physical_examination_id,physicalStatu:physicalStatu},
 				dataType:"json",
 				success:function (date) {
@@ -155,7 +155,7 @@
         function getCostTypeByPersonId() {
             var physical_examination_id = $("input[name=physical_examination_id]").val();
             $.ajax({
-                url:"/getCostTypeByPersonId.do",
+                url:"/hospitalOne/getCostTypeByPersonId.do",
                 data:{physical_examination_id:physical_examination_id,costType:"收费"},
                 dataType:"json",
                 success:function (date) {
@@ -193,7 +193,7 @@
             var physical_examination_id = $("input[name=physical_examination_id]").val();
             var aggregate = $(".aggregate").html();
             $.ajax({
-				url:"/operationCost.do",
+				url:"/hospitalOne/operationCost.do",
 				data:{physical_examination_id:physical_examination_id,aggregate:aggregate,physicalStatu:0},
 				dataType:"json",
 				success:function (date) {

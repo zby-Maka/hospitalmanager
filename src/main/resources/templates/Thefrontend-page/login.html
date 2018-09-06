@@ -76,33 +76,33 @@
             flag=false;
 		}
 		if(flag){
-            $.post("http://localhost:8080/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
+            $.post("/hospitalOne/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
                 var roletype="";
                 if (data.roletypeid>0) {
                     alert("登录成功！");
                     if (roletypeid==1){
                         roletype="系统管理员";
-                        location.href="http://localhost:8080/index.html"
+                        location.href="/hospitalOne/index.html"
                     }else if (roletypeid==3){
                         roletype="总检医生";
-                        location.href="http://localhost:8080/AlwaysCheckIndex.html"
+                        location.href="/hospitalOne/AlwaysCheckIndex.html"
                     }else  if (roletypeid==2){
                         var section_type_id=data.sectiontypeid;
                         roletype="科室医生"
                         if(section_type_id==1){
-                            location.href="http://localhost:8080/Thebackend-page/department.html";
+                            location.href="/hospitalOne/Thebackend-page/department.html";
                         }else if(section_type_id==2){
-                            location.href="http://localhost:8080/Thebackend-page/Laboratory.html";
+                            location.href="/hospitalOne/Thebackend-page/Laboratory.html";
                         }else if(section_type_id==3){
-                            location.href="http://localhost:8080/Thebackend-page/Laboratory.html";
+                            location.href="/hospitalOne/Thebackend-page/Laboratory.html";
                         }
                     } else {
                         roletype="收费处";
-                        location.href="http://localhost:8080/CashiersIndex.html"
+                        location.href="//hospitalOneCashiersIndex.html"
                     }
                 }else{
                     alert("登录失败");
-                    location.href="http://localhost:8080/login.html"
+                    location.href="/hospitalOne/login.html"
                 }
             },"json");
 		}

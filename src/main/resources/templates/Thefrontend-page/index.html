@@ -587,7 +587,7 @@
 			function checkchuanid(checkid,typeid) {
 				localStorage.cid=checkid;
 				localStorage.tid=typeid;
-                $("#rightMain").attr("src", "/Thebackend-page/tjx.html")
+                $("#rightMain").attr("src", "/hospitalOne/Thebackend-page/tjx.html")
             }
 			//传递科室信息
 			function tj(that) {
@@ -596,7 +596,7 @@
                 localStorage.secid=sid;
                 localStorage.secname=sname;
                 localStorage.cid=null;
-				$("#rightMain").attr("src", "/Thebackend-page/tjx.html")
+				$("#rightMain").attr("src", "/hospitalOne/Thebackend-page/tjx.html")
 
 
 
@@ -604,7 +604,7 @@
 			//传递组合项目id值
 			function combinationchuanid(combinationid){
 			localStorage.comid=combinationid;//传递组合项目id
-                $("#rightMain").attr("src", "/Thebackend-page/zhx.html")
+                $("#rightMain").attr("src", "/hospitalOne/Thebackend-page/zhx.html")
 			}
 			//传递科室信息
 			function zhx(that) {
@@ -613,24 +613,24 @@
                 localStorage.secid=sid;
                 localStorage.secname=sname;
 				localStorage.comid=null;
-				$("#rightMain").attr("src", "/Thebackend-page/zhx.html")
+				$("#rightMain").attr("src", "/hospitalOne/Thebackend-page/zhx.html")
 			}
 			
 			function kswh(that) {
                 var sectionid=$(that).next().val();
                 localStorage.keid=sectionid;
-				$("#rightMain").attr("src", "/Thebackend-page/keshiweihu.html");
+				$("#rightMain").attr("src", "/hospitalOne/Thebackend-page/keshiweihu.html");
 			}
 
 			function gotc() {
                 localStorage.pid=null;
-                $("#rightMain").attr("src", "/Thebackend-page/tc.html")
+                $("#rightMain").attr("src", "/hospitalOne/Thebackend-page/tc.html")
             }
 			//传递套餐信息
 			function taocan (packageid) {
 			    localStorage.pid=packageid;//套餐id
 
-				$("#rightMain").attr("src", "/Thebackend-page/tc.html")
+				$("#rightMain").attr("src", "/hospitalOne/Thebackend-page/tc.html")
 			}
 
 			/*单位分组*/

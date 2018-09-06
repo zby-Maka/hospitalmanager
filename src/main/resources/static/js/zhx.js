@@ -29,7 +29,7 @@ $(function () {
 function addandupd() {
     var cmbid = $("#cmbid").val();
     $.ajax({
-        url: "http://localhost:8080/getCombinationAndCheckInfo",
+        url: "/hospitalOne/getCombinationAndCheckInfo",
         type: "post",
         dataType: "json",
         data: {"combinationId": cmbid},
@@ -48,7 +48,7 @@ function addandupd() {
 //修改绑定
 function getcombinationidByid(combinaid) {
     $.ajax({
-        url: "http://localhost:8080/getCombinationAndCheckInfo",
+        url: "/hospitalOne/getCombinationAndCheckInfo",
         type: "post",
         dataType: "json",
         data: {"combinationId": combinaid},
@@ -96,7 +96,7 @@ function getcombinationidByid(combinaid) {
 function getCheckInfoBySectionId(secid) {
 
     $.ajax({
-        url: "http://localhost:8080/getCheckInfoBySectionId",
+        url: "/hospitalOne/getCheckInfoBySectionId",
         type: "post",
         dataType: "json",
         data: {"sectionId": secid},
@@ -145,7 +145,7 @@ function addcom() {
     }) + "&" + combination;
 
     $.ajax({
-        url: "http://localhost:8080/addCombinationInfo",
+        url: "/hospitalOne/addCombinationInfo",
         data: date,
         dataType: "json",
         type: "get",
@@ -182,7 +182,7 @@ function updcom() {
     // }) + "&" + combination;
 
     $.ajax({
-        url: "http://localhost:8080/updCombinationInfo",
+        url: "/hospitalOne/updCombinationInfo",
         data: combination,
         dataType: "json",
         type: "get",
@@ -204,7 +204,7 @@ function updcom() {
 function showcheckcheckbox(combid) {
 
     $.ajax({
-        url: "http://localhost:8080/getCombinationAndCheckInfo",
+        url: "/hospitalOne/getCombinationAndCheckInfo",
         type: "post",
         dataType: "json",
         data: {"combinationId": combid},

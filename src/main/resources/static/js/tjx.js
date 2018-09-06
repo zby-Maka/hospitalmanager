@@ -34,7 +34,7 @@ $(function () {
 function addandupd() {
     var cid = $("#ckid").val();
     $.ajax({
-        url: "http://localhost:8080/getCheckInfoById",
+        url: "/hospitalOne/getCheckInfoById",
         type: "post",
         dataType: "json",
         data: {"checkId": cid},
@@ -53,7 +53,7 @@ function addandupd() {
 //根据id查询体检项信息
 function showCheckById(checkid) {
     $.ajax({
-        url: "http://localhost:8080/getCheckInfoById",
+        url: "/hospitalOne/getCheckInfoById",
         type: "post",
         dataType: "json",
         data: {"checkId": checkid},
@@ -144,7 +144,7 @@ function add() {
 function addcheck() {
     var a = $("#addform").serialize();
     $.ajax({
-        url: "http://localhost:8080/addCheckInfo",
+        url: "/hospitalOne/addCheckInfo",
         data: a,
         dataType: "json",
         type: "post",
@@ -179,7 +179,7 @@ function addcheck() {
 function updcheck() {
     var a = $("#addform").serialize();
     $.ajax({
-        url: "http://localhost:8080/updCheckInfo",
+        url: "/hospitalOne/updCheckInfo",
         data: a,
         dataType: "json",
         type: "post",
@@ -196,6 +196,6 @@ function updcheck() {
 }
 function goresult(chkid) {
     sessionStorage.setItem("checkId",chkid);
-    window.location.href="http://localhost:8080/Thebackend-page/jieguojianyi.html";
+    window.location.href="/hospitalOne/Thebackend-page/jieguojianyi.html";
     //   $("#rightMain").attr("src", "/Thebackend-page/jieguojianyi.html");
 }
