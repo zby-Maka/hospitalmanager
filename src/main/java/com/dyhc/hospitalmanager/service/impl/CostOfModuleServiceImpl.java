@@ -61,6 +61,7 @@ public class CostOfModuleServiceImpl implements CostOfModuleService {
             Cost cost = new Cost();
             if (physicalStatu==1){
                 cost.setCostType("退费");
+                physicalStatu=0;
             }else{
                 cost.setCostType("收费");
             }
