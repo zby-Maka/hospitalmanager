@@ -151,7 +151,6 @@ $("input[name=upload]").click(function () {
         }
     });
     if(ch){
-        alert("进入上传文件");
         //获取公司名称
         var companyName = $("input[name=companyName]").val();
         //获取上传文件的文件名称

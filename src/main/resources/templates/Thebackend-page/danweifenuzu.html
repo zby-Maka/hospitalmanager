@@ -180,7 +180,6 @@
                 var perIsMarry = tdArr.eq(5).text();
                 var perAge = tdArr.eq(1).text();
                 if (sex == perSex && isMarrys == perIsMarry && ageDown < perAge < ageUp) {
-                    alert(1);
                     var personName = $("#"+i+"personName").text();
                     var personAge = $("#"+i+"personAge").text();
                     var personBirthday = $("#"+i+"personBirthday").text();
@@ -204,7 +203,6 @@
 
                 /*性别婚否不限*/
                 if(sex == "不限" && isMarrys == "不限" && ageDown < perAge < ageUp){
-                    alert(2);
                     var personName = $("#"+i+"personName").text();
                     var personAge = $("#"+i+"personAge").text();
                     var personBirthday = $("#"+i+"personBirthday").text();
@@ -228,7 +226,6 @@
 
                 /*性别不限婚否限*/
                 if(sex == "不限" && isMarrys == perIsMarry && ageDown < perAge < ageUp){
-                    alert(3);
                     var personName = $("#"+i+"personName").text();
                     var personAge = $("#"+i+"personAge").text();
                     var personBirthday = $("#"+i+"personBirthday").text();
@@ -252,7 +249,6 @@
 
                 /*婚否不限*/
                 if(sex == perSex && isMarrys == "不限" && ageDown < perAge < ageUp){
-                    alert(4);
                     var personName = $("#"+i+"personName").text();
                     var personAge = $("#"+i+"personAge").text();
                     var personBirthday = $("#"+i+"personBirthday").text();
