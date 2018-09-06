@@ -181,8 +181,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                     return -3+"";
                 }
                 //jsonObject.put("physicalExaminationId", physicalExaminationId);
-                bianhao=physicalExaminationId;
             }
+            bianhao=physicalExaminationId;
             List<Integer> packCheckId = null;
             List<Integer> comCheckId = null;
             List checkList = null;
@@ -243,15 +243,9 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             return -1+"";
         }
         //jsonObject.put("errMsg","ok");
-        SmsSingleSenderResult smsSingleSenderResult =null;
-        do {
-            System.out.println("abcdefghijklmnopqrstuvwxyz");
-            System.out.println(smsSingleSenderResult.errMsg);
-            smsSingleSenderResult= sendMes.sendMes(phone,bianhao);
-            if(smsSingleSenderResult.errMsg=="ok"){
-                break;
-            }
-        }while (true);
+        SmsSingleSenderResult smsSingleSenderResult = sendMes.sendMes(phone,bianhao);
+        System.out.println("abcdefghijklmnopqrstuvwxyz");
+        System.out.println(smsSingleSenderResult.errMsg);
         return "ok";
     }
 
