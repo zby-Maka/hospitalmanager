@@ -4,7 +4,6 @@ import org.apache.commons.lang.StringUtils;
 import org.krysalis.barcode4j.impl.code39.Code39Bean;
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
 import org.krysalis.barcode4j.tools.UnitConv;
-import org.springframework.util.ResourceUtils;
 
 import java.awt.image.BufferedImage;
 import java.io.*;
