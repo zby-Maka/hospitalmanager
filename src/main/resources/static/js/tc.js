@@ -26,7 +26,7 @@ function updandadd() {
 //根据套餐id查询套餐信息以及套餐下的组合项目
 function getPackageAndCombinationInfo(packaid) {
     $.ajax({
-        url: "http://localhost:8080/getPackageAndCombinationInfoById",
+        url: "/hospitalOne/getPackageAndCombinationInfoById",
         type: "post",
         dataType: "json",
         data: {"packageId": packaid},
@@ -63,7 +63,7 @@ function getPackageAndCombinationInfo(packaid) {
 //根据套餐id查询套餐信息以及套餐下的体检项
 function getPackageAndCheckInfo(packaid) {
     $.ajax({
-        url: "http://localhost:8080/getPackageAndCheckInfoById",
+        url: "/hospitalOne/getPackageAndCheckInfoById",
         type: "post",
         dataType: "json",
         data: {"packageId": packaid},
@@ -102,7 +102,7 @@ function getPackageAndCheckInfo(packaid) {
 //查询科室信息以及下的组合信息和体检信息
 function showSectionAndCombinationAndCheck() {
     $.ajax({
-        url: "http://localhost:8080/getSecionAndCheckAndCombinationInfo",
+        url: "/hospitalOne/getSecionAndCheckAndCombinationInfo",
         type: "post",
         dataType: "json",
         data: {},
@@ -124,7 +124,7 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
     var flag = false;
     var flag1 = false;
     $.ajax({
-        url: "http://localhost:8080/getSecionAndCheckAndCombinationInfoById",
+        url: "/hospitalOne/getSecionAndCheckAndCombinationInfoById",
         type: "post",
         dataType: "json",
         data: {"sectionId": sectionid},
@@ -264,7 +264,7 @@ function addpack() {
     }) + "&" + combination;
 
     $.ajax({
-        url: "http://localhost:8080/addPackageInfo",
+        url: "/hospitalOne/addPackageInfo",
         data: date,
         dataType: "json",
         type: "get",
@@ -291,7 +291,7 @@ function addpack() {
 function updpack() {
     var combination = $("#addform").serialize();
     $.ajax({
-        url: "http://localhost:8080/updPackageInfo",
+        url: "/hospitalOne/updPackageInfo",
         data: combination,
         dataType: "json",
         type: "get",
