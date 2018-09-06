@@ -240,7 +240,6 @@ public class UnitReservationController {
         List<PersonInfo> personInfos=JSONObject.parseArray(json2,PersonInfo.class);
         Integer perG = 0;
         Integer result = 0;
-        System.out.println("shenfenzheng:"+personInfos.size());
         if(personInfos.size() == 0){
             result = unitReservationService.addGroupAndPersonInfo(group,personInfos);
             perG = 2;  //添加分组成功 人员不成功

@@ -92,7 +92,6 @@ public class UnitReservationServiceImpl implements UnitReservationService {
     public Integer addGroupAndPersonInfo(Group group, List<PersonInfo> personInfos) {
         Integer groupResult = 0;
         Integer personResult = 0;
-        System.out.println("aaaaaaa"+personInfos.size());
         try{
             //执行添加分组单位信息
             groupResult = groupMapper.addGroupInfo(group);
@@ -106,7 +105,10 @@ public class UnitReservationServiceImpl implements UnitReservationService {
                         personInfos.get(i).setGroupId(group.getGroupId());
                         personInfos.get(i).setPersonType("单位");
                         personResult = personInfoMapper.addPersonInfo(personInfos.get(i));
+                    }else{
+                        personResult = 2;
                     }
+
                 }
             }
         }catch(Exception e){
