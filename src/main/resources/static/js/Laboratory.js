@@ -15,7 +15,7 @@ $(function () {
     //查询全部
     function  getPerson() {
         var peacId=$("input[name=physicalExaminationId]").val();
-        $.getJSON("http://localhost:8080/Person.html",{"peacId":peacId},function (date) {
+        $.getJSON("http://localhost:8080/hospitalOne/Person.html",{"peacId":peacId},function (date) {
             $.each(date.map1,function (i,m) {
                 $("label[name=personName]").text(m.personName);
                 $("label[name=personAge]").text(m.personAge);
@@ -56,7 +56,7 @@ $(function () {
         };
         console.log(par);
         $.ajax({
-            url: 'http://localhost:8080/addResultAndMedicalEvent.html',
+            url: 'http://localhost:8080/hospitalOne/addResultAndMedicalEvent.html',
             data:JSON.stringify(par),
             contentType:"application/json;charset=utf-8",
             dataType: "json",
@@ -78,7 +78,7 @@ $(function () {
 //根据checkId获取传过来的lis 小项显示
 function getYan(checkId){
     $("input[name=checkId]").val(checkId);
-    $.getJSON("http://localhost:8080/getYan.html",{"checkId":checkId},function (date) {
+    $.getJSON("http://localhost:8080/hospitalOne/getYan.html",{"checkId":checkId},function (date) {
         var content="";
         console.log(date);
         dataArry=date;
@@ -123,7 +123,7 @@ function  qing() {
 function  updateStatu() {
     var peaId=$("input[name=physicalExaminationId]").val();
     var checkId=$("input[name=checkId]").val();
-    $.getJSON("http://localhost:8080/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
+    $.getJSON("http://localhost:8080/hospitalOne/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
         var ok="0";
         if(data>0){
             ok="1";
