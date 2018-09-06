@@ -97,7 +97,7 @@
         var groupId = localStorage["groupId"];
         //根据公司id查询公司名称
         $.ajax({
-            url: "/showGroup.do?companyId="+companyId+"&groupId="+groupId,
+            url: "/hospitalOne/showGroup.do?companyId="+companyId+"&groupId="+groupId,
             data: {},
             type: "get",
             dataType: "json",
@@ -140,7 +140,7 @@
         var isDelete = $("input[name=isDelete]:checked").val();
         var groupId = $("input[name=groupId]").val();
         $.ajax({
-            url: "/updGroupIsDel.do?isDelete="+isDelete+"&groupId="+groupId,
+            url: "/hospitalOne/updGroupIsDel.do?isDelete="+isDelete+"&groupId="+groupId,
             data: {},
             type: "get",
             dataType: "json",

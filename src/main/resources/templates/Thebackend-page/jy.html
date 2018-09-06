@@ -66,7 +66,7 @@
 	});
 	//查询建议
 	function getproposedDescription(commonResultsId) {
-	$.post("http://localhost:8080/proposedDescription.do",{"resultId":commonResultsId},function (data) {
+	$.post("/hospitalOne/proposedDescription.do",{"resultId":commonResultsId},function (data) {
 	var content="";
 	$.each(data,function (i,e) {
 	content+="<tr>" +
@@ -80,7 +80,7 @@
 	}
 	//获取下拉框的值
 	function getcommonresultxia(commonResultsId,cid) {
-	$.post("http://localhost:8080/commonresult.do",
+	$.post("/hospitalOne/commonresult.do",
 		{"checkId":cid},function (data) {
 	var content="";
 	$.each(data,function (i,e) {
@@ -95,7 +95,7 @@
 	}
 
 	function findById(proposedDescriptionId) {
-	$.post("http://localhost:8080/addProposedDescription.do?proposedDescriptionId="+proposedDescriptionId,function (data) {
+	$.post("/hospitalOne/addProposedDescription.do?proposedDescriptionId="+proposedDescriptionId,function (data) {
 	if(data.isDelete == 1){
 	$("input[name=isDelete]").get(0).checked = true;
 	}else{

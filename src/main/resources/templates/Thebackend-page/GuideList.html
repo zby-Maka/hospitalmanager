@@ -53,13 +53,13 @@ $("input[name=geren]").click(function () {
             localStorage.physicalExaminationId=physicalExaminationId;
             // localStorage["physicalExaminationId"]
             $.ajax({
-                url: "/selectByPhysicalExaminationId.do?physicalExaminationId="+physicalExaminationId,
+                url: "/hospitalOne/selectByPhysicalExaminationId.do?physicalExaminationId="+physicalExaminationId,
                 data:{},
                 type: "get",
                 dataType: "json",
                 success: function (data) {
                     if(data>0){
-                        location.href = "/Thebackend-page/thewaylist.html";
+                        location.href = "/hospitalOne/Thebackend-page/thewaylist.html";
                     }
                     $("#xianshi").show();
                 }
@@ -83,13 +83,13 @@ $("input[name=geren]").click(function () {
             localStorage.personIdCard = personIdCard;
             // localStorage["physicalExaminationId"]
             $.ajax({
-                url: "/personIdCard.do?personIdCard=" + personIdCard,
+                url: "/hospitalOne/personIdCard.do?personIdCard=" + personIdCard,
                 data: {},
                 type: "get",
                 dataType: "json",
                 success: function (data) {
                     if (data > 0) {
-                        location.href = "/Thebackend-page/DanWeiGuide.html";
+                        location.href = "/hospitalOne/Thebackend-page/DanWeiGuide.html";
                     }
                     $("#xianshi").show();
 

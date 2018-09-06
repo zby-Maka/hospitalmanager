@@ -41,7 +41,7 @@
         function showPersonInfo() {
             var physicalExaminationId =localStorage["physicalExaminationId"];
             $.ajax({
-                url: "/selectInfoByselectByPhysicalExaminationId.do?physicalExaminationId="+physicalExaminationId,
+                url: "/hospitalOne/selectInfoByselectByPhysicalExaminationId.do?physicalExaminationId="+physicalExaminationId,
                 data:{},
                 type: "get",
                 dataType: "json",
@@ -65,7 +65,7 @@
         function showCheckInfos() {
             var physicalExaminationId =localStorage["physicalExaminationId"];
             $.ajax({
-                url: "/showCheckedDetail.do?physicalExaminationId="+physicalExaminationId,
+                url: "/hospitalOne/showCheckedDetail.do?physicalExaminationId="+physicalExaminationId,
                 data:{},
                 type: "get",
                 dataType: "json",

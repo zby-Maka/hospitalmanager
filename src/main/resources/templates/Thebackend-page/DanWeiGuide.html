@@ -41,7 +41,7 @@
         function showPersonInfo() {
             var personIdCard =localStorage["personIdCard"];
             $.ajax({
-                url: "/selectInfoByselectByPersonIdCard.do?personIdCard="+personIdCard,
+                url: "/hospitalOne/selectInfoByselectByPersonIdCard.do?personIdCard="+personIdCard,
                 data:{},
                 type: "get",
                 dataType: "json",
@@ -70,7 +70,7 @@
             //获取体检编号
             var img = $("input[name=img]").val();
             $.ajax({
-                url: "/showPackageId.do?personIdCard="+personIdCard+"&personId="+personId,
+                url: "/hospitalOne/showPackageId.do?personIdCard="+personIdCard+"&personId="+personId,
                 data:{},
                 type: "get",
                 dataType: "json",
