@@ -126,7 +126,7 @@ var choose = false;
         }
 
 });
-
+var ch = true;
 //上传按钮
 $("input[name=upload]").click(function () {
     var file=$("#file").val();
@@ -134,23 +134,24 @@ $("input[name=upload]").click(function () {
     /*if(!/\.(xlsx|xls|XLSX|XLS)$/.test(ext)){*/
     if($.trim($("#file").val())==''){
         alert("请选择Excel文件");
-        flag = false;
+        ch = false;
         return false;
     }
     if ("xls" != ext && "xlsx" != ext) {
         alert("只能上传Excle文件");
-        flag = false;
+        ch = false;
         return false;
     }
     var textControl = $("#companyInfo input");
     $.each(textControl,function (i,e) {
         if(e.type=="text" && e.value=="") {
-            flag = false;
+            ch = false;
             alert("请先完善公司信息！");
             return false;
         }
     });
-    if(flag){
+    if(ch){
+        alert("进入上传文件");
         //获取公司名称
         var companyName = $("input[name=companyName]").val();
         //获取上传文件的文件名称
