@@ -76,7 +76,7 @@
 
     //查询常见结果
     function getcommonresult(checkId) {
-        $.post("http://localhost:8080/commonresult.do",{"checkId":checkId},function (data) {
+        $.post("/hospitalOne/commonresult.do",{"checkId":checkId},function (data) {
             var content="";
             $.each(data,function (i,e) {
                 content+="<tr>" +
@@ -91,7 +91,7 @@
     }
     //获取下拉框的值
     function getcommonresultxia(checkId) {
-        $.post("http://localhost:8080/checkall.do",function (data) {
+        $.post("/hospitalOne/checkall.do",function (data) {
             var content="";
             $.each(data,function (i,e) {
                 	if(parseInt(checkId)==e.checkId) {
@@ -105,7 +105,7 @@
     }
 
     function findById(commonResultsId) {
-        $.post("http://localhost:8080/addProvideInfo?commonResultsId="+commonResultsId,function (data) {
+        $.post("/hospitalOne/addProvideInfo?commonResultsId="+commonResultsId,function (data) {
             if(data.isDelete == 1){
                 $("input[name=isDelete]").get(0).checked = true;
             }else{

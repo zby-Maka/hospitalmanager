@@ -9,7 +9,7 @@ function getinsertsection() {
         return;
     }
     if (sectionid==0){
-        $.post("http://localhost:8080/keshiweihu.do",content,function (data) {
+        $.post("/hospitalOne/keshiweihu.do",content,function (data) {
             if (data.status==1){
                 alert("添加成功");
                 resetInsert();
@@ -18,7 +18,7 @@ function getinsertsection() {
             }
         },"json");
     }else {
-        $.post("http://localhost:8080/keshiweihu.do?sectionId="+sectionid,content,function (data) {
+        $.post("/hospitalOne/keshiweihu.do?sectionId="+sectionid,content,function (data) {
             if (data.status==1){
                 alert("修改成功");
                 findByIds();

@@ -16,7 +16,7 @@ $(function () {
             var params = $("#personal").serializeObject();
             sessionStorage.setItem("personInfo",JSON.stringify(params));
             sessionStorage.setItem("personInfoSer",$("#personal").serialize());
-            location.href = "/check.html";
+            location.href = "/hospitalOne/check.html";
         }
     });
 });

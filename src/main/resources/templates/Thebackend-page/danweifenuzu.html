@@ -105,7 +105,7 @@
     //显示所有套餐信息
     function showPackage() {
         $.ajax({
-            url: "/showPackage.do",
+            url: "/hospitalOne/showPackage.do",
             data: {},
             type: "get",
             dataType: "json",
@@ -129,7 +129,7 @@
     function personInfo() {
         var companyName = $("input[name=companyName]").val();
         $.ajax({
-            url: "/uploadPersonInfo.do",
+            url: "/hospitalOne/uploadPersonInfo.do",
             data: {companyName: companyName},
             type: "get",
             dataType: "json",
@@ -286,7 +286,7 @@
             var formdate={};
             formdate["persionarray"]=perList;
             $.ajax({
-                url: "/uploadGroupPerson.do",
+                url: "/hospitalOne/uploadGroupPerson.do",
                 data:JSON.stringify(formdate),
                 type: "post",
                 contentType:"application/json;charset=utf-8",
@@ -324,7 +324,7 @@
     $("input[name=groupName]").blur(function () {
         var groupName = $("input[name=groupName]").val();
         $.ajax({
-            url: "/selectGroupNameByExists.do?groupName="+groupName,
+            url: "/hospitalOne/selectGroupNameByExists.do?groupName="+groupName,
             data: {},
             type: "get",
             dataType: "json",

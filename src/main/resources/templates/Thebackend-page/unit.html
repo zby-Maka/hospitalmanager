@@ -77,7 +77,7 @@
 		function showCompanyInfoById() {
 		    var companyId = localStorage["comid"];
             $.ajax({
-                url: "/showCompanyInfoById.do",
+                url: "/hospitalOne/showCompanyInfoById.do",
                 data: {companyId:companyId},
                 type: "get",
                 dataType: "json",
@@ -107,7 +107,7 @@
 		$("input[name=groupAdd]").click(function () {
 		    var companyName = $("input[name=companyName]").val();
 		    var companyId = $("input[name=companyId]").val();
-		    location.href = "/Thebackend-page/danweifenuzu.html?companyName="+companyName+"&companyId="+companyId;
+		    location.href = "/hospitalOne/Thebackend-page/danweifenuzu.html?companyName="+companyName+"&companyId="+companyId;
             //$("#rightMain").attr("src", "/Thebackend-page/danweifenuzu.html")
         });
 
@@ -116,7 +116,7 @@
 			var isDelete = $("input[name=isDelete]:checked").val();
             var companyId = localStorage["comid"];
             $.ajax({
-                url: "/updIsDel.do",
+                url: "/hospitalOne/updIsDel.do",
                 data: {isDelete: isDelete,companyId:companyId},
                 type: "get",
                 dataType: "json",
