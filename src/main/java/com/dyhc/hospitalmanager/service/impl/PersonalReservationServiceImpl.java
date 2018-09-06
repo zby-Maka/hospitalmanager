@@ -74,13 +74,13 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      */
     @Override
     @Transactional
-    public PersonInfo getPersonInfoByNameAndCard(String personIdCard){
-        PersonInfo personInfo=null;
+    public PersonInfo getPersonInfoByNameAndCard(String personIdCard) {
+        PersonInfo personInfo = null;
         try {
-            personInfo=personInfoMapper.findPersonInfoPersonIdCard(personIdCard);
+            personInfo = personInfoMapper.findPersonInfoPersonIdCard(personIdCard);
             return personInfo;
         } catch (Exception e) {
-            logger.error("根据身份证号查询用户表："+e.getMessage());
+            logger.error("根据身份证号查询用户表：" + e.getMessage());
             e.printStackTrace();
             return null;
         }
@@ -148,7 +148,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             if(physicalExaminationId!=null){
                 //给这个人员生成体检编号
                 //编号
-                String phyNo = physicalExaminationId.substring(8,physicalExaminationId.length());
+                String phyNo = physicalExaminationId.substring(8, physicalExaminationId.length());
                 //日期
                 String phyDate = physicalExaminationId.substring(0,8);
                 //生成新的编号
@@ -259,18 +259,23 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Transactional(rollbackFor=Exception.class)
     public String userReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId){
         Destination destination = new ActiveMQQueue("reservation");
-        Map<String,Object> map=new HashMap<>();
-        map.put("personInfo",personInfo);
-        map.put("yuDate",Yudate);
-        map.put("packId",packId);
-        map.put("comId",comId);
-        map.put("checkId",checkId);
-        //发送消息
-        messageProducer.sendMessage(destination,JSON.toJSONString(map));
-        String value="";
-        for (int i=0;i<=0;i--){
-            value=redisDao.getValue(personInfo.getPersonIdCard());
-            if (value!=null&&!"".equals(value)&&value!=""){
+        Map<String, Object> map = new HashMap<>();
+        map.put("personInfo", personInfo);
+        map.put("yuDate", Yudate);
+        map.put("packId", packId);
+        map.put("comId", comId);
+        map.put("checkId", checkId);
+        Integer num = Integer.parseInt(redisDao.getValue(Yudate));
+        if (num > 0) {
+            //发送消息
+            messageProducer.sendMessage(destination, JSON.toJSONString(map));
+        } else {
+            return "-1";
+        }
+        String value = "";
+        for (int i = 0; i <= 0; i--) {
+            value = redisDao.getValue(personInfo.getPersonIdCard());
+            if (value != null && !"".equals(value) && value != "") {
                 redisDao.delete(personInfo.getPersonIdCard());
                 break;
             }
@@ -323,16 +328,10 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         //获取person对象
         String personInfoStr=json.get("personInfo").toString();
         JSONObject object1 = JSONObject.parseObject(personInfoStr);
-        PersonInfo personInfo=JSONObject.toJavaObject(object1,PersonInfo.class);
-        Integer value=Integer.parseInt(redisDao.getValue(yuDate));
-        System.out.println(value);
-        if (value>1){
-            redisDao.decr(yuDate,1);
-            String result=UserReservation(personInfo,yuDate,packId,comId,checkId);
-            redisDao.setKey(personInfo.getPersonIdCard(),result);
-        }else{
-            redisDao.setKey(personInfo.getPersonIdCard(),"-1");
-        }
+        PersonInfo personInfo = JSONObject.toJavaObject(object1, PersonInfo.class);
+        redisDao.decr(yuDate, 1);
+        String result = UserReservation(personInfo, yuDate, packId, comId, checkId);
+        redisDao.setKey(personInfo.getPersonIdCard(), result);
     }
 
     /**
