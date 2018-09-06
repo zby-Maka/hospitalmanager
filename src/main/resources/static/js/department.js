@@ -14,7 +14,7 @@ $(function () {
 //查询全部
 function  getPerson() {
     var peacId=$("input[name=physicalExaminationId]").val();
-    $.getJSON("http://localhost:8080/hospitalOne/Person.html",{"peacId":peacId},function (date) {
+    $.getJSON("/hospitalOne/Person.html",{"peacId":peacId},function (date) {
         $.each(date.map1,function (i,m) {
             $("label[name=personName]").text(m.personName);
             $("label[name=personAge]").text(m.personAge);
@@ -35,7 +35,7 @@ function  getPerson() {
 //获取结果
 function  result(checkId) {
     $("input[name=checkId]").val(checkId);
-    $.getJSON("http://localhost:8080/hospitalOne/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
+    $.getJSON("/hospitalOne/getCommResultsByCheckId.html",{"checkId":checkId},function (result) {
         $("#checkResultFinally textarea").html(result.resultDesc);
         $("input[name=checkResultFinally]").val(result.commonResultsId);//结果id
         //如果结果是正常的话建议为空
@@ -49,7 +49,7 @@ function  result(checkId) {
 };
 //根据结果获取建议
 function getProposedByResultId(commonResultsId) {
-    $.getJSON("http://localhost:8080/hospitalOne/getProposedByResultId.html",{"resultId":commonResultsId},function (result) {
+    $.getJSON("/hospitalOne/getProposedByResultId.html",{"resultId":commonResultsId},function (result) {
         $.each(result,function (i,e) {
             $("#checkAdvice textarea").html(e.adviceContent);
             $("input[name=checkAdvice]").val(e.proposedDescriptionId);//建议id
@@ -61,7 +61,7 @@ function  addResultAndMedicalEvent() {
     var arr = formToJson($("form").serialize());
     var par = {checkResult: arr,medicalEventsList:null};
     $.ajax({
-        url: 'http://localhost:8080/hospitalOne/addResultAndMedicalEvent.html',
+        url: '/hospitalOne/addResultAndMedicalEvent.html',
         data: JSON.stringify(par),
         contentType: "application/json;charset=utf-8",
         dataType: "json",
@@ -111,7 +111,7 @@ function  qing() {
 function  updateStatu() {
     var peaId=$("input[name=physicalExaminationId]").val();
     var checkId=$("input[name=checkId]").val();
-    $.getJSON("http://localhost:8080/hospitalOne/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
+    $.getJSON("/hospitalOne/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
         var ok="0";
         if(data>0){
            ok="1";
