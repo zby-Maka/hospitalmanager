@@ -34,4 +34,5 @@ function resetInsert() {
     $('form')[0].reset();
     $("textarea[name=remark]").attr("readonly",false);
     $("input[name='sectionName']").attr("readonly",false);
+    $("input[type='radio']").attr("disabled",false);
 }
