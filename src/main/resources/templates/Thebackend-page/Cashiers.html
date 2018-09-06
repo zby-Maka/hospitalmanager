@@ -13,7 +13,7 @@
 					<tr>
 						<td colspan="4" align="center">
 							<span>体检编号:</span>&nbsp;&nbsp;&nbsp;<input type="text" name="physical_examination_id" size="40" style="height:30px; font-size: 16px;"/>
-							<input type="button" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" onclick="getPersonInfo(0)"/>
+							<input type="button" value="查询" style="margin-left: 10px; height: 30px; width: 60px; font-weight: bold;" onclick="getCostTypeByPersonId()"/>
 						</td>
 					</tr>
 					<tr>
@@ -91,14 +91,13 @@
 
 		//根据体检编号查询体检信息
 		function getPersonInfo(physicalStatu) {
-		    var physical_examination_id = $("input[name=physical_examination_id]").val();
+            var physical_examination_id = $("input[name=physical_examination_id]").val();
 			$.ajax({
 				url:"/getPersonInfoByPersonId.do",
 				data:{physical_examination_id:physical_examination_id,physicalStatu:physicalStatu},
 				dataType:"json",
 				success:function (date) {
 					if (date!=null){
-                        getCostTypeByPersonId(date.personId);
 						$(".name").html("姓名:"+date.personName);
                         $(".age").html("年龄:"+date.personAge);
                         $(".sex").html("性别:"+date.personSex);
@@ -120,7 +119,7 @@
                                 "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
                                 "\t\t\t\t\t</tr>\n" +
                                 "\t\t\t\t\t<tr>\n" +
-                                "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">无体检信息</td>\n" +
+                                "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">无体检项信息</td>\n" +
                                 "\t\t\t\t\t</tr>" ;
                             $(".checkList").html(checkList);
 						}
@@ -142,6 +141,10 @@
                             "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无信息,请输入人员编号进行查询</td>\n" +
                             "\t\t\t\t\t</tr>" ;
                         $(".checkList").html(checkList);
+                        $(".aggregate").html("---");
+                        $(".receivable").html("---");
+                        $(".change").html("---");
+                        $("input[name=price]").val("");
 					    alert("查询失败,请重新输如人员编号！");
 					}
                 }
@@ -149,15 +152,17 @@
         }
 
         //根据人员id查询该体检人是否已缴费/是否已退费
-        function getCostTypeByPersonId(personId) {
+        function getCostTypeByPersonId() {
+            var physical_examination_id = $("input[name=physical_examination_id]").val();
             $.ajax({
                 url:"/getCostTypeByPersonId.do",
-                data:{personId:personId,costType:"收费"},
+                data:{physical_examination_id:physical_examination_id,costType:"收费"},
                 dataType:"json",
                 success:function (date) {
 					if (date!="收费"){
 					    var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\"/>";
 						$(".operation").html(str)
+                        getPersonInfo(0);
 					}else{
                         var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                         $(".name").html("姓名:----");
@@ -172,10 +177,10 @@
                             "\t\t\t\t\t<tr>\n" +
                             "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">已缴费</td>\n" +
                             "\t\t\t\t\t</tr>" ;
-                        $(".checkList").html("---");
                         $(".aggregate").html("---");
                         $(".receivable").html("---");
                         $(".change").html("---");
+                        $("input[name=price]").val("");
                         $(".checkList").html(checkList);
                         $(".operation").html(str)
 					}
@@ -208,6 +213,12 @@
                             "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无信息,请输入人员编号进行查询</td>\n" +
                             "\t\t\t\t\t</tr>" ;
                         $(".checkList").html(checkList);
+                        $("input[name=price]").val("");
+                        $(".aggregate").html("---");
+                        $(".receivable").html("---");
+                        $(".change").html("---");
+                        var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                        $(".operation").html(str)
 					}else{
 						alert("收费失败");
 					}
