@@ -92,6 +92,7 @@ public class UnitReservationServiceImpl implements UnitReservationService {
     public Integer addGroupAndPersonInfo(Group group, List<PersonInfo> personInfos) {
         Integer groupResult = 0;
         Integer personResult = 0;
+        System.out.println("aaaaaaa"+personInfos.size());
         try{
             //执行添加分组单位信息
             groupResult = groupMapper.addGroupInfo(group);
@@ -99,7 +100,6 @@ public class UnitReservationServiceImpl implements UnitReservationService {
                 //执行添加人员信息
                 for(int i =0; i<personInfos.size();i++){
                     //通过身份证号判断人员是否存在
-                    System.out.println("身份证:"+personInfos.get(i).getPersonIdCard());
                     PersonInfo personInfo = personInfoMapper.findPersonInfoPersonIdCard(personInfos.get(i).getPersonIdCard());
                     if(personInfo == null){
                         //不存在人员信息进行添加

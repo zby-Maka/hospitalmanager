@@ -236,14 +236,17 @@ public class UnitReservationController {
         Group group=JSONObject.parseObject(json,Group.class);
         jsonArray.remove(jsonArray.size()-1);
         String json2=jsonArray.toJSONString();
+        System.out.println("aaaaaaaaaa"+json2);
         List<PersonInfo> personInfos=JSONObject.parseArray(json2,PersonInfo.class);
         Integer perG = 0;
         Integer result = 0;
+        System.out.println("shenfenzheng:"+personInfos.size());
         if(personInfos.size() == 0){
             result = unitReservationService.addGroupAndPersonInfo(group,personInfos);
             perG = 2;  //添加分组成功 人员不成功
         }
         if(personInfos.size()>0){
+
             //添加方法
             result = unitReservationService.addGroupAndPersonInfo(group,personInfos);
             if(result>0){

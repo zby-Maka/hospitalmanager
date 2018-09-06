@@ -157,7 +157,7 @@
         //性别条件
         var sex = $("input[name=sex]:checked").val();
         //婚否条件
-        var isMarry = $("input[name=hun]:checked").val();
+        var isMarrys = $("input[name=hun]:checked").val();
         //年龄上限
         var ageUp = $("input[name=ageUp]").val();
         //年龄下限
@@ -179,7 +179,8 @@
                 var perSex = tdArr.eq(3).text();
                 var perIsMarry = tdArr.eq(5).text();
                 var perAge = tdArr.eq(1).text();
-                if (sex == perSex && isMarry == perIsMarry && ageDown < perAge < ageUp) {
+                if (sex == perSex && isMarrys == perIsMarry && ageDown < perAge < ageUp) {
+                    alert(1);
                     var personName = $("#"+i+"personName").text();
                     var personAge = $("#"+i+"personAge").text();
                     var personBirthday = $("#"+i+"personBirthday").text();
@@ -200,10 +201,83 @@
                     perList.push(perJson);
                     $(trLength[i]).remove();
                 }
-            }
 
+                /*性别婚否不限*/
+                if(sex == "不限" && isMarrys == "不限" && ageDown < perAge < ageUp){
+                    alert(2);
+                    var personName = $("#"+i+"personName").text();
+                    var personAge = $("#"+i+"personAge").text();
+                    var personBirthday = $("#"+i+"personBirthday").text();
+                    var personSex = $("#"+i+"personSex").text();
+                    var isMarry = $("#"+i+"isMarry").text();
+                    var personTelephone = $("input[name="+i+"personTelephone]").val();
+                    var personAddress = $("input[name="+i+"personAddress]").val();
+                    var personNameSpellCode = $("input[name="+i+"personNameSpellCode]").val();
+                    var personIdCard = $("#"+i+"personIdCard").text();
+                    var perJson
+                        =
+                        {"personName":""+personName+"","personAge":""+personAge+"","personBirthday":""+personBirthday+"","personSex":""+personSex+"","isMarry":""+isMarry+"","personTelephone":""+personTelephone+"","personAddress":""+personAddress+"","personNameSpellCode":""+personNameSpellCode+"","personIdCard":""+personIdCard+""};
+
+                    /*"{\"personName\":" + personName + ",\"personAge\":" + personAge + ",\"personBirthday\":" + personBirthday + "," +
+                    "\"personSex\":" + personSex + ",\"isMarry\":" + isMarry + ",\"personTelephone\":" + personTelephone + "," +
+                    "\"personAddress\":" + personAddress + ",\"personNameSpellCode\":" + personNameSpellCode + "}";*/
+
+                    perList.push(perJson);
+                    $(trLength[i]).remove();
+                }
+
+                /*性别不限婚否限*/
+                if(sex == "不限" && isMarrys == perIsMarry && ageDown < perAge < ageUp){
+                    alert(3);
+                    var personName = $("#"+i+"personName").text();
+                    var personAge = $("#"+i+"personAge").text();
+                    var personBirthday = $("#"+i+"personBirthday").text();
+                    var personSex = $("#"+i+"personSex").text();
+                    var isMarry = $("#"+i+"isMarry").text();
+                    var personTelephone = $("input[name="+i+"personTelephone]").val();
+                    var personAddress = $("input[name="+i+"personAddress]").val();
+                    var personNameSpellCode = $("input[name="+i+"personNameSpellCode]").val();
+                    var personIdCard = $("#"+i+"personIdCard").text();
+                    var perJson
+                        =
+                        {"personName":""+personName+"","personAge":""+personAge+"","personBirthday":""+personBirthday+"","personSex":""+personSex+"","isMarry":""+isMarry+"","personTelephone":""+personTelephone+"","personAddress":""+personAddress+"","personNameSpellCode":""+personNameSpellCode+"","personIdCard":""+personIdCard+""};
+
+                    /*"{\"personName\":" + personName + ",\"personAge\":" + personAge + ",\"personBirthday\":" + personBirthday + "," +
+                    "\"personSex\":" + personSex + ",\"isMarry\":" + isMarry + ",\"personTelephone\":" + personTelephone + "," +
+                    "\"personAddress\":" + personAddress + ",\"personNameSpellCode\":" + personNameSpellCode + "}";*/
+
+                    perList.push(perJson);
+                    $(trLength[i]).remove();
+                }
+
+                /*婚否不限*/
+                if(sex == perSex && isMarrys == "不限" && ageDown < perAge < ageUp){
+                    alert(4);
+                    var personName = $("#"+i+"personName").text();
+                    var personAge = $("#"+i+"personAge").text();
+                    var personBirthday = $("#"+i+"personBirthday").text();
+                    var personSex = $("#"+i+"personSex").text();
+                    var isMarry = $("#"+i+"isMarry").text();
+                    var personTelephone = $("input[name="+i+"personTelephone]").val();
+                    var personAddress = $("input[name="+i+"personAddress]").val();
+                    var personNameSpellCode = $("input[name="+i+"personNameSpellCode]").val();
+                    var personIdCard = $("#"+i+"personIdCard").text();
+                    var perJson
+                        =
+                        {"personName":""+personName+"","personAge":""+personAge+"","personBirthday":""+personBirthday+"","personSex":""+personSex+"","isMarry":""+isMarry+"","personTelephone":""+personTelephone+"","personAddress":""+personAddress+"","personNameSpellCode":""+personNameSpellCode+"","personIdCard":""+personIdCard+""};
+
+                    /*"{\"personName\":" + personName + ",\"personAge\":" + personAge + ",\"personBirthday\":" + personBirthday + "," +
+                    "\"personSex\":" + personSex + ",\"isMarry\":" + isMarry + ",\"personTelephone\":" + personTelephone + "," +
+                    "\"personAddress\":" + personAddress + ",\"personNameSpellCode\":" + personNameSpellCode + "}";*/
+
+                    perList.push(perJson);
+                    $(trLength[i]).remove();
+                }
+
+
+            }
             var groupInfo ={companyId:""+$("input[name='companyId']").val()+"",groupName:""+$("input[name='groupName']").val()+"",
-                termSex:""+sex+"",termIsMarry:""+isMarry+"",
+                termSex:""+sex+"",termIsMarry:""+isMarrys+"",
                 termAgeFloor:""+ageDown+"",termAgeCeil:""+ageUp+"",packageId:""+$("input[name=packageId]:checked").val()+"",
                 isDelete:""+$("input[name='isDelete']:checked").val()+""};//$("#groupPerson").serialize();
             console.log(perList);
