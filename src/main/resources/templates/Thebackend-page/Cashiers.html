@@ -217,6 +217,8 @@
                         $(".aggregate").html("---");
                         $(".receivable").html("---");
                         $(".change").html("---");
+                        var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                        $(".operation").html(str)
 					}else{
 						alert("收费失败");
 					}
