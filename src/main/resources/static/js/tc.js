@@ -136,13 +136,22 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
                     flag = false;
                     for (var i = 0; i < oncheck.length; i++) {
                         if (oncheck[i][0] == e1.combinationId && oncheck[i][1] == e1.combinationName) {
-                            content += "<input name='combiantionInfo' type='checkbox' checked='checked' value='" + e1.combinationId + "'><span>" + e1.combinationName + "</span><hr/>";
+                            if(e1.combinationName==undefined){
+                            content+="";
+                            }else{
+                                content += "<input name='combiantionInfo' type='checkbox' checked='checked' value='" + e1.combinationId + "'><span>" + e1.combinationName + "</span><hr/>";
+                            }
                             flag = true;
                             break;
                         }
                     }
                     if (flag == false) {
-                        content += "<input name='combiantionInfo' type='checkbox' value='" + e1.combinationId + "'><span>" + e1.combinationName + "</span><hr/>";
+                        if(e1.combinationName==undefined){
+                            content+="";
+                        }else{
+                            content += "<input name='combiantionInfo' type='checkbox' value='" + e1.combinationId + "'><span>" + e1.combinationName + "</span><hr/>";
+                        }
+
                     }
 
                 })
@@ -150,13 +159,22 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
                     flag1 = false;
                     for (var i = 0; i < oncheck.length; i++) {
                         if (oncheck[i][0] == e2.checkId && oncheck[i][1] == e2.checkName) {
-                            content += "<input name='checkInfo' type='checkbox' checked='checked' value='" + e2.checkId + "'><span>" + e2.checkName + "</span><hr/>";
+                            if(e2.checkName==undefined){
+                                content+="";
+                            }else{
+                                content += "<input name='checkInfo' type='checkbox' checked='checked' value='" + e2.checkId + "'><span>" + e2.checkName + "</span><hr/>";
+                            }
                             flag1 = true;
                             break;
                         }
                     }
                     if (flag1 == false) {
-                        content += "<input name='checkInfo' type='checkbox' value='" + e2.checkId + "'><span>" + e2.checkName + "</span><hr/>";
+                        if(e2.checkName==undefined){
+                            content+="";
+                        }else{
+                            content += "<input name='checkInfo' type='checkbox' value='" + e2.checkId + "'><span>" + e2.checkName + "</span><hr/>";
+                        }
+
                     }
                 })
             })

@@ -81,7 +81,7 @@ function showCheckById(checkid) {
                 }else{
                     $("input[name='termSex']").eq(2).prop("checked", true);
                 }
-                $("input[name='termSex']").attr("readonly",true);
+                $("input[name='termSex']").attr("disabled",true);
 
                 $("input[name='checkPrice']").val(e.checkPrice);
                 $("input[name='checkPrice']").attr("readonly",true);
