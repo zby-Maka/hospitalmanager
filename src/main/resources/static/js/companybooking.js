@@ -65,6 +65,8 @@ var choose = false;
             return false;
         }
         if(flag && choose){
+            //确定禁用
+            $("input[name=confirm]").attr({"disabled":"disabled"});
             if(companyId > 0){
                 //执行修改操作
                 var content = $("#companyInfo").serialize();
@@ -215,7 +217,6 @@ function upload() {
                 return myXhr; //xhr对象返回给jQuery使用
             },
             success: function (result) {
-                alert(result);
                 if (result == 1) {
                     choose = true;
                     alert("上传成功");
