@@ -23,9 +23,9 @@ $(function() {
     $("#chooseDate>div").not(":eq(0)").click(function () {
         var yue = $(this).find("lable").text();
         if(yue!="约满了"){
-            makeAnAppointment(yue,packId,comId,checkId);
             EV_closeAlert();
             $("#chooseDate").hide();
+            makeAnAppointment(yue,packId,comId,checkId);
         }else {
             alert("该日期约满了，请选择其他日期！");
         }
@@ -159,8 +159,16 @@ function makeAnAppointment(yue,packId,comId,checkId) {
             url: "/hospitalOne/UserReservation.do?" + date,
             date: {},
             dataType: "text",
+            beforeSend:function(){
+                    //弹出等待遮罩层
+                    EV_modeAlert("loding");
+            },
             success: function (result) {
+                //alert(result);
+                //console.log(result);
                 if (result == "ok") {
+                    EV_closeAlert();//关闭等待遮罩层
+                    $("#loding").hide();
                     alert("预约成功！");
                     sessionStorage.setItem("personInfo",null);
                     checkId=[];
