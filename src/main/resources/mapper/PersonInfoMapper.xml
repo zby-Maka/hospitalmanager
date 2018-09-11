@@ -83,6 +83,13 @@
 
     </select>
 
+    <!--根据体检编号和手机号查询-->
+    <select id="getPersonInfoByPhysical_Examination_Id" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
+        SELECT * FROM `person_info` `pi` WHERE `person_id` IN
+        (SELECT `person_id` FROM `physical_examination` WHERE `physical_examination_id` = #{physical_examination_id})
+        AND `pi`.`person_telephone`= #{person_telphone}
+    </select>
+
     <!--根据体检编号查询人员信息-->
     <select id="getPersonBypeacId" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
           SELECT p.* FROM `person_info` p
