@@ -68,7 +68,7 @@ function  getpersoninfo() {
                         "<td>" + c.eventsName + "</td>" +
                         "<td>" + c.unit + "</td>" +
                         "<td>" + c.upperLimit + "-" + c.lowerLimit + "</td>" +
-                        "<td>" + e.commonResults.resultDesc + "</td>" +
+                        "<td>" + c.medicalResultData+ "</td>" +
                         "<td>" + c.medicalResult + "</td>" +
                         "</tr>";
                 });
@@ -101,6 +101,7 @@ function  getpersoninfo() {
         $(".one").val(one);
         $(".two").val(two);
         $("#checknum").html(contents);
+        $("#Checkdate").text(getNowFormatDate());
     },"json");
 
     // $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (result) {
@@ -126,6 +127,21 @@ function  getpersoninfo() {
     //     /*$("#two").val(contens);*/
     // },"json");
 }
+function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;
+    return currentdate;
+}
+
 
 //跳转打印页面
 function sendTotal() {

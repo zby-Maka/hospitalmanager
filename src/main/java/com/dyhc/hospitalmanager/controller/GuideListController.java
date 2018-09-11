@@ -32,6 +32,17 @@ public class GuideListController {
     private UnitReservationService unitReservationService;
     @Autowired
     private GuideService guideService;
+    //体检编号
+    private String resultsId;
+
+    public String getResultsId() {
+        return resultsId;
+    }
+
+    public void setResultsId(String resultsId) {
+        this.resultsId = resultsId;
+    }
+
     /**
      * 根据体检编号查询体检信息
      * @param physicalExaminationId
@@ -130,19 +141,33 @@ public class GuideListController {
         int packageId = unitReservationService.getPackageId(personIdCard);
         List<Check> list = null;
         Integer[] pac={packageId};
-        String results = guideService.addRelationPerson(personId,pac,packageId);
-        if(results != null){
+        resultsId = guideService.addRelationPerson(personId,pac,packageId);
+        if(resultsId != null){
             System.out.println("添加成功");
         }
         //根据体检编号显示条形码
-        BarCodeUtil.generateFile(results);
+        BarCodeUtil.generateFile(resultsId);
         HttpSession session=request.getSession();
-        session.setAttribute("results",results);
+        System.out.println(resultsId);
+        session.setAttribute("resultsId",resultsId);
         try {
             list = unitReservationService.listCheckId(packageId);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return JSON.toJSONString(list);
+    }
+
+
+    /**
+     *
+     *
+     * 显示体检编号
+     * @return
+     */
+    @RequestMapping("/showResultId.do")
+    @ResponseBody
+    public String showResultId(){
+        return JSON.toJSONString(resultsId);
     }
 }

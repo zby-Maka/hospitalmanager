@@ -36,6 +36,7 @@ public class LoginConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/Thebackend-page/thewaylist.html")
                 .excludePathPatterns("/check.html")
                 .excludePathPatterns("/login.html")
+                .excludePathPatterns("/codefile/**")
                 .excludePathPatterns("/admin/**");
     }
 

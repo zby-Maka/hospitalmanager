@@ -76,8 +76,8 @@ $(function () {
     }
 })
 //根据checkId获取传过来的lis 小项显示
-function getYan(checkId){
-    $("input[name=checkId]").val(checkId);
+    function getYan(checkId){
+        $("input[name=checkId]").val(checkId);
     $.getJSON("/hospitalOne/getYan.html",{"checkId":checkId},function (date) {
         var content="";
         console.log(date);
@@ -118,6 +118,7 @@ function  qing() {
     $("input[name=checkResultFinally]").val("");//结果id
     $("#checkAdvice textarea").html("");
     $("input[name=checkAdvice]").val("");//建议id
+    $("#show").html("");
 }
 //体检成功之后修改状态
 function  updateStatu() {

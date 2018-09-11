@@ -2,9 +2,9 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://129.28.67.63/health_examination_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      url: jdbc:mysql://120.79.200.87:3306/health_examination_system?useUnicode=true&characterEncoding=utf-8&useSSL=false
       username: root
-      password: Dxy123..
+      password: Project123..
       db-type: com.alibaba.druid.pool.DruidDataSource #指定使用druid连接池作为数据源
       initial-size: 5 #初始化大小
       min-idle: 5 #最小空闲数
@@ -34,9 +34,20 @@ spring:
   redis:
     host: 120.79.200.87
     port: 6379
+  jmx:
+    enabled: false
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml #映射指定mapper下的所有SQL映射文件
   configuration:
     map-underscore-to-camel-case: true           #设置自动映射数据库表有下划线字段属性
     auto-mapping-behavior: full                   #高级查询
   type-aliases-package: com.dyhc.hospitalmanager.pojo   #开启别名
+
+file:
+  filePathMapper: /codefile/**
+  linuxAbsloutePath: /usr/local/code/
+
+server:
+  servlet:
+    context-path: /hospitalOne
+  port: 8888

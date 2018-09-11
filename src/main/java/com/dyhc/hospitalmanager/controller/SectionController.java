@@ -92,6 +92,7 @@ public class SectionController {
         }
         return json;
     }
+
     @RequestMapping("/update.html")
     @ResponseBody
     public String updateStatu(@RequestParam("peaId")String peaId,@RequestParam("checkId")Integer checkId){

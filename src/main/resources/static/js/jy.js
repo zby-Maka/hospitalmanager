@@ -6,6 +6,7 @@ function  getclearproposedDescription() {
     $("input[name=sciencePopularization]").val("");
     $("input[name=adviceContent]").attr("readonly",false);
     $("input[name=sciencePopularization]").attr("readonly",false);
+    $("select[name='resultId']").attr("disabled",true);
 }
 //添加常见建议
 function getinsertproposedDescription() {

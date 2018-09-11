@@ -6,7 +6,7 @@
 	<title>结果建议</title>
 </head>
 
-<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+<body style="background-image: url(/hospitalOne/images/bgimg.jpg);background-size: 100% 100%;">
 <div style="width: 80%; height: 200mm; margin: 0 auto; background-color: #f8f8f8; opacity: 0.8;text-align: center;">
 	<h2 style="display: block; text-align: center;">结果建议维护</h2>
 	<div style="margin-left: 30px;text-align: center;">
@@ -61,8 +61,8 @@
 	</div>
 </div>
 </body>
-<script  type="text/javascript" src="/js/jieguojianyi.js"></script>
-<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+<script  type="text/javascript" src="/hospitalOne/js/jieguojianyi.js"></script>
+<script type="text/javascript" src="/hospitalOne/js/jquery-3.2.1.js"></script>
 <script>
     $(function () {
         var checkId = sessionStorage.getItem("checkId");
@@ -119,6 +119,8 @@
             $("#commonResultsIds").val(data.commonResultsId);
             $("input[name=resultDesc]").val(data.resultDesc);
             $("input[name=resultDesc]").attr("readonly",true);
+            $("input[name='isPositive']").attr("disabled",true);
+            $("select[name='checkId']").attr("disabled",true);
         },"json")
     }
     function checkchuanid(commonResultsId) {

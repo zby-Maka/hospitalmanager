@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class
-PersonInfoController {
+public class PersonInfoController {
     @Autowired
     private PersonInfoService personInfoService;
+
     @RequestMapping(value = "personInfo.do")
     public String getpersonInfo(String physicalexaminationid){
         List<PersonInfo> personInfoList=personInfoService.getPersonBypeacId(physicalexaminationid);

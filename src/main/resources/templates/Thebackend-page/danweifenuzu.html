@@ -8,7 +8,7 @@
 
 </head>
 
-<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+<body style="background-image: url(/hospitalOne/images/bgimg.jpg);background-size: 100% 100%;">
 <div style="width: 90%;height: 174mm; margin: 0 auto; background-color: #f8f8f8; opacity: 0.8;">
     <h2 style="display: block; text-align: center;letter-spacing: 15px;">单位分组维护</h2>
     <div style="width: 50%; height: 160mm; float: left;">
@@ -92,8 +92,8 @@
 </div>
 
 </body>
-<script src="/js/jquery-3.2.1.js"></script>
-<script src="/js/jquery.form.js"></script>
+<script src="/hospitalOne/js/jquery-3.2.1.js"></script>
+<script src="/hospitalOne/js/jquery.form.js"></script>
 <script>
     //单位分组js
     $(function () {
@@ -198,7 +198,7 @@
                         "\"personAddress\":" + personAddress + ",\"personNameSpellCode\":" + personNameSpellCode + "}";*/
 
                     perList.push(perJson);
-                    $(trLength[i]).remove();
+                    $(trLength[i]).hide();
                 }
 
                 /*性别婚否不限*/
@@ -299,8 +299,9 @@
                         $("input[name=ageUp]").val("");
                         //年龄下限
                         $("input[name=ageDown]").val("");
-                        $("input[name=sex]").eq(0).prop(":checked",true);
-                        $("input[name=hun]").eq(0).prop(":checked",true);
+                        $("input[name=sex]").eq(0).prop("checked",true);
+                        $("input[name=hun]").eq(0).prop("checked",true);
+                        $("input[name=packageId]").eq(0).prop("checked",true);
                     }
                     if(data == 2){
                         alert("添加分组信息成功,没有符合的人员信息");
@@ -309,8 +310,9 @@
                         $("input[name=ageUp]").val("");
                         //年龄下限
                         $("input[name=ageDown]").val("");
-                        $("input[name=sex]").eq(0).prop(":checked",true);
-                        $("input[name=hun]").eq(0).prop(":checked",true);
+                        $("input[name=sex]").eq(0).prop("checked",true);
+                        $("input[name=hun]").eq(0).prop("checked",true);
+                        $("input[name=packageId]").eq(0).prop("checked",true);
                     }
                     if(data == 0){
                         alert("添加失败");
@@ -330,7 +332,7 @@
             dataType: "json",
             success: function (data) {
                 if(data>0){
-                    $("#error").html("改分组名称已存在");
+                    $("#error").html("该分组名称已存在");
                 }else{
                     $("#error").html("");
                 }

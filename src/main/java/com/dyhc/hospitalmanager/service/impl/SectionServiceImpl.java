@@ -112,11 +112,15 @@ public class SectionServiceImpl implements SectionService {
             }else if(sectionType.getSectionTypeName().equals("检验")){
                 save=checkResultMapper.addCheckResult(checkResult);
                 for (MedicalEvents list:medicalEvents) {
-                    list.setCheckResultId(save);
+                    list.setCheckResultId(checkResult.getCheckResultId());
                     add=medicalEventsMapper.addMedicalEvent(list);
                 }
             }else{
                 save=checkResultMapper.addCheckResult(checkResult);
+                for (MedicalEvents list:medicalEvents) {
+                    list.setCheckResultId(checkResult.getCheckResultId());
+                    add=medicalEventsMapper.addMedicalEvent(list);
+                }
             }
             if(add>0&&save>0){
                 ok=2;
@@ -124,8 +128,8 @@ public class SectionServiceImpl implements SectionService {
                 ok=1;
             }
         }catch (Exception e){
-            logger.error("增加出错了");
             e.printStackTrace();
+            logger.error("增加出错了");
         }
         return ok;
     }

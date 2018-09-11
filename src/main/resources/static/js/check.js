@@ -5,7 +5,7 @@ var checkId = new Array();
 $(function() {
     //查询预约时间
     $.ajax({
-        url:"/listDate.do",
+        url:"/hospitalOne/listDate.do",
         dataType:"json",
         success:function (res) {
             var divControl = document.getElementById("chooseDate").getElementsByTagName("div");
@@ -100,12 +100,11 @@ $(function() {
             var checkCom = "<tr>";
             console.log(comCheck);
             $.each(comCheck,function (i,e) {
-                checkCom+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
+                checkCom+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>&nbsp;&nbsp;";
                 if ((i+1)%4==0){
                     checkCom+="</tr>";
                 }
             })
-            checkCom+="</tr></table>";
             $(".childBox").html(checkCom);
             $(".childBox").show();
         })
@@ -118,13 +117,13 @@ $(function() {
             console.log(packCheck);
             var checkPack = "<tr>";
             $.each(packCheck.packageCombinationList,function (i,e) {
-                checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.combinationName+"</td>";
+                checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.combinationName+"</td>&nbsp;&nbsp;";
                 if ((i+1)%3==0){
                     checkPack+="</tr>";
                 }
             })
             $.each(packCheck.packageCheckList,function (i,e) {
-                checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>";
+                checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>&nbsp;&nbsp;";
                 if ((i+1)%3==0){
                     checkPack+="</tr>";
                 }
@@ -174,7 +173,7 @@ function makeAnAppointment(yue,packId,comId,checkId) {
                     checkId=[];
                     comId=[];
                     packId=[];
-                    location.href="/booking.html";
+                    location.href="/hospitalOne/booking.html";
                 }
             }
         });

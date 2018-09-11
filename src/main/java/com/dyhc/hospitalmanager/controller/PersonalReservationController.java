@@ -75,35 +75,46 @@ public class PersonalReservationController {
      *          -4用户选择套餐失败
      *          -5用户选择体检项失败
      *          -6用户选择体检项失败
-    */
+     */
     @RequestMapping(value = "/wxUserReservation.do",method=RequestMethod.POST)
     @ResponseBody
     public String wxUserReservation(@RequestBody JSONObject json){
 
 
         JSONArray tjx1=json.getJSONArray("tjx");        //体检项转集合
-        String tjcjson=JSON.toJSONString(tjx1);
-        List<Integer> number1=JSONObject.parseArray(tjcjson,Integer.class);
-        Integer[] tjx=new Integer[number1.size()];
-        for (int i = 0;i<number1.size();i++){
-            tjx[i]=number1.get(i);
+        Integer[] tjx=null;
+        if (tjx1.size()!=0){
+            String tjcjson=JSON.toJSONString(tjx1);
+            List<Integer> number1=JSONObject.parseArray(tjcjson,Integer.class);
+            tjx=new Integer[number1.size()];
+            for (int i = 0;i<number1.size();i++){
+                tjx[i]=number1.get(i);
+            }
         }
 
         JSONArray zhx1=json.getJSONArray("zhx");        //组合项数组
-        String zhxjson=JSON.toJSONString(zhx1);
-        List<Integer> number2=JSONObject.parseArray(zhxjson,Integer.class);
-        Integer[] zhx=new Integer[number2.size()];
-        for (int i = 0;i<number2.size();i++){
-            zhx[i]=number2.get(i);
+        Integer[] zhx=null;
+        if (zhx1.size()!=0){
+            String zhxjson=JSON.toJSONString(zhx1);
+            List<Integer> number2=JSONObject.parseArray(zhxjson,Integer.class);
+            zhx=new Integer[number2.size()];
+            for (int i = 0;i<number2.size();i++){
+                zhx[i]=number2.get(i);
+            }
         }
 
+
         JSONArray pac1=json.getJSONArray("pac");        //套餐
-        String pacjson=JSON.toJSONString(pac1);
-        List<Integer> number3=JSONObject.parseArray(pacjson,Integer.class);
-        Integer[] pac=new Integer[number3.size()];
-        for (int i = 0;i<number3.size();i++){
-            pac[i]=number3.get(i);
+        Integer[] pac = null;
+        if (pac1.size()!=0){
+            String pacjson=JSON.toJSONString(pac1);
+            List<Integer> number3=JSONObject.parseArray(pacjson,Integer.class);
+            pac=new Integer[number3.size()];
+            for (int i = 0;i<number3.size();i++){
+                pac[i]=number3.get(i);
+            }
         }
+
 
         Object object=json.get("userInfo");
         String jsontext=JSON.toJSONString(object);
@@ -113,6 +124,7 @@ public class PersonalReservationController {
         System.out.println(num);
         return num;
     }
+
 
 
     /**

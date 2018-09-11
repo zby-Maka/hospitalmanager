@@ -25,7 +25,7 @@ $("input[name=companyName]").blur(function () {
     //获取公司名称进行查询
     var companyName = $("input[name=companyName]").val();
     $.ajax({
-        url: "/showCompanyInfo.do",
+        url: "/hospitalOne/showCompanyInfo.do",
         data: {companyName: companyName},
         type: "get",
         success: function (data) {
@@ -60,6 +60,7 @@ var choose = false;
             }
         });
         if($.trim($("#file").val())==''){
+            alert($.trim($("#file").val()));
             flag = false;
             alert("请选择Excel文件");
             return false;
@@ -71,14 +72,14 @@ var choose = false;
                 //执行修改操作
                 var content = $("#companyInfo").serialize();
                 $.ajax({
-                    url:"/updCompanyInfo.do",
+                    url:"/hospitalOne/updCompanyInfo.do",
                     data:content,
                     type:"get",
                     dataType:"json",
                     success:function (data) {
                         if(data>0){
                             alert("修改成功");
-                            location.href ="/booking.html" ;
+                            location.href ="/hospitalOne/booking.html" ;
                             /*$("input[name=companyName]").val("");
                             $("input[name=companyId]").val("");
                             $("input[name=companyPrincipal]").val("");
@@ -98,14 +99,14 @@ var choose = false;
             }else{
                 var contents = $("#companyInfo").serialize();
                 $.ajax({
-                    url: "/addCompanyInfo.do",
+                    url: "/hospitalOne/addCompanyInfo.do",
                     data: contents,
                     type: "get",
                     dataType:"json",
                     success: function (data) {
                         if (data > 0) {
                             alert("添加成功");
-                            location.href ="/booking.html" ;
+                            location.href ="/hospitalOne/booking.html" ;
                             /* $("input[name=companyName]").val("");
                              $("input[name=companyId]").val("");
                              $("input[name=companyPrincipal]").val("");
@@ -202,7 +203,7 @@ function upload() {
         var formData = new FormData($('#companyInfo')[0]);
         //ajax异步上传
         $.ajax({
-            url: "/admin/import",
+            url: "/hospitalOne/admin/import",
             type: "POST",
             data: formData,
             //因为upload属性是XMLHttpRequest的属性，所以，必须获取到请求中的XMLHttpRequest对象

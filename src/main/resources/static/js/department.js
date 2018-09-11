@@ -58,6 +58,12 @@ function getProposedByResultId(commonResultsId) {
 }
 //增加
 function  addResultAndMedicalEvent() {
+    //判断结果文本域为空不能添加
+    var checkResultFinally=$("#checkResultFinally textarea").html();
+    if(checkResultFinally.trim()==""){
+        alert("该体检项还没有结果！");
+        return;
+    }
     var arr = formToJson($("form").serialize());
     var par = {checkResult: arr,medicalEventsList:null};
     $.ajax({

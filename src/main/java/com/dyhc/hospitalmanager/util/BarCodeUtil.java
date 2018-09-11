@@ -1,5 +1,6 @@
 package com.dyhc.hospitalmanager.util;
 
+import com.dyhc.hospitalmanager.config.FilePathConfigration;
 import org.apache.commons.lang.StringUtils;
 import org.krysalis.barcode4j.impl.code39.Code39Bean;
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
@@ -9,6 +10,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 
 public class BarCodeUtil {
+
     /**
      * 生成文件
      *
@@ -17,8 +19,7 @@ public class BarCodeUtil {
      */
     public static File generateFile(String msg) {
         //ResourceUtils.CLASSPATH_URL_PREFIX+"static/code/"
-
-        File file = new File("./src/main/resources/static/code/"+msg+".png");
+        File file = new File(FilePathConfigration.absloutePath +msg+".png");
         try {
             generate(msg, new FileOutputStream(file));
         } catch (FileNotFoundException e) {

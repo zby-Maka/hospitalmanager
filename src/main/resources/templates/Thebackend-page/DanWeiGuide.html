@@ -3,10 +3,10 @@
 <head>
     <title>太原市小店区三甲大院体检指引单</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/code128.css" />
-    <script type="text/javascript" src="../js/code128.js"></script>
-    <script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
-    <script language="javascript" src="/js/jquery.jqprint-0.3.js"></script>
+    <link rel="stylesheet" href="/hospitalOne/css/code128.css" />
+    <script type="text/javascript" src="/hospitalOne/js/code128.js"></script>
+    <script language="javascript" src="/hospitalOne/js/jquery-1.4.4.min.js"></script>
+    <script language="javascript" src="/hospitalOne/js/jquery.jqprint-0.3.js"></script>
     <script type="text/javascript">
         (function(divId) {
             var divElement, oldOnLoad = window.onload;
@@ -67,8 +67,6 @@
             var personIdCard =localStorage["personIdCard"];
             //获取人员编号
             var personId = $("input[name=personId]").val();
-            //获取体检编号
-            var img = $("input[name=img]").val();
             $.ajax({
                 url: "/hospitalOne/showPackageId.do?personIdCard="+personIdCard+"&personId="+personId,
                 data:{},
@@ -82,8 +80,20 @@
                             "<td align=\"center\">"+e.checkAddress+"</td>" +
                             "</tr>";
                     });
-                    $("#showsTiao").attr("src","/code/"+img+".png");
                     $("#showInfo").html(content);
+                    resultsId();
+                }
+            });
+        }
+        //显示条形码
+        function  resultsId() {
+            $.ajax({
+                url: "/hospitalOne/showResultId.do",
+                data:{},
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    $("#showsTiao").attr("src","/hospitalOne/codefile/"+data+".png");
                 }
             });
         }
@@ -111,7 +121,6 @@
             身份证号：<label id="personIdCard"></label>
         </div>
         <div class="barcode2" id="div128" style="float: right;margin-top: -18mm;" >
-            <input type="hidden" name="img" th:value="${session.results}"/>
             <img src="" id="showsTiao"/>
         </div>
     </div>

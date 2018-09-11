@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>jy</title>
 	</head>
-	<body style="background-image: url(../images/bgimg.jpg);background-size: 100% 100%;">
+	<body style="background-image: url(/hospitalOne/images/bgimg.jpg);background-size: 100% 100%;">
 		<div style="width: 80%; height: 200mm; margin: 0 auto;background-color: #f8f8f8; opacity: 0.8;">
 			<h2 style="display: block; text-align: center;">检验项维护</h2>
 			<div style="margin-left: 30px;">
@@ -55,8 +55,8 @@
 			</div>
 		</div>
 	</body>
-	<script  type="text/javascript" src="/js/jy.js"></script>
-	<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+	<script  type="text/javascript" src="/hospitalOne/js/jy.js"></script>
+	<script type="text/javascript" src="/hospitalOne/js/jquery-3.2.1.js"></script>
 	<script>
 	$(function () {
         var commonResultsId = sessionStorage.getItem("commonResultsId");
@@ -106,8 +106,9 @@
 	$("input[name=sciencePopularization]").val(data.sciencePopularization);
 	$("input[name=adviceContent]").attr("readonly",true);
 	$("input[name=sciencePopularization]").attr("readonly",true);
+	$("select[name='resultId']").attr("disabled",true);
 
-	},"json")
+    },"json")
 	}
 	</script>
 </html>

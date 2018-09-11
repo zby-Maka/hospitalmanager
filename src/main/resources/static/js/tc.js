@@ -46,7 +46,7 @@ function getPackageAndCombinationInfo(packaid) {
                 $("input[name='note']").val(e.note);
                 $("textarea[name='scopeApplication']").val(e.scopeApplication);
                 $("textarea[name='scopeApplication']").attr("readonly", true)
-                $("#showxiang").removeAttr("onclick")
+                $("a").removeAttr("onclick")
                 $.each(e.packageCombinationList, function (o, r) {
                     content += "<lable name='combiantionInfo'  value='" + r.combinationId + "'>" + r.combinationName + "</lable><hr/>"
                 })
@@ -84,7 +84,7 @@ function getPackageAndCheckInfo(packaid) {
                 $("input[name='note']").attr("readonly", true)
                 $("textarea[name='scopeApplication']").val(e.scopeApplication);
                 $("textarea[name='scopeApplication']").attr("readonly", true)
-                $("#showxiang").removeAttr("onclick")
+                $("a").removeAttr("onclick");
                 $.each(e.packageCheckList, function (o, r) {
                     content += "<lable name='combiantionInfo'  value='" + r.checkId + "'>" + r.checkName + "</lable><hr/>"
                 })

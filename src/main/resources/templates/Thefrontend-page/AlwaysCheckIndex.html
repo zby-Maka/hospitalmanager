@@ -4,15 +4,15 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>SCT-总检医生</title>
-		<link href="/style/authority/main_css.css" rel="stylesheet" type="text/css" />
-		<link href="/style/authority/zTreeStyle.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="/css/layui.css" />
+		<link href="/hospitalOne/style/authority/main_css.css" rel="stylesheet" type="text/css" />
+		<link href="/hospitalOne/style/authority/zTreeStyle.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/hospitalOne/css/layui.css" />
 		<!--<script type="text/javascript" src="../scripts/jquery/jquery-1.7.1.js"></script>-->
-		<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="/scripts/zTree/jquery.ztree.core-3.2.js"></script>
-		<script type="text/javascript" src="/scripts/authority/commonAll.js"></script>
-		<script src="/js/nowdate.js"></script>
-		<script type="text/javascript" src="/layui.js"></script>
+		<script type="text/javascript" src="/hospitalOne/js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="/hospitalOne/scripts/zTree/jquery.ztree.core-3.2.js"></script>
+		<script type="text/javascript" src="/hospitalOne/scripts/authority/commonAll.js"></script>
+		<script src="/hospitalOne/js/nowdate.js"></script>
+		<script type="text/javascript" src="/hospitalOne/layui.js"></script>
 		<script>
 			var element;
 			layui.use('element', function() {
@@ -37,24 +37,24 @@
 		<div style="background-image:url(/images/bgimg.jpg);background-size: 100% 100%;">
 			<div id="top">
 				<div id="top_logo">
-					<img alt="logo" src="/img/logo.jpg" width="280px" height="110%" style="vertical-align:middle;">
+					<img alt="logo" src="/hospitalOne/img/logo.jpg" width="280px" height="110%" style="vertical-align:middle;">
 				</div>
 				<div id="top_links">
 					<div id="top_op">
 						<ul>
 							<li>
-								<img alt="当前用户" src="/images/common/user.jpg">：
+								<img alt="当前用户" src="/hospitalOne/images/common/user.jpg">：
 								<span>admin</span>
 							</li>
 							<li>
-								<img alt="今天是" src="/images/common/date.jpg">：
+								<img alt="今天是" src="/hospitalOne/images/common/date.jpg">：
 								<span id="nowdate"></span>
 							</li>
 						</ul>
 					</div>
 					<div id="top_close">
 						<a href="javascript:void(0);" onclick="logout();" target="_parent">
-							<img alt="退出系统" title="退出系统" src="/images/common/close.jpg" style="position: relative; top: 10px; left: 25px;">
+							<img alt="退出系统" title="退出系统" src="/hospitalOne/images/common/close.jpg" style="position: relative; top: 10px; left: 25px;">
 						</a>
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 	width: auto;
 	z-index: 2;
 	overflow: hidden;">
-				<iframe name="right" id="rightMain" src="/Thebackend-page/AlwaysCheck.html" frameborder="no" scrolling="auto" width="100%" height="100%" allowtransparency="true" />
+				<iframe name="right" id="rightMain" src="/hospitalOne/Thebackend-page/AlwaysCheck.html" frameborder="no" scrolling="auto" width="100%" height="100%" allowtransparency="true" />
 			</div>
 		</div>
 	</body>

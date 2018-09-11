@@ -3,10 +3,10 @@
 <head>
 	<title>太原市小店区三甲大院体检指引单</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="../css/code128.css" />
-	<script type="text/javascript" src="../js/code128.js"></script>
-	<script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
-	<script language="javascript" src="/js/jquery.jqprint-0.3.js"></script>
+	<link rel="stylesheet" href="/hospitalOne/css/code128.css" />
+	<script type="text/javascript" src="/hospitalOne/js/code128.js"></script>
+	<script language="javascript" src="/hospitalOne/js/jquery-1.4.4.min.js"></script>
+	<script language="javascript" src="/hospitalOne/js/jquery.jqprint-0.3.js"></script>
 	<script type="text/javascript">
         (function(divId) {
             var divElement, oldOnLoad = window.onload;
@@ -53,7 +53,7 @@
                     $("#personType").text(data.personType);
                     $("#telephone").text(data.personTelephone);
 					//$("#div128").attr('background',"url('/code/"+physicalExaminationId+".png')");
-					$("#showsTiao").attr("src","/code/"+physicalExaminationId+".png");
+					$("#showsTiao").attr("src","/hospitalOne/codefile/"+physicalExaminationId+".png");
                     showCheckInfos();
                 }
             });
@@ -70,7 +70,6 @@
                 type: "get",
                 dataType: "json",
                 success: function (data) {
-                    alert(data);
                     var content = "";
 					$.each(data,function (i,e) {
 						content += "<tr>\n" +

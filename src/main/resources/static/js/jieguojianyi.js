@@ -5,6 +5,8 @@ function  getclearcommonresult() {
     $("#commonResultsIds").val(0);
     $("input[name='resultDesc']").val("");
     $("input[name='resultDesc']").attr("readonly",false);
+    $("input[name='isPositive']").attr("disabled",false);
+    $("select[name='checkId']").attr("disabled",true);
 
 }
 
