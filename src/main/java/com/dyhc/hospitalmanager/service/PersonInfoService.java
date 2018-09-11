@@ -11,4 +11,12 @@ public interface PersonInfoService {
      * @return
      */
     List<PersonInfo> getPersonBypeacId(@Param("peacId")String peacId);
+
+    /**
+     * 根据体检编号和手机号进行查询
+     * @param physical_examination_id
+     * @param person_telphone
+     * @return
+     */
+    PersonInfo getPersonInfoByIdAndPhone(@Param("physical_examination_id")String physical_examination_id,@Param("person_telphone")String person_telphone);
 }
