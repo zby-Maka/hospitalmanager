@@ -26,7 +26,7 @@
     </update>
 
     <select id="getCheckList" resultMap="getRc">
-      SELECT  a.*,me.*,me.`unit` AS eunit,comr.*,pd.*  FROM(SELECT c.* FROM `physical_examination` pe
+      SELECT  a.*,me.*,me.`unit` AS eunit,comr.*,pd.*,cr.check_advice FROM(SELECT c.* FROM `physical_examination` pe
       INNER JOIN `physical_examination_and_package` pep
       ON pe.`physical_examination_id` = pep.`physical_examination_id`
       INNER JOIN `package_and_ combination` pac ON pep.`package_id` = pac.`package_id`
@@ -62,9 +62,6 @@
         <id column="check_id" property="checkId"/>
         <association property="commonResults" javaType="com.dyhc.hospitalmanager.pojo.CommonResults">
             <id column="common_results_id" property="commonResultsId"/>
-        </association>
-        <association property="proposedDescription" javaType="com.dyhc.hospitalmanager.pojo.ProposedDescription">
-            <id column="proposed_description_id" property="proposedDescriptionId"/>
         </association>
         <collection property="medicalEventsList" javaType="com.dyhc.hospitalmanager.pojo.MedicalEvents">
             <id column="medical_events_id" property="medicalEventsId"/>
