@@ -15,7 +15,7 @@ public class CheckResult {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date checkDate;
     private Integer checkResultFinally;
-    private Integer checkAdvice;
+    private String checkAdvice;
     private  CommonResults commonResults;
     private  MedicalEvents medicalEvents;
 
@@ -83,11 +83,11 @@ public class CheckResult {
         this.checkResultFinally = checkResultFinally;
     }
 
-    public Integer getCheckAdvice() {
+    public String getCheckAdvice() {
         return checkAdvice;
     }
 
-    public void setCheckAdvice(Integer checkAdvice) {
+    public void setCheckAdvice(String checkAdvice) {
         this.checkAdvice = checkAdvice;
     }
 

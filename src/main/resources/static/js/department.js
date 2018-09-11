@@ -52,12 +52,14 @@ function getProposedByResultId(commonResultsId) {
     $.getJSON("/hospitalOne/getProposedByResultId.html",{"resultId":commonResultsId},function (result) {
         $.each(result,function (i,e) {
             $("#checkAdvice textarea").html(e.adviceContent);
-            $("input[name=checkAdvice]").val(e.proposedDescriptionId);//建议id
+           // $("input[name=checkAdvice]").val(e.proposedDescriptionId);//建议id
         });
     });
 }
 //增加
 function  addResultAndMedicalEvent() {
+    //获取建议文本框
+    var checkAdvice= $("#test").val();
     //判断结果文本域为空不能添加
     var checkResultFinally=$("#checkResultFinally textarea").html();
     if(checkResultFinally.trim()==""){
@@ -67,7 +69,7 @@ function  addResultAndMedicalEvent() {
     var arr = formToJson($("form").serialize());
     var par = {checkResult: arr,medicalEventsList:null};
     $.ajax({
-        url: '/hospitalOne/addResultAndMedicalEvent.html',
+        url: '/hospitalOne/addResultAndMedicalEvent.html?checkAdvice='+checkAdvice,
         data: JSON.stringify(par),
         contentType: "application/json;charset=utf-8",
         dataType: "json",
@@ -110,8 +112,7 @@ function  qing() {
     }
     $("#checkResultFinally textarea").html("");
     $("input[name=checkResultFinally]").val("");//结果id
-    $("#checkAdvice textarea").html("");
-    $("input[name=checkAdvice]").val("");//建议id
+    $("#test").val("");//建议
 }
 //体检成功之后修改状态
 function  updateStatu() {
