@@ -22,4 +22,14 @@ public class PersonInfoServiceImpl implements PersonInfoService {
             return null;
         }
     }
+    @Override
+    public PersonInfo getPersonInfoByIdAndPhone(String physical_examination_id, String person_telphone) {
+        try {
+            return personInfoMapper.getPersonInfoByIdAndPhone(physical_examination_id,person_telphone);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+
+    }
 }
