@@ -53,6 +53,13 @@ public interface PersonInfoMapper {
      * @return
      */
     PersonInfo getPersonInfoByPhysical_Examination_Id(@Param("physical_examination_id")String physical_examination_id)throws  Exception;
+    /**
+     * 根据体检编号和手机号查询
+     * @param physical_examination_id
+     * @param person_telphone
+     * @return
+     */
+    PersonInfo getPersonInfoByIdAndPhone(@Param("physical_examination_id")String physical_examination_id,@Param("person_telphone")String person_telphone);
 
 
     /**
