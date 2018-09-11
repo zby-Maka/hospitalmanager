@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.CombinationMapper">
 
-
     <!--添加组合项信息-->
     <insert id="addCombinationInfo" useGeneratedKeys="true" keyProperty="combinationId" keyColumn="combination_id">
        INSERT INTO combination VALUES(null,#{sectionId},#{combinationName},#{pinyinCode},#{promptInformation},#{resultToWay},#{isSpecimen},#{specimenType},1)
@@ -14,9 +13,21 @@
  SELECT com.*,c.* FROM `combination` com
         INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id`
         INNER JOIN `check` c ON c.`check_id`=cac.`check_id`
-        WHERE com.combination_id=#{combinationId}
-
+        WHERE com.combination_id=#{combinationId} AND com.is_enable = 1
     </select>
+
+    <!-- 根据一组组合项Id，查询组合项信息以及下的体检项信息 -->
+    <select id="getCheckByComArrayId" resultMap="comCheck">
+        SELECT com.*,c.* FROM `combination` com
+        INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id`
+        INNER JOIN `check` c ON c.`check_id`=cac.`check_id`
+        WHERE com.combination_id in
+        <foreach collection="combinationId" item="cId" open="(" close=")" separator=",">
+            #{cId}
+        </foreach>
+         AND com.is_enable = 1
+    </select>
+
     <!--修改组合项信息-->
     <update id="updCombinationInfo">
     UPDATE

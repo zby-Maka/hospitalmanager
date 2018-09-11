@@ -24,6 +24,13 @@ public interface CombinationMapper {
      */
     List<Combination> getCheckByCombinationId(@Param("combinationId") Integer combinationId)throws Exception;
 
+    /**
+     * 根据一组组合项Id，查询组合项信息以及下的体检项信息
+     * @param combinationId 一组Array
+     * @return
+     * @throws Exception
+     */
+    List<Combination> getCheckByComArrayId(@Param("combinationId") Integer[] combinationId) throws Exception;
 
     /**
      * 修改组合项信息
@@ -51,7 +58,4 @@ public interface CombinationMapper {
      * @throws Exception
      */
     List<Combination> getCombinationList(@Param("sectionId")Integer sectionId)throws Exception;
-
-
-
 }
