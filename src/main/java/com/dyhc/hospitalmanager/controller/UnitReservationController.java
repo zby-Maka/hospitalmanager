@@ -189,7 +189,8 @@ public class UnitReservationController {
     @ResponseBody
     public String showPersonInfo(@RequestParam("companyName") String companyName){
         File cfgFile = null;
-            File file1 = new File("./src/main/resources/excelfile/"+companyName+".xlsx");
+        //String filePath = "E:/src/main/resources/excelfile/";
+            File file1 = new File("E:/src/main/resources/excelfile/"+companyName+".xlsx");
             //cfgFile = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "excelfile/"+companyName+".xlsx");
         ImportExcelUtil importExcelUtil=new ImportExcelUtil();
         File file=new File(String.valueOf(file1));

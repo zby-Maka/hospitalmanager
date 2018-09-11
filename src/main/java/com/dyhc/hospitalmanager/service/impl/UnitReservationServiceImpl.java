@@ -4,6 +4,7 @@ import com.dyhc.hospitalmanager.dao.*;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
+import com.dyhc.hospitalmanager.util.PinYinUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,7 @@ public class UnitReservationServiceImpl implements UnitReservationService {
     @Transactional
     @Override
     public Integer addGroupAndPersonInfo(Group group, List<PersonInfo> personInfos) {
+        PinYinUtil pinYinUtil = new PinYinUtil();
         Integer groupResult = 0;
         Integer personResult = 0;
         try{
@@ -101,6 +103,10 @@ public class UnitReservationServiceImpl implements UnitReservationService {
                     //通过身份证号判断人员是否存在
                     PersonInfo personInfo = personInfoMapper.findPersonInfoPersonIdCard(personInfos.get(i).getPersonIdCard());
                     if(personInfo == null){
+                        //获取人员姓名
+                        String personName = personInfos.get(i).getPersonName();
+                        String personCode = pinYinUtil.getFirstSpell(personName);
+                        personInfos.get(i).setPersonNameSpellCode(personCode);
                         //不存在人员信息进行添加
                         personInfos.get(i).setGroupId(group.getGroupId());
                         personInfos.get(i).setPersonType("单位");
