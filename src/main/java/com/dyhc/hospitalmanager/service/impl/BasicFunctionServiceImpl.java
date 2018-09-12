@@ -295,7 +295,22 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         return list;
     }
 
-
+    /**
+     * 根据科室id查询组合项信息以及下的体检项信息
+     * @param sectionId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Combination> getCombinationAndCheckInfoBySectionId(Integer sectionId)  {
+        List<Combination>list=null;
+        try {
+            list=combinationMapper.getCombinationAndCheckInfoBySectionId(sectionId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
 
     @Override

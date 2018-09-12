@@ -219,4 +219,16 @@ public class BasicFunctionController {
         return JSON.toJSONString(basicFunctionService.getSectionList());
     }
 
+    /**
+     * 根据科室id查询组合项信息以及下的体检项信息
+     * @param sectionId
+     * @return
+     */
+    @RequestMapping("getCombinationAndCheckInfoBySectionId")
+    @ResponseBody
+    public String getCombinationAndCheckInfoBySectionId(@Param("sectionId")Integer sectionId){
+        List<Combination>list=basicFunctionService.getCombinationAndCheckInfoBySectionId(sectionId);
+        return JSON.toJSONString(list);
+    }
+
 }
