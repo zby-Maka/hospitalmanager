@@ -10,10 +10,6 @@ function sessionStorageData() {
     var persionInfo = sessionStorage.getItem("one");
     //体检项
     var checkInfo = sessionStorage.getItem("two");
-    //检查结果
-    var resultInfo = sessionStorage.getItem("three");
-    //建议
-    var commInfo = sessionStorage.getItem("four");
 
     //个人信息
     $.each(JSON.parse(persionInfo),function (i,e) {
@@ -32,10 +28,10 @@ function sessionStorageData() {
             console.log(e);
             if (e.medicalEventsList.length==0) {
                 var cons="";
-                if(e.proposedDescription.adviceContent==undefined){
+                if(e.commonResults.checkAdvice==undefined){
                     cons=""
                 }else {
-                    cons=e.proposedDescription.adviceContent;
+                    cons=e.commonResults.checkAdvice;
                 }
                 var conss="";
                 if (e.commonResults.resultDesc==undefined){
@@ -106,7 +102,8 @@ function sessionStorageData() {
     $("#jiancha").html(contents);
     $("#jiancha").after(jianyan);
     $($("textarea").get(0)).html(one);
-    $($("textarea").get(1)).html(two);
+    //$($("textarea").get(1)).html(two);
+    $($("textarea").get(1)).html(sessionStorage.getItem("jianyi"));
     $("#Checkdate").text(getNowFormatDate());
 }
 

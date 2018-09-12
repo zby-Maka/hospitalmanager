@@ -29,10 +29,10 @@ function  getpersoninfo() {
             jianyan="";
             if (e.medicalEventsList.length==0) {
                 var cons="";
-                if(e.proposedDescription.adviceContent==undefined){
+                if(e.commonResults.checkAdvice==undefined){
                     cons=""
                 }else {
-                    cons=e.proposedDescription.adviceContent;
+                    cons=e.commonResults.checkAdvice;
                 }
                 var conss="";
                 if (e.commonResults.resultDesc==undefined){
@@ -145,5 +145,7 @@ function getNowFormatDate() {
 
 //跳转打印页面
 function sendTotal() {
+    var jianyi = $("#checkAdvice textarea").val();
+    sessionStorage.setItem("jianyi",jianyi);
     location.href="/hospitalOne/Thebackend-page/total.html";
 }

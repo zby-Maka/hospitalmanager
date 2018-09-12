@@ -11,6 +11,7 @@ import com.dyhc.hospitalmanager.util.MessageProducer;
 import com.dyhc.hospitalmanager.util.SendMes;
 import com.github.qcloudsms.SmsSingleSenderResult;
 import org.apache.activemq.command.ActiveMQQueue;
+import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,6 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.jms.Destination;
@@ -66,6 +66,23 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     private SendMes sendMes;
     public String result="ok";
 
+    /**
+     * 根据一组组合项Id，查询组合项信息以及下的体检项信息
+     * combinationId 一组Array
+     * @return
+     */
+    @Override
+    public List<Combination> getCheckByComArrayId(Integer[] combinationId) {
+        if(combinationId==null){
+            return null;
+        }
+        try {
+            return combinationMapper.getCheckByComArrayId(combinationId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     /**
      * 根据身份证号查询用户信息表
@@ -425,14 +442,66 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             if(packageCombination!=null){
                 if(packageCheck!=null)
                     packageCombination.setPackageCheckList(packageCheck.getPackageCheckList());
+                return packageCombination;
             }else {
                 pack= packageMapper.selPackageById(packId);
                 if(packageCheck!=null)
                     pack.setPackageCheckList(packageCheck.getPackageCheckList());
+                return pack;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return packageCombination;
+        return null;
     }
+
+    /**
+     * 根据组合项id查询组合项信息以及下的体检项信息
+     * @return
+     */
+    @Override
+    public Combination getCheckByCombinationId(Integer combinationId) {
+        try {
+            List<Combination> combinationList= combinationMapper.getCheckByCombinationId(combinationId);
+            if(combinationList!=null)
+                return combinationList.get(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 获取该套餐项下的所有体检项
+     * packId 套餐id
+     * @return
+     */
+    @Override
+    public List<Package> getPackCheckbyPackArray(Integer[] packId) {
+        List<Package> packageList = new ArrayList<>();
+        Package packageCombination=null;
+        Package packageCheck=null;
+        Package pack = null;
+        for (Integer pId:packId) {
+            try {
+                packageCombination =  packageMapper.getPackageCombination(pId);
+                packageCheck =  packageMapper.getPackageCheck(pId);
+                if(packageCombination!=null){
+                    if(packageCheck!=null)
+                        packageCombination.setPackageCheckList(packageCheck.getPackageCheckList());
+                    packageList.add(packageCombination);
+                }else {
+                    pack= packageMapper.selPackageById(pId);
+                    if(packageCheck!=null)
+                        pack.setPackageCheckList(packageCheck.getPackageCheckList());
+                    packageList.add(pack);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return packageList;
+    }
+
+
 }
