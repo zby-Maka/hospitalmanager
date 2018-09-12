@@ -46,6 +46,19 @@ public class CheckServiceImpl implements CheckService {
     }
 
     @Override
+    public List<Check> getChecks(String physicalExaminationId, String telephone) throws Exception {
+        try{
+            List<Check> list=CheckMapper.getChecks(physicalExaminationId, telephone);
+            System.out.println(list);
+            return CheckMapper.getChecks(physicalExaminationId, telephone);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    @Override
     public List<PersonInfo> personInfo(String peacId) {
         try {
             List<PersonInfo> list  = personInfoMapper.getPersonBypeacId(peacId);

@@ -72,7 +72,7 @@ public class SectionController {
     //检查增加体检结果，检验增加体检结果和检验明细
     @RequestMapping("addResultAndMedicalEvent.do")
     @ResponseBody
-    public String addResultAndMedicalEvent(@RequestBody JSONObject params, HttpServletRequest request,@RequestParam("checkAdvice")String checkAdvice){
+    public String addResultAndMedicalEvent(@RequestBody JSONObject params, HttpServletRequest request,@RequestParam(value="checkAdvice",required = false) String checkAdvice){
         HttpSession session=request.getSession();
         CheckResult checkResult= params.getObject("checkResult",CheckResult.class);
         checkResult.setCheckAdvice(checkAdvice);

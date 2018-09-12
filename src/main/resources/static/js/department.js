@@ -52,7 +52,6 @@ function getProposedByResultId(commonResultsId) {
     $.getJSON("/hospitalOne/getProposedByResultId.do",{"resultId":commonResultsId},function (result) {
         $.each(result,function (i,e) {
             $("#checkAdvice textarea").html(e.adviceContent);
-           // $("input[name=checkAdvice]").val(e.proposedDescriptionId);//建议id
         });
     });
 }

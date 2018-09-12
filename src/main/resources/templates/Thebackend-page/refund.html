@@ -73,30 +73,35 @@
         //判断是否已收费
 		function sfysf() {
             var physical_examination_id = $("input[name=physical_examination_id]").val();
-			$.ajax({
-                url:"/hospitalOne/getNumber.do",
-                data:{physical_examination_id:physical_examination_id},
-                dataType:"json",
-                success:function (date) {
-					if (date>0) {
-                        getCostTypeByPersonId();
-					}else{
-                        var checkList = "<tr>\n" +
-                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                            "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                            "\t\t\t\t\t</tr>\n" +
-                            "\t\t\t\t\t<tr>\n" +
-                            "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">请收费后在进行退费</td>\n" +
-                            "\t\t\t\t\t</tr>" ;
-                        $(".checkList").html(checkList);
-                        var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                        $(".operation").html(str);
-					}
+            if (physical_examination_id!="") {
+                $.ajax({
+                    url:"/hospitalOne/getNumber.do",
+                    data:{physical_examination_id:physical_examination_id},
+                    dataType:"json",
+                    success:function (date) {
+                        if (date>0) {
+                            getCostTypeByPersonId();
+                        }else{
+                            var checkList = "<tr>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                "\t\t\t\t\t</tr>\n" +
+                                "\t\t\t\t\t<tr>\n" +
+                                "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">请收费后在进行退费</td>\n" +
+                                "\t\t\t\t\t</tr>" ;
+                            $(".checkList").html(checkList);
+                            var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                            $(".operation").html(str);
+                        }
 
-				}
-			})
-
+                    }
+                })
+            }else{
+                var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                $(".operation").html(str)
+                alert("请输入体检编号！");
+            }
         }
 
         //根据人员id查询体检信息
@@ -107,7 +112,7 @@
                 data:{physical_examination_id:physical_examination_id,physicalStatu:0},
                 dataType:"json",
                 success:function (date) {
-                    if (date!=null){
+                    if (date!=""){
                         $(".name").html("姓名:"+date.personName);
                         $(".age").html("年龄:"+date.personAge);
                         $(".sex").html("性别:"+date.personSex);
