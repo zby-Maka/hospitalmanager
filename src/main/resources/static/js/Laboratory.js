@@ -15,7 +15,7 @@ $(function () {
     //查询全部
     function  getPerson() {
         var peacId=$("input[name=physicalExaminationId]").val();
-        $.getJSON("/hospitalOne/Person.html",{"peacId":peacId},function (date) {
+        $.getJSON("/hospitalOne/Person.do",{"peacId":peacId},function (date) {
             $.each(date.map1,function (i,m) {
                 $("label[name=personName]").text(m.personName);
                 $("label[name=personAge]").text(m.personAge);
@@ -56,7 +56,7 @@ $(function () {
         };
         console.log(par);
         $.ajax({
-            url: '/hospitalOne/addResultAndMedicalEvent.html',
+            url: '/hospitalOne/addResultAndMedicalEvent.do',
             data:JSON.stringify(par),
             contentType:"application/json;charset=utf-8",
             dataType: "json",
@@ -78,7 +78,7 @@ $(function () {
 //根据checkId获取传过来的lis 小项显示
     function getYan(checkId){
         $("input[name=checkId]").val(checkId);
-    $.getJSON("/hospitalOne/getYan.html",{"checkId":checkId},function (date) {
+    $.getJSON("/hospitalOne/getYan.do",{"checkId":checkId},function (date) {
         var content="";
         console.log(date);
         dataArry=date;
@@ -124,7 +124,7 @@ function  qing() {
 function  updateStatu() {
     var peaId=$("input[name=physicalExaminationId]").val();
     var checkId=$("input[name=checkId]").val();
-    $.getJSON("/hospitalOne/update.html",{"peaId":peaId,"checkId":checkId},function (data) {
+    $.getJSON("/hospitalOne/update.do",{"peaId":peaId,"checkId":checkId},function (data) {
         var ok="0";
         if(data>0){
             ok="1";
