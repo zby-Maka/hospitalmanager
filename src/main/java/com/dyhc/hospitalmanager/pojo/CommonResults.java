@@ -10,6 +10,24 @@ public class CommonResults {
     private Integer isPositive;
     private Integer isDelete;
     private  Check check;
+    //结果
+    private String checkAdvice;
+
+    public Check getCheck() {
+        return check;
+    }
+
+    public void setCheck(Check check) {
+        this.check = check;
+    }
+
+    public String getCheckAdvice() {
+        return checkAdvice;
+    }
+
+    public void setCheckAdvice(String checkAdvice) {
+        this.checkAdvice = checkAdvice;
+    }
 
     public ProposedDescription getProposedDescription() {
         return proposedDescription;

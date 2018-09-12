@@ -150,6 +150,12 @@ public interface BasicFunctionService {
      */
     List<Package>getPackageAndCheckInfoById(@Param("packageId")Integer packageId);
 
+    /**
+     * 根据科室id查询组合项信息以及下的体检项信息
+     * @return
+     * @throws Exception
+     */
+    List<Combination>getCombinationAndCheckInfoBySectionId(@Param("sectionId") Integer sectionId);
 
     /**
      * 修改套餐信息
