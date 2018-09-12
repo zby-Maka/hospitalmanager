@@ -23,7 +23,7 @@ function updandadd() {
 }
 
 
-//根据套餐id查询套餐信息以及套餐下的组合项目
+//根据套餐id查询套餐信息以及套餐下的组合项
 function getPackageAndCombinationInfo(packaid) {
     $.ajax({
         url: "/hospitalOne/getPackageAndCombinationInfoById",
@@ -119,7 +119,7 @@ function showSectionAndCombinationAndCheck() {
     })
 }
 
-//根据科室id查询科室信息以及下的组合信息和体检信息
+//根据科室id查询科室信息以及下的组合项信息和体检项信息
 function showSectionAndCombinationAndCheckByid(sectionid) {
     var flag = false;
     var flag1 = false;
@@ -136,9 +136,9 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
                     flag = false;
                     for (var i = 0; i < oncheck.length; i++) {
                         if (oncheck[i][0] == e1.combinationId && oncheck[i][1] == e1.combinationName) {
-                            if(e1.combinationName==undefined){
-                            content+="";
-                            }else{
+                            if (e1.combinationName == undefined) {
+                                content += "";
+                            } else {
                                 content += "<input name='combiantionInfo' type='checkbox' checked='checked' value='" + e1.combinationId + "'><span>" + e1.combinationName + "</span><hr/>";
                             }
                             flag = true;
@@ -146,9 +146,9 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
                         }
                     }
                     if (flag == false) {
-                        if(e1.combinationName==undefined){
-                            content+="";
-                        }else{
+                        if (e1.combinationName == undefined) {
+                            content += "";
+                        } else {
                             content += "<input name='combiantionInfo' type='checkbox' value='" + e1.combinationId + "'><span>" + e1.combinationName + "</span><hr/>";
                         }
 
@@ -159,9 +159,9 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
                     flag1 = false;
                     for (var i = 0; i < oncheck.length; i++) {
                         if (oncheck[i][0] == e2.checkId && oncheck[i][1] == e2.checkName) {
-                            if(e2.checkName==undefined){
-                                content+="";
-                            }else{
+                            if (e2.checkName == undefined) {
+                                content += "";
+                            } else {
                                 content += "<input name='checkInfo' type='checkbox' checked='checked' value='" + e2.checkId + "'><span>" + e2.checkName + "</span><hr/>";
                             }
                             flag1 = true;
@@ -169,9 +169,9 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
                         }
                     }
                     if (flag1 == false) {
-                        if(e2.checkName==undefined){
-                            content+="";
-                        }else{
+                        if (e2.checkName == undefined) {
+                            content += "";
+                        } else {
                             content += "<input name='checkInfo' type='checkbox' value='" + e2.checkId + "'><span>" + e2.checkName + "</span><hr/>";
                         }
 
@@ -194,16 +194,118 @@ $("#combinationAndcheck").on("click", "input[name='combiantionInfo'],input[name=
     var xiangname = $(this).next().text();//选中checkbox的内容
     var check = $(this).prop("checked");//选中状态
     var checkorcom = $(this).attr("name");//选中checkbox的name属性的值
-    var arr1 = [];
-    arr1.push(xiangid);
-    arr1.push(xiangname);
-    oncheck.push(arr1);
+
     if (check) {
         var html = "";
-        if (checkorcom == "combiantionInfo") {
-            html = "<lable name='combiantionInfo' id='" + xiangname + "'  value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
-        } else if (checkorcom == "checkInfo") {
-            html = "<lable name='checkInfo' id='" + xiangname + "' value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
+        if ($("lable[name='combiantionInfo']").val() == undefined && $("lable[name='checkInfo']").val() == undefined) {
+            if (checkorcom == "combiantionInfo") {
+                html = "<lable name='combiantionInfo' id='" + xiangname + "'  value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
+            } else if (checkorcom == "checkInfo") {
+                html = "<lable name='checkInfo' id='" + xiangname + "' value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
+            }
+            var arr1 = [];
+            arr1.push(xiangid);
+            arr1.push(xiangname);
+            oncheck.push(arr1);
+        } else {
+            if (checkorcom == "checkInfo") {
+                var combinationID = [];//组合项id数组
+                var checkID = [];//体检项id数组
+                var a = $("#checkcombinationAndcheck > lable[name='checkInfo']").length;
+                var b = $("#checkcombinationAndcheck > lable[name='combiantionInfo']").length;
+                if (b != 0) {
+                    for (var i = 0; i < b; i++) {//循环属于组合项的lable
+                        combinationID[i] = $("lable[name='combiantionInfo']").eq(i).attr("value");
+                    }
+                    var boolean = false;
+                    for (var i = 0; i < combinationID.length; i++) {
+                        var count = 0;
+                        $.ajax({
+                            url: "/hospitalOne/getCombinationAndCheckInfo",
+                            type: "post",
+                            dataType: "json",
+                            data: {"combinationId": combinationID[i]},
+                            success: function (data) {
+                                $.each(data[0].combinationCheckList, function (j, e) {
+                                    if (e.checkId == xiangid) {
+                                        alert("您已选择的组合项目中已包含该体检项");
+                                        $("input[name='" + checkorcom + "']").prop("checked", false);
+
+                                        boolean = true;
+                                        return false;
+                                    } else if (data[0].combinationCheckList.length == [j + 1]) {
+                                        count++;
+                                        if (count == combinationID.length) {
+                                            html = "<lable name='checkInfo' id='" + xiangname + "' value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
+                                            $("#checkcombinationAndcheck").append(html);
+                                        }
+                                        var arr1 = [];
+                                        arr1.push(xiangid);
+                                        arr1.push(xiangname);
+                                        oncheck.push(arr1);
+                                    }
+                                });
+                            }
+                        })
+                        if (boolean == true) {
+                            boolean == false;
+                            break;
+                        }
+                    }
+                } else {
+                    alert("发生错误")
+                }
+            } else if (checkorcom == "combiantionInfo") {
+                var combinationID = [];//组合项id数组
+                var checkID = [];//体检项id数组
+                var a = $("#checkcombinationAndcheck > lable[name='checkInfo']").length;
+                var b = $("#checkcombinationAndcheck > lable[name='combiantionInfo']").length;
+                if (a != 0) {
+                    for (var i = 0; i < a; i++) {//循环属于体检项的lable
+                        checkID[i] = $("lable[name='checkInfo']").eq(i).attr("value");
+                    }
+                    var boolean = false;
+                    for (var i = 0; i < checkID.length; i++) {
+                        var count = 0;
+                        $.ajax({
+                            url: "/hospitalOne/getCombinationAndCheckInfo",
+                            type: "post",
+                            dataType: "json",
+                            data: {"combinationId": xiangid},
+                            success: function (data) {
+                                $.each(data[0].combinationCheckList, function (i, e) {
+                                    if (e.checkId == xiangid) {
+                                        alert("您选择的组合项目中已包含"+e.checkName+"项，请重新选择");
+                                        $("input[name='" + checkorcom + "']").prop("checked", false);
+                                        boolean = true;
+                                        return false;
+                                    }else if(data[0].combinationCheckList.length == [i + 1]){
+                                        if (count == combinationID.length) {
+                                            html = "<lable name='combiantionInfo' id='" + xiangname + "'  value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
+                                            $("#checkcombinationAndcheck").append(html);
+                                        }
+                                    }
+                                })
+                            }
+                        })
+                        if (boolean == true) {
+                            boolean == false;
+                            break;
+                        }
+                    }
+                } else {
+                    alert("体检组合项中可能有重复的体检项，请慎重选择!!")
+                    if (checkorcom == "combiantionInfo") {
+                        html = "<lable name='combiantionInfo' id='" + xiangname + "'  value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
+                    } else if (checkorcom == "checkInfo") {
+                        html = "<lable name='checkInfo' id='" + xiangname + "' value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
+                    }
+                    var arr1 = [];
+                    arr1.push(xiangid);
+                    arr1.push(xiangname);
+                    oncheck.push(arr1);
+                }
+            }
         }
         $("#checkcombinationAndcheck").append(html);
     } else {
@@ -214,12 +316,9 @@ $("#combinationAndcheck").on("click", "input[name='combiantionInfo'],input[name=
         }
         if (checkorcom == "combiantionInfo") {
             $("#checkcombinationAndcheck").children("lable[id='" + xiangname + "']").remove()
-            var aa = $("#checkcombinationAndcheck").children("lable[id='" + xiangname + "']").next().html();
         } else if (checkorcom == "checkInfo") {
             $("#checkcombinationAndcheck").children("lable[id='" + xiangname + "']").remove()
-            $("#checkcombinationAndcheck").children("lable[id='" + xiangname + "']").next().remove()
         }
-
     }
 
 })
@@ -229,17 +328,17 @@ function add() {
     var textControl = $("#addform input");
     var text = $("textarea[name='scopeApplication']").val();
     var flag = true;
-        if (text.trim() == "") {
-            $.each(textControl, function (i, e) {
-                if (e.type == "text" && e.value == "") {
-                    flag = false;
-                    alert("请完善套餐项信息！");
-                    return false;
-                }
-            })
-        }
+    if (text.trim() == "") {
+        $.each(textControl, function (i, e) {
+            if (e.type == "text" && e.value == "") {
+                flag = false;
+                alert("请完善套餐项信息！");
+                return false;
+            }
+        })
+    }
 
-        if (flag) {
+    if (flag) {
         addpack();
     }
 
@@ -275,6 +374,7 @@ function addpack() {
                 $("input[name='packageName']").val("");
                 $("input[name='note']").val("")
                 $("textarea[name='scopeApplication']").val("");
+                $("#checkcombinationAndcheck").val("");
             }
             else {
                 alert("添加失败")

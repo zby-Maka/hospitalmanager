@@ -39,6 +39,13 @@ public interface CombinationMapper {
     List<Combination> getAllCombinationList() throws Exception;
 
     /**
+     * 根据科室id查询组合项信息以及下的体检项信息
+     * @return
+     * @throws Exception
+     */
+    List<Combination>getCombinationAndCheckInfoBySectionId(@Param("sectionId") Integer sectionId)throws Exception;
+
+    /**
      * 根据体检Id查询组合信息
      * @return
      */

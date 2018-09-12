@@ -40,6 +40,14 @@
         WHERE com.is_enable = 1
     </select>
 
+    <!-- 根据id查询所有组合项，及其下的体检项 -->
+    <select id="getCombinationAndCheckInfoBySectionId" resultMap="comCheck">
+        SELECT com.*,c.* FROM `combination` com
+        INNER JOIN `combination_and_ check` cac ON com.`combination_id` = cac.`combination_id`
+        INNER JOIN `check` c ON c.`check_id`=cac.`check_id`
+        WHERE com.section_id=#{sectionId}
+    </select>
+
     <!-- 查询所有组合项，及其下的体检项 -->
     <resultMap id="comCheck" type="com.dyhc.hospitalmanager.pojo.Combination">
         <id property="combinationId" column="combination_id"/>
