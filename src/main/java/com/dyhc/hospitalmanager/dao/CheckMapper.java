@@ -24,6 +24,15 @@ public interface CheckMapper {
     List<Check>  getCheckList(@Param("physicalExaminationId")String  physicalExaminationId) throws  Exception;
 
     /**
+     * 根据体检编号和手机号查询
+     * @param physicalExaminationId
+     * @param telephone
+     * @return
+     * @throws Exception
+     */
+    List<Check>  getChecks(@Param("physicalExaminationId")String  physicalExaminationId,@Param("telephone")String telephone) throws  Exception;
+
+    /**
      * 查询所有的体检项
      * @return
      */
