@@ -60,7 +60,6 @@ var choose = false;
             }
         });
         if($.trim($("#file").val())==''){
-            alert($.trim($("#file").val()));
             flag = false;
             alert("请选择Excel文件");
             return false;
