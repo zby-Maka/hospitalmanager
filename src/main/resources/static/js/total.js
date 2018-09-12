@@ -69,7 +69,7 @@ function sessionStorageData() {
                         "<td>" + c.eventsName + "</td>" +
                         "<td>" + c.unit + "</td>" +
                         "<td>" + c.upperLimit + "-" + c.lowerLimit + "</td>" +
-                        "<td>" + e.commonResults.resultDesc + "</td>" +
+                        "<td>" + c.medicalResultData + "</td>" +
                         "<td>" + c.medicalResult + "</td>" +
                         "</tr>";
                 });
