@@ -33,7 +33,7 @@ public class SectionController {
      * @param peacId
      * @return
      */
-    @RequestMapping("Person.html")
+    @RequestMapping("Person.do")
     @ResponseBody
     public String getPersonCheckBySectionId(@RequestParam("peacId") String peacId, HttpServletRequest request) {
         HttpSession session=request.getSession();
@@ -43,7 +43,7 @@ public class SectionController {
     }
 
     //检查:结果
-    @RequestMapping("getCommResultsByCheckId.html")
+    @RequestMapping("getCommResultsByCheckId.do")
     @ResponseBody
     public String getCommResultsByCheckId(@RequestParam("checkId")Integer checkId,HttpServletRequest request){
         HttpSession session=request.getSession();
@@ -52,7 +52,7 @@ public class SectionController {
         return JSON.toJSONString(commonResults);
     }
     //检查:建议
-    @RequestMapping("getProposedByResultId.html")
+    @RequestMapping("getProposedByResultId.do")
     @ResponseBody
     public String getProposedByResultId(@RequestParam("resultId")Integer resultId,HttpServletRequest request){
         HttpSession session=request.getSession();
@@ -60,7 +60,7 @@ public class SectionController {
         List<ProposedDescription> list=sectionService.getProposedByResultId(resultId,sectionId);
         return JSON.toJSONString(list);
     }
-    @RequestMapping("/getYan.html")
+    @RequestMapping("/getYan.do")
     @ResponseBody
     public String getYan(@RequestParam("checkId")Integer checkId){
         HttpClient httpClient=new HttpClient();
@@ -70,9 +70,9 @@ public class SectionController {
     }
 
     //检查增加体检结果，检验增加体检结果和检验明细
-    @RequestMapping("addResultAndMedicalEvent.html")
+    @RequestMapping("addResultAndMedicalEvent.do")
     @ResponseBody
-    public String addResultAndMedicalEvent(@RequestBody JSONObject params, HttpServletRequest request,@RequestParam("checkAdvice")String checkAdvice){
+    public String addResultAndMedicalEvent(@RequestBody JSONObject params, HttpServletRequest request,@RequestParam(value="checkAdvice",required = false) String checkAdvice){
         HttpSession session=request.getSession();
         CheckResult checkResult= params.getObject("checkResult",CheckResult.class);
         checkResult.setCheckAdvice(checkAdvice);
@@ -94,7 +94,7 @@ public class SectionController {
         return json;
     }
 
-    @RequestMapping("/update.html")
+    @RequestMapping("/update.do")
     @ResponseBody
     public String updateStatu(@RequestParam("peaId")String peaId,@RequestParam("checkId")Integer checkId){
         Integer update=sectionService.updateStatu(peaId,checkId);

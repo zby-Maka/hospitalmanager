@@ -122,6 +122,8 @@
                                 "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">无体检项信息</td>\n" +
                                 "\t\t\t\t\t</tr>" ;
                             $(".checkList").html(checkList);
+                            var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                            $(".operation").html(str);
 						}
                         $(".checkList").html(checkList);
 						$(".aggregate").html(price);
@@ -145,6 +147,8 @@
                         $(".receivable").html("---");
                         $(".change").html("---");
                         $("input[name=price]").val("");
+                        var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                        $(".operation").html(str)
 					    alert("查询失败,请重新输如人员编号！");
 					}
                 }

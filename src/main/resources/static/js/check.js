@@ -47,7 +47,7 @@ $(function() {
                 comId.push(comIdControl[i].value);
         }
 
-        //获取所有选中的组合项Id
+        //获取所有选中的体检项Id
         var checkIdControl = document.getElementsByName('checkItem');
         for(var i = 0; i < checkIdControl.length; i++){
             if(checkIdControl[i].checked)
@@ -80,25 +80,11 @@ $(function() {
 	//查询所有体检项，组合项，套餐项
     selAllCheck();
 
-	//获取体检项
-	$(".tab_box").on("click","input[name='checkItem'],input[name='combineItem'],input[name='packageItem']",function() {
-		var result = $(this).parent().text();
-		//判断是否选中
-		var check = $(this).prop("checked");
-		if(check){
-			var html="<span class='check' name='checkItem' id='"+result+"'>"+result+"</span>";
-			$(".checked").append(html);
-		}else{
-			$(".checked").children("#"+result).remove();
-		}
-	});
-
 	//浮动组合项时显示该项下边的体检项
     $("#com").on("mouseenter","td[name=c]",function () {
         var comId=$(this).find("span input").val();
         $.getJSON("/hospitalOne/getComCheck.do",{"comId":comId},function (comCheck) {
             var checkCom = "<tr>";
-            console.log(comCheck);
             $.each(comCheck,function (i,e) {
                 checkCom+="<td style=\"font-weight: bolder; text-align: center;\">"+e.checkName+"</td>&nbsp;&nbsp;";
                 if ((i+1)%4==0){
@@ -114,7 +100,6 @@ $(function() {
     $("#package").on("mouseenter","td[name=p]",function () {
         var packId=$(this).find("span input").val();
         $.getJSON("/hospitalOne/getPackCheck.do",{"packId":packId},function (packCheck) {
-            console.log(packCheck);
             var checkPack = "<tr>";
             $.each(packCheck.packageCombinationList,function (i,e) {
                 checkPack+="<td style=\"font-weight: bolder; text-align: center;\">"+e.combinationName+"</td>&nbsp;&nbsp;";
@@ -138,6 +123,55 @@ $(function() {
         $(".childBox").html("");
         $(".childBox").hide();
 	});
+
+    //选中体检时，去重，并给已选项赋值
+    $("#check").on("change","input[name=checkItem]",function () {
+        var result = $(this).parent().text();
+        if($(this).is(':checked')){
+            var html="<span class='check' name='checkItem' id='c"+$(this).val()+"'>"+result+"</span>";
+            $(".checked").append(html);
+            CheckDuplicateRemoval(this,$(this).val());
+        }else{
+            $(".checked").children("#c"+$(this).val()).remove();
+        }
+    });
+
+    //选中组合项时，去重，并给已选项赋值
+    $("#com").on("change","input[name=combineItem]",function () {
+        var result = $(this).parent().text();
+        if($(this).is(':checked')){
+            var html="<span class='check' name='combineItem' id='com"+$(this).val()+"'>"+result+"</span>";
+            $(".checked").append(html);
+            ComDuplicateRemoval($(this).val());
+        }else{
+            $(".checked").children("#com"+$(this).val()).remove();
+        }
+    });
+
+    //选中套餐时，去重，并给已选项赋值
+    $("#package").on("change","input[name=packageItem]",function () {
+        var result = $(this).parent().text();
+        if($(this).is(':checked')){
+            var html="<span class='check' name='packageItem' id='p"+$(this).val()+"'>"+result+"</span>";
+            $(".checked").append(html);
+            PackDuplicateRemoval($(this).val());
+        }else{
+            $(".checked").children("#p"+$(this).val()).remove();
+        }
+    });
+
+    //获取体检项
+    // $(".tab_box").on("click","input[name='combineItem'],input[name='packageItem']",function() {
+    //     var result = $(this).parent().text();
+    //     //判断是否选中
+    //     var check = $(this).prop("checked");
+    //     if(check){
+    //         var html="<span class='check' name='checkItem' id='"+result+"'>"+result+"</span>";
+    //         $(".checked").append(html);
+    //     }else{
+    //         $(".checked").children("#"+result).remove();
+    //     }
+    // });
 });
 
 /**
@@ -163,8 +197,6 @@ function makeAnAppointment(yue,packId,comId,checkId) {
                     EV_modeAlert("loding");
             },
             success: function (result) {
-                //alert(result);
-                //console.log(result);
                 if (result == "ok") {
                     EV_closeAlert();//关闭等待遮罩层
                     $("#loding").hide();
@@ -220,6 +252,137 @@ function selAllCheck() {
         $("#package").html(content);
     })
 }
+
+//选中套餐项时，去重，并给已选项赋值
+function PackDuplicateRemoval(pid) {
+    var ZuId = new Array();
+    var checkIdControl = document.getElementsByName('checkItem');
+    for(var i = 0; i < checkIdControl.length; i++){
+        if(checkIdControl[i].checked)
+            ZuId.push(checkIdControl[i]);
+    }
+    if(ZuId.length!=0){
+        //获取所有选中的组合项下的体检项
+        $.getJSON("/hospitalOne/getPackCheck.do",{"packId":pid},function (pack) {
+            console.log(pack);
+            var checkName = "";
+            $.each(ZuId,function (i,checkIdControl) {
+                $.each(pack.packageCheckList,function (i,e) {
+                    if(e.checkId == checkIdControl.value){
+                        checkName+="【"+e.checkName+"】";
+                        checkIdControl.checked=false;
+                        $(".checked").children("#c"+e.checkId).remove();
+                    }
+                })
+                $.each(pack.packageCombinationList,function (i,e){
+                    $.each(e.combinationCheckList,function (i,c) {
+                        if(c.checkId == checkIdControl.value){
+                            checkName+="【"+c.checkName+"】";
+                            checkIdControl.checked=false;
+                            $(".checked").children("#c"+c.checkId).remove();
+                        }
+                    })
+                })
+            });
+            if(checkName!="")
+                alert("您所选的"+checkName+"已包含在您所选的【"+pack.packageName+"】套餐中,我们自动帮您去除哦");
+        })
+    }
+}
+
+//选中组合项时，去重，并给已选项赋值
+function ComDuplicateRemoval(comId) {
+    var ZuId = new Array();
+    var checkIdControl = document.getElementsByName('checkItem');
+    for(var i = 0; i < checkIdControl.length; i++){
+        if(checkIdControl[i].checked)
+            ZuId.push(checkIdControl[i]);
+    }
+    if(ZuId.length!=0){
+        //获取所有选中的组合项下的体检项
+        $.getJSON("/hospitalOne/getCheckByCombinationId.do",{"combinationId":comId},function (combination) {
+            console.log(combination);
+            var checkName = "";
+            $.each(combination.combinationCheckList,function (i,e) {
+                $.each(ZuId,function (i,checkIdControl) {
+                    if(e.checkId == checkIdControl.value){
+                        checkName+="【"+e.checkName+"】";
+                        checkIdControl.checked=false;
+                        $(".checked").children("#c"+e.checkId).remove();
+                    }
+                });
+            })
+            if(checkName!="")
+                alert("您所选的"+checkName+"已包含在您所选的【"+combination.combinationName+"】组合项中,我们自动帮您去除哦");
+        })
+    }
+}
+
+//体检项去重
+function CheckDuplicateRemoval(that,checkId) {
+    //所有选中组合项Id
+    var ZuId = new Array();
+    //所有选中套餐的Id
+    var TaoId = new Array();
+    //获取所有选中的组合项Id
+    var comIdControl = document.getElementsByName('combineItem');
+    for(var i = 0; i < comIdControl.length; i++){
+        if(comIdControl[i].checked)
+            ZuId.push(comIdControl[i].value);
+    }
+    if(ZuId.length!=0){
+        //获取所有选中的组合项下的体检项
+        $.getJSON("/hospitalOne/getCheckByComArrayId.do",{"combinationId":ZuId},function (ZuAllCheck) {
+            console.log(ZuAllCheck);
+            $.each(ZuAllCheck,function (i,e) {
+                $.each(e.combinationCheckList,function (ic,c) {
+                    if(c.checkId == checkId){
+                        alert("您所选的【"+c.checkName+"】已包含在您所选的【"+e.combinationName+"】组合项中");
+                        $(that).prop("checked",false);
+                        $(".checked").children("#c"+checkId).remove();
+                        return;
+                    }
+                })
+            })
+        })
+    }else{
+        //获取所有选中的套餐项Id
+        var packIdControl = document.getElementsByName('packageItem');
+        for(var i = 0; i < packIdControl.length; i++){
+            if(packIdControl[i].checked)
+                TaoId.push(packIdControl[i].value);
+        }
+        if(TaoId.length!=0){
+            $.getJSON("/hospitalOne/getPackCheckbyPackArray.do",{"packId":TaoId},function (TaoAllCheck) {
+                var alertFlag = true;
+                console.log(TaoAllCheck);
+                $.each(TaoAllCheck,function (i,e) {
+                    $.each(e.packageCheckList,function (ic,c) {
+                        if(c.checkId == checkId&&alertFlag){
+                            alert("您所选的【"+c.checkName+"】已包含在您所选的【"+e.packageName+"】套餐中");
+                            $(that).prop("checked",false);
+                            $(".checked").children("#c"+checkId).remove();
+                            alertFlag=false;
+                            return;
+                        }
+                    })
+                    $.each(e.packageCombinationList,function (im,m) {
+                        $.each(m.combinationCheckList,function (imc,mc) {
+                            if(mc.checkId == checkId&&alertFlag){
+                                alert("您所选的【"+mc.checkName+"】已包含在您所选的【"+e.packageName+"】套餐中");
+                                $(that).prop("checked",false);
+                                $(".checked").children("#c"+checkId).remove();
+                                alertFlag=false;
+                                return;
+                            }
+                        })
+                    })
+                })
+            })
+        }
+    }
+}
+
 //关闭预约时间弹框
 function closeDate() {
     checkId=[];

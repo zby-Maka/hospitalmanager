@@ -67,6 +67,7 @@ public class PersonalReservationController {
         allMedicals.add(allMedical2);
         return JSON.toJSONString(allMedicals);
     }
+
     /*
      * @return 1成功
      *          -1失败
@@ -79,8 +80,6 @@ public class PersonalReservationController {
     @RequestMapping(value = "/wxUserReservation.do",method=RequestMethod.POST)
     @ResponseBody
     public String wxUserReservation(@RequestBody JSONObject json){
-
-
         JSONArray tjx1=json.getJSONArray("tjx");        //体检项转集合
         Integer[] tjx=null;
         if (tjx1.size()!=0){
@@ -103,7 +102,6 @@ public class PersonalReservationController {
             }
         }
 
-
         JSONArray pac1=json.getJSONArray("pac");        //套餐
         Integer[] pac = null;
         if (pac1.size()!=0){
@@ -115,7 +113,6 @@ public class PersonalReservationController {
             }
         }
 
-
         Object object=json.get("userInfo");
         String jsontext=JSON.toJSONString(object);
         PersonInfo personInfo=JSONObject.parseObject(jsontext,PersonInfo.class);
@@ -124,8 +121,6 @@ public class PersonalReservationController {
         System.out.println(num);
         return num;
     }
-
-
 
     /**
      * 用户预约
@@ -147,8 +142,6 @@ public class PersonalReservationController {
         String result = personalReservation.userReservation(personInfo,yue,packId,comId,checkId);
         return result;
     }
-
-
 
     /**
      * 获取所有的检查项
@@ -207,5 +200,34 @@ public class PersonalReservationController {
     @GetMapping("/smg.do")
     public String sendSmg(String phone,String physicalExaminationId){
         return JSON.toJSONString(sendMes.sendMes(phone,physicalExaminationId));
+    }
+
+    /**
+     * 根据一组组合项Id，查询组合项信息以及下的体检项信息
+     * combinationId 一组Array
+     * @return
+     */
+    @GetMapping("/getCheckByComArrayId.do")
+    public List<Combination> getCheckByComArrayId(@RequestParam("combinationId[]") Integer[] combinationId) {
+        return personalReservation.getCheckByComArrayId(combinationId);
+    }
+
+    /**
+     * 获取该套餐项下的所有体检项
+     * packId 套餐id
+     * @return
+     */
+    @GetMapping("/getPackCheckbyPackArray.do")
+    public List<Package> getPackCheckbyPackArray(@RequestParam("packId[]") Integer[] packId) {
+        return personalReservation.getPackCheckbyPackArray(packId);
+    }
+
+    /**
+     * 根据组合项id查询组合项信息以及下的体检项信息
+     * @return
+     */
+    @GetMapping("/getCheckByCombinationId.do")
+    public Combination getCheckByCombinationId(Integer combinationId) {
+        return personalReservation.getCheckByCombinationId(combinationId);
     }
 }

@@ -92,3 +92,11 @@ ul {
 .hide {
 	display: none;
 }
+
+.tieshi {
+	float: left;
+}
+
+.tieshi h5{
+	text-align: center;
+}

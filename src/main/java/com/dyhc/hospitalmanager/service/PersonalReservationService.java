@@ -4,15 +4,32 @@ import com.dyhc.hospitalmanager.pojo.Check;
 import com.dyhc.hospitalmanager.pojo.Combination;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.pojo.PersonInfo;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Date;
 import java.util.List;
 
 /**
  * 个人预约业务
  */
 public interface PersonalReservationService {
+
+    /**
+     * 根据组合项id查询组合项信息以及下的体检项信息
+     * @return
+     */
+    Combination getCheckByCombinationId(Integer combinationId);
+
+    /**
+     * 根据选中的套餐Id,查询组合项信息，及体检项信息
+     * @param packId
+     * @return
+     */
+    List<Package> getPackCheckbyPackArray(Integer[] packId);
+
+    /**
+     * 根据一组组合项Id，查询组合项信息以及下的体检项信息
+     * combinationId 一组Array
+     * @return
+     */
+    List<Combination> getCheckByComArrayId(Integer[] combinationId);
 
     /**
      * 根据身份证号查询用户信息表
