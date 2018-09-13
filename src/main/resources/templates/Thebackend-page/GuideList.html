@@ -48,6 +48,7 @@ $("input[name=geren]").click(function () {
             flat = false;
             return false;
         }
+
         if(flat){
             var physicalExaminationId = $("input[name=physicalExaminationId]").val();
             localStorage.physicalExaminationId=physicalExaminationId;
@@ -59,7 +60,15 @@ $("input[name=geren]").click(function () {
                 dataType: "json",
                 success: function (data) {
                     if(data>0){
-                        location.href = "/hospitalOne/Thebackend-page/thewaylist.html";
+                        //获取当前日期
+                        var nowDate = getNowFormatDate();
+                        //获取输入的体检日期
+                        var thisDate = nowDate.substring(0,8);
+                        if(nowDate == thisDate){
+                            location.href = "/hospitalOne/Thebackend-page/thewaylist.html";
+                        }else{
+                            alert("请在指定日期前来打印");
+                        }
                     }else{
                         $("#xianshi").show();
                     }
@@ -70,7 +79,25 @@ $("input[name=geren]").click(function () {
 
     });
 
-    /*查询单位按钮*/
+    //获取当前时间
+    function getNowFormatDate() {
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = date.getFullYear()+month+ strDate;
+        return currentdate;
+    }
+
+
+
+
+/*查询单位按钮*/
     $("input[name=danwei]").click(function () {
         var flat = true;
         var personIdCard = $("input[name=personIdCard]").val();
