@@ -62,9 +62,11 @@ $("input[name=geren]").click(function () {
                     if(data>0){
                         //获取当前日期
                         var nowDate = getNowFormatDate();
-                        //获取输入的体检日期
+                        //截取当前的体检日期
                         var thisDate = nowDate.substring(0,8);
-                        if(nowDate == thisDate){
+                        //截取输入的体检日期
+                        var tijian = physicalExaminationId.substring(0,8);
+                        if(thisDate == tijian){
                             location.href = "/hospitalOne/Thebackend-page/thewaylist.html";
                         }else{
                             alert("请在指定日期前来打印");
