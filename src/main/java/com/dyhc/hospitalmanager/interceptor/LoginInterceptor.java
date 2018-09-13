@@ -39,6 +39,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         adminPermissions.add("Thebackend-page/jieguojianyi.html");
         adminPermissions.add("Thebackend-page/unit.html");
         adminPermissions.add("Thebackend-page/danweifenuzu.html");
+        adminPermissions.add("Thebackend-page/GroupInfos.html");
 
         chargePermissions.add("CashiersIndex.html");
         chargePermissions.add("Thebackend-page/refund.html");
