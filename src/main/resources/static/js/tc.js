@@ -387,6 +387,7 @@ function addpack() {
                 $("input[name='note']").val("")
                 $("textarea[name='scopeApplication']").val("");
                 $("#checkcombinationAndcheck").html("");
+                $("#combinationAndcheck").html("");
             }
             else {
                 alert("添加失败")
