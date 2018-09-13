@@ -22,6 +22,23 @@ public class CheckController{
         System.out.println(json);
         return json;
     }
+
+    /**
+     * 根据体检编号和手机号查询体检项以及结果
+     * @param physicalExaminationId
+     * @param telephone
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/getPersonInfoCheckList.do")
+    public Object getChecks(String physicalExaminationId,String telephone) throws Exception {
+        List<Check> checkList=checkService.getChecks(physicalExaminationId, telephone);
+        String json=JSON.toJSONString(checkList);
+        System.out.println(json);
+        return json;
+    }
+
+
     @RequestMapping(value = "checkall.do")
     public String getChecklist(){
         List<Check> checkList=checkService.getAllCheckList();

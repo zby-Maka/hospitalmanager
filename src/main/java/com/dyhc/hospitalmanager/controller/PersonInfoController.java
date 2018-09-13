@@ -21,4 +21,11 @@ public class PersonInfoController {
         System.out.println(json);
         return json;
     }
+
+    @RequestMapping("/getPersonInfo.do")
+    public String getPersonInfoByIdAndPhone(String physicalexaminationid,String telephone){
+        PersonInfo personInfo=personInfoService.getPersonInfoByIdAndPhone(physicalexaminationid,telephone);
+        String json=JSON.toJSONString(personInfo);
+        return json;
+    }
 }

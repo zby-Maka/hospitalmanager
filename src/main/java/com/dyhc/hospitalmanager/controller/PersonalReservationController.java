@@ -6,7 +6,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.dyhc.hospitalmanager.pojo.*;
 import com.dyhc.hospitalmanager.pojo.Package;
 import com.dyhc.hospitalmanager.service.PersonalReservationService;
+import com.dyhc.hospitalmanager.util.PinYin4j;
 import com.dyhc.hospitalmanager.util.SendMes;
+import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +27,21 @@ public class PersonalReservationController {
     private PersonalReservationService personalReservation;
 
     private SendMes sendMes = new SendMes();
+
+
+    /**
+     * 拼音简码
+     * @param name
+     * @return
+     * @throws BadHanyuPinyinOutputFormatCombination
+     */
+    @RequestMapping("/getPinYin.do")
+    public Object pinYin(@RequestParam("name")String name) throws BadHanyuPinyinOutputFormatCombination {
+        System.out.println(name);
+        PinYin4j pinYin4j=new PinYin4j();
+        String pinyin=pinYin4j.toPinYinLowercase(name);
+        return pinyin;
+    }
 
     /**
      * 根据身份证号查询用户信息表，绑定信息框

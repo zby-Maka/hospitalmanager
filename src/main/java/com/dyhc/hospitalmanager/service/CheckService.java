@@ -24,6 +24,16 @@ public interface CheckService {
     List<Check>  getCheckList(String  physicalExaminationId);
 
     /**
+     * 根据体检编号和手机号查询
+     * @param physicalExaminationId
+     * @param telephone
+     * @return
+     * @throws Exception
+     */
+    List<Check>  getChecks(@Param("physicalExaminationId")String  physicalExaminationId,@Param("telephone")String telephone) throws  Exception;
+
+
+    /**
      * 根据体检编号查询体检信息
      * @param peacId
      * @return

@@ -25,6 +25,7 @@
       is_enable=#{isEnable} where check_id=#{checkId}
     </update>
 
+    <!--根据体检编号查询结果建议-->
     <select id="getCheckList" resultMap="getRc">
       SELECT  a.*,me.*,me.`unit` AS eunit,comr.*,pd.*,cr.check_advice FROM(SELECT c.* FROM `physical_examination` pe
       INNER JOIN `physical_examination_and_package` pep
@@ -56,6 +57,41 @@
       LEFT JOIN common_results  comr ON  cr.check_result_finally=comr.common_results_id
       LEFT JOIN proposed_description pd ON pd.proposed_description_id=cr.`check_advice`
   WHERE cr.`physical_examination_id` = #{physicalExaminationId}
+    </select>
+    <!--根据体检编号和手机号查询结果建议-->
+    <select id="getChecks" resultMap="getRc">
+      SELECT  a.*,me.*,me.`unit` AS eunit,comr.*,pd.*  FROM(SELECT c.* FROM `physical_examination` pe
+    INNER JOIN `physical_examination_and_package` pep
+    ON pe.`physical_examination_id` = pep.`physical_examination_id`
+    INNER JOIN `package_and_ combination` pac ON pep.`package_id` = pac.`package_id`
+    INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
+    INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
+    WHERE pe.`physical_examination_id` =#{physicalExaminationId}
+    UNION
+    SELECT c.* FROM `physical_examination` pe
+    INNER JOIN `physical_examination_and_package` peap
+    ON pe.`physical_examination_id` = peap.`physical_examination_id`
+    INNER JOIN `package_and_ check` pac ON peap.package_id = pac.package_id
+    INNER JOIN `check` c ON c.`check_id` = pac.check_id
+    WHERE peap.physical_examination_id =#{physicalExaminationId}
+    UNION
+    SELECT c.* FROM `physical_examination` pe
+    INNER JOIN `physical_examination_and_ combination` pac ON pe.`physical_examination_id` = pac.`physical_examination_id`
+    INNER JOIN `combination_and_ check` cac ON pac.`combination_id` = cac.`combination_id`
+    INNER JOIN `check` c ON cac.`check_id` = c.`check_id`
+    WHERE pe.`physical_examination_id` = #{physicalExaminationId}
+    UNION
+    SELECT c.* FROM `physical_examination` pe
+    INNER JOIN `physical_examination_and_ check` peac ON pe.`physical_examination_id` = peac.`physical_examination_id`
+    INNER JOIN `check` c ON peac.`check_id` = c.`check_id`
+    WHERE pe.`physical_examination_id` =#{physicalExaminationId}) a
+    INNER JOIN `check_result` cr ON cr.`check_id` = a.check_id
+    LEFT JOIN `medical_events` me ON cr.`check_result _id` = me.`check_result_id`
+    LEFT JOIN common_results  comr ON  cr.check_result_finally=comr.common_results_id
+    LEFT JOIN proposed_description pd ON pd.proposed_description_id=cr.`check_advice`
+    INNER JOIN `physical_examination` pe ON pe.physical_examination_id=cr.physical_examination_id
+    INNER JOIN `person_info` ppi ON ppi.person_id=pe.person_id
+    WHERE cr.`physical_examination_id` = #{physicalExaminationId} AND ppi.`person_telephone`= #{telephone}
     </select>
 
     <resultMap id="getRc" type="com.dyhc.hospitalmanager.pojo.Check">
@@ -131,3 +167,7 @@
     </foreach>)
     </select>
 </mapper>
+
+
+
+
