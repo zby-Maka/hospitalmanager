@@ -8,7 +8,7 @@ $(function () {
         $.each(textControl,function (i,e) {
             if(e.type=="text" && e.value=="") {
                 flag = false;
-                alert("请完善用户信息！");
+                swal("请完善用户信息！");
                 return false;
             }
         })

@@ -174,6 +174,9 @@ $(function() {
     // });
 });
 
+
+
+
 /**
  * 预约
  */
@@ -200,7 +203,7 @@ function makeAnAppointment(yue,packId,comId,checkId) {
                 if (result == "ok") {
                     EV_closeAlert();//关闭等待遮罩层
                     $("#loding").hide();
-                    alert("预约成功！");
+                    swal("预约成功！");
                     sessionStorage.setItem("personInfo",null);
                     checkId=[];
                     comId=[];
@@ -285,7 +288,8 @@ function PackDuplicateRemoval(pid) {
                 })
             });
             if(checkName!="")
-                alert("您所选的"+checkName+"已包含在您所选的【"+pack.packageName+"】套餐中,我们自动帮您去除哦");
+                swal("小贴士","您所选的【"+checkName+"】已包含在您所选的【"+pack.packageName+"】套餐中,我们自动帮您去除哦");
+                //alert("您所选的"+checkName+"已包含在您所选的【"+pack.packageName+"】套餐中,我们自动帮您去除哦");
         })
     }
 }
@@ -313,7 +317,7 @@ function ComDuplicateRemoval(comId) {
                 });
             })
             if(checkName!="")
-                alert("您所选的"+checkName+"已包含在您所选的【"+combination.combinationName+"】组合项中,我们自动帮您去除哦");
+                swal("小贴士","您所选的【"+checkName+"】已包含在您所选的【"+combination.combinationName+"】组合项中,我们自动帮您去除哦");
         })
     }
 }
@@ -337,7 +341,7 @@ function CheckDuplicateRemoval(that,checkId) {
             $.each(ZuAllCheck,function (i,e) {
                 $.each(e.combinationCheckList,function (ic,c) {
                     if(c.checkId == checkId){
-                        alert("您所选的【"+c.checkName+"】已包含在您所选的【"+e.combinationName+"】组合项中");
+                        swal("小贴士","您所选的【"+c.checkName+"】已包含在您所选的【"+e.combinationName+"】组合项中");
                         $(that).prop("checked",false);
                         $(".checked").children("#c"+checkId).remove();
                         return;
@@ -359,7 +363,7 @@ function CheckDuplicateRemoval(that,checkId) {
                 $.each(TaoAllCheck,function (i,e) {
                     $.each(e.packageCheckList,function (ic,c) {
                         if(c.checkId == checkId&&alertFlag){
-                            alert("您所选的【"+c.checkName+"】已包含在您所选的【"+e.packageName+"】套餐中");
+                            swal("小贴士","您所选的【"+c.checkName+"】已包含在您所选的【"+e.packageName+"】套餐中");
                             $(that).prop("checked",false);
                             $(".checked").children("#c"+checkId).remove();
                             alertFlag=false;
@@ -369,7 +373,7 @@ function CheckDuplicateRemoval(that,checkId) {
                     $.each(e.packageCombinationList,function (im,m) {
                         $.each(m.combinationCheckList,function (imc,mc) {
                             if(mc.checkId == checkId&&alertFlag){
-                                alert("您所选的【"+mc.checkName+"】已包含在您所选的【"+e.packageName+"】套餐中");
+                                swal("小贴士","您所选的【"+mc.checkName+"】已包含在您所选的【"+e.packageName+"】套餐中");
                                 $(that).prop("checked",false);
                                 $(".checked").children("#c"+checkId).remove();
                                 alertFlag=false;
