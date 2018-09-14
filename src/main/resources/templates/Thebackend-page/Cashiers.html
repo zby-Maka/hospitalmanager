@@ -4,6 +4,8 @@
 		<meta charset="UTF-8">
 		<title>收费</title>
 		<link rel="stylesheet" type="text/css" href="/hospitalOne/css/Cashiers.css"/>
+		<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.css"/>
+		<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.min.js"></script>
 	</head>
 	<body style=" width: 100%;	background-image: url(/hospitalOne/images/bgimg.jpg); background-size: 100% 100%;">
 		<div id="content">
@@ -86,7 +88,7 @@
         })
 		
 		function hint() {
-			alert("请先查询人员信息！");
+            swal("请先查询人员信息！");
         }
 
 		//根据体检编号查询体检信息
@@ -150,14 +152,14 @@
                             $("input[name=price]").val("");
                             var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                             $(".operation").html(str)
-                            alert("查询失败,请重新输如人员编号！");
+                            swal("查询失败,请重新输如人员编号！");
                         }
                     }
                 })
             }else{
                 var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                 $(".operation").html(str)
-                alert("请输入体检编号！");
+                swal("请输入体检编号！");
             }
 
         }
@@ -232,12 +234,12 @@
                             var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                             $(".operation").html(str)
                         }else{
-                            alert("收费失败");
+                            swal("收费失败");
                         }
                     }
                 })
             }else{
-                alert("请输入正确的应收金额！");
+                swal("请输入正确的应收金额！");
             }
 
         }

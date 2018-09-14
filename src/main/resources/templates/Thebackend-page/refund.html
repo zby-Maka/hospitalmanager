@@ -4,6 +4,8 @@
 		<meta charset="UTF-8">
 		<title>退费</title>
 		<link rel="stylesheet" type="text/css" href="/hospitalOne/css/Cashiers.css"/>
+		<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.css"/>
+		<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.min.js"></script>
 	</head>
 	<body style="background-image: url(/hospitalOne/images/bgimg.jpg);background-size: 100% 100%;">
 		<div id="content">
@@ -100,7 +102,7 @@
             }else{
                 var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                 $(".operation").html(str)
-                alert("请输入体检编号！");
+                swal("请输入体检编号！");
             }
         }
 
@@ -163,7 +165,7 @@
                         $(".shouldBeBack").html("---");
                         var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                         $(".operation").html(str);
-                        alert("查询失败,请重新输如人员编号！");
+                        swal("查询失败,请重新输如人员编号！");
                     }
                 }
             })
@@ -214,7 +216,7 @@
                 dataType:"json",
                 success:function (date) {
                     if (date>0) {
-                        alert("退费成功");
+                        swal("退费成功");
                         $("input[name=physical_examination_id]").val("");
                         $(".name").html("姓名:----");
                         $(".age").html("年龄:----");
@@ -234,7 +236,7 @@
                         var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
                         $(".operation").html(str)
                     }else{
-                        alert("退费失败");
+                        swal("退费失败");
                     }
                 }
             })
