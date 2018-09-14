@@ -94,6 +94,9 @@
 </body>
 <script src="/hospitalOne/js/jquery-3.2.1.js"></script>
 <script src="/hospitalOne/js/jquery.form.js"></script>
+<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetswal.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetswal.css"/>
+
 <script>
     //单位分组js
     $(function () {
@@ -168,7 +171,7 @@
         var groupName = $("input[name=groupName]").val();
         var panDuan = true;
         if($.trim(groupName)=='' || $.trim(ageUp)=='' || $.trim(ageDown)=='' ){
-            alert("请先完善信息");
+            swal("请先完善信息");
             panDuan = false;
             return false;
         }
@@ -293,7 +296,7 @@
                 dataType: "json",
                 success: function (data) {
                     if(data == 1){
-                        alert("添加成功");
+                        swal("添加成功");
                         $("input[name='groupName']").val("");
                         //年龄上限
                         $("input[name=ageUp]").val("");
@@ -304,7 +307,7 @@
                         $("input[name=packageId]").eq(0).prop("checked",true);
                     }
                     if(data == 2){
-                        alert("添加分组信息成功,没有符合的人员信息");
+                        swal("添加分组信息成功,没有符合的人员信息");
                         $("input[name='groupName']").val("");
                         //年龄上限
                         $("input[name=ageUp]").val("");
@@ -315,7 +318,7 @@
                         $("input[name=packageId]").eq(0).prop("checked",true);
                     }
                     if(data == 0){
-                        alert("添加失败");
+                        swal("添加失败");
                     }
                 }
             });

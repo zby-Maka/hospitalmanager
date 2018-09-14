@@ -87,12 +87,15 @@
 <script type="text/javascript" src="/hospitalOne/js/jquery-3.2.1.js"></script>
 <script language="javascript" src="/hospitalOne/js/jquery.jqprint-0.3.js"></script>
 <script  type="text/javascript" src="/hospitalOne/js/AlwaysCheck.js"></script>
+<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.css"/>
+
 <script>
     $(function () {
         $(".select").click(function () {
             var physicalexaminationid=$("input[name=physicalexaminationid]").val();
             if(physicalexaminationid == "") {
-                alert("请输入体检编号！");
+                swal("请输入体检编号！");
                 return false;
             }
         });

@@ -12,7 +12,7 @@ function GetBirthday(psidno) {
 		birthdaytemp = psidno.substring(6, 12)
 		birthdayno = "19" + birthdaytemp
 	} else {
-		alert("错误的身份证号码，请核对！")
+		swal("错误的身份证号码，请核对！")
 		return false
 	}
 	var birthday = birthdayno.substring(0, 4) + "-" + birthdayno.substring(4, 6) + "-" + birthdayno.substring(6, 8)
@@ -32,7 +32,7 @@ function Getsex(psidno) {
 	} else if(psidno.length == 15) {
 		sexno = psidno.substring(14, 15)
 	} else {
-		alert("错误的身份证号码，请核对！")
+		swal("错误的身份证号码，请核对！")
 		return false
 	}
 	var tempid = sexno % 2;

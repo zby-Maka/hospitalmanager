@@ -19,25 +19,25 @@ function getinsertcommonresult() {
     var crId=localStorage["cid"];
     //$("input[type='button']").parent().append(get());
     if (resultDesc==""){
-        alert("请输入建议描述")
+        swal("请输入建议描述")
         return
     }
     if (commonResultsId==0){
         $.post("/hospitalOne/insertcommonResults.do",content,function (data) {
             if (data.status==1){
-                alert("添加成功");
+                swal("添加成功");
                 location.href="/hospitalOne/Thebackend-page/jieguojianyi.html"
             } else {
-                alert("添加失败")
+                swal("添加失败")
             }
         },"json")
     } else {
         $.post("/hospitalOne/insertcommonResults.do?commonResultsId="+commonResultsId,content,function (data) {
             if (data.status==1){
-                alert("修改成功");
+                swal("修改成功");
                 location.href="/hospitalOne/Thebackend-page/jieguojianyi.html"
             } else {
-                alert("修改失败")
+                swal("修改失败")
             }
         },"json")
     }

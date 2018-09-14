@@ -55,7 +55,7 @@ function getPackageAndCombinationInfo(packaid) {
             $("#checkcombinationAndcheck").append(content);
 
         }, error: function () {
-            alert("发生错误")
+            swal("发生错误")
         }
     })
 }
@@ -92,7 +92,7 @@ function getPackageAndCheckInfo(packaid) {
             })
             $("#checkcombinationAndcheck").append(content);
         }, error: function () {
-            alert("发生错误")
+            swal("发生错误")
         }
     })
 
@@ -114,7 +114,7 @@ function showSectionAndCombinationAndCheck() {
             })
             $("#secionContent").html(content);
         }, error: function () {
-            alert("发生错误")
+            swal("发生错误")
         }
     })
 }
@@ -180,7 +180,7 @@ function showSectionAndCombinationAndCheckByid(sectionid) {
             })
             $("#combinationAndcheck").html(content);
         }, error: function () {
-            alert("发生错误")
+            swal("发生错误")
         }
     })
 };
@@ -232,7 +232,7 @@ $("#combinationAndcheck").on("click", "input[name='combiantionInfo'],input[name=
                             success: function (data) {
                                 $.each(data[0].combinationCheckList, function (j, e) {
                                     if (e.checkId == xiangid) {
-                                        alert("您已选择的组合项目中已包含该体检项");
+                                        swal("您已选择的组合项目中已包含该体检项");
                                         $("input[name='checkInfo'][value='"+xiangid+"']").prop("checked", false);
                                         boolean = true;
                                         return false;
@@ -287,7 +287,7 @@ $("#combinationAndcheck").on("click", "input[name='combiantionInfo'],input[name=
                                 $.each(data[0].combinationCheckList, function (c, e) {
                                     for (var j=0;j<checkID.length;j++){
                                         if (e.checkId == checkID[j]) {
-                                            alert("您选择的组合项右侧体检项已包含"+e.checkName+"项,请取消该体检项重新选择。");
+                                            swal("您选择的组合项右侧体检项已包含"+e.checkName+"项,请取消该体检项重新选择。");
                                             $("input[name='combiantionInfo'][value='"+xiangid+"']").prop("checked", false);
                                             boolean = true;
                                             return false;
@@ -308,7 +308,7 @@ $("#combinationAndcheck").on("click", "input[name='combiantionInfo'],input[name=
 
 
                 } else {
-                    alert("您选择的组合项可能会有重复体检项,客户选择该套餐将会自动去除")
+                    swal("您选择的组合项可能会有重复体检项,客户选择该套餐将会自动去除")
                     if (checkorcom == "combiantionInfo") {
                         html = "<lable name='combiantionInfo' id='" + xiangname + "'  value='" + xiangid + "'>" + xiangname + "</lable><hr/>"
                     }
@@ -344,7 +344,7 @@ function add() {
         $.each(textControl, function (i, e) {
             if (e.type == "text" && e.value == "") {
                 flag = false;
-                alert("请完善套餐项信息！");
+                swal("请完善套餐项信息！");
                 return false;
             }
         })
@@ -382,7 +382,7 @@ function addpack() {
         traditional: true,
         success: function (data) {
             if (data == 1) {
-                alert("套餐添加成功");
+                swal("套餐添加成功");
                 $("input[name='packageName']").val("");
                 $("input[name='note']").val("")
                 $("textarea[name='scopeApplication']").val("");
@@ -390,12 +390,12 @@ function addpack() {
                 $("#combinationAndcheck").html("");
             }
             else {
-                alert("添加失败")
+                swal("添加失败")
             }
 
         },
         error: function () {
-            alert("发生错误");
+            swal("发生错误");
         }
     })
 }
@@ -411,12 +411,12 @@ function updpack() {
         traditional: true,
         success: function (data) {
             if (data == 1)
-                alert("修改成功");
+                swal("修改成功");
             else
-                alert("修改失败")
+                swal("修改失败")
         },
         error: function () {
-            alert("发生错误");
+            swal("发生错误");
         }
     })
 }

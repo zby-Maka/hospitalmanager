@@ -9,6 +9,8 @@
 	<script type="text/javascript" src="/hospitalOne/scripts/zTree/jquery.ztree.core-3.2.js"></script>
 	<script type="text/javascript" src="/hospitalOne/scripts/authority/commonAll.js"></script>
 	<script src="/hospitalOne/js/nowdate.js"></script>
+	<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetswal.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetswal.css"/>
 	<script type="text/javascript">
 		/**退出系统**/
 		function logout(){
@@ -131,12 +133,12 @@
 	// 		zTree.expandNode(treeNode);
 			// 规定：如果是父类节点，不允许单击操作
 			if(treeNode.isParent){
-	// 			alert("父类节点无法点击哦...");
+	// 			swal("父类节点无法点击哦...");
 				return false;
 			}
 			// 如果节点路径为空或者为"#"，不允许单击操作
 			if(treeNode.accessPath=="" || treeNode.accessPath=="#"){
-				//alert("节点路径为空或者为'#'哦...");
+				//swal("节点路径为空或者为'#'哦...");
 				return false;
 			}
 		    // 跳到该节点下对应的路径, 把当前资源ID(resourceID)传到后台，写进Session
@@ -193,7 +195,7 @@
 					if(data != null){
 						// 将返回的数据赋给zTree
 						$.fn.zTree.init($("#"+treeObj), setting, data);
- 						alert(treeObj);
+ 						swal(treeObj);
 						zTree = $.fn.zTree.getZTreeObj(treeObj);
 						if( zTree ){
 							// 默认展开所有节点
@@ -253,7 +255,7 @@
             if(data != null){
                 // 将返回的数据赋给zTree
                 $.fn.zTree.init($("#"+treeObj), setting, data);
-//              alert(treeObj);
+//              swal(treeObj);
                 zTree = $.fn.zTree.getZTreeObj(treeObj);
                 if( zTree ){
                     // 默认展开所有节点

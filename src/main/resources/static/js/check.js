@@ -23,11 +23,11 @@ $(function() {
     $("#chooseDate>div").not(":eq(0)").click(function () {
         var yue = $(this).find("lable").text();
         if(yue!="约满了"){
-            EV_closeAlert();
+            EV_closeswal();
             $("#chooseDate").hide();
             makeAnAppointment(yue,packId,comId,checkId);
         }else {
-            alert("该日期约满了，请选择其他日期！");
+            swal("该日期约满了，请选择其他日期！");
         }
     });
 
@@ -54,9 +54,9 @@ $(function() {
                 checkId.push(checkIdControl[i].value);
         }
         if(packId.length==0&&comId.length==0&&checkId.length==0){
-            alert("请选择体检项目！");
+            swal("请选择体检项目！");
         }else {
-            EV_modeAlert('chooseDate');
+            EV_modeswal('chooseDate');
             //$("#chooseDate").show();
         }
     });
@@ -197,11 +197,11 @@ function makeAnAppointment(yue,packId,comId,checkId) {
             dataType: "text",
             beforeSend:function(){
                     //弹出等待遮罩层
-                    EV_modeAlert("loding");
+                    EV_modeswal("loding");
             },
             success: function (result) {
                 if (result == "ok") {
-                    EV_closeAlert();//关闭等待遮罩层
+                    EV_closeswal();//关闭等待遮罩层
                     $("#loding").hide();
                     swal("预约成功！");
                     sessionStorage.setItem("personInfo",null);
@@ -289,7 +289,7 @@ function PackDuplicateRemoval(pid) {
             });
             if(checkName!="")
                 swal("小贴士","您所选的【"+checkName+"】已包含在您所选的【"+pack.packageName+"】套餐中,我们自动帮您去除哦");
-                //alert("您所选的"+checkName+"已包含在您所选的【"+pack.packageName+"】套餐中,我们自动帮您去除哦");
+                //swal("您所选的"+checkName+"已包含在您所选的【"+pack.packageName+"】套餐中,我们自动帮您去除哦");
         })
     }
 }
@@ -392,5 +392,5 @@ function closeDate() {
     checkId=[];
     comId=[];
     packId=[];
-    EV_closeAlert();
+    EV_closeswal();
 }

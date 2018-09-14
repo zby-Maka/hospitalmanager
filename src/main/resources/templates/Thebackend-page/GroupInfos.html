@@ -80,6 +80,8 @@
 </div>
 
 </body>
+<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetswal.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetswal.css"/>
 <script src="/hospitalOne/js/jquery-3.2.1.js"></script>
 <script src="/hospitalOne/js/jquery.form.js"></script>
 <script>
@@ -146,7 +148,7 @@
             dataType: "json",
             success:function (data) {
                 if(data>0){
-                    alert("保存成功");
+                    swal("保存成功");
                 }
             }
         });

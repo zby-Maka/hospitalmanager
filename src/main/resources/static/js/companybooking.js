@@ -55,13 +55,13 @@ var choose = false;
         $.each(textControl,function (i,e) {
             if(e.type=="text" && e.value=="") {
                 flag = false;
-                alert("请完善公司信息！");
+                swal("请完善公司信息！");
                 return false;
             }
         });
         if($.trim($("#file").val())==''){
             flag = false;
-            alert("请选择Excel文件");
+            swal("请选择Excel文件");
             return false;
         }
         if(flag && choose){
@@ -77,7 +77,7 @@ var choose = false;
                     dataType:"json",
                     success:function (data) {
                         if(data>0){
-                            alert("修改成功");
+                            swal("修改成功");
                             location.href ="/hospitalOne/booking.html" ;
                             /*$("input[name=companyName]").val("");
                             $("input[name=companyId]").val("");
@@ -104,7 +104,7 @@ var choose = false;
                     dataType:"json",
                     success: function (data) {
                         if (data > 0) {
-                            alert("添加成功");
+                            swal("添加成功");
                             location.href ="/hospitalOne/booking.html" ;
                             /* $("input[name=companyName]").val("");
                              $("input[name=companyId]").val("");
@@ -124,7 +124,7 @@ var choose = false;
                 });
             }
         }else {
-            alert("请将Excel文件上传");
+            swal("请将Excel文件上传");
         }
 
 });
@@ -135,12 +135,12 @@ $("input[name=upload]").click(function () {
     var ext = file.slice(file.lastIndexOf(".")+1).toLowerCase();
     /*if(!/\.(xlsx|xls|XLSX|XLS)$/.test(ext)){*/
     if($.trim($("#file").val())==''){
-        alert("请选择Excel文件");
+        swal("请选择Excel文件");
         ch = false;
         return false;
     }
     if ("xls" != ext && "xlsx" != ext) {
-        alert("只能上传Excle文件");
+        swal("只能上传Excle文件");
         ch = false;
         return false;
     }
@@ -148,7 +148,7 @@ $("input[name=upload]").click(function () {
     $.each(textControl,function (i,e) {
         if(e.type=="text" && e.value=="") {
             ch = false;
-            alert("请先完善公司信息！");
+            swal("请先完善公司信息！");
             return false;
         }
     });
@@ -162,7 +162,7 @@ $("input[name=upload]").click(function () {
         if(companyName == fileNames){
             upload();
         }else{
-            alert("文件名与公司名不匹配");
+            swal("文件名与公司名不匹配");
         }
 
     }
@@ -187,12 +187,12 @@ function upload() {
     var ext = file.slice(file.lastIndexOf(".")+1).toLowerCase();
     /*if(!/\.(xlsx|xls|XLSX|XLS)$/.test(ext)){*/
     if($.trim($("#file").val())==''){
-        alert("请选择Excel文件");
+        swal("请选择Excel文件");
         flag = false;
         return false;
     }
     if ("xls" != ext && "xlsx" != ext) {
-        alert("只能上传Excle文件");
+        swal("只能上传Excle文件");
         flag = false;
         return false;
     }
@@ -219,16 +219,16 @@ function upload() {
             success: function (result) {
                 if (result == 1) {
                     choose = true;
-                    alert("上传成功");
+                    swal("上传成功");
 
                 }
                 if (result == 2) {
                     flag = false;
-                    alert("文件上传格式不正确,请重新选择");
+                    swal("文件上传格式不正确,请重新选择");
                 }
                 if (result == 3) {
                     flag = false;
-                    alert("请重新核实文件数据");
+                    swal("请重新核实文件数据");
                 }
                 //$("#result").html(result.data);
             },

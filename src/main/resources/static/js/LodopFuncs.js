@@ -28,7 +28,7 @@ function getLodop(oOBJECT,oEMBED){
 	} catch(err) {};
 
         if (!LODOP && document.readyState!=="complete") {
-		alert("C-Lodop没准备好，请稍后再试！"); 
+		swal("C-Lodop没准备好，请稍后再试！"); 
 		return;
 	};
 
@@ -37,7 +37,7 @@ function getLodop(oOBJECT,oEMBED){
 	if (oOBJECT && oOBJECT.parentNode) oOBJECT.parentNode.removeChild(oOBJECT);	
 
         return LODOP;
-    } catch(err) {alert("getLodop出错:"+err);};
+    } catch(err) {swal("getLodop出错:"+err);};
 };
 
 

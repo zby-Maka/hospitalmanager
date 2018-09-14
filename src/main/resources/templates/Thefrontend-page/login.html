@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>SCT-后台系统</title>
 <link href="/hospitalOne/style/authority/login_css.css" rel="stylesheet" type="text/css" />
+	<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetalert.css"/>
 </head>
 <body>
 	<div id="login_center">
@@ -69,7 +71,7 @@
             $.post("/hospitalOne/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
                 var roletype="";
                 if (data.roletypeid>0) {
-                    alert("登录成功！");
+                    swal("登录成功！");
                     if (data.roletypeid==1){
                         roletype="系统管理员";
                         location.href="/hospitalOne/index.html"
@@ -91,7 +93,7 @@
                         location.href="/hospitalOne/CashiersIndex.html"
                     }
                 }else{
-                    alert("登录失败");
+                    swal("登录失败");
                     location.href="/hospitalOne/login.html"
                 }
             },"json");

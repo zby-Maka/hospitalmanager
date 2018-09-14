@@ -15,29 +15,29 @@ function getinsertproposedDescription() {
     var sciencePopularization = $("[name=sciencePopularization]").val();
     var adviceContent=$("[name=adviceContent]").val();
     if (sciencePopularization==""){
-        alert("请输入建议内容")
+        swal("请输入建议内容")
         return;
     }else if(adviceContent==""){
-        alert("请输入科普说明")
+        swal("请输入科普说明")
         return;
     }
     if (proposedDescriptionId==0){
         $.post("/hospitalOne/insertProposedDescription.do",content,function (data) {
             if (data.status==1){
-                alert("添加成功");
+                swal("添加成功");
                 location.href="/hospitalOne/Thebackend-page/jy.html"
             } else {
-                alert("添加失败")
+                swal("添加失败")
             }
         },"json")
     } else {
         $.post("/hospitalOne/insertProposedDescription.do?proposedDescriptionId="+proposedDescriptionId,content,function (data) {
             if (data.status==1){
-                alert("修改成功");
+                swal("修改成功");
                 $("#proposedDescriptionIds").val(0);
                 location.href="/hospitalOne/Thebackend-page/jy.html"
             } else {
-                alert("修改失败")
+                swal("修改失败")
             }
         },"json")
     }

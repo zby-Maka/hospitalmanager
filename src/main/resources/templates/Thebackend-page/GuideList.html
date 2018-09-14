@@ -24,6 +24,8 @@
 </div>
 </body>
 <script language="javascript" src="/hospitalOne/js/jquery-1.4.4.min.js"></script>
+<script src="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetswal.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/499/ixc5vbvz/sweetswal.css"/>
 <script>
 $("input[name=geren]").click(function () {
     //判断选择的类型
@@ -44,7 +46,7 @@ $("input[name=geren]").click(function () {
         var flat = true;
         var physicalExaminationId = $("input[name=physicalExaminationId]").val();
         if($.trim(physicalExaminationId) == ''){
-            alert("请输入体检编号");
+            swal("请输入体检编号");
             flat = false;
             return false;
         }
@@ -69,7 +71,7 @@ $("input[name=geren]").click(function () {
                         if(thisDate == tijian){
                             location.href = "/hospitalOne/Thebackend-page/thewaylist.html";
                         }else{
-                            alert("请在指定日期前来打印");
+                            swal("请在指定日期前来打印");
                         }
                     }else{
                         $("#xianshi").show();
@@ -104,7 +106,7 @@ $("input[name=geren]").click(function () {
         var flat = true;
         var personIdCard = $("input[name=personIdCard]").val();
         if($.trim(personIdCard) == ''){
-            alert("请输入身份证号");
+            swal("请输入身份证号");
             flat = false;
             return false;
         }
