@@ -87,7 +87,7 @@ function getcombinationidByid(combinaid) {
 
             })
         }, error: function () {
-            swal("发生错误")
+            alert("发生错误")
         }
     })
 }
@@ -108,7 +108,7 @@ function getCheckInfoBySectionId(secid) {
             })
             $("#content").html(content);
         }, error: function () {
-            swal("发生错误")
+            alert("发生错误")
         }
     })
 }
@@ -120,7 +120,7 @@ function add() {
             $.each(textControl,function (i,e) {
                 if(e.type=="text" && e.value=="") {
                     flag = false;
-                    swal("请完善组合项信息！");
+                    alert("请完善组合项信息！");
                     return false;
                 }
             })
@@ -152,18 +152,18 @@ function addcom() {
         traditional: true,
         success: function (data) {
             if (data == 1){
-                swal("添加成功");
+                alert("添加成功");
                 $("input[name='combinationName']").val("");
                 $("input[name='promptInformation']").val("")
                 $("input[name='resultToWay']").val("")
                 $("input[name='specimenType']").val("");
             }
             else{
-                swal("添加失败")
+                alert("添加失败")
             }
         },
         error: function () {
-            swal("发生错误");
+            alert("发生错误");
         }
     })
 }
@@ -189,12 +189,12 @@ function updcom() {
         traditional: true,
         success: function (data) {
             if (data == 1)
-                swal("修改成功");
+                alert("修改成功");
             else
-                swal("修改失败")
+                alert("修改失败")
         },
         error: function () {
-            swal("发生错误");
+            alert("发生错误");
         }
     })
 }
@@ -218,7 +218,7 @@ function showcheckcheckbox(combid) {
             })
             $("#content").html(content);
         }, error: function () {
-            swal("发生错误")
+            alert("发生错误")
         }
     })
 }
