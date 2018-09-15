@@ -208,6 +208,7 @@
             if($("input[name=price]").val()>=0&&$(".change").html()>=0){
                 $.ajax({
                     url:"/hospitalOne/operationCost.do",
+
                     data:{physical_examination_id:physical_examination_id,aggregate:aggregate,physicalStatu:0},
                     dataType:"json",
                     success:function (date) {
