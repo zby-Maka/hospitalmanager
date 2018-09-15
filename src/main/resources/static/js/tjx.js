@@ -113,7 +113,7 @@ function showCheckById(checkid) {
             })
 
         }, error: function () {
-            swal("发生错误")
+            alert("发生错误")
         }
     })
 }
@@ -127,7 +127,7 @@ function add() {
             $.each(textControl, function (i, e) {
                 if (e.type == "text" && e.value == "") {
                     flag = false;
-                    swal("请完善体检项目信息！");
+                    alert("请完善体检项目信息！");
                     return false;
                 }
             })
@@ -150,7 +150,7 @@ function addcheck() {
         type: "post",
         success: function (data) {
             if (data == 1){
-                swal("添加成功");
+                alert("添加成功");
                 $("input[name='checkName']").val("");
                 $("input[name='checkSpellCode']").val("");
                 $("input[name='checkPrice']").val("");
@@ -164,12 +164,12 @@ function addcheck() {
                 $("textarea[name='remark']").val("");
             }
             else{
-                swal("添加失败")
+                alert("添加失败")
             }
 
         },
         error: function () {
-            swal("发生错误");
+            alert("发生错误");
         }
     })
 }
@@ -185,12 +185,12 @@ function updcheck() {
         type: "post",
         success: function (data) {
             if (data == 1)
-                swal("修改成功");
+                alert("修改成功");
             else
-                swal("修改失败")
+                alert("修改失败")
         },
         error: function () {
-            swal("发生错误");
+            alert("发生错误");
         }
     })
 }
