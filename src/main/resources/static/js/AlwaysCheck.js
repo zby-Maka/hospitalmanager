@@ -64,7 +64,7 @@ function  getpersoninfo() {
             }else {
                 //通过体检编号查询体检人员的检验项
                 $.each(e.medicalEventsList, function (i, c) {
-                    comt += "<tr>" +
+                    comt ="<tr>" +
                         "<td>" + c.eventsName + "</td>" +
                         "<td>" + c.unit + "</td>" +
                         "<td>" + c.upperLimit + "-" + c.lowerLimit + "</td>" +
