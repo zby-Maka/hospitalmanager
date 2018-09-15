@@ -77,8 +77,12 @@ var choose = false;
                     dataType:"json",
                     success:function (data) {
                         if(data>0){
-                            swal("修改成功");
-                            location.href ="/hospitalOne/booking.html" ;
+                            swal({title:"修改成功！",
+                                text:"已成功修改数据",
+                                type:"success"},function(){
+                                location.href ="/hospitalOne/booking.html" ;
+                            });
+
                             /*$("input[name=companyName]").val("");
                             $("input[name=companyId]").val("");
                             $("input[name=companyPrincipal]").val("");
@@ -104,8 +108,12 @@ var choose = false;
                     dataType:"json",
                     success: function (data) {
                         if (data > 0) {
-                            swal("添加成功");
-                            location.href ="/hospitalOne/booking.html" ;
+                            swal({title:"添加成功！",
+                                text:"已添加数据",
+                                type:"success"},function(){
+                                    location.href ="/hospitalOne/booking.html" ;
+                            });
+
                             /* $("input[name=companyName]").val("");
                              $("input[name=companyId]").val("");
                              $("input[name=companyPrincipal]").val("");
