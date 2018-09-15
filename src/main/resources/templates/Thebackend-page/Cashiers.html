@@ -115,6 +115,8 @@
                                     "\t\t\t\t\t</tr>";
                                 price += e.checkPrice;
                             })
+                            var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\"/>";
+                            $(".operation").html(str);
                             if (checkList==""){
                                 checkList = "<tr>\n" +
                                     "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
@@ -125,13 +127,15 @@
                                     "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">无体检项信息</td>\n" +
                                     "\t\t\t\t\t</tr>" ;
                                 $(".checkList").html(checkList);
-                                var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                                var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled='disabled'/>";
                                 $(".operation").html(str);
+                                alert(0);
                             }
                             $(".checkList").html(checkList);
                             $(".aggregate").html(price);
                             $(".receivable").html(price);
                             $(".change").html("---");
+                            alert(0);
                         } else {
                             $(".name").html("姓名:----");
                             $(".age").html("年龄:----");
@@ -150,15 +154,15 @@
                             $(".receivable").html("---");
                             $(".change").html("---");
                             $("input[name=price]").val("");
-                            var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                            $(".operation").html(str)
+                            var str1 = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                            $(".operation").html(str1);
                             swal("查询失败,请重新输如人员编号！");
                         }
                     }
                 })
             }else{
                 var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                $(".operation").html(str)
+                $(".operation").html(str);
                 swal("请输入体检编号！");
             }
 
@@ -173,8 +177,6 @@
                 dataType:"json",
                 success:function (date) {
 					if (date!="收费"){
-					    var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\"/>";
-						$(".operation").html(str)
                         getPersonInfo(0);
 					}else{
                         var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
@@ -232,7 +234,7 @@
                             $(".receivable").html("---");
                             $(".change").html("---");
                             var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                            $(".operation").html(str)
+                            $(".operation").html(str);
                         }else{
                             swal("收费失败");
                         }

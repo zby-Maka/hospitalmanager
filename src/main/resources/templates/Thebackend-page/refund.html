@@ -101,7 +101,7 @@
                 })
             }else{
                 var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                $(".operation").html(str)
+                $(".operation").html(str);
                 swal("请输入体检编号！");
             }
         }
@@ -234,7 +234,7 @@
                         $(".number").html("---");
                         $(".shouldBeBack").html("---");
                         var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                        $(".operation").html(str)
+                        $(".operation").html(str);
                     }else{
                         swal("退费失败");
                     }
