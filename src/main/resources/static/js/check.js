@@ -8,13 +8,18 @@ $(function() {
         url:"/hospitalOne/listDate.do",
         dataType:"json",
         success:function (res) {
+            var index = 1;
             var divControl = document.getElementById("chooseDate").getElementsByTagName("div");
             $.each(res,function (i,e) {
-                if(e.value>0){
-                    var myDate = new Date(Date.parse(e.key.replace(/-/g, "/")));
-                    divControl[i+1].innerHTML=weekDay[myDate.getDay()]+"\n"+"<lable>"+e.key+"</lable>";
-                }else {
-                    divControl[i+1].innerHTML="<lable>约满了</lable>";
+                var myDate = new Date(Date.parse(e.key.replace(/-/g, "/")));
+                var week = weekDay[myDate.getDay()];
+                if(week!="星期六"&&week!="星期天"){
+                    if(e.value>0){
+                        divControl[index].innerHTML=week+"\n"+"<lable>"+e.key+"</lable>";
+                    }else {
+                        divControl[index].innerHTML="<lable>约满了</lable>";
+                    }
+                    index++;
                 }
             })
         }
