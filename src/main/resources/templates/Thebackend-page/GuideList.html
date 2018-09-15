@@ -46,7 +46,7 @@ $("input[name=geren]").click(function () {
         var flat = true;
         var physicalExaminationId = $("input[name=physicalExaminationId]").val();
         if($.trim(physicalExaminationId) == ''){
-            swal("请输入体检编号");
+            alert("请输入体检编号");
             flat = false;
             return false;
         }
@@ -71,7 +71,7 @@ $("input[name=geren]").click(function () {
                         if(thisDate == tijian){
                             location.href = "/hospitalOne/Thebackend-page/thewaylist.html";
                         }else{
-                            swal("请在指定日期前来打印");
+                            alert("请在指定日期前来打印");
                         }
                     }else{
                         $("#xianshi").show();
@@ -106,7 +106,7 @@ $("input[name=geren]").click(function () {
         var flat = true;
         var personIdCard = $("input[name=personIdCard]").val();
         if($.trim(personIdCard) == ''){
-            swal("请输入身份证号");
+            alert("请输入身份证号");
             flat = false;
             return false;
         }
