@@ -171,7 +171,7 @@
         var groupName = $("input[name=groupName]").val();
         var panDuan = true;
         if($.trim(groupName)=='' || $.trim(ageUp)=='' || $.trim(ageDown)=='' ){
-            swal("请先完善信息");
+            alert("请先完善信息");
             panDuan = false;
             return false;
         }
@@ -296,7 +296,7 @@
                 dataType: "json",
                 success: function (data) {
                     if(data == 1){
-                        swal("添加成功");
+                        alert("添加成功");
                         $("input[name='groupName']").val("");
                         //年龄上限
                         $("input[name=ageUp]").val("");
@@ -307,7 +307,7 @@
                         $("input[name=packageId]").eq(0).prop("checked",true);
                     }
                     if(data == 2){
-                        swal("添加分组信息成功,没有符合的人员信息");
+                        alert("添加分组信息成功,没有符合的人员信息");
                         $("input[name='groupName']").val("");
                         //年龄上限
                         $("input[name=ageUp]").val("");
@@ -318,7 +318,7 @@
                         $("input[name=packageId]").eq(0).prop("checked",true);
                     }
                     if(data == 0){
-                        swal("添加失败");
+                        alert("添加失败");
                     }
                 }
             });
