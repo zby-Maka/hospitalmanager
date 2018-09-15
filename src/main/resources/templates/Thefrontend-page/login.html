@@ -97,8 +97,12 @@
                         }
                     });
                 }else{
-                    swal("登录失败");
-                    location.href="/hospitalOne/login.html"
+                    swal({
+                        title:"登录失败！",
+                        type:"error"
+					},function() {
+                        location.href="/hospitalOne/login.html"
+                    });
                 }
             },"json");
 		}
