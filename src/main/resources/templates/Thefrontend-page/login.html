@@ -71,7 +71,6 @@
             $.post("/hospitalOne/login.do",{"userName":userName,"password":password,"roletypeid":roletypeid},function(data){
                 var roletype="";
                 if (data.roletypeid>0) {
-                    swal("登录成功！");
                     if (data.roletypeid==1){
                         roletype="系统管理员";
                         location.href="/hospitalOne/index.html"
@@ -93,8 +92,12 @@
                         location.href="/hospitalOne/CashiersIndex.html"
                     }
                 }else{
-                    swal("登录失败");
-                    location.href="/hospitalOne/login.html"
+                    swal({
+                        title:"登录失败！",
+                        type:"error"
+					},function() {
+                        location.href="/hospitalOne/login.html"
+                    });
                 }
             },"json");
 		}

@@ -208,11 +208,12 @@
             if($("input[name=price]").val()>=0&&$(".change").html()>=0){
                 $.ajax({
                     url:"/hospitalOne/operationCost.do",
+
                     data:{physical_examination_id:physical_examination_id,aggregate:aggregate,physicalStatu:0},
                     dataType:"json",
                     success:function (date) {
                         if (date>0) {
-                            alert("收费成功");
+                            swal("收费成功");
                             $("input[name=physical_examination_id]").val("");
                             $(".name").html("姓名:----");
                             $(".age").html("年龄:----");
