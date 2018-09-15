@@ -29,9 +29,18 @@
 		<script type="text/javascript">
 			/**退出系统**/
 			function logout() {
-				if(confirm("您确定要退出本系统吗？")) {
-					window.location.href = "login.html";
-				}
+                swal({
+                        title: "您确定要退出本系统吗？",
+                        text: "",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "确定",
+                        closeOnConfirm: false
+                    },
+                    function(){
+                        window.location.href = "login.html";
+                    });
 			}
 		</script>
 
