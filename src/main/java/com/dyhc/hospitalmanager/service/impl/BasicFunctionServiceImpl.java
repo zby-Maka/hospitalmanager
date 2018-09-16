@@ -242,20 +242,40 @@ public class BasicFunctionServiceImpl implements BasicFunctionService {
         int result=0;
         try {
             result=packageMapper.addPackageInfo(pack);
-            //添加套餐与组合项的关系
-            for (Integer comid : combinationList){
-                PackageAndCombination packageAndCombination = new PackageAndCombination();
-                packageAndCombination.setPackageId(pack.getPackageId());
-                packageAndCombination.setCombinationId(comid);
-                packageAndCombinationMapper.addPackageAndCombination(packageAndCombination);
+            if(combinationList.length==0){
+                //添加套餐与体检项的关系
+                for (Integer checkId  : checkList){
+                    PackageAndCheck packageAndCheck = new PackageAndCheck();
+                    packageAndCheck.setPackageId(pack.getPackageId());
+                    packageAndCheck.setCheckId(checkId);
+                    packageAndCheckMapper.addPackageAndCheckInfo(packageAndCheck);
+                }
+            }else if(checkList.length==0){
+                //添加套餐与组合项的关系
+                for (Integer comid : combinationList){
+                    PackageAndCombination packageAndCombination = new PackageAndCombination();
+                    packageAndCombination.setPackageId(pack.getPackageId());
+                    packageAndCombination.setCombinationId(comid);
+                    packageAndCombinationMapper.addPackageAndCombination(packageAndCombination);
+                }
+            }else{
+                //添加套餐与体检项的关系
+                for (Integer checkId  : checkList){
+                    PackageAndCheck packageAndCheck = new PackageAndCheck();
+                    packageAndCheck.setPackageId(pack.getPackageId());
+                    packageAndCheck.setCheckId(checkId);
+                    packageAndCheckMapper.addPackageAndCheckInfo(packageAndCheck);
+                }
+                //添加套餐与组合项的关系
+                for (Integer comid : combinationList){
+                    PackageAndCombination packageAndCombination = new PackageAndCombination();
+                    packageAndCombination.setPackageId(pack.getPackageId());
+                    packageAndCombination.setCombinationId(comid);
+                    packageAndCombinationMapper.addPackageAndCombination(packageAndCombination);
+                }
             }
-            //添加套餐与体检项的关系
-            for (Integer checkId  : checkList){
-                PackageAndCheck packageAndCheck = new PackageAndCheck();
-                packageAndCheck.setPackageId(pack.getPackageId());
-                packageAndCheck.setCheckId(checkId);
-                packageAndCheckMapper.addPackageAndCheckInfo(packageAndCheck);
-            }
+
+
         } catch (Exception e) {
             logger.error("添加套餐失败!");
             e.printStackTrace();
