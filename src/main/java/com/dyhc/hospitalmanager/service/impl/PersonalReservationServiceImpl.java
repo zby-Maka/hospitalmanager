@@ -345,6 +345,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         redisDao.setKey(personInfo.getPersonIdCard(), result);
     }
 
+
+
     /**
      * 获取所有的检查项
      * @return
@@ -451,6 +453,22 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 根据性别查询适用的体检项
+     * @param sex 性别
+     * @return
+     */
+    @Override
+    public List<Check> getCheckListBySex(String sex) {
+        try {
+            return checkMapper.getCheckListBySex(sex);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
         }
         return null;
     }

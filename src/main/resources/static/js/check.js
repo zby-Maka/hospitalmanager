@@ -220,13 +220,13 @@ function makeAnAppointment(yue,packId,comId,checkId) {
             }
         });
 }
-
+var personSex = sessionStorage.getItem("personSex");
 /**
  * 查询所有体检项，组合项，套餐项
  */
 function selAllCheck() {
 	//获取所有检查项
-	$.getJSON("/hospitalOne/ExhibitionAllCheck.do",{},function (check) {
+	$.getJSON("/hospitalOne/getCheckListBySex.do",{sex:personSex},function (check) {
 		var content = "<tr>";
 		$.each(check,function (i,e) {
             content+="<td style='width: auto'><span style='text-align: center;margin-left: 15px;' name=\"t\"><input type=\"checkbox\" id='c"+i+"' name=\"checkItem\" value=\""+e.checkId+"\" /><label for='c"+i+"'>"+e.checkName+"</label></span></td>";
