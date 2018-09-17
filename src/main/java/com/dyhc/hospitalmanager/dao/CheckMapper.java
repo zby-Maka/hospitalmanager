@@ -9,6 +9,15 @@ import java.util.List;
 @Mapper
 @Repository
 public interface CheckMapper {
+
+    /**
+     * 根据性别查询适用的体检项
+     * @param sex 性别
+     * @return
+     * @throws Exception
+     */
+    List<Check> getCheckListBySex(String sex) throws Exception;
+
     /**
      * 科室是检验:根据体检项id查出体检项数据，与接收的数据对比
      * @param checkId
