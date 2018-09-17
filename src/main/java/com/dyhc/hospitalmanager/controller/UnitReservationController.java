@@ -112,7 +112,7 @@ public class UnitReservationController {
         String fileName = file.getOriginalFilename();
 
         //指定文件存放路径，可以是相对路径或者绝对路径
-        String filePath = "/src/main/resources/excelfile/";
+        String filePath = "/usr/local/excel/";
         try {
             uploadFile(file.getBytes(), filePath, fileName);
             content = 1;
@@ -190,7 +190,7 @@ public class UnitReservationController {
     public String showPersonInfo(@RequestParam("companyName") String companyName){
         File cfgFile = null;
         //String filePath = "E:/src/main/resources/excelfile/";
-            File file1 = new File("./src/main/resources/excelfile/"+companyName+".xlsx");
+            File file1 = new File("/usr/local/excel/"+companyName+".xlsx");
             //cfgFile = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "excelfile/"+companyName+".xlsx");
         ImportExcelUtil importExcelUtil=new ImportExcelUtil();
         File file=new File(String.valueOf(file1));

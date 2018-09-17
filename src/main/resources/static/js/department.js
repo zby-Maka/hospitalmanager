@@ -2,7 +2,7 @@ $(function () {
     $(".select").click(function () {
         var peacId=$("input[name=physicalExaminationId]").val();
           if(peacId == "") {
-               swal("请输入体检编号！");
+               alert("请输入体检编号！");
                return false;
             }
          getPerson();
@@ -22,7 +22,7 @@ function  getPerson() {
             $("label[name=isMarry]").text(m.isMarry);
         });
         if($.trim(date.map)==''){
-            swal("该体检人员暂无此科室体检项");
+            alert("该体检人员暂无此科室体检项");
         }else{
             var content="<ul></ul>";
             $.each(date.map,function (b,n) {
@@ -62,7 +62,7 @@ function  addResultAndMedicalEvent() {
     //判断结果文本域为空不能添加
     var checkResultFinally=$("#checkResultFinally textarea").html();
     if(checkResultFinally.trim()==""){
-        swal("该体检项还没有结果！");
+        alert("该体检项还没有结果！");
         return;
     }
     var arr = formToJson($("form").serialize());
@@ -77,11 +77,11 @@ function  addResultAndMedicalEvent() {
             console.log(date);
             if (date.stat == "ok") {
                 updateStatu();
-                swal("保存成功！");
+                alert("保存成功！");
                 $(".xuan").parent().remove();
                 qing();
             } else {
-                swal("保存失败！");
+                alert("保存失败！");
             }
         }
     });
