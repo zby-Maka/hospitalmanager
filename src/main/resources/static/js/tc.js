@@ -287,7 +287,7 @@ $("#combinationAndcheck").on("click", "input[name='combiantionInfo'],input[name=
                                 $.each(data[0].combinationCheckList, function (c, e) {
                                     for (var j=0;j<checkID.length;j++){
                                         if (e.checkId == checkID[j]) {
-                                            alert("您选择的组合项右侧体检项已包含"+e.checkName+"项,请取消该体检项重新选择。");
+                                            alert("您选择的组合项中已包含"+e.checkName+"项,请取消该体检项重新选择。");
                                             $("input[name='combiantionInfo'][value='"+xiangid+"']").prop("checked", false);
                                             boolean = true;
                                             return false;
@@ -340,15 +340,14 @@ function add() {
     var textControl = $("#addform input");
     var text = $("textarea[name='scopeApplication']").val();
     var flag = true;
-    if (text.trim() == "") {
+
         $.each(textControl, function (i, e) {
             if (e.type == "text" && e.value == "") {
                 flag = false;
                 alert("请完善套餐项信息！");
-                return false;
             }
         })
-    }
+
 
     if (flag) {
         addpack();
@@ -398,9 +397,9 @@ function addpack() {
         success: function (data) {
             if (data == 1) {
                 alert("套餐添加成功");
+                top.location="/hospitalOne/index.html";
                 $("input[name='packageName']").val("");
                 $("input[name='note']").val("")
-                $("textarea[name='scopeApplication']").val("");
                 $("#checkcombinationAndcheck").html("");
                 $("#combinationAndcheck").html("");
             }
