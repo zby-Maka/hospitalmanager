@@ -6,7 +6,8 @@
 
     <!--添加体检信息-->
     <insert id="addPhysicalExaminationInfo">
-        INSERT INTO physical_examination VALUES (#{physicalExaminationId},#{personId},#{archivesId},#{medicalResultsId},#{medicalTime})
+        INSERT INTO physical_examination VALUES
+        (#{physicalExaminationId},#{personId},#{archivesId},#{medicalResultsId},#{medicalTime},0)
     </insert>
 
     <!-- 根据用户Id查询历史体检记录 -->
@@ -46,4 +47,15 @@
         SELECT * FROM `physical_examination` p WHERE p.`physical_examination_id`=#{physicalExaminationId}
     </select>
 
+    <!--根据体检编号判断人员是否已经打印过指引单-->
+    <select id="selectStatusByPhysicalExamination" resultType="com.dyhc.hospitalmanager.pojo.PhysicalExamination">
+        SELECT * FROM `physical_examination` p
+        WHERE p.`physical_examination_id`=#{physicalExaminationId} and status = 0
+    </select>
+
+    <!--修改体检打印状态-->
+    <update id="updPhysicalExaminationStatus">
+        update physical_examination set status = 1
+        where `physical_examination_id`=#{physicalExaminationId};
+    </update>
 </mapper>

@@ -170,4 +170,33 @@ public class GuideListController {
     public String showResultId(){
         return JSON.toJSONString(resultsId);
     }
+
+
+    /**
+     *  根据体检编号判断人员是否已经打印过指引单
+     * @param physicalExaminationId
+     * @return
+     */
+    @RequestMapping("/selectStatusByPhysicalExamination.do")
+    @ResponseBody
+    public String selectStatusByPhysicalExamination(@RequestParam("physicalExaminationId") String physicalExaminationId){
+        PhysicalExamination list = guideService.selectStatusByPhysicalExamination(physicalExaminationId);
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     *  修改体检打印状态
+     * @param physicalExaminationId
+     * @return
+     */
+    @RequestMapping("/updPhysicalExaminationStatus.do")
+    @ResponseBody
+    public String updPhysicalExaminationStatus(@RequestParam("physicalExaminationId") String physicalExaminationId){
+        Integer result = 0;
+        if(guideService.updPhysicalExaminationStatus(physicalExaminationId) > 0){
+            result = 1;
+        }
+        return JSON.toJSONString(result);
+
+    }
 }
