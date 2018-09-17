@@ -11,6 +11,7 @@ import com.dyhc.hospitalmanager.pojo.PersonInfo;
 import com.dyhc.hospitalmanager.service.UnitReservationService;
 import com.dyhc.hospitalmanager.service.impl.ExcelServiceImpl;
 import com.dyhc.hospitalmanager.util.ImportExcelUtil;
+import com.dyhc.hospitalmanager.util.PersonIdCard;
 import com.dyhc.hospitalmanager.util.ResponseUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,8 @@ public class UnitReservationController {
     private UnitReservationService unitReservationService;
     @Autowired
     private ExcelServiceImpl excelService;
-
+    //身份证号
+    PersonIdCard personIdCard = new PersonIdCard();
     /**
      * 根据公司名称查询是否有公司信息
      * @param companyName 公司名称
@@ -204,18 +206,33 @@ public class UnitReservationController {
             for (List<Object> str:infos){
                 PersonInfo c = new PersonInfo();
                 c.setPersonName((String) str.get(0));
-                System.out.println();
-                String a = (String) str.get(1);
+               /* String a = (String) str.get(1);
                 c.setPersonAge(Integer.parseInt(a));
                 String bir = (String) str.get(2);
                 Date date = new SimpleDateFormat("yyyy-MM-dd").parse(bir);
                 c.setPersonBirthday(date);
-                c.setPersonSex((String) str.get(3));
-                c.setPersonIdCard((String) str.get(4));
-                c.setIsMarry((String) str.get(5));
-                c.setPersonTelephone((String) str.get(6));
-                c.setPersonAddress((String) str.get(7));
-                c.setPersonNameSpellCode((String) str.get(8));
+                c.setPersonSex((String) str.get(3));*/
+               //身份证号
+                c.setPersonIdCard((String) str.get(1));
+                //联系电话
+                c.setPersonTelephone((String) str.get(2));
+                //住址
+                c.setPersonAddress((String) str.get(3));
+                //婚否
+                c.setIsMarry((String) str.get(4));
+                //获取身份证号
+                String idCard = (String) str.get(1);
+                //获取年龄
+                c.setPersonAge(personIdCard.getAgeByIdCard(idCard));
+                //获取出生日期
+                Short nian=personIdCard.getYearByIdCard(idCard);
+                Short yue=personIdCard.getMonthByIdCard(idCard);
+                Short ri=personIdCard.getDateByIdCard(idCard);
+                String birth = nian+"-"+yue+"-"+ri;
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(birth);
+                c.setPersonBirthday(date);
+                //获取性别
+                c.setPersonSex(personIdCard.getGenderByIdCard(idCard));
                 info.add(c);
             }
         } catch (FileNotFoundException e) {
