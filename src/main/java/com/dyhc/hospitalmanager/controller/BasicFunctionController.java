@@ -151,8 +151,27 @@ public class BasicFunctionController {
      */
     @RequestMapping("addPackageInfo")
     @ResponseBody
-    public String addPackage(Package pack,@RequestParam("sectionandcheckList[]") Integer[] checkList,@RequestParam("sectionandcombinationList[]") Integer[] combinationList){
-        int result=basicFunctionService.addPackageInfo(pack,combinationList,checkList);
+    public String addPackage(Package pack, String checkList, String combinationList){
+        Integer[] sad1=new Integer[0];
+        if (!"".equals(checkList)&&checkList!=null){
+            String[] sad=checkList.split(",");
+             sad1=new Integer[sad.length];
+            for (int i=0;i<sad.length;i++){
+                sad1[i]=Integer.parseInt(sad[i]);
+            }
+        }
+        Integer[] sad2=new Integer[0];
+        if (!"".equals(combinationList)&&combinationList!=null){
+            String[] qwe2=combinationList.split(",");
+            sad2=new Integer[qwe2.length];
+            for (int i=0;i<sad2.length;i++){
+                sad2[i]=Integer.parseInt(qwe2[i]);
+            }
+        }
+
+
+
+        int result=basicFunctionService.addPackageInfo(pack,sad2,sad1);
         return JSON.toJSONString(result);
     }
 

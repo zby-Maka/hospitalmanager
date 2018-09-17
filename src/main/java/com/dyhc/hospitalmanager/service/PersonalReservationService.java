@@ -12,6 +12,13 @@ import java.util.List;
 public interface PersonalReservationService {
 
     /**
+     * 根据性别查询适用的体检项
+     * @param sex 性别
+     * @return
+     */
+    List<Check> getCheckListBySex(String sex);
+
+    /**
      * 根据组合项id查询组合项信息以及下的体检项信息
      * @return
      */
