@@ -3,7 +3,7 @@ $(function () {
     $(".select").click(function () {
         var peacId=$("input[name=physicalExaminationId]").val();
         if(peacId == "") {
-            swal("请输入体检编号！");
+            alert("请输入体检编号！");
             return false;
         }
         getPerson();
@@ -23,7 +23,7 @@ $(function () {
                 $("label[name=isMarry]").text(m.isMarry);
             });
             if($.trim(date.map)==''){
-                swal("该体检编号在本科室的体检项！");
+                alert("该体检编号在本科室的体检项！");
             }else{
                 var content="";
                 $.each(date.map,function (b,n) {
@@ -65,11 +65,11 @@ $(function () {
                 console.log(resultJSON);
                 if (resultJSON.stat == "ok") {
                     updateStatu();
-                    swal(" 保存成功！");
+                    alert(" 保存成功！");
                     $(".xuan").parent().remove();
                     qing();
                 } else {
-                    swal(" 保存失败！");
+                    alert(" 保存失败！");
                 }
             }
         });

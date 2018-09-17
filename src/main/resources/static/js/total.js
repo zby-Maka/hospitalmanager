@@ -25,6 +25,7 @@ function sessionStorageData() {
         var one = "" ;
         var two = "" ;
         $.each(JSON.parse(checkInfo),function (i,e) {
+            comt="";
             console.log(e);
             if (e.medicalEventsList.length==0) {
                 var cons="";
