@@ -107,4 +107,37 @@ public class GuideServiceImpl implements GuideService {
         }
         return physicalExaminationId;
     }
+
+    /**
+     * 根据体检编号判断人员是否已经打印过指引单
+     * @param physicalExaminationId
+     * @return
+     */
+    @Override
+    public PhysicalExamination selectStatusByPhysicalExamination(String physicalExaminationId) {
+        PhysicalExamination physicalExamination = null;
+        try {
+            physicalExamination = physicalExaminationMapper.selectStatusByPhysicalExamination(physicalExaminationId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return physicalExamination;
+    }
+
+
+    /**
+     *  修改体检打印状态
+     * @param physicalExaminationId
+     * @return
+     */
+    @Override
+    public Integer updPhysicalExaminationStatus(String physicalExaminationId) {
+        Integer result = 0;
+        try {
+            result = physicalExaminationMapper.updPhysicalExaminationStatus(physicalExaminationId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

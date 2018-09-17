@@ -99,4 +99,11 @@
      </select>
 
 
+    <!--根据当前分组显示该分组下的人员信息-->
+    <select id="getPersonInfoListByGroupId" resultType="com.dyhc.hospitalmanager.pojo.PersonInfo">
+      SELECT * FROM `person_info` WHERE group_id = #{groupId};
+    </select>
+
+
+
 </mapper>

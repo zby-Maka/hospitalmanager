@@ -68,7 +68,23 @@ public interface PhysicalExaminationMapper {
      * @return
      * @throws Exception
      */
-    PhysicalExamination selectPhysical(String  physicalExaminationId)throws Exception;
+    PhysicalExamination selectPhysical(@Param("physicalExaminationId") String  physicalExaminationId)throws Exception;
+
+
+    /**
+     * 根据体检编号判断人员是否已经打印过指引单
+     * @return
+     * @throws Exception
+     */
+    PhysicalExamination selectStatusByPhysicalExamination(@Param("physicalExaminationId") String  physicalExaminationId)throws Exception;
+
+    /**
+     * 修改体检打印状态
+     * @param physicalExaminationId
+     * @return
+     * @throws Exception
+     */
+    Integer updPhysicalExaminationStatus(@Param("physicalExaminationId")String physicalExaminationId)throws Exception;
 
 
 }
