@@ -28,6 +28,15 @@ public class PersonalReservationController {
 
     private SendMes sendMes = new SendMes();
 
+    /**
+     * 根据性别查询适用的体检项
+     * @param sex 性别
+     * @return
+     */
+    @GetMapping("/getCheckListBySex.do")
+    public List<Check> getCheckListBySex(String sex) {
+        return personalReservation.getCheckListBySex(sex);
+    }
 
     /**
      * 拼音简码

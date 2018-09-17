@@ -369,14 +369,29 @@ function addpack() {
     for (var i = 0; i < a; i++) {//循环属于体检项的lable
         checkID[i] = $("lable[name='checkInfo']").eq(i).attr("value");
     }
-    var date = $.param({
-        "sectionandcheckList": checkID,
-        "sectionandcombinationList": combinationID,
-    }) + "&" + combination;
+
+
+
+/*
+    if(combinationID.length==0){
+        date = $.param({
+            "sectionandcheckList": checkID,
+        }) + "&" + combination;
+    }else if(checkID.length==0){
+        date = $.param({
+            "sectionandcombinationList": combinationID,
+        }) + "&" + combination;
+    }else{
+        date = $.param({
+            "sectionandcheckList": checkID,
+            "sectionandcombinationList": combinationID,
+        }) + "&" + combination;
+    }
+    console.log(date);*/
 
     $.ajax({
-        url: "/hospitalOne/addPackageInfo",
-        data: date,
+        url: "/hospitalOne/addPackageInfo?checkList="+checkID+"&combinationList="+combinationID,
+        data: combination,
         dataType: "json",
         type: "get",
         traditional: true,

@@ -26,6 +26,7 @@ function  getpersoninfo() {
         var two = "" ;
         $("#content").html("<table border=\"1\" style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\" id=\"checknum\"></table>");
         $.each(date,function (i,e) {
+            comt="";
             jianyan="";
             if (e.medicalEventsList.length==0) {
                 var cons="";
@@ -64,7 +65,7 @@ function  getpersoninfo() {
             }else {
                 //通过体检编号查询体检人员的检验项
                 $.each(e.medicalEventsList, function (i, c) {
-                    comt += "<tr>" +
+                    comt +="<tr>" +
                         "<td>" + c.eventsName + "</td>" +
                         "<td>" + c.unit + "</td>" +
                         "<td>" + c.upperLimit + "-" + c.lowerLimit + "</td>" +
@@ -97,35 +98,13 @@ function  getpersoninfo() {
                     "</tbody></table>";
             }
             $("#content").append(jianyan);
+            console.log(jianyan);
         })
         $(".one").val(one);
         $(".two").val(two);
         $("#checknum").html(contents);
         $("#Checkdate").text(getNowFormatDate());
     },"json");
-
-    // $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (result) {
-    //     sessionStorage.setItem("three",JSON.stringify(result));
-    //     var content="";
-    //     $.each(result,function (i,n) {
-    //         content+=n.commonResults.resultDesc+"\n\r";
-    //     });
-    //     /*$("#one").val(content);*/
-    // },"json");
-    // $.post("http://localhost:8080/checkResults.do",{"physicalexaminationid":physicalexaminationid},function (results) {
-    //     sessionStorage.setItem("four",JSON.stringify(results));
-    //     var contens="";
-    //     $.each(results,function (i,e) {
-    //         var cons="";
-    //         if(e.commonResults.proposedDescription.adviceContent=="undefined"){
-    //             cons="";
-    //         }else {
-    //             cons=e.commonResults.proposedDescription.adviceContent;
-    //         }
-    //         contens+=cons+"\n\r";
-    //     });
-    //     /*$("#two").val(contens);*/
-    // },"json");
 }
 function getNowFormatDate() {
     var date = new Date();

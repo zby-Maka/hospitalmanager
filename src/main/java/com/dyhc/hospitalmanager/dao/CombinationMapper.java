@@ -11,6 +11,14 @@ import java.util.List;
 public interface CombinationMapper {
 
     /**
+     * 查询所有组合项，及其下的体检项
+     * @param sex 性别
+     * @return
+     * @throws Exception
+     */
+    List<Combination> getAllCombinationListBySex(String sex) throws Exception;
+
+    /**
      * 添加组合项信息
      * @param combination
      * @return
