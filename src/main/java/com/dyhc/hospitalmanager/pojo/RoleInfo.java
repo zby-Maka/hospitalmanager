@@ -1,8 +1,9 @@
 package com.dyhc.hospitalmanager.pojo;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class RoleInfo {
+public class RoleInfo implements Serializable {
     private Integer roleInfoId;
     private String realName;
     private String userName;
