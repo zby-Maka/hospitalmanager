@@ -115,7 +115,7 @@ public class ShiroConfiguration {
         filters.put("/Thebackend-page/Cashiers.html","roles[fyc],perms[Thebackend-page/Cashiers.html]");
 
         //set logout
-        filters.put("/logout","logout");
+        filters.put("/logout.do","logout");
 
         //Warning: intercepts all unauthenticated requests, and this configuration item must be last
         filters.put("/**","authc");
@@ -124,7 +124,7 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean.setLoginUrl("/login.html");
 
         //Set access insufficient jump path
-        shiroFilterFactoryBean.setUnauthorizedUrl("/logout");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/logout.do");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filters);
         return shiroFilterFactoryBean;
     }
