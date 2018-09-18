@@ -23,7 +23,7 @@ $(function () {
                 $("label[name=isMarry]").text(m.isMarry);
             });
             if($.trim(date.map)==''){
-                alert("该体检人员暂无此科室体检项");
+                alert("该体检人员在本科室的体检已完成");
             }else{
                 var content="";
                 $.each(date.map,function (b,n) {
