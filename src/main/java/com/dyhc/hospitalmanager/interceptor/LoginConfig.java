@@ -1,3 +1,4 @@
+/*
 package com.dyhc.hospitalmanager.interceptor;
 
 import org.springframework.context.annotation.Bean;
@@ -56,3 +57,4 @@ public class LoginConfig implements WebMvcConfigurer {
     }
 
 }
+*/
