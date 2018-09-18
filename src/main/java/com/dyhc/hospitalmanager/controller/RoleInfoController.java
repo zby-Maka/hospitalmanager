@@ -78,7 +78,7 @@ public class RoleInfoController{
      * 退出登录
      * @return
      */
-    @RequestMapping("/logout")
+    @RequestMapping("/logout.do")
     public String logout(){
         Subject subject=SecurityUtils.getSubject();
         subject.logout();
