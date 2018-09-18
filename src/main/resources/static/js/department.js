@@ -22,7 +22,7 @@ function  getPerson() {
             $("label[name=isMarry]").text(m.isMarry);
         });
         if($.trim(date.map)==''){
-            alert("该体检人员在本科室的体检已完成！");
+            alert("该体检人员在本科室的体检已全部完成！");
         }else{
             var content="<ul></ul>";
             $.each(date.map,function (b,n) {

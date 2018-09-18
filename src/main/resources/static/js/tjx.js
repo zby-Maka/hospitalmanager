@@ -151,6 +151,7 @@ function addcheck() {
         success: function (data) {
             if (data == 1){
                 alert("添加成功");
+                top.location="/hospitalOne/index.html";
                 $("input[name='checkName']").val("");
                 $("input[name='checkSpellCode']").val("");
                 $("input[name='checkPrice']").val("");

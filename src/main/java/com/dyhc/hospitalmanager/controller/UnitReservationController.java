@@ -115,7 +115,7 @@ public class UnitReservationController {
 
         //指定文件存放路径，可以是相对路径或者绝对路径
         //String filePath = "/src/main/resources/excelfile/";
-        String filePath = "/src/main/resources/excelfile/";
+        String filePath = "E:/src/main/resources/excelfile/";
         try {
             uploadFile(file.getBytes(), filePath, fileName);
             content = 1;
