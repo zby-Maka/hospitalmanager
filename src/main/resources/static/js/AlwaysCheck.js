@@ -120,8 +120,6 @@ function getNowFormatDate() {
     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;
     return currentdate;
 }
-
-
 //跳转打印页面
 function sendTotal() {
     var jianyi = $("#checkAdvice textarea").val();
