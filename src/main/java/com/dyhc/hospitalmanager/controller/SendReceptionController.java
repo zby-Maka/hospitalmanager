@@ -39,7 +39,6 @@ public class SendReceptionController {
 
     @GetMapping("/login.html")
     public String sendLogin(HttpSession session) {
-        session.invalidate();
         return "Thefrontend-page/login";
     }
 
