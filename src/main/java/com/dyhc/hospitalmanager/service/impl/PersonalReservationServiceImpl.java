@@ -293,6 +293,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         }
         return value;
     }
+
     /**
      * 监听消息
      * @param object
