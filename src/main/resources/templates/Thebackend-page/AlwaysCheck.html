@@ -96,6 +96,11 @@
             var physicalexaminationid=$("input[name=physicalexaminationid]").val();
             if(physicalexaminationid == "") {
                 alert("请输入体检编号！");
+                $("label[name=personName]").text("");
+                $("label[name=personAge]").text("");
+                $("label[name=personSex]").text("");
+                $("label[name=isMarry]").text("");
+                $("#dayin").attr("disabled","disabled");
                 return false;
             }
         });
