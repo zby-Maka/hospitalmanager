@@ -38,6 +38,13 @@ public interface PackageMapper {
     List<Package> showAllPackage()throws  Exception;
 
     /**
+     * 根据套餐数组ID获取套餐
+     * @return
+     * @throws Exception
+     */
+    List<Package> getPackageArrayId(@Param("pacId") Integer[] pacId)throws Exception;
+
+    /**
      * 根据套餐Id，获取该套餐
      * @param packageId 套餐Id
      * @return
