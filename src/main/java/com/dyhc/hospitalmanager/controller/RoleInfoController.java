@@ -78,9 +78,9 @@ public class RoleInfoController{
      */
     @RequestMapping("/logout.do")
     public String logout(){
-        System.out.println("进入了退出！！！");
+        System.out.println("logout！！！");
         Subject subject=SecurityUtils.getSubject();
         subject.logout();
-        return "Thefrontend-page/login";
+        return "redirect:/login.html";
     }
 }
