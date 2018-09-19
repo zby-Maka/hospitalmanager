@@ -255,8 +255,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
                 }
             }
         } catch (Exception e) {
-            logger.error("预约失败，"+e.getMessage());
             e.printStackTrace();
+            logger.error("预约失败，"+e.getMessage());
             return -1+"";
         }
         //jsonObject.put("errMsg","ok");

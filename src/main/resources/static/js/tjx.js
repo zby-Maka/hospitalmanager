@@ -119,25 +119,15 @@ function showCheckById(checkid) {
 }
 function add() {
 
-    var textControl = $("#addform input");
-    var text=$("textarea[name='remark']").val();
-    var flag=true;
+    var cname=$("input[name='checkName']").val();
+    var cprice=$("input[name='checkPrice']").val();
+    var caddress=$("input[name='checkAddress']").val();
 
-        if(text.trim()=="") {
-            $.each(textControl, function (i, e) {
-                if (e.type == "text" && e.value == "") {
-                    flag = false;
+                if ( cname== ""&&cprice== ""&&caddress== "") {
                     alert("请完善体检项目信息！");
-                    return false;
+                }else{
+                    addcheck();
                 }
-            })
-        }
-    if(flag){
-        addcheck();
-    }
-
-
-
 }
 
 //添加体检项

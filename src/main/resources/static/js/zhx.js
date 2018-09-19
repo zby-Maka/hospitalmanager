@@ -1,5 +1,15 @@
 $(function () {
 
+
+    $("input[name='isSpecimen']").click(function () {
+        var aa=$(this).val();
+        if(aa=="0"){
+            $("input[name='specimenType']").attr("readonly",true);
+        }else{
+            $("input[name='specimenType']").attr("readonly",false);
+        }
+    })
+
     //根据组合项名称获取姓名简拼
     $("input[name='combinationName']").on("keyup keydown change blur", function() {
         $("input[name='pinyinCode']").val($(this).toPinyin());

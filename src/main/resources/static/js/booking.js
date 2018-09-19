@@ -8,16 +8,24 @@ $(function () {
         $.each(textControl,function (i,e) {
             if(e.type=="text" && e.value=="") {
                 flag = false;
-                swal("请完善用户信息！");
+                swal({title:"请完善用户信息！", type:"error"});
                 return false;
             }
         })
         if (flag) {
-            var params = $("#personal").serializeObject();
-            sessionStorage.setItem("personInfo",JSON.stringify(params));
-            sessionStorage.setItem("personInfoSer",$("#personal").serialize());
-            sessionStorage.setItem("personSex",$("input[name=personSex]").val());
-            location.href = "/hospitalOne/check.html";
+            var idCardError = $("td[name=checkIdCard]").text();
+            var phoneError = $("td[name=checkTelephone]").text();
+            if(idCardError!=""){
+                swal({title:"身份证号错误！", type:"error"});
+            }else if (phoneError!="") {
+                swal({title:"手机号有误！", type:"error"});
+            }else {
+                var params = $("#personal").serializeObject();
+                sessionStorage.setItem("personInfo",JSON.stringify(params));
+                sessionStorage.setItem("personInfoSer",$("#personal").serialize());
+                sessionStorage.setItem("personSex",$("input[name=personSex]").val());
+                location.href = "/hospitalOne/check.html";
+            }
         }
     });
 });

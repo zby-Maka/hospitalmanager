@@ -338,20 +338,16 @@ $("#combinationAndcheck").on("click", "input[name='combiantionInfo'],input[name=
 
 function add() {
     var textControl = $("#addform input");
-    var text = $("textarea[name='scopeApplication']").val();
+    var name=$("input[name='packageName']").val();
     var flag = true;
 
-        $.each(textControl, function (i, e) {
-            if (e.type == "text" && e.value == "") {
-                flag = false;
-                alert("请完善套餐项信息！");
-            }
-        })
-
-
-    if (flag) {
+    if(name==""){
+        alert("请完善套餐信息")
+    }else{
         addpack();
     }
+
+
 
 }
 
