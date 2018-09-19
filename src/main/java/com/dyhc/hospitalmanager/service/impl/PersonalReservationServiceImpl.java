@@ -520,6 +520,4 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         }
         return packageList;
     }
-
-
 }
