@@ -153,6 +153,7 @@ function addcom() {
         success: function (data) {
             if (data == 1){
                 alert("添加成功");
+                top.location="/hospitalOne/index.html";
                 $("input[name='combinationName']").val("");
                 $("input[name='promptInformation']").val("")
                 $("input[name='resultToWay']").val("")

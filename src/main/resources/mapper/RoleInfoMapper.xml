@@ -4,6 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.RoleInfoMapper">
     <select id="getRoleInfoLogin" resultType="com.dyhc.hospitalmanager.pojo.RoleInfo">
-        SELECT * FROM role_info WHERE user_name=#{userName} AND `password`=#{password}
+        SELECT * FROM role_info WHERE
+        <if test="userName!=null and password==null">
+            user_name=#{userName}
+        </if>
+        <if test="userName!=null and password!=null">
+            user_name=#{userName} AND `password`=#{password}
+        </if>
     </select>
 </mapper>

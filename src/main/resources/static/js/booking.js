@@ -29,7 +29,6 @@ function assignmentPersonInfo() {
     var persionInfo = sessionStorage.getItem("personInfo");
     var persion = JSON.parse(persionInfo);
     if (persion!=null) {
-        console.log(persion);
         $("input[name=personName]").val(persion.personName);
         $("input[name=personNameSpellCode]").val(persion.personNameSpellCode);
         $("input[name=personIdCard]").val(persion.personIdCard);
@@ -53,7 +52,6 @@ function assignmentPersonInfo() {
     var persionInfo = sessionStorage.getItem("personInfo");
     var persion = JSON.parse(persionInfo);
     if (persion!=null) {
-        console.log(persion);
         $("input[name=personName]").val(persion.personName);
         $("input[name=personNameSpellCode]").val(persion.personNameSpellCode);
         $("input[name=personIdCard]").val(persion.personIdCard);

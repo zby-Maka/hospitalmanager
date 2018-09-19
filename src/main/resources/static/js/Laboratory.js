@@ -23,7 +23,7 @@ $(function () {
                 $("label[name=isMarry]").text(m.isMarry);
             });
             if($.trim(date.map)==''){
-                alert("该体检编号在本科室的体检项！");
+                alert("该体检人员在本科室的体检已全部完成！");
             }else{
                 var content="";
                 $.each(date.map,function (b,n) {
@@ -66,7 +66,10 @@ $(function () {
                 if (resultJSON.stat == "ok") {
                     updateStatu();
                     alert(" 保存成功！");
+                    //对体检完项的移除
                     $(".xuan").parent().remove();
+                    //清空l小项标题
+                    $("#name").html("");
                     qing();
                 } else {
                     alert(" 保存失败！");

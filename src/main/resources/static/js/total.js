@@ -74,7 +74,7 @@ function sessionStorageData() {
                         "<td>" + c.medicalResult + "</td>" +
                         "</tr>";
                 });
-                jianyan += "<table border=\"1\" style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\">\n" +
+                jianyan += "<table style=\"margin:0 auto; margin-bottom: 15px; line-height: 30px;\">\n" +
                     "<tbody><tr>" +
                     "<td align=\"right\">体检项：</td>" +
                     "<td>" + e.checkName + "</td>" +

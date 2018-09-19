@@ -220,12 +220,13 @@ function makeAnAppointment(yue,packId,comId,checkId) {
             }
         });
 }
+//用户的性别
 var personSex = sessionStorage.getItem("personSex");
 /**
- * 查询所有体检项，组合项，套餐项
+ * 查询体检项，组合项，套餐项
  */
 function selAllCheck() {
-	//获取所有检查项
+	//根据用户性别获取检查项
 	$.getJSON("/hospitalOne/getCheckListBySex.do",{sex:personSex},function (check) {
 		var content = "<tr>";
 		$.each(check,function (i,e) {
@@ -237,26 +238,64 @@ function selAllCheck() {
 		$("#check").html(content);
     });
 
-	//获取是所有组合项
+	//获取是所有组合项，显示适合用户性别的组合项
     $.getJSON("/hospitalOne/ExhibitionAllCombination.do",{},function (com) {
+        var index = 1;
         var content = "<tr>";
         $.each(com,function (i,e) {
-            content+="<td style='width: auto' name='c'><span style='text-align: center;margin-left: 15px;'><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
-            if((i+1)%3==0){
-                content+="</tr>";
+            var flag=false;
+            $.each(e.combinationCheckList,function (j,c) {
+                if(c.termSex == personSex || c.termSex == "不限"){
+                    flag=true;
+                }else {
+                    flag=false;
+                    return false;
+                }
+            })
+            if(flag){
+                content+="<td style='width: auto' name='c'><span style='text-align: center;margin-left: 15px;'><input type=\"checkbox\" id='com"+i+"' name=\"combineItem\" value=\""+e.combinationId+"\" /><label for='com"+i+"'>"+e.combinationName+"</label></span></td>";
+                if(index%3==0){
+                    content+="</tr>";
+                }
+                index++;
             }
         });
         $("#com").html(content);
     });
 
-	//获取所有套餐项
+	//获取所有套餐项，显示适合用户性别的套餐项
     $.getJSON("/hospitalOne/ExhibitionAllPackages.do",{},function (package) {
-        var packageContent = "";
+        var index = 1;
         var content = "<tr>";
         $.each(package,function (i,e) {
-            content+="<td style='width: auto' name='p'><span style='text-align: center;margin-left: 15px;'><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></span></td>";
-            if((i+1)%3==0){
-                content +="</tr>";
+            var flag=false;
+            var flagTwo = false;
+            $.each(e.packageCheckList,function (i,e) {
+                if(e.termSex == personSex || e.termSex == "不限"){
+                    flag=true;
+                }else {
+                    flag=false;
+                    return false;
+                }
+            })
+            if(flag){
+                $.each(e.packageCombinationList,function (i,e) {
+                    $.each(e.combinationCheckList,function (i,c) {
+                        if(c.termSex == personSex || c.termSex == "不限"){
+                            flagTwo=true;
+                        }else {
+                            flagTwo=false;
+                            return false;
+                        }
+                    })
+                })
+            }
+            if (flagTwo){
+                content+="<td style='width: auto' name='p'><span style='text-align: center;margin-left: 15px;'><input id='pack"+i+"' type=\"checkbox\" name=\"packageItem\" value=\""+e.packageId+"\"/><label for='pack"+i+"'>"+e.packageName+"</label></span></td>";
+                if(index%3==0){
+                    content +="</tr>";
+                }
+                index++;
             }
         });
         $("#package").html(content);
@@ -274,7 +313,6 @@ function PackDuplicateRemoval(pid) {
     if(ZuId.length!=0){
         //获取所有选中的组合项下的体检项
         $.getJSON("/hospitalOne/getPackCheck.do",{"packId":pid},function (pack) {
-            console.log(pack);
             var checkName = "";
             $.each(ZuId,function (i,checkIdControl) {
                 $.each(pack.packageCheckList,function (i,e) {
@@ -312,7 +350,6 @@ function ComDuplicateRemoval(comId) {
     if(ZuId.length!=0){
         //获取所有选中的组合项下的体检项
         $.getJSON("/hospitalOne/getCheckByCombinationId.do",{"combinationId":comId},function (combination) {
-            console.log(combination);
             var checkName = "";
             $.each(combination.combinationCheckList,function (i,e) {
                 $.each(ZuId,function (i,checkIdControl) {
@@ -344,7 +381,6 @@ function CheckDuplicateRemoval(that,checkId) {
     if(ZuId.length!=0){
         //获取所有选中的组合项下的体检项
         $.getJSON("/hospitalOne/getCheckByComArrayId.do",{"combinationId":ZuId},function (ZuAllCheck) {
-            console.log(ZuAllCheck);
             $.each(ZuAllCheck,function (i,e) {
                 $.each(e.combinationCheckList,function (ic,c) {
                     if(c.checkId == checkId){
@@ -366,7 +402,6 @@ function CheckDuplicateRemoval(that,checkId) {
         if(TaoId.length!=0){
             $.getJSON("/hospitalOne/getPackCheckbyPackArray.do",{"packId":TaoId},function (TaoAllCheck) {
                 var alertFlag = true;
-                console.log(TaoAllCheck);
                 $.each(TaoAllCheck,function (i,e) {
                     $.each(e.packageCheckList,function (ic,c) {
                         if(c.checkId == checkId&&alertFlag){

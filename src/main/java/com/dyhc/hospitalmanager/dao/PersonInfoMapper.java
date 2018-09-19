@@ -68,4 +68,6 @@ public interface PersonInfoMapper {
      */
     List<PersonInfo> getPersonBypeacId(@Param("peacId")String peacId)throws Exception;
 
+    List<PersonInfo> getPersonInfoListByGroupId(@Param("groupId") Integer groupId)throws Exception;
+
 }

@@ -1,3 +1,4 @@
+/*
 package com.dyhc.hospitalmanager.interceptor;
 
 
@@ -13,10 +14,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+*/
 /**
  *
  * 登陆拦截器
- **/
+ **//*
+
 @Component
 public class LoginInterceptor implements HandlerInterceptor {
 
@@ -61,14 +64,16 @@ public class LoginInterceptor implements HandlerInterceptor {
     }
 
 
-    /**
+    */
+/**
      * 进行url权限拦截
      * @param request
      * @param response
      * @param handler
      * @return
      * @throws Exception
-     */
+     *//*
+
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
         RoleInfo roleInfo=(RoleInfo) request.getSession().getAttribute("roleInfo");
         //获取请求url
@@ -79,8 +84,10 @@ public class LoginInterceptor implements HandlerInterceptor {
         }else {
             if(url.indexOf(".html")>0){
                 Boolean flag=false;
-            /*Integer statrIndex=url.indexOf("One")+4;
-            String newUrl=url.substring(statrIndex);*/
+            */
+/*Integer statrIndex=url.indexOf("One")+4;
+            String newUrl=url.substring(statrIndex);*//*
+
                 switch (roleInfo.getRoleTypeId()){
                     case 1:
                         for (String location:LoginInterceptor.rolePermissions.get(roleInfo.getRoleTypeId())){
@@ -144,3 +151,4 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     }
 }
+*/

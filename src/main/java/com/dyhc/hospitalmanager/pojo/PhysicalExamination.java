@@ -15,6 +15,15 @@ public class PhysicalExamination {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date medicalTime;
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    private Integer status;
     public String getPhysicalExaminationId() {
         return physicalExaminationId;
     }

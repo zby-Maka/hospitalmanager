@@ -46,7 +46,7 @@
             /**退出系统**/
             function logout() {
                 if(confirm("您确定要退出本系统吗？")) {
-                    window.location.href = "/hospitalOne/login.html";
+                    window.location.href = "/hospitalOne/logout.do";
                 }
             }
 		</script>
@@ -113,7 +113,7 @@
 						<thead>
 							<tr>
 								<th colspan="5" align="center">
-									<h2 class="name"></h2></th>
+									<h2 class="name" id="name"></h2></th>
 							</tr>
 							<tr>
 								<td align="center">检验项</td>
