@@ -23,4 +23,14 @@ public class CombinationServiceImpl implements CombinationService {
             return null;
         }
     }
+
+    @Override
+    public List<Combination> getCheckByComArrayId(Integer[] combinationId) throws Exception {
+        try {
+            return combinationMapper.getCheckByComArrayId(combinationId);
+        }catch (Exception e){
+            e.printStackTrace();
+            return  null;
+        }
+    }
 }

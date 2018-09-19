@@ -261,6 +261,27 @@ public class PersonalReservationController {
     }
 
     /**
+     * vx获取该套餐项下的所有体检项
+     * packId 套餐id
+     * @return
+     */
+    @RequestMapping("/getvxPackCheckbyPackArray.do")
+    public Object getvxPackCheckbyPackArray(@RequestBody JSONObject json) throws Exception {
+        JSONArray pacIds=json.getJSONArray("pacIds");
+        Integer[] pacId=null;
+        if (pacIds.size()!=0){
+            String tjcjson=JSON.toJSONString(pacIds);
+            List<Integer> number1=JSONObject.parseArray(tjcjson,Integer.class);
+            pacId=new Integer[number1.size()];
+            for (int i = 0;i<number1.size();i++){
+                pacId[i]=number1.get(i);
+            }
+        }
+        return personalReservation.getPackCheckbyPackArray(pacId);
+
+    }
+
+    /**
      * 根据组合项id查询组合项信息以及下的体检项信息
      *
      * @return

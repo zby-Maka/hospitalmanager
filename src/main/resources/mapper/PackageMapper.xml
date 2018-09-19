@@ -3,6 +3,30 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dyhc.hospitalmanager.dao.PackageMapper">
+    <!--套餐项的Map包含的组合项和体检项以及组合项下的体检项-->
+    <resultMap id="checkAndCombin" type="com.dyhc.hospitalmanager.pojo.Package">
+        <id property="packageId" column="package_id"/>
+        <collection property="packageCombinationList" javaType="com.dyhc.hospitalmanager.pojo.Combination">
+            <id property="combinationId" column="combination_id"/>
+            <collection property="combinationCheckList" javaType="com.dyhc.hospitalmanager.pojo.Check">
+                <id property="checkId" column="check_id"/>
+            </collection>
+        </collection>
+        <collection property="packageCheckList" javaType="com.dyhc.hospitalmanager.pojo.Check">
+            <id property="checkId" column="check_id"/>
+        </collection>
+    </resultMap>
+    <select id="getPackageArrayId" resultMap="checkAndCombin">
+          SELECT p.*,c.check_name,b.combination_name FROM `package` p
+              INNER JOIN `package_and_ check` pac ON p.package_id=pac.package_id
+              INNER JOIN `package_and_ combination` pab ON p.package_id=pab.package_id
+              INNER JOIN `check` c ON c.check_id=pac.check_id
+              INNER JOIN `combination` b ON b.combination_id=pab.combination_id
+        <foreach collection="pacId" item="cId" open="(" close=")" separator=",">
+            #{cId}
+        </foreach>
+        AND com.is_enable = 1
+    </select>
 
     <!-- 根据套餐Id查询其下面的所有组合项 -->
     <select id="getPackageCombination" resultMap="getPC">
