@@ -12,8 +12,9 @@ $("input[name='telephone']").on("blur", function() {
         $("td[name='checkTelephone']").text("");
     }
 });
-function checkPhone(telephone) {
-    var reg = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+function checnextFlgakPhone(telephone) {
+    //var reg = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+    var reg = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
     if(!reg.exec(telephone)) {
         return false;
     }

@@ -35,9 +35,11 @@ $(function() {
                                 $("input[name=personName]").val(date.personName);
                             if(date.personNameSpellCode!=null)
                             	$("input[name=personNameSpellCode]").val(date.personNameSpellCode);
+							if(date.personTelephone!=null)
+                                $("input[name=personTelephone]").val(date.personTelephone);
+							if(date.personAddress!=null)
+								$("input[name=personAddress]").val(date.personAddress);
 
-                            $("input[name=personTelephone]").val(date.personTelephone);
-                            $("input[name=personAddress]").val(date.personAddress);
                             if("未婚"==date.isMarry)
                                 //$(isMarry[0]).prop("checked",true);
                                 document.getElementsByName('isMarry')[0].checked = true;
@@ -62,7 +64,7 @@ $(function() {
 	$("input[name='personTelephone']").on("blur", function() {
 		var phone = $("input[name='personTelephone']").val();
 		if(phone != "") {
-			var checkResult = checkPhone(phone);
+			var checkResult = checnextFlgakPhone(phone);
 			if(!checkResult) {
 				$("td[name='checkTelephone']").text("请输入正确的电话号");
 			} else {
