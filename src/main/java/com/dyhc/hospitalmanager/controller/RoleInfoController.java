@@ -46,7 +46,7 @@ public class RoleInfoController{
             //如果未认证，就将用户名和密码封装成UsernamePasswordToken对象
             UsernamePasswordToken usernamePasswordToken=new UsernamePasswordToken(userName,password);
             //将用户的token存放与sessionManager中，让shiro记住该用户
-            usernamePasswordToken.setRememberMe(true);
+            //usernamePasswordToken.setRememberMe(true);
 
             try {
                 //执行登录
@@ -68,8 +68,6 @@ public class RoleInfoController{
             }catch (Exception e){
                 e.printStackTrace();
             }
-        }else {
-            json="{\"state\":\"您已登录，无需重复登录！\"}";
         }
         return json;
     }
@@ -80,8 +78,9 @@ public class RoleInfoController{
      */
     @RequestMapping("/logout.do")
     public String logout(){
+        System.out.println("进入了退出！！！");
         Subject subject=SecurityUtils.getSubject();
         subject.logout();
-        return "login";
+        return "Thefrontend-page/login";
     }
 }

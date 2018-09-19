@@ -69,22 +69,23 @@ public class ShiroConfiguration {
         filters.put("/css/**","anon");
         filters.put("/font/**","anon");
         filters.put("/images/**","anon");
-        filters.put("/PhysicalPersonInfo.xlsx","anon");
         filters.put("/img/**","anon");
         filters.put("/js/**","anon");
         filters.put("/lay/**","anon");
         filters.put("/style/**","anon");
         filters.put("/scripts/**","anon");
         filters.put("/templates/**","anon");
+        filters.put("/codefile/**","anon");
+        filters.put("/admin/**","anon");
         filters.put("/*.do","anon");
+        filters.put("/PhysicalPersonInfo.xlsx","anon");
         filters.put("/Thebackend-page/guideList.html","anon");
         filters.put("/Thebackend-page/DanWeiGuide.html","anon");
-        filters.put("/booking.html","anon");
         filters.put("/Thebackend-page/thewaylist.html","anon");
         filters.put("/check.html","anon");
         filters.put("/login.html","anon");
-        filters.put("/codefile/**","anon");
-        filters.put("/admin/**","anon");
+        filters.put("/booking.html","anon");
+
 
         //admin permissions configuration
         filters.put("/index.html","roles[admin],perms[index.html]");
@@ -114,11 +115,8 @@ public class ShiroConfiguration {
         filters.put("/Thebackend-page/refund.html","roles[fyc],perms[Thebackend-page/refund.html]");
         filters.put("/Thebackend-page/Cashiers.html","roles[fyc],perms[Thebackend-page/Cashiers.html]");
 
-        //set logout
-        filters.put("/logout.do","logout");
-
         //Warning: intercepts all unauthenticated requests, and this configuration item must be last
-        filters.put("/**","authc");
+        //filters.put("/**","authc");
 
         //set login page
         shiroFilterFactoryBean.setLoginUrl("/login.html");
