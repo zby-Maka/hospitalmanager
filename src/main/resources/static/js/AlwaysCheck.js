@@ -2,7 +2,6 @@ function  getpersoninfo() {
     var physicalexaminationid=$("input[name=physicalexaminationid]").val();
     //通过体检编号查询体检人员
     $.post("/hospitalOne/personInfo.do",{"physicalexaminationid":physicalexaminationid},function (data) {
-        $("#dayin").removeAttr("disabled");
         sessionStorage.setItem("one",JSON.stringify(data));
         $.each(data,function (i,e) {
             $("label[name=personName]").text(e.personName);
@@ -18,6 +17,8 @@ function  getpersoninfo() {
     },"json");
     //通过体检编号查询体检人员的检查项
     $.post("/hospitalOne/checkList.do",{"physicalExaminationId":physicalexaminationid},function (date) {
+        if(date.length>0)
+            $("#dayin").removeAttr("disabled");
         sessionStorage.setItem("two",JSON.stringify(date));
         var contents="";
         var comt="";
