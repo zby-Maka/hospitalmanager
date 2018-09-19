@@ -123,7 +123,7 @@ function add() {
     var text=$("textarea[name='remark']").val();
     var flag=true;
 
-        if(text.trim()=="") {
+
             $.each(textControl, function (i, e) {
                 if (e.type == "text" && e.value == "") {
                     flag = false;
@@ -131,7 +131,7 @@ function add() {
                     return false;
                 }
             })
-        }
+
     if(flag){
         addcheck();
     }
