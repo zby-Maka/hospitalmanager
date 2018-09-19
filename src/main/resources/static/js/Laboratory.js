@@ -66,7 +66,10 @@ $(function () {
                 if (resultJSON.stat == "ok") {
                     updateStatu();
                     alert(" 保存成功！");
+                    //对体检完项的移除
                     $(".xuan").parent().remove();
+                    //清空l小项标题
+                    $("#name").html("");
                     qing();
                 } else {
                     alert(" 保存失败！");
