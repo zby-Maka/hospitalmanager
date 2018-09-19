@@ -54,3 +54,5 @@ public interface CheckService {
      */
     PhysicalExamination selectPhysical(String  physicalExaminationId);
 }
+
+
