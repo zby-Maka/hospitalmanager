@@ -1,5 +1,12 @@
 $(function () {
 
+   var aa= $("input[name='isSpecimen'],[value='1']").attr("checked");
+
+    if($("input[name='isSpecimen'],[value='1']").attr("checked")==true){
+        $("input[name='specimenType']").attr("readonly",true);
+    }else{
+        $("input[name='specimenType']").attr("readonly",false);
+    }
     //根据组合项名称获取姓名简拼
     $("input[name='combinationName']").on("keyup keydown change blur", function() {
         $("input[name='pinyinCode']").val($(this).toPinyin());
