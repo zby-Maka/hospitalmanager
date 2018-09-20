@@ -147,11 +147,15 @@ $("input[name=upload]").click(function () {
         swal("请选择Excel文件");
         ch = false;
         return false;
+    }else{
+        ch=true;
     }
     if ("xls" != ext && "xlsx" != ext) {
         swal("只能上传Excle文件");
         ch = false;
         return false;
+    }else{
+        ch=true;
     }
     var textControl = $("#companyInfo input");
     $.each(textControl,function (i,e) {
@@ -162,6 +166,7 @@ $("input[name=upload]").click(function () {
         }
     });
     if(ch){
+
         //获取公司名称
         var companyName = $("input[name=companyName]").val();
         //获取上传文件的文件名称
@@ -247,6 +252,7 @@ function upload() {
     }
 }
 //上传进度回调函数：
+
 function progressHandlingFunction(e) {
     if (e.lengthComputable) {
         $('progress').attr({
