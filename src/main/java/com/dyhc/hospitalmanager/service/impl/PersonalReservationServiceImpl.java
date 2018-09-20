@@ -268,7 +268,8 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
     @Override
     @Transactional(rollbackFor={RuntimeException.class, Exception.class})
     public String userReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId){
-        Destination destination = new ActiveMQQueue("hospitalManage");
+        //创建MQ消息队列
+        Destination destination = new ActiveMQQueue("hospitalOne");
         Map<String, Object> map = new HashMap<>();
         map.put("personInfo", personInfo);
         map.put("yuDate", Yudate);
@@ -297,7 +298,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      * 监听消息
      * @param object
      */
-    @JmsListener(destination = "hospitalManage")
+    @JmsListener(destination = "hospitalOne")
     public void test(String object){
         //此处接受到消息将redis中的数量减少1进行数据处理
         Map json = (Map) JSONObject.parse(object);

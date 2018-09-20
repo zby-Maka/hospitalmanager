@@ -18,9 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *shiro数据域
- * @author ドゥシウ
- * 2018-9-18
+ *shiro
  */
 public class ShiroRealm extends AuthorizingRealm {
 
