@@ -68,6 +68,9 @@ public class RoleInfoController{
             }catch (Exception e){
                 e.printStackTrace();
             }
+        }else {
+            json="{\"state\":\"由于您未正常退出，需要重新登录！\"}";
+            subject.logout();
         }
         return json;
     }
