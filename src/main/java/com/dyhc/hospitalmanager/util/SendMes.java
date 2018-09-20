@@ -13,13 +13,13 @@ import java.io.IOException;
 public class SendMes {
 
     // 短信应用SDK AppID
-    int appid = 1400135828; // 1400开头
+    int appid = 1400141424; // 1400开头
     // 短信应用SDK AppKey
-    String appkey = "c28febad5be67f75feac0b3c94a849b3";
+    String appkey = "474223bca22a2a3c167cd3435f50b3ed";
     // 需要发送短信的手机号码
     String[] phoneNumbers = new String[1];
     // 短信模板ID，需要在短信应用中申请
-    int templateId = 188436; // NOTE: 这里的模板ID`7839`只是一个示例，真实的模板ID需要在短信控制台中申请
+    int templateId = 197549; // NOTE: 这里的模板ID`7839`只是一个示例，真实的模板ID需要在短信控制台中申请
     //templateId7839对应的内容是"您的验证码是: {1}"
     // 签名
     String smsSign = "山大一院"; // NOTE: 这里的签名"腾讯云"只是一个示例，真实的签名需要在短信控制台中申请，另外签名参数使用的是`签名内容`，而不是`签名ID`
