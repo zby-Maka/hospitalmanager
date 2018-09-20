@@ -88,6 +88,7 @@
                     "<td id='last'><a href='javascript:void(0)' onclick='getjianyi("+e.commonResultsId+","+checkId+")'>查看建议</a></td>" +
                     "</tr>";
             })
+            $("select[name='checkId']").attr("disabled",true);
             $("#nums").html(content);
         },"json")
     }

@@ -12,6 +12,7 @@ function  getclearcommonresult() {
 
 //添加常见结果
 function getinsertcommonresult() {
+    $("select[name='checkId']").attr("disabled",false);
     var content = $('form').serialize();
     var commonResultsId=$("#commonResultsIds").val();
     var resultDesc = $("[name=resultDesc]").val();

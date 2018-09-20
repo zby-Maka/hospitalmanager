@@ -10,6 +10,7 @@ function  getclearproposedDescription() {
 }
 //添加常见建议
 function getinsertproposedDescription() {
+    $("select[name='resultId']").attr("disabled",false);
     var content = $('form').serialize();
     var proposedDescriptionId=$("#proposedDescriptionIds").val();
     var sciencePopularization = $("[name=sciencePopularization]").val();
