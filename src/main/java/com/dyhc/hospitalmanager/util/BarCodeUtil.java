@@ -49,29 +49,22 @@ public class BarCodeUtil {
         if (StringUtils.isEmpty(msg) || ous == null) {
             return;
         }
-
         Code39Bean bean = new Code39Bean();
-
         // 精细度
         final int dpi = 150;
         // module宽度
         final double moduleWidth = UnitConv.in2mm(1.0f / dpi);
-
         // 配置对象
         bean.setModuleWidth(moduleWidth);
         bean.setWideFactor(3);
         bean.doQuietZone(false);
-
         String format = "image/png";
         try {
-
             // 输出到流
             BitmapCanvasProvider canvas = new BitmapCanvasProvider(ous, format, dpi,
                     BufferedImage.TYPE_BYTE_BINARY, false, 0);
-
             // 生成条形码
             bean.generateBarcode(canvas, msg);
-
             // 结束绘制
             canvas.finish();
         } catch (IOException e) {
