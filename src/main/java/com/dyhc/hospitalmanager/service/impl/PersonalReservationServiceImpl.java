@@ -134,7 +134,7 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
      *          -6添加用户体检项失败
      */
     @Override
-    @Transactional(rollbackFor=Exception.class)
+    @Transactional(rollbackFor={RuntimeException.class, Exception.class},readOnly = false)
     public String UserReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId) {
         Integer result = 0;
         JSONObject jsonObject = new JSONObject();
@@ -261,13 +261,12 @@ public class PersonalReservationServiceImpl implements PersonalReservationServic
         }
         //jsonObject.put("errMsg","ok");
         SmsSingleSenderResult smsSingleSenderResult = sendMes.sendMes(phone,bianhao);
-        System.out.println("abcdefghijklmnopqrstuvwxyz");
         System.out.println(smsSingleSenderResult.errMsg);
         return "ok";
     }
 
     @Override
-    @Transactional(rollbackFor=Exception.class)
+    @Transactional(rollbackFor={RuntimeException.class, Exception.class})
     public String userReservation(PersonInfo personInfo,String Yudate,Integer[] packId, Integer[] comId, Integer[] checkId){
         Destination destination = new ActiveMQQueue("hospitalManage");
         Map<String, Object> map = new HashMap<>();
