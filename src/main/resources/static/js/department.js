@@ -36,6 +36,7 @@ function  getPerson() {
 function  result(checkId) {
     $("input[name=checkId]").val(checkId);
     $.getJSON("/hospitalOne/getCommResultsByCheckId.do",{"checkId":checkId},function (result) {
+        $("#save").attr("disabled",false);
         $("#checkResultFinally textarea").html(result.resultDesc);
         $("input[name=checkResultFinally]").val(result.commonResultsId);//结果id
         //如果结果是正常的话建议为空
@@ -108,6 +109,7 @@ function  qing() {
         $("label[name=personSex]").text("");
         $("label[name=isMarry]").text("");
         $("#check").html("");
+        $("#save").attr("disabled",true);
     }
     $("#checkResultFinally textarea").html("");
     $("input[name=checkResultFinally]").val("");//结果id
