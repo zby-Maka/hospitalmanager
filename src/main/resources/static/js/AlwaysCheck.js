@@ -99,10 +99,9 @@ function  getpersoninfo() {
                     "</tbody></table>";
             }
             $("#content").append(jianyan);
-            console.log(jianyan);
         })
-        $(".one").val(one);
-        $(".two").val(two);
+        // $(".one").val(one);
+        // $(".two").val(two);
         $("#checknum").html(contents);
         $("#Checkdate").text(getNowFormatDate());
     },"json");
