@@ -75,6 +75,7 @@
 		"<td id='last'><a href='javascript:void(0)' onclick='findById("+e.proposedDescriptionId+")'>编辑</a></td>" +
 		"</tr>";
 	})
+		$("select[name='resultId']").attr("disabled",true);
 	$("#nums").html(content);
 	},"json")
 	}
