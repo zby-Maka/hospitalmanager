@@ -98,7 +98,7 @@ function sessionStorageData() {
                     "</tbody></table>";
             }
         })
-x``
+
     $("#jiancha").html(contents);
     $("#jiancha").after(jianyan);
     // $($("textarea").get(0)).html(one);
