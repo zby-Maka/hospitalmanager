@@ -67,7 +67,7 @@
 					</tr>
 					<tr style="line-height: 36px;">
 						<td colspan="3" style="text-indent: 39em;" class="operation">
-							<input disabled="disabled" type="button" value="结算" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;" onclick="hint()"/>
+							<input disabled="disabled" type="button" value="结算" style="margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;"/>
 						</td>
 					</tr>
 				</tfoot>
@@ -86,98 +86,50 @@
 				$(".change").html(change);
             })
         })
-		
-		function hint() {
-            swal("请先查询人员信息！");
-        }
 
 		//根据体检编号查询体检信息
 		function getPersonInfo(physicalStatu) {
             var physical_examination_id = $("input[name=physical_examination_id]").val();
-            if (physical_examination_id!=""){
-                $.ajax({
-                    url:"/hospitalOne/getPersonInfoByPersonId.do",
-                    data:{physical_examination_id:physical_examination_id,physicalStatu:physicalStatu},
-                    dataType:"json",
-                    success:function (date) {
-                        if (date!=""){
-                            $(".name").html("姓名:"+date.personName);
-                            $(".age").html("年龄:"+date.personAge);
-                            $(".sex").html("性别:"+date.personSex);
-                            $(".isMarry").html("婚否:"+date.isMarry);
-                            var checkList = "" ;
-                            var price = 0 ;
-                            $.each(date.checkList,function (i,e) {
-                                checkList += "<tr>\n" +
-                                    "\t\t\t\t\t\t<td align=\"center\">"+(i+1)+"</td>\n" +
-                                    "\t\t\t\t\t\t<td align=\"center\">"+e.checkName+"</td>\n" +
-                                    "\t\t\t\t\t\t<td align=\"center\">"+e.checkPrice+"</td>\n" +
-                                    "\t\t\t\t\t</tr>";
-                                price += e.checkPrice;
-                            })
-                            var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\"/>";
-                            $(".operation").html(str);
-                            if (checkList==""){
-                                checkList = "<tr>\n" +
-                                    "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                                    "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                                    "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
-                                    "\t\t\t\t\t</tr>\n" +
-                                    "\t\t\t\t\t<tr>\n" +
-                                    "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">无体检项信息</td>\n" +
-                                    "\t\t\t\t\t</tr>" ;
-                                $(".checkList").html(checkList);
-                                var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled='disabled'/>";
-                                $(".operation").html(str);
-                            }
-                            $(".checkList").html(checkList);
-                            $(".aggregate").html(price);
-                            $(".receivable").html(price);
-                            $(".change").html("---");
-                        } else {
-                            $(".name").html("姓名:----");
-                            $(".age").html("年龄:----");
-                            $(".sex").html("性别:----");
-                            $(".isMarry").html("婚否:----");
-                            var checkList = "<tr>\n" +
+            $.ajax({
+                url:"/hospitalOne/getPersonInfoByPersonId.do",
+                data:{physical_examination_id:physical_examination_id,physicalStatu:physicalStatu},
+                dataType:"json",
+                success:function (date) {
+                    if (date!=""){
+                        $(".name").html("姓名:"+date.personName);
+                        $(".age").html("年龄:"+date.personAge);
+                        $(".sex").html("性别:"+date.personSex);
+                        $(".isMarry").html("婚否:"+date.isMarry);
+                        var checkList = "" ;
+                        var price = 0 ;
+                        $.each(date.checkList,function (i,e) {
+                            checkList += "<tr>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">"+(i+1)+"</td>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">"+e.checkName+"</td>\n" +
+                                "\t\t\t\t\t\t<td align=\"center\">"+e.checkPrice+"</td>\n" +
+                                "\t\t\t\t\t</tr>";
+                            price += e.checkPrice;
+                        })
+                        var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\"/>";
+                        $(".operation").html(str);
+                        if (checkList==""){
+                            checkList = "<tr>\n" +
                                 "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
                                 "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
                                 "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
                                 "\t\t\t\t\t</tr>\n" +
                                 "\t\t\t\t\t<tr>\n" +
-                                "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无信息,请输入人员编号进行查询</td>\n" +
+                                "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">无体检项信息</td>\n" +
                                 "\t\t\t\t\t</tr>" ;
                             $(".checkList").html(checkList);
-                            $(".aggregate").html("---");
-                            $(".receivable").html("---");
-                            $(".change").html("---");
-                            $("input[name=price]").val("");
-                            var str1 = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                            $(".operation").html(str1);
-                            swal("查询失败,请重新输如人员编号！");
+                            var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled='disabled'/>";
+                            $(".operation").html(str);
                         }
-                    }
-                })
-            }else{
-                var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
-                $(".operation").html(str);
-                swal("请输入体检编号！");
-            }
-
-        }
-
-        //根据人员id查询该体检人是否已缴费/是否已退费
-        function getCostTypeByPersonId() {
-            var physical_examination_id = $("input[name=physical_examination_id]").val();
-            $.ajax({
-                url:"/hospitalOne/getCostTypeByPersonId.do",
-                data:{physical_examination_id:physical_examination_id,costType:"收费"},
-                dataType:"json",
-                success:function (date) {
-					if (date!="收费"){
-                        getPersonInfo(0);
-					}else{
-                        var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                        $(".checkList").html(checkList);
+                        $(".aggregate").html(price);
+                        $(".receivable").html(price);
+                        $(".change").html("---");
+                    } else {
                         $(".name").html("姓名:----");
                         $(".age").html("年龄:----");
                         $(".sex").html("性别:----");
@@ -188,17 +140,66 @@
                             "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
                             "\t\t\t\t\t</tr>\n" +
                             "\t\t\t\t\t<tr>\n" +
-                            "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">已缴费</td>\n" +
+                            "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">暂无信息,请输入人员编号进行查询</td>\n" +
                             "\t\t\t\t\t</tr>" ;
+                        $(".checkList").html(checkList);
                         $(".aggregate").html("---");
                         $(".receivable").html("---");
                         $(".change").html("---");
                         $("input[name=price]").val("");
-                        $(".checkList").html(checkList);
-                        $(".operation").html(str)
-					}
+                        var str1 = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                        $(".operation").html(str1);
+                        swal("查询失败,请重新输如人员编号！");
+                    }
                 }
             })
+        }
+
+        //根据人员id查询该体检人是否已缴费/是否已退费
+        function getCostTypeByPersonId() {
+            var physical_examination_id = $("input[name=physical_examination_id]").val();
+            var now = new Date();
+            var time = now.getFullYear() + "" +((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+""+(now.getDate()<10?"0":"")+now.getDate();
+            if (physical_examination_id!=""){
+                if (time==physical_examination_id.substring(0,8)){
+                    $.ajax({
+                        url:"/hospitalOne/getCostTypeByPersonId.do",
+                        data:{physical_examination_id:physical_examination_id,costType:"收费"},
+                        dataType:"json",
+                        success:function (date) {
+                            if (date!="收费"){
+                                getPersonInfo(0);
+                            }else{
+                                var str = "<input type=\"button\" value=\"已结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                                $(".name").html("姓名:----");
+                                $(".age").html("年龄:----");
+                                $(".sex").html("性别:----");
+                                $(".isMarry").html("婚否:----");
+                                var checkList = "<tr>\n" +
+                                    "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                    "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                    "\t\t\t\t\t\t<td align=\"center\">----</td>\n" +
+                                    "\t\t\t\t\t</tr>\n" +
+                                    "\t\t\t\t\t<tr>\n" +
+                                    "\t\t\t\t\t\t<td colspan=\"3\" align=\"center\">已缴费</td>\n" +
+                                    "\t\t\t\t\t</tr>" ;
+                                $(".aggregate").html("---");
+                                $(".receivable").html("---");
+                                $(".change").html("---");
+                                $("input[name=price]").val("");
+                                $(".checkList").html(checkList);
+                                $(".operation").html(str)
+                            }
+                        }
+                    })
+                }else{
+                    swal("请在预约日期前来缴费！！！");
+                }
+            }else{
+                var str = "<input type=\"button\" value=\"结算\" style=\"margin-left: 10px; height: 30px; width: 60px;  font-weight: bold;\" onclick=\"operationCost()\" disabled=\"disabled\"/>";
+                $(".operation").html(str);
+                swal("请输入体检编号！");
+            }
         }
 
         //结算
@@ -208,7 +209,6 @@
             if($("input[name=price]").val()>=0&&$(".change").html()>=0){
                 $.ajax({
                     url:"/hospitalOne/operationCost.do",
-
                     data:{physical_examination_id:physical_examination_id,aggregate:aggregate,physicalStatu:0},
                     dataType:"json",
                     success:function (date) {
