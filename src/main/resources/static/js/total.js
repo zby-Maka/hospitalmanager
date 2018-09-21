@@ -26,7 +26,6 @@ function sessionStorageData() {
         var two = "" ;
         $.each(JSON.parse(checkInfo),function (i,e) {
             comt="";
-            console.log(e);
             if (e.medicalEventsList.length==0) {
                 var cons="";
                 if(e.commonResults.checkAdvice==undefined){
@@ -99,12 +98,12 @@ function sessionStorageData() {
                     "</tbody></table>";
             }
         })
-
+x``
     $("#jiancha").html(contents);
     $("#jiancha").after(jianyan);
-    $($("textarea").get(0)).html(one);
-    //$($("textarea").get(1)).html(two);
-    $($("textarea").get(1)).html(sessionStorage.getItem("jianyi"));
+    // $($("textarea").get(0)).html(one);
+    $($("textarea").get(0)).html(sessionStorage.getItem("jianyi"));
+    $($("textarea").get(0)).attr("disabled",true);
     $("#Checkdate").text(getNowFormatDate());
 }
 

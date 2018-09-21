@@ -31,7 +31,6 @@ $(function () {
                 });
                 $("#check").html(content);
             }
-
         });
     }
 
@@ -82,6 +81,7 @@ $(function () {
     function getYan(checkId){
         $("input[name=checkId]").val(checkId);
     $.getJSON("/hospitalOne/getYan.do",{"checkId":checkId},function (date) {
+        $("#save").attr("disabled",false);
         var content="";
         console.log(date);
         dataArry=date;
@@ -116,6 +116,7 @@ function  qing() {
         $("label[name=personSex]").text("");
         $("label[name=isMarry]").text("");
         $("#check").html("");
+        $("#save").attr("disabled",true);
     }
     $("#checkResultFinally textarea").html("");
     $("input[name=checkResultFinally]").val("");//结果id
